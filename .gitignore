@@ -1,0 +1,17 @@
+# 密钥（绝不入库——用 street_heat_config.example.yaml 作模板）
+stability-monitor/scripts/street_heat_config.yaml
+
+# 依赖与缓存
+**/node_modules/
+**/__pycache__/
+*.pyc
+
+# 运行产物（体积大/可再生；确认单与pending保留在库里以便"打开即最新"）
+credit-tracker/p2p-scraper/results/debug_*.txt
+credit-tracker/data/source/_Tabel_17_latest.xls
+
+# 私人对话存档
+credit-tracker/conversation_history.html
+
+# 备份
+*.bak-*

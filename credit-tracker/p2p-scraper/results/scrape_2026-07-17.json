@@ -1,0 +1,132 @@
+{
+  "date": "2026-07-17",
+  "fx": 15000,
+  "players": [
+    {
+      "name": "AdaKami",
+      "url": "https://www.adakami.id/about",
+      "dataDate": null,
+      "parsed": {
+        "disbCumul_usd": 4.924,
+        "disbYTD_usd": 0.66,
+        "outstanding_usd": 0.253,
+        "totalBorrowers": 7150000,
+        "activeBorrowersYTD": 1680000
+      },
+      "tracker_last": {},
+      "note": null
+    },
+    {
+      "name": "Lentera Dana (Shopee Loan)",
+      "url": "https://www.lenteradana.co.id/statistic",
+      "dataDate": "13 Juli 2026",
+      "parsed": {
+        "disbCumul_usd": 23.085,
+        "disbYTD_usd": 3.695,
+        "outstanding_usd": 0.285,
+        "totalBorrowers": 17655546,
+        "activeBorrowersYTD": 6838280
+      },
+      "tracker_last": {},
+      "note": null
+    },
+    {
+      "name": "Kredifazz",
+      "url": "https://kredifazz.id/disclosure.html",
+      "dataDate": null,
+      "parsed": {
+        "disbCumul_usd": 6.257,
+        "disbYTD_usd": 0.697,
+        "outstanding_usd": 0.589,
+        "totalBorrowers": 8720000,
+        "activeBorrowersYTD": 1970000
+      },
+      "tracker_last": {},
+      "note": null
+    },
+    {
+      "name": "Akulaku (Asetku)",
+      "url": "https://www.asetku.co.id/#/",
+      "dataDate": null,
+      "parsed": {
+        "disbCumul_usd": 5.424,
+        "disbYTD_usd": null,
+        "outstanding_usd": null,
+        "totalBorrowers": 25168640,
+        "activeBorrowersYTD": null
+      },
+      "tracker_last": {},
+      "note": "官网仅披露累计口径(无YTD/outstanding)"
+    },
+    {
+      "name": "Kredit Pintar",
+      "url": "https://www.kreditpintar.com/about-us",
+      "dataDate": "10/7/2026",
+      "parsed": {
+        "disbCumul_usd": 4.333,
+        "disbYTD_usd": 0.353,
+        "outstanding_usd": 0.213,
+        "totalBorrowers": 9300000,
+        "activeBorrowersYTD": 650000
+      },
+      "tracker_last": {},
+      "note": null
+    },
+    {
+      "name": "Easycash",
+      "url": "https://easycash.id/about/us/company-team",
+      "dataDate": null,
+      "parsed": {
+        "disbCumul_usd": 6.551,
+        "disbYTD_usd": 0.685,
+        "outstanding_usd": 0.463,
+        "totalBorrowers": 10299405,
+        "activeBorrowersYTD": 1740817
+      },
+      "tracker_last": {},
+      "note": null
+    },
+    {
+      "name": "Julo",
+      "url": "https://www.julo.co.id/about",
+      "dataDate": null,
+      "parsed": {
+        "disbCumul_usd": 1.927,
+        "disbYTD_usd": 0.055,
+        "outstanding_usd": null,
+        "totalBorrowers": 3332319,
+        "activeBorrowersYTD": 139320
+      },
+      "tracker_last": {},
+      "note": "官网未披露outstanding"
+    },
+    {
+      "name": "ADA Pundi",
+      "url": "https://www.adapundi.com/about/achievements",
+      "dataDate": null,
+      "parsed": {
+        "disbCumul_usd": 2.276,
+        "disbYTD_usd": 0.398,
+        "outstanding_usd": 0.238,
+        "totalBorrowers": 5620000,
+        "activeBorrowersYTD": 1910000
+      },
+      "tracker_last": {},
+      "note": null
+    },
+    {
+      "name": "KrediOne",
+      "url": "https://www.kredione.id/",
+      "dataDate": "2026-07-12",
+      "parsed": {
+        "disbCumul_usd": 1.253,
+        "disbYTD_usd": 0.415,
+        "outstanding_usd": null,
+        "totalBorrowers": 2465267,
+        "activeBorrowersYTD": 669337
+      },
+      "tracker_last": {},
+      "note": "官网JSON接口；无outstanding披露；LoanNumber按借款人口径对齐(与Excel序列连续,判断)"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+# 跨机器/跨系统协作：文本文件统一用 LF，避免 Windows/Mac 之间的换行符 diff 噪音
+* text=auto eol=lf
+
+# 二进制文件不做转换
+*.xlsx binary
+*.xls  binary
+*.png  binary
+*.jpg  binary
+*.gz   binary
+*.zip  binary

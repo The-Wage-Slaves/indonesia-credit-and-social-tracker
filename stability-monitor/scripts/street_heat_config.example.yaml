@@ -1,0 +1,16 @@
+# 街头动员热度 · 密钥配置模板
+# 复制本文件为 street_heat_config.yaml，按 API_KEYS_GUIDE.md 申请key后填入。
+# street_heat_config.yaml 含真实密钥，已在 .gitignore 中排除，不要提交/分享。
+
+reddit:                # 已停用(API收紧)，由Kaskus开放接口替代，留作将来恢复
+  client_id: ""
+  client_secret: ""
+  user_agent: "windows:street-heat-monitor:v2 (personal research)"
+
+youtube:
+  api_key: ""          # Google Cloud 的 YouTube Data API v3 key（AIza 开头，免费）
+
+llm:                   # 反对率分类（DeepSeek，OpenAI兼容；每周约200条，费用<¥0.1）
+  api_key: ""          # platform.deepseek.com 申请（sk- 开头）
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-chat"

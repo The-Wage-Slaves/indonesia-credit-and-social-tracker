@@ -1,0 +1,65 @@
+[
+  {
+    "date": "2026-07-16",
+    "version": 3,
+    "heat": 29.6,
+    "suggested_score": 67,
+    "opposition": {
+      "status": "ok",
+      "rate": 39.7,
+      "detail": "250条中政治条目204条(浓度82%)，反对81/中性91/支持32 → 总反对率 39.7%（分侧: 民间YouTube 50% · 论坛Kaskus 21% · 媒体RSS 25%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 7.9,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 1,
+          "share": 3.9405774863997767,
+          "examples": [
+            "Gence Ruan, Menu MBG Terbaik Untuk Anak-anak Kalimantan Timur"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "n_searched": 133,
+          "n_big": 43
+        }
+      },
+      "gdelt_vol": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 57.4,
+        "raw": {
+          "avg_tone7": -3.736685714285714
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 2.2,
+        "raw": {
+          "total": 451,
+          "matched": 1,
+          "share": 0.22172949002217296,
+          "examples": [
+            "[ANTARA Top News] Polisi kerahkan 569 personel amankan unjuk rasa di Jakarta Pusat"
+          ],
+          "dead_feeds": []
+        }
+      }
+    }
+  }
+]

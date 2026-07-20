@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印尼稳定性指数 · 五支柱框架</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#faf9f5; --card:#ffffff; --line:#e6e4dc; --line-strong:#cfcdc3;
+    --tx:#1a1a17; --tx2:#5f5e58; --tx3:#93918a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1c1b19; --card:#26241f; --line:#38352f; --line-strong:#4a463e;
+      --tx:#f2f0e9; --tx2:#b8b5ab; --tx3:#88857c; }
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--tx);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.6; }
+  .wrap{ max-width:820px; margin:0 auto; padding:28px 20px 60px; }
+  h1{ font-size:24px; font-weight:600; margin:0; }
+  .sub{ font-size:13px; color:var(--tx3); }
+  .lede{ font-size:13px; color:var(--tx2); margin:4px 0 24px; }
+  button{ font:inherit; font-size:13px; background:transparent; color:var(--tx);
+    border:0.5px solid var(--line-strong); border-radius:8px; padding:7px 12px;
+    cursor:pointer; transition:background .15s; }
+  button:hover{ background:var(--bg); }
+  button.active{ background:var(--bg); border-color:var(--tx2); font-weight:500; }
+  .hero{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:24px; }
+  .heroBox{ flex:1; min-width:200px; border-radius:12px; padding:20px;
+    display:flex; flex-direction:column; justify-content:center; }
+  .heroNum{ font-size:52px; font-weight:600; line-height:1; }
+  .weightBox{ flex:1.4; min-width:240px; display:flex; flex-direction:column; justify-content:center; gap:6px; }
+  .presets{ display:flex; gap:6px; flex-wrap:wrap; }
+  .grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+  .pillar{ background:var(--card); border:0.5px solid var(--line); border-radius:12px; padding:14px 16px; }
+  .pHead{ display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .pIcon{ width:20px; height:20px; flex:0 0 20px; }
+  .pTitle{ font-size:15px; font-weight:500; }
+  .pQ{ font-size:12px; color:var(--tx3); }
+  .pScore{ font-size:22px; font-weight:600; line-height:1; text-align:right; }
+  .pLvl{ font-size:11px; text-align:right; }
+  .bar{ height:6px; background:var(--bg); border-radius:3px; overflow:hidden; margin-bottom:8px; position:relative; }
+  .barFill{ height:100%; border-radius:3px; }
+  .thresh{ position:absolute; top:-2px; width:2px; height:10px; background:var(--tx); }
+  .metrics{ display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--tx2); margin-bottom:8px; }
+  .metrics span{ display:inline-flex; align-items:center; gap:3px; }
+  details{ font-size:12px; }
+  summary{ cursor:pointer; color:var(--tx2); }
+  details ul{ margin:6px 0 4px; padding-left:18px; color:var(--tx2); }
+  .lead{ font-size:11px; color:var(--tx3); margin-top:4px; }
+  .section{ margin-top:24px; padding-top:16px; border-top:0.5px solid var(--line); }
+  .chartWrap{ position:relative; width:100%; height:240px; }
+  .note{ font-size:11px; color:var(--tx3); margin-top:12px; line-height:1.5; }
+  .foot{ margin-top:28px; padding-top:16px; border-top:0.5px solid var(--line); font-size:12px; color:var(--tx3); }
+  a{ color:inherit; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <h1>印尼稳定性指数</h1>
+    <span class="sub" id="asOf"></span>
+  </div>
+  <p class="lede">规则 → 钱 → 枪：一条因果链上的五个环节。分数越低风险越高。可调权重，实时重算。</p>
+  <div id="app"></div>
+  <div class="foot">
+    <strong>这个文件是什么：</strong>一个完全自包含的静态仪表盘。所有交互（调权重、展开驱动因子、切换对照图）在你本地浏览器里运行，
+    不联网、不依赖任何服务。数据是 <span id="asOf2"></span> 的评估快照。<br><br>
+    <strong>怎么让它自动更新：</strong>目前它是静态快照。要做到"打开即最新"，需要把顶部的
+    <code>DATA</code> 对象改为从一个你自己的数据源（如 GitHub Actions 生成的 <code>dashboard-data.json</code>）读取——
+    前端逻辑一行都不用改，只需把 <code>const DATA = {...}</code> 换成一次 <code>fetch()</code>。
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   数据层 —— 与逻辑完全分离。
+   未来接自动更新时，只需把下面这个 DATA 对象换成:
+     const DATA = await (await fetch('你的地址/dashboard-data.json')).json();
+   其余代码一行都不用动。
+   ============================================================ */
+const DATA = {
+  asOf: "2026-07-14",
+  pillars: [
+    { id:"fiscal", label:"财政与外部脆弱性", icon:"bank", weight:0.20,
+      score:52, prev:56, threshold:35, hist1998:60,
+      question:"国家的钱还撑得住吗？下一个冲击有没有缓冲？",
+      drivers:["全年赤字 2.85% 紧贴 3% 上限","基本盈余 85.1万亿(硬数据,当下不弱)","或有负债膨胀:Danantara/DSI/Patriot Bond(表外)","收入靠油价周期windfall,缓冲耗尽"],
+      lead:"表外或有负债膨胀速度 + 收入对商品价格依赖度" },
+    { id:"currency", label:"货币与市场信心", icon:"trend", weight:0.20,
+      score:38, prev:44, threshold:30, hist1998:25,
+      question:"资本在用脚投票吗？防守成本递增吗？",
+      drivers:["卢比 18,128,年内 −11%,破 18,000 心理关口","JCI 美元计 −35%,全球最差","加息边际效果递减,流入疑似 BI 自己接盘","外资持续净流出 40亿美元+"],
+      lead:"加息的边际稳汇率效果 —— 越来越无效即信心结构性流失" },
+    { id:"institutions", label:"制度与政策可预见性", icon:"scale", weight:0.20,
+      score:34, prev:40, threshold:30, hist1998:45,
+      question:"游戏规则还稳定吗？约束权力的机构还独立吗？",
+      drivers:["央行独立性:侄子进 BI + P2SK 拟改法定目标","财政锚移除:Sri Mulyani 被换","政策方差极高:B50 四个月翻转、IIFC 速成","50A 条免责 + FATF 风险悬顶"],
+      lead:"每个独立机构从'独立'变成'接入总统网络'的动作" },
+    { id:"social", label:"社会与街头", icon:"users", weight:0.20,
+      score:55, prev:60, threshold:35, hist1998:50,
+      question:"老百姓承受力到临界了吗？动员性质变了吗？",
+      drivers:["Pertamax +32%,但补贴 Pertalite 红线仍守住","消费者信心 117.8,九个月低,连跌两月","6月裁员约43,000,2025以来最大","'走向破产的印尼':诉求转向正当性"],
+      lead:"动员诉求从分配性转向正当性 + 补贴红线是否被迫触碰" },
+    { id:"coercive", label:"强制机构内聚性", icon:"shield", weight:0.20,
+      score:40, prev:47, threshold:30, hist1998:35,
+      question:"拿枪的人内部还团结吗？最后的稳定器稳吗？",
+      drivers:["军警平衡翻转:扶军压警","dwifungsi 复活:军官进检察院/文职","冲突下沉到实弹:楠榜警察被士兵打死","Febrie 案暴露执法工具化"],
+      lead:"强制机构间暴力烈度 + 精英联盟出现被排除的输家" }
+  ]
+};
+
+const WEIGHT_PRESETS = {
+  balanced:   { fiscal:0.20, currency:0.20, institutions:0.20, social:0.20, coercive:0.20 },
+  investment: { fiscal:0.28, currency:0.28, institutions:0.18, social:0.13, coercive:0.13 },
+  compliance: { fiscal:0.13, currency:0.15, institutions:0.32, social:0.12, coercive:0.28 }
+};
+const PRESET_NAMES = { balanced:"全景均衡", investment:"投资/敞口", compliance:"合规/牌照" };
+
+const ICONS = {
+  bank:'<path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/>',
+  trend:'<path d="M3 7l6 6 4-4 8 8M21 17v-4h-4"/>',
+  scale:'<path d="M12 3v18M7 8H3l2-4 2 4H3M21 8h-4l2-4 2 4h-4M6 21h12"/>',
+  users:'<path d="M9 11a4 4 0 100-8 4 4 0 000 8zM17 11a3 3 0 100-6M3 21v-2a5 5 0 015-5h2a5 5 0 015 5v2M17 15a4 4 0 014 4v2"/>',
+  shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM12 3v18"/>'
+};
+
+function alertLevel(s){
+  if(s>=70)return{n:1,label:"绿·稳定",hex:"#639922",bg:"#EAF3DE",tx:"#27500A"};
+  if(s>=55)return{n:2,label:"黄绿·平稳",hex:"#97C459",bg:"#EAF3DE",tx:"#3B6D11"};
+  if(s>=45)return{n:3,label:"橙黄·承压",hex:"#EF9F27",bg:"#FAEEDA",tx:"#854F0B"};
+  if(s>=30)return{n:4,label:"橙红·预警",hex:"#D85A30",bg:"#FAECE7",tx:"#993C1D"};
+  return{n:5,label:"红·危机",hex:"#E24B4A",bg:"#FCEBEB",tx:"#791F1F"};
+}
+
+let weights = {...WEIGHT_PRESETS.balanced};
+
+function composite(){
+  let s=0,w=0;
+  DATA.pillars.forEach(p=>{ s+=p.score*weights[p.id]; w+=weights[p.id]; });
+  return Math.round(s/w);
+}
+
+function icon(name,color){
+  return `<svg class="pIcon" viewBox="0 0 24 24" fill="none" stroke="${color}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||''}</svg>`;
+}
+
+function pillarRow(p){
+  const a = alertLevel(p.score);
+  const delta = p.score - p.prev;
+  const dist = p.score - p.threshold;
+  const arrow = delta>0?'↗':(delta<0?'↘':'→');
+  const mCol = delta>0?'#639922':(delta<0?'#D85A30':'#888780');
+  return `
+  <div class="pillar">
+    <div class="pHead">
+      ${icon(p.icon,a.hex)}
+      <div style="flex:1;min-width:0;">
+        <div class="pTitle">${p.label}</div>
+        <div class="pQ">${p.question}</div>
+      </div>
+      <div>
+        <div class="pScore" style="color:${a.hex};">${p.score}</div>
+        <div class="pLvl" style="color:${a.tx};">${a.n}级</div>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="barFill" style="width:${p.score}%;background:${a.hex};"></div>
+      <div class="thresh" style="left:${p.threshold}%;" title="临界值 ${p.threshold}"></div>
+    </div>
+    <div class="metrics">
+      <span style="color:${mCol};">${arrow} 周变化 ${delta>0?'+':''}${delta}</span>
+      <span>离临界 ${dist>0?'+':''}${dist}</span>
+      <span>1998位置 ${p.hist1998}</span>
+    </div>
+    <details>
+      <summary>驱动因子</summary>
+      <ul>${p.drivers.map(d=>`<li>${d}</li>`).join('')}</ul>
+      <div class="lead">👁 先行信号：${p.lead}</div>
+    </details>
+  </div>`;
+}
+
+function render(){
+  document.getElementById('asOf').textContent = `截至 ${DATA.asOf} · 五支柱框架`;
+  document.getElementById('asOf2').textContent = DATA.asOf;
+  const comp = composite();
+  const ca = alertLevel(comp);
+  document.getElementById('app').innerHTML = `
+    <div class="hero">
+      <div class="heroBox" style="background:${ca.bg};">
+        <div style="font-size:13px;color:${ca.tx};margin-bottom:2px;">综合指数（加权）</div>
+        <div style="display:flex;align-items:baseline;gap:10px;">
+          <span class="heroNum" style="color:${ca.tx};">${comp}</span>
+          <span style="font-size:15px;color:${ca.tx};">/100</span>
+        </div>
+        <div style="margin-top:8px;display:inline-flex;align-items:center;gap:6px;">
+          <span style="width:10px;height:10px;border-radius:2px;background:${ca.hex};"></span>
+          <span style="font-size:14px;font-weight:500;color:${ca.tx};">${ca.n}级 · ${ca.label}</span>
+        </div>
+      </div>
+      <div class="weightBox">
+        <div style="font-size:13px;color:var(--tx2);margin-bottom:2px;">权重预设</div>
+        <div class="presets">
+          ${Object.keys(WEIGHT_PRESETS).map(k=>{
+            const active = JSON.stringify(weights)===JSON.stringify(WEIGHT_PRESETS[k]);
+            return `<button class="${active?'active':''}" onclick="setPreset('${k}')">${PRESET_NAMES[k]}</button>`;
+          }).join('')}
+        </div>
+        <p style="font-size:12px;color:var(--tx3);margin:6px 0 0;">当前：${DATA.pillars.map(p=>Math.round(weights[p.id]*100)+'%').join(' / ')}<br>综合分随权重实时重算。</p>
+      </div>
+    </div>
+    <div class="grid">${DATA.pillars.map(pillarRow).join('')}</div>
+    <div class="section">
+      <div style="font-size:13px;color:var(--tx2);margin-bottom:10px;">各支柱评分 vs 临界值 vs 1998 类比位置</div>
+      <div class="chartWrap"><canvas id="cmp"></canvas></div>
+      <p class="note">读图：制度支柱当前已低于其 1998 位置 —— 在"约束权力的机构独立性"上，已比苏哈托崩溃前夕更弱。社会支柱离临界与 1998 都还有距离 —— 街头仍是缓冲。</p>
+    </div>`;
+  drawChart();
+}
+
+window.setPreset = function(k){ weights = {...WEIGHT_PRESETS[k]}; render(); };
+
+let chart;
+function drawChart(){
+  const ctx = document.getElementById('cmp');
+  if(!ctx || !window.Chart) return;
+  if(chart) chart.destroy();
+  chart = new Chart(ctx, {
+    type:'bar',
+    data:{
+      labels: DATA.pillars.map(p=>p.label.replace(/与.*/,'').slice(0,4)),
+      datasets:[
+        { label:'当前分', data:DATA.pillars.map(p=>p.score), backgroundColor:'#D85A30', borderRadius:4, barPercentage:0.7 },
+        { label:'临界值', data:DATA.pillars.map(p=>p.threshold), backgroundColor:'#888780', borderRadius:4, barPercentage:0.7 },
+        { label:'1998位置', data:DATA.pillars.map(p=>p.hist1998), backgroundColor:'#B5D4F4', borderRadius:4, barPercentage:0.7 }
+      ]
+    },
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{ display:true, position:'top', labels:{ font:{size:11}, boxWidth:10, boxHeight:10 } } },
+      scales:{ y:{ min:0, max:100, ticks:{ font:{size:11} } }, x:{ ticks:{ font:{size:11} } } }
+    }
+  });
+}
+
+if(window.Chart){ render(); }
+else{ const iv=setInterval(()=>{ if(window.Chart){ clearInterval(iv); render(); } },50); }
+</script>
+</body>
+</html>

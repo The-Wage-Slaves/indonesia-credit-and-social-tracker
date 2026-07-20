@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>街头动员热度确认单 · 2026-07-15</title>
+<style>
+ body{margin:0;background:#f7f8fa;color:#1f2937;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+ .wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
+ h1{font-size:20px;margin:0 0 2px} .sub{font-size:12px;color:#9aa1ab;margin-bottom:18px}
+ .card{background:#fff;border:1px solid #e7e9ee;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+ .hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+ .big{font-size:44px;font-weight:700} .lbl{font-size:12px;color:#6b7280}
+ table{width:100%;border-collapse:collapse;font-size:12px}
+ th{text-align:left;color:#6b7280;font-weight:600;border-bottom:2px solid #e7e9ee;padding:6px}
+ td{border-bottom:1px solid #f1f2f4;padding:7px 6px;vertical-align:top}
+ .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+ .badge{font-size:11px;border:1px solid;border-radius:6px;padding:1px 7px;white-space:nowrap}
+ .grp{font-size:10px;color:#9aa1ab;margin-left:6px}
+ .detail{color:#6b7280;font-size:11px}
+ .band{display:inline-block;background:#f1f5f9;border:1px solid #e7e9ee;border-radius:6px;padding:1px 8px;font-size:11px;margin:2px}
+ .warn{color:#b45309;font-size:12px}
+ h3{font-size:13px;margin:4px 0 8px} ul{margin:0;padding-left:18px;font-size:12px;color:#4b5563}
+ .next{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #2563eb;border-radius:8px;padding:12px 16px;font-size:12.5px}
+</style></head><body><div class="wrap">
+<h1>街头动员热度 · 周度确认单</h1>
+<div class="sub">采集日 2026-07-15 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
+<div class="card hero">
+  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">26.3</div></div>
+  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">69</div></div>
+  <div style="flex:1;min-width:220px"><div class="lbl">换算刻度</div><span class='band'>≤25→70分</span> <span class='band'>≤45→58分</span> <span class='band'>≤60→45分</span> <span class='band'>≤75→35分</span> <span class='band'>≤100→22分</span></div>
+</div>
+<div class="card"><h3>六源明细</h3><p class='warn'>⚠ 2 个源未参与（失败/待配置），热度按剩余源权重归一化。</p>
+<table><tr><th>状态</th><th>数据源</th><th class="num">热度</th><th class="num">权重</th><th>本期读数</th></tr>
+<tr>
+          <td><span class="badge" style="color:#D85A30;border-color:#D85A30">✗ 失败</span></td>
+          <td><b>A. Google Trends 双篮搜索热度</b><span class="grp">领先指标</span></td>
+          <td class="num">—</td><td class="num">重分配</td>
+          <td class="detail">采集失败: The request failed: Google returned a response with code 429</td></tr><tr>
+          <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
+          <td><b>E. Kaskus 全站热帖</b><span class="grp">领先指标</span></td>
+          <td class="num">2.9</td><td class="num">20%</td>
+          <td class="detail">全站热帖25条中政治/愤怒帖 1 条，互动占比 1.4%</td></tr><tr>
+          <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
+          <td><b>F. YouTube 高播放政治视频</b><span class="grp">领先指标</span></td>
+          <td class="num">100.0</td><td class="num">10%</td>
+          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 44 条（检索136条）</td></tr><tr>
+          <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
+          <td><b>B. GDELT 报道量</b><span class="grp">滞后指标</span></td>
+          <td class="num">43.6</td><td class="num">15%</td>
+          <td class="detail">近7天报道量占比均值 0.018% / 前49天基线 0.020% = 0.87x</td></tr><tr>
+          <td><span class="badge" style="color:#D85A30;border-color:#D85A30">✗ 失败</span></td>
+          <td><b>C. GDELT 媒体tone</b><span class="grp">滞后指标</span></td>
+          <td class="num">—</td><td class="num">重分配</td>
+          <td class="detail">采集失败: 429 Client Error: Too Many Requests for url: https://api.gdeltproject.org/api/v2/doc/doc?q</td></tr><tr>
+          <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
+          <td><b>D. 大众媒体RSS 街头标题占比</b><span class="grp">滞后指标</span></td>
+          <td class="num">0.0</td><td class="num">20%</td>
+          <td class="detail">近7天 451 条标题中 0 条街头相关（0.0%）；失效源: 0</td></tr></table></div>
+<div class="card"><h3>历史（共2期）</h3>
+<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-15</td><td class='num'>30.2</td><td class='num'><b>67</b></td></tr><tr><td>2026-07-15</td><td class='num'>26.3</td><td class='num'><b>69</b></td></tr></table></div>
+<div class="next"><b>下一步：</b>把这个建议分数发给 Claude Code 确认（说"确认本期街头热度"即可写入看板），
+或者说"这期不对，因为……"来挑战校准。</div>
+</div></body></html>

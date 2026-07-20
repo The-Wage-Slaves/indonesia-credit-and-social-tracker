@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印尼市场监测 · Indonesia Monitor Hub</title>
+<style>
+  :root{
+    --bg:#faf9f5; --card:#ffffff; --card2:#f6f4ee; --line:#e6e4dc; --line-strong:#cfcdc3;
+    --tx:#1a1a17; --tx2:#5f5e58; --tx3:#93918a; --accent:#b8542a; --accent2:#185fa5;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1c1b19; --card:#26241f; --card2:#201e1a; --line:#38352f; --line-strong:#4a463e;
+      --tx:#f2f0e9; --tx2:#b8b5ab; --tx3:#88857c; --accent:#e08a5a; --accent2:#85b7eb; }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--tx);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+    line-height:1.6;min-height:100vh;}
+  .wrap{max-width:920px;margin:0 auto;padding:56px 24px 72px;}
+  .kicker{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);font-weight:600;}
+  h1{font-size:30px;font-weight:600;margin:6px 0 8px;}
+  .lede{font-size:14px;color:var(--tx2);max-width:640px;margin:0 0 36px;}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  @media(max-width:680px){.cards{grid-template-columns:1fr;}}
+  .card{display:flex;flex-direction:column;background:var(--card);border:0.5px solid var(--line);
+    border-radius:16px;padding:24px;text-decoration:none;color:inherit;transition:.16s;
+    box-shadow:0 1px 2px rgba(0,0,0,.03);position:relative;overflow:hidden;}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
+  .card .bar{position:absolute;top:0;left:0;right:0;height:3px;}
+  .c1 .bar{background:var(--accent2);}
+  .c2 .bar{background:var(--accent);}
+  .ic{font-size:26px;margin-bottom:12px;}
+  .card h2{font-size:18px;font-weight:600;margin:0 0 4px;}
+  .card .en{font-size:12px;color:var(--tx3);margin-bottom:12px;letter-spacing:.02em;}
+  .card p{font-size:13px;color:var(--tx2);margin:0 0 16px;flex:1;}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px;}
+  .tag{font-size:11px;color:var(--tx2);background:var(--card2);border:0.5px solid var(--line);
+    border-radius:6px;padding:3px 8px;}
+  .go{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+  .c1 .go{color:var(--accent2);} .c2 .go{color:var(--accent);}
+  .meta{margin-top:40px;padding-top:20px;border-top:0.5px solid var(--line);
+    font-size:12px;color:var(--tx3);display:flex;flex-wrap:wrap;gap:18px;}
+  .meta b{color:var(--tx2);font-weight:600;}
+  code{background:var(--card2);border:0.5px solid var(--line);border-radius:4px;padding:1px 5px;font-size:11px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Indonesia Market &amp; Stability Monitor</div>
+  <h1>印尼市场监测中心</h1>
+  <p class="lede">两套独立但互补的监测体系 —— 一套盯<b>消费信贷市场的量</b>（谁在放款、余额多少），
+  一套盯<b>国家稳定性的势</b>（宏观—政治—市场离临界多远）。点击进入任一看板。</p>
+
+  <div class="cards">
+    <a class="card c1" href="credit-tracker/dashboard/credit-dashboard.html">
+      <div class="bar"></div>
+      <div class="ic">📊</div>
+      <h2>消费信贷市场追踪</h2>
+      <div class="en">Consumer Credit Market Tracker</div>
+      <p>四板块：① 国家宏观数据（GDP / BI利率 / 通胀 / 汇率 / 失业率）② 信贷行业数据（银行 / 多元金融 / P2P
+      监管报表余额）③ 竞对数据（10 家 P2P 财务运营 + APP量级留位）④ 舆情监测（留位）。回答"市场有多大、谁在增长"。</p>
+      <div class="tags">
+        <span class="tag">宏观 + 行业 + 竞对</span>
+        <span class="tag">月度余额</span>
+        <span class="tag">✎ 手工录入暗门</span>
+      </div>
+      <span class="go">进入看板 →</span>
+    </a>
+
+    <a class="card c2" href="stability-monitor/dashboard/indonesia-stability-index-pro.html">
+      <div class="bar"></div>
+      <div class="ic">🧭</div>
+      <h2>稳定性指数分析</h2>
+      <div class="en">Stability Index · Five-Pillar Framework</div>
+      <p>五支柱评分体系（财政 / 货币 / 制度 / 社会 / 强制机构），含主权评级与腐败指数等外部第三方入参、
+      顶部周度趋势图，每项标注事实 / 引述 / 判断来源，并与 1998 危机位置对照。回答"离临界还有多远"。</p>
+      <div class="tags">
+        <span class="tag">五支柱 + 外部评级</span>
+        <span class="tag">周度趋势</span>
+        <span class="tag">1998 锚定</span>
+      </div>
+      <span class="go">进入看板 →</span>
+    </a>
+  </div>
+
+  <div id="pendingBox" style="display:none;margin-top:32px;">
+    <h2 style="font-size:17px;margin:0 0 4px;">📋 待确认事项</h2>
+    <p style="font-size:12px;color:var(--tx3);margin:0 0 12px;">
+      脚本自动抓到的新数据先进这里，<b>你确认后才写入看板</b>。处理方式：看完点开确认单（如有），回到 Claude Code 说"确认 ××"或提出修改。</p>
+    <div id="pendingList"></div>
+    <p id="pendingTime" style="font-size:11px;color:var(--tx3);margin-top:8px;"></p>
+  </div>
+
+  <div class="meta">
+    <span><b>数据源</b> BI · OJK · BPS · 评级机构 · TI</span>
+    <span><b>汇率</b> 固定 1 USD = 15,000 IDR</span>
+    <span><b>街头热度</b> <a href="stability-monitor/scripts/output/street-heat-latest.html" style="color:var(--accent2)">最新周度确认单 →</a></span>
+    <span><b>更新</b> 2026-07-16</span>
+  </div>
+</div>
+<script src="pending.js"></script>
+<script>
+try {
+  if (typeof PENDING !== 'undefined') {
+    var NAMES = { credit: '📊 信贷市场追踪', stability: '🧭 稳定性指数' };
+    var items = [];
+    var boards = PENDING.boards || {};
+    for (var b in boards) (boards[b] || []).forEach(function(it){ items.push({ b: b, it: it }); });
+    var box = document.getElementById('pendingBox');
+    var list = document.getElementById('pendingList');
+    box.style.display = 'block';
+    if (items.length) {
+      list.innerHTML = items.map(function(x){
+        var it = x.it;
+        return '<div style="background:var(--card);border:0.5px solid var(--line);border-left:3px solid var(--accent);' +
+          'border-radius:10px;padding:12px 16px;margin-bottom:8px;">' +
+          '<div style="font-size:13px;font-weight:600;">' + (NAMES[x.b] || x.b) + ' · ' + it.title + '</div>' +
+          (it.detail ? '<div style="font-size:12px;color:var(--tx2);margin-top:3px;">' + it.detail + '</div>' : '') +
+          '<div style="font-size:12px;margin-top:6px;">' +
+          (it.link ? '<a href="' + it.link + '" style="color:var(--accent2);font-weight:600;">打开确认单 →</a> · ' : '') +
+          '<span style="color:var(--tx3);">' + (it.action || '回 Claude Code 说"确认"') + '</span></div></div>';
+      }).join('');
+    } else {
+      list.innerHTML = '<div style="font-size:13px;color:var(--tx3);background:var(--card2);border:0.5px solid var(--line);border-radius:10px;padding:12px 16px;">当前无待确认事项 ✓</div>';
+    }
+    document.getElementById('pendingTime').textContent = '最近一次自动取数: ' + (PENDING.updated || '—');
+  }
+} catch (e) {}
+</script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+# 印尼宏观 / 经济 / 金融科技 每日简报 —— 信息源配置
+#
+# tier: 1 = 权威一手源(央行/监管/官方通讯社), 2 = 主流财经媒体, 3 = 行业垂直
+# lang: id = 印尼语, en = 英语
+# 抓取失败的源不会中断整体流程,只会在日志里告警。
+# 先跑 `python -m src.main --check-feeds` 体检哪些源活着。
+
+# 2026-07-15 全量体检并重组：原13源中8个已失效（BI官方RSS下线、ANTARA Ekonomi停更于1月、
+# Jakarta Post/Globe/Tempo EN/Kontan/Bisnis/Indonesia Investments 均无法解析）。
+# 失效源已移除，补入6个体检当日存活且当天有更新的大众/国民新闻源（街头热度监测也依赖这些）。
+feeds:
+  # ---------- Tier 1: 通讯社与国际台 ----------
+  - name: ANTARA Top News
+    url: https://www.antaranews.com/rss/top-news
+    tier: 1
+    lang: id
+    topics: [macro, policy, politics]
+
+  - name: BBC Indonesia
+    url: https://feeds.bbci.co.uk/indonesia/rss.xml
+    tier: 1
+    lang: id
+    topics: [politics, macro]
+
+  # ---------- Tier 2: 主流媒体（国民新闻 + 财经）----------
+  - name: CNN Indonesia Nasional
+    url: https://www.cnnindonesia.com/nasional/rss
+    tier: 2
+    lang: id
+    topics: [politics, policy]
+
+  - name: CNN Indonesia Ekonomi
+    url: https://www.cnnindonesia.com/ekonomi/rss
+    tier: 2
+    lang: id
+    topics: [macro, markets]
+
+  - name: Liputan6 News
+    url: https://feed.liputan6.com/rss/news
+    tier: 2
+    lang: id
+    topics: [politics, policy]
+
+  - name: Republika
+    url: https://www.republika.co.id/rss
+    tier: 2
+    lang: id
+    topics: [politics, macro]
+
+  - name: Katadata
+    url: https://katadata.co.id/rss
+    tier: 2
+    lang: id
+    topics: [macro, markets]
+
+  - name: CNBC Indonesia - Market
+    url: https://www.cnbcindonesia.com/market/rss
+    tier: 2
+    lang: id
+    topics: [markets]
+
+  # ---------- Tier 3: 行业垂直 ----------
+  - name: DailySocial
+    url: https://dailysocial.id/feed
+    tier: 3
+    lang: id
+    topics: [fintech, startup]
+
+  - name: Fintech News Singapore
+    url: https://fintechnews.sg/feed/
+    tier: 3
+    lang: en
+    topics: [fintech]
+
+
+# 高优先级关键词:命中任一即强制进入候选池,不参与常规打分淘汰。
+# 你要的 FATF / PPATK / 宪法法院 三条线在这里。
+priority_keywords:
+  # —— 合规与法治风险(最高优先级)——
+  - FATF
+  - PPATK
+  - "Mahkamah Konstitusi"      # 宪法法院
+  - "Constitutional Court"
+  - "judicial review"
+  - "uji materi"               # 司法审查(印尼语)
+  - "Pasal 50A"
+  - "Article 50A"
+  - "Patriot Bond"
+  - "Merah Putih Bond"
+  - "pencucian uang"           # 洗钱
+  - "money laundering"
+  - "grey list"
+  - "daftar abu-abu"
+  - APG                        # 亚太反洗钱组织
+
+  # —— 主权评级与指数 ——
+  - MSCI
+  - "S&P Dow Jones"
+  - "S&P DJI"
+  - Moody
+  - Fitch
+  - "frontier market"
+  - "pasar frontier"
+  - "credit rating"
+  - "peringkat utang"
+
+  # —— 制度与治理 ——
+  - Danantara
+  - DSI
+  - "Danantara Sumberdaya"
+  - P2SK
+  - "bank sentral"             # 央行(独立性语境)
+  - "independensi BI"
+  - IIFC
+  - "financial center"
+  - "pusat finansial"
+
+  # —— 监管(与你的业务直接相关)——
+  - OJK
+  - QRIS
+  - PJP
+  - LPBBTI
+  - "pinjaman online"          # 网贷
+  - pindar
+  - fintech
+  - "credit scoring"
+  - "innovative credit scoring"
+  - ITSK
+  - "paylater"
+  - "multifinance"
+
+  # —— 宏观核心 ——
+  - "suku bunga"               # 利率
+  - "BI rate"
+  - rupiah
+  - "cadangan devisa"          # 外汇储备
+  - "defisit"                  # 赤字
+  - DHE
+  - "devisa hasil ekspor"
+  - inflasi
+  - B50
+  - "subsidi"
+
+
+# 噪音过滤:标题命中即丢弃(体育/娱乐/交通事故等)
+noise_keywords:
+  - sepak bola
+  - piala dunia
+  - "world cup"
+  - selebriti
+  - artis
+  - gosip
+  - horoskop
+  - "resep masakan"
+  - kecelakaan lalu lintas
+
+
+# 主题分栏(推送时按此分组)
+sections:
+  - key: macro
+    label: 宏观与货币
+  - key: policy
+    label: 政策与制度
+  - key: markets
+    label: 市场与评级
+  - key: fintech
+    label: 金融科技与监管

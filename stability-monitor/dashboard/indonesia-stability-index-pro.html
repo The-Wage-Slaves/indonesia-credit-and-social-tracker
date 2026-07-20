@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>印尼稳定性指数 · 五支柱方法论深度版</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#faf9f5; --card:#ffffff; --card2:#f6f4ee; --line:#e6e4dc; --line-strong:#cfcdc3;
+    --tx:#1a1a17; --tx2:#5f5e58; --tx3:#93918a;
+    --fact:#0f6e56; --factbg:#e1f5ee; --judge:#854f0b; --judgebg:#faeeda;
+    --quote:#185fa5; --quotebg:#e6f1fb; --todo:#5f5e5a; --todobg:#f1efe8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1c1b19; --card:#26241f; --card2:#201e1a; --line:#38352f; --line-strong:#4a463e;
+      --tx:#f2f0e9; --tx2:#b8b5ab; --tx3:#88857c;
+      --fact:#5dcaa5; --factbg:#0f3b30; --judge:#efa727; --judgebg:#3a2a08;
+      --quote:#85b7eb; --quotebg:#0c2c4a; --todo:#b4b2a9; --todobg:#2c2c2a; }
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--tx);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.65; }
+  .wrap{ max-width:860px; margin:0 auto; padding:28px 20px 70px; }
+  h1{ font-size:24px; font-weight:600; margin:0; }
+  h3{ font-size:15px; font-weight:600; margin:0 0 8px; }
+  .sub{ font-size:13px; color:var(--tx3); }
+  .lede{ font-size:13px; color:var(--tx2); margin:4px 0 20px; }
+  button{ font:inherit; font-size:13px; background:transparent; color:var(--tx);
+    border:0.5px solid var(--line-strong); border-radius:8px; padding:7px 12px; cursor:pointer; }
+  button:hover{ background:var(--card2); }
+  button.active{ background:var(--card2); border-color:var(--tx2); font-weight:500; }
+  .hero{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:20px; }
+  .heroBox{ flex:1; min-width:200px; border-radius:12px; padding:20px; display:flex; flex-direction:column; justify-content:center; }
+  .heroNum{ font-size:52px; font-weight:600; line-height:1; }
+  .weightBox{ flex:1.4; min-width:240px; display:flex; flex-direction:column; justify-content:center; gap:6px; }
+  .presets{ display:flex; gap:6px; flex-wrap:wrap; }
+  .grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+  .pillar{ background:var(--card); border:0.5px solid var(--line); border-radius:12px; overflow:hidden; }
+  .pHead{ display:flex; align-items:center; gap:10px; padding:14px 16px; cursor:pointer; }
+  .pIcon{ width:20px; height:20px; flex:0 0 20px; }
+  .pTitle{ font-size:15px; font-weight:500; }
+  .pQ{ font-size:12px; color:var(--tx3); }
+  .pScore{ font-size:22px; font-weight:600; line-height:1; text-align:right; }
+  .pLvl{ font-size:11px; text-align:right; }
+  .chev{ width:16px; height:16px; color:var(--tx3); transition:transform .2s; }
+  .pillar.open .chev{ transform:rotate(90deg); }
+  .bar{ height:6px; background:var(--bg); border-radius:3px; overflow:hidden; margin:0 16px 12px; position:relative; }
+  .barFill{ height:100%; border-radius:3px; }
+  .thresh{ position:absolute; top:-2px; width:2px; height:10px; background:var(--tx); }
+  .metrics{ display:flex; gap:14px; flex-wrap:wrap; font-size:11px; color:var(--tx2); padding:0 16px 12px; }
+  .metrics span{ display:inline-flex; align-items:center; gap:3px; }
+  .body{ display:none; padding:0 16px 16px; border-top:0.5px solid var(--line); }
+  .pillar.open .body{ display:block; }
+  .callout{ font-size:12px; color:var(--tx2); background:var(--card2); border-radius:8px; padding:10px 12px; margin:12px 0; line-height:1.6; }
+  .callout b{ color:var(--tx); font-weight:600; }
+  .driver{ border:0.5px solid var(--line); border-radius:10px; padding:12px; margin:10px 0; }
+  .dHead{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:6px; }
+  .dName{ font-size:14px; font-weight:500; }
+  .dMeta{ font-size:11px; color:var(--tx3); }
+  .dScore{ font-size:16px; font-weight:600; }
+  .typeTag{ font-size:10px; padding:1px 7px; border-radius:10px; margin-left:6px; vertical-align:1px; }
+  .tQuant{ background:var(--quotebg); color:var(--quote); }
+  .tOrd{ background:var(--judgebg); color:var(--judge); }
+  .zone{ margin-top:8px; }
+  .zoneLabel{ font-size:11px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; margin-bottom:5px; display:flex; align-items:center; gap:5px; }
+  .zHard{ color:var(--fact); }
+  .zJudge{ color:var(--judge); }
+  .bands{ font-size:12px; }
+  .bandRow{ display:flex; justify-content:space-between; padding:3px 8px; border-radius:5px; }
+  .bandRow.hit{ background:var(--factbg); font-weight:500; }
+  .bandRow .b0{ color:var(--tx2); }
+  .scaleRow{ display:flex; gap:8px; padding:3px 8px; border-radius:5px; font-size:12px; align-items:baseline; }
+  .scaleRow.hit{ background:var(--judgebg); font-weight:500; }
+  .scaleLv{ flex:0 0 34px; font-weight:600; color:var(--tx3); }
+  .scaleRow.hit .scaleLv{ color:var(--judge); }
+  .formula{ font-size:12px; color:var(--tx2); background:var(--card2); border-radius:6px; padding:8px 10px; margin:6px 0; font-family:ui-monospace,"SF Mono",Consolas,monospace; line-height:1.5; }
+  .placement{ font-size:12px; color:var(--tx2); margin:6px 0; line-height:1.6; }
+  .srcList{ list-style:none; padding:0; margin:6px 0 0; }
+  .srcList li{ font-size:11px; color:var(--tx2); margin:3px 0; line-height:1.5; display:flex; gap:6px; align-items:baseline; }
+  .srcTag{ flex:0 0 auto; font-size:10px; padding:1px 6px; border-radius:4px; font-weight:600; }
+  .sFact{ background:var(--factbg); color:var(--fact); }
+  .sQuote{ background:var(--quotebg); color:var(--quote); }
+  .sJudge{ background:var(--judgebg); color:var(--judge); }
+  .sTodo{ background:var(--todobg); color:var(--todo); }
+  .change{ font-size:11px; color:var(--tx3); margin-top:6px; padding-top:6px; border-top:0.5px dashed var(--line); }
+  .change b{ color:var(--tx2); }
+  .section{ margin-top:24px; padding-top:16px; border-top:0.5px solid var(--line); }
+  .chartWrap{ position:relative; width:100%; height:240px; }
+  .note{ font-size:11px; color:var(--tx3); margin-top:12px; line-height:1.6; }
+  .foot{ margin-top:28px; padding-top:16px; border-top:0.5px solid var(--line); font-size:12px; color:var(--tx3); line-height:1.7; }
+  .foot code{ background:var(--card2); padding:1px 5px; border-radius:4px; font-size:11px; }
+  .legend{ display:flex; gap:12px; flex-wrap:wrap; font-size:11px; margin:10px 0; }
+  .legend span{ display:inline-flex; align-items:center; gap:4px; }
+  .lgChip{ width:24px; height:12px; border-radius:3px; display:inline-block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12px;margin-bottom:10px;">
+    <a href="../../index.html" style="color:var(--tx2);text-decoration:none;font-weight:600;">🏠 主页</a>
+    <a href="../../credit-tracker/dashboard/credit-dashboard.html" style="color:#185fa5;text-decoration:none;font-weight:600;">📊 切到信贷市场追踪 →</a>
+  </div>
+  <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+    <h1>印尼稳定性指数</h1>
+    <span class="sub" id="asOf"></span>
+  </div>
+  <p class="lede">五支柱方法论深度版 · 规则 → 钱 → 枪。点击任一支柱展开完整计量。分数越低风险越高。</p>
+  <div class="legend">
+    <span><span class="srcTag sFact">事实</span>公开数据/文件</span>
+    <span><span class="srcTag sQuote">引述</span>官方/机构原话</span>
+    <span><span class="srcTag sJudge">判断</span>我的结构化分析</span>
+    <span><span class="srcTag sTodo">待补</span>可接实时数据</span>
+  </div>
+  <div id="app"></div>
+  <div class="foot" id="footNote"></div>
+</div>
+<script src="data.js"></script>
+<script src="engine.js"></script>
+</body>
+</html>
