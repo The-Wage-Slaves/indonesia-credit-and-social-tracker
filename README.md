@@ -78,22 +78,17 @@ python stability-monitor/scripts/street_heat.py
 
 ---
 
-## 四、线上部署流程（GitHub Pages）
+## 四、发布与访问策略
 
-本仓库已内置自动部署工作流 `.github/workflows/deploy-pages.yml`：
-**推送到 `main` 分支 → GitHub Actions 自动把整个仓库发布为 Pages 静态站点**（`index.html` 为入口）。
+本仓库含竞对数据与政治稳定性分析，默认只允许本地访问。`.github/workflows/deploy-pages.yml`
+已改为手动说明工作流，不具备 Pages 发布权限，也不会在推送 `main` 时上传仓库内容。
 
-⚠️ **重要前提 —— 私有仓库用 Pages 需要付费计划：**
-- 本仓库为**私有**（含竞对数据与政治分析，不宜公开）。
-- GitHub **免费计划的私有仓库无法启用 Pages**；私有 Pages 需 **GitHub Pro（约 $4/月）** 或 Team/Enterprise。
-- 因此有两条路：
-  1. **升级 Pro** → 在仓库 `Settings → Pages` 把 Source 选为 **GitHub Actions** → 之后每次推 main 自动上线，
-     站点仅登录并有权限的协作者可见（私有 Pages 受 GitHub 鉴权保护）。
-  2. **不升级** → 保持私有、**不启用 Pages**；同事通过 `git clone` 拉取后本地双击 `index.html` 查看
-     （静态站点，体验一致），用 Codex/Claude Code 也是克隆到本地编辑。**推荐这条，零成本零暴露。**
-- 🚫 **不要为了用 Pages 而把仓库改成 Public** —— 会把竞对财务数据、政治稳定性分析全部暴露给公网并被搜索引擎索引。
+请在仓库根目录运行 `python -m http.server 8777`，再访问
+`http://localhost:8777/index.html`。不要为了使用 Pages 把仓库改成 Public。
 
-一旦满足前提，部署无需手动操作：`git push origin main` 即触发，Actions 页可看部署状态与站点 URL。
+GitHub 的“私有仓库”不等于“Pages 站点仅协作者可见”。受访问控制的私有 Pages
+只适用于满足 GitHub Enterprise Cloud 组织条件的场景；个人 Pro/Team 计划不能作为本项目的
+访问控制方案。如未来确需线上共享，应先选择带身份认证的私有托管方案，并只发布明确的文件白名单。
 
 ---
 
@@ -109,7 +104,7 @@ git add -A && git commit -m "简述改了什么"
 git push -u origin feat/描述性分支名           # 推分支（不是 main）
 ```
 然后在 GitHub 网页上对该分支 **New Pull Request → 指定 reviewer → 逐行看 diff → 批准后 Merge 到 main**。
-合并到 main 会自动触发 Pages 部署（若已启用）。
+合并到 main 不会触发线上发布；发布功能默认禁用。
 
 > 建议在 `Settings → Branches` 给 `main` 加**分支保护规则**（要求 PR、禁止直接 push），
 > 从机制上防止误改。用 Codex / Claude Code 的同事：仓库根目录已备好
@@ -120,10 +115,10 @@ git push -u origin feat/描述性分支名           # 推分支（不是 main�
 ## 六、目录结构
 
 ```
-indonesia-dashboard/                          # ← 仓库根 = Pages 站点根
+indonesia-dashboard/                          # ← 仓库根
 ├── index.html                                # ★ 总入口 + 待确认中心
 ├── pending.json / pending.js                 # 待确认事项（脚本写入，首页读取）
-├── .github/workflows/deploy-pages.yml        # Pages 自动部署
+├── .github/workflows/deploy-pages.yml        # 禁止误发布的手动说明工作流
 ├── AGENTS.md                                  # Codex 上下文；REVIEW.md = 给人的综述
 ├── credit-tracker/                            # 【消费信贷市场追踪】
 │   ├── dashboard/credit-dashboard.html        #   ★ 信贷看板（数据+逻辑单一真源）
@@ -148,4 +143,4 @@ indonesia-dashboard/                          # ← 仓库根 = Pages 站点根
 - 仓库**保持私有**：含 P2P 竞对财务数据、印尼政治稳定性分析、内部方法论。
 - **真实密钥永不入库**：`street_heat_config.yaml` 已 .gitignore；克隆后用 `.example.yaml` 模板自填。
   切勿 `git add -f` 该文件。
-- 私有 Pages（若启用）受 GitHub 登录鉴权保护，仅协作者可访问。
+- 默认不发布 Pages；需要线上共享时，必须使用带身份认证的私有托管并设置发布白名单。

@@ -30,8 +30,15 @@ const { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Cartesian
 // ===== 汇率（暗门里可一键更改，全站USD图表联动重算）=====
 // DEFAULT_FX=15000 是历史口径基准: ②板块Rp原值按所选FX换算; ③板块P2P底数以15000采集换算,再按所选FX折算
 const DEFAULT_FX = 15000;
+const DASHBOARD_DATA_AS_OF = "2026-07-17";
 const FX_KEY = "ct_fx";
-const loadFx = () => { const v = parseFloat(localStorage.getItem(FX_KEY)); return (v >= 8000 && v <= 25000) ? v : DEFAULT_FX; };
+const parseNonNegativeNumber = (value) => {
+  const text = String(value ?? "").trim();
+  if (!/^\d+(?:\.\d+)?$/.test(text)) return null;
+  const number = Number(text);
+  return Number.isFinite(number) && number >= 0 ? number : null;
+};
+const loadFx = () => { const v = parseNonNegativeNumber(localStorage.getItem(FX_KEY)); return (v >= 8000 && v <= 25000) ? v : DEFAULT_FX; };
 const saveFx = (v) => localStorage.setItem(FX_KEY, String(v));
 
 // ===== THEME (light) =====
@@ -534,8 +541,15 @@ function ManualDataPanel({extra,onChange}) {
   const save = () => {
     if(!/^20\d{2}\.(0[1-9]|1[0-2])$/.test(period)){ setMsg("⚠ 月份格式应为 YYYY.MM，例如 2026.01"); return; }
     const row = {period};
-    let filled = 0;
-    FIELD_DEFS.forEach(([k])=>{ const v = parseFloat(vals[k]); row[k] = isNaN(v)?null:v; if(!isNaN(v)) filled++; });
+    let filled = 0, invalid = 0;
+    FIELD_DEFS.forEach(([k])=>{
+      const text = String(vals[k] ?? "").trim();
+      const v = text === "" ? null : parseNonNegativeNumber(text);
+      if(text !== "" && v === null) invalid++;
+      row[k] = v;
+      if(v !== null) filled++;
+    });
+    if(invalid){ setMsg("⚠ 数值必须是非负有限数字，不能含单位或其他字符"); return; }
     if(filled===0){ setMsg("⚠ 至少填一个数值"); return; }
     onChange([...extra.filter(e=>e.period!==period), row]);
     setMsg(`✓ 已保存 ${period}（填了${filled}项），图表已更新`); setPeriod(""); setVals({});
@@ -586,8 +600,8 @@ function FxPanel({fx,onChange}) {
   const [val,setVal] = useState(String(fx));
   const [msg,setMsg] = useState("");
   const apply = () => {
-    const v = parseFloat(val);
-    if(isNaN(v)||v<8000||v>25000){ setMsg("⚠ 请输入 8,000–25,000 之间的数值"); return; }
+    const v = parseNonNegativeNumber(val);
+    if(v===null||v<8000||v>25000){ setMsg("⚠ 请输入 8,000–25,000 之间的数值"); return; }
     onChange(v); setMsg(`✓ 已切换为 FX=${v.toLocaleString()}，全站USD图表已重算`);
   };
   const reset = () => { setVal(String(DEFAULT_FX)); onChange(DEFAULT_FX); setMsg("✓ 已恢复默认 15,000"); };
@@ -627,10 +641,19 @@ function P2PPendingPanel({p2pExtra,onChange}) {
   };
   const fmt = (v,ppl) => v==null?"—":(ppl?(v>=1e6?(v/1e6).toFixed(2)+"M":Math.round(v).toLocaleString()):"$"+(+v).toFixed(3)+"B");
   const apply = () => {
+    let invalid = false;
+    const parseCell = (value) => {
+      const text = String(value ?? "").trim();
+      if(text === "") return null;
+      const parsed = parseNonNegativeNumber(text);
+      if(parsed === null) invalid = true;
+      return parsed;
+    };
     const exRows = rows.map(r=>({name:r.name,
-      disb:r.disb===""?null:parseFloat(r.disb), out:r.out===""?null:parseFloat(r.out),
-      tot:r.tot===""?null:parseFloat(r.tot), act:r.act===""?null:parseFloat(r.act)}))
-      .filter(r=>[r.disb,r.out,r.tot,r.act].some(v=>v!=null&&!isNaN(v)));
+      disb:parseCell(r.disb), out:parseCell(r.out),
+      tot:parseCell(r.tot), act:parseCell(r.act)}))
+      .filter(r=>[r.disb,r.out,r.tot,r.act].some(v=>v!=null));
+    if(invalid){ setMsg("⚠ 数值必须是非负有限数字，不能含单位或其他字符"); return; }
     if(!exRows.length){ setMsg("⚠ 没有可写入的数值"); return; }
     const ex = {date:pendDate, srcDate:pend.date, rows:exRows};
     onChange([...p2pExtra.filter(e=>e.srcDate!==pend.date), ex]);
@@ -719,7 +742,7 @@ function Dashboard() {
         {showMgr && <P2PPendingPanel p2pExtra={p2pExtra} onChange={v=>{saveP2pExtra(v);setP2pExtra(v);}} />}
         {showMgr && <ManualDataPanel extra={extra} onChange={rows=>{saveExtra(rows);setExtra(rows);}} />}
         <div style={{margin:"28px 0 0",paddingTop:14,borderTop:"1px solid #e7e9ee",textAlign:"center",fontSize:9,color:"#9aa1ab"}}>
-          ★ Sep-Dec 2025 newly added · ✎ 手工录入 · Primary sources verified · {new Date().toISOString().split('T')[0]}
+          ★ Sep-Dec 2025 newly added · ✎ 手工录入 · Data version {DASHBOARD_DATA_AS_OF}
           <span onClick={()=>setShowMgr(!showMgr)} style={{cursor:"pointer",marginLeft:10,fontWeight:p2pPendingCount?700:400,color:showMgr?"#2563eb":(p2pPendingCount?"#d97706":"#c3c8cf")}} title="手工录入/确认抓取数据">
             ✎ 数据管理{p2pPendingCount?` (${p2pPendingCount}批待确认)`:""}
           </span>

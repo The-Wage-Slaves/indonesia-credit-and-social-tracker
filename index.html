@@ -103,6 +103,17 @@
 <script>
 try {
   if (typeof PENDING !== 'undefined') {
+    var escapeHtml = function(value) {
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function(ch) {
+        return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[ch];
+      });
+    };
+    var safeRelativeLink = function(value) {
+      var link = String(value == null ? '' : value).trim();
+      if (!link || link[0] === '/' || link.indexOf('\\') !== -1 || /^[a-z][a-z0-9+.-]*:/i.test(link)) return '';
+      if (link.split('/').some(function(part){ return part === '..'; })) return '';
+      return link;
+    };
     var NAMES = { credit: '📊 信贷市场追踪', stability: '🧭 稳定性指数' };
     var items = [];
     var boards = PENDING.boards || {};
@@ -113,13 +124,14 @@ try {
     if (items.length) {
       list.innerHTML = items.map(function(x){
         var it = x.it;
+        var link = safeRelativeLink(it.link);
         return '<div style="background:var(--card);border:0.5px solid var(--line);border-left:3px solid var(--accent);' +
           'border-radius:10px;padding:12px 16px;margin-bottom:8px;">' +
-          '<div style="font-size:13px;font-weight:600;">' + (NAMES[x.b] || x.b) + ' · ' + it.title + '</div>' +
-          (it.detail ? '<div style="font-size:12px;color:var(--tx2);margin-top:3px;">' + it.detail + '</div>' : '') +
+          '<div style="font-size:13px;font-weight:600;">' + escapeHtml(NAMES[x.b] || x.b) + ' · ' + escapeHtml(it.title) + '</div>' +
+          (it.detail ? '<div style="font-size:12px;color:var(--tx2);margin-top:3px;">' + escapeHtml(it.detail) + '</div>' : '') +
           '<div style="font-size:12px;margin-top:6px;">' +
-          (it.link ? '<a href="' + it.link + '" style="color:var(--accent2);font-weight:600;">打开确认单 →</a> · ' : '') +
-          '<span style="color:var(--tx3);">' + (it.action || '回 Claude Code 说"确认"') + '</span></div></div>';
+          (link ? '<a href="' + escapeHtml(link) + '" style="color:var(--accent2);font-weight:600;">打开确认单 →</a> · ' : '') +
+          '<span style="color:var(--tx3);">' + escapeHtml(it.action || '回 Claude Code 说"确认"') + '</span></div></div>';
       }).join('');
     } else {
       list.innerHTML = '<div style="font-size:13px;color:var(--tx3);background:var(--card2);border:0.5px solid var(--line);border-radius:10px;padding:12px 16px;">当前无待确认事项 ✓</div>';

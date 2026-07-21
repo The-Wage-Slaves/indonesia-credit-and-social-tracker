@@ -22,7 +22,7 @@
 
 用法:  python street_heat.py
 """
-import json, re, sys, time, datetime, pathlib, html
+import datetime, hashlib, html, json, os, pathlib, re, sys, time
 import requests
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -37,16 +37,40 @@ OUT_DIR = HERE / "output"
 ROOT = HERE.parent.parent                # indonesia-dashboard/
 
 
-def update_pending(board, items):
-    """写 ROOT/pending.json + pending.js，首页"待确认事项"卡片读取（与 update_credit.py 同款）"""
+def _atomic_write_text(path, content):
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    try:
+        tmp.write_text(content, encoding="utf-8")
+        tmp.replace(path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def update_pending(board, items, source="street-heat"):
+    """Replace this producer's cards without deleting other pending work."""
     pj = ROOT / "pending.json"
     data = json.loads(pj.read_text(encoding="utf-8")) if pj.exists() else {"boards": {}}
-    data.setdefault("boards", {})[board] = items
+    boards = data.setdefault("boards", {})
+    existing = boards.get(board, [])
+    retained = [
+        item for item in existing
+        if item.get("source") != source
+        and not str(item.get("title", "")).startswith("街头热度周报")
+    ]
+    produced = []
+    for item in items:
+        normalized = dict(item)
+        normalized["source"] = source
+        normalized.setdefault(
+            "id",
+            f"{source}:{hashlib.sha256(str(item.get('title', '')).encode('utf-8')).hexdigest()[:12]}",
+        )
+        produced.append(normalized)
+    boards[board] = retained + produced
     data["updated"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    pj.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    (ROOT / "pending.js").write_text(
-        "const PENDING = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n",
-        encoding="utf-8")
+    serialized = json.dumps(data, ensure_ascii=False, indent=2)
+    _atomic_write_text(pj, serialized + "\n")
+    _atomic_write_text(ROOT / "pending.js", "const PENDING = " + serialized + ";\n")
 
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) street-heat-monitor/2.0"}
 BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -376,6 +400,7 @@ def collect_opposition(cfg, segments):
 # ============ 合成与输出 ============
 WEIGHTS = {"trends": 0.25, "kaskus": 0.20, "youtube": 0.10,
            "gdelt_vol": 0.15, "gdelt_tone": 0.10, "rss": 0.20}
+MIN_WEIGHT_COVERAGE = 0.65
 NAMES = {"trends": "A. Google Trends 双篮搜索热度", "kaskus": "E. Kaskus 全站热帖",
          "youtube": "F. YouTube 高播放政治视频", "gdelt_vol": "B. GDELT 报道量",
          "gdelt_tone": "C. GDELT 媒体tone", "rss": "D. 大众媒体RSS 街头标题占比"}
@@ -383,6 +408,17 @@ GROUP = {"trends": "领先", "kaskus": "领先", "youtube": "领先",
          "gdelt_vol": "滞后", "gdelt_tone": "滞后", "rss": "滞后"}
 ORDER = ["trends", "kaskus", "youtube", "gdelt_vol", "gdelt_tone", "rss"]
 STATUS_LABEL = {"ok": "✓", "fail": "✗ 失败", "unconfigured": "○ 待配置"}
+REQUIRED_GROUPS = {
+    "领先": {"trends", "kaskus", "youtube"},
+    "滞后": {"gdelt_vol", "gdelt_tone", "rss"},
+}
+
+
+def validate_coverage(ok_keys):
+    ok_keys = set(ok_keys)
+    coverage = sum(WEIGHTS[key] for key in ok_keys)
+    missing_groups = [name for name, keys in REQUIRED_GROUPS.items() if not (keys & ok_keys)]
+    return coverage, missing_groups
 
 
 def render_html(today, results, ok, heat, score, hist, opp=None):
@@ -468,9 +504,12 @@ def main():
         time.sleep(6)   # GDELT 限流约1次/5秒
 
     ok = {k: v for k, v in results.items() if v["status"] == "ok"}
-    if not ok:
-        print("全部数据源失败，本周此子因子标'待补'。"); sys.exit(1)
-    wsum = sum(WEIGHTS[k] for k in ok)
+    wsum, missing_groups = validate_coverage(ok)
+    if wsum < MIN_WEIGHT_COVERAGE or missing_groups:
+        missing = f"；缺少组别: {', '.join(missing_groups)}" if missing_groups else ""
+        print(f"数据覆盖不足（有效权重 {wsum:.0%}，最低 {MIN_WEIGHT_COVERAGE:.0%}{missing}）。")
+        print("本周不生成分数、不写历史、不推送待确认事项。")
+        sys.exit(2)
     heat = sum(results[k]["heat"] * WEIGHTS[k] for k in ok) / wsum
     score = heat_to_score(heat)
 
@@ -512,18 +551,19 @@ def main():
 
     # ---- 历史留档 + HTML确认单 ----
     hist = json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else []
+    hist = [entry for entry in hist if entry.get("date") != today]
     hist.append({"date": today, "version": 3, "heat": round(heat, 1), "suggested_score": score,
                  "opposition": {"status": opp["status"], "rate": opp.get("rate"), "detail": opp["detail"]},
                  "sources": {k: {"status": v["status"], "heat": v["heat"],
                                  "raw": {kk: vv for kk, vv in v["raw"].items() if kk != "titles"}}
                              for k, v in results.items()}})
-    HISTORY_FILE.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding="utf-8")
+    _atomic_write_text(HISTORY_FILE, json.dumps(hist, ensure_ascii=False, indent=2) + "\n")
 
     OUT_DIR.mkdir(exist_ok=True)
     page = render_html(today, results, ok, heat, score, hist, opp)
     dated = OUT_DIR / f"street-heat-{today}.html"
-    dated.write_text(page, encoding="utf-8")
-    (OUT_DIR / "street-heat-latest.html").write_text(page, encoding="utf-8")
+    _atomic_write_text(dated, page)
+    _atomic_write_text(OUT_DIR / "street-heat-latest.html", page)
     print(f"  已留档 → {HISTORY_FILE.name}（{len(hist)}期）")
     print(f"  HTML确认单 → {dated}")
     print(f"             → {OUT_DIR / 'street-heat-latest.html'}（双击打开）")

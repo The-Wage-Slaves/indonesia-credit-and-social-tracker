@@ -1,39 +1,19 @@
-# 自动部署到 GitHub Pages（推送到 main 即触发）
-# ⚠ 注意：私有仓库启用 Pages 需要 GitHub Pro/Team/Enterprise 付费计划。
-#   免费计划的私有仓库无法使用 Pages —— 详见 README「线上部署流程」。
-#   本工作流已就绪：一旦仓库可用 Pages（升级 Pro 或改为公开），推送 main 即自动上线。
-name: Deploy to GitHub Pages
+# Online publication is intentionally disabled because this repository contains
+# sensitive competitive and political analysis. Keep this manual guard workflow
+# so a push to main can never publish repository contents by accident.
+name: Pages deployment disabled
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:   # 也可在 Actions 页手动触发
+  workflow_dispatch:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-# 同一时间只跑一个部署，新推送取消进行中的旧部署
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deployment-disabled:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload site (整个仓库作为静态站点，index.html 为入口)
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: '.'
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Explain deployment policy
+        run: |
+          echo "GitHub Pages deployment is disabled for this sensitive repository."
+          echo "Use the documented local server workflow instead."

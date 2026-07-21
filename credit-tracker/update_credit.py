@@ -14,7 +14,7 @@
 结果写入 ../pending.js（首页"待确认事项"卡片自动展示）+ 控制台报告。
 用法:  python update_credit.py
 """
-import json, re, sys, datetime, pathlib
+import datetime, hashlib, json, os, pathlib, re, sys
 import requests
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -33,16 +33,45 @@ MONTH_ID = {m: i+1 for i, m in enumerate(
      "Agustus", "September", "Oktober", "November", "Desember"])}
 
 
-def update_pending(board, items):
-    """写 pending.json + pending.js，首页待确认卡片读取"""
+def _atomic_write_text(path, content):
+    """Write a complete sibling temp file before replacing the destination."""
+    tmp = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    try:
+        tmp.write_text(content, encoding="utf-8")
+        tmp.replace(path)
+    finally:
+        tmp.unlink(missing_ok=True)
+
+
+def update_pending(board, items, source="credit-update"):
+    """Replace only this producer's items and preserve other pending work."""
     pj = ROOT / "pending.json"
     data = json.loads(pj.read_text(encoding="utf-8")) if pj.exists() else {"boards": {}}
-    data.setdefault("boards", {})[board] = items
+    boards = data.setdefault("boards", {})
+    existing = boards.get(board, [])
+
+    # Recognize records created by older versions of this script, before source
+    # metadata existed. P2P and manually entered items must never be discarded.
+    legacy_prefixes = ("BI银行侧新月份数据", "OJK出新数了")
+    retained = [
+        item for item in existing
+        if item.get("source") != source
+        and not str(item.get("title", "")).startswith(legacy_prefixes)
+    ]
+    produced = []
+    for item in items:
+        normalized = dict(item)
+        normalized["source"] = source
+        normalized.setdefault(
+            "id",
+            f"{source}:{hashlib.sha256(str(item.get('title', '')).encode('utf-8')).hexdigest()[:12]}",
+        )
+        produced.append(normalized)
+    boards[board] = retained + produced
     data["updated"] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
-    pj.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    (ROOT / "pending.js").write_text(
-        "const PENDING = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n",
-        encoding="utf-8")
+    serialized = json.dumps(data, ensure_ascii=False, indent=2)
+    _atomic_write_text(pj, serialized + "\n")
+    _atomic_write_text(ROOT / "pending.js", "const PENDING = " + serialized + ";\n")
 
 
 def dashboard_latest_period():
