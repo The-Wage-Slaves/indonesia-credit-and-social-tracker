@@ -154,7 +154,7 @@ function render(){
     <div class="section">
       <div style="font-size:13px;color:var(--tx2);margin-bottom:10px;">各支柱评分 vs 临界值 vs 1998 类比位置</div>
       <div class="chartWrap"><canvas id="cmp"></canvas></div>
-      <p class="note">读图: 制度支柱(37)本周随DSI出口管制升级+PFII仓促立法(政策方差计数2→3)进一步走低，与强制机构并列全框架最弱，且低于1998位置(45)。强制机构(37)贴近1998(35)——实弹冲突2起+对峙+Febrie案。货币(41)本周随卢比回落至18k下方、外资回流小幅回升，仍高于1998(25)且通胀锚完好。社会(55)离临界有距离。<b>本周关键:综合仍44,但货币面技术性喘息(+2)恰好掩盖了制度面持续侵蚀(−3)——看支柱不看综合。</b></p>
+      <p class="note">${DATA.weeklyAnalysis || ""}</p>
     </div>`;
   document.getElementById('footNote').innerHTML = `
     <b>方法论:</b> ${DATA.methodology.scale}<br>
