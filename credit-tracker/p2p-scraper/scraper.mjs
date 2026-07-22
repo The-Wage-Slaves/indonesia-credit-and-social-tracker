@@ -19,6 +19,16 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FX = 15000;
 const TODAY = new Date().toISOString().split('T')[0];
 
+function atomicWriteText(destination, content) {
+  const temporary = `${destination}.${process.pid}.tmp`;
+  try {
+    fs.writeFileSync(temporary, content, 'utf8');
+    fs.renameSync(temporary, destination);
+  } finally {
+    if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
+  }
+}
+
 // ── 数字解析（印尼语混排：73,86=73.86 / 10.299.405=10299405 / 35,400,922,888,387）──
 function parseIdNum(s) {
   if (s == null) return null;
@@ -165,6 +175,7 @@ const PLAYERS = [
   { name: 'KrediOne', url: 'https://www.kredione.id/',
     api: 'https://www.kredione.id/gateway/idn-om-agency/agency/officialWebsiteData/queryOfficialWebsiteData' },
 ];
+const MIN_SUCCESS = Math.ceil(PLAYERS.length * 0.6);
 
 // ── 看板现有最后值(对比用) ──
 function trackerLast() {
@@ -198,10 +209,19 @@ function updatePending(items) {
   let data = { boards: {} };
   try { data = JSON.parse(fs.readFileSync(pj, 'utf8')); } catch {}
   data.boards = data.boards || {};
-  data.boards.credit = (data.boards.credit || []).filter((it) => !/P2P竞对批量/.test(it.title)).concat(items);
+  const source = 'p2p-scraper';
+  const retained = (data.boards.credit || []).filter((it) =>
+    it.source !== source && !/P2P竞对批量/.test(String(it.title || '')));
+  const produced = items.map((item, index) => ({
+    ...item,
+    source,
+    id: item.id || `${source}:${TODAY}:${index}`,
+  }));
+  data.boards.credit = retained.concat(produced);
   data.updated = new Date().toISOString().slice(0, 16).replace('T', ' ');
-  fs.writeFileSync(pj, JSON.stringify(data, null, 2));
-  fs.writeFileSync(path.join(root, 'pending.js'), 'const PENDING = ' + JSON.stringify(data, null, 2) + ';\n');
+  const serialized = JSON.stringify(data, null, 2);
+  atomicWriteText(pj, serialized + '\n');
+  atomicWriteText(path.join(root, 'pending.js'), 'const PENDING = ' + serialized + ';\n');
 }
 
 // ── Main ──
@@ -217,9 +237,10 @@ async function main() {
     // API型数据源: 直接fetch JSON，不开浏览器
     if (p.api) {
       try {
-        const res = await fetch(p.api, { headers: {
+        const res = await fetch(p.api, { signal: AbortSignal.timeout(30_000), headers: {
           'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126',
           Referer: p.url, Accept: 'application/json' } });
+        if (!res.ok) throw new Error(`API HTTP ${res.status}`);
         const j = (await res.json()).result || {};
         const raw = {
           disbCumul: j.fullLoanAmount ?? null, disbYTD: j.yearLoanAmount ?? null,
@@ -278,7 +299,7 @@ async function main() {
   const dir = path.join(__dirname, 'results');
   if (!fs.existsSync(dir)) fs.mkdirSync(dir);
   const outPath = path.join(dir, `scrape_${TODAY}.json`);
-  fs.writeFileSync(outPath, JSON.stringify({ date: TODAY, fx: FX, players: results }, null, 2));
+  atomicWriteText(outPath, JSON.stringify({ date: TODAY, fx: FX, players: results }, null, 2) + '\n');
 
   // 看板暗门用的结构化待确认文件（credit-dashboard.html 通过 <script src> 读取）
   // 注意: 全部10家都进列表——抓不到的留空行，正好供人在暗门里手工补录
@@ -293,7 +314,7 @@ async function main() {
                tot: p.totalBorrowers ?? null, act: p.activeBorrowersYTD ?? null };
     }),
   };
-  fs.writeFileSync(path.join(__dirname, '..', 'dashboard', 'p2p-pending.js'),
+  atomicWriteText(path.join(__dirname, '..', 'dashboard', 'p2p-pending.js'),
     'const P2P_PENDING = ' + JSON.stringify(pendingJs, null, 2) + ';\n');
 
   console.log(`\nPLAYER`.padEnd(33) + 'YTD DISB'.padStart(10) + 'OUTSTAND'.padStart(10) + 'TOT BORR'.padStart(10) + 'YTD BORR'.padStart(10) + '  DATE');
@@ -317,6 +338,13 @@ async function main() {
     action: '打开看板→页脚"✎ 数据管理"→核对/修改→点"确认写入"；要永久固化再回来说一声',
   }]);
   console.log('待确认卡片已推送到首页');
+  if (okCount < MIN_SUCCESS) {
+    console.error(`抓取覆盖率不足：${okCount}/${PLAYERS.length}，最低要求 ${MIN_SUCCESS}；结果仅供人工复核。`);
+    process.exitCode = 2;
+  }
 }
 
-main().catch(console.error);
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});

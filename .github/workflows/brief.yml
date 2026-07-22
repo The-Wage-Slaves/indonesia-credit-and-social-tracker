@@ -1,0 +1,51 @@
+# Manual-only until feed quality, output validation and notification recipients
+# have been verified. Add schedules only after an explicit deployment decision.
+name: 印尼简报（手动）
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 运行模式
+        required: true
+        default: check-feeds
+        type: choice
+        options: [check-feeds, dry-run, daily, weekly]
+
+permissions:
+  contents: read
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: stability-monitor/brief
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: stability-monitor/brief/requirements.txt
+      - run: pip install -r requirements.txt
+      - name: 运行
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: |
+          case "${{ inputs.mode }}" in
+            weekly)      python -m src.main --weekly ;;
+            dry-run)     python -m src.main --dry-run ;;
+            check-feeds) python -m src.main --check-feeds ;;
+            *)           python -m src.main ;;
+          esac
+      - name: 保存周报历史供人工复核
+        if: inputs.mode == 'weekly'
+        uses: actions/upload-artifact@v4
+        with:
+          name: brief-history-${{ github.run_id }}
+          path: stability-monitor/brief/data/history.json
+          if-no-files-found: error
+          retention-days: 14

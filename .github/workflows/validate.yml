@@ -1,0 +1,36 @@
+name: Validate repository
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: credit-tracker/p2p-scraper/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate JavaScript and repository invariants
+        run: |
+          node --check credit-tracker/p2p-scraper/scraper.mjs
+          node --check credit-tracker/p2p-scraper/update_excel.mjs
+          node credit-tracker/dashboard/build_credit_html.mjs
+          node .github/scripts/validate_repo.mjs
+      - name: Validate Python syntax
+        run: python -m compileall -q credit-tracker stability-monitor
+      - name: Verify Node dependency lock and vulnerabilities
+        working-directory: credit-tracker/p2p-scraper
+        run: |
+          npm ci --ignore-scripts
+          npm audit --omit=dev
