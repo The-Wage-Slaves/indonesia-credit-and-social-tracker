@@ -1,20 +1,33 @@
 # Agent Handoff
 
-Last updated: 2026-07-21
+Last updated: 2026-07-22
 
 ## Current State
 
 - Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`
 - Visibility: private
 - Main branch: `main`
-- Active PR: `#1`
-- PR branch: `agent/security-reliability-fixes`
-- Main is not merged with the PR yet.
-- GitHub Pages is not available on the current private-repository plan. The old automatic Pages workflow was disabled in the PR.
+- PR `#1` (Codex security/reliability pass) is MERGED into `main`.
+- Active PR: `#2` — weekly stability score refresh.
+- PR branch: `chore/stability-week-2026-07-22`
+- GitHub Pages is not available on the current private-repository plan. Automatic Pages publishing stays disabled.
 
-## Last Completed Work
+## Last Completed Work (PR #2, by Claude Code)
 
-The current PR contains the security and reliability pass from Codex:
+Weekly stability re-score for 2026-07-22 (`data.js`, `engine.js`, and this handoff), based on reviewed official data and the human-in-loop evidence process:
+
+- Fiscal pillar 49 → 48: corrected BI June reserves to USD145.6B / 5.5 months of imports; the existing V3 [4.5,6) band maps to 60. DSI is not also deducted here.
+- Currency pillar 39 → 40: rupiah returned below 18,000 and the FX driver is reproducibly 38; defense efficiency and portfolio-flow drivers stay unchanged until complete, like-for-like inputs are available.
+- Institutions pillar 40 → 37: the DSI timing/scope shift is counted once, here, in policy variance. PFII is evidence for the existing IIFC event; Febrie continuation is not counted again.
+- Social 55 and Coercive 37 are unchanged. Degraded Trends/GDELT coverage and within-band protest evidence are recorded but do not receive subjective point tweaks.
+- BI 21-22 July rate decision was not available at the snapshot cutoff and is left OUT.
+- Equal-weight composite is 43.4, displayed as 43. Appended the corrected 2026-07-22 weekly snapshot.
+- `node .github/scripts/validate_repo.mjs` must pass before merge.
+- `node .github/scripts/validate_repo.mjs` passes locally (pillar scores = weighted sums, provenance present).
+
+## Prior Completed Work (PR #1, by Codex — now merged)
+
+The security and reliability pass:
 
 - Disabled automatic whole-repository Pages publishing.
 - Corrected README language around private GitHub Pages availability.
