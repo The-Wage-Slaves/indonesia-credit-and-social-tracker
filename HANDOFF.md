@@ -14,14 +14,15 @@ Last updated: 2026-07-22
 
 ## Last Completed Work (PR #2, by Claude Code)
 
-Weekly stability re-score for 2026-07-22 (only `data.js` + `engine.js`), based on this week's web research + a local `street_heat.py` run:
+Weekly stability re-score for 2026-07-22 (`data.js`, `engine.js`, and this handoff), based on reviewed official data and the human-in-loop evidence process:
 
-- Currency pillar 39 → 41 (+2): rupiah recovered from the 18,177 peak to ~17,921 (back below 18k, YTD ~-10.2%); foreign inflows returning to stocks/bonds. Drivers 汇率 35→38, 股市 30→33, 防守消耗效率 35→37.
-- Social pillar held at 55: 网络政治情绪 62→63 (opposition rate 39.7%→37.1%, YouTube political-video heat cooled) offset by 动员性质 58→56 (protest spread to Surabaya, 24 arrested).
-- Fiscal 49 / Institutions 40 / Coercive 37 unchanged — no evidenced new drivers this week; only pillar-level weekChange notes rewritten.
-- BI 21-22 July rate decision left OUT (result unconfirmed at time of writing; economists split hike-to-6.0% vs hold-5.75%). Do NOT bake it in until confirmed.
-- Composite index stays 44. Appended the 2026-07-22 weekly snapshot via `apply_week.py`.
-- This week's `street_heat.py` run was degraded (Google Trends + GDELT rate-limited); the reliable signals (YouTube, DeepSeek opposition rate) drove the social sentiment update. Re-run Trends/GDELT later when not rate-limited if a cleaner heat composite is wanted.
+- Fiscal pillar 49 → 48: corrected BI June reserves to USD145.6B / 5.5 months of imports; the existing V3 [4.5,6) band maps to 60. DSI is not also deducted here.
+- Currency pillar 39 → 40: rupiah returned below 18,000 and the FX driver is reproducibly 38; defense efficiency and portfolio-flow drivers stay unchanged until complete, like-for-like inputs are available.
+- Institutions pillar 40 → 37: the DSI timing/scope shift is counted once, here, in policy variance. PFII is evidence for the existing IIFC event; Febrie continuation is not counted again.
+- Social 55 and Coercive 37 are unchanged. Degraded Trends/GDELT coverage and within-band protest evidence are recorded but do not receive subjective point tweaks.
+- BI 21-22 July rate decision was not available at the snapshot cutoff and is left OUT.
+- Equal-weight composite is 43.4, displayed as 43. Appended the corrected 2026-07-22 weekly snapshot.
+- `node .github/scripts/validate_repo.mjs` must pass before merge.
 - `node .github/scripts/validate_repo.mjs` passes locally (pillar scores = weighted sums, provenance present).
 
 ## Prior Completed Work (PR #1, by Codex — now merged)
