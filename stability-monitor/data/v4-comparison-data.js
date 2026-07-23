@@ -6,6 +6,13 @@ const V4_COMPARISON = {
     "methodology": "V3",
     "composite": 43.4,
     "displayScore": 43,
+    "pillarWeights": {
+      "fiscal": 0.2,
+      "currency": 0.2,
+      "institutions": 0.2,
+      "social": 0.2,
+      "coercive": 0.2
+    },
     "scores": {
       "fiscal": 48.0,
       "currency": 40.0,
@@ -14,10 +21,40 @@ const V4_COMPARISON = {
       "coercive": 37.0
     }
   },
+  "reweightedBaseline": {
+    "methodology": "V3 scores with proposed V4 pillar weights",
+    "composite": 45.0,
+    "pillarWeights": {
+      "fiscal": 0.25,
+      "currency": 0.25,
+      "institutions": 0.15,
+      "social": 0.25,
+      "coercive": 0.1
+    }
+  },
   "shadow": {
     "methodology": "V4",
-    "composite": 45.0,
-    "delta": 1.6
+    "composite": 46.4,
+    "delta": 1.4,
+    "pillarWeights": {
+      "fiscal": 0.25,
+      "currency": 0.25,
+      "institutions": 0.15,
+      "social": 0.25,
+      "coercive": 0.1
+    },
+    "publicationStatus": "provisional-shadow"
+  },
+  "measurement": {
+    "confidence": 0.741,
+    "lowConfidenceWeight": 0.17,
+    "missingWeight": 0.038,
+    "confidenceFactors": {
+      "high": 1.0,
+      "medium": 0.75,
+      "low": 0.4,
+      "missing": 0.0
+    }
   },
   "ratings": {
     "medianScore": 59.5,
@@ -62,7 +99,9 @@ const V4_COMPARISON = {
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
+      "measurementConfidence": 0.815,
       "nonOrdinalPlannedWeight": 0.9,
+      "pillarWeight": 0.25,
       "drivers": [
         {
           "id": "public_finance",
@@ -142,7 +181,9 @@ const V4_COMPARISON = {
       "coverage": 0.85,
       "missingWeight": 0.15,
       "lowConfidenceWeight": 0.0,
+      "measurementConfidence": 0.787,
       "nonOrdinalPlannedWeight": 1.0,
+      "pillarWeight": 0.25,
       "drivers": [
         {
           "id": "inflation_expectations",
@@ -200,12 +241,14 @@ const V4_COMPARISON = {
       "id": "institutions",
       "label": "制度与政策可预见性",
       "v3Score": 37.0,
-      "v4ShadowScore": 37.1,
-      "delta": 0.1,
+      "v4ShadowScore": 36.9,
+      "delta": -0.1,
       "coverage": 1.0,
       "missingWeight": 0.0,
-      "lowConfidenceWeight": 0.15,
-      "nonOrdinalPlannedWeight": 0.85,
+      "lowConfidenceWeight": 0.1,
+      "measurementConfidence": 0.715,
+      "nonOrdinalPlannedWeight": 0.9,
+      "pillarWeight": 0.15,
       "drivers": [
         {
           "id": "policy_predictability",
@@ -223,7 +266,7 @@ const V4_COMPARISON = {
         {
           "id": "implementation_capacity",
           "label": "行政执行能力",
-          "weight": 0.2,
+          "weight": 0.25,
           "score": 42.0,
           "evidenceClass": "statistical",
           "availability": "medium",
@@ -262,7 +305,7 @@ const V4_COMPARISON = {
         {
           "id": "elite_continuity",
           "label": "执政联盟连续性",
-          "weight": 0.15,
+          "weight": 0.1,
           "score": 45.0,
           "evidenceClass": "ordinal",
           "availability": "low",
@@ -278,17 +321,19 @@ const V4_COMPARISON = {
       "id": "social",
       "label": "社会与街头",
       "v3Score": 55.0,
-      "v4ShadowScore": 52.2,
-      "delta": -2.8,
+      "v4ShadowScore": 50.7,
+      "delta": -4.3,
       "coverage": 1.0,
       "missingWeight": 0.0,
-      "lowConfidenceWeight": 0.5,
+      "lowConfidenceWeight": 0.4,
+      "measurementConfidence": 0.672,
       "nonOrdinalPlannedWeight": 1.0,
+      "pillarWeight": 0.25,
       "drivers": [
         {
           "id": "livelihood_stress",
           "label": "家庭生计压力",
-          "weight": 0.3,
+          "weight": 0.35,
           "score": 40.0,
           "evidenceClass": "statistical",
           "availability": "medium",
@@ -301,7 +346,7 @@ const V4_COMPARISON = {
         {
           "id": "subjective_confidence",
           "label": "主观经济信心",
-          "weight": 0.2,
+          "weight": 0.25,
           "score": 50.0,
           "evidenceClass": "statistical",
           "availability": "high",
@@ -314,7 +359,7 @@ const V4_COMPARISON = {
         {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
-          "weight": 0.3,
+          "weight": 0.25,
           "score": 62.0,
           "evidenceClass": "automated_proxy",
           "availability": "low",
@@ -327,7 +372,7 @@ const V4_COMPARISON = {
         {
           "id": "offline_mobilization",
           "label": "线下动员与升级",
-          "weight": 0.2,
+          "weight": 0.15,
           "score": 58.0,
           "evidenceClass": "event_count",
           "availability": "low",
@@ -343,17 +388,19 @@ const V4_COMPARISON = {
       "id": "coercive",
       "label": "强制机构内聚性",
       "v3Score": 37.0,
-      "v4ShadowScore": 37.8,
-      "delta": 0.8,
+      "v4ShadowScore": 37.3,
+      "delta": 0.3,
       "coverage": 1.0,
       "missingWeight": 0.0,
-      "lowConfidenceWeight": 0.4,
-      "nonOrdinalPlannedWeight": 0.6,
+      "lowConfidenceWeight": 0.3,
+      "measurementConfidence": 0.645,
+      "nonOrdinalPlannedWeight": 0.7,
+      "pillarWeight": 0.1,
       "drivers": [
         {
           "id": "interagency_cohesion",
           "label": "军警跨机构协调",
-          "weight": 0.35,
+          "weight": 0.4,
           "score": 32.0,
           "evidenceClass": "event_count",
           "availability": "medium",
@@ -366,7 +413,7 @@ const V4_COMPARISON = {
         {
           "id": "role_boundary",
           "label": "军队角色边界与政治中立",
-          "weight": 0.25,
+          "weight": 0.3,
           "score": 40.0,
           "evidenceClass": "event_count",
           "availability": "medium",
@@ -379,7 +426,7 @@ const V4_COMPARISON = {
         {
           "id": "command_cohesion",
           "label": "垂直指挥链完整性",
-          "weight": 0.2,
+          "weight": 0.15,
           "score": 38.0,
           "evidenceClass": "ordinal",
           "availability": "low",
@@ -392,7 +439,7 @@ const V4_COMPARISON = {
         {
           "id": "defection_discipline",
           "label": "执行纪律与倒戈信号",
-          "weight": 0.2,
+          "weight": 0.15,
           "score": 45.0,
           "evidenceClass": "ordinal",
           "availability": "low",
@@ -408,8 +455,48 @@ const V4_COMPARISON = {
   "evidenceFile": "evidence/2026-07-22.json",
   "caveats": [
     "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
-    "Missing V4 inputs are not assigned subjective scores; available weights are renormalised and coverage is displayed.",
-    "Low-confidence ordinal and crawler inputs remain visible and cannot be mistaken for high-confidence statistics.",
-    "Each evidence observation has one primary scoring owner to prevent double counting across pillars."
-  ]
+    "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",
+    "Missing V4 inputs are not assigned subjective scores. Shadow mode renormalises available driver weights only to show structure; production V4 must not do this.",
+    "Low-confidence ordinal and crawler inputs have reduced within-pillar weights, remain visible, and cannot be mistaken for high-confidence statistics.",
+    "Each evidence observation has one primary scoring owner to prevent double counting across pillars.",
+    "Coercive tail-risk events use independent alert triggers so a 10% routine weight cannot hide a verified institutional rupture."
+  ],
+  "triggers": {
+    "level": "normal",
+    "active": [],
+    "rules": [
+      {
+        "id": "verified_armed_interagency_event",
+        "label": "经核验的军警实弹冲突或死亡",
+        "condition": "事件为实弹冲突或至少1人死亡，verificationStatus=confirmed，独立来源数≥2",
+        "status": "clear",
+        "matchingSignalIds": []
+      },
+      {
+        "id": "verified_discipline_break",
+        "label": "成建制拒令、倒戈或平行指挥",
+        "condition": "事件类型属于['formed_unit_refusal', 'security_defection', 'parallel_command']，verificationStatus=confirmed，独立来源数≥2",
+        "status": "clear",
+        "matchingSignalIds": []
+      },
+      {
+        "id": "coercive_score_floor",
+        "label": "强制机构支柱跌破红线",
+        "condition": "V4强制机构支柱分<25",
+        "status": "clear",
+        "observed": 37.3
+      },
+      {
+        "id": "four_week_coercive_drop",
+        "label": "四周内强制机构分数快速下跌",
+        "condition": "相对至少四周前下降≥10分，且人工确认并有≥2个独立来源",
+        "status": "not_evaluable",
+        "observed": {
+          "reason": "尚无至少四周前的V4影子基线"
+        }
+      }
+    ],
+    "qualifiedSignalCount": 0,
+    "note": "触发器不改变综合分；它们覆盖低频尾部风险。pending或单一来源事件只进入待确认，不能触发红色警报。"
+  }
 };
