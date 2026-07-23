@@ -74,6 +74,37 @@ assert(v4Input.asOf === evidence.asOf, 'V4 input and evidence cutoff dates diffe
 const latestWeekly = [...stabilityContext.__DATA.weekly].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
 assert(latestWeekly && latestWeekly.date === v4Input.asOf, 'V3 production and V4 shadow cutoff dates differ');
 assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and V4 shadow cutoff dates differ');
+assert(Math.abs(Object.values(v4Input.officialPillarWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9, 'V4 official baseline weights do not sum to 1');
+assert(Object.values(v4Input.officialPillarWeights).every((value) => value === 0.2), 'V3 official baseline must remain equal weighted');
+assert(JSON.stringify(v4Input.pillarWeights) === JSON.stringify({
+  fiscal: 0.25,
+  currency: 0.25,
+  institutions: 0.15,
+  social: 0.25,
+  coercive: 0.1,
+}), 'V4 proposed pillar weights differ from the approved 25/25/15/25/10 structure');
+assert(JSON.stringify(v4Input.confidenceFactors) === JSON.stringify({
+  high: 1,
+  medium: 0.75,
+  low: 0.4,
+  missing: 0,
+}), 'V4 confidence factors differ from the approved scale');
+assert(v4Input.redTriggers.coerciveScoreFloor === 25, 'V4 coercive score-floor trigger changed');
+assert(v4Input.redTriggers.fourWeekDrop === 10, 'V4 four-week drop trigger changed');
+assert(v4Input.redTriggers.minimumIndependentSources === 2, 'V4 red triggers must require two independent sources');
+
+const allowedTriggerTypes = new Set([
+  ...v4Input.redTriggers.armedEventTypes,
+  ...v4Input.redTriggers.disciplineEventTypes,
+]);
+const triggerSignalIds = new Set();
+for (const signal of evidence.triggerSignals || []) {
+  assert(signal.id && !triggerSignalIds.has(signal.id), `duplicate V4 trigger signal: ${signal.id}`);
+  triggerSignalIds.add(signal.id);
+  assert(['pending', 'confirmed', 'rejected'].includes(signal.verificationStatus), `invalid V4 trigger status: ${signal.id}`);
+  assert(Number.isInteger(signal.independentSourceCount), `V4 trigger lacks source count: ${signal.id}`);
+  assert(allowedTriggerTypes.has(signal.eventType), `invalid V4 trigger event type: ${signal.id}`);
+}
 
 const observations = new Map();
 for (const observation of evidence.observations || []) {
@@ -107,17 +138,36 @@ for (const pillar of v4Input.pillars) {
 assert(referencedEvidence.size === observations.size, 'V4 evidence ledger contains unreferenced observations');
 
 const comparison = JSON.parse(read('stability-monitor/data/v4-comparison-2026-07-22.json'));
+const comparisonLatest = JSON.parse(read('stability-monitor/data/v4-comparison-latest.json'));
 const comparisonJs = read('stability-monitor/data/v4-comparison-data.js').trim();
 assert(comparisonJs.startsWith('const V4_COMPARISON = ') && comparisonJs.endsWith(';'), 'V4 comparison JS wrapper is invalid');
 const comparisonFromJs = JSON.parse(comparisonJs.slice('const V4_COMPARISON = '.length, -1));
 assert(JSON.stringify(comparisonFromJs) === JSON.stringify(comparison), 'V4 comparison JSON and JS differ');
+assert(JSON.stringify(comparisonLatest) === JSON.stringify(comparison), 'V4 latest and dated comparison JSON differ');
 assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-shadow', 'V4 comparison metadata is invalid');
+assert(comparison.official.composite === 43.4, 'Official V3 composite changed');
+assert(comparison.reweightedBaseline.composite === 45.0, 'V3 same-weight baseline is invalid');
+assert(comparison.shadow.composite === 46.4 && comparison.shadow.delta === 1.4, 'V4 confidence-aware shadow result is invalid');
+assert(comparison.measurement.confidence === 0.741, 'V4 measurement-confidence result is invalid');
+assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
+assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'First V4 snapshot must mark four-week trigger as not evaluable');
+
+const v4History = JSON.parse(read('stability-monitor/data/v4-shadow-history.json'));
+assert(v4History.schemaVersion === 1 && Array.isArray(v4History.snapshots), 'V4 history schema is invalid');
+const historyDates = new Set();
+for (const snapshot of v4History.snapshots) {
+  assert(snapshot.confirmed === true, `V4 history snapshot is not human-confirmed: ${snapshot.date}`);
+  assert(!historyDates.has(snapshot.date), `duplicate V4 history date: ${snapshot.date}`);
+  historyDates.add(snapshot.date);
+}
+assert(historyDates.has(v4Input.asOf), 'V4 history lacks the current confirmed shadow snapshot');
 
 const comparisonPage = read('stability-monitor/dashboard/v3-v4-comparison.html');
 assert(comparisonPage.includes('../data/v4-comparison-data.js'), 'V3/V4 page does not load the local comparison data');
 assert(comparisonPage.includes('V3 正式版 / V4 影子版'), 'V3/V4 page does not clearly label official versus shadow');
+assert(comparisonPage.includes('../data/v4-comparison-latest.json'), 'V3/V4 page does not link the latest machine-readable result');
+assert(comparisonPage.includes('../docs/V4_WEEKLY_RUNBOOK.md'), 'V3/V4 page does not link the weekly runbook');
 assert(!/<script[^>]+src=["']https?:/i.test(comparisonPage), 'V3/V4 page must not load remote scripts');
 assert(read('index.html').includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
 
 console.log('Repository invariants: OK');
-
