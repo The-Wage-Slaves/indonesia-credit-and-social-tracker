@@ -40,24 +40,33 @@ PR #4 compares the same 2026-07-22 evidence cutoff under V3 and V4:
 - Reproducible scorer/validator: `stability-monitor/scripts/score_v4_shadow.py`.
 - Generated JSON and browser-local JS comparison artifacts in `stability-monitor/data/`.
 - Read-only page: `stability-monitor/dashboard/v3-v4-comparison.html`.
+- Machine-evaluated coercive red triggers and human-confirmed history: `stability-monitor/data/v4-shadow-history.json`.
+- Weekly operating procedure: `stability-monitor/docs/V4_WEEKLY_RUNBOOK.md`.
 - Homepage entry and CI stale-output / MECE ownership checks.
 
-Current shadow result:
+Current confidence-aware shadow result:
 
-| Pillar | V3 official | V4 shadow | Delta |
-|---|---:|---:|---:|
-| Fiscal | 48.0 | 52.2 | +4.2 |
-| Currency | 40.0 | 45.6 | +5.6 |
-| Institutions | 37.0 | 37.1 | +0.1 |
-| Social | 55.0 | 52.2 | -2.8 |
-| Coercive | 37.0 | 37.8 | +0.8 |
-| Composite | 43.4 | 45.0 | +1.6 |
+| Pillar | V4 weight | V3 pillar | V4 shadow | Delta | Measurement confidence |
+|---|---:|---:|---:|---:|---:|
+| Fiscal | 25% | 48.0 | 52.2 | +4.2 | 81.5% |
+| Currency | 25% | 40.0 | 45.6 | +5.6 | 78.8% |
+| Institutions | 15% | 37.0 | 36.9 | -0.1 | 71.5% |
+| Social | 25% | 55.0 | 50.7 | -4.3 | 67.3% |
+| Coercive | 10% | 37.0 | 37.3 | +0.3 | 64.5% |
+
+- Official equal-weight V3 composite: 43.4.
+- The same V3 pillar scores under the proposed V4 weights: 45.0.
+- V4 shadow composite: 46.4; methodology delta versus the same-weight V3 baseline: +1.4.
+- Overall measurement confidence: 74.1%; low-confidence planned weight: 17.0%; missing planned weight: 3.8%.
 
 Interpretation guardrails:
 
-- The delta is a methodology-structure effect, not a claim that conditions improved by 1.6 points.
+- The +1.4 delta is a methodology-structure effect, not a claim that conditions improved.
 - Monetary transmission has no same-format series yet; its 15% currency weight is missing and displayed as 85% coverage.
-- Social and coercive shadow inputs still contain substantial low-confidence weight.
+- Social and coercive low-confidence driver weights were reduced to 40% and 30%, respectively.
+- Social retains a 25% pillar weight because it is a core early-warning construct; crawler confidence must be earned through coverage and validation gates.
+- Coercive routine weight is 10%, with separate red-alert triggers for verified armed conflict, defection, parallel command, or rapid collapse.
+- Current trigger level is `normal`; the four-week drop rule is `not_evaluable` because 2026-07-22 is the first confirmed V4 shadow snapshot.
 - Each observation has one primary scoring owner. Cross-references may add context but may not add another score contribution.
 
 ## Validation
@@ -71,11 +80,20 @@ node .github/scripts/validate_repo.mjs
 
 The GitHub Actions workflow runs both checks on every pull request. Do not merge PR #4 until all checks pass and the owner approves the V4 shadow interpretation.
 
+Weekly shadow generation after updating and reviewing the evidence:
+
+```powershell
+python stability-monitor/scripts/score_v4_shadow.py --write-output
+python stability-monitor/scripts/score_v4_shadow.py --append-history --confirmed
+```
+
+The second command is deliberately gated by the explicit `--confirmed` flag. It never updates V3 production data.
+
 ## Next Priorities
 
-1. Review PR #4 and decide which V4 bridge drivers require replacement time series before any pilot history is built.
-2. OJK new portal parsing for `data.ojk.go.id/SJKPublic`.
-3. Opposition-rate source pool expansion: YouTube comments and Kaskus `forum/21`.
+1. Review PR #4 and approve or revise the proposed 25/25/15/25/10 pillar weights and formal formulas.
+2. Open a separate crawler-upgrade PR: YouTube comments, Kaskus `forum/21`, fixed quotas, Wilson intervals, blind review, and 12/26-week promotion gates.
+3. OJK new portal parsing for `data.ojk.go.id/SJKPublic`.
 4. Manual confirmation for Modalku dual definitions and an ADA Pundi replacement source.
 5. Define the credit-dashboard sentiment panel before implementation.
 
@@ -97,4 +115,3 @@ Chinese:
 - Before switching Codex/Claude Code, commit the current branch and refresh this file.
 - Never commit keys, tokens, cookies, or private account data.
 - The current local workspace's `.git` metadata is not reliable; GitHub main/PR branches are the source of truth until a clean clone is made.
-
