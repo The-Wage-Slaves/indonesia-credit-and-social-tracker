@@ -2,16 +2,44 @@
   "schemaVersion": 2,
   "status": "shadow-same-date",
   "asOf": "2026-07-22",
-  "purpose": "Compare the production V3 and a MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
-  "warning": "V3 remains official. V4 bridge scores are a migration experiment and are not a replacement time series.",
+  "purpose": "Compare the production V3 and a confidence-aware MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
+  "warning": "V3 remains official. V4 bridge scores are a migration experiment; the proposed weights and confidence factors do not create a replacement time series.",
   "productionData": "../dashboard/data.js",
   "evidenceFile": "evidence/2026-07-22.json",
-  "pillarWeights": {
+  "historyFile": "v4-shadow-history.json",
+  "redTriggers": {
+    "coerciveScoreFloor": 25,
+    "fourWeekDrop": 10,
+    "minimumIndependentSources": 2,
+    "armedEventTypes": [
+      "interagency_live_fire",
+      "interagency_fatality"
+    ],
+    "disciplineEventTypes": [
+      "formed_unit_refusal",
+      "security_defection",
+      "parallel_command"
+    ]
+  },
+  "officialPillarWeights": {
     "fiscal": 0.2,
     "currency": 0.2,
     "institutions": 0.2,
     "social": 0.2,
     "coercive": 0.2
+  },
+  "pillarWeights": {
+    "fiscal": 0.25,
+    "currency": 0.25,
+    "institutions": 0.15,
+    "social": 0.25,
+    "coercive": 0.1
+  },
+  "confidenceFactors": {
+    "high": 1.0,
+    "medium": 0.75,
+    "low": 0.4,
+    "missing": 0.0
   },
   "ratings": [
     {
@@ -164,7 +192,7 @@
         {
           "id": "implementation_capacity",
           "label": "行政执行能力",
-          "weight": 0.2,
+          "weight": 0.25,
           "bridgeScore": 42,
           "evidenceClass": "statistical",
           "availability": "medium",
@@ -194,7 +222,7 @@
         {
           "id": "elite_continuity",
           "label": "执政联盟连续性",
-          "weight": 0.15,
+          "weight": 0.1,
           "bridgeScore": 45,
           "evidenceClass": "ordinal",
           "availability": "low",
@@ -211,7 +239,7 @@
         {
           "id": "livelihood_stress",
           "label": "家庭生计压力",
-          "weight": 0.3,
+          "weight": 0.35,
           "bridgeScore": 40,
           "evidenceClass": "statistical",
           "availability": "medium",
@@ -221,7 +249,7 @@
         {
           "id": "subjective_confidence",
           "label": "主观经济信心",
-          "weight": 0.2,
+          "weight": 0.25,
           "bridgeScore": 50,
           "evidenceClass": "statistical",
           "availability": "high",
@@ -231,7 +259,7 @@
         {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
-          "weight": 0.3,
+          "weight": 0.25,
           "bridgeScore": 62,
           "evidenceClass": "automated_proxy",
           "availability": "low",
@@ -241,7 +269,7 @@
         {
           "id": "offline_mobilization",
           "label": "线下动员与升级",
-          "weight": 0.2,
+          "weight": 0.15,
           "bridgeScore": 58,
           "evidenceClass": "event_count",
           "availability": "low",
@@ -258,7 +286,7 @@
         {
           "id": "interagency_cohesion",
           "label": "军警跨机构协调",
-          "weight": 0.35,
+          "weight": 0.4,
           "bridgeScore": 32,
           "evidenceClass": "event_count",
           "availability": "medium",
@@ -268,7 +296,7 @@
         {
           "id": "role_boundary",
           "label": "军队角色边界与政治中立",
-          "weight": 0.25,
+          "weight": 0.3,
           "bridgeScore": 40,
           "evidenceClass": "event_count",
           "availability": "medium",
@@ -278,7 +306,7 @@
         {
           "id": "command_cohesion",
           "label": "垂直指挥链完整性",
-          "weight": 0.2,
+          "weight": 0.15,
           "bridgeScore": 38,
           "evidenceClass": "ordinal",
           "availability": "low",
@@ -288,7 +316,7 @@
         {
           "id": "defection_discipline",
           "label": "执行纪律与倒戈信号",
-          "weight": 0.2,
+          "weight": 0.15,
           "bridgeScore": 45,
           "evidenceClass": "ordinal",
           "availability": "low",
@@ -299,4 +327,3 @@
     }
   ]
 }
-
