@@ -112,10 +112,27 @@ confidence_total = Σ(pillarWeight × confidence_pillar)
 
 强制机构日常权重降为 10%，但以下情形直接触发红色警报，不等待综合分反映：
 
-- 经验证的军警实弹冲突或死亡；
+- 经验证的军警实弹冲突或至少一人死亡；
 - 成建制拒令、倒戈或平行指挥；
-- 强制机构支柱低于 25；
-- 四周内下降 10 分以上且至少两个独立来源确认。
+- 强制机构支柱低于 25（严格小于，不含 25）；
+- 相比至少 28 天前的最近一份确认快照下降 10 分以上，且人工确认有至少两个独立来源。
+
+事件触发器必须写入当周证据文件的 `triggerSignals`，最少字段为：
+
+```text
+id / eventDate / eventType / verificationStatus /
+independentSourceCount / liveFire / fatalities / summary
+```
+
+机器规则：
+
+- `verificationStatus` 必须为 `confirmed`；
+- `independentSourceCount >= 2`；
+- 实弹事件必须 `eventType=interagency_live_fire` 且 `liveFire=true`；
+- 死亡事件必须 `eventType=interagency_fatality` 且 `fatalities>=1`；
+- 执行纪律事件必须属于 `formed_unit_refusal`、`security_defection` 或 `parallel_command`；
+- `pending`、`rejected`、单一来源和未经人类确认的事件只进入待确认，不触发红色；
+- 红色触发器只改变警报层级，不直接加减综合分。
 
 ## 三、统一连续评分函数
 
@@ -478,6 +495,8 @@ S_discipline =
 - V4 影子输入：`data/v4-shadow-input.json`
 - 唯一证据台账：`data/evidence/2026-07-22.json`
 - V4 复算脚本：`scripts/score_v4_shadow.py`
+- 周度运行手册：`docs/V4_WEEKLY_RUNBOOK.md`
+- V4 人类确认历史：`data/v4-shadow-history.json`
 - 比较页：`dashboard/v3-v4-comparison.html`
 - 街头热度采集：`scripts/street_heat.py`
 
