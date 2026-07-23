@@ -413,4 +413,3 @@ const V4_COMPARISON = {
     "Each evidence observation has one primary scoring owner to prevent double counting across pillars."
   ]
 };
-
