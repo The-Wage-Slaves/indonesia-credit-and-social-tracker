@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Human-confirmed weekly V4 shadow snapshots used for trend comparison and rapid-drop trigger evaluation. This is not the production V3 time series.",
+  "snapshots": [
+    {
+      "date": "2026-07-22",
+      "scores": {
+        "fiscal": 52.2,
+        "currency": 45.6,
+        "institutions": 36.9,
+        "social": 50.7,
+        "coercive": 37.3
+      },
+      "composite": 46.4,
+      "measurementConfidence": 0.741,
+      "triggerLevel": "normal",
+      "activeTriggerIds": [],
+      "status": "provisional-shadow",
+      "confirmed": true
+    }
+  ]
+}
