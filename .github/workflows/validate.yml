@@ -30,10 +30,11 @@ jobs:
       - name: Validate Python syntax
         run: python -m compileall -q credit-tracker stability-monitor
       - name: Validate V4 shadow comparison artifacts
-        run: python stability-monitor/scripts/score_v4_shadow.py --check-output
+        run: |
+          python -m unittest discover -s stability-monitor/scripts -p "test_*.py"
+          python stability-monitor/scripts/score_v4_shadow.py --check-output
       - name: Verify Node dependency lock and vulnerabilities
         working-directory: credit-tracker/p2p-scraper
         run: |
           npm ci --ignore-scripts
           npm audit --omit=dev
-
