@@ -2,6 +2,12 @@
   "schemaVersion": 1,
   "asOf": "2026-07-22",
   "purpose": "Canonical evidence ownership ledger for the same-date V3/V4 comparison. Every observation has one primary owner; references elsewhere must not create a second score contribution.",
+  "triggerSignals": [],
+  "rapidDropReview": {
+    "confirmed": false,
+    "independentSourceCount": 0,
+    "note": "No four-week V4 shadow baseline exists for this first snapshot."
+  },
   "observations": [
     {
       "id": "fiscal_public_finance_2026q1",
@@ -214,4 +220,3 @@
     }
   ]
 }
-
