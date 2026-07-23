@@ -67,4 +67,57 @@ for (const pillar of stabilityContext.__DATA.pillars) {
   }
 }
 
+const v4Input = JSON.parse(read('stability-monitor/data/v4-shadow-input.json'));
+const evidence = JSON.parse(read(`stability-monitor/data/${v4Input.evidenceFile}`));
+assert(v4Input.schemaVersion === 2 && v4Input.status === 'shadow-same-date', 'V4 input is not a same-date schema-v2 shadow');
+assert(v4Input.asOf === evidence.asOf, 'V4 input and evidence cutoff dates differ');
+const latestWeekly = [...stabilityContext.__DATA.weekly].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
+assert(latestWeekly && latestWeekly.date === v4Input.asOf, 'V3 production and V4 shadow cutoff dates differ');
+assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and V4 shadow cutoff dates differ');
+
+const observations = new Map();
+for (const observation of evidence.observations || []) {
+  assert(observation.id && !observations.has(observation.id), `duplicate V4 evidence id: ${observation.id}`);
+  assert(['high', 'medium', 'low'].includes(observation.confidence), `invalid evidence confidence: ${observation.id}`);
+  assert(observation.primaryOwner, `V4 evidence lacks primaryOwner: ${observation.id}`);
+  observations.set(observation.id, observation);
+}
+const referencedEvidence = new Set();
+assert(Math.abs(Object.values(v4Input.pillarWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9, 'V4 pillar weights do not sum to 1');
+for (const pillar of v4Input.pillars) {
+  assert(latestWeekly.scores[pillar.id] === pillar.v3Score, `V4 bridge V3 score differs from production: ${pillar.id}`);
+  assert(pillar.drivers.length >= 4 && pillar.drivers.length <= 5, `V4 pillar must have 4-5 drivers: ${pillar.id}`);
+  assert(Math.abs(pillar.drivers.reduce((sum, driver) => sum + driver.weight, 0) - 1) < 1e-9, `V4 driver weights do not sum to 1: ${pillar.id}`);
+  for (const driver of pillar.drivers) {
+    const owner = `${pillar.id}.${driver.id}`;
+    const ids = driver.observationIds || [];
+    if (driver.bridgeScore !== null || driver.scoreMethod) {
+      assert(ids.length > 0, `scored V4 driver lacks evidence: ${owner}`);
+    } else {
+      assert(driver.missingReason, `missing V4 driver lacks a reason: ${owner}`);
+    }
+    for (const id of ids) {
+      assert(observations.has(id), `unknown V4 evidence id: ${id}`);
+      assert(observations.get(id).primaryOwner === owner, `V4 evidence owner mismatch: ${id}`);
+      assert(!referencedEvidence.has(id), `V4 evidence double counted: ${id}`);
+      referencedEvidence.add(id);
+    }
+  }
+}
+assert(referencedEvidence.size === observations.size, 'V4 evidence ledger contains unreferenced observations');
+
+const comparison = JSON.parse(read('stability-monitor/data/v4-comparison-2026-07-22.json'));
+const comparisonJs = read('stability-monitor/data/v4-comparison-data.js').trim();
+assert(comparisonJs.startsWith('const V4_COMPARISON = ') && comparisonJs.endsWith(';'), 'V4 comparison JS wrapper is invalid');
+const comparisonFromJs = JSON.parse(comparisonJs.slice('const V4_COMPARISON = '.length, -1));
+assert(JSON.stringify(comparisonFromJs) === JSON.stringify(comparison), 'V4 comparison JSON and JS differ');
+assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-shadow', 'V4 comparison metadata is invalid');
+
+const comparisonPage = read('stability-monitor/dashboard/v3-v4-comparison.html');
+assert(comparisonPage.includes('../data/v4-comparison-data.js'), 'V3/V4 page does not load the local comparison data');
+assert(comparisonPage.includes('V3 正式版 / V4 影子版'), 'V3/V4 page does not clearly label official versus shadow');
+assert(!/<script[^>]+src=["']https?:/i.test(comparisonPage), 'V3/V4 page must not load remote scripts');
+assert(read('index.html').includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
+
 console.log('Repository invariants: OK');
+
