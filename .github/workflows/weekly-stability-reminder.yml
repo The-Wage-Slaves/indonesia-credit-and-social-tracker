@@ -1,0 +1,31 @@
+# 每周稳定性周更 · 飞书提醒
+# 每周二 10:00 GMT+8 = 02:00 UTC（GitHub Actions cron 用 UTC，故此时刻锁定 GMT+8，不随任何机器时区漂移）。
+# 只推一条飞书提醒，不改任何评分（评分是人在环，回 Claude Code/Codex 手动做）。
+# 需要在仓库 Settings → Secrets and variables → Actions 配置:
+#   FEISHU_WEBHOOK （必需）  FEISHU_SECRET （机器人开启签名校验时才需要）
+# 注: GitHub 定时任务在高负载时可能延迟数分钟，对每周提醒无影响。
+name: Weekly stability reminder (Feishu)
+
+on:
+  schedule:
+    - cron: '0 2 * * 2'   # 每周二 02:00 UTC = 10:00 GMT+8
+  workflow_dispatch: {}   # 也可在 Actions 页手动触发（用于测试）
+
+permissions:
+  contents: read
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install requests
+        run: pip install --quiet requests
+      - name: Push Feishu reminder
+        env:
+          FEISHU_WEBHOOK: ${{ secrets.FEISHU_WEBHOOK }}
+          FEISHU_SECRET: ${{ secrets.FEISHU_SECRET }}
+        run: python stability-monitor/scripts/feishu_reminder.py
