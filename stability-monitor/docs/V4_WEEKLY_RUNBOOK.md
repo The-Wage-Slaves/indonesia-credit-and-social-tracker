@@ -12,6 +12,15 @@
 4. 对可能触发红色警报的事件填写 `triggerSignals`；
 5. 如需检验四周快速下降，保留 `data/v4-shadow-history.json` 中以前的人类确认快照。
 
+每条证据都必须保留真实观测日期，不能把文件日期当成数据日期：
+
+- `observedAt`：指标实际所属期或事件日期；
+- `retrievedAt`：本次取得或复核日期；
+- `maxAgeDays`：该类数据允许沿用的最大天数；
+- `carryForwardReason`：超过时效窗口时必须填写；
+- `sourceType` / `sourceFamily` / `underlyingEventId`：用于来源质量和相关性审计；
+- 统计型指标的 `scoreInputs`：原始值、单位、分项权重与连续变换说明。
+
 ## triggerSignals 示例
 
 ```json
@@ -60,6 +69,8 @@ python stability-monitor/scripts/score_v4_shadow.py --write-output
 - 验证证据唯一归属、权重和置信标签；
 - 计算 V3正式、V3按V4权重和V4影子三个综合分；
 - 计算覆盖率、低置信权重和测量置信度；
+- 分开计算可用性、新鲜度、来源直达度、原始输入可追溯权重和证据质量指数；
+- 拒绝没有沿用理由的过期证据，以及直接填写 `bridgeScore` 的统计型指标；
 - 运行四条红色触发器规则；
 - 写入日期归档 `v4-comparison-YYYY-MM-DD.json`；
 - 刷新 `v4-comparison-latest.json` 和浏览器数据 `v4-comparison-data.js`。
@@ -75,6 +86,8 @@ stability-monitor/dashboard/v3-v4-comparison.html
 重点确认：
 
 - 分数与来源是否一致；
+- `observedAt` 是否仍在时效窗口内，沿用理由是否成立；
+- 统计型分数能否从 `scoreInputs` 复算；
 - 缺失数据是否被明确显示；
 - 红色触发器是否存在误报或漏报；
 - `pending` 或单一来源事件没有被错误升级；
@@ -115,4 +128,6 @@ node .github/scripts/validate_repo.mjs
 - 2026-07-22 是第一份 V4 确认影子快照，因此“四周快速下降”当前显示 `历史不足`；
 - 当前没有满足双源确认的红色事件，触发层级为 `normal`；
 - 线上/线下街头数据在达到方法论中的12/26周门槛前仍为低置信；
+- 当前证据质量指数为65.9%；它不是准确率，主要短板是内部数据包引用和缺少直接原始链接；
+- 货币传导仍缺失。影子页会归一化展示，但正式V4必须采用“限期沿用→到期停发”；
 - 本流程可以每周重复运行，但不是无人值守自动发布。
