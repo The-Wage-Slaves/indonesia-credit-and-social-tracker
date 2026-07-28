@@ -219,9 +219,20 @@ assert(creditSentimentJs.startsWith('const CREDIT_SENTIMENT = ') && creditSentim
 const creditSentimentFromJs = JSON.parse(creditSentimentJs.slice('const CREDIT_SENTIMENT = '.length, -1));
 assert(JSON.stringify(creditSentimentFromJs) === JSON.stringify(creditSentiment), 'credit sentiment JSON and JS differ');
 assert(creditSentiment.status === 'pilot-pending-human-review', 'credit sentiment output bypasses human review');
+assert(creditSentiment.schemaVersion === 2, 'credit sentiment output must use the news/social v2 schema');
 assert(creditSentiment.weeks.length === 2, 'credit sentiment pilot must contain two complete weeks');
-assert(creditSentiment.weeks[0].weekStart === '2026-07-13' && creditSentiment.weeks[0].fearIndex === 63.8, 'first credit sentiment pilot week changed unexpectedly');
-assert(creditSentiment.weeks[1].weekStart === '2026-07-20' && creditSentiment.weeks[1].fearIndex === 69.6, 'second credit sentiment pilot week changed unexpectedly');
+assert(creditSentiment.weeks[0].weekStart === '2026-07-13' && creditSentiment.weeks[0].fearIndex === 65.2, 'first credit sentiment v2 pilot week changed unexpectedly');
+assert(creditSentiment.weeks[1].weekStart === '2026-07-20' && creditSentiment.weeks[1].fearIndex === 69.9, 'second credit sentiment v2 pilot week changed unexpectedly');
+assert(Object.values(creditSentiment.methodology.componentWeights).reduce((sum, value) => sum + value, 0) === 1, 'credit sentiment v2 weights must sum to one');
+for (const source of ['google_news', 'media_rss', 'gdelt', 'google_trends', 'kaskus', 'youtube', 'reddit']) {
+  assert(creditSentiment.sourceCatalog[source], `credit sentiment v2 lacks required source channel: ${source}`);
+}
+assert(creditSentiment.weeks.every((week) => (
+  week.engines?.news
+  && week.engines?.social
+  && week.dataStatus === 'provisional-partial-coverage'
+)), 'reviewed news-only fixture must disclose unavailable social coverage');
+assert(creditSentiment.weeks.every((week) => week.engines.social.score === null), 'missing social evidence must not be scored as calm');
 assert(creditSentiment.latestAlert.level === 'red', 'Kredivo/KrediFazz pilot alert must be red');
 assert(creditSentiment.latestAlert.active.some((event) => (
   event.id === 'kredivo-kredifazz-purworejo-2026-07'
