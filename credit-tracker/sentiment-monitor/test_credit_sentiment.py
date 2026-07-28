@@ -27,6 +27,45 @@ class CreditSentimentTests(unittest.TestCase):
             fixture["articles"],
             dt.date(2026, 7, 28),
         )
+        social_items = [{
+            "date": "2026-07-16",
+            "platform": "youtube",
+            "externalId": "calm-1",
+            "text": "Informasi pinjol legal dan perlindungan konsumen",
+            "url": "https://youtube.com/watch?v=calm-1",
+            "engagement": 5,
+        }] + [
+            {
+                "date": "2026-07-23",
+                "platform": platform,
+                "externalId": f"risk-{index}",
+                "text": "Kredivo KrediFazz debt collector intimidasi dan sebar data di Purworejo",
+                "url": f"https://example.com/{platform}/{index}",
+                "engagement": 100 + index * 10,
+                "eventId": "kredivo-kredifazz-purworejo-2026-07",
+            }
+            for index, platform in enumerate(("youtube", "kaskus", "reddit", "youtube"), 1)
+        ]
+        health = {
+            key: {**meta, "status": "ok", "detail": "test fixture"}
+            for key, meta in MODULE.SOURCE_CATALOG.items()
+        }
+        signals = [
+            {
+                "source": "google_trends",
+                "family": "social",
+                "metric": "social_volume",
+                "date": "2026-07-26",
+                "risk": 90,
+            }
+        ]
+        cls.social_result = MODULE.build_result(
+            fixture["articles"],
+            dt.date(2026, 7, 28),
+            social_items=social_items,
+            signals=signals,
+            source_health=health,
+        )
 
     def test_two_complete_weeks_are_scored(self):
         self.assertEqual(
@@ -52,6 +91,26 @@ class CreditSentimentTests(unittest.TestCase):
     def test_second_week_fear_is_higher(self):
         first, second = self.result["weeks"]
         self.assertGreater(second["fearIndex"], first["fearIndex"])
+
+    def test_missing_social_is_disclosed_not_scored_as_calm(self):
+        latest = self.result["weeks"][-1]
+        self.assertEqual(latest["dataStatus"], "provisional-partial-coverage")
+        self.assertIsNone(latest["engines"]["social"]["score"])
+        self.assertLess(latest["availableFormulaWeight"], 1.0)
+
+    def test_news_and_social_engines_are_independent(self):
+        latest = self.social_result["weeks"][-1]
+        self.assertIsNotNone(latest["engines"]["news"]["score"])
+        self.assertIsNotNone(latest["engines"]["social"]["score"])
+        self.assertGreater(latest["negativeSocialShare"], 65)
+        self.assertGreaterEqual(latest["coverage"]["socialChannels"], 2)
+
+    def test_formula_weights_remain_mece_and_sum_to_one(self):
+        self.assertEqual(
+            set(MODULE.COMPONENT_WEIGHTS),
+            {"newsVolume", "newsTone", "socialVolume", "socialNegativity", "severeEvent"},
+        )
+        self.assertAlmostEqual(sum(MODULE.COMPONENT_WEIGHTS.values()), 1.0)
 
 
 if __name__ == "__main__":
