@@ -1,0 +1,530 @@
+const CREDIT_SENTIMENT = {
+  "schemaVersion": 1,
+  "status": "pilot-pending-human-review",
+  "asOf": "2026-07-28",
+  "cadence": "weekly-complete-weeks",
+  "indexDirection": "0=calm; 100=acute fear/event shock",
+  "methodology": {
+    "name": "Indonesia Digital Credit Fear Index v1 pilot",
+    "formula": "35% continuous volume shock + 30% source-weighted negative tone + 25% severe-event intensity + 10% source breadth",
+    "guardrails": [
+      "This measures short-term attention and fear, not industry solvency or approval.",
+      "Multiple articles about one event raise media volume but share one eventId.",
+      "Red alerts do not change the index and require primary plus multi-source confirmation.",
+      "The first two weeks use a week-on-week pilot baseline; use an 8-week robust baseline after enough history accumulates."
+    ]
+  },
+  "latestAlert": {
+    "level": "red",
+    "active": [
+      {
+        "id": "kredivo-kredifazz-purworejo-2026-07",
+        "eventType": "regulatory_action",
+        "severity": 0.92,
+        "articleIds": [
+          "sindo-kredivo-settlement",
+          "ojk-kredivo-kredifazz-call",
+          "suara-kredivo-settlement"
+        ],
+        "independentSourceCount": 3,
+        "domains": [
+          "daerah.sindonews.com",
+          "ojk.go.id",
+          "suara.com"
+        ],
+        "hasPrimarySource": true,
+        "headline": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai"
+      }
+    ],
+    "rule": "Red requires severity>=0.80, a primary source and at least two independent domains for a regulatory, consumer-harm or systemic event.",
+    "pendingHighSeverity": []
+  },
+  "weeks": [
+    {
+      "weekStart": "2026-07-13",
+      "weekEnd": "2026-07-19",
+      "fearIndex": 63.8,
+      "components": {
+        "volumeShock": 50.0,
+        "negativeTone": 66.1,
+        "severeEvent": 86.0,
+        "sourceBreadth": 50.0
+      },
+      "articleCount": 4,
+      "uniqueSourceCount": 4,
+      "negativeArticleShare": 50.0,
+      "confidence": 0.867,
+      "volumeNote": "First pilot week; neutral volume baseline.",
+      "alert": {
+        "level": "amber",
+        "active": [
+          {
+            "id": "debt-linked-school-threat-2026-07",
+            "eventType": "consumer_harm",
+            "severity": 0.86,
+            "articleIds": [
+              "antara-debt-linked-school-threat"
+            ],
+            "independentSourceCount": 1,
+            "domains": [
+              "m.antaranews.com"
+            ],
+            "hasPrimarySource": false,
+            "headline": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol"
+          },
+          {
+            "id": "pindar-tadpole-practice-2026-07",
+            "eventType": "fraud_or_illegal_practice",
+            "severity": 0.74,
+            "articleIds": [
+              "suara-tadpole-risk"
+            ],
+            "independentSourceCount": 1,
+            "domains": [
+              "suara.com"
+            ],
+            "hasPrimarySource": false,
+            "headline": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%"
+          }
+        ],
+        "rule": "Red requires severity>=0.80, a primary source and at least two independent domains for a regulatory, consumer-harm or systemic event.",
+        "pendingHighSeverity": [
+          {
+            "id": "debt-linked-school-threat-2026-07",
+            "eventType": "consumer_harm",
+            "severity": 0.86,
+            "articleIds": [
+              "antara-debt-linked-school-threat"
+            ],
+            "independentSourceCount": 1,
+            "domains": [
+              "m.antaranews.com"
+            ],
+            "hasPrimarySource": false,
+            "headline": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol"
+          },
+          {
+            "id": "pindar-tadpole-practice-2026-07",
+            "eventType": "fraud_or_illegal_practice",
+            "severity": 0.74,
+            "articleIds": [
+              "suara-tadpole-risk"
+            ],
+            "independentSourceCount": 1,
+            "domains": [
+              "suara.com"
+            ],
+            "hasPrimarySource": false,
+            "headline": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%"
+          }
+        ]
+      },
+      "events": [
+        {
+          "id": "debt-linked-school-threat-2026-07",
+          "eventType": "consumer_harm",
+          "severity": 0.86,
+          "articleIds": [
+            "antara-debt-linked-school-threat"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "m.antaranews.com"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol"
+        },
+        {
+          "id": "pindar-tadpole-practice-2026-07",
+          "eventType": "fraud_or_illegal_practice",
+          "severity": 0.74,
+          "articleIds": [
+            "suara-tadpole-risk"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "suara.com"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%"
+        },
+        {
+          "id": "consumer-protection-education-2026-07",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "rri-consumer-protection-p2sk"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "rri.co.id"
+          ],
+          "hasPrimarySource": false,
+          "headline": "OJK Perkuat Perlindungan Konsumen Sektor Jasa Keuangan Melalui UU P2SK"
+        },
+        {
+          "id": "pinjol-debt-writeoff-hoax-2026-07",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "ojk-hoax-alert"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "ojk.go.id"
+          ],
+          "hasPrimarySource": true,
+          "headline": "HOAX Alert: OJK tidak pernah ada kebijakan penghapusan utang pinjol"
+        }
+      ],
+      "articleIds": [
+        "ojk-hoax-alert",
+        "rri-consumer-protection-p2sk",
+        "antara-debt-linked-school-threat",
+        "suara-tadpole-risk"
+      ]
+    },
+    {
+      "weekStart": "2026-07-20",
+      "weekEnd": "2026-07-26",
+      "fearIndex": 69.6,
+      "components": {
+        "volumeShock": 65.3,
+        "negativeTone": 60.6,
+        "severeEvent": 92.0,
+        "sourceBreadth": 55.9
+      },
+      "articleCount": 7,
+      "uniqueSourceCount": 5,
+      "negativeArticleShare": 42.9,
+      "confidence": 1.0,
+      "volumeNote": "Continuous week-on-week article ratio: 1.60x.",
+      "alert": {
+        "level": "red",
+        "active": [
+          {
+            "id": "kredivo-kredifazz-purworejo-2026-07",
+            "eventType": "regulatory_action",
+            "severity": 0.92,
+            "articleIds": [
+              "sindo-kredivo-settlement",
+              "ojk-kredivo-kredifazz-call",
+              "suara-kredivo-settlement"
+            ],
+            "independentSourceCount": 3,
+            "domains": [
+              "daerah.sindonews.com",
+              "ojk.go.id",
+              "suara.com"
+            ],
+            "hasPrimarySource": true,
+            "headline": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai"
+          }
+        ],
+        "rule": "Red requires severity>=0.80, a primary source and at least two independent domains for a regulatory, consumer-harm or systemic event.",
+        "pendingHighSeverity": []
+      },
+      "events": [
+        {
+          "id": "kredivo-kredifazz-purworejo-2026-07",
+          "eventType": "regulatory_action",
+          "severity": 0.92,
+          "articleIds": [
+            "sindo-kredivo-settlement",
+            "ojk-kredivo-kredifazz-call",
+            "suara-kredivo-settlement"
+          ],
+          "independentSourceCount": 3,
+          "domains": [
+            "daerah.sindonews.com",
+            "ojk.go.id",
+            "suara.com"
+          ],
+          "hasPrimarySource": true,
+          "headline": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai"
+        },
+        {
+          "id": "pindar-credit-quality-may-2026",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [
+            "kontan-pindar-profit-quality",
+            "kontan-pindar-concentration"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "keuangan.kontan.co.id"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Laba Industri Pindar Naik 37,43% per Mei 2026, Kualitas Pembiayaan Masih Jadi Catatan"
+        },
+        {
+          "id": "samir-growth-2026h1",
+          "eventType": "industry_update",
+          "severity": 0.18,
+          "articleIds": [
+            "kontan-samir-growth",
+            "swa-samir-growth"
+          ],
+          "independentSourceCount": 2,
+          "domains": [
+            "keuangan.kontan.co.id",
+            "swa.co.id"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Fintech Samir Catatkan Kenaikan Pembiayaan 84% per Juni 2026"
+        }
+      ],
+      "articleIds": [
+        "kontan-pindar-profit-quality",
+        "kontan-pindar-concentration",
+        "kontan-samir-growth",
+        "swa-samir-growth",
+        "sindo-kredivo-settlement",
+        "ojk-kredivo-kredifazz-call",
+        "suara-kredivo-settlement"
+      ]
+    }
+  ],
+  "articles": [
+    {
+      "id": "ojk-hoax-alert",
+      "date": "2026-07-15",
+      "title": "HOAX Alert: OJK tidak pernah ada kebijakan penghapusan utang pinjol",
+      "url": "https://www.ojk.go.id/id/default.aspx?title=ojk",
+      "source": "OJK",
+      "sourceClass": "primary",
+      "summary": "OJK mengingatkan masyarakat terhadap informasi palsu tentang penghapusan utang pinjol.",
+      "eventId": "pinjol-debt-writeoff-hoax-2026-07",
+      "domain": "ojk.go.id",
+      "sourceFactor": 1.0,
+      "sentiment": {
+        "risk": 57.0,
+        "label": "mixed",
+        "negativeWeight": 1.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "id": "rri-consumer-protection-p2sk",
+      "date": "2026-07-15",
+      "title": "OJK Perkuat Perlindungan Konsumen Sektor Jasa Keuangan Melalui UU P2SK",
+      "url": "https://rri.co.id/makassar/regional/2571093/ojk-perkuat-perlindungan-konsumen-sektor-jasa-keuangan-melalui-uu-p2sk",
+      "source": "RRI",
+      "sourceClass": "established_media",
+      "summary": "OJK menjelaskan pencegahan dan perlindungan konsumen sebelum kerugian terjadi.",
+      "eventId": "consumer-protection-education-2026-07",
+      "domain": "rri.co.id",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 44.4,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "id": "antara-debt-linked-school-threat",
+      "date": "2026-07-15",
+      "title": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol",
+      "url": "https://m.antaranews.com/amp/berita/5650372/peneror-bom-di-sdn-srengseng-sawah-ternyata-tak-kerja-dan-terjerat-pinjol",
+      "source": "ANTARA",
+      "sourceClass": "established_media",
+      "summary": "Polisi menyebut tersangka ancaman bom tidak memiliki pekerjaan tetap, terlilit utang pinjol dan kerap didatangi penagih.",
+      "eventId": "debt-linked-school-threat-2026-07",
+      "domain": "m.antaranews.com",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 71.0,
+        "label": "negative",
+        "negativeWeight": 3.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "consumer_harm",
+      "eventSeverity": 0.86
+    },
+    {
+      "id": "suara-tadpole-risk",
+      "date": "2026-07-17",
+      "title": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%",
+      "url": "https://www.suara.com/bisnis/2026/07/17/170133/awas-skema-pinjol-tadpole-bunga-harian-bisa-capai-10",
+      "source": "Suara",
+      "sourceClass": "established_media",
+      "summary": "YLKI menyoroti tenor pendek, cicilan besar di awal, dugaan penipuan pemasaran dan kewajiban pembayaran yang memberatkan konsumen.",
+      "eventId": "pindar-tadpole-practice-2026-07",
+      "domain": "suara.com",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 93.4,
+        "label": "negative",
+        "negativeWeight": 6.2,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "fraud_or_illegal_practice",
+      "eventSeverity": 0.74
+    },
+    {
+      "id": "kontan-pindar-profit-quality",
+      "date": "2026-07-20",
+      "title": "Laba Industri Pindar Naik 37,43% per Mei 2026, Kualitas Pembiayaan Masih Jadi Catatan",
+      "url": "https://keuangan.kontan.co.id/news/laba-industri-pindar-naik-3743-per-mei-2026-kualitas-pembiayaan-masih-jadi-catatan",
+      "source": "Kontan",
+      "sourceClass": "established_media",
+      "summary": "Laba naik tetapi pengamat menilai skema tadpole dapat memberatkan konsumen dan TWP90 4,42% masih dekat batas 5%.",
+      "eventId": "pindar-credit-quality-may-2026",
+      "domain": "keuangan.kontan.co.id",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 65.4,
+        "label": "mixed",
+        "negativeWeight": 3.8,
+        "positiveWeight": 1.6,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "id": "kontan-pindar-concentration",
+      "date": "2026-07-20",
+      "title": "Laba Industri Pindar Naik, Pertumbuhan Masih Ditopang Pemain Besar",
+      "url": "https://keuangan.kontan.co.id/news/laba-industri-pindar-naik-pertumbuhan-masih-ditopang-pemain-besar",
+      "source": "Kontan",
+      "sourceClass": "established_media",
+      "summary": "Sebanyak 18 penyelenggara memiliki TWP90 di atas 5% dan delapan belum memenuhi ekuitas minimum.",
+      "eventId": "pindar-credit-quality-may-2026",
+      "domain": "keuangan.kontan.co.id",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 34.6,
+        "label": "positive",
+        "negativeWeight": 0.8,
+        "positiveWeight": 3.0,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "id": "kontan-samir-growth",
+      "date": "2026-07-21",
+      "title": "Fintech Samir Catatkan Kenaikan Pembiayaan 84% per Juni 2026",
+      "url": "https://keuangan.kontan.co.id/news/fintech-samir-catatkan-kenaikan-pembiayaan-84-per-juni-2026",
+      "source": "Kontan",
+      "sourceClass": "established_media",
+      "summary": "Pembiayaan Samir meningkat dan laba industri pindar tumbuh, namun kualitas bisnis tetap perlu diukur bersama risiko.",
+      "eventId": "samir-growth-2026h1",
+      "domain": "keuangan.kontan.co.id",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 36.0,
+        "label": "positive",
+        "negativeWeight": 1.0,
+        "positiveWeight": 3.0,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "industry_update",
+      "eventSeverity": 0.18
+    },
+    {
+      "id": "swa-samir-growth",
+      "date": "2026-07-22",
+      "title": "Pindar Samir Salurkan Pembiayaan Rp2,3 Triliun pada Semester I 2026, Tumbuh 84%",
+      "url": "https://swa.co.id/read/475178/pindar-samir-salurkan-pembiayaan-rp23-triliun-pada-semester-i-2026-tumbuh-84",
+      "source": "SWA",
+      "sourceClass": "established_media",
+      "summary": "Samir melaporkan pertumbuhan pembiayaan dan kerja sama dengan sebelas institutional lender.",
+      "eventId": "samir-growth-2026h1",
+      "domain": "swa.co.id",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 40.2,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 1.4,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "industry_update",
+      "eventSeverity": 0.18
+    },
+    {
+      "id": "sindo-kredivo-settlement",
+      "date": "2026-07-24",
+      "title": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai",
+      "url": "https://daerah.sindonews.com/newsread/1731977/174/kasus-debt-collector-dan-nasabah-digerebek-di-purworejo-berakhir-damai-1784902039",
+      "source": "SindoNews",
+      "sourceClass": "established_media",
+      "summary": "Polisi menyatakan tidak menemukan bukti tindak pidana; perusahaan mengevaluasi penagihan dan memberi sanksi kepada petugas.",
+      "eventId": "kredivo-kredifazz-purworejo-2026-07",
+      "domain": "daerah.sindonews.com",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 75.2,
+        "label": "negative",
+        "negativeWeight": 5.0,
+        "positiveWeight": 1.4,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "id": "ojk-kredivo-kredifazz-call",
+      "date": "2026-07-24",
+      "title": "OJK Panggil Kredivo dan KrediFazz Terkait Dugaan Pelanggaran Etika Penagihan di Purworejo",
+      "url": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Panggil-Kredivo-dan-KrediFazz-Terkait-Dugaan-Pelanggaran-Etika-Penagihan-di-Purworejo.aspx",
+      "source": "OJK",
+      "sourceClass": "primary",
+      "summary": "OJK memanggil manajemen setelah informasi dugaan tindakan tidak patut petugas penagihan dan meminta investigasi serta perbaikan.",
+      "eventId": "kredivo-kredifazz-purworejo-2026-07",
+      "domain": "ojk.go.id",
+      "sourceFactor": 1.0,
+      "sentiment": {
+        "risk": 92.0,
+        "label": "negative",
+        "negativeWeight": 6.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "regulatory_action",
+      "eventSeverity": 0.92
+    },
+    {
+      "id": "suara-kredivo-settlement",
+      "date": "2026-07-25",
+      "title": "Kasus Debt Collector Kredivo di Purworejo Berakhir Damai, Perusahaan Perkuat Pengawasan Penagihan",
+      "url": "https://www.suara.com/bisnis/2026/07/25/161717/kasus-debt-collector-kredivo-di-purworejo-berakhir-damai-perusahaan-perkuat-pengawasan-penagihan",
+      "source": "Suara",
+      "sourceClass": "established_media",
+      "summary": "Kredivo dan KrediFazz memenuhi panggilan OJK, melanjutkan investigasi dan memperkuat tata kelola penagihan.",
+      "eventId": "kredivo-kredifazz-purworejo-2026-07",
+      "domain": "suara.com",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 75.2,
+        "label": "negative",
+        "negativeWeight": 5.8,
+        "positiveWeight": 2.2,
+        "method": "deterministic_id_lexicon_v1"
+      },
+      "eventType": "regulatory_action",
+      "eventSeverity": 0.92
+    }
+  ],
+  "reviewRequired": true,
+  "collectionDiagnostics": {
+    "queryCount": 4,
+    "successfulQueryCount": 4,
+    "failedQueries": [],
+    "mode": "reviewed_fixture"
+  },
+  "sourceMode": "fixture:credit-tracker/sentiment-monitor/fixtures/recent-two-weeks.json"
+};

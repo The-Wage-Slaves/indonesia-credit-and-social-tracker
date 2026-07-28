@@ -8,7 +8,7 @@
 印尼市场双看板监测系统（纯静态 HTML，无构建步骤）+ 配套自动取数脚本链：
 
 1. **消费信贷市场追踪** `credit-tracker/dashboard/credit-dashboard.html` —— 四板块：
-   ①国家宏观 ②信贷行业(BI/OJK监管数据) ③P2P竞对 ④舆情(留位)
+   ①国家宏观 ②信贷行业(BI/OJK监管数据) ③P2P竞对 ④线上信贷舆情恐慌指数
 2. **稳定性指数** `stability-monitor/dashboard/indonesia-stability-index-pro.html` ——
    五支柱评分（财政/货币/制度/社会/强制机构），方法论 v3（73%硬数据权重）
 3. 入口 `index.html`（含"待确认事项"卡片，读 `pending.js`）
@@ -24,6 +24,7 @@ credit-tracker/
   dashboard/credit-dashboard.html   # 信贷看板（数据+逻辑单一真源，手工维护，React/Recharts CDN）
   update_credit.py                  # 月度取数: BI Tabel_17 / OJK监控 / Shopee直抓
   p2p-scraper/scraper.mjs           # Playwright 10家P2P官网抓取(8/10已通,逐家定制提取器)
+  sentiment-monitor/credit_sentiment.py # 周度新闻/舆情恐慌指数 → pending待确认 + 红色证据门
   PROJECT_BRIEF.md                  # 数据源行列映射 + 技术决策（改提取逻辑前必读）
 stability-monitor/
   dashboard/data.js                 # ★ 五支柱评分数据(唯一要常改的文件)
@@ -51,6 +52,7 @@ stability-monitor/
 ## 例行任务（人类或agent均可跑）
 
 - 周度：`python stability-monitor/scripts/street_heat.py` → 确认单+首页待确认
+- 信贷舆情周度：`python credit-tracker/sentiment-monitor/credit_sentiment.py --write-output` → 仅生成待确认结果
 - 月度：`python credit-tracker/update_credit.py` + `cd credit-tracker/p2p-scraper && node scraper.mjs`
 - 评分确认后写入：改 `data.js` → `python scripts/apply_week.py append <date> fiscal=.. ...`
 
@@ -59,5 +61,5 @@ stability-monitor/
 1. OJK 新门户 data.ojk.go.id/SJKPublic 解析（锁非印尼区IP，需本地网络探测）
 2. 反对率池升级：YouTube评论区、Kaskus forum/21 政治版
 3. Modalku 双口径待人工确认；ADA Pundi 官网撤统计页待另寻
-4. 信贷看板④舆情板块需求未定义；③3.2 APP量级等外部数据
+4. 信贷舆情积累满8周后，将声量项从周环比升级为滚动中位数+MAD稳健异常值；③3.2 APP量级等外部数据
 5. 飞书推送/云端部署（与所有者单独沟通后再动）

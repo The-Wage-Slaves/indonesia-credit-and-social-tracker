@@ -12,6 +12,7 @@
 <script src="p2p-pending.js"></script><!-- scraper生成的待确认数据; 文件不存在时静默跳过 -->
 <script src="app-metrics-data.js"></script><!-- ③3.2 APP量级数据(点点数据口径) -->
 <script src="app-metrics-panel.js"></script><!-- APP量级图表组件(多实例适配版) -->
+<script src="../sentiment-monitor/output/credit-sentiment-data.js"></script><!-- ④ 周度线上信贷舆情待确认数据 -->
 <style>
   html,body{margin:0;padding:0;background:#f7f8fa;}
   html{scroll-behavior:smooth;}
@@ -26,6 +27,7 @@
 <script type="text/babel" data-presets="react">
 const { useState, useMemo, useEffect, useRef } = React;
 const { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, ReferenceLine } = Recharts;
+const CREDIT_SENTIMENT_DATA = typeof CREDIT_SENTIMENT === "undefined" ? null : CREDIT_SENTIMENT;
 
 // ===== 汇率（暗门里可一键更改，全站USD图表联动重算）=====
 // DEFAULT_FX=15000 是历史口径基准: ②板块Rp原值按所选FX换算; ③板块P2P底数以15000采集换算,再按所选FX折算
@@ -513,10 +515,94 @@ function PlayersSection({p2pData}) {
 
 // ===== ④ 舆情板块 =====
 function SentimentSection() {
+  const data = CREDIT_SENTIMENT_DATA;
+  if (!data || !Array.isArray(data.weeks) || !data.weeks.length) {
+    return (<section id="sec4" style={{scrollMarginTop:64}}>
+      <SectionHead no="④" title="舆情监测" en="Digital Credit Fear Monitor" note="周频 · 待确认数据" />
+      <Placeholder icon="📡" title="尚未生成本周舆情确认单"
+        lines={["运行 credit_sentiment.py 后，这里会显示 pinjol / pindar 声量、负面语气和高风险事件。","脚本只生成待确认材料，不会自动写入正式历史。"]} />
+    </section>);
+  }
+  const latest = data.weeks[data.weeks.length-1];
+  const previous = data.weeks.length > 1 ? data.weeks[data.weeks.length-2] : null;
+  const change = previous ? latest.fearIndex - previous.fearIndex : null;
+  const currentArticles = data.articles.filter(a=>latest.articleIds.includes(a.id));
+  const levelColor = latest.alert.level==="red" ? "#b91c1c" : (latest.alert.level==="amber" ? "#b45309" : "#15803d");
+  const levelBg = latest.alert.level==="red" ? "#fef2f2" : (latest.alert.level==="amber" ? "#fffbeb" : "#f0fdf4");
+  const componentLabels = {
+    volumeShock:"声量冲击", negativeTone:"负面语气",
+    severeEvent:"严重事件", sourceBreadth:"来源扩散"
+  };
   return (<section id="sec4" style={{scrollMarginTop:64}}>
-    <SectionHead no="④" title="舆情监测" en="Sentiment Monitor" note="板块规划中" />
-    <Placeholder icon="📡" title="预留板块 · 需求待定义"
-      lines={["行业与竞对舆情监测（数据源、指标与呈现方式待确认）","确认需求后接入"]} />
+    <SectionHead no="④" title="舆情监测" en="Digital Credit Fear Monitor"
+      note={`周频 · ${latest.weekStart}–${latest.weekEnd} · 试运行/待人工确认`} />
+    <div style={{...cardS,border:"1.5px solid #c7d2fe",background:"#f8faff",marginBottom:12}}>
+      <div style={{fontSize:12,color:"#3730a3",fontWeight:700,marginBottom:5}}>线上信贷恐慌指数 · 0平静 / 100急性冲击</div>
+      <div style={{fontSize:11,color:"#4b5563",lineHeight:1.7}}>
+        这是短期<b>波动信号</b>：35%声量冲击＋30%负面语气＋25%严重事件＋10%来源扩散。
+        它不等于行业坏账率、品牌好感度或基本面评分；红色触发器独立于综合分。
+      </div>
+    </div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(155px,1fr))",gap:10,marginBottom:12}}>
+      {[
+        ["本周恐慌指数",latest.fearIndex.toFixed(1),change==null?"首期":`${change>=0?"+":""}${change.toFixed(1)} 周环比`],
+        ["负面报道占比",`${latest.negativeArticleShare.toFixed(1)}%`,`${latest.articleCount}篇去重报道`],
+        ["独立来源",latest.uniqueSourceCount,`证据覆盖 ${Math.round(latest.confidence*100)}%（非准确率）`],
+        ["警报层级",latest.alert.level.toUpperCase(),latest.alert.active.length?`${latest.alert.active.length}个事件满足规则`:"无合格红色事件"]
+      ].map((item,i)=><div key={i} style={{...cardS,padding:"13px 14px",borderTop:i===3?`3px solid ${levelColor}`:"1px solid #e7e9ee"}}>
+        <div style={{fontSize:10,color:"#6b7280"}}>{item[0]}</div>
+        <div style={{fontSize:24,fontWeight:750,color:i===3?levelColor:"#111827",margin:"4px 0"}}>{item[1]}</div>
+        <div style={{fontSize:10,color:"#6b7280"}}>{item[2]}</div>
+      </div>)}
+    </div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:12,marginBottom:12}}>
+      <div style={cardS}>
+        <h3 style={h3S}>最近两周恐慌指数</h3>
+        <div style={{height:230}}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart data={data.weeks} margin={{top:8,right:8,left:-18,bottom:0}}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#eef0f3" />
+              <XAxis dataKey="weekEnd" tick={{fontSize:10,fill:T.tick}} />
+              <YAxis domain={[0,100]} tick={{fontSize:10,fill:T.tick}} />
+              <Tooltip formatter={(v)=>[Number(v).toFixed(1),"恐慌指数"]} />
+              <ReferenceLine y={70} stroke="#dc2626" strokeDasharray="4 4" label={{value:"高压区",fontSize:9,fill:"#dc2626"}} />
+              <Bar dataKey="fearIndex" fill="#ef4444" radius={[5,5,0,0]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+      <div style={cardS}>
+        <h3 style={h3S}>本周构成</h3>
+        {Object.entries(latest.components).map(([k,v])=><div key={k} style={{marginBottom:12}}>
+          <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"#4b5563",marginBottom:4}}>
+            <span>{componentLabels[k]||k}</span><b>{Number(v).toFixed(1)}</b>
+          </div>
+          <div style={{height:7,background:"#f1f5f9",borderRadius:5,overflow:"hidden"}}>
+            <div style={{height:"100%",width:`${Math.max(0,Math.min(100,v))}%`,background:k==="severeEvent"?"#dc2626":"#6366f1"}} />
+          </div>
+        </div>)}
+      </div>
+    </div>
+    <div style={{...cardS,border:`1.5px solid ${levelColor}`,background:levelBg,marginBottom:12}}>
+      <h3 style={{...h3S,color:levelColor}}>🚨 高风险事件触发器 · {latest.alert.level.toUpperCase()}</h3>
+      {latest.alert.active.length ? latest.alert.active.map(event=><div key={event.id} style={{fontSize:12,lineHeight:1.7,color:"#374151",marginBottom:6}}>
+        <b>{event.headline}</b><br/>
+        类型 {event.eventType} · 严重度 {(event.severity*100).toFixed(0)} · 独立来源 {event.independentSourceCount} · {event.hasPrimarySource?"含监管/原始来源":"无原始来源"}
+      </div>) : <div style={{fontSize:12,color:"#4b5563"}}>本周没有满足“原始来源＋至少两个独立来源”的红色事件。</div>}
+      <div style={{fontSize:10,color:"#6b7280",marginTop:6}}>{latest.alert.rule}</div>
+    </div>
+    <div style={cardS}>
+      <h3 style={h3S}>本周证据清单 · 点击查看原文</h3>
+      {currentArticles.map(article=><div key={article.id} style={{padding:"9px 0",borderBottom:"1px solid #f1f2f4"}}>
+        <a href={article.url} target="_blank" rel="noopener noreferrer" style={{fontSize:12,fontWeight:650,color:"#1d4ed8",textDecoration:"none"}}>{article.title}</a>
+        <div style={{fontSize:10,color:"#6b7280",marginTop:3}}>
+          {article.date} · {article.source} · {article.sentiment.label} / 风险语气 {article.sentiment.risk.toFixed(1)} · eventId {article.eventId}
+        </div>
+      </div>)}
+      <div style={{fontSize:10,color:"#9aa1ab",marginTop:10,lineHeight:1.6}}>
+        状态：{data.status}。本期为可复现的两周试算，需人工确认后才可转入正式历史；首两周声量采用连续周环比，积累8周后升级为滚动中位数/MAD异常值。
+      </div>
+    </div>
   </section>);
 }
 

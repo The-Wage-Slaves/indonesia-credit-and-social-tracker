@@ -1,0 +1,89 @@
+name: Weekly digital-credit sentiment
+
+on:
+  schedule:
+    - cron: "15 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: weekly-credit-sentiment
+  cancel-in-progress: false
+
+jobs:
+  prepare-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build pending two-week fear-index review
+        run: |
+          python credit-tracker/sentiment-monitor/credit_sentiment.py --write-output
+          python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
+      - name: Read review summary
+        id: summary
+        shell: bash
+        run: |
+          node <<'NODE' >> "$GITHUB_OUTPUT"
+          const data = require("./credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json");
+          const latest = data.weeks.at(-1);
+          console.log(`week_end=${latest.weekEnd}`);
+          console.log(`fear_index=${latest.fearIndex}`);
+          console.log(`alert_level=${data.latestAlert.level}`);
+          console.log(`active_count=${data.latestAlert.active.length}`);
+          NODE
+      - name: Open or refresh a human-review PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEEK_END: ${{ steps.summary.outputs.week_end }}
+          FEAR_INDEX: ${{ steps.summary.outputs.fear_index }}
+          ALERT_LEVEL: ${{ steps.summary.outputs.alert_level }}
+        shell: bash
+        run: |
+          if git diff --quiet -- credit-tracker/sentiment-monitor/output; then
+            echo "No pending-output change."
+            exit 0
+          fi
+          branch="bot/weekly-credit-sentiment"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add credit-tracker/sentiment-monitor/output
+          git commit -m "data: prepare digital-credit sentiment review for ${WEEK_END}"
+          git push --force-with-lease origin "HEAD:${branch}"
+          existing="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "data: weekly digital-credit sentiment review (${WEEK_END})" \
+              --body "Human review required. Fear index: **${FEAR_INDEX}**; alert: **${ALERT_LEVEL}**. This PR contains pending artifacts only and cannot update confirmed dashboard history without merge approval."
+          else
+            gh pr edit "$existing" \
+              --title "data: weekly digital-credit sentiment review (${WEEK_END})" \
+              --body "Human review required. Fear index: **${FEAR_INDEX}**; alert: **${ALERT_LEVEL}**. This PR contains pending artifacts only and cannot update confirmed dashboard history without merge approval."
+          fi
+      - name: Create a deduplicated red-alert issue
+        if: steps.summary.outputs.alert_level == 'red'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          WEEK_END: ${{ steps.summary.outputs.week_end }}
+          FEAR_INDEX: ${{ steps.summary.outputs.fear_index }}
+          ACTIVE_COUNT: ${{ steps.summary.outputs.active_count }}
+        shell: bash
+        run: |
+          title="[RED] Digital-credit sentiment alert — ${WEEK_END}"
+          existing="$(gh issue list --state open --search "${title} in:title" --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh issue create \
+              --title "$title" \
+              --body "Automated evidence gate passed for ${ACTIVE_COUNT} high-risk event(s). Fear index: **${FEAR_INDEX}**. Review the weekly sentiment PR and its cited primary and independent sources before acting."
+          fi

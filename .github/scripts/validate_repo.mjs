@@ -40,7 +40,14 @@ assert(!pagesWorkflow.includes("path: '.'"), 'Pages workflow publishes the whole
 assert(!pagesWorkflow.includes('upload-pages-artifact'), 'Pages upload must remain disabled');
 
 const dashboard = read('credit-tracker/dashboard/credit-dashboard.html');
-for (const marker of ['DASHBOARD_DATA_AS_OF', 'parseNonNegativeNumber', 'function ManualDataPanel', 'function P2PPendingPanel']) {
+for (const marker of [
+  'DASHBOARD_DATA_AS_OF',
+  'parseNonNegativeNumber',
+  'function ManualDataPanel',
+  'function P2PPendingPanel',
+  '../sentiment-monitor/output/credit-sentiment-data.js',
+  'Digital Credit Fear Monitor',
+]) {
   assert(dashboard.includes(marker), `credit dashboard missing ${marker}`);
 }
 
@@ -69,7 +76,7 @@ for (const pillar of stabilityContext.__DATA.pillars) {
 
 const v4Input = JSON.parse(read('stability-monitor/data/v4-shadow-input.json'));
 const evidence = JSON.parse(read(`stability-monitor/data/${v4Input.evidenceFile}`));
-assert(v4Input.schemaVersion === 2 && v4Input.status === 'shadow-same-date', 'V4 input is not a same-date schema-v2 shadow');
+assert(v4Input.schemaVersion === 3 && v4Input.status === 'shadow-same-date', 'V4 input is not a same-date schema-v3 shadow');
 assert(v4Input.asOf === evidence.asOf, 'V4 input and evidence cutoff dates differ');
 const latestWeekly = [...stabilityContext.__DATA.weekly].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
 assert(latestWeekly && latestWeekly.date === v4Input.asOf, 'V3 production and V4 shadow cutoff dates differ');
@@ -89,6 +96,14 @@ assert(JSON.stringify(v4Input.confidenceFactors) === JSON.stringify({
   low: 0.4,
   missing: 0,
 }), 'V4 confidence factors differ from the approved scale');
+assert(JSON.stringify(v4Input.sourceDirectnessFactors) === JSON.stringify({
+  primary: 1,
+  secondary: 0.85,
+  internal_review: 0.65,
+  crawler: 0.7,
+}), 'V4 source-directness factors differ from the approved scale');
+assert(v4Input.missingDataPolicy.publishCoverageFloor === 0.75, 'V4 publish coverage floor changed');
+assert(v4Input.missingDataPolicy.carryForwardRequiresReason === true, 'V4 stale carry-forward must require a reason');
 assert(v4Input.redTriggers.coerciveScoreFloor === 25, 'V4 coercive score-floor trigger changed');
 assert(v4Input.redTriggers.fourWeekDrop === 10, 'V4 four-week drop trigger changed');
 assert(v4Input.redTriggers.minimumIndependentSources === 2, 'V4 red triggers must require two independent sources');
@@ -111,9 +126,14 @@ for (const observation of evidence.observations || []) {
   assert(observation.id && !observations.has(observation.id), `duplicate V4 evidence id: ${observation.id}`);
   assert(['high', 'medium', 'low'].includes(observation.confidence), `invalid evidence confidence: ${observation.id}`);
   assert(observation.primaryOwner, `V4 evidence lacks primaryOwner: ${observation.id}`);
+  assert(observation.observedAt && observation.retrievedAt, `V4 evidence lacks freshness dates: ${observation.id}`);
+  assert(Number.isInteger(observation.maxAgeDays) && observation.maxAgeDays > 0, `V4 evidence has invalid maxAgeDays: ${observation.id}`);
+  assert(Object.hasOwn(v4Input.sourceDirectnessFactors, observation.sourceType), `V4 evidence has invalid sourceType: ${observation.id}`);
+  assert(observation.sourceFamily && observation.underlyingEventId, `V4 evidence lacks source/event lineage: ${observation.id}`);
   observations.set(observation.id, observation);
 }
 const referencedEvidence = new Set();
+const allowedScoreMethods = new Set(['evidence_weighted', 'rating_ladder', 'bridge', 'missing']);
 assert(Math.abs(Object.values(v4Input.pillarWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9, 'V4 pillar weights do not sum to 1');
 for (const pillar of v4Input.pillars) {
   assert(latestWeekly.scores[pillar.id] === pillar.v3Score, `V4 bridge V3 score differs from production: ${pillar.id}`);
@@ -122,15 +142,34 @@ for (const pillar of v4Input.pillars) {
   for (const driver of pillar.drivers) {
     const owner = `${pillar.id}.${driver.id}`;
     const ids = driver.observationIds || [];
-    if (driver.bridgeScore !== null || driver.scoreMethod) {
+    assert(allowedScoreMethods.has(driver.scoreMethod), `invalid V4 score method: ${owner}`);
+    if (driver.scoreMethod !== 'missing') {
       assert(ids.length > 0, `scored V4 driver lacks evidence: ${owner}`);
     } else {
       assert(driver.missingReason, `missing V4 driver lacks a reason: ${owner}`);
     }
+    if (driver.scoreMethod === 'bridge') {
+      assert(Number.isFinite(driver.bridgeScore), `bridge V4 driver lacks bridgeScore: ${owner}`);
+    } else {
+      assert(!Object.hasOwn(driver, 'bridgeScore'), `non-bridge V4 driver contains bridgeScore: ${owner}`);
+    }
+    if (driver.evidenceClass === 'statistical') {
+      assert(['evidence_weighted', 'missing'].includes(driver.scoreMethod), `statistical V4 driver uses subjective bridge: ${owner}`);
+    }
     for (const id of ids) {
       assert(observations.has(id), `unknown V4 evidence id: ${id}`);
-      assert(observations.get(id).primaryOwner === owner, `V4 evidence owner mismatch: ${id}`);
+      const observation = observations.get(id);
+      assert(observation.primaryOwner === owner, `V4 evidence owner mismatch: ${id}`);
       assert(!referencedEvidence.has(id), `V4 evidence double counted: ${id}`);
+      if (driver.scoreMethod === 'evidence_weighted') {
+        assert(Array.isArray(observation.scoreInputs) && observation.scoreInputs.length > 0, `raw scoreInputs missing: ${id}`);
+        const scoreInputWeight = observation.scoreInputs.reduce((sum, input) => {
+          assert(input.metric && input.unit && input.transform, `incomplete scoreInput provenance: ${id}`);
+          assert(Object.hasOwn(input, 'value') && Number.isFinite(input.score), `invalid scoreInput value/score: ${id}`);
+          return sum + input.weight;
+        }, 0);
+        assert(Math.abs(scoreInputWeight - 1) < 1e-9, `scoreInput weights do not sum to 1: ${id}`);
+      }
       referencedEvidence.add(id);
     }
   }
@@ -148,7 +187,11 @@ assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-sh
 assert(comparison.official.composite === 43.4, 'Official V3 composite changed');
 assert(comparison.reweightedBaseline.composite === 45.0, 'V3 same-weight baseline is invalid');
 assert(comparison.shadow.composite === 46.4 && comparison.shadow.delta === 1.4, 'V4 confidence-aware shadow result is invalid');
-assert(comparison.measurement.confidence === 0.741, 'V4 measurement-confidence result is invalid');
+assert(comparison.measurement.confidence === 0.659, 'V4 evidence-quality result is invalid');
+assert(comparison.measurement.availabilityQuality === 0.741, 'V4 availability-quality result is invalid');
+assert(comparison.measurement.freshnessQuality === 0.963, 'V4 freshness-quality result is invalid');
+assert(comparison.measurement.sourceDirectness === 0.693, 'V4 source-directness result is invalid');
+assert(comparison.measurement.rawTraceabilityWeight === 0.688, 'V4 raw-traceability result is invalid');
 assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
 assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'First V4 snapshot must mark four-week trigger as not evaluable');
 
@@ -169,5 +212,22 @@ assert(comparisonPage.includes('../data/v4-comparison-latest.json'), 'V3/V4 page
 assert(comparisonPage.includes('../docs/V4_WEEKLY_RUNBOOK.md'), 'V3/V4 page does not link the weekly runbook');
 assert(!/<script[^>]+src=["']https?:/i.test(comparisonPage), 'V3/V4 page must not load remote scripts');
 assert(read('index.html').includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
+
+const creditSentiment = JSON.parse(read('credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json'));
+const creditSentimentJs = read('credit-tracker/sentiment-monitor/output/credit-sentiment-data.js').trim();
+assert(creditSentimentJs.startsWith('const CREDIT_SENTIMENT = ') && creditSentimentJs.endsWith(';'), 'credit sentiment JS wrapper is invalid');
+const creditSentimentFromJs = JSON.parse(creditSentimentJs.slice('const CREDIT_SENTIMENT = '.length, -1));
+assert(JSON.stringify(creditSentimentFromJs) === JSON.stringify(creditSentiment), 'credit sentiment JSON and JS differ');
+assert(creditSentiment.status === 'pilot-pending-human-review', 'credit sentiment output bypasses human review');
+assert(creditSentiment.weeks.length === 2, 'credit sentiment pilot must contain two complete weeks');
+assert(creditSentiment.weeks[0].weekStart === '2026-07-13' && creditSentiment.weeks[0].fearIndex === 63.8, 'first credit sentiment pilot week changed unexpectedly');
+assert(creditSentiment.weeks[1].weekStart === '2026-07-20' && creditSentiment.weeks[1].fearIndex === 69.6, 'second credit sentiment pilot week changed unexpectedly');
+assert(creditSentiment.latestAlert.level === 'red', 'Kredivo/KrediFazz pilot alert must be red');
+assert(creditSentiment.latestAlert.active.some((event) => (
+  event.id === 'kredivo-kredifazz-purworejo-2026-07'
+  && event.hasPrimarySource
+  && event.independentSourceCount >= 2
+)), 'Kredivo/KrediFazz alert lacks primary and multi-source confirmation');
+assert(creditSentiment.articles.every((article) => /^https:\/\//.test(article.url)), 'credit sentiment evidence must use HTTPS source URLs');
 
 console.log('Repository invariants: OK');

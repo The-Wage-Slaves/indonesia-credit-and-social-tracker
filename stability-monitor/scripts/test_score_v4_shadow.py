@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import copy
+import datetime as dt
 import importlib.util
 import pathlib
 import unittest
@@ -145,6 +146,75 @@ class RedTriggerTests(unittest.TestCase):
             "four_week_coercive_drop",
             {trigger["id"] for trigger in confirmed["active"]},
         )
+
+    def test_exact_28_day_boundary_is_evaluable(self):
+        result = copy.deepcopy(BASE_RESULT)
+        result["asOf"] = "2026-07-20"
+        history = {
+            "schemaVersion": 1,
+            "snapshots": [
+                {"date": "2026-06-22", "scores": {"coercive": 47.3}}
+            ],
+        }
+        evaluated = self.evaluate(result=result, history=history)
+        rapid = next(
+            rule for rule in evaluated["rules"]
+            if rule["id"] == "four_week_coercive_drop"
+        )
+        self.assertEqual(rapid["status"], "pending_confirmation")
+
+
+class EvidenceQualityTests(unittest.TestCase):
+    def test_evidence_weighted_score_uses_raw_components(self):
+        score, components = MODULE.evidence_weighted_score(
+            {"id": "example"},
+            [{
+                "scoreInputs": [
+                    {
+                        "metric": "a",
+                        "value": 1,
+                        "unit": "index",
+                        "score": 40,
+                        "weight": 0.25,
+                        "transform": "empirical_cdf",
+                    },
+                    {
+                        "metric": "b",
+                        "value": 2,
+                        "unit": "index",
+                        "score": 80,
+                        "weight": 0.75,
+                        "transform": "empirical_cdf",
+                    },
+                ]
+            }],
+        )
+        self.assertEqual(score, 70)
+        self.assertEqual(len(components), 2)
+
+    def test_stale_observation_requires_carry_forward_reason(self):
+        observation = {
+            "id": "stale",
+            "observedAt": "2026-06-01",
+            "retrievedAt": "2026-07-28",
+            "maxAgeDays": 30,
+            "sourceType": "primary",
+        }
+        with self.assertRaisesRegex(ValueError, "carryForwardReason"):
+            MODULE.observation_quality(
+                observation,
+                dt.date(2026, 7, 28),
+                {"primary": 1.0},
+            )
+
+        observation["carryForwardReason"] = "Official source has not released a new period."
+        quality = MODULE.observation_quality(
+            observation,
+            dt.date(2026, 7, 28),
+            {"primary": 1.0},
+        )
+        self.assertTrue(quality["stale"])
+        self.assertLess(quality["freshness"], 1.0)
 
 
 if __name__ == "__main__":
