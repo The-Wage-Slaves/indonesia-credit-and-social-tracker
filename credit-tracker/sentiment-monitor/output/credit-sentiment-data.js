@@ -1,18 +1,127 @@
 const CREDIT_SENTIMENT = {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "status": "pilot-pending-human-review",
   "asOf": "2026-07-28",
   "cadence": "weekly-complete-weeks",
-  "indexDirection": "0=calm; 100=acute fear/event shock",
+  "indexDirection": "0=calm; 100=acute attention/fear/event shock",
   "methodology": {
-    "name": "Indonesia Digital Credit Fear Index v1 pilot",
-    "formula": "35% continuous volume shock + 30% source-weighted negative tone + 25% severe-event intensity + 10% source breadth",
+    "name": "Indonesia Digital Credit Fear Index v2",
+    "formula": "25% news-density shock + 20% news negativity + 20% social-volume shock + 20% social negativity + 15% verified-event severity",
+    "componentWeights": {
+      "newsVolume": 0.25,
+      "newsTone": 0.2,
+      "socialVolume": 0.2,
+      "socialNegativity": 0.2,
+      "severeEvent": 0.15
+    },
     "guardrails": [
-      "This measures short-term attention and fear, not industry solvency or approval.",
-      "Multiple articles about one event raise media volume but share one eventId.",
-      "Red alerts do not change the index and require primary plus multi-source confirmation.",
-      "The first two weeks use a week-on-week pilot baseline; use an 8-week robust baseline after enough history accumulates."
+      "High news density raises risk even before sentiment is considered.",
+      "Confidence is shown separately and never reduces the risk score.",
+      "Missing components are excluded and the score is labelled provisional.",
+      "Syndicated articles and repeated posts are deduplicated; one event shares one eventId.",
+      "Red alerts use independent evidence gates and do not silently modify the score.",
+      "Volume uses an 8-week rolling median/MAD after enough reviewed history exists."
     ]
+  },
+  "sourceCatalog": {
+    "google_news": {
+      "family": "news",
+      "label": "Google News RSS",
+      "access": "public"
+    },
+    "media_rss": {
+      "family": "news",
+      "label": "Mainstream media RSS",
+      "access": "public"
+    },
+    "gdelt": {
+      "family": "news",
+      "label": "GDELT volume + tone",
+      "access": "public"
+    },
+    "google_trends": {
+      "family": "social",
+      "label": "Google Trends attention proxy",
+      "access": "public"
+    },
+    "kaskus": {
+      "family": "social",
+      "label": "Kaskus hot threads",
+      "access": "public"
+    },
+    "youtube": {
+      "family": "social",
+      "label": "YouTube videos + comments",
+      "access": "api_key"
+    },
+    "reddit": {
+      "family": "social",
+      "label": "Reddit r/indonesia",
+      "access": "public_or_oauth"
+    },
+    "x": {
+      "family": "social",
+      "label": "X recent search",
+      "access": "bearer_token"
+    }
+  },
+  "sourceHealth": {
+    "google_news": {
+      "family": "news",
+      "label": "Google News RSS",
+      "access": "public",
+      "status": "ok",
+      "detail": "Not present in reviewed fixture."
+    },
+    "media_rss": {
+      "family": "news",
+      "label": "Mainstream media RSS",
+      "access": "public",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    },
+    "gdelt": {
+      "family": "news",
+      "label": "GDELT volume + tone",
+      "access": "public",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    },
+    "google_trends": {
+      "family": "social",
+      "label": "Google Trends attention proxy",
+      "access": "public",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    },
+    "kaskus": {
+      "family": "social",
+      "label": "Kaskus hot threads",
+      "access": "public",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    },
+    "youtube": {
+      "family": "social",
+      "label": "YouTube videos + comments",
+      "access": "api_key",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    },
+    "reddit": {
+      "family": "social",
+      "label": "Reddit r/indonesia",
+      "access": "public_or_oauth",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    },
+    "x": {
+      "family": "social",
+      "label": "X recent search",
+      "access": "bearer_token",
+      "status": "unavailable",
+      "detail": "Not present in reviewed fixture."
+    }
   },
   "latestAlert": {
     "level": "red",
@@ -26,35 +135,85 @@ const CREDIT_SENTIMENT = {
           "ojk-kredivo-kredifazz-call",
           "suara-kredivo-settlement"
         ],
+        "socialItemIds": [],
         "independentSourceCount": 3,
         "domains": [
           "daerah.sindonews.com",
           "ojk.go.id",
           "suara.com"
         ],
+        "platforms": [],
         "hasPrimarySource": true,
-        "headline": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai"
+        "headline": "OJK Panggil Kredivo dan KrediFazz Terkait Dugaan Pelanggaran Etika Penagihan di Purworejo"
       }
     ],
-    "rule": "Red requires severity>=0.80, a primary source and at least two independent domains for a regulatory, consumer-harm or systemic event.",
+    "triggerReasons": [
+      "verified_severe_event"
+    ],
+    "rule": "Red if a severe event has a primary source plus two independent sources; or fear>=75 with both news and social>=70; or a two-day, two-platform social spike with volume>=80 and negative share>=65%.",
     "pendingHighSeverity": []
   },
   "weeks": [
     {
       "weekStart": "2026-07-13",
       "weekEnd": "2026-07-19",
-      "fearIndex": 63.8,
+      "fearIndex": 65.2,
+      "dataStatus": "provisional-partial-coverage",
+      "availableFormulaWeight": 0.6,
+      "engines": {
+        "news": {
+          "score": 58.3,
+          "volume": 50.0,
+          "negativity": 68.6,
+          "itemCount": 4,
+          "negativeShare": 47.9,
+          "uniqueSources": 4
+        },
+        "social": {
+          "score": null,
+          "volume": null,
+          "negativity": null,
+          "itemCount": 0,
+          "negativeShare": 0.0,
+          "platformCount": 0,
+          "engagementUnits": 0.0
+        }
+      },
       "components": {
-        "volumeShock": 50.0,
-        "negativeTone": 66.1,
-        "severeEvent": 86.0,
-        "sourceBreadth": 50.0
+        "newsVolume": 50.0,
+        "newsTone": 68.6,
+        "socialVolume": null,
+        "socialNegativity": null,
+        "severeEvent": 86.0
       },
       "articleCount": 4,
+      "socialPostCount": 0,
       "uniqueSourceCount": 4,
-      "negativeArticleShare": 50.0,
-      "confidence": 0.867,
-      "volumeNote": "First pilot week; neutral volume baseline.",
+      "socialPlatformCount": 0,
+      "negativeArticleShare": 47.9,
+      "negativeSocialShare": 0.0,
+      "confidence": 0.335,
+      "coverage": {
+        "successfulChannels": [
+          "google_news"
+        ],
+        "expectedChannels": [
+          "google_news",
+          "media_rss",
+          "gdelt",
+          "google_trends",
+          "kaskus",
+          "youtube",
+          "reddit",
+          "x"
+        ],
+        "newsChannels": 1,
+        "socialChannels": 0
+      },
+      "volumeNotes": {
+        "news": "First observed week; neutral volume baseline pending 8 weeks of history.",
+        "social": "First observed week; neutral volume baseline pending 8 weeks of history."
+      },
       "alert": {
         "level": "amber",
         "active": [
@@ -65,10 +224,12 @@ const CREDIT_SENTIMENT = {
             "articleIds": [
               "antara-debt-linked-school-threat"
             ],
+            "socialItemIds": [],
             "independentSourceCount": 1,
             "domains": [
               "m.antaranews.com"
             ],
+            "platforms": [],
             "hasPrimarySource": false,
             "headline": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol"
           },
@@ -79,15 +240,18 @@ const CREDIT_SENTIMENT = {
             "articleIds": [
               "suara-tadpole-risk"
             ],
+            "socialItemIds": [],
             "independentSourceCount": 1,
             "domains": [
               "suara.com"
             ],
+            "platforms": [],
             "hasPrimarySource": false,
             "headline": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%"
           }
         ],
-        "rule": "Red requires severity>=0.80, a primary source and at least two independent domains for a regulatory, consumer-harm or systemic event.",
+        "triggerReasons": [],
+        "rule": "Red if a severe event has a primary source plus two independent sources; or fear>=75 with both news and social>=70; or a two-day, two-platform social spike with volume>=80 and negative share>=65%.",
         "pendingHighSeverity": [
           {
             "id": "debt-linked-school-threat-2026-07",
@@ -96,10 +260,12 @@ const CREDIT_SENTIMENT = {
             "articleIds": [
               "antara-debt-linked-school-threat"
             ],
+            "socialItemIds": [],
             "independentSourceCount": 1,
             "domains": [
               "m.antaranews.com"
             ],
+            "platforms": [],
             "hasPrimarySource": false,
             "headline": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol"
           },
@@ -110,10 +276,12 @@ const CREDIT_SENTIMENT = {
             "articleIds": [
               "suara-tadpole-risk"
             ],
+            "socialItemIds": [],
             "independentSourceCount": 1,
             "domains": [
               "suara.com"
             ],
+            "platforms": [],
             "hasPrimarySource": false,
             "headline": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%"
           }
@@ -127,10 +295,12 @@ const CREDIT_SENTIMENT = {
           "articleIds": [
             "antara-debt-linked-school-threat"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
             "m.antaranews.com"
           ],
+          "platforms": [],
           "hasPrimarySource": false,
           "headline": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol"
         },
@@ -141,10 +311,12 @@ const CREDIT_SENTIMENT = {
           "articleIds": [
             "suara-tadpole-risk"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
             "suara.com"
           ],
+          "platforms": [],
           "hasPrimarySource": false,
           "headline": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%"
         },
@@ -155,10 +327,12 @@ const CREDIT_SENTIMENT = {
           "articleIds": [
             "rri-consumer-protection-p2sk"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
             "rri.co.id"
           ],
+          "platforms": [],
           "hasPrimarySource": false,
           "headline": "OJK Perkuat Perlindungan Konsumen Sektor Jasa Keuangan Melalui UU P2SK"
         },
@@ -169,10 +343,12 @@ const CREDIT_SENTIMENT = {
           "articleIds": [
             "ojk-hoax-alert"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
             "ojk.go.id"
           ],
+          "platforms": [],
           "hasPrimarySource": true,
           "headline": "HOAX Alert: OJK tidak pernah ada kebijakan penghapusan utang pinjol"
         }
@@ -182,23 +358,71 @@ const CREDIT_SENTIMENT = {
         "rri-consumer-protection-p2sk",
         "antara-debt-linked-school-threat",
         "suara-tadpole-risk"
-      ]
+      ],
+      "socialItemIds": [],
+      "_newsVolumeRaw": 4,
+      "_socialVolumeRaw": 0.0
     },
     {
       "weekStart": "2026-07-20",
       "weekEnd": "2026-07-26",
-      "fearIndex": 69.6,
+      "fearIndex": 69.9,
+      "dataStatus": "provisional-partial-coverage",
+      "availableFormulaWeight": 0.6,
+      "engines": {
+        "news": {
+          "score": 62.6,
+          "volume": 65.3,
+          "negativity": 59.1,
+          "itemCount": 7,
+          "negativeShare": 44.3,
+          "uniqueSources": 5
+        },
+        "social": {
+          "score": null,
+          "volume": null,
+          "negativity": null,
+          "itemCount": 0,
+          "negativeShare": 0.0,
+          "platformCount": 0,
+          "engagementUnits": 0.0
+        }
+      },
       "components": {
-        "volumeShock": 65.3,
-        "negativeTone": 60.6,
-        "severeEvent": 92.0,
-        "sourceBreadth": 55.9
+        "newsVolume": 65.3,
+        "newsTone": 59.1,
+        "socialVolume": null,
+        "socialNegativity": null,
+        "severeEvent": 92.0
       },
       "articleCount": 7,
+      "socialPostCount": 0,
       "uniqueSourceCount": 5,
-      "negativeArticleShare": 42.9,
-      "confidence": 1.0,
-      "volumeNote": "Continuous week-on-week article ratio: 1.60x.",
+      "socialPlatformCount": 0,
+      "negativeArticleShare": 44.3,
+      "negativeSocialShare": 0.0,
+      "confidence": 0.377,
+      "coverage": {
+        "successfulChannels": [
+          "google_news"
+        ],
+        "expectedChannels": [
+          "google_news",
+          "media_rss",
+          "gdelt",
+          "google_trends",
+          "kaskus",
+          "youtube",
+          "reddit",
+          "x"
+        ],
+        "newsChannels": 1,
+        "socialChannels": 0
+      },
+      "volumeNotes": {
+        "news": "Pilot week-on-week ratio: 1.60x; 1/8 baseline weeks.",
+        "social": "Pilot week-on-week ratio: 1.00x; 1/8 baseline weeks."
+      },
       "alert": {
         "level": "red",
         "active": [
@@ -211,17 +435,22 @@ const CREDIT_SENTIMENT = {
               "ojk-kredivo-kredifazz-call",
               "suara-kredivo-settlement"
             ],
+            "socialItemIds": [],
             "independentSourceCount": 3,
             "domains": [
               "daerah.sindonews.com",
               "ojk.go.id",
               "suara.com"
             ],
+            "platforms": [],
             "hasPrimarySource": true,
-            "headline": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai"
+            "headline": "OJK Panggil Kredivo dan KrediFazz Terkait Dugaan Pelanggaran Etika Penagihan di Purworejo"
           }
         ],
-        "rule": "Red requires severity>=0.80, a primary source and at least two independent domains for a regulatory, consumer-harm or systemic event.",
+        "triggerReasons": [
+          "verified_severe_event"
+        ],
+        "rule": "Red if a severe event has a primary source plus two independent sources; or fear>=75 with both news and social>=70; or a two-day, two-platform social spike with volume>=80 and negative share>=65%.",
         "pendingHighSeverity": []
       },
       "events": [
@@ -234,14 +463,16 @@ const CREDIT_SENTIMENT = {
             "ojk-kredivo-kredifazz-call",
             "suara-kredivo-settlement"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 3,
           "domains": [
             "daerah.sindonews.com",
             "ojk.go.id",
             "suara.com"
           ],
+          "platforms": [],
           "hasPrimarySource": true,
-          "headline": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai"
+          "headline": "OJK Panggil Kredivo dan KrediFazz Terkait Dugaan Pelanggaran Etika Penagihan di Purworejo"
         },
         {
           "id": "pindar-credit-quality-may-2026",
@@ -251,10 +482,12 @@ const CREDIT_SENTIMENT = {
             "kontan-pindar-profit-quality",
             "kontan-pindar-concentration"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
             "keuangan.kontan.co.id"
           ],
+          "platforms": [],
           "hasPrimarySource": false,
           "headline": "Laba Industri Pindar Naik 37,43% per Mei 2026, Kualitas Pembiayaan Masih Jadi Catatan"
         },
@@ -266,11 +499,13 @@ const CREDIT_SENTIMENT = {
             "kontan-samir-growth",
             "swa-samir-growth"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 2,
           "domains": [
             "keuangan.kontan.co.id",
             "swa.co.id"
           ],
+          "platforms": [],
           "hasPrimarySource": false,
           "headline": "Fintech Samir Catatkan Kenaikan Pembiayaan 84% per Juni 2026"
         }
@@ -283,7 +518,10 @@ const CREDIT_SENTIMENT = {
         "sindo-kredivo-settlement",
         "ojk-kredivo-kredifazz-call",
         "suara-kredivo-settlement"
-      ]
+      ],
+      "socialItemIds": [],
+      "_newsVolumeRaw": 7,
+      "_socialVolumeRaw": 0.0
     }
   ],
   "articles": [
@@ -303,7 +541,7 @@ const CREDIT_SENTIMENT = {
         "label": "mixed",
         "negativeWeight": 1.0,
         "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -324,7 +562,7 @@ const CREDIT_SENTIMENT = {
         "label": "mixed",
         "negativeWeight": 0.0,
         "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -341,11 +579,11 @@ const CREDIT_SENTIMENT = {
       "domain": "m.antaranews.com",
       "sourceFactor": 0.85,
       "sentiment": {
-        "risk": 71.0,
+        "risk": 81.5,
         "label": "negative",
-        "negativeWeight": 3.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v1"
+        "negativeWeight": 5.3,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "consumer_harm",
       "eventSeverity": 0.86
@@ -366,7 +604,7 @@ const CREDIT_SENTIMENT = {
         "label": "negative",
         "negativeWeight": 6.2,
         "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
@@ -383,11 +621,11 @@ const CREDIT_SENTIMENT = {
       "domain": "keuangan.kontan.co.id",
       "sourceFactor": 0.85,
       "sentiment": {
-        "risk": 65.4,
+        "risk": 54.9,
         "label": "mixed",
-        "negativeWeight": 3.8,
+        "negativeWeight": 2.3,
         "positiveWeight": 1.6,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -408,7 +646,7 @@ const CREDIT_SENTIMENT = {
         "label": "positive",
         "negativeWeight": 0.8,
         "positiveWeight": 3.0,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -429,7 +667,7 @@ const CREDIT_SENTIMENT = {
         "label": "positive",
         "negativeWeight": 1.0,
         "positiveWeight": 3.0,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "industry_update",
       "eventSeverity": 0.18
@@ -450,7 +688,7 @@ const CREDIT_SENTIMENT = {
         "label": "mixed",
         "negativeWeight": 0.0,
         "positiveWeight": 1.4,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "industry_update",
       "eventSeverity": 0.18
@@ -471,7 +709,7 @@ const CREDIT_SENTIMENT = {
         "label": "negative",
         "negativeWeight": 5.0,
         "positiveWeight": 1.4,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -492,7 +730,7 @@ const CREDIT_SENTIMENT = {
         "label": "negative",
         "negativeWeight": 6.0,
         "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "regulatory_action",
       "eventSeverity": 0.92
@@ -513,18 +751,28 @@ const CREDIT_SENTIMENT = {
         "label": "negative",
         "negativeWeight": 5.8,
         "positiveWeight": 2.2,
-        "method": "deterministic_id_lexicon_v1"
+        "method": "deterministic_id_lexicon_v2"
       },
       "eventType": "regulatory_action",
       "eventSeverity": 0.92
     }
   ],
+  "socialItems": [],
   "reviewRequired": true,
   "collectionDiagnostics": {
-    "queryCount": 4,
-    "successfulQueryCount": 4,
-    "failedQueries": [],
-    "mode": "reviewed_fixture"
+    "mode": "reviewed_fixture",
+    "successfulChannels": [
+      "google_news"
+    ],
+    "failedOrUnavailableChannels": {
+      "media_rss": "Not present in reviewed fixture.",
+      "gdelt": "Not present in reviewed fixture.",
+      "google_trends": "Not present in reviewed fixture.",
+      "kaskus": "Not present in reviewed fixture.",
+      "youtube": "Not present in reviewed fixture.",
+      "reddit": "Not present in reviewed fixture.",
+      "x": "Not present in reviewed fixture."
+    }
   },
   "sourceMode": "fixture:credit-tracker/sentiment-monitor/fixtures/recent-two-weeks.json"
 };
