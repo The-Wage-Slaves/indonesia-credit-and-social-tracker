@@ -1,5 +1,6 @@
 # 密钥（绝不入库——用 street_heat_config.example.yaml 作模板）
 stability-monitor/scripts/street_heat_config.yaml
+credit-tracker/sentiment-monitor/credit_sentiment_config.yaml
 
 # 依赖与缓存
 **/node_modules/
