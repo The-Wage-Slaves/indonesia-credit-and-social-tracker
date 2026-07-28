@@ -43,7 +43,7 @@
 - **领先指标偏置**：稳定性分析盯变化率与先行信号（搜索/视频热度先于媒体报道先于评级行动），
   舆情权重向民间侧倾斜
 - **抓取策略分层**：能 requests 就不用 headless（BI/Shopee/Kaskus API）；JS站才上
-  Playwright；无API的社媒诚实放弃（X/TikTok）而非硬凑
+  Playwright；X 仅走可选官方 API，TikTok/Instagram 无合规接口时不硬抓
 
 ## 四、数据源与自动化矩阵
 
@@ -66,6 +66,20 @@
 
 ## 六、请重点 Review 的问题
 
+### PR #6：线上信贷恐慌指数 v2
+
+本 PR 不应直接合并；请先重点检查：
+
+1. 五项输入是否 MECE：新闻密度25%、新闻负面20%、社媒声量20%、
+   社媒负面20%、严重事件15%；
+2. 缺失社媒信源时，临时分采用可用权重重分配并显式标记
+   `provisional-partial-coverage`，是否符合使用预期；
+3. Google Trends/Kaskus/YouTube评论/GDELT/RSS/Reddit 加上 Google News
+   与可选官方 X API 的覆盖，是否足以支撑周频；
+4. 红色触发的三条独立路径（硬事件证据门、新闻社媒同步急升、多平台持续社媒峰值）
+   是否过松或过严；
+5. 每周 Actions 仍只生成待审 PR/issue，不直接写 `main`，是否符合审批流程。
+
 1. **五支柱框架**：支柱与子因子的正交性、权重预设（均衡/投资/合规三档）是否合理？
 2. **量表校准**：各 quant 项的阈值档（如 CDS <70/70-100/100-150、外资持债<15%基准65分）
    与序数档锚定是否符合你的经验？
@@ -81,6 +95,7 @@
 - 产品：`index.html` → 两看板
 - 方法论：`stability-monitor/docs/METHODOLOGY.md`（框架）+ `METHODOLOGY_V3_PROPOSAL.md`（v3校验档案，含跨国/跨时代验证表）
 - 数据映射：`credit-tracker/PROJECT_BRIEF.md`
-- 脚本：`credit-tracker/update_credit.py`、`p2p-scraper/scraper.mjs`、`stability-monitor/scripts/street_heat.py`
+- 脚本：`credit-tracker/update_credit.py`、`p2p-scraper/scraper.mjs`、
+  `credit-tracker/sentiment-monitor/credit_sentiment.py`、`stability-monitor/scripts/street_heat.py`
 - Agent上下文：`AGENTS.md`（Codex）、`stability-monitor/CLAUDE.md`（Claude Code）
 - 密钥：不在包内；模板 `street_heat_config.example.yaml`，申请指引 `scripts/API_KEYS_GUIDE.md`
