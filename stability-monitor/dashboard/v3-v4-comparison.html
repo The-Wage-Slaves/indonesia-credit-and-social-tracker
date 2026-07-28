@@ -85,7 +85,7 @@
   <div class="eyebrow">Methodology migration · review only</div>
   <h1>V3 正式版 / V4 影子版同日比较</h1>
   <p class="lede">同一截止日期、同一批已审阅证据，只改变指标归属和计算结构，用来观察 MECE 重构本身会怎样改变分数。</p>
-  <div class="notice"><b>当前正式口径仍是 V3。</b> V4 不是新一期正式指数，也不能接到 V3 历史曲线上。方法差异必须以“V3支柱分按V4权重重算”的基线比较；测量置信度低于75%时仍标为暂定影子。</div>
+  <div class="notice"><b>当前正式口径仍是 V3。</b> V4 不是新一期正式指数，也不能接到 V3 历史曲线上。方法差异必须以“V3支柱分按V4权重重算”的基线比较。证据质量指数综合可用性、新鲜度和来源直达度，不是统计准确率。</div>
 
   <section class="summary" id="summary" aria-label="综合比较"></section>
 
@@ -101,7 +101,7 @@
     <p class="hint">覆盖率不足时，V4 只在有数据的权重内归一化，不用主观分数填补。</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>支柱</th><th>V4权重</th><th>V3</th><th>V4</th><th>变化</th><th>覆盖率</th><th>测量置信度</th><th>低置信权重</th><th>非序数权重</th></tr></thead>
+        <thead><tr><th>支柱</th><th>V4权重</th><th>V3</th><th>V4</th><th>变化</th><th>覆盖率</th><th>证据质量</th><th>新鲜度</th><th>来源直达度</th><th>原始输入可追溯</th><th>低置信权重</th></tr></thead>
         <tbody id="comparisonBody"></tbody>
       </table>
     </div>
@@ -124,7 +124,7 @@
     <h2>限制与审阅材料</h2>
     <ul class="caveats" id="caveats"></ul>
     <div class="sources">
-      <a href="../data/evidence/2026-07-22.json">查看统一证据台账</a>
+      <a id="evidenceLink" href="../data/evidence/2026-07-28.json">查看统一证据台账</a>
       <a href="../data/v4-comparison-latest.json">查看机器可读比较结果</a>
       <a href="../docs/METHODOLOGY_V4_DRAFT.md">查看 V4 方法论草案</a>
       <a href="../docs/V4_WEEKLY_RUNBOOK.md">查看 V4 周度运行手册</a>
@@ -158,7 +158,8 @@
     ["V3 正式综合分", score(data.official.composite), "生产口径；页面显示整数 " + data.official.displayScore, "v3"],
     ["V3 按V4权重", score(data.reweightedBaseline.composite), "隔离顶层权重变化", "v3"],
     ["V4 影子综合分", score(data.shadow.composite), "暂定结构迁移实验", "v4"],
-    ["方法论变化", delta(data.shadow.delta), "V4减去同权重V3；非周度变化", data.shadow.delta >= 0 ? "positive" : "negative"]
+    ["方法论变化", delta(data.shadow.delta), "V4减去同权重V3；非周度变化", data.shadow.delta >= 0 ? "positive" : "negative"],
+    ["证据质量指数", pct(data.measurement.confidence), "可用性 " + pct(data.measurement.availabilityQuality) + " · 新鲜度 " + pct(data.measurement.freshnessQuality) + " · 来源 " + pct(data.measurement.sourceDirectness), "v4"]
   ].forEach(function (item) {
     var card = node("div", "metric");
     card.appendChild(node("div", "label", item[0]));
@@ -194,12 +195,14 @@
     tr.appendChild(node("td", pillar.delta >= 0 ? "positive" : "negative", delta(pillar.delta)));
     tr.appendChild(node("td", "", pct(pillar.coverage)));
     tr.appendChild(node("td", "", pct(pillar.measurementConfidence)));
+    tr.appendChild(node("td", "", pct(pillar.freshnessQuality)));
+    tr.appendChild(node("td", "", pct(pillar.sourceDirectness)));
+    tr.appendChild(node("td", "", pct(pillar.rawTraceabilityWeight)));
     var low = node("td");
     var quality = node("div", "quality");
     quality.appendChild(node("span", "pill" + (pillar.lowConfidenceWeight ? " warn" : ""), pct(pillar.lowConfidenceWeight)));
     low.appendChild(quality);
     tr.appendChild(low);
-    tr.appendChild(node("td", "", pct(pillar.nonOrdinalPlannedWeight)));
     body.appendChild(tr);
   });
 
@@ -226,13 +229,13 @@
   data.pillars.forEach(function (pillar) {
     var details = document.createElement("details");
     var summaryEl = document.createElement("summary");
-    summaryEl.textContent = pillar.label + " · 权重 " + pct(pillar.pillarWeight) + " · V4 " + score(pillar.v4ShadowScore) + " · 置信 " + pct(pillar.measurementConfidence);
+    summaryEl.textContent = pillar.label + " · 权重 " + pct(pillar.pillarWeight) + " · V4 " + score(pillar.v4ShadowScore) + " · 证据质量 " + pct(pillar.measurementConfidence);
     details.appendChild(summaryEl);
     var grid = node("div", "driver-grid");
     pillar.drivers.forEach(function (driver) {
       var card = node("div", "driver");
       card.appendChild(node("strong", "", driver.label + " · 权重 " + pct(driver.weight)));
-      card.appendChild(node("div", "meta", "影子分 " + (driver.score === null ? "缺失" : score(driver.score)) + " · " + driver.evidenceClass + " · " + driver.availability));
+      card.appendChild(node("div", "meta", "影子分 " + (driver.score === null ? "缺失" : score(driver.score)) + " · " + driver.evidenceClass + " · " + driver.scoreMethod + " · 质量 " + pct(driver.evidenceQuality)));
       card.appendChild(node("p", "", driver.missingReason || driver.basis));
       grid.appendChild(card);
     });
@@ -242,7 +245,8 @@
 
   var caveats = document.getElementById("caveats");
   data.caveats.forEach(function (item) { caveats.appendChild(node("li", "", item)); });
-  document.getElementById("footer").textContent = "静态只读页面 · 数据截止 " + data.asOf + " · 整体测量置信度 " + pct(data.measurement.confidence) + " · V3 official / V4 provisional shadow";
+  document.getElementById("evidenceLink").href = "../data/" + data.evidenceFile;
+  document.getElementById("footer").textContent = "静态只读页面 · 数据截止 " + data.asOf + " · 证据质量指数 " + pct(data.measurement.confidence) + "（非准确率） · V3 official / V4 provisional shadow";
 }());
 </script>
 </body>
