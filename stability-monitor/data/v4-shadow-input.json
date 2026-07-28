@@ -1,15 +1,45 @@
 {
-  "schemaVersion": 1,
-  "status": "shadow-bridge",
-  "asOf": "2026-07-16",
-  "purpose": "Compare a MECE v4 structure with v3 without changing the production dashboard.",
-  "warning": "Bridge scores reuse selected v3 component scores where the historical series required by v4 is not yet available. They are not final v4 scores.",
-  "pillarWeights": {
+  "schemaVersion": 2,
+  "status": "shadow-same-date",
+  "asOf": "2026-07-22",
+  "purpose": "Compare the production V3 and a confidence-aware MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
+  "warning": "V3 remains official. V4 bridge scores are a migration experiment; the proposed weights and confidence factors do not create a replacement time series.",
+  "productionData": "../dashboard/data.js",
+  "evidenceFile": "evidence/2026-07-22.json",
+  "historyFile": "v4-shadow-history.json",
+  "redTriggers": {
+    "coerciveScoreFloor": 25,
+    "fourWeekDrop": 10,
+    "minimumIndependentSources": 2,
+    "armedEventTypes": [
+      "interagency_live_fire",
+      "interagency_fatality"
+    ],
+    "disciplineEventTypes": [
+      "formed_unit_refusal",
+      "security_defection",
+      "parallel_command"
+    ]
+  },
+  "officialPillarWeights": {
     "fiscal": 0.2,
     "currency": 0.2,
     "institutions": 0.2,
     "social": 0.2,
     "coercive": 0.2
+  },
+  "pillarWeights": {
+    "fiscal": 0.25,
+    "currency": 0.25,
+    "institutions": 0.15,
+    "social": 0.25,
+    "coercive": 0.1
+  },
+  "confidenceFactors": {
+    "high": 1.0,
+    "medium": 0.75,
+    "low": 0.4,
+    "missing": 0.0
   },
   "ratings": [
     {
@@ -17,6 +47,7 @@
       "rating": "BBB",
       "outlook": "stable",
       "updated": "2026-07-13",
+      "observationId": "rating_sp_2026_07_13",
       "source": "https://www.bi.go.id/en/iru/highlight-news/Pages/-S%26P-Affirmed-Indonesia%E2%80%99s-Sovereign-Credit-Rating-at-BBB-with-Stable-Outlook.aspx"
     },
     {
@@ -24,6 +55,7 @@
       "rating": "BBB",
       "outlook": "negative",
       "updated": "2026-03-04",
+      "observationId": "rating_fitch_2026_03_04",
       "source": "https://www.bi.go.id/en/iru/economic-market-data/Pages/-Fitch-Affirms-the-Republic-of-Indonesia%E2%80%99s-Rating-at-BBB-and-Revises-Outlook-to-Negative.aspx"
     },
     {
@@ -31,6 +63,7 @@
       "rating": "Baa2",
       "outlook": "negative",
       "updated": "2026-02-05",
+      "observationId": "rating_moodys_2026_02_05",
       "source": "https://www.bi.go.id/en/iru/economic-market-data/Pages/Moody%27s-Affirmed-the-Republic-of-Indonesia%27s-Sovereign-Credit-Rating-at-Baa2%2C-Outlook-Revised-to-Negative.aspx"
     }
   ],
@@ -38,7 +71,7 @@
     {
       "id": "fiscal",
       "label": "财政与外部脆弱性",
-      "v3Score": 49,
+      "v3Score": 48,
       "drivers": [
         {
           "id": "public_finance",
@@ -46,17 +79,19 @@
           "weight": 0.3,
           "bridgeScore": 55,
           "evidenceClass": "statistical",
-          "availability": "high",
-          "bridgeBasis": "v3 赤字与债务轨迹；正式 v4 将拆取赤字、收入/GDP、利息/收入、债务/GDP 和 r-g 的连续序列。"
+          "availability": "medium",
+          "observationIds": ["fiscal_public_finance_2026q1"],
+          "bridgeBasis": "连续财政变量的迁移代理；后续补齐收入/GDP、利息/收入和 r-g 历史序列。"
         },
         {
           "id": "external_liquidity",
           "label": "官方外部流动性缓冲",
           "weight": 0.25,
-          "bridgeScore": 62,
+          "bridgeScore": 60,
           "evidenceClass": "statistical",
           "availability": "high",
-          "bridgeBasis": "v3 外储进口覆盖；正式 v4 优先采用 IMF ARA、短期外债覆盖和进口覆盖的连续值。"
+          "observationIds": ["bi_reserves_2026_06"],
+          "bridgeBasis": "BI 2026年6月官方外储145.6亿美元、覆盖5.5个月进口；只在财政/外部支柱计一次。"
         },
         {
           "id": "funding_mismatch",
@@ -65,7 +100,8 @@
           "bridgeScore": 40,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "bridgeBasis": "v3 融资结构脆弱性，移除作为市场情绪结果的重复流量信号。"
+          "observationIds": ["funding_mismatch_2026_05"],
+          "bridgeBasis": "保留外债与外国持债结构，不重复使用短期市场流量。"
         },
         {
           "id": "contingent_liabilities",
@@ -74,7 +110,8 @@
           "bridgeScore": 38,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "bridgeBasis": "暂沿用 v3；正式 v4 只使用可确认担保、承诺、资产负债表敞口和压力测试，不以管理资产总额等同政府负债。"
+          "observationIds": ["contingent_liabilities_2026_07"],
+          "bridgeBasis": "仅使用可确认担保和资产负债表敞口；DSI政策时点变化不在这里重复扣分。"
         },
         {
           "id": "sovereign_rating",
@@ -84,14 +121,15 @@
           "scoreMethod": "rating_ladder",
           "evidenceClass": "external_rating",
           "availability": "high",
-          "bridgeBasis": "三大机构长期外币主权评级映射到统一等级阶梯；展望只作半个 notch 调整，不能覆盖评级等级差。"
+          "observationIds": ["rating_sp_2026_07_13", "rating_fitch_2026_03_04", "rating_moodys_2026_02_05"],
+          "bridgeBasis": "评级等级先决定主分，展望仅作±0.5 notch调整；BBB正面仍低于A-负面。"
         }
       ]
     },
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 39,
+      "v3Score": 40,
       "drivers": [
         {
           "id": "inflation_expectations",
@@ -100,16 +138,18 @@
           "bridgeScore": 60,
           "evidenceClass": "statistical",
           "availability": "high",
-          "bridgeBasis": "沿用 v3 当前读数；正式 v4 使用通胀偏离目标中枢、核心通胀和预期调查连续值，不再引用 FX 条件。"
+          "observationIds": ["inflation_2026_06"],
+          "bridgeBasis": "使用通胀相对目标的状态，不引用汇率或外储。"
         },
         {
           "id": "fx_stress",
           "label": "汇率压力",
           "weight": 0.3,
-          "bridgeScore": 35,
+          "bridgeScore": 38,
           "evidenceClass": "statistical",
           "availability": "high",
-          "bridgeBasis": "沿用 v3 当前汇率读数；正式 v4 使用 NEER/REER、滚动波动率和自身历史分位数，不再重复计入外储。"
+          "observationIds": ["fx_idr_2026_07_20"],
+          "bridgeBasis": "使用同日汇率读数，未来改为自身历史分位与波动率；不重复计入外储。"
         },
         {
           "id": "monetary_transmission",
@@ -117,8 +157,10 @@
           "weight": 0.15,
           "bridgeScore": null,
           "evidenceClass": "statistical",
-          "availability": "medium",
-          "bridgeBasis": "当前缺少统一历史序列；拟使用政策利率-同业利率偏差、贷款利差、信贷增速和流动性条件。"
+          "availability": "missing",
+          "observationIds": [],
+          "missingReason": "截至本期未形成政策利率—同业—贷款利率的同口径历史序列。",
+          "bridgeBasis": "缺失权重按可用项归一化，不以主观分数补洞。"
         },
         {
           "id": "market_access",
@@ -127,41 +169,45 @@
           "bridgeScore": 37.5,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "bridgeBasis": "v3 股市与外资流向 30 与主权风险定价 45 的简单平均，仅用于迁移比较；正式 v4 使用本币资产回报、净流量、国债利差和拍卖覆盖率。"
+          "observationIds": ["market_access_2026_07"],
+          "bridgeBasis": "V3股市/外资流向与主权风险定价的迁移均值；外储不进入本项。"
         }
       ]
     },
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 40,
+      "v3Score": 37,
       "drivers": [
         {
           "id": "policy_predictability",
           "label": "决策可预见性",
           "weight": 0.25,
-          "bridgeScore": 45,
+          "bridgeScore": 30,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "bridgeBasis": "v3 政策翻转计数；正式 v4 使用带唯一 eventId 的发布-撤回-实施差异事件率。"
+          "observationIds": ["dsi_policy_shift_2026_07"],
+          "bridgeBasis": "DSI政策时点/范围变化只归属政策可预见性一次。"
         },
         {
           "id": "implementation_capacity",
           "label": "行政执行能力",
-          "weight": 0.2,
+          "weight": 0.25,
           "bridgeScore": 42,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "bridgeBasis": "暂以 v3 国际治理评估作代理；正式 v4 使用 WGI Government Effectiveness 与项目执行偏差，不再叠加完整治理综合分。"
+          "observationIds": ["governance_effectiveness_proxy_2026"],
+          "bridgeBasis": "国际治理指标作过渡代理，避免与法治和制衡的综合分重复。"
         },
         {
           "id": "legal_impartiality",
           "label": "法律适用公正性",
           "weight": 0.2,
           "bridgeScore": 42,
-          "evidenceClass": "ordinal",
+          "evidenceClass": "event_count",
           "availability": "medium",
-          "bridgeBasis": "暂沿用 v3；正式 v4 建立唯一案件清单、明确纳入条件并使用滚动事件率。"
+          "observationIds": ["legal_case_registry_2026_07"],
+          "bridgeBasis": "唯一案件清单；与强制机构冲突的武装事件记录分离。"
         },
         {
           "id": "institutional_checks",
@@ -170,16 +216,18 @@
           "bridgeScore": 30,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "bridgeBasis": "v3 关键机构俘获计数；FX 和通胀结果完全移出本支柱。"
+          "observationIds": ["institutional_checks_2026_07"],
+          "bridgeBasis": "只测制衡事件，不使用通胀、汇率或外储结果。"
         },
         {
           "id": "elite_continuity",
           "label": "执政联盟连续性",
-          "weight": 0.15,
+          "weight": 0.1,
           "bridgeScore": 45,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "bridgeBasis": "由 v3 强制支柱的精英联盟裂痕迁入；正式 v4 只记录公开退出、倒戈、罢免和联盟破裂，不重复使用选择性执法案件。"
+          "observationIds": ["elite_continuity_2026_07"],
+          "bridgeBasis": "只记录公开退出、倒戈、罢免与联盟破裂，不重复使用选择性执法案件。"
         }
       ]
     },
@@ -191,38 +239,42 @@
         {
           "id": "livelihood_stress",
           "label": "家庭生计压力",
-          "weight": 0.3,
+          "weight": 0.35,
           "bridgeScore": 40,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "bridgeBasis": "v3 劳动力市场压力；正式 v4 增加实际工资、食品与交通负担，不再使用 PMI headline。"
+          "observationIds": ["labour_stress_2026_05"],
+          "bridgeBasis": "劳动力和实际生计变量，不使用PMI headline。"
         },
         {
           "id": "subjective_confidence",
           "label": "主观经济信心",
-          "weight": 0.2,
+          "weight": 0.25,
           "bridgeScore": 50,
           "evidenceClass": "statistical",
           "availability": "high",
-          "bridgeBasis": "v3 BI 消费者信心指数，改用自身历史分位数连续映射。"
+          "observationIds": ["consumer_confidence_2026_06"],
+          "bridgeBasis": "BI消费者信心，未来转为自身历史分位连续映射。"
         },
         {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
-          "weight": 0.3,
+          "weight": 0.25,
           "bridgeScore": 62,
           "evidenceClass": "automated_proxy",
           "availability": "low",
-          "bridgeBasis": "沿用当前网络政治情绪仅作迁移比较；当前仅一周历史且样本非代表性，正式 v4 达到最少 12 周基线和分类审计门槛前不得转正。"
+          "observationIds": ["online_grievance_2026_07_22"],
+          "bridgeBasis": "保留街头热度爬虫价值，但清楚标记覆盖退化；满12周基线和分类审计前仅作影子输入。"
         },
         {
           "id": "offline_mobilization",
           "label": "线下动员与升级",
-          "weight": 0.2,
+          "weight": 0.15,
           "bridgeScore": 58,
-          "evidenceClass": "ordinal",
+          "evidenceClass": "event_count",
           "availability": "low",
-          "bridgeBasis": "暂沿用 v3 动员性质；正式 v4 使用事件数、城市数、参与规模、组织广度和干预/暴力事件编码。燃油补贴只作触发器。"
+          "observationIds": ["offline_mobilization_2026_07_22"],
+          "bridgeBasis": "按事件、城市、规模和升级程度编码；不把触发议题本身当作第二个指标。"
         }
       ]
     },
@@ -234,38 +286,42 @@
         {
           "id": "interagency_cohesion",
           "label": "军警跨机构协调",
-          "weight": 0.35,
+          "weight": 0.4,
           "bridgeScore": 32,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "bridgeBasis": "v3 军警冲突事件计数；一个事件只保留一个主记录。"
+          "observationIds": ["armed_interagency_registry_2026_07"],
+          "bridgeBasis": "每个武装/对峙事件只有一个主记录；法律程序另属制度支柱。"
         },
         {
           "id": "role_boundary",
           "label": "军队角色边界与政治中立",
-          "weight": 0.25,
+          "weight": 0.3,
           "bridgeScore": 40,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "bridgeBasis": "v3 军队文职渗透计数，删除同一法案和任命在其他子项的重复加分。"
+          "observationIds": ["military_role_boundary_2026_07"],
+          "bridgeBasis": "只测文职渗透和正式角色扩张。"
         },
         {
           "id": "command_cohesion",
           "label": "垂直指挥链完整性",
-          "weight": 0.2,
+          "weight": 0.15,
           "bridgeScore": 38,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "bridgeBasis": "暂借用 v3 军警权力平衡，仅为迁移占位；正式 v4 改测拒令、非正常调动、公开分歧和多重指挥。"
+          "observationIds": ["command_cohesion_2026_07"],
+          "bridgeBasis": "迁移占位；未来只测拒令、异常调动、公开分歧和多重指挥。"
         },
         {
           "id": "defection_discipline",
           "label": "执行纪律与倒戈信号",
-          "weight": 0.2,
+          "weight": 0.15,
           "bridgeScore": 45,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "bridgeBasis": "暂借用 v3 精英联盟裂痕，仅为迁移占位；正式 v4 仅纳入军警安全领导层的倒戈、拒绝执行和公开阵营分化。"
+          "observationIds": ["security_discipline_2026_07"],
+          "bridgeBasis": "只纳入军警安全领导层倒戈、拒绝执行和公开阵营分化。"
         }
       ]
     }

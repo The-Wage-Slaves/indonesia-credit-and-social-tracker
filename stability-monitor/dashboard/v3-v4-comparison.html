@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>稳定性指数 · V3 / V4 同日比较</title>
+<style>
+  :root {
+    --bg:#f5f6f8; --panel:#fff; --ink:#16202a; --muted:#647181; --line:#dfe4e9;
+    --v3:#1f6feb; --v4:#8b5cf6; --positive:#16825d; --negative:#c2413b;
+    --warning:#9a6700; --soft:#f0f3f6;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; line-height:1.55; }
+  a { color:#0969da; }
+  .wrap { max-width:1120px; margin:auto; padding:28px 22px 64px; }
+  .back { font-size:13px; text-decoration:none; color:var(--muted); }
+  .eyebrow { margin-top:24px; color:var(--v4); font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+  h1 { margin:5px 0 8px; font-size:30px; line-height:1.25; }
+  .lede { margin:0; max-width:780px; color:var(--muted); font-size:14px; }
+  .notice { margin:22px 0; padding:14px 16px; background:#fff8c5; border:1px solid #e5c95c; border-radius:10px; font-size:13px; }
+  .notice b { color:#6e4b00; }
+  .summary { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin:20px 0; }
+  .metric { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; }
+  .metric .label { color:var(--muted); font-size:12px; }
+  .metric .value { margin-top:3px; font-size:28px; font-weight:750; font-variant-numeric:tabular-nums; }
+  .metric .sub { color:var(--muted); font-size:11px; }
+  .v3 { color:var(--v3); } .v4 { color:var(--v4); }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:16px; }
+  .panel h2 { margin:0 0 4px; font-size:18px; }
+  .panel .hint { margin:0 0 18px; color:var(--muted); font-size:12px; }
+  .chart-row { display:grid; grid-template-columns:170px 1fr 42px; gap:10px; align-items:center; margin:14px 0; }
+  .chart-label { font-size:13px; font-weight:650; }
+  .bar-pair { display:grid; gap:5px; }
+  .track { height:10px; background:var(--soft); border-radius:999px; overflow:hidden; }
+  .fill { height:100%; border-radius:999px; }
+  .fill.v3-bg { background:var(--v3); } .fill.v4-bg { background:var(--v4); }
+  .pair-score { font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums; text-align:right; white-space:pre-line; }
+  .legend { display:flex; gap:18px; color:var(--muted); font-size:12px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px; }
+  .table-wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; min-width:720px; font-size:13px; }
+  th, td { padding:10px 9px; border-bottom:1px solid var(--line); text-align:right; vertical-align:top; font-variant-numeric:tabular-nums; }
+  th { color:var(--muted); font-size:11px; font-weight:650; }
+  th:first-child, td:first-child { text-align:left; }
+  .positive { color:var(--positive); } .negative { color:var(--negative); }
+  .quality { display:flex; gap:7px; flex-wrap:wrap; justify-content:flex-end; }
+  .pill { padding:2px 7px; border-radius:999px; background:var(--soft); font-size:11px; color:var(--muted); white-space:nowrap; }
+  .pill.warn { background:#fff1c2; color:var(--warning); }
+  .trigger-head { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:10px 0 14px; }
+  .trigger-state { font-weight:750; border-radius:999px; padding:5px 10px; font-size:12px; }
+  .trigger-state.normal { color:var(--positive); background:#dafbe1; }
+  .trigger-state.red { color:#fff; background:var(--negative); }
+  .trigger-rule { display:grid; grid-template-columns:190px 120px 1fr; gap:10px; border-top:1px solid var(--line); padding:10px 0; font-size:12px; }
+  .trigger-rule:first-child { border-top:0; }
+  .trigger-rule .status { color:var(--muted); font-weight:650; }
+  details { border-top:1px solid var(--line); padding:12px 0; }
+  details:first-of-type { border-top:0; }
+  summary { cursor:pointer; font-size:13px; font-weight:650; }
+  .driver-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:9px; margin-top:10px; }
+  .driver { padding:10px; background:var(--soft); border-radius:9px; }
+  .driver strong { font-size:12px; }
+  .driver .meta { color:var(--muted); font-size:11px; margin:3px 0; }
+  .driver p { margin:5px 0 0; font-size:11px; }
+  .caveats { margin:8px 0 0; padding-left:20px; color:var(--muted); font-size:12px; }
+  .sources { display:flex; flex-wrap:wrap; gap:14px; font-size:12px; }
+  footer { margin-top:24px; color:var(--muted); font-size:11px; }
+  .error { padding:18px; color:var(--negative); background:#ffebe9; border-radius:10px; }
+  @media (max-width:760px) {
+    .summary { grid-template-columns:repeat(2,1fr); }
+    .chart-row { grid-template-columns:120px 1fr 40px; }
+    .driver-grid { grid-template-columns:1fr; }
+    .trigger-rule { grid-template-columns:1fr; gap:3px; }
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --panel:#161b22; --ink:#e6edf3; --muted:#8b949e; --line:#30363d; --soft:#21262d; }
+    .notice { background:#3b2f05; border-color:#6e570b; } .notice b { color:#f2cc60; }
+    .pill.warn { background:#3b2f05; color:#f2cc60; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <a class="back" href="../../index.html">← 返回监测中心</a>
+  <div class="eyebrow">Methodology migration · review only</div>
+  <h1>V3 正式版 / V4 影子版同日比较</h1>
+  <p class="lede">同一截止日期、同一批已审阅证据，只改变指标归属和计算结构，用来观察 MECE 重构本身会怎样改变分数。</p>
+  <div class="notice"><b>当前正式口径仍是 V3。</b> V4 不是新一期正式指数，也不能接到 V3 历史曲线上。方法差异必须以“V3支柱分按V4权重重算”的基线比较；测量置信度低于75%时仍标为暂定影子。</div>
+
+  <section class="summary" id="summary" aria-label="综合比较"></section>
+
+  <section class="panel">
+    <h2>五支柱比较</h2>
+    <p class="hint">每行上方为 V3 正式分，下方为 V4 影子分；满刻度为 100。</p>
+    <div class="legend"><span><i class="dot" style="background:var(--v3)"></i>V3 正式</span><span><i class="dot" style="background:var(--v4)"></i>V4 影子</span></div>
+    <div id="chart"></div>
+  </section>
+
+  <section class="panel">
+    <h2>分数与数据质量</h2>
+    <p class="hint">覆盖率不足时，V4 只在有数据的权重内归一化，不用主观分数填补。</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>支柱</th><th>V4权重</th><th>V3</th><th>V4</th><th>变化</th><th>覆盖率</th><th>测量置信度</th><th>低置信权重</th><th>非序数权重</th></tr></thead>
+        <tbody id="comparisonBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>强制机构红色触发器</h2>
+    <p class="hint">触发器不改变综合分。它用来覆盖10%日常权重可能遗漏的低频尾部风险；待确认或单一来源事件不能触发红色警报。</p>
+    <div class="trigger-head"><span id="triggerState" class="trigger-state"></span><span id="triggerNote" class="hint" style="margin:0"></span></div>
+    <div id="triggerRules"></div>
+  </section>
+
+  <section class="panel">
+    <h2>V4 子维度与证据归属</h2>
+    <p class="hint">每个支柱保持 4–5 项。每条证据只有一个 primaryOwner，从结构上阻止跨支柱重复计分。</p>
+    <div id="driverDetails"></div>
+  </section>
+
+  <section class="panel">
+    <h2>限制与审阅材料</h2>
+    <ul class="caveats" id="caveats"></ul>
+    <div class="sources">
+      <a href="../data/evidence/2026-07-22.json">查看统一证据台账</a>
+      <a href="../data/v4-comparison-latest.json">查看机器可读比较结果</a>
+      <a href="../docs/METHODOLOGY_V4_DRAFT.md">查看 V4 方法论草案</a>
+      <a href="../docs/V4_WEEKLY_RUNBOOK.md">查看 V4 周度运行手册</a>
+      <a href="../docs/METHODOLOGY_V3_PROPOSAL.md">查看 V3 校验档案</a>
+    </div>
+  </section>
+  <footer id="footer"></footer>
+</main>
+<noscript><div class="wrap error">此比较页需要浏览器启用 JavaScript；所有数据均为仓库内本地静态文件，不会上传。</div></noscript>
+<script src="../data/v4-comparison-data.js"></script>
+<script>
+(function () {
+  "use strict";
+  if (typeof V4_COMPARISON === "undefined") {
+    document.getElementById("summary").innerHTML = '<div class="error">比较数据未加载，请确认 v4-comparison-data.js 与本页一起发布。</div>';
+    return;
+  }
+  var data = V4_COMPARISON;
+  var pct = function (value) { return Math.round(value * 100) + "%"; };
+  var score = function (value) { return Number(value).toFixed(1); };
+  var delta = function (value) { return (value > 0 ? "+" : "") + Number(value).toFixed(1); };
+  var node = function (tag, className, text) {
+    var el = document.createElement(tag);
+    if (className) el.className = className;
+    if (text !== undefined) el.textContent = text;
+    return el;
+  };
+
+  var summary = document.getElementById("summary");
+  [
+    ["V3 正式综合分", score(data.official.composite), "生产口径；页面显示整数 " + data.official.displayScore, "v3"],
+    ["V3 按V4权重", score(data.reweightedBaseline.composite), "隔离顶层权重变化", "v3"],
+    ["V4 影子综合分", score(data.shadow.composite), "暂定结构迁移实验", "v4"],
+    ["方法论变化", delta(data.shadow.delta), "V4减去同权重V3；非周度变化", data.shadow.delta >= 0 ? "positive" : "negative"]
+  ].forEach(function (item) {
+    var card = node("div", "metric");
+    card.appendChild(node("div", "label", item[0]));
+    card.appendChild(node("div", "value " + item[3], item[1]));
+    card.appendChild(node("div", "sub", item[2]));
+    summary.appendChild(card);
+  });
+
+  var chart = document.getElementById("chart");
+  data.pillars.forEach(function (pillar) {
+    var row = node("div", "chart-row");
+    row.appendChild(node("div", "chart-label", pillar.label));
+    var pair = node("div", "bar-pair");
+    [["v3-bg", pillar.v3Score], ["v4-bg", pillar.v4ShadowScore]].forEach(function (bar) {
+      var track = node("div", "track");
+      var fill = node("div", "fill " + bar[0]);
+      fill.style.width = Math.max(0, Math.min(100, bar[1])) + "%";
+      track.appendChild(fill);
+      pair.appendChild(track);
+    });
+    row.appendChild(pair);
+    row.appendChild(node("div", "pair-score", score(pillar.v3Score) + "\n" + score(pillar.v4ShadowScore)));
+    chart.appendChild(row);
+  });
+
+  var body = document.getElementById("comparisonBody");
+  data.pillars.forEach(function (pillar) {
+    var tr = document.createElement("tr");
+    tr.appendChild(node("td", "", pillar.label));
+    tr.appendChild(node("td", "", pct(pillar.pillarWeight)));
+    tr.appendChild(node("td", "v3", score(pillar.v3Score)));
+    tr.appendChild(node("td", "v4", score(pillar.v4ShadowScore)));
+    tr.appendChild(node("td", pillar.delta >= 0 ? "positive" : "negative", delta(pillar.delta)));
+    tr.appendChild(node("td", "", pct(pillar.coverage)));
+    tr.appendChild(node("td", "", pct(pillar.measurementConfidence)));
+    var low = node("td");
+    var quality = node("div", "quality");
+    quality.appendChild(node("span", "pill" + (pillar.lowConfidenceWeight ? " warn" : ""), pct(pillar.lowConfidenceWeight)));
+    low.appendChild(quality);
+    tr.appendChild(low);
+    tr.appendChild(node("td", "", pct(pillar.nonOrdinalPlannedWeight)));
+    body.appendChild(tr);
+  });
+
+  var triggerState = document.getElementById("triggerState");
+  triggerState.textContent = data.triggers.level === "red" ? "红色警报已触发" : "本期未触发红色警报";
+  triggerState.className = "trigger-state " + (data.triggers.level === "red" ? "red" : "normal");
+  document.getElementById("triggerNote").textContent = "合格事件信号 " + data.triggers.qualifiedSignalCount + " 条";
+  var triggerRules = document.getElementById("triggerRules");
+  data.triggers.rules.forEach(function (rule) {
+    var row = node("div", "trigger-rule");
+    row.appendChild(node("strong", "", rule.label));
+    var statusText = {
+      active:"已触发",
+      clear:"未触发",
+      not_evaluable:"历史不足",
+      pending_confirmation:"等待双源确认"
+    }[rule.status] || rule.status;
+    row.appendChild(node("span", "status", statusText));
+    row.appendChild(node("span", "", rule.condition));
+    triggerRules.appendChild(row);
+  });
+
+  var detailsRoot = document.getElementById("driverDetails");
+  data.pillars.forEach(function (pillar) {
+    var details = document.createElement("details");
+    var summaryEl = document.createElement("summary");
+    summaryEl.textContent = pillar.label + " · 权重 " + pct(pillar.pillarWeight) + " · V4 " + score(pillar.v4ShadowScore) + " · 置信 " + pct(pillar.measurementConfidence);
+    details.appendChild(summaryEl);
+    var grid = node("div", "driver-grid");
+    pillar.drivers.forEach(function (driver) {
+      var card = node("div", "driver");
+      card.appendChild(node("strong", "", driver.label + " · 权重 " + pct(driver.weight)));
+      card.appendChild(node("div", "meta", "影子分 " + (driver.score === null ? "缺失" : score(driver.score)) + " · " + driver.evidenceClass + " · " + driver.availability));
+      card.appendChild(node("p", "", driver.missingReason || driver.basis));
+      grid.appendChild(card);
+    });
+    details.appendChild(grid);
+    detailsRoot.appendChild(details);
+  });
+
+  var caveats = document.getElementById("caveats");
+  data.caveats.forEach(function (item) { caveats.appendChild(node("li", "", item)); });
+  document.getElementById("footer").textContent = "静态只读页面 · 数据截止 " + data.asOf + " · 整体测量置信度 " + pct(data.measurement.confidence) + " · V3 official / V4 provisional shadow";
+}());
+</script>
+</body>
+</html>

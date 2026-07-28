@@ -7,11 +7,11 @@
 <style>
   :root{
     --bg:#faf9f5; --card:#ffffff; --card2:#f6f4ee; --line:#e6e4dc; --line-strong:#cfcdc3;
-    --tx:#1a1a17; --tx2:#5f5e58; --tx3:#93918a; --accent:#b8542a; --accent2:#185fa5;
+    --tx:#1a1a17; --tx2:#5f5e58; --tx3:#93918a; --accent:#b8542a; --accent2:#185fa5; --accent3:#7c3aed;
   }
   @media (prefers-color-scheme: dark){
     :root{ --bg:#1c1b19; --card:#26241f; --card2:#201e1a; --line:#38352f; --line-strong:#4a463e;
-      --tx:#f2f0e9; --tx2:#b8b5ab; --tx3:#88857c; --accent:#e08a5a; --accent2:#85b7eb; }
+      --tx:#f2f0e9; --tx2:#b8b5ab; --tx3:#88857c; --accent:#e08a5a; --accent2:#85b7eb; --accent3:#c4b5fd; }
   }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--tx);
@@ -30,6 +30,9 @@
   .card .bar{position:absolute;top:0;left:0;right:0;height:3px;}
   .c1 .bar{background:var(--accent2);}
   .c2 .bar{background:var(--accent);}
+  .c3 .bar{background:var(--accent3);}
+  .c3{grid-column:1 / -1;}
+  @media(max-width:680px){.c3{grid-column:auto;}}
   .ic{font-size:26px;margin-bottom:12px;}
   .card h2{font-size:18px;font-weight:600;margin:0 0 4px;}
   .card .en{font-size:12px;color:var(--tx3);margin-bottom:12px;letter-spacing:.02em;}
@@ -38,7 +41,7 @@
   .tag{font-size:11px;color:var(--tx2);background:var(--card2);border:0.5px solid var(--line);
     border-radius:6px;padding:3px 8px;}
   .go{font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
-  .c1 .go{color:var(--accent2);} .c2 .go{color:var(--accent);}
+  .c1 .go{color:var(--accent2);} .c2 .go{color:var(--accent);} .c3 .go{color:var(--accent3);}
   .meta{margin-top:40px;padding-top:20px;border-top:0.5px solid var(--line);
     font-size:12px;color:var(--tx3);display:flex;flex-wrap:wrap;gap:18px;}
   .meta b{color:var(--tx2);font-weight:600;}
@@ -82,6 +85,20 @@
       </div>
       <span class="go">进入看板 →</span>
     </a>
+
+    <a class="card c3" href="stability-monitor/dashboard/v3-v4-comparison.html">
+      <div class="bar"></div>
+      <div class="ic">⚖️</div>
+      <h2>V3 / V4 同日比较</h2>
+      <div class="en">Methodology Comparison · Review-only Shadow</div>
+      <p>把 2026-07-22 的同一批证据同时放入 V3 正式口径与 V4 影子结构，检查子维度是否 MECE、证据是否重复计分，以及缺失和低置信数据对结果的影响。V4 仍是审阅实验，不替代正式指数。</p>
+      <div class="tags">
+        <span class="tag">V3 正式 / V4 影子</span>
+        <span class="tag">统一证据台账</span>
+        <span class="tag">只读比较</span>
+      </div>
+      <span class="go">查看比较 →</span>
+    </a>
   </div>
 
   <div id="pendingBox" style="display:none;margin-top:32px;">
@@ -96,7 +113,7 @@
     <span><b>数据源</b> BI · OJK · BPS · 评级机构 · TI</span>
     <span><b>汇率</b> 固定 1 USD = 15,000 IDR</span>
     <span><b>街头热度</b> <a href="stability-monitor/scripts/output/street-heat-latest.html" style="color:var(--accent2)">最新周度确认单 →</a></span>
-    <span><b>更新</b> 2026-07-16</span>
+    <span><b>更新</b> 2026-07-22</span>
   </div>
 </div>
 <script src="pending.js"></script>
@@ -142,3 +159,4 @@ try {
 </script>
 </body>
 </html>
+
