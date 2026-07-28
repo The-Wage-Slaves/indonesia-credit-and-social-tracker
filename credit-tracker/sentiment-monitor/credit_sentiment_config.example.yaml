@@ -1,0 +1,21 @@
+# Copy to credit_sentiment_config.yaml for local runs. The real file is ignored.
+# The collector also falls back to stability-monitor/scripts/street_heat_config.yaml,
+# so existing YouTube / Reddit credentials can be reused without duplication.
+
+youtube:
+  api_key: ""
+
+reddit:
+  client_id: ""
+  client_secret: ""
+
+x:
+  # Optional official X API v2 bearer token. No unofficial scraping is used.
+  bearer_token: ""
+
+llm:
+  # Reserved for reviewed model-based sentiment classification. The deterministic
+  # Indonesian lexicon remains the auditable fallback.
+  api_key: ""
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-chat"
