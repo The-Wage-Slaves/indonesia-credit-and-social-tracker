@@ -19,6 +19,8 @@ const requiredMarkers = [
   'function ManualDataPanel',
   'function P2PPendingPanel',
   'DASHBOARD_DATA_AS_OF',
+  '../sentiment-monitor/output/credit-sentiment-data.js',
+  'Digital Credit Fear Monitor',
 ];
 const missing = requiredMarkers.filter((marker) => !html.includes(marker));
 
