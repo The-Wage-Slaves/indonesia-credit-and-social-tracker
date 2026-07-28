@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Reproducible two-week pilot evidence gathered for human review on 2026-07-28.",
+  "articles": [
+    {
+      "id": "antara-debt-linked-school-threat",
+      "date": "2026-07-15",
+      "title": "Peneror bom di SDN Srengseng Sawah ternyata tak kerja dan terjerat pinjol",
+      "url": "https://m.antaranews.com/amp/berita/5650372/peneror-bom-di-sdn-srengseng-sawah-ternyata-tak-kerja-dan-terjerat-pinjol",
+      "source": "ANTARA",
+      "sourceClass": "established_media",
+      "summary": "Polisi menyebut tersangka ancaman bom tidak memiliki pekerjaan tetap, terlilit utang pinjol dan kerap didatangi penagih.",
+      "eventId": "debt-linked-school-threat-2026-07"
+    },
+    {
+      "id": "rri-consumer-protection-p2sk",
+      "date": "2026-07-15",
+      "title": "OJK Perkuat Perlindungan Konsumen Sektor Jasa Keuangan Melalui UU P2SK",
+      "url": "https://rri.co.id/makassar/regional/2571093/ojk-perkuat-perlindungan-konsumen-sektor-jasa-keuangan-melalui-uu-p2sk",
+      "source": "RRI",
+      "sourceClass": "established_media",
+      "summary": "OJK menjelaskan pencegahan dan perlindungan konsumen sebelum kerugian terjadi.",
+      "eventId": "consumer-protection-education-2026-07"
+    },
+    {
+      "id": "suara-tadpole-risk",
+      "date": "2026-07-17",
+      "title": "Awas Skema Pinjol Tadpole, Bunga Harian Bisa Capai 10%",
+      "url": "https://www.suara.com/bisnis/2026/07/17/170133/awas-skema-pinjol-tadpole-bunga-harian-bisa-capai-10",
+      "source": "Suara",
+      "sourceClass": "established_media",
+      "summary": "YLKI menyoroti tenor pendek, cicilan besar di awal, dugaan penipuan pemasaran dan kewajiban pembayaran yang memberatkan konsumen.",
+      "eventId": "pindar-tadpole-practice-2026-07"
+    },
+    {
+      "id": "ojk-hoax-alert",
+      "date": "2026-07-15",
+      "title": "HOAX Alert: OJK tidak pernah ada kebijakan penghapusan utang pinjol",
+      "url": "https://www.ojk.go.id/id/default.aspx?title=ojk",
+      "source": "OJK",
+      "sourceClass": "primary",
+      "summary": "OJK mengingatkan masyarakat terhadap informasi palsu tentang penghapusan utang pinjol.",
+      "eventId": "pinjol-debt-writeoff-hoax-2026-07"
+    },
+    {
+      "id": "kontan-pindar-profit-quality",
+      "date": "2026-07-20",
+      "title": "Laba Industri Pindar Naik 37,43% per Mei 2026, Kualitas Pembiayaan Masih Jadi Catatan",
+      "url": "https://keuangan.kontan.co.id/news/laba-industri-pindar-naik-3743-per-mei-2026-kualitas-pembiayaan-masih-jadi-catatan",
+      "source": "Kontan",
+      "sourceClass": "established_media",
+      "summary": "Laba naik tetapi pengamat menilai skema tadpole dapat memberatkan konsumen dan TWP90 4,42% masih dekat batas 5%.",
+      "eventId": "pindar-credit-quality-may-2026"
+    },
+    {
+      "id": "kontan-pindar-concentration",
+      "date": "2026-07-20",
+      "title": "Laba Industri Pindar Naik, Pertumbuhan Masih Ditopang Pemain Besar",
+      "url": "https://keuangan.kontan.co.id/news/laba-industri-pindar-naik-pertumbuhan-masih-ditopang-pemain-besar",
+      "source": "Kontan",
+      "sourceClass": "established_media",
+      "summary": "Sebanyak 18 penyelenggara memiliki TWP90 di atas 5% dan delapan belum memenuhi ekuitas minimum.",
+      "eventId": "pindar-credit-quality-may-2026"
+    },
+    {
+      "id": "kontan-samir-growth",
+      "date": "2026-07-21",
+      "title": "Fintech Samir Catatkan Kenaikan Pembiayaan 84% per Juni 2026",
+      "url": "https://keuangan.kontan.co.id/news/fintech-samir-catatkan-kenaikan-pembiayaan-84-per-juni-2026",
+      "source": "Kontan",
+      "sourceClass": "established_media",
+      "summary": "Pembiayaan Samir meningkat dan laba industri pindar tumbuh, namun kualitas bisnis tetap perlu diukur bersama risiko.",
+      "eventId": "samir-growth-2026h1"
+    },
+    {
+      "id": "swa-samir-growth",
+      "date": "2026-07-22",
+      "title": "Pindar Samir Salurkan Pembiayaan Rp2,3 Triliun pada Semester I 2026, Tumbuh 84%",
+      "url": "https://swa.co.id/read/475178/pindar-samir-salurkan-pembiayaan-rp23-triliun-pada-semester-i-2026-tumbuh-84",
+      "source": "SWA",
+      "sourceClass": "established_media",
+      "summary": "Samir melaporkan pertumbuhan pembiayaan dan kerja sama dengan sebelas institutional lender.",
+      "eventId": "samir-growth-2026h1"
+    },
+    {
+      "id": "ojk-kredivo-kredifazz-call",
+      "date": "2026-07-24",
+      "title": "OJK Panggil Kredivo dan KrediFazz Terkait Dugaan Pelanggaran Etika Penagihan di Purworejo",
+      "url": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Panggil-Kredivo-dan-KrediFazz-Terkait-Dugaan-Pelanggaran-Etika-Penagihan-di-Purworejo.aspx",
+      "source": "OJK",
+      "sourceClass": "primary",
+      "summary": "OJK memanggil manajemen setelah informasi dugaan tindakan tidak patut petugas penagihan dan meminta investigasi serta perbaikan.",
+      "eventId": "kredivo-kredifazz-purworejo-2026-07"
+    },
+    {
+      "id": "sindo-kredivo-settlement",
+      "date": "2026-07-24",
+      "title": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai",
+      "url": "https://daerah.sindonews.com/newsread/1731977/174/kasus-debt-collector-dan-nasabah-digerebek-di-purworejo-berakhir-damai-1784902039",
+      "source": "SindoNews",
+      "sourceClass": "established_media",
+      "summary": "Polisi menyatakan tidak menemukan bukti tindak pidana; perusahaan mengevaluasi penagihan dan memberi sanksi kepada petugas.",
+      "eventId": "kredivo-kredifazz-purworejo-2026-07"
+    },
+    {
+      "id": "suara-kredivo-settlement",
+      "date": "2026-07-25",
+      "title": "Kasus Debt Collector Kredivo di Purworejo Berakhir Damai, Perusahaan Perkuat Pengawasan Penagihan",
+      "url": "https://www.suara.com/bisnis/2026/07/25/161717/kasus-debt-collector-kredivo-di-purworejo-berakhir-damai-perusahaan-perkuat-pengawasan-penagihan",
+      "source": "Suara",
+      "sourceClass": "established_media",
+      "summary": "Kredivo dan KrediFazz memenuhi panggilan OJK, melanjutkan investigasi dan memperkuat tata kelola penagihan.",
+      "eventId": "kredivo-kredifazz-purworejo-2026-07"
+    }
+  ]
+}
