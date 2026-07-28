@@ -2,116 +2,105 @@
 
 Last updated: 2026-07-28
 
-## Current State
+## Current state
 
-- Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker` (private, main branch).
-- 方法论命名(2026-07-28 用户拍板): 生产/正式版=「全景等权版」(Panoramic Equal-Weight, 内部代号 v3)；影子/实验版=「数据置信版」(Data-Confidence, 内部代号 v4)。代码/文件内部仍用 v3/v4 标识以免破坏引用；对外统一用中文名。
-- Merged 至 main: PR #1(安全加固)、PR #2(V3周更)、PR #3(V4影子脚手架)、**PR #4(数据置信版 算分器/单测/对比页/证据台账,纯影子)**、以及 07-28 周更+改名。
-- 全景等权版(V3)是唯一生产口径; 数据置信版(V4)是只读影子,不得当作新的正式周分呈现。
-- 数据置信版目前只需两个结论点: 07-22 + 07-28(本周,值同07-22因安静确认周)。不做 07-07/16 补测。
-- GitHub Pages 在当前私有计划下不可用,自动发布保持禁用。
+- Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker` (private).
+- `main` contains PR #1–#4 and the 2026-07-28 confirmed production snapshot.
+- 全景等权版（内部代号 V3）仍是唯一正式口径。
+- 数据置信版（内部代号 V4）仍是只读影子口径，不得自动替换正式分数。
+- PR #5 adds V4 evidence-quality controls and the digital-credit fear monitor.
 
-## Official V3 Snapshot
+## PR #5 — V4 evidence-quality upgrade
 
-Cutoff: 2026-07-22.
+The 2026-07-28 score was rerun on the same evidence cutoff:
 
-| Pillar | Score |
+| Metric | Result |
 |---|---:|
-| Fiscal | 48 |
-| Currency | 40 |
-| Institutions | 37 |
-| Social | 55 |
-| Coercive | 37 |
-| Equal-weight composite | 43.4 (UI: 43) |
+| Official equal-weight V3 | 43.4 |
+| V3 under proposed V4 pillar weights | 45.0 |
+| V4 shadow | 46.4 |
+| Methodology delta | +1.4 |
+| Evidence-quality index | 65.9% |
+| Availability quality | 74.1% |
+| Freshness quality | 96.3% |
+| Source directness | 69.3% |
+| Raw-input traceability | 68.8% |
 
-Key decisions from merged PR #2:
+Pillar scores remain 52.2 / 45.6 / 36.9 / 50.7 / 37.3. The unchanged
+score is intentional: PR #5 improves provenance and measurement disclosure,
+not the underlying same-date facts.
 
-- BI June reserves corrected to USD145.6bn / 5.5 months; V3 external-liquidity score is 60.
-- The DSI timing/scope shift is counted only under institutional policy predictability, not again under fiscal.
-- No subjective weekly bumps were added for defense efficiency, portfolio flows, protest evidence, or degraded crawler coverage.
-- `engine.js` renders `DATA.weeklyAnalysis`; the weekly note is no longer hardcoded.
+Important changes:
 
-## Draft PR #4
+- Statistical drivers must use `evidence_weighted` inputs with raw value, unit,
+  transform, score and weight; they may not use a subjective `bridgeScore`.
+- Every observation records observed/retrieved dates, maximum age, source type,
+  source family and underlying event ID.
+- Stale evidence requires an explicit carry-forward reason.
+- “74.1% confidence” was split into availability, freshness, source directness
+  and raw traceability. The combined 65.9% evidence-quality index is not an
+  accuracy probability.
+- Missing inputs remain visible. Shadow mode may renormalize with disclosure;
+  production mode must carry forward with expiry or withhold publication.
+- Trigger tests include the exact four-week boundary and stale-evidence cases.
 
-PR #4 compares the same 2026-07-22 evidence cutoff under V3 and V4:
+## PR #5 — digital-credit fear monitor
 
-- Canonical evidence ledger: `stability-monitor/data/evidence/2026-07-22.json`.
-- V4 same-date bridge input: `stability-monitor/data/v4-shadow-input.json`.
-- Reproducible scorer/validator: `stability-monitor/scripts/score_v4_shadow.py`.
-- Generated JSON and browser-local JS comparison artifacts in `stability-monitor/data/`.
-- Read-only page: `stability-monitor/dashboard/v3-v4-comparison.html`.
-- Machine-evaluated coercive red triggers and human-confirmed history: `stability-monitor/data/v4-shadow-history.json`.
-- Weekly operating procedure: `stability-monitor/docs/V4_WEEKLY_RUNBOOK.md`.
-- Homepage entry and CI stale-output / MECE ownership checks.
+Main files:
 
-Current confidence-aware shadow result:
+- `credit-tracker/sentiment-monitor/credit_sentiment.py`
+- `credit-tracker/sentiment-monitor/fixtures/recent-two-weeks.json`
+- `credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json`
+- `credit-tracker/dashboard/credit-dashboard.html` section 4
+- `.github/workflows/weekly-credit-sentiment.yml`
 
-| Pillar | V4 weight | V3 pillar | V4 shadow | Delta | Measurement confidence |
-|---|---:|---:|---:|---:|---:|
-| Fiscal | 25% | 48.0 | 52.2 | +4.2 | 81.5% |
-| Currency | 25% | 40.0 | 45.6 | +5.6 | 78.8% |
-| Institutions | 15% | 37.0 | 36.9 | -0.1 | 71.5% |
-| Social | 25% | 55.0 | 50.7 | -4.3 | 67.3% |
-| Coercive | 10% | 37.0 | 37.3 | +0.3 | 64.5% |
+Pilot results:
 
-- Official equal-weight V3 composite: 43.4.
-- The same V3 pillar scores under the proposed V4 weights: 45.0.
-- V4 shadow composite: 46.4; methodology delta versus the same-weight V3 baseline: +1.4.
-- Overall measurement confidence: 74.1%; low-confidence planned weight: 17.0%; missing planned weight: 3.8%.
+| Complete week | Fear index | Alert |
+|---|---:|---|
+| 2026-07-13–2026-07-19 | 63.8 | Amber |
+| 2026-07-20–2026-07-26 | 69.6 | Red |
 
-Interpretation guardrails:
+The Kredivo/KrediFazz Purworejo collection incident passes the red evidence
+gate because it has an OJK primary release and independent corroborating media.
+The index measures short-term fear/attention shock, not solvency or brand favorability.
 
-- The +1.4 delta is a methodology-structure effect, not a claim that conditions improved.
-- Monetary transmission has no same-format series yet; its 15% currency weight is missing and displayed as 85% coverage.
-- Social and coercive low-confidence driver weights were reduced to 40% and 30%, respectively.
-- Social retains a 25% pillar weight because it is a core early-warning construct; crawler confidence must be earned through coverage and validation gates.
-- Coercive routine weight is 10%, with separate red-alert triggers for verified armed conflict, defection, parallel command, or rapid collapse.
-- Current trigger level is `normal`; the four-week drop rule is `not_evaluable` because 2026-07-22 is the first confirmed V4 shadow snapshot.
-- Each observation has one primary scoring owner. Cross-references may add context but may not add another score contribution.
+The scheduled workflow runs every Monday. It writes only pending artifacts to
+`bot/weekly-credit-sentiment`, opens or refreshes a review PR, and creates a
+deduplicated red-alert GitHub issue only when the strict evidence gate passes.
+It never writes confirmed dashboard history directly.
 
 ## Validation
 
-From the repository root:
+From repository root:
 
 ```powershell
 python stability-monitor/scripts/score_v4_shadow.py --check-output
+python -m unittest discover -s stability-monitor/scripts -p "test_*.py"
+python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
+node credit-tracker/dashboard/build_credit_html.mjs
 node .github/scripts/validate_repo.mjs
 ```
 
-The GitHub Actions workflow runs both checks on every pull request. Do not merge PR #4 until all checks pass and the owner approves the V4 shadow interpretation.
+## Next priorities
 
-Weekly shadow generation after updating and reviewing the evidence:
+1. Accumulate at least eight weekly credit-sentiment observations, then replace
+   the pilot week-on-week volume component with rolling median + MAD.
+2. Replace V4 migration-anchor transforms with 24–36 months of raw histories.
+3. Add YouTube comments and Kaskus forum/21 to the stability street-heat source pool.
+4. Complete OJK new-portal parsing and the remaining P2P source gaps.
 
-```powershell
-python stability-monitor/scripts/score_v4_shadow.py --write-output
-python stability-monitor/scripts/score_v4_shadow.py --append-history --confirmed
-```
-
-The second command is deliberately gated by the explicit `--confirmed` flag. It never updates V3 production data.
-
-## Next Priorities
-
-1. Review PR #4 and approve or revise the proposed 25/25/15/25/10 pillar weights and formal formulas.
-2. Open a separate crawler-upgrade PR: YouTube comments, Kaskus `forum/21`, fixed quotas, Wilson intervals, blind review, and 12/26-week promotion gates.
-3. OJK new portal parsing for `data.ojk.go.id/SJKPublic`.
-4. Manual confirmation for Modalku dual definitions and an ADA Pundi replacement source.
-5. Define the credit-dashboard sentiment panel before implementation.
-
-## Takeover Prompt
+## Takeover prompt
 
 ```text
-Take over: read AGENTS.md, CLAUDE.md, and HANDOFF.md; check git status, git log -5, and git diff origin/main...HEAD; summarize the last completed changes; then continue the next item in HANDOFF.md.
+Take over: read AGENTS.md, CLAUDE.md and HANDOFF.md; inspect main and open PRs;
+summarize the latest merged changes and pending review artifacts; then continue
+the first unfinished priority without bypassing human confirmation.
 ```
 
-Chinese:
+## Operating notes
 
-```text
-接手：读取 AGENTS.md、CLAUDE.md 和 HANDOFF.md；检查 git status、git log -5、git diff origin/main...HEAD；总结上一轮修改；然后继续 HANDOFF.md 里的下一项。
-```
-
-## Operating Notes
-
-- Follow the human-in-loop rule: scripts may prepare review artifacts but must not directly change production scores.
-- Before switching Codex/Claude Code, commit the current branch and refresh this file.
-- Never commit keys, tokens, cookies, or private account data.
-- The current local workspace's `.git` metadata is not reliable; GitHub main/PR branches are the source of truth until a clean clone is made.
+- Never commit keys, tokens, cookies or private account data.
+- Scripts prepare review artifacts; only a human-approved merge may publish them.
+- The current local root `.git` metadata is unreliable. GitHub `main` and PR
+  branches are the source of truth until a clean clone is made.
