@@ -1,16 +1,14 @@
 # Agent Handoff
 
-Last updated: 2026-07-22
+Last updated: 2026-07-28
 
 ## Current State
 
-- Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`
-- Visibility: private
-- Main branch: `main`
-- PR `#1` (Codex security/reliability pass) is MERGED into `main`.
-- Active PR: `#2` — weekly stability score refresh.
-- PR branch: `chore/stability-week-2026-07-22`
-- GitHub Pages is not available on the current private-repository plan. Automatic Pages publishing stays disabled.
+- Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker` (private, main branch).
+- 方法论命名(2026-07-28): 生产/正式版=「全景等权版」(Panoramic Equal-Weight, 内部代号 v3)；影子/实验版=「数据置信版」(Data-Confidence, 内部代号 v4)。代码/文件内部仍用 v3/v4 标识以免破坏引用；对外统一用中文名。
+- Active PR: `chore/stability-week-2026-07-28-rename` — 本周(07-28,安静确认周)快照五柱维持 48/40/37/55/37 + 全景等权版/数据置信版 改名。
+- PR `#4` 仍开: 「数据置信版」的算分器/单测/V3-V4对比页/证据台账(纯影子,不碰生产看板)。待办: 合并 PR#4 后给数据置信版补测 07-07/16/22/28 四期,与全景等权版并排对比。
+- GitHub Pages 在当前私有计划下不可用,自动发布保持禁用。
 
 ## Last Completed Work (PR #2, by Claude Code)
 

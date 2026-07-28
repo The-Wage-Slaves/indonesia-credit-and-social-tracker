@@ -116,7 +116,7 @@ window.toggle = function(id){ openPillars[id] = !openPillars[id]; render(); };
 window.setPreset = function(k){ weights = {...WEIGHT_PRESETS[k]}; render(); };
 
 function render(){
-  document.getElementById('asOf').textContent = `截至 ${DATA.asOf} · 深度方法论版`;
+  document.getElementById('asOf').textContent = `截至 ${DATA.asOf} · 全景等权版`;
   const comp = composite();
   const ca = alertLevel(comp);
   document.getElementById('app').innerHTML = `
