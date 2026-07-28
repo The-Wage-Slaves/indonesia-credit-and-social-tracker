@@ -5,10 +5,28 @@ Last updated: 2026-07-28
 ## Current state
 
 - Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker` (private).
-- `main` contains PR #1–#4 and the 2026-07-28 confirmed production snapshot.
+- `main` contains PR #1–#5 and the 2026-07-28 confirmed production snapshot.
 - 全景等权版（内部代号 V3）仍是唯一正式口径。
 - 数据置信版（内部代号 V4）仍是只读影子口径，不得自动替换正式分数。
-- PR #5 adds V4 evidence-quality controls and the digital-credit fear monitor.
+- PR #6 is a review-only branch upgrading the fear monitor to a news/social
+  dual engine. Do not merge it without human review.
+
+## PR #6 — news/social fear monitor v2 (pending review)
+
+The v2 formula is 25% news-density shock + 20% news negativity + 20% social
+volume shock + 20% social negativity + 15% verified-event severity. Data
+confidence is separate and never lowers risk. Missing components are excluded,
+the available weight is disclosed, and the result is labelled provisional.
+
+Live source coverage now includes every channel used by the stability street
+heat monitor: Google Trends, Kaskus, YouTube, GDELT volume/tone and mainstream
+RSS, with Reddit as an active fallback. It also adds Google News and an optional
+official X API adapter. YouTube captures comments as well as video titles.
+
+The reviewed two-week fixture contains news evidence only, so the regenerated
+preview correctly shows social pressure as unavailable rather than inventing
+social observations. A live weekly run fills social evidence where configured.
+The weekly workflow remains human-in-the-loop and does not write `main`.
 
 ## PR #5 — V4 evidence-quality upgrade
 
