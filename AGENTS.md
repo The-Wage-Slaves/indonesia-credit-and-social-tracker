@@ -24,7 +24,7 @@ credit-tracker/
   dashboard/credit-dashboard.html   # 信贷看板（数据+逻辑单一真源，手工维护，React/Recharts CDN）
   update_credit.py                  # 月度取数: BI Tabel_17 / OJK监控 / Shopee直抓
   p2p-scraper/scraper.mjs           # Playwright 10家P2P官网抓取(8/10已通,逐家定制提取器)
-  sentiment-monitor/credit_sentiment.py # 周度新闻/舆情恐慌指数 → pending待确认 + 红色证据门
+  sentiment-monitor/credit_sentiment.py # 周度新闻+社媒双引擎恐慌指数 → pending待确认 + 红色证据门
   PROJECT_BRIEF.md                  # 数据源行列映射 + 技术决策（改提取逻辑前必读）
 stability-monitor/
   dashboard/data.js                 # ★ 五支柱评分数据(唯一要常改的文件)
@@ -44,8 +44,8 @@ stability-monitor/
    改分后自行验算（`node -e` 对 data.js 求值核对）。
 3. **口径稳定**：FX 固定 15000（不用实时汇率，保历史可比）；量表/阈值档是经校验的
    校准（见 METHODOLOGY_V3_PROPOSAL.md），调整需先与所有者讨论，不要顺手改。
-4. **密钥**：`street_heat_config.yaml` 含真实key，已被 .gitignore 排除。模板见
-   `street_heat_config.example.yaml`。不要把key写进任何会提交的文件。
+4. **密钥**：`street_heat_config.yaml` / `credit_sentiment_config.yaml` 含真实key，
+   已被 .gitignore 排除。只提交各自的 example 模板，不要把key写进任何会提交的文件。
 5. **外部接口的已知坑**：GDELT 限流约1次/5秒勿密集测试；Google Trends/OJK新门户
    (data.ojk.go.id) 在部分网络不可达；Kaskus 偶发掐连接需退避重试；unpkg 不可用。
 
