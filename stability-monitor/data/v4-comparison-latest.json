@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "review-only-shadow",
-  "asOf": "2026-07-22",
+  "asOf": "2026-07-28",
   "official": {
     "methodology": "V3",
     "composite": 43.4,
@@ -452,7 +452,7 @@
       ]
     }
   ],
-  "evidenceFile": "evidence/2026-07-22.json",
+  "evidenceFile": "evidence/2026-07-28.json",
   "caveats": [
     "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
     "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",

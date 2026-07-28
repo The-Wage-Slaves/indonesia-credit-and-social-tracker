@@ -137,7 +137,7 @@ for (const pillar of v4Input.pillars) {
 }
 assert(referencedEvidence.size === observations.size, 'V4 evidence ledger contains unreferenced observations');
 
-const comparison = JSON.parse(read('stability-monitor/data/v4-comparison-2026-07-22.json'));
+const comparison = JSON.parse(read(`stability-monitor/data/v4-comparison-${v4Input.asOf}.json`));
 const comparisonLatest = JSON.parse(read('stability-monitor/data/v4-comparison-latest.json'));
 const comparisonJs = read('stability-monitor/data/v4-comparison-data.js').trim();
 assert(comparisonJs.startsWith('const V4_COMPARISON = ') && comparisonJs.endsWith(';'), 'V4 comparison JS wrapper is invalid');

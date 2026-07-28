@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "status": "review-only-shadow",
+  "asOf": "2026-07-28",
+  "official": {
+    "methodology": "V3",
+    "composite": 43.4,
+    "displayScore": 43,
+    "pillarWeights": {
+      "fiscal": 0.2,
+      "currency": 0.2,
+      "institutions": 0.2,
+      "social": 0.2,
+      "coercive": 0.2
+    },
+    "scores": {
+      "fiscal": 48.0,
+      "currency": 40.0,
+      "institutions": 37.0,
+      "social": 55.0,
+      "coercive": 37.0
+    }
+  },
+  "reweightedBaseline": {
+    "methodology": "V3 scores with proposed V4 pillar weights",
+    "composite": 45.0,
+    "pillarWeights": {
+      "fiscal": 0.25,
+      "currency": 0.25,
+      "institutions": 0.15,
+      "social": 0.25,
+      "coercive": 0.1
+    }
+  },
+  "shadow": {
+    "methodology": "V4",
+    "composite": 46.4,
+    "delta": 1.4,
+    "pillarWeights": {
+      "fiscal": 0.25,
+      "currency": 0.25,
+      "institutions": 0.15,
+      "social": 0.25,
+      "coercive": 0.1
+    },
+    "publicationStatus": "provisional-shadow"
+  },
+  "measurement": {
+    "confidence": 0.741,
+    "lowConfidenceWeight": 0.17,
+    "missingWeight": 0.038,
+    "confidenceFactors": {
+      "high": 1.0,
+      "medium": 0.75,
+      "low": 0.4,
+      "missing": 0.0
+    }
+  },
+  "ratings": {
+    "medianScore": 59.5,
+    "rule": "Rating level first; outlook adjusts by at most half a notch.",
+    "agencies": [
+      {
+        "agency": "S&P",
+        "rating": "BBB",
+        "commonRating": "BBB",
+        "outlook": "stable",
+        "effectiveIndex": 8.0,
+        "score": 61.9,
+        "source": "https://www.bi.go.id/en/iru/highlight-news/Pages/-S%26P-Affirmed-Indonesia%E2%80%99s-Sovereign-Credit-Rating-at-BBB-with-Stable-Outlook.aspx"
+      },
+      {
+        "agency": "Fitch",
+        "rating": "BBB",
+        "commonRating": "BBB",
+        "outlook": "negative",
+        "effectiveIndex": 8.5,
+        "score": 59.5,
+        "source": "https://www.bi.go.id/en/iru/economic-market-data/Pages/-Fitch-Affirms-the-Republic-of-Indonesia%E2%80%99s-Rating-at-BBB-and-Revises-Outlook-to-Negative.aspx"
+      },
+      {
+        "agency": "Moody's",
+        "rating": "Baa2",
+        "commonRating": "BBB",
+        "outlook": "negative",
+        "effectiveIndex": 8.5,
+        "score": 59.5,
+        "source": "https://www.bi.go.id/en/iru/economic-market-data/Pages/Moody%27s-Affirmed-the-Republic-of-Indonesia%27s-Sovereign-Credit-Rating-at-Baa2%2C-Outlook-Revised-to-Negative.aspx"
+      }
+    ]
+  },
+  "pillars": [
+    {
+      "id": "fiscal",
+      "label": "财政与外部脆弱性",
+      "v3Score": 48.0,
+      "v4ShadowScore": 52.2,
+      "delta": 4.2,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
+      "lowConfidenceWeight": 0.1,
+      "measurementConfidence": 0.815,
+      "nonOrdinalPlannedWeight": 0.9,
+      "pillarWeight": 0.25,
+      "drivers": [
+        {
+          "id": "public_finance",
+          "label": "预算流量与债务负担",
+          "weight": 0.3,
+          "score": 55.0,
+          "evidenceClass": "statistical",
+          "availability": "medium",
+          "observationIds": [
+            "fiscal_public_finance_2026q1"
+          ],
+          "basis": "连续财政变量的迁移代理；后续补齐收入/GDP、利息/收入和 r-g 历史序列。",
+          "missingReason": null
+        },
+        {
+          "id": "external_liquidity",
+          "label": "官方外部流动性缓冲",
+          "weight": 0.25,
+          "score": 60.0,
+          "evidenceClass": "statistical",
+          "availability": "high",
+          "observationIds": [
+            "bi_reserves_2026_06"
+          ],
+          "basis": "BI 2026年6月官方外储145.6亿美元、覆盖5.5个月进口；只在财政/外部支柱计一次。",
+          "missingReason": null
+        },
+        {
+          "id": "funding_mismatch",
+          "label": "外部融资与币种期限错配",
+          "weight": 0.2,
+          "score": 40.0,
+          "evidenceClass": "statistical",
+          "availability": "medium",
+          "observationIds": [
+            "funding_mismatch_2026_05"
+          ],
+          "basis": "保留外债与外国持债结构，不重复使用短期市场流量。",
+          "missingReason": null
+        },
+        {
+          "id": "contingent_liabilities",
+          "label": "或有与准财政负债",
+          "weight": 0.1,
+          "score": 38.0,
+          "evidenceClass": "ordinal",
+          "availability": "low",
+          "observationIds": [
+            "contingent_liabilities_2026_07"
+          ],
+          "basis": "仅使用可确认担保和资产负债表敞口；DSI政策时点变化不在这里重复扣分。",
+          "missingReason": null
+        },
+        {
+          "id": "sovereign_rating",
+          "label": "主权评级水平与方向",
+          "weight": 0.15,
+          "score": 59.5,
+          "evidenceClass": "external_rating",
+          "availability": "high",
+          "observationIds": [
+            "rating_sp_2026_07_13",
+            "rating_fitch_2026_03_04",
+            "rating_moodys_2026_02_05"
+          ],
+          "basis": "评级等级先决定主分，展望仅作±0.5 notch调整；BBB正面仍低于A-负面。",
+          "missingReason": null
+        }
+      ]
+    },
+    {
+      "id": "currency",
+      "label": "货币与市场信心",
+      "v3Score": 40.0,
+      "v4ShadowScore": 45.6,
+      "delta": 5.6,
+      "coverage": 0.85,
+      "missingWeight": 0.15,
+      "lowConfidenceWeight": 0.0,
+      "measurementConfidence": 0.787,
+      "nonOrdinalPlannedWeight": 1.0,
+      "pillarWeight": 0.25,
+      "drivers": [
+        {
+          "id": "inflation_expectations",
+          "label": "通胀与预期锚定",
+          "weight": 0.3,
+          "score": 60.0,
+          "evidenceClass": "statistical",
+          "availability": "high",
+          "observationIds": [
+            "inflation_2026_06"
+          ],
+          "basis": "使用通胀相对目标的状态，不引用汇率或外储。",
+          "missingReason": null
+        },
+        {
+          "id": "fx_stress",
+          "label": "汇率压力",
+          "weight": 0.3,
+          "score": 38.0,
+          "evidenceClass": "statistical",
+          "availability": "high",
+          "observationIds": [
+            "fx_idr_2026_07_20"
+          ],
+          "basis": "使用同日汇率读数，未来改为自身历史分位与波动率；不重复计入外储。",
+          "missingReason": null
+        },
+        {
+          "id": "monetary_transmission",
+          "label": "国内金融条件与货币传导",
+          "weight": 0.15,
+          "score": null,
+          "evidenceClass": "statistical",
+          "availability": "missing",
+          "observationIds": [],
+          "basis": "缺失权重按可用项归一化，不以主观分数补洞。",
+          "missingReason": "截至本期未形成政策利率—同业—贷款利率的同口径历史序列。"
+        },
+        {
+          "id": "market_access",
+          "label": "资本流动与市场准入",
+          "weight": 0.25,
+          "score": 37.5,
+          "evidenceClass": "statistical",
+          "availability": "medium",
+          "observationIds": [
+            "market_access_2026_07"
+          ],
+          "basis": "V3股市/外资流向与主权风险定价的迁移均值；外储不进入本项。",
+          "missingReason": null
+        }
+      ]
+    },
+    {
+      "id": "institutions",
+      "label": "制度与政策可预见性",
+      "v3Score": 37.0,
+      "v4ShadowScore": 36.9,
+      "delta": -0.1,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
+      "lowConfidenceWeight": 0.1,
+      "measurementConfidence": 0.715,
+      "nonOrdinalPlannedWeight": 0.9,
+      "pillarWeight": 0.15,
+      "drivers": [
+        {
+          "id": "policy_predictability",
+          "label": "决策可预见性",
+          "weight": 0.25,
+          "score": 30.0,
+          "evidenceClass": "event_count",
+          "availability": "medium",
+          "observationIds": [
+            "dsi_policy_shift_2026_07"
+          ],
+          "basis": "DSI政策时点/范围变化只归属政策可预见性一次。",
+          "missingReason": null
+        },
+        {
+          "id": "implementation_capacity",
+          "label": "行政执行能力",
+          "weight": 0.25,
+          "score": 42.0,
+          "evidenceClass": "statistical",
+          "availability": "medium",
+          "observationIds": [
+            "governance_effectiveness_proxy_2026"
+          ],
+          "basis": "国际治理指标作过渡代理，避免与法治和制衡的综合分重复。",
+          "missingReason": null
+        },
+        {
+          "id": "legal_impartiality",
+          "label": "法律适用公正性",
+          "weight": 0.2,
+          "score": 42.0,
+          "evidenceClass": "event_count",
+          "availability": "medium",
+          "observationIds": [
+            "legal_case_registry_2026_07"
+          ],
+          "basis": "唯一案件清单；与强制机构冲突的武装事件记录分离。",
+          "missingReason": null
+        },
+        {
+          "id": "institutional_checks",
+          "label": "关键机构独立与制衡",
+          "weight": 0.2,
+          "score": 30.0,
+          "evidenceClass": "event_count",
+          "availability": "medium",
+          "observationIds": [
+            "institutional_checks_2026_07"
+          ],
+          "basis": "只测制衡事件，不使用通胀、汇率或外储结果。",
+          "missingReason": null
+        },
+        {
+          "id": "elite_continuity",
+          "label": "执政联盟连续性",
+          "weight": 0.1,
+          "score": 45.0,
+          "evidenceClass": "ordinal",
+          "availability": "low",
+          "observationIds": [
+            "elite_continuity_2026_07"
+          ],
+          "basis": "只记录公开退出、倒戈、罢免与联盟破裂，不重复使用选择性执法案件。",
+          "missingReason": null
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "label": "社会与街头",
+      "v3Score": 55.0,
+      "v4ShadowScore": 50.7,
+      "delta": -4.3,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
+      "lowConfidenceWeight": 0.4,
+      "measurementConfidence": 0.672,
+      "nonOrdinalPlannedWeight": 1.0,
+      "pillarWeight": 0.25,
+      "drivers": [
+        {
+          "id": "livelihood_stress",
+          "label": "家庭生计压力",
+          "weight": 0.35,
+          "score": 40.0,
+          "evidenceClass": "statistical",
+          "availability": "medium",
+          "observationIds": [
+            "labour_stress_2026_05"
+          ],
+          "basis": "劳动力和实际生计变量，不使用PMI headline。",
+          "missingReason": null
+        },
+        {
+          "id": "subjective_confidence",
+          "label": "主观经济信心",
+          "weight": 0.25,
+          "score": 50.0,
+          "evidenceClass": "statistical",
+          "availability": "high",
+          "observationIds": [
+            "consumer_confidence_2026_06"
+          ],
+          "basis": "BI消费者信心，未来转为自身历史分位连续映射。",
+          "missingReason": null
+        },
+        {
+          "id": "online_grievance",
+          "label": "线上不满与议题关注",
+          "weight": 0.25,
+          "score": 62.0,
+          "evidenceClass": "automated_proxy",
+          "availability": "low",
+          "observationIds": [
+            "online_grievance_2026_07_22"
+          ],
+          "basis": "保留街头热度爬虫价值，但清楚标记覆盖退化；满12周基线和分类审计前仅作影子输入。",
+          "missingReason": null
+        },
+        {
+          "id": "offline_mobilization",
+          "label": "线下动员与升级",
+          "weight": 0.15,
+          "score": 58.0,
+          "evidenceClass": "event_count",
+          "availability": "low",
+          "observationIds": [
+            "offline_mobilization_2026_07_22"
+          ],
+          "basis": "按事件、城市、规模和升级程度编码；不把触发议题本身当作第二个指标。",
+          "missingReason": null
+        }
+      ]
+    },
+    {
+      "id": "coercive",
+      "label": "强制机构内聚性",
+      "v3Score": 37.0,
+      "v4ShadowScore": 37.3,
+      "delta": 0.3,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
+      "lowConfidenceWeight": 0.3,
+      "measurementConfidence": 0.645,
+      "nonOrdinalPlannedWeight": 0.7,
+      "pillarWeight": 0.1,
+      "drivers": [
+        {
+          "id": "interagency_cohesion",
+          "label": "军警跨机构协调",
+          "weight": 0.4,
+          "score": 32.0,
+          "evidenceClass": "event_count",
+          "availability": "medium",
+          "observationIds": [
+            "armed_interagency_registry_2026_07"
+          ],
+          "basis": "每个武装/对峙事件只有一个主记录；法律程序另属制度支柱。",
+          "missingReason": null
+        },
+        {
+          "id": "role_boundary",
+          "label": "军队角色边界与政治中立",
+          "weight": 0.3,
+          "score": 40.0,
+          "evidenceClass": "event_count",
+          "availability": "medium",
+          "observationIds": [
+            "military_role_boundary_2026_07"
+          ],
+          "basis": "只测文职渗透和正式角色扩张。",
+          "missingReason": null
+        },
+        {
+          "id": "command_cohesion",
+          "label": "垂直指挥链完整性",
+          "weight": 0.15,
+          "score": 38.0,
+          "evidenceClass": "ordinal",
+          "availability": "low",
+          "observationIds": [
+            "command_cohesion_2026_07"
+          ],
+          "basis": "迁移占位；未来只测拒令、异常调动、公开分歧和多重指挥。",
+          "missingReason": null
+        },
+        {
+          "id": "defection_discipline",
+          "label": "执行纪律与倒戈信号",
+          "weight": 0.15,
+          "score": 45.0,
+          "evidenceClass": "ordinal",
+          "availability": "low",
+          "observationIds": [
+            "security_discipline_2026_07"
+          ],
+          "basis": "只纳入军警安全领导层倒戈、拒绝执行和公开阵营分化。",
+          "missingReason": null
+        }
+      ]
+    }
+  ],
+  "evidenceFile": "evidence/2026-07-28.json",
+  "caveats": [
+    "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
+    "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",
+    "Missing V4 inputs are not assigned subjective scores. Shadow mode renormalises available driver weights only to show structure; production V4 must not do this.",
+    "Low-confidence ordinal and crawler inputs have reduced within-pillar weights, remain visible, and cannot be mistaken for high-confidence statistics.",
+    "Each evidence observation has one primary scoring owner to prevent double counting across pillars.",
+    "Coercive tail-risk events use independent alert triggers so a 10% routine weight cannot hide a verified institutional rupture."
+  ],
+  "triggers": {
+    "level": "normal",
+    "active": [],
+    "rules": [
+      {
+        "id": "verified_armed_interagency_event",
+        "label": "经核验的军警实弹冲突或死亡",
+        "condition": "事件为实弹冲突或至少1人死亡，verificationStatus=confirmed，独立来源数≥2",
+        "status": "clear",
+        "matchingSignalIds": []
+      },
+      {
+        "id": "verified_discipline_break",
+        "label": "成建制拒令、倒戈或平行指挥",
+        "condition": "事件类型属于['formed_unit_refusal', 'security_defection', 'parallel_command']，verificationStatus=confirmed，独立来源数≥2",
+        "status": "clear",
+        "matchingSignalIds": []
+      },
+      {
+        "id": "coercive_score_floor",
+        "label": "强制机构支柱跌破红线",
+        "condition": "V4强制机构支柱分<25",
+        "status": "clear",
+        "observed": 37.3
+      },
+      {
+        "id": "four_week_coercive_drop",
+        "label": "四周内强制机构分数快速下跌",
+        "condition": "相对至少四周前下降≥10分，且人工确认并有≥2个独立来源",
+        "status": "not_evaluable",
+        "observed": {
+          "reason": "尚无至少四周前的V4影子基线"
+        }
+      }
+    ],
+    "qualifiedSignalCount": 0,
+    "note": "触发器不改变综合分；它们覆盖低频尾部风险。pending或单一来源事件只进入待确认，不能触发红色警报。"
+  }
+}

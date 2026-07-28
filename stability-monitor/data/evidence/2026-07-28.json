@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-07-28",
+  "purpose": "Canonical evidence ownership ledger for the same-date V3/V4 comparison. Every observation has one primary owner; references elsewhere must not create a second score contribution. (07-28安静确认周:无新触发事件,沿用上周证据)",
+  "triggerSignals": [],
+  "rapidDropReview": {
+    "confirmed": false,
+    "independentSourceCount": 0,
+    "note": "No four-week V4 shadow baseline exists for this first snapshot."
+  },
+  "observations": [
+    {
+      "id": "fiscal_public_finance_2026q1",
+      "date": "2026-03-31",
+      "primaryOwner": "fiscal.public_finance",
+      "label": "Budget balance, debt burden and r-g bridge",
+      "summary": "V4 bridge retains the reviewed V3 public-finance state pending a continuous revenue, interest burden and r-g series.",
+      "confidence": "medium",
+      "sourceText": "Reviewed V3 fiscal data pack as of 2026-07-22"
+    },
+    {
+      "id": "bi_reserves_2026_06",
+      "date": "2026-06-30",
+      "primaryOwner": "fiscal.external_liquidity",
+      "label": "Official reserve assets",
+      "value": 145.6,
+      "unit": "USD billion; 5.5 months of imports and government external debt service",
+      "summary": "BI reported June 2026 reserves of USD145.6bn, equivalent to 5.5 months of imports and government external debt service.",
+      "confidence": "high",
+      "sourceUrl": "https://www.bi.go.id/en/publikasi/ruang-media/news-release/Pages/sp_2815226.aspx"
+    },
+    {
+      "id": "funding_mismatch_2026_05",
+      "date": "2026-05-31",
+      "primaryOwner": "fiscal.funding_mismatch",
+      "label": "External funding and holder structure",
+      "summary": "External debt and foreign ownership structure are retained as the funding-mismatch bridge; short-term portfolio sentiment is excluded.",
+      "confidence": "medium",
+      "sourceText": "Reviewed BI/Ministry of Finance structure data in production V3"
+    },
+    {
+      "id": "contingent_liabilities_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "fiscal.contingent_liabilities",
+      "label": "Confirmed contingent and quasi-fiscal exposures",
+      "summary": "Bridge score uses confirmed guarantees and balance-sheet exposures only. DSI timing/scope uncertainty is excluded and belongs to policy predictability.",
+      "confidence": "low",
+      "sourceText": "Reviewed production V3 contingent-liability evidence pool"
+    },
+    {
+      "id": "rating_sp_2026_07_13",
+      "date": "2026-07-13",
+      "primaryOwner": "fiscal.sovereign_rating",
+      "label": "S&P sovereign rating",
+      "summary": "BBB, stable outlook.",
+      "confidence": "high",
+      "sourceUrl": "https://www.bi.go.id/en/iru/highlight-news/Pages/-S%26P-Affirmed-Indonesia%E2%80%99s-Sovereign-Credit-Rating-at-BBB-with-Stable-Outlook.aspx"
+    },
+    {
+      "id": "rating_fitch_2026_03_04",
+      "date": "2026-03-04",
+      "primaryOwner": "fiscal.sovereign_rating",
+      "label": "Fitch sovereign rating",
+      "summary": "BBB, negative outlook.",
+      "confidence": "high",
+      "sourceUrl": "https://www.bi.go.id/en/iru/economic-market-data/Pages/-Fitch-Affirms-the-Republic-of-Indonesia%E2%80%99s-Rating-at-BBB-and-Revises-Outlook-to-Negative.aspx"
+    },
+    {
+      "id": "rating_moodys_2026_02_05",
+      "date": "2026-02-05",
+      "primaryOwner": "fiscal.sovereign_rating",
+      "label": "Moody's sovereign rating",
+      "summary": "Baa2, negative outlook.",
+      "confidence": "high",
+      "sourceUrl": "https://www.bi.go.id/en/iru/economic-market-data/Pages/Moody%27s-Affirmed-the-Republic-of-Indonesia%27s-Sovereign-Credit-Rating-at-Baa2%2C-Outlook-Revised-to-Negative.aspx"
+    },
+    {
+      "id": "inflation_2026_06",
+      "date": "2026-06-30",
+      "primaryOwner": "currency.inflation_expectations",
+      "label": "Inflation relative to target",
+      "summary": "Reviewed June inflation state used without FX or reserve duplication.",
+      "confidence": "high",
+      "sourceText": "BPS/BI inflation series cited in production V3"
+    },
+    {
+      "id": "fx_idr_2026_07_20",
+      "date": "2026-07-20",
+      "primaryOwner": "currency.fx_stress",
+      "label": "Rupiah spot stress",
+      "summary": "Rupiah returned below 18,000; V3 reproducible driver score is 38. Official project FX conversion remains fixed at 15,000 for historical comparability and is not this stress input.",
+      "confidence": "high",
+      "sourceText": "Reviewed weekly market snapshot for PR #2"
+    },
+    {
+      "id": "market_access_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "currency.market_access",
+      "label": "Market access bridge",
+      "summary": "Migration average of the existing equity/foreign-flow and sovereign risk-pricing drivers; no reserve input is included.",
+      "confidence": "medium",
+      "sourceText": "Production V3 driver evidence as of 2026-07-22"
+    },
+    {
+      "id": "dsi_policy_shift_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "institutions.policy_predictability",
+      "label": "DSI timing and scope change",
+      "summary": "The reviewed DSI timing/scope shift is counted once as a policy-predictability event, not again as a fiscal deduction.",
+      "confidence": "medium",
+      "sourceText": "Reviewed PR #2 evidence and production changeReason"
+    },
+    {
+      "id": "governance_effectiveness_proxy_2026",
+      "date": "2026-07-22",
+      "primaryOwner": "institutions.implementation_capacity",
+      "label": "Government effectiveness migration proxy",
+      "summary": "External governance assessment is retained only as a bridge for implementation capacity, not as a full composite repeated across institutional drivers.",
+      "confidence": "medium",
+      "sourceText": "Production V3 external governance inputs"
+    },
+    {
+      "id": "legal_case_registry_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "institutions.legal_impartiality",
+      "label": "Unique legal impartiality case pool",
+      "summary": "Legal-process observations are owned here. Any armed standoff dimension is a separate observation owned by coercive cohesion.",
+      "confidence": "medium",
+      "sourceText": "Reviewed production V3 case list"
+    },
+    {
+      "id": "institutional_checks_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "institutions.institutional_checks",
+      "label": "Institutional checks event pool",
+      "summary": "Only capture/independence events contribute; macro outcomes do not.",
+      "confidence": "medium",
+      "sourceText": "Production V3 event list"
+    },
+    {
+      "id": "elite_continuity_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "institutions.elite_continuity",
+      "label": "Governing coalition continuity",
+      "summary": "Bridge uses public exit, defection, dismissal and coalition-fracture signals only.",
+      "confidence": "low",
+      "sourceText": "Production V3 elite-cohesion evidence"
+    },
+    {
+      "id": "labour_stress_2026_05",
+      "date": "2026-05-31",
+      "primaryOwner": "social.livelihood_stress",
+      "label": "Household livelihood stress",
+      "summary": "Labour-market pressure bridge; PMI headline is excluded.",
+      "confidence": "medium",
+      "sourceText": "Production V3 labour evidence"
+    },
+    {
+      "id": "consumer_confidence_2026_06",
+      "date": "2026-06-30",
+      "primaryOwner": "social.subjective_confidence",
+      "label": "BI consumer confidence",
+      "summary": "Latest reviewed BI consumer-confidence input.",
+      "confidence": "high",
+      "sourceText": "BI consumer confidence series cited in production V3"
+    },
+    {
+      "id": "online_grievance_2026_07_22",
+      "date": "2026-07-22",
+      "primaryOwner": "social.online_grievance",
+      "label": "Online grievance proxy",
+      "summary": "Crawler output is retained because it measures a distinct channel, but GDELT/Trends coverage was degraded and the baseline is shorter than the 12-week promotion gate.",
+      "confidence": "low",
+      "sourceText": "street_heat.py reviewed weekly output"
+    },
+    {
+      "id": "offline_mobilization_2026_07_22",
+      "date": "2026-07-22",
+      "primaryOwner": "social.offline_mobilization",
+      "label": "Offline mobilisation event pool",
+      "summary": "Reviewed protest evidence remained within the existing band; no subjective weekly point bump was applied.",
+      "confidence": "low",
+      "sourceText": "Reviewed PR #2 protest evidence"
+    },
+    {
+      "id": "armed_interagency_registry_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "coercive.interagency_cohesion",
+      "label": "Armed interagency incident registry",
+      "summary": "Each standoff or armed conflict has one eventId. Legal-process implications, if any, are not scored here.",
+      "confidence": "medium",
+      "sourceText": "Production V3 military-police conflict event list"
+    },
+    {
+      "id": "military_role_boundary_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "coercive.role_boundary",
+      "label": "Military role-boundary registry",
+      "summary": "Formal civilian-role expansion and appointments only; the same law or appointment is not repeated in another driver.",
+      "confidence": "medium",
+      "sourceText": "Production V3 military civilian-role event list"
+    },
+    {
+      "id": "command_cohesion_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "coercive.command_cohesion",
+      "label": "Vertical command-chain bridge",
+      "summary": "Low-confidence migration placeholder pending a direct refusal, abnormal-transfer, public-disagreement and dual-command registry.",
+      "confidence": "low",
+      "sourceText": "Production V3 coercive-institution evidence"
+    },
+    {
+      "id": "security_discipline_2026_07",
+      "date": "2026-07-22",
+      "primaryOwner": "coercive.defection_discipline",
+      "label": "Security leadership discipline bridge",
+      "summary": "Low-confidence migration placeholder restricted to security-leadership defection, refusal and public factionalisation signals.",
+      "confidence": "low",
+      "sourceText": "Production V3 coercive-institution evidence"
+    }
+  ]
+}

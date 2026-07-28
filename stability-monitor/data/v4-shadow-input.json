@@ -1,11 +1,11 @@
 {
   "schemaVersion": 2,
   "status": "shadow-same-date",
-  "asOf": "2026-07-22",
+  "asOf": "2026-07-28",
   "purpose": "Compare the production V3 and a confidence-aware MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
   "warning": "V3 remains official. V4 bridge scores are a migration experiment; the proposed weights and confidence factors do not create a replacement time series.",
   "productionData": "../dashboard/data.js",
-  "evidenceFile": "evidence/2026-07-22.json",
+  "evidenceFile": "evidence/2026-07-28.json",
   "historyFile": "v4-shadow-history.json",
   "redTriggers": {
     "coerciveScoreFloor": 25,
@@ -80,7 +80,9 @@
           "bridgeScore": 55,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "observationIds": ["fiscal_public_finance_2026q1"],
+          "observationIds": [
+            "fiscal_public_finance_2026q1"
+          ],
           "bridgeBasis": "连续财政变量的迁移代理；后续补齐收入/GDP、利息/收入和 r-g 历史序列。"
         },
         {
@@ -90,7 +92,9 @@
           "bridgeScore": 60,
           "evidenceClass": "statistical",
           "availability": "high",
-          "observationIds": ["bi_reserves_2026_06"],
+          "observationIds": [
+            "bi_reserves_2026_06"
+          ],
           "bridgeBasis": "BI 2026年6月官方外储145.6亿美元、覆盖5.5个月进口；只在财政/外部支柱计一次。"
         },
         {
@@ -100,7 +104,9 @@
           "bridgeScore": 40,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "observationIds": ["funding_mismatch_2026_05"],
+          "observationIds": [
+            "funding_mismatch_2026_05"
+          ],
           "bridgeBasis": "保留外债与外国持债结构，不重复使用短期市场流量。"
         },
         {
@@ -110,7 +116,9 @@
           "bridgeScore": 38,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "observationIds": ["contingent_liabilities_2026_07"],
+          "observationIds": [
+            "contingent_liabilities_2026_07"
+          ],
           "bridgeBasis": "仅使用可确认担保和资产负债表敞口；DSI政策时点变化不在这里重复扣分。"
         },
         {
@@ -121,7 +129,11 @@
           "scoreMethod": "rating_ladder",
           "evidenceClass": "external_rating",
           "availability": "high",
-          "observationIds": ["rating_sp_2026_07_13", "rating_fitch_2026_03_04", "rating_moodys_2026_02_05"],
+          "observationIds": [
+            "rating_sp_2026_07_13",
+            "rating_fitch_2026_03_04",
+            "rating_moodys_2026_02_05"
+          ],
           "bridgeBasis": "评级等级先决定主分，展望仅作±0.5 notch调整；BBB正面仍低于A-负面。"
         }
       ]
@@ -138,7 +150,9 @@
           "bridgeScore": 60,
           "evidenceClass": "statistical",
           "availability": "high",
-          "observationIds": ["inflation_2026_06"],
+          "observationIds": [
+            "inflation_2026_06"
+          ],
           "bridgeBasis": "使用通胀相对目标的状态，不引用汇率或外储。"
         },
         {
@@ -148,7 +162,9 @@
           "bridgeScore": 38,
           "evidenceClass": "statistical",
           "availability": "high",
-          "observationIds": ["fx_idr_2026_07_20"],
+          "observationIds": [
+            "fx_idr_2026_07_20"
+          ],
           "bridgeBasis": "使用同日汇率读数，未来改为自身历史分位与波动率；不重复计入外储。"
         },
         {
@@ -169,7 +185,9 @@
           "bridgeScore": 37.5,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "observationIds": ["market_access_2026_07"],
+          "observationIds": [
+            "market_access_2026_07"
+          ],
           "bridgeBasis": "V3股市/外资流向与主权风险定价的迁移均值；外储不进入本项。"
         }
       ]
@@ -186,7 +204,9 @@
           "bridgeScore": 30,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "observationIds": ["dsi_policy_shift_2026_07"],
+          "observationIds": [
+            "dsi_policy_shift_2026_07"
+          ],
           "bridgeBasis": "DSI政策时点/范围变化只归属政策可预见性一次。"
         },
         {
@@ -196,7 +216,9 @@
           "bridgeScore": 42,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "observationIds": ["governance_effectiveness_proxy_2026"],
+          "observationIds": [
+            "governance_effectiveness_proxy_2026"
+          ],
           "bridgeBasis": "国际治理指标作过渡代理，避免与法治和制衡的综合分重复。"
         },
         {
@@ -206,7 +228,9 @@
           "bridgeScore": 42,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "observationIds": ["legal_case_registry_2026_07"],
+          "observationIds": [
+            "legal_case_registry_2026_07"
+          ],
           "bridgeBasis": "唯一案件清单；与强制机构冲突的武装事件记录分离。"
         },
         {
@@ -216,7 +240,9 @@
           "bridgeScore": 30,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "observationIds": ["institutional_checks_2026_07"],
+          "observationIds": [
+            "institutional_checks_2026_07"
+          ],
           "bridgeBasis": "只测制衡事件，不使用通胀、汇率或外储结果。"
         },
         {
@@ -226,7 +252,9 @@
           "bridgeScore": 45,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "observationIds": ["elite_continuity_2026_07"],
+          "observationIds": [
+            "elite_continuity_2026_07"
+          ],
           "bridgeBasis": "只记录公开退出、倒戈、罢免与联盟破裂，不重复使用选择性执法案件。"
         }
       ]
@@ -243,7 +271,9 @@
           "bridgeScore": 40,
           "evidenceClass": "statistical",
           "availability": "medium",
-          "observationIds": ["labour_stress_2026_05"],
+          "observationIds": [
+            "labour_stress_2026_05"
+          ],
           "bridgeBasis": "劳动力和实际生计变量，不使用PMI headline。"
         },
         {
@@ -253,7 +283,9 @@
           "bridgeScore": 50,
           "evidenceClass": "statistical",
           "availability": "high",
-          "observationIds": ["consumer_confidence_2026_06"],
+          "observationIds": [
+            "consumer_confidence_2026_06"
+          ],
           "bridgeBasis": "BI消费者信心，未来转为自身历史分位连续映射。"
         },
         {
@@ -263,7 +295,9 @@
           "bridgeScore": 62,
           "evidenceClass": "automated_proxy",
           "availability": "low",
-          "observationIds": ["online_grievance_2026_07_22"],
+          "observationIds": [
+            "online_grievance_2026_07_22"
+          ],
           "bridgeBasis": "保留街头热度爬虫价值，但清楚标记覆盖退化；满12周基线和分类审计前仅作影子输入。"
         },
         {
@@ -273,7 +307,9 @@
           "bridgeScore": 58,
           "evidenceClass": "event_count",
           "availability": "low",
-          "observationIds": ["offline_mobilization_2026_07_22"],
+          "observationIds": [
+            "offline_mobilization_2026_07_22"
+          ],
           "bridgeBasis": "按事件、城市、规模和升级程度编码；不把触发议题本身当作第二个指标。"
         }
       ]
@@ -290,7 +326,9 @@
           "bridgeScore": 32,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "observationIds": ["armed_interagency_registry_2026_07"],
+          "observationIds": [
+            "armed_interagency_registry_2026_07"
+          ],
           "bridgeBasis": "每个武装/对峙事件只有一个主记录；法律程序另属制度支柱。"
         },
         {
@@ -300,7 +338,9 @@
           "bridgeScore": 40,
           "evidenceClass": "event_count",
           "availability": "medium",
-          "observationIds": ["military_role_boundary_2026_07"],
+          "observationIds": [
+            "military_role_boundary_2026_07"
+          ],
           "bridgeBasis": "只测文职渗透和正式角色扩张。"
         },
         {
@@ -310,7 +350,9 @@
           "bridgeScore": 38,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "observationIds": ["command_cohesion_2026_07"],
+          "observationIds": [
+            "command_cohesion_2026_07"
+          ],
           "bridgeBasis": "迁移占位；未来只测拒令、异常调动、公开分歧和多重指挥。"
         },
         {
@@ -320,7 +362,9 @@
           "bridgeScore": 45,
           "evidenceClass": "ordinal",
           "availability": "low",
-          "observationIds": ["security_discipline_2026_07"],
+          "observationIds": [
+            "security_discipline_2026_07"
+          ],
           "bridgeBasis": "只纳入军警安全领导层倒戈、拒绝执行和公开阵营分化。"
         }
       ]
