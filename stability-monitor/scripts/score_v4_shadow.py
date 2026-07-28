@@ -48,6 +48,8 @@ OUTLOOK_ADJUSTMENT = {
 }
 NON_ORDINAL = {"statistical", "external_rating", "event_count", "automated_proxy"}
 PILLAR_IDS = ("fiscal", "currency", "institutions", "social", "coercive")
+SOURCE_TYPES = {"primary", "secondary", "internal_review", "crawler"}
+SCORE_METHODS = {"evidence_weighted", "rating_ladder", "bridge", "missing"}
 
 WEEKLY_RE = re.compile(
     r'\{\s*date:\s*"(?P<date>\d{4}-\d{2}-\d{2})"\s*,\s*scores:\s*\{\s*'
@@ -88,11 +90,74 @@ def parse_latest_v3(path: pathlib.Path) -> tuple[str, dict[str, float]]:
     return latest.group("date"), {pillar: float(latest.group(pillar)) for pillar in PILLAR_IDS}
 
 
+def parse_date(value: str, field: str) -> dt.date:
+    try:
+        return dt.date.fromisoformat(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(f"{field} must be an ISO date") from exc
+
+
+def observation_quality(
+    observation: dict[str, Any],
+    as_of: dt.date,
+    source_factors: dict[str, float],
+) -> dict[str, float | int | bool]:
+    observed_at = parse_date(observation["observedAt"], f"{observation['id']}.observedAt")
+    retrieved_at = parse_date(observation["retrievedAt"], f"{observation['id']}.retrievedAt")
+    if observed_at > as_of or retrieved_at > as_of:
+        raise ValueError(f"Future-dated evidence observation: {observation['id']}")
+    if retrieved_at < observed_at:
+        raise ValueError(f"retrievedAt precedes observedAt: {observation['id']}")
+    max_age = observation["maxAgeDays"]
+    age_days = (as_of - observed_at).days
+    stale = age_days > max_age
+    if stale and not observation.get("carryForwardReason"):
+        raise ValueError(
+            f"Stale observation {observation['id']} requires carryForwardReason "
+            f"({age_days}d > {max_age}d)"
+        )
+    if not stale:
+        freshness = 1.0
+    else:
+        overdue_ratio = (age_days - max_age) / max_age
+        freshness = max(0.25, 1.0 - 0.5 * overdue_ratio)
+    return {
+        "ageDays": age_days,
+        "stale": stale,
+        "freshness": round(freshness, 3),
+        "sourceDirectness": source_factors[observation["sourceType"]],
+    }
+
+
+def evidence_weighted_score(
+    driver: dict[str, Any],
+    driver_observations: list[dict[str, Any]],
+) -> tuple[float, list[dict[str, Any]]]:
+    components = [
+        component
+        for observation in driver_observations
+        for component in observation.get("scoreInputs", [])
+    ]
+    if not components:
+        raise ValueError(f"{driver['id']} has no scoreInputs")
+    weight_sum = sum(float(component["weight"]) for component in components)
+    if abs(weight_sum - 1.0) > 1e-9:
+        raise ValueError(f"{driver['id']} scoreInput weights must sum to 1")
+    for component in components:
+        if not 0 <= float(component["score"]) <= 100:
+            raise ValueError(f"{driver['id']} scoreInput score must stay within 0-100")
+        if "value" not in component or not component.get("unit") or not component.get("transform"):
+            raise ValueError(f"{driver['id']} scoreInput lacks value/unit/transform")
+    score = sum(float(item["score"]) * float(item["weight"]) for item in components)
+    return score, components
+
+
 def validate_and_index(data: dict[str, Any], evidence: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    if data.get("schemaVersion") != 2 or data.get("status") != "shadow-same-date":
-        raise ValueError("V4 input must use schemaVersion 2 and shadow-same-date status")
+    if data.get("schemaVersion") != 3 or data.get("status") != "shadow-same-date":
+        raise ValueError("V4 input must use schemaVersion 3 and shadow-same-date status")
     if evidence.get("asOf") != data.get("asOf"):
         raise ValueError("Evidence and V4 input must use the same cutoff date")
+    as_of = parse_date(data["asOf"], "asOf")
     for weight_key in ("officialPillarWeights", "pillarWeights"):
         if abs(sum(data[weight_key].values()) - 1.0) > 1e-9:
             raise ValueError(f"{weight_key} must sum to 1")
@@ -102,6 +167,16 @@ def validate_and_index(data: dict[str, Any], evidence: dict[str, Any]) -> dict[s
         raise ValueError("confidenceFactors must define high, medium, low and missing")
     if not all(0.0 <= value <= 1.0 for value in data["confidenceFactors"].values()):
         raise ValueError("confidenceFactors must stay within 0-1")
+    source_factors = data.get("sourceDirectnessFactors", {})
+    if set(source_factors) != SOURCE_TYPES:
+        raise ValueError("sourceDirectnessFactors must define every source type")
+    if not all(0.0 <= value <= 1.0 for value in source_factors.values()):
+        raise ValueError("sourceDirectnessFactors must stay within 0-1")
+    missing_policy = data.get("missingDataPolicy", {})
+    if not 0.0 < missing_policy.get("publishCoverageFloor", 0.0) <= 1.0:
+        raise ValueError("missingDataPolicy.publishCoverageFloor must stay within 0-1")
+    if missing_policy.get("shadowHandling") != "renormalize_with_disclosure":
+        raise ValueError("Shadow missing-data handling must remain explicit")
     trigger_rules = data.get("redTriggers", {})
     if not 0 <= trigger_rules.get("coerciveScoreFloor", -1) <= 100:
         raise ValueError("redTriggers.coerciveScoreFloor must stay within 0-100")
@@ -138,6 +213,13 @@ def validate_and_index(data: dict[str, Any], evidence: dict[str, Any]) -> dict[s
             raise ValueError(f"Invalid confidence for {observation_id}")
         if not observation.get("primaryOwner"):
             raise ValueError(f"Observation {observation_id} has no primaryOwner")
+        if observation.get("sourceType") not in SOURCE_TYPES:
+            raise ValueError(f"Invalid sourceType for {observation_id}")
+        if not observation.get("sourceFamily") or not observation.get("underlyingEventId"):
+            raise ValueError(f"Observation {observation_id} lacks source lineage")
+        if not isinstance(observation.get("maxAgeDays"), int) or observation["maxAgeDays"] <= 0:
+            raise ValueError(f"Observation {observation_id} has invalid maxAgeDays")
+        observation["_quality"] = observation_quality(observation, as_of, source_factors)
         observations[observation_id] = observation
 
     seen_pillars: set[str] = set()
@@ -160,11 +242,25 @@ def validate_and_index(data: dict[str, Any], evidence: dict[str, Any]) -> dict[s
                 raise ValueError(f"Duplicate driver: {owner}")
             driver_ids.add(driver_id)
             observation_ids = driver.get("observationIds", [])
-            if driver.get("bridgeScore") is not None or driver.get("scoreMethod"):
+            score_method = driver.get("scoreMethod")
+            if score_method not in SCORE_METHODS:
+                raise ValueError(f"Invalid scoreMethod for {owner}")
+            if score_method != "missing":
                 if not observation_ids:
                     raise ValueError(f"Scored driver {owner} has no evidence")
-            elif not driver.get("missingReason"):
+            elif not driver.get("missingReason") or observation_ids:
                 raise ValueError(f"Missing driver {owner} must state missingReason")
+            if driver["evidenceClass"] == "statistical" and score_method not in {
+                "evidence_weighted",
+                "missing",
+            }:
+                raise ValueError(f"Statistical driver {owner} may not use a bridge score")
+            if score_method == "bridge" and driver["evidenceClass"] == "statistical":
+                raise ValueError(f"Statistical bridge score prohibited for {owner}")
+            if score_method == "bridge" and driver.get("bridgeScore") is None:
+                raise ValueError(f"Bridge driver {owner} lacks bridgeScore")
+            if score_method != "bridge" and driver.get("bridgeScore") is not None:
+                raise ValueError(f"Non-bridge driver {owner} may not define bridgeScore")
             for observation_id in observation_ids:
                 if observation_id not in observations:
                     raise ValueError(f"Unknown observation {observation_id} used by {owner}")
@@ -239,29 +335,60 @@ def build_result(
     reweighted_v3_composite = 0.0
     v4_composite = 0.0
     composite_measurement_confidence = 0.0
+    composite_availability_quality = 0.0
+    composite_freshness_quality = 0.0
+    composite_source_quality = 0.0
     composite_low_confidence_weight = 0.0
     composite_missing_weight = 0.0
+    composite_raw_traceability_weight = 0.0
     for pillar in data["pillars"]:
         weighted = 0.0
         coverage = 0.0
         non_ordinal = 0.0
         low_confidence = 0.0
         measurement_confidence = 0.0
+        availability_quality = 0.0
+        freshness_quality = 0.0
+        source_quality = 0.0
+        raw_traceability_weight = 0.0
         driver_rows = []
         for driver in pillar["drivers"]:
-            score = driver.get("bridgeScore")
-            if driver.get("scoreMethod") == "rating_ladder":
+            score_method = driver["scoreMethod"]
+            score = None
+            score_inputs: list[dict[str, Any]] = []
+            driver_observations = [observations[item] for item in driver.get("observationIds", [])]
+            if score_method == "rating_ladder":
                 score = sovereign_score
+                raw_traceability_weight += driver["weight"]
+            elif score_method == "evidence_weighted":
+                score, score_inputs = evidence_weighted_score(driver, driver_observations)
+                raw_traceability_weight += driver["weight"]
+            elif score_method == "bridge":
+                score = float(driver["bridgeScore"])
             if driver["evidenceClass"] in NON_ORDINAL:
                 non_ordinal += driver["weight"]
-            driver_observations = [observations[item] for item in driver.get("observationIds", [])]
             if driver["availability"] == "low" or any(
                 item["confidence"] == "low" for item in driver_observations
             ):
                 low_confidence += driver["weight"]
-            measurement_confidence += (
-                driver["weight"] * data["confidenceFactors"][driver["availability"]]
+            availability_factor = data["confidenceFactors"][driver["availability"]]
+            if driver_observations:
+                driver_freshness = statistics.mean(
+                    float(item["_quality"]["freshness"]) for item in driver_observations
+                )
+                driver_source_quality = statistics.mean(
+                    float(item["_quality"]["sourceDirectness"]) for item in driver_observations
+                )
+            else:
+                driver_freshness = 0.0
+                driver_source_quality = 0.0
+            driver_quality = availability_factor * (
+                0.6 * driver_freshness + 0.4 * driver_source_quality
             )
+            availability_quality += driver["weight"] * availability_factor
+            freshness_quality += driver["weight"] * driver_freshness
+            source_quality += driver["weight"] * driver_source_quality
+            measurement_confidence += driver["weight"] * driver_quality
             if score is not None:
                 weighted += float(score) * driver["weight"]
                 coverage += driver["weight"]
@@ -270,8 +397,13 @@ def build_result(
                 "label": driver["label"],
                 "weight": driver["weight"],
                 "score": None if score is None else round1(float(score)),
+                "scoreMethod": score_method,
+                "scoreInputs": score_inputs,
                 "evidenceClass": driver["evidenceClass"],
                 "availability": driver["availability"],
+                "evidenceQuality": round(driver_quality, 3),
+                "freshnessQuality": round(driver_freshness, 3),
+                "sourceDirectness": round(driver_source_quality, 3),
                 "observationIds": driver.get("observationIds", []),
                 "basis": driver["bridgeBasis"],
                 "missingReason": driver.get("missingReason"),
@@ -291,6 +423,10 @@ def build_result(
             "missingWeight": round(1.0 - coverage, 2),
             "lowConfidenceWeight": round(low_confidence, 2),
             "measurementConfidence": round(measurement_confidence, 3),
+            "availabilityQuality": round(availability_quality, 3),
+            "freshnessQuality": round(freshness_quality, 3),
+            "sourceDirectness": round(source_quality, 3),
+            "rawTraceabilityWeight": round(raw_traceability_weight, 2),
             "nonOrdinalPlannedWeight": round(non_ordinal, 2),
             "pillarWeight": data["pillarWeights"][pillar["id"]],
             "drivers": driver_rows,
@@ -301,8 +437,12 @@ def build_result(
         reweighted_v3_composite += pillar["v3Score"] * proposed_weight
         v4_composite += shadow_score * proposed_weight
         composite_measurement_confidence += measurement_confidence * proposed_weight
+        composite_availability_quality += availability_quality * proposed_weight
+        composite_freshness_quality += freshness_quality * proposed_weight
+        composite_source_quality += source_quality * proposed_weight
         composite_low_confidence_weight += low_confidence * proposed_weight
         composite_missing_weight += (1.0 - coverage) * proposed_weight
+        composite_raw_traceability_weight += raw_traceability_weight * proposed_weight
 
     result = {
         "schemaVersion": 1,
@@ -329,9 +469,16 @@ def build_result(
         },
         "measurement": {
             "confidence": round(composite_measurement_confidence, 3),
+            "label": "evidence quality index; not a probability of correctness",
+            "availabilityQuality": round(composite_availability_quality, 3),
+            "freshnessQuality": round(composite_freshness_quality, 3),
+            "sourceDirectness": round(composite_source_quality, 3),
+            "rawTraceabilityWeight": round(composite_raw_traceability_weight, 3),
             "lowConfidenceWeight": round(composite_low_confidence_weight, 3),
             "missingWeight": round(composite_missing_weight, 3),
             "confidenceFactors": data["confidenceFactors"],
+            "sourceDirectnessFactors": data["sourceDirectnessFactors"],
+            "publishCoverageFloor": data["missingDataPolicy"]["publishCoverageFloor"],
         },
         "ratings": {
             "medianScore": round1(sovereign_score),
@@ -344,6 +491,8 @@ def build_result(
             "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
             "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",
             "Missing V4 inputs are not assigned subjective scores. Shadow mode renormalises available driver weights only to show structure; production V4 must not do this.",
+            "Freshness, source directness and availability are reported separately; the combined evidence-quality index is not a statistical accuracy probability.",
+            "Statistical drivers must be computed from evidence scoreInputs. Migration-anchor transforms remain provisional until 24-36 months of raw history are available.",
             "Low-confidence ordinal and crawler inputs have reduced within-pillar weights, remain visible, and cannot be mistaken for high-confidence statistics.",
             "Each evidence observation has one primary scoring owner to prevent double counting across pillars.",
             "Coercive tail-risk events use independent alert triggers so a 10% routine weight cannot hide a verified institutional rupture.",
@@ -591,7 +740,10 @@ def render_console(result: dict[str, Any]) -> None:
         f"V4影子={result['shadow']['composite']:.1f}, 方法变化={result['shadow']['delta']:+.1f}"
     )
     print(
-        f"测量置信度={result['measurement']['confidence']:.1%}, "
+        f"证据质量指数={result['measurement']['confidence']:.1%}, "
+        f"可用性={result['measurement']['availabilityQuality']:.1%}, "
+        f"新鲜度={result['measurement']['freshnessQuality']:.1%}, "
+        f"来源直达度={result['measurement']['sourceDirectness']:.1%}, "
         f"低置信权重={result['measurement']['lowConfidenceWeight']:.1%}, "
         f"缺失权重={result['measurement']['missingWeight']:.1%}"
     )
