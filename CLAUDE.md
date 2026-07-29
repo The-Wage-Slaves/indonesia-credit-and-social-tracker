@@ -1,7 +1,7 @@
 # CLAUDE.md — 印尼监测系统 · 核心参考（防上下文腐烂用）
 
 > 本仓库由「人在环」的 AI 代理（Claude Code / Codex）与一位分析师共同维护。
-> 接手先读：本文件 → `AGENTS.md` → `HANDOFF.md`（当前状态）→ `REVIEW.md`（综述）。
+> 接手先读：本文件 → `AGENTS.md` → `HANDOFF.md`（当前状态）→ `REVIEW.md`（综述）→ `AUTOMATIONS.md`（定时任务）。
 > 本文件是**项目全貌的单一真源**，任何会话冷启动读完即可接上，不必依赖历史对话。
 
 ---
@@ -75,6 +75,8 @@ GitHub 私有仓 `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`（仓
 ---
 
 ## 4. 基础设施与自动化
+
+定时任务、执行器、人工确认点和飞书推送边界以根目录 `AUTOMATIONS.md` 为单一真源；例行数据不得创建 PR。
 
 - **GitHub 私有仓**（含竞对数据+政治分析，**保持私有**）。离线备份 bundle 在 `D:\...\100 Dashboard with AI\`。Pages 私有仓需 Pro，默认禁用（`deploy-pages.yml` 是禁止误发布的守卫）。
 - **CI** `.github/workflows/validate.yml` → `.github/scripts/validate_repo.mjs`：每次 PR/push 校验 JS/Python 语法、pending.json↔js 一致、链接安全、五支柱权重和=1/支柱分=加权和/provenance、数据置信版 comparison/history 一致。**改 data.js 或 v4 后本地先跑它。**
