@@ -520,34 +520,68 @@ function SentimentSection() {
     return (<section id="sec4" style={{scrollMarginTop:64}}>
       <SectionHead no="④" title="舆情监测" en="Digital Credit Fear Monitor" note="周频 · 待确认数据" />
       <Placeholder icon="📡" title="尚未生成本周舆情确认单"
-        lines={["运行 credit_sentiment.py 后，这里会显示 pinjol / pindar 声量、负面语气和高风险事件。","脚本只生成待确认材料，不会自动写入正式历史。"]} />
+        lines={["运行 credit_sentiment.py 后，这里会显示新闻压力、社媒压力和高风险事件。","脚本只生成待确认材料，不会自动写入正式历史。"]} />
     </section>);
   }
-  const latest = data.weeks[data.weeks.length-1];
-  const previous = data.weeks.length > 1 ? data.weeks[data.weeks.length-2] : null;
-  const change = previous ? latest.fearIndex - previous.fearIndex : null;
-  const currentArticles = data.articles.filter(a=>latest.articleIds.includes(a.id));
-  const levelColor = latest.alert.level==="red" ? "#b91c1c" : (latest.alert.level==="amber" ? "#b45309" : "#15803d");
-  const levelBg = latest.alert.level==="red" ? "#fef2f2" : (latest.alert.level==="amber" ? "#fffbeb" : "#f0fdf4");
-  const componentLabels = {
-    volumeShock:"声量冲击", negativeTone:"负面语气",
-    severeEvent:"严重事件", sourceBreadth:"来源扩散"
+  const latest=data.weeks[data.weeks.length-1];
+  const previous=data.weeks.length>1?data.weeks[data.weeks.length-2]:null;
+  const num=v=>v==null||!Number.isFinite(Number(v))?null:Number(v);
+  const fmt=(v,d=1)=>num(v)==null?"—":num(v).toFixed(d);
+  const change=previous&&num(previous.fearIndex)!=null&&num(latest.fearIndex)!=null
+    ?latest.fearIndex-previous.fearIndex:null;
+  const news=latest.engines?.news||{
+    score:latest.fearIndex,volume:latest.components?.volumeShock,
+    negativity:latest.components?.negativeTone,itemCount:latest.articleCount,
+    negativeShare:latest.negativeArticleShare,uniqueSources:latest.uniqueSourceCount
   };
+  const social=latest.engines?.social||{
+    score:null,volume:null,negativity:null,itemCount:0,negativeShare:0,platformCount:0
+  };
+  const currentArticles=(data.articles||[]).filter(a=>(latest.articleIds||[]).includes(a.id));
+  const currentSocial=(data.socialItems||[]).filter(a=>(latest.socialItemIds||[]).includes(a.id));
+  const trendData=data.weeks.map(w=>({...w,news:w.engines?.news?.score??null,social:w.engines?.social?.score??null}));
+  const levelColor=latest.alert.level==="red"?"#b91c1c":latest.alert.level==="amber"?"#b45309":"#15803d";
+  const levelBg=latest.alert.level==="red"?"#fef2f2":latest.alert.level==="amber"?"#fffbeb":"#f0fdf4";
+  const componentLabels={
+    newsVolume:"新闻密度异常",newsTone:"新闻负面程度",
+    socialVolume:"社媒讨论量异常",socialNegativity:"社媒负面/投诉",
+    severeEvent:"经验证严重事件",volumeShock:"新闻声量冲击",
+    negativeTone:"新闻负面语气",sourceBreadth:"来源扩散"
+  };
+  const sourceHealth=data.sourceHealth||{};
+  const sourceCatalog=data.sourceCatalog||{};
+  const healthColors={
+    ok:["#166534","#f0fdf4"],failed:["#b91c1c","#fef2f2"],
+    unconfigured:["#b45309","#fffbeb"],unavailable:["#6b7280","#f8fafc"],
+    pending:["#6b7280","#f8fafc"]
+  };
+  const statusText=latest.dataStatus==="complete"?"完整双引擎":
+    latest.dataStatus==="provisional-partial-coverage"?"部分覆盖/临时分":"旧版试算";
+  const engineCards=[
+    ["新闻引擎","#2563eb",[
+      ["密度异常",fmt(news.volume)],["负面程度",fmt(news.negativity)],
+      ["负面报道占比",`${fmt(news.negativeShare)}%`],["独立新闻来源",news.uniqueSources??0]
+    ]],
+    ["社媒引擎","#7c3aed",[
+      ["讨论量异常",fmt(social.volume)],["负面/投诉程度",fmt(social.negativity)],
+      ["负面讨论占比",`${fmt(social.negativeShare)}%`],["覆盖平台",social.platformCount??0]
+    ]]
+  ];
   return (<section id="sec4" style={{scrollMarginTop:64}}>
     <SectionHead no="④" title="舆情监测" en="Digital Credit Fear Monitor"
       note={`周频 · ${latest.weekStart}–${latest.weekEnd} · 试运行/待人工确认`} />
     <div style={{...cardS,border:"1.5px solid #c7d2fe",background:"#f8faff",marginBottom:12}}>
       <div style={{fontSize:12,color:"#3730a3",fontWeight:700,marginBottom:5}}>线上信贷恐慌指数 · 0平静 / 100急性冲击</div>
       <div style={{fontSize:11,color:"#4b5563",lineHeight:1.7}}>
-        这是短期<b>波动信号</b>：35%声量冲击＋30%负面语气＋25%严重事件＋10%来源扩散。
-        它不等于行业坏账率、品牌好感度或基本面评分；红色触发器独立于综合分。
+        <b>新闻＋社媒双引擎</b>：25%新闻密度＋20%新闻负面＋20%社媒声量＋20%社媒负面＋15%严重事件。
+        新闻大量出现本身即推高风险；置信度只表示覆盖，不会压低风险。当前：<b>{statusText}</b>。
       </div>
     </div>
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(155px,1fr))",gap:10,marginBottom:12}}>
       {[
-        ["本周恐慌指数",latest.fearIndex.toFixed(1),change==null?"首期":`${change>=0?"+":""}${change.toFixed(1)} 周环比`],
-        ["负面报道占比",`${latest.negativeArticleShare.toFixed(1)}%`,`${latest.articleCount}篇去重报道`],
-        ["独立来源",latest.uniqueSourceCount,`证据覆盖 ${Math.round(latest.confidence*100)}%（非准确率）`],
+        ["综合恐慌指数",fmt(latest.fearIndex),change==null?"首期/无可比":`${change>=0?"+":""}${change.toFixed(1)} 周环比`],
+        ["新闻压力",fmt(news.score),`${news.itemCount||0}篇去重 · 负面${fmt(news.negativeShare)}%`],
+        ["社媒压力",fmt(social.score),`${social.itemCount||0}条 · ${social.platformCount||0}个平台 · 负面${fmt(social.negativeShare)}%`],
         ["警报层级",latest.alert.level.toUpperCase(),latest.alert.active.length?`${latest.alert.active.length}个事件满足规则`:"无合格红色事件"]
       ].map((item,i)=><div key={i} style={{...cardS,padding:"13px 14px",borderTop:i===3?`3px solid ${levelColor}`:"1px solid #e7e9ee"}}>
         <div style={{fontSize:10,color:"#6b7280"}}>{item[0]}</div>
@@ -557,51 +591,92 @@ function SentimentSection() {
     </div>
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:12,marginBottom:12}}>
       <div style={cardS}>
-        <h3 style={h3S}>最近两周恐慌指数</h3>
-        <div style={{height:230}}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={data.weeks} margin={{top:8,right:8,left:-18,bottom:0}}>
-              <CartesianGrid strokeDasharray="3 3" stroke="#eef0f3" />
-              <XAxis dataKey="weekEnd" tick={{fontSize:10,fill:T.tick}} />
-              <YAxis domain={[0,100]} tick={{fontSize:10,fill:T.tick}} />
-              <Tooltip formatter={(v)=>[Number(v).toFixed(1),"恐慌指数"]} />
-              <ReferenceLine y={70} stroke="#dc2626" strokeDasharray="4 4" label={{value:"高压区",fontSize:9,fill:"#dc2626"}} />
-              <Bar dataKey="fearIndex" fill="#ef4444" radius={[5,5,0,0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+        <h3 style={h3S}>综合 / 新闻 / 社媒趋势</h3>
+        <div style={{height:230}}><ResponsiveContainer width="100%" height="100%">
+          <LineChart data={trendData} margin={{top:8,right:8,left:-18,bottom:0}}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#eef0f3" />
+            <XAxis dataKey="weekEnd" tick={{fontSize:10,fill:T.tick}} />
+            <YAxis domain={[0,100]} tick={{fontSize:10,fill:T.tick}} />
+            <Tooltip formatter={(v,n)=>[fmt(v),n==="fearIndex"?"综合":n==="news"?"新闻":"社媒"]} />
+            <Legend wrapperStyle={{fontSize:10}} formatter={n=>n==="fearIndex"?"综合恐慌":n==="news"?"新闻压力":"社媒压力"} />
+            <ReferenceLine y={70} stroke="#dc2626" strokeDasharray="4 4" />
+            <Line type="monotone" dataKey="fearIndex" stroke="#dc2626" strokeWidth={3} dot={{r:3}} connectNulls={false} />
+            <Line type="monotone" dataKey="news" stroke="#2563eb" strokeWidth={2} dot={{r:2}} connectNulls={false} />
+            <Line type="monotone" dataKey="social" stroke="#7c3aed" strokeWidth={2} dot={{r:2}} connectNulls={false} />
+          </LineChart>
+        </ResponsiveContainer></div>
       </div>
       <div style={cardS}>
-        <h3 style={h3S}>本周构成</h3>
-        {Object.entries(latest.components).map(([k,v])=><div key={k} style={{marginBottom:12}}>
+        <h3 style={h3S}>本周五项构成</h3>
+        {Object.entries(latest.components||{}).map(([k,v])=><div key={k} style={{marginBottom:11}}>
           <div style={{display:"flex",justifyContent:"space-between",fontSize:11,color:"#4b5563",marginBottom:4}}>
-            <span>{componentLabels[k]||k}</span><b>{Number(v).toFixed(1)}</b>
+            <span>{componentLabels[k]||k}</span><b>{fmt(v)}</b>
           </div>
           <div style={{height:7,background:"#f1f5f9",borderRadius:5,overflow:"hidden"}}>
-            <div style={{height:"100%",width:`${Math.max(0,Math.min(100,v))}%`,background:k==="severeEvent"?"#dc2626":"#6366f1"}} />
+            <div style={{height:"100%",width:`${num(v)==null?0:Math.max(0,Math.min(100,v))}%`,
+              background:k==="severeEvent"?"#dc2626":k.startsWith("social")?"#7c3aed":"#2563eb"}} />
           </div>
         </div>)}
+        <div style={{fontSize:10,color:"#6b7280",lineHeight:1.6}}>
+          可用公式权重 {Math.round((latest.availableFormulaWeight??1)*100)}% ·
+          证据覆盖 {Math.round((latest.confidence??0)*100)}%（覆盖度，不是准确率）
+        </div>
       </div>
     </div>
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(280px,1fr))",gap:12,marginBottom:12}}>
+      {engineCards.map(([title,color,rows])=><div key={title} style={{...cardS,borderTop:`3px solid ${color}`}}>
+        <h3 style={{...h3S,color}}>{title}</h3>
+        {rows.map(([label,value])=><div key={label} style={{display:"flex",justifyContent:"space-between",padding:"7px 0",borderBottom:"1px solid #f1f2f4",fontSize:11}}>
+          <span style={{color:"#6b7280"}}>{label}</span><b>{value}</b>
+        </div>)}
+      </div>)}
+    </div>
+    {Object.keys(sourceCatalog).length>0&&<div style={{...cardS,marginBottom:12}}>
+      <h3 style={h3S}>信源覆盖与健康状态</h3>
+      <div style={{fontSize:10,color:"#6b7280",marginBottom:9}}>失败或未配置会标成临时分，不会当作“零风险”。</div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(215px,1fr))",gap:8}}>
+        {Object.entries(sourceCatalog).map(([key,meta])=>{
+          const health=sourceHealth[key]||{status:"unavailable",detail:"本期没有状态"};
+          const colors=healthColors[health.status]||healthColors.unavailable;
+          return <div key={key} style={{border:"1px solid #e7e9ee",borderRadius:8,padding:"9px 10px",background:colors[1]}}>
+            <div style={{display:"flex",justifyContent:"space-between",gap:8,fontSize:11}}>
+              <b>{meta.label||key}</b><span style={{color:colors[0],fontWeight:700,fontSize:9}}>{String(health.status).toUpperCase()}</span>
+            </div>
+            <div style={{fontSize:9,color:"#6b7280",marginTop:3}}>{meta.family==="news"?"新闻":"社媒/关注度"} · {health.detail||"—"}</div>
+          </div>;
+        })}
+      </div>
+    </div>}
     <div style={{...cardS,border:`1.5px solid ${levelColor}`,background:levelBg,marginBottom:12}}>
       <h3 style={{...h3S,color:levelColor}}>🚨 高风险事件触发器 · {latest.alert.level.toUpperCase()}</h3>
-      {latest.alert.active.length ? latest.alert.active.map(event=><div key={event.id} style={{fontSize:12,lineHeight:1.7,color:"#374151",marginBottom:6}}>
+      {latest.alert.active.length?latest.alert.active.map(event=><div key={event.id} style={{fontSize:12,lineHeight:1.7,color:"#374151",marginBottom:6}}>
         <b>{event.headline}</b><br/>
-        类型 {event.eventType} · 严重度 {(event.severity*100).toFixed(0)} · 独立来源 {event.independentSourceCount} · {event.hasPrimarySource?"含监管/原始来源":"无原始来源"}
-      </div>) : <div style={{fontSize:12,color:"#4b5563"}}>本周没有满足“原始来源＋至少两个独立来源”的红色事件。</div>}
+        类型 {event.eventType} · 严重度 {(event.severity*100).toFixed(0)} · 独立来源 {event.independentSourceCount} ·
+        {event.platforms?.length?` 社媒 ${event.platforms.join(" / ")} ·`:""} {event.hasPrimarySource?"含监管/原始来源":"无原始来源"}
+      </div>):<div style={{fontSize:12,color:"#4b5563"}}>本周没有满足事件证据门或新闻＋社媒同步急升规则的红色事件。</div>}
+      {latest.alert.triggerReasons?.length>0&&<div style={{fontSize:10,color:levelColor,marginTop:5}}>触发路径：{latest.alert.triggerReasons.join(" · ")}</div>}
       <div style={{fontSize:10,color:"#6b7280",marginTop:6}}>{latest.alert.rule}</div>
     </div>
-    <div style={cardS}>
-      <h3 style={h3S}>本周证据清单 · 点击查看原文</h3>
-      {currentArticles.map(article=><div key={article.id} style={{padding:"9px 0",borderBottom:"1px solid #f1f2f4"}}>
-        <a href={article.url} target="_blank" rel="noopener noreferrer" style={{fontSize:12,fontWeight:650,color:"#1d4ed8",textDecoration:"none"}}>{article.title}</a>
-        <div style={{fontSize:10,color:"#6b7280",marginTop:3}}>
-          {article.date} · {article.source} · {article.sentiment.label} / 风险语气 {article.sentiment.risk.toFixed(1)} · eventId {article.eventId}
-        </div>
-      </div>)}
-      <div style={{fontSize:10,color:"#9aa1ab",marginTop:10,lineHeight:1.6}}>
-        状态：{data.status}。本期为可复现的两周试算，需人工确认后才可转入正式历史；首两周声量采用连续周环比，积累8周后升级为滚动中位数/MAD异常值。
+    <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:12}}>
+      <div style={cardS}>
+        <h3 style={h3S}>新闻证据 · 点击查看原文</h3>
+        {currentArticles.length?currentArticles.map(article=><div key={article.id} style={{padding:"9px 0",borderBottom:"1px solid #f1f2f4"}}>
+          <a href={article.url} target="_blank" rel="noopener noreferrer" style={{fontSize:11,fontWeight:650,color:"#1d4ed8",textDecoration:"none"}}>{article.title}</a>
+          <div style={{fontSize:9,color:"#6b7280",marginTop:3}}>{article.date} · {article.source} · {article.sentiment.label} / {fmt(article.sentiment.risk)} · {article.eventId}</div>
+        </div>):<div style={{fontSize:11,color:"#6b7280"}}>本周没有可展示的新闻条目。</div>}
       </div>
+      <div style={cardS}>
+        <h3 style={h3S}>社媒证据 · 点击查看原帖/视频</h3>
+        {currentSocial.length?currentSocial.slice(0,30).map(item=><div key={item.id} style={{padding:"9px 0",borderBottom:"1px solid #f1f2f4"}}>
+          <a href={item.url} target="_blank" rel="noopener noreferrer" style={{fontSize:11,fontWeight:650,color:"#6d28d9",textDecoration:"none"}}>
+            {item.text.length>135?item.text.slice(0,135)+"…":item.text}
+          </a>
+          <div style={{fontSize:9,color:"#6b7280",marginTop:3}}>{item.date} · {item.platform}/{item.contentType} · 互动 {item.engagement||0} · {item.sentiment.label}/{fmt(item.sentiment.risk)}</div>
+        </div>):<div style={{fontSize:11,color:"#6b7280"}}>本周没有成功采集的社媒条目；请查看上方信源状态，不能据此判断“舆情平静”。</div>}
+      </div>
+    </div>
+    <div style={{fontSize:10,color:"#9aa1ab",marginTop:10,lineHeight:1.6}}>
+      状态：{data.status}。需人工确认后才可转入正式历史；积累8周后声量基准自动切换为滚动中位数/MAD。
     </div>
   </section>);
 }

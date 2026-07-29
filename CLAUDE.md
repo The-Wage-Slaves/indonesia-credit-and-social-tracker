@@ -21,7 +21,7 @@ GitHub 私有仓 `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`（仓
 2. **事实/判断分离**：稳定性证据每条标 事实/引述/判断/待补 四类标签。
 3. **改 `stability-monitor/dashboard/data.js` 必须**：同步更新该 driver 的 `score/prev/changeReason/sources/updated`；支柱分 = round(Σ driver.score×weight)，改分后**本地跑 `node .github/scripts/validate_repo.mjs` 必须通过**（它校验权重和=1、支柱分=加权和、provenance 齐全、pending/V4 一致性）。
 4. **FX 固定 15000**（历史可比口径），除非所有者明确批准改方法论。
-5. **密钥永不入库**：`stability-monitor/scripts/street_heat_config.yaml`（DeepSeek/YouTube key）已 .gitignore，**切勿 `git add -f`**；克隆后用 `.example.yaml` 模板自填。
+5. **密钥永不入库**：`stability-monitor/scripts/street_heat_config.yaml` 与 `credit-tracker/sentiment-monitor/credit_sentiment_config.yaml` 已 .gitignore，**切勿 `git add -f`**；克隆后用 `.example.yaml` 模板自填。
 6. **CDN 用 jsDelivr，不用 unpkg**（unpkg 的 recharts 在此网络失败过）。
 7. **协作走分支+PR**，不直接改 `main`（我方自己的小改动历史上有直接 merge，但规范是 PR）。
 8. **不擅自**：合并他人 PR、开 Pages/改仓库可见性/改分支保护——需所有者批准。
@@ -35,7 +35,7 @@ GitHub 私有仓 `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`（仓
 - **① 国家宏观数据**：GDP(季度)/BI利率/CPI/USDIDR/失业率，2024年起月度序列（BPS/BI，含"待核"标注）。改 `macroKPI/gdpData/cpiData/rateData/fxData/unempData` 数组。
 - **② 信贷行业数据**：银行/多元金融/P2P 各品类月度贷款余额（总览/银行/MF/P2P/明细 5 子tab）。数据在 `rawData`（Rp Miliar，看板按 FX 折 USD）。源=BI SSKI Tabel17 + OJK PP9 + OJK LPBBTI + RDKB新闻稿(BNPL)。映射见 `PROJECT_BRIEF.md`。
 - **③ 竞对数据**：3.1 财务运营（`p2pRaw`，9家×4指标：放款/余额/累计借款人/活跃借款人）；3.2 APP量级（`app-metrics-{data,panel}.js`，点点数据估算的下载量/月活，两卡各带 公司/国家 切换，**口径注记必须保留**）。
-- **④ 舆情监测**：留位（需求待定义；注意这是"行业/竞对舆情"，与稳定性指数的"政治舆情"是两回事）。
+- **④ 舆情监测**：新闻＋社媒双引擎的线上信贷恐慌指数（周频、pending待审）；新闻密度/负面与社媒声量/负面独立计分，严重事件另设证据门。与稳定性指数的政治舆情是两回事。
 
 **暗门（页脚"✎ 数据管理"）**：手工录月度数据（存 localStorage）；P2P 待确认面板（scraper 产出 `p2p-pending.js` → 逐格核对/补录 → 写入生成新数据列上图，可撤销）；**一键改汇率**（8000–25000，全站 USD 图表即时重算）。永久固化=把 JSON 发给维护者写进 html 的 `rawData/p2pRaw`。
 
@@ -89,6 +89,7 @@ credit-tracker/
   dashboard/p2p-pending.js                   scraper产出的P2P待确认(暗门读)
   p2p-scraper/scraper.mjs                    9家P2P抓取(8 Playwright + KrediOne API)
   update_credit.py                           月度取数(BI/OJK/Shopee)
+  sentiment-monitor/credit_sentiment.py      周度新闻+社媒恐慌指数(pending待审)
   PROJECT_BRIEF.md                           数据源行列映射+技术决策
 stability-monitor/
   dashboard/indonesia-stability-index-pro.html  ★全景等权版看板(外链下面两js)
@@ -113,5 +114,5 @@ AGENTS.md / HANDOFF.md / REVIEW.md           Codex上下文 / 当前状态 / 给
 - 数据置信版 V4：影子跑 4–6 周攒历史后，与全景等权版对比，重点验证"低政治权重是否钝化制度骤变预警"；两条方法论分歧届时定夺。**勿擅自转正**。
 - OJK 新门户 `data.ojk.go.id/SJKPublic` 直爬（屏蔽非印尼IP，需本地/印尼网络）。
 - 街头热度：Trends/GDELT 限流→可切 GDELT BigQuery；反对率池升级(YouTube评论区/Kaskus政治版)。已记录待决策。
-- 信贷看板：③3.2 APP量级等新数据、④舆情需求定义、宏观"待核"点(汇率月度近似值待接BI JISDOR)。
+- 信贷看板：③3.2 APP量级等新数据；④舆情需配置/维护 YouTube、Reddit、X 官方接口并积累8周基线；宏观"待核"点(汇率月度近似值待接BI JISDOR)。
 - Modalku 双口径 / ADA Pundi 官网撤统计页 / P2P scraper 各站改版维护。
