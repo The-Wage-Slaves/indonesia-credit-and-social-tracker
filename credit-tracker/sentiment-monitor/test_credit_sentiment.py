@@ -156,6 +156,9 @@ class CreditSentimentTests(unittest.TestCase):
         )
         self.assertTrue(kredivo["hasPrimarySource"])
         self.assertGreaterEqual(kredivo["independentSourceCount"], 3)
+        self.assertIn("OJK", kredivo["headlineZh"])
+        self.assertIn("监管介入", kredivo["summaryZh"])
+        self.assertIn("正式留痕", kredivo["reviewQuestionZh"])
 
     def test_review_candidates_are_evidence_filtered_and_capped(self):
         events = [
@@ -187,3 +190,4 @@ class CreditSentimentTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
