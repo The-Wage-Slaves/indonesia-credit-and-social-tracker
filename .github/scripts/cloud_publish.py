@@ -32,6 +32,10 @@ DASHBOARD_URL = os.getenv(
     "PRIVATE_DASHBOARD_URL",
     "https://indonesia-monitor-private.rafael-3954.chatgpt.site",
 )
+ALERT_REVIEW_URL = os.getenv(
+    "ALERT_REVIEW_URL",
+    "https://github.com/rafaelbonanza279-wq/indonesia-credit-and-social-tracker/issues/6",
+)
 
 CONTENT_TYPES = {
     ".html": "text/html; charset=utf-8",
@@ -85,12 +89,68 @@ def latest_stability_daily_event() -> dict[str, Any] | None:
     return rows[-1] if rows else None
 
 
+def number(value: Any) -> float | None:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def score_change(current: Any, previous: Any) -> str:
+    current_value = number(current)
+    previous_value = number(previous)
+    if current_value is None or previous_value is None:
+        return "暂无可比上期"
+    delta = round(current_value - previous_value, 1)
+    if delta > 0:
+        direction = "压力上升"
+    elif delta < 0:
+        direction = "压力缓和"
+    else:
+        direction = "持平"
+    return f"较上周 {previous_value:.1f}：{delta:+.1f}点（{direction}）"
+
+
+def event_explanation(event: dict[str, Any]) -> tuple[str, str]:
+    headline = (
+        event.get("headlineZh")
+        or event.get("headline")
+        or event.get("id")
+        or "待核风险事件"
+    )
+    summary = event.get("summaryZh")
+    if not summary and event.get("id") == "kredivo-kredifazz-purworejo-2026-07":
+        headline = "OJK 就 Kredivo/KrediFazz 涉嫌违反催收伦理一事进行约谈"
+        summary = (
+            "Purworejo 一宗催收纠纷引发监管介入。OJK 已约谈 Kredivo 与 KrediFazz；"
+            "后续媒体称双方已和解、公司承诺加强催收监督，但监管介入和消费者伤害风险"
+            "仍值得正式留痕。"
+        )
+    if not summary:
+        summary = "该事件已通过关键词与来源证据门，但仍需人工核对事实、影响范围和处置级别。"
+    return str(headline), str(summary)
+
+
+def trigger_explanation(alert: dict[str, Any], has_active_event: bool) -> str:
+    reasons = set(alert.get("triggerReasons") or [])
+    explanations = []
+    if "verified_severe_event" in reasons or has_active_event:
+        explanations.append("严重事件证据门（原始来源＋至少2个独立来源）")
+    if "news_social_cross_signal" in reasons:
+        explanations.append("指数≥75且新闻、社媒压力均≥70")
+    if "multi_platform_social_spike" in reasons:
+        explanations.append("连续两日、至少两个平台的负面社媒异常")
+    return "；".join(explanations) or "指数或证据达到待核标准"
+
+
 def weekly_summary() -> dict[str, Any]:
     data = read_json(
         "credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json",
         {},
     )
-    latest = (data.get("weeks") or [{}])[-1]
+    weeks = data.get("weeks") or [{}]
+    latest = weeks[-1]
+    previous = weeks[-2] if len(weeks) >= 2 else {}
     alert = latest.get("alert") or data.get("latestAlert") or {}
     active = list(alert.get("active") or [])
     candidates = list(
@@ -112,28 +172,57 @@ def weekly_summary() -> dict[str, Any]:
     credit_risk = alert.get("level") in {"red", "amber"} and (
         alert.get("level") == "red" or active or candidates
     )
+    latest_engines = latest.get("engines") or {}
+    previous_engines = previous.get("engines") or {}
+    news_score = (latest_engines.get("news") or {}).get("score")
+    social_score = (latest_engines.get("social") or {}).get("score")
     lines = [
-        f"信贷恐慌指数：{latest.get('fearIndex', '—')} / 100（{alert.get('level', 'unknown').upper()}）",
-        f"新闻压力：{(latest.get('engines') or {}).get('news', {}).get('score', '—')}；"
-        f"社媒压力：{(latest.get('engines') or {}).get('social', {}).get('score', '—')}",
+        "**为什么收到**\n"
+        "这是每周二例行监测；本周达到风险推送门槛，因此发送。正常周保持静默。",
+        "**指数与上周比较**\n"
+        f"信贷恐慌指数 **{latest.get('fearIndex', '—')} / 100**"
+        "（0=平静，100=急性冲击）\n"
+        f"{score_change(latest.get('fearIndex'), previous.get('fearIndex'))}\n"
+        f"新闻压力 {news_score if news_score is not None else '—'}"
+        f"（{score_change(news_score, (previous_engines.get('news') or {}).get('score'))}）；"
+        f"社媒压力 {social_score if social_score is not None else '—'}"
+        f"（{score_change(social_score, (previous_engines.get('social') or {}).get('score'))}）\n"
+        "当前只有周环比；积累满8周后增加滚动中位数/MAD异常幅度。",
+        "**为何仍为红色**\n"
+        f"{trigger_explanation(alert, bool(active))}。红色可由独立事件证据触发，"
+        "所以即使指数比上周下降也会触发；这不表示指数本身正在恶化。",
     ]
-    for event in (active or candidates)[:3]:
+    for index, event in enumerate((active or candidates)[:3], 1):
         evidence = (
             f"{event.get('independentSourceCount', 0)}个独立来源"
             + ("＋原始来源" if event.get("hasPrimarySource") else "")
         )
-        lines.append(f"• {event.get('headline', event.get('id', '风险事件'))}（{evidence}）")
+        headline, explanation = event_explanation(event)
+        lines.append(
+            f"**风险事件 {index}｜{headline}**\n{explanation}\n证据：{evidence}。"
+        )
     if street:
         lines.append(
-            f"街头热度：{street.get('heat', '—')}；建议稳定性分数："
-            f"{street.get('suggested_score', '—')}（待人工确认）"
+            "**稳定性街头热度**\n"
+            f"热度 {street.get('heat', '—')}；建议稳定性分数 "
+            f"{street.get('suggested_score', '—')}（尚未写入正式评分）。"
         )
+    lines.append(
+        "**需要你决定什么**\n"
+        "请确认风险事件应当：①确认留痕；②降级为观察；③驳回并说明原因。"
+        "这里确认的是“是否作为风险事件留痕及其级别”，不是直接确认或改写指数分数。"
+    )
+    level = str(alert.get("level", "unknown")).upper()
     return {
         "kind": "weekly",
-        "title": f"周二监测 · {latest.get('weekEnd', dt.date.today().isoformat())}",
+        "title": (
+            f"【每周二例行】线上信贷风险监测｜{level}待确认"
+            f"｜{latest.get('weekEnd', dt.date.today().isoformat())}"
+        ),
         "risk": bool(credit_risk or street_risk),
         "level": "red" if alert.get("level") == "red" else "orange",
         "lines": lines,
+        "reviewUrl": ALERT_REVIEW_URL,
         "decisionId": f"weekly:{latest.get('weekEnd', 'unknown')}:{alert.get('level', 'unknown')}",
     }
 
@@ -155,20 +244,30 @@ def daily_summary() -> dict[str, Any]:
         "red", "amber", "orange", "high_pending",
     }
     lines = [
-        f"Pinjol/Pindar：{str(credit_level).upper()}",
-        f"稳定性重大新闻：{str(stability_level).upper()}",
+        "**为什么收到**\n"
+        "这是日频扫描触发的额外风险通知；只有异常日发送，正常日保持静默。",
+        "**风险状态**\n"
+        f"Pinjol/Pindar：{str(credit_level).upper()}；"
+        f"稳定性重大新闻：{str(stability_level).upper()}。",
     ]
     for event in (
         list(credit.get("verifiedRedEvents") or [])
         + list(credit.get("highRiskPendingEvents") or [])
     )[:3]:
-        lines.append(f"• {event.get('headline', event.get('id', '风险事件'))}")
+        headline, explanation = event_explanation(event)
+        lines.append(f"**风险事件｜{headline}**\n{explanation}")
+    lines.append(
+        "**需要你决定什么**\n"
+        "请确认事件应当：①确认留痕并纳入周评证据；②降级为观察；③驳回。"
+        "在你确认前不会自动改正式评分。"
+    )
     return {
         "kind": "daily",
-        "title": f"日频风险警报 · {credit.get('date', dt.date.today().isoformat())}",
+        "title": f"【日频异常触发】风险警报｜待确认｜{credit.get('date', dt.date.today().isoformat())}",
         "risk": risk,
         "level": "red" if "red" in {credit_level, stability_level} else "orange",
         "lines": lines,
+        "reviewUrl": ALERT_REVIEW_URL,
         "decisionId": f"daily:{credit.get('date', dt.date.today().isoformat())}:{credit_level}:{stability_level}",
     }
 
@@ -188,20 +287,40 @@ def monthly_summary() -> dict[str, Any]:
     month = dt.date.today().strftime("%Y-%m")
     return {
         "kind": "monthly",
-        "title": f"月度信贷数据 · {month}",
+        "title": f"【每月例行】信贷数据批次｜待确认｜{month}",
         "risk": bool(items),
         "level": "blue",
-        "lines": lines,
+        "lines": [
+            "**为什么收到**\n"
+            "这是每月1日例行数据采集；发现新数据、口径变化或采集异常时发送。"
+        ] + lines + [
+            "**需要你决定什么**\n"
+            "请核对月份、单位、来源、异常值和缺失项；确认后才写入正式看板。"
+        ],
         "decisionId": f"monthly:{month}:{len(items)}",
     }
 
 
 def feishu_payload(summary: dict[str, Any]) -> dict[str, Any]:
-    content = "\n".join(summary["lines"])
+    content = "\n\n---\n\n".join(summary["lines"])
     content += (
         f"\n\n[打开私有看板]({DASHBOARD_URL})"
-        "\n\n结果为待人工确认；不会自动改正式评分或历史数据。"
+        f"　|　[打开风险待确认记录]({summary.get('reviewUrl', ALERT_REVIEW_URL)})"
+        "\n\n**人在环边界：**机器人只提交证据和建议；不会自动改正式评分或历史数据。"
     )
+    elements: list[dict[str, Any]] = [
+        {"tag": "div", "text": {"tag": "lark_md", "content": content}},
+    ]
+    if summary.get("reviewUrl"):
+        elements.append({
+            "tag": "action",
+            "actions": [{
+                "tag": "button",
+                "text": {"tag": "plain_text", "content": "打开待确认记录"},
+                "type": "primary",
+                "url": summary["reviewUrl"],
+            }],
+        })
     return {
         "msg_type": "interactive",
         "card": {
@@ -210,9 +329,7 @@ def feishu_payload(summary: dict[str, Any]) -> dict[str, Any]:
                 "template": summary["level"],
                 "title": {"tag": "plain_text", "content": summary["title"]},
             },
-            "elements": [
-                {"tag": "div", "text": {"tag": "lark_md", "content": content}},
-            ],
+            "elements": elements,
         },
     }
 
@@ -360,3 +477,4 @@ if __name__ == "__main__":
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     raise SystemExit(main())
+
