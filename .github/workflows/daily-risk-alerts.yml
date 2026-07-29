@@ -83,9 +83,15 @@ jobs:
         shell: bash
         run: |
           branch="bot/daily-risk-alerts"
+          transfer_dir="$(mktemp -d)"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
+            credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json \
+            stability-monitor/data/daily-events \
+            pending.json pending.js outputs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch"
+          git checkout -B "$branch" origin/main
+          tar -xf "$transfer_dir/pending-output.tar"
           git add credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json || true
           git add stability-monitor/data/daily-events || true
           git add pending.json pending.js || true
