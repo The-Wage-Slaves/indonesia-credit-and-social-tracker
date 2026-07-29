@@ -195,7 +195,7 @@
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 37,
+      "v3Score": 35,
       "drivers": [
         {
           "id": "policy_predictability",
@@ -239,13 +239,14 @@
           "id": "institutional_checks",
           "label": "关键机构独立与制衡",
           "weight": 0.2,
-          "bridgeScore": 30,
+          "bridgeScore": 25,
           "evidenceClass": "event_count",
           "availability": "medium",
           "observationIds": [
-            "institutional_checks_2026_07"
+            "institutional_checks_2026_07",
+            "bi_governor_resignation_2026_07"
           ],
-          "bridgeBasis": "只测制衡事件，不使用通胀、汇率或外储结果。",
+          "bridgeBasis": "只测制衡事件，不使用通胀、汇率或外储结果。2026-07 计入BI行长提前辞职(治理层动荡)。",
           "scoreMethod": "bridge"
         },
         {
@@ -392,4 +393,3 @@
     "productionHandling": "carry_forward_with_expiry_then_withhold"
   }
 }
-

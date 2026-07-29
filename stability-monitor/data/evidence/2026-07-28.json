@@ -455,7 +455,21 @@
       "sourceFamily": "security_event_ledger",
       "underlyingEventId": "security_discipline_2026_07",
       "retrievedAt": "2026-07-28"
+    },
+    {
+      "id": "bi_governor_resignation_2026_07",
+      "date": "2026-07-26",
+      "primaryOwner": "institutions.institutional_checks",
+      "label": "BI governor resigns two years early",
+      "summary": "BI行长Perry Warjiyo于2026-07-26提前两年辞职(称个人原因),Destry Damayanti代行、继任未提名;市场汇股债三杀、10Y收益率+4bp;分析师普遍解读为央行独立性侵蚀。按MECE只在此处计分,货币支柱不因同一事件重复扣分(汇率/收益率的市场反应由既有市场指标自然吸收)。 【补录说明】本条由日频警报器于2026-07-29捕获后补入本周(07-28)快照；事件本身发生于07-26、在截止日之前，检索日按快照截止日记录。",
+      "confidence": "high",
+      "sourceText": "ANTARA/Bloomberg/CNBC/MarketScreener 2026-07-27",
+      "observedAt": "2026-07-26",
+      "maxAgeDays": 35,
+      "sourceType": "secondary",
+      "sourceFamily": "wire_and_market_media",
+      "underlyingEventId": "bi_governor_resignation_2026_07",
+      "retrievedAt": "2026-07-28"
     }
   ]
 }
-
