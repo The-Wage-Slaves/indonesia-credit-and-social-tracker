@@ -17,13 +17,14 @@
 **体验路径**：双击 `index.html` → 两张卡片进两个看板 → 首页底部"待确认事项"是
 自动取数的出口（脚本抓到新数据先进这里，人确认后才入库）。
 
-## 二、成果清单（2026-07-14 至 07-17）
+## 二、成果清单（截至 2026-07-29）
 
-1. **信贷看板重构**：白底四板块（宏观KPI+信号解读 / 行业五子tab / 竞对财务+APP量级留位 / 舆情留位），
-   页脚含手工录入暗门（localStorage，双周期数据可自助补录）
+1. **信贷看板重构**：白底四板块（宏观KPI+信号解读 / 行业五子tab / 竞对财务+APP量级 /
+   新闻＋社媒双引擎舆情监测），页脚含手工录入暗门（localStorage，双周期数据可自助补录）
 2. **稳定性方法论 v3**：经跨国（中/美/马/日）与跨时代（2019/2024/2026）双重校验后的量化重构——
    序数项 14→8、硬数据权重 38%→**73%**；新增主权评级/腐败指数(CPI+WJP)/融资结构/
-   防守消耗弹性公式/军警冲突计数等入参；当前读数 综合44（财政49/货币39/制度40/社会55/强制37）
+   防守消耗弹性公式/军警冲突计数等入参；当前正式读数43.4（界面43；财政48/货币40/
+   制度37/社会55/强制37）。数据置信版V4影子值46.4，证据质量指数65.9%
 3. **街头动员热度工具**（周度）：六源三角测量（Google Trends双词篮/Kaskus/YouTube/GDELT×2/大众RSS）
    + **DeepSeek反对率分类**（抽检11/12命中；首期：民间侧反对率50% vs 媒体侧25%——
    "线上炸锅未上街"的量化证据）→ HTML确认单 + 建议分数
@@ -55,6 +56,7 @@
 | P2P竞对 10家×4指标 | 各官网 | 🟢 8/10自动（Modalku口径歧义/AdaPundi撤页） |
 | 宏观5指标 | BPS/BI | 会话内搜索（BPS有API可升级） |
 | 舆情6源+反对率 | Trends/Kaskus/YouTube/GDELT/RSS/DeepSeek | 🟢 周度脚本 |
+| 信贷恐慌指数 | Google News/媒体RSS/GDELT/Trends/Kaskus/YouTube/Reddit/X | 🟡 双引擎已合并；社媒实测覆盖和8周基线待积累 |
 
 ## 五、已知限制（诚实边界）
 
@@ -63,12 +65,14 @@
 - 汇率固定15000（可比性优先），美元计数值≠市价折算
 - 部分宏观点位标注"待核"（2026年1-4月BI利率假设、2026.01汇率反推值）
 - 跨国/跨时代校验打分为校准级（结构化判断），非实时精确评分
+- 信贷恐慌指数的两周审阅样本只有新闻证据，社媒分明确显示为不可用而非平静；
+  飞书通知与现有日频新闻Hook尚未接入
 
 ## 六、请重点 Review 的问题
 
-### PR #6：线上信贷恐慌指数 v2
+### PR #7：线上信贷恐慌指数 v2（已合并）
 
-本 PR 不应直接合并；请先重点检查：
+代码与周度暂存边界已经进入 `main`，后续运行时请继续重点检查：
 
 1. 五项输入是否 MECE：新闻密度25%、新闻负面20%、社媒声量20%、
    社媒负面20%、严重事件15%；
@@ -78,7 +82,8 @@
    与可选官方 X API 的覆盖，是否足以支撑周频；
 4. 红色触发的三条独立路径（硬事件证据门、新闻社媒同步急升、多平台持续社媒峰值）
    是否过松或过严；
-5. 每周 Actions 仍只生成待审 PR/issue，不直接写 `main`，是否符合审批流程。
+5. 每周 Actions 只更新 `bot/weekly-credit-sentiment` 待确认分支和 run summary，
+   不创建周度数据PR、不直接写正式历史；飞书通知待所有者提供现有Hook格式后接入。
 
 1. **五支柱框架**：支柱与子因子的正交性、权重预设（均衡/投资/合规三档）是否合理？
 2. **量表校准**：各 quant 项的阈值档（如 CDS <70/70-100/100-150、外资持债<15%基准65分）
@@ -97,5 +102,7 @@
 - 数据映射：`credit-tracker/PROJECT_BRIEF.md`
 - 脚本：`credit-tracker/update_credit.py`、`p2p-scraper/scraper.mjs`、
   `credit-tracker/sentiment-monitor/credit_sentiment.py`、`stability-monitor/scripts/street_heat.py`
+- 信贷舆情审阅边界：`credit-tracker/sentiment-monitor/REVIEW_REQUEST.md`
 - Agent上下文：`AGENTS.md`（Codex）、`stability-monitor/CLAUDE.md`（Claude Code）
-- 密钥：不在包内；模板 `street_heat_config.example.yaml`，申请指引 `scripts/API_KEYS_GUIDE.md`
+- 密钥：不在包内；模板 `street_heat_config.example.yaml` /
+  `credit_sentiment_config.example.yaml`，申请指引 `scripts/API_KEYS_GUIDE.md`
