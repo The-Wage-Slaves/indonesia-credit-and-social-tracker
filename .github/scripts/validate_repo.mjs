@@ -241,16 +241,30 @@ assert(historyDates.has(v4Input.asOf), 'V4 history lacks the current confirmed s
 
 const comparisonPage = read('stability-monitor/dashboard/v3-v4-comparison.html');
 assert(comparisonPage.includes('../data/v4-comparison-data.js'), 'V3/V4 page does not load the local comparison data');
-// 命名于 2026-07-29 改为「全景等权版(正式)/数据置信版(影子)」；断言本意不变：
-// 页面必须明确区分"正式口径"与"影子口径"，避免读者把影子分当成正式分。
-assert(
-  comparisonPage.includes('全景等权版（正式）') && comparisonPage.includes('数据置信版（影子）'),
-  'Comparison page does not clearly label official (全景等权版) versus shadow (数据置信版)',
-);
+const homepage = read('index.html');
+for (const [file, content] of [
+  ['index.html', homepage],
+  ['stability-monitor/dashboard/v3-v4-comparison.html', comparisonPage],
+]) {
+  assert(content.includes('全景等权版') && content.includes('数据置信版'),
+    `${file} must use the approved public methodology names`);
+  for (const obsolete of ['V3 正式版 / V4 影子版', 'V3 正式 / V4 影子', 'V3 正式综合分', 'V4 影子综合分']) {
+    assert(!content.includes(obsolete), `${file} regressed to obsolete public label: ${obsolete}`);
+  }
+}
 assert(comparisonPage.includes('../data/v4-comparison-latest.json'), 'V3/V4 page does not link the latest machine-readable result');
 assert(comparisonPage.includes('../docs/V4_WEEKLY_RUNBOOK.md'), 'V3/V4 page does not link the weekly runbook');
 assert(!/<script[^>]+src=["']https?:/i.test(comparisonPage), 'V3/V4 page must not load remote scripts');
-assert(read('index.html').includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
+assert(homepage.includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
+
+const automationCatalog = read('AUTOMATIONS.md');
+for (const marker of ['daily_alert.py', 'credit_daily_alert.py', 'weekly-credit-sentiment.yml',
+  'street_heat.py', 'update_credit.py', 'p2p-scraper/scraper.mjs', 'FEISHU_WEBHOOK_URL']) {
+  assert(automationCatalog.includes(marker), `automation catalog missing ${marker}`);
+}
+const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml');
+assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'),
+  'weekly credit workflow does not expose the optional DeepSeek secret');
 
 const creditSentiment = JSON.parse(read('credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json'));
 const creditSentimentJs = read('credit-tracker/sentiment-monitor/output/credit-sentiment-data.js').trim();
