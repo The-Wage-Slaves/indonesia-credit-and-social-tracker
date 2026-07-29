@@ -254,6 +254,18 @@ assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher mus
 assert(cloudPublisher.includes('"OAI-Sites-Authorization"'), 'Sites ingest must use the platform bypass header');
 assert(cloudPublisher.includes('Keep Feishu independent from dashboard delivery'), 'dashboard failure must not suppress Feishu');
 assert(cloudPublisher.includes('Keep dashboard delivery independent from Feishu'), 'Feishu failure must not suppress dashboard');
+assert(!cloudPublisher.includes('"title": f"周二监测'), 'weekly Feishu title must disclose cadence and purpose');
+for (const marker of [
+  '【每周二例行】',
+  '【日频异常触发】',
+  '较上周',
+  '需要你决定什么',
+  '确认留痕',
+  '降级为观察',
+  '驳回',
+]) {
+  assert(cloudPublisher.includes(marker), `Feishu decision card missing ${marker}`);
+}
 
 const creditSentiment = JSON.parse(read('credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json'));
 const creditSentimentJs = read('credit-tracker/sentiment-monitor/output/credit-sentiment-data.js').trim();
@@ -284,3 +296,4 @@ assert(creditSentiment.latestAlert.active.some((event) => (
 assert(creditSentiment.articles.every((article) => /^https:\/\//.test(article.url)), 'credit sentiment evidence must use HTTPS source URLs');
 
 console.log('Repository invariants: OK');
+
