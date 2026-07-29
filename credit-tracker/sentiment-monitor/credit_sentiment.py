@@ -472,7 +472,405 @@ def cluster_events(
     return sorted(events, key=lambda item: (-item["severity"], item["id"]))
 
 
-def robust_volume_risk(current: float, his…4156 tokens truncated…in parsed.entries:
+def robust_volume_risk(current: float, history: list[float]) -> tuple[float, str]:
+    usable = [float(value) for value in history if value is not None]
+    if len(usable) >= 8:
+        baseline = statistics.median(usable[-8:])
+        deviations = [abs(value - baseline) for value in usable[-8:]]
+        mad = statistics.median(deviations)
+        scale = max(mad * 1.4826, max(1.0, baseline * 0.10))
+        z_score = (current - baseline) / scale
+        risk = clamp(50.0 + 15.0 * z_score)
+        return risk, f"8-week rolling median/MAD anomaly: z={z_score:.2f}."
+    if usable:
+        previous = usable[-1]
+        ratio = (current + 1) / (previous + 1)
+        risk = clamp(50.0 + 35.0 * math.tanh(math.log(ratio)))
+        return risk, f"Pilot week-on-week ratio: {ratio:.2f}x; {len(usable)}/8 baseline weeks."
+    return 50.0, "First observed week; neutral volume baseline pending 8 weeks of history."
+
+
+def weighted_sentiment(items: list[dict[str, Any]], social: bool = False) -> tuple[float | None, float]:
+    if not items:
+        return None, 0.0
+    weights = []
+    for item in items:
+        if social:
+            weights.append(1.0 + min(4.0, math.log1p(float(item.get("engagement", 0)))))
+        else:
+            weights.append(float(item.get("sourceFactor", 0.7)))
+    total = sum(weights)
+    risk = sum(item["sentiment"]["risk"] * weight for item, weight in zip(items, weights)) / total
+    negative_share = 100.0 * sum(
+        weight for item, weight in zip(items, weights) if item["sentiment"]["label"] == "negative"
+    ) / total
+    return risk, negative_share
+
+
+def combine_available(values: list[tuple[float | None, float]]) -> float | None:
+    available = [(float(value), weight) for value, weight in values if value is not None]
+    if not available:
+        return None
+    return sum(value * weight for value, weight in available) / sum(weight for _, weight in available)
+
+
+def aggregate_signals(
+    signals: list[dict[str, Any]], week_end: dt.date, metric: str
+) -> float | None:
+    values = [
+        (float(signal["risk"]), float(signal.get("weight", 1.0)))
+        for signal in signals
+        if signal.get("metric") == metric
+        and within_week(parse_date(signal.get("date"), week_end), week_end)
+        and signal.get("risk") is not None
+    ]
+    if not values:
+        return None
+    return sum(value * weight for value, weight in values) / sum(weight for _, weight in values)
+
+
+def alert_for_week(
+    events: list[dict[str, Any]],
+    fear_index: float,
+    news_score: float | None,
+    social_score: float | None,
+    social_volume: float | None,
+    social_negative_share: float,
+    social_items: list[dict[str, Any]],
+) -> dict[str, Any]:
+    red_types = {"regulatory_action", "consumer_harm", "systemic_platform_stress"}
+    verified_events = [
+        event for event in events
+        if event["eventType"] in red_types
+        and event["severity"] >= 0.8
+        and event["hasPrimarySource"]
+        and event["independentSourceCount"] >= 2
+    ]
+    cross_signal = (
+        fear_index >= 75
+        and news_score is not None and news_score >= 70
+        and social_score is not None and social_score >= 70
+    )
+    active_dates = {item["date"] for item in social_items if item["sentiment"]["label"] == "negative"}
+    social_spike = (
+        social_volume is not None and social_volume >= 80
+        and social_negative_share >= 65
+        and len({item["platform"] for item in social_items}) >= 2
+        and len(active_dates) >= 2
+    )
+    reasons = []
+    if verified_events:
+        reasons.append("verified_severe_event")
+    if cross_signal:
+        reasons.append("news_social_cross_signal")
+    if social_spike:
+        reasons.append("multi_platform_social_spike")
+    review_candidates = [
+        event for event in events
+        if event not in verified_events
+        and event["severity"] >= 0.8
+        and (event["hasPrimarySource"] or event["independentSourceCount"] >= 2)
+    ][:5]
+    suppressed_candidate_count = max(
+        0,
+        sum(
+            event not in verified_events and event["severity"] >= 0.7
+            for event in events
+        ) - len(review_candidates),
+    )
+    level = "red" if reasons else (
+        "amber" if review_candidates or fear_index >= 65 else "normal"
+    )
+    active = verified_events if verified_events else (
+        review_candidates if level == "amber" else []
+    )
+    return {
+        "level": level,
+        "active": active,
+        "triggerReasons": reasons,
+        "rule": (
+            "Red if a severe event has a primary source plus two independent sources; "
+            "or fear>=75 with both news and social>=70; or a two-day, two-platform "
+            "social spike with volume>=80 and negative share>=65%."
+        ),
+        "reviewCandidates": review_candidates,
+        "suppressedCandidateCount": suppressed_candidate_count,
+        # Backward-compatible alias. This list is intentionally capped and
+        # evidence-filtered; it is not a dump of every keyword-matched story.
+        "pendingHighSeverity": review_candidates,
+    }
+
+
+def score_week(
+    week_end: dt.date,
+    articles: list[dict[str, Any]],
+    social_items: list[dict[str, Any]],
+    signals: list[dict[str, Any]],
+    news_history: list[float],
+    social_history: list[float],
+    source_health: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    week_articles = [
+        item for item in articles if within_week(parse_date(item["date"]), week_end)
+    ]
+    week_social = [
+        item for item in social_items if within_week(parse_date(item["date"]), week_end)
+    ]
+    article_count = len(week_articles)
+    social_units = sum(
+        1.0 + 0.25 * min(10.0, math.log1p(float(item.get("engagement", 0))))
+        for item in week_social
+    )
+    article_volume_risk, news_volume_note = robust_volume_risk(article_count, news_history)
+    social_item_volume_risk, social_volume_note = robust_volume_risk(social_units, social_history)
+    article_tone, negative_article_share = weighted_sentiment(week_articles)
+    social_tone, negative_social_share = weighted_sentiment(week_social, social=True)
+    news_volume = combine_available([
+        (article_volume_risk if week_articles else None, 0.65),
+        (aggregate_signals(signals, week_end, "news_volume"), 0.35),
+    ])
+    news_tone = combine_available([
+        (article_tone, 0.75),
+        (aggregate_signals(signals, week_end, "news_tone"), 0.25),
+    ])
+    social_volume = combine_available([
+        (social_item_volume_risk if week_social else None, 0.65),
+        (aggregate_signals(signals, week_end, "social_volume"), 0.35),
+    ])
+    social_negativity = combine_available([
+        (social_tone, 0.85),
+        (aggregate_signals(signals, week_end, "social_negativity"), 0.15),
+    ])
+    events = cluster_events(week_articles, week_social)
+    severe_event = 100.0 * max((event["severity"] for event in events), default=0.0)
+    components: dict[str, float | None] = {
+        "newsVolume": round1(news_volume) if news_volume is not None else None,
+        "newsTone": round1(news_tone) if news_tone is not None else None,
+        "socialVolume": round1(social_volume) if social_volume is not None else None,
+        "socialNegativity": round1(social_negativity) if social_negativity is not None else None,
+        "severeEvent": round1(severe_event),
+    }
+    available_weight = sum(
+        COMPONENT_WEIGHTS[key] for key, value in components.items() if value is not None
+    )
+    fear_index = sum(
+        float(value) * COMPONENT_WEIGHTS[key]
+        for key, value in components.items() if value is not None
+    ) / available_weight
+    news_score = combine_available([
+        (news_volume, COMPONENT_WEIGHTS["newsVolume"]),
+        (news_tone, COMPONENT_WEIGHTS["newsTone"]),
+    ])
+    social_score = combine_available([
+        (social_volume, COMPONENT_WEIGHTS["socialVolume"]),
+        (social_negativity, COMPONENT_WEIGHTS["socialNegativity"]),
+    ])
+    successful = [
+        key for key in SOURCE_CATALOG
+        if source_health.get(key, {}).get("status") == "ok"
+    ]
+    expected = list(SOURCE_CATALOG)
+    source_coverage = len(successful) / len(expected)
+    news_channels = sum(
+        source_health.get(key, {}).get("status") == "ok"
+        for key, meta in SOURCE_CATALOG.items() if meta["family"] == "news"
+    )
+    social_channels = sum(
+        source_health.get(key, {}).get("status") == "ok"
+        for key, meta in SOURCE_CATALOG.items() if meta["family"] == "social"
+    )
+    evidence_breadth = min(1.0, (
+        len({item["domain"] for item in week_articles})
+        + len({item["platform"] for item in week_social})
+    ) / 6.0)
+    confidence = 0.55 * source_coverage + 0.25 * evidence_breadth + 0.20 * min(
+        1.0, (news_channels > 0) * 0.5 + (social_channels > 0) * 0.5
+    )
+    data_status = "complete" if (
+        news_volume is not None and news_tone is not None
+        and social_volume is not None and social_negativity is not None
+        and news_channels >= 2 and social_channels >= 2
+    ) else "provisional-partial-coverage"
+    alert = alert_for_week(
+        events, fear_index, news_score, social_score, social_volume,
+        negative_social_share, week_social,
+    )
+    return {
+        "weekStart": (week_end - dt.timedelta(days=6)).isoformat(),
+        "weekEnd": week_end.isoformat(),
+        "fearIndex": round1(fear_index),
+        "dataStatus": data_status,
+        "availableFormulaWeight": round(available_weight, 3),
+        "engines": {
+            "news": {
+                "score": round1(news_score) if news_score is not None else None,
+                "volume": components["newsVolume"],
+                "negativity": components["newsTone"],
+                "itemCount": article_count,
+                "negativeShare": round1(negative_article_share),
+                "uniqueSources": len({item["domain"] for item in week_articles}),
+            },
+            "social": {
+                "score": round1(social_score) if social_score is not None else None,
+                "volume": components["socialVolume"],
+                "negativity": components["socialNegativity"],
+                "itemCount": len(week_social),
+                "negativeShare": round1(negative_social_share),
+                "platformCount": len({item["platform"] for item in week_social}),
+                "engagementUnits": round1(social_units),
+            },
+        },
+        "components": components,
+        "articleCount": article_count,
+        "socialPostCount": len(week_social),
+        "uniqueSourceCount": len({item["domain"] for item in week_articles}),
+        "socialPlatformCount": len({item["platform"] for item in week_social}),
+        "negativeArticleShare": round1(negative_article_share),
+        "negativeSocialShare": round1(negative_social_share),
+        "confidence": round(confidence, 3),
+        "coverage": {
+            "successfulChannels": successful,
+            "expectedChannels": expected,
+            "newsChannels": news_channels,
+            "socialChannels": social_channels,
+        },
+        "volumeNotes": {"news": news_volume_note, "social": social_volume_note},
+        "alert": alert,
+        "events": events,
+        "articleIds": [item["id"] for item in week_articles],
+        "socialItemIds": [item["id"] for item in week_social],
+        "_newsVolumeRaw": article_count,
+        "_socialVolumeRaw": round1(social_units),
+    }
+
+
+def build_result(
+    articles: list[dict[str, Any]],
+    as_of: dt.date,
+    social_items: list[dict[str, Any]] | None = None,
+    signals: list[dict[str, Any]] | None = None,
+    source_health: dict[str, dict[str, Any]] | None = None,
+    historical_weeks: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    enriched_articles = enrich_articles(articles)
+    enriched_social = enrich_social_items(social_items or [])
+    signals = signals or []
+    source_health = source_health or {
+        key: {
+            **meta,
+            "status": "ok" if key == "google_news" and enriched_articles else "unavailable",
+            "detail": "Fixture did not provide this channel.",
+        }
+        for key, meta in SOURCE_CATALOG.items()
+    }
+    old_weeks = historical_weeks or []
+    news_history = [
+        float(week.get("_newsVolumeRaw", week.get("articleCount", 0)))
+        for week in old_weeks[-8:]
+    ]
+    social_history = [
+        float(week.get("_socialVolumeRaw", week.get("socialPostCount", 0)))
+        for week in old_weeks[-8:]
+    ]
+    weeks = []
+    for week_end in complete_week_ends(as_of, 2):
+        week = score_week(
+            week_end, enriched_articles, enriched_social, signals,
+            news_history, social_history, source_health,
+        )
+        news_history.append(float(week["_newsVolumeRaw"]))
+        social_history.append(float(week["_socialVolumeRaw"]))
+        weeks.append(week)
+    latest_alert = weeks[-1]["alert"]
+    return {
+        "schemaVersion": 2,
+        "status": "pilot-pending-human-review",
+        "asOf": as_of.isoformat(),
+        "cadence": "weekly-complete-weeks",
+        "indexDirection": "0=calm; 100=acute attention/fear/event shock",
+        "methodology": {
+            "name": "Indonesia Digital Credit Fear Index v2",
+            "formula": (
+                "25% news-density shock + 20% news negativity + 20% social-volume "
+                "shock + 20% social negativity + 15% verified-event severity"
+            ),
+            "componentWeights": COMPONENT_WEIGHTS,
+            "guardrails": [
+                "High news density raises risk even before sentiment is considered.",
+                "Confidence is shown separately and never reduces the risk score.",
+                "Missing components are excluded and the score is labelled provisional.",
+                "Syndicated articles and repeated posts are deduplicated; one event shares one eventId.",
+                "Red alerts use independent evidence gates and do not silently modify the score.",
+                "Volume uses an 8-week rolling median/MAD after enough reviewed history exists.",
+            ],
+        },
+        "sourceCatalog": SOURCE_CATALOG,
+        "sourceHealth": source_health,
+        "latestAlert": latest_alert,
+        "weeks": weeks,
+        "articles": enriched_articles,
+        "socialItems": enriched_social,
+        "reviewRequired": True,
+    }
+
+
+def request_json(
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    headers: dict[str, str] | None = None,
+    timeout: int = 30,
+) -> Any:
+    target = url + (("?" if "?" not in url else "&") + urlencode(params) if params else "")
+    request = Request(target, headers={
+        "User-Agent": "Mozilla/5.0 digital-credit-monitor/2.0",
+        "Accept": "application/json",
+        **(headers or {}),
+    })
+    with urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def fetch_google_news(query: str, after: dt.date, before: dt.date) -> list[dict[str, Any]]:
+    search = f"{query} after:{after.isoformat()} before:{before.isoformat()}"
+    url = "https://news.google.com/rss/search?q=" + quote(search) + "&hl=id&gl=ID&ceid=ID:id"
+    request = Request(url, headers={"User-Agent": "Mozilla/5.0 digital-credit-monitor/2.0"})
+    with urlopen(request, timeout=25) as response:
+        root = ET.fromstring(response.read())
+    articles = []
+    for item in root.findall("./channel/item"):
+        source_node = item.find("source")
+        articles.append({
+            "date": parse_date(item.findtext("pubDate", "")).isoformat(),
+            "title": item.findtext("title", "").strip(),
+            "url": item.findtext("link", "").strip(),
+            "publisherUrl": source_node.attrib.get("url", "").strip() if source_node is not None else "",
+            "source": (source_node.text or "").strip() if source_node is not None else "",
+            "summary": normalize_text(item.findtext("description", "")),
+        })
+    return articles
+
+
+def load_yaml(path: pathlib.Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        import yaml
+    except ImportError:
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def fetch_media_rss(after: dt.date, before: dt.date) -> list[dict[str, Any]]:
+    try:
+        import feedparser
+    except ImportError as exc:
+        raise RuntimeError("feedparser is not installed") from exc
+    feeds = load_yaml(RSS_CONFIG).get("feeds", [])
+    articles = []
+    for feed in feeds:
+        parsed = feedparser.parse(feed["url"], agent="Mozilla/5.0 digital-credit-monitor/2.0")
+        for entry in parsed.entries:
             raw_date = entry.get("published") or entry.get("updated")
             try:
                 item_date = parse_date(raw_date)
