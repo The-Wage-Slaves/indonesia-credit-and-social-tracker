@@ -282,7 +282,7 @@ def publish_dashboard(mode: str, requested: bool) -> str:
         endpoint,
         data=json.dumps({"files": files}, ensure_ascii=False).encode("utf-8"),
         headers={
-            "Authorization": f"Bearer {bypass}",
+            "OAI-Sites-Authorization": f"Bearer {bypass}",
             "X-Dashboard-Ingest-Token": ingest_token,
             "Content-Type": "application/json",
         },
