@@ -330,8 +330,17 @@ def main() -> int:
         "weekly": weekly_summary,
         "monthly": monthly_summary,
     }[args.mode]()
-    dashboard_status = publish_dashboard(args.mode, args.publish_dashboard)
-    feishu_status = push_feishu(summary, args.push)
+    delivery_errors: list[str] = []
+    try:
+        dashboard_status = publish_dashboard(args.mode, args.publish_dashboard)
+    except Exception as exc:  # Keep Feishu independent from dashboard delivery.
+        dashboard_status = f"error:{type(exc).__name__}"
+        delivery_errors.append(f"dashboard={exc}")
+    try:
+        feishu_status = push_feishu(summary, args.push)
+    except Exception as exc:  # Keep dashboard delivery independent from Feishu.
+        feishu_status = f"error:{type(exc).__name__}"
+        delivery_errors.append(f"feishu={exc}")
     write_status(summary, feishu_status, dashboard_status)
     print(
         f"mode={args.mode} risk={summary['risk']} "
@@ -342,7 +351,9 @@ def main() -> int:
     ) or (
         args.push and summary["risk"] and feishu_status == "unconfigured"
     )
-    return 2 if missing_required else 0
+    if delivery_errors:
+        print("; ".join(delivery_errors), file=sys.stderr)
+    return 2 if missing_required or delivery_errors else 0
 
 
 if __name__ == "__main__":
