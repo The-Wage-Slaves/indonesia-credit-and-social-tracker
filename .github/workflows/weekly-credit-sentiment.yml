@@ -128,9 +128,16 @@ jobs:
         shell: bash
         run: |
           branch="bot/weekly-monitoring"
+          transfer_dir="$(mktemp -d)"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
+            credit-tracker/sentiment-monitor/output \
+            stability-monitor/scripts/output \
+            stability-monitor/scripts/street_heat_history.json \
+            pending.json pending.js outputs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch"
+          git checkout -B "$branch" origin/main
+          tar -xf "$transfer_dir/pending-output.tar"
           git add credit-tracker/sentiment-monitor/output || true
           git add stability-monitor/scripts/output || true
           git add stability-monitor/scripts/street_heat_history.json || true
@@ -143,7 +150,7 @@ jobs:
           git commit -m "data: prepare Tuesday monitoring review for ${WEEK_END:-unknown}"
           git push --force-with-lease origin "HEAD:${branch}"
       - name: Create one deduplicated red-alert issue
-        if: steps.summary.outputs.alert_level == 'red'
+        if: always() && steps.summary.outputs.alert_level == 'red'
         env:
           GH_TOKEN: ${{ github.token }}
           WEEK_END: ${{ steps.summary.outputs.week_end }}
