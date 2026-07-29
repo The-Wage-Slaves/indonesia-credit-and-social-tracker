@@ -113,5 +113,30 @@ class CreditSentimentTests(unittest.TestCase):
         self.assertAlmostEqual(sum(MODULE.COMPONENT_WEIGHTS.values()), 1.0)
 
 
+    def test_blank_local_config_does_not_hide_shared_credentials(self):
+        merged = MODULE.merge_nonempty_config(
+            {"youtube": {"api_key": "shared-key"}, "llm": {"api_key": "shared-llm"}},
+            {"youtube": {"api_key": ""}, "x": {"bearer_token": "credit-x"}},
+        )
+        self.assertEqual(merged["youtube"]["api_key"], "shared-key")
+        self.assertEqual(merged["llm"]["api_key"], "shared-llm")
+        self.assertEqual(merged["x"]["bearer_token"], "credit-x")
+
+    def test_deepseek_labels_drop_irrelevant_and_keep_lexicon_trace(self):
+        items = [
+            {"platform": "youtube", "text": "pinjol debt collector intimidasi"},
+            {"platform": "kaskus", "text": "promo telepon genggam"},
+        ]
+        mapped, counts = MODULE.apply_llm_social_labels(items, [
+            {"index": 1, "label": "NEG", "confidence": 0.91},
+            {"index": 2, "label": "IRR", "confidence": 0.99},
+        ])
+        self.assertEqual(len(mapped), 1)
+        self.assertEqual(mapped[0]["sentiment"]["method"], "deepseek_credit_social_v1")
+        self.assertIn("lexiconRisk", mapped[0]["sentiment"])
+        self.assertEqual(counts["NEG"], 1)
+        self.assertEqual(counts["IRR"], 1)
+
+
 if __name__ == "__main__":
     unittest.main()
