@@ -75,8 +75,8 @@ jobs:
         env:
           SITES_BYPASS_BEARER_TOKEN: ${{ secrets.SITES_BYPASS_BEARER_TOKEN }}
           DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
-          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
-          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
+          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
         run: python .github/scripts/cloud_publish.py daily --publish-dashboard --push
       - name: Stage daily evidence without a pull request
         if: always()
