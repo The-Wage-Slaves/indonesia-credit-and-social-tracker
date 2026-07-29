@@ -28,14 +28,13 @@
         "social": 50.7,
         "coercive": 37.3
       },
-      "composite": 46.2,
+      "composite": 46.4,
       "measurementConfidence": 0.741,
       "triggerLevel": "normal",
       "activeTriggerIds": [],
       "status": "provisional-shadow",
       "confirmed": true,
-      "humanConfirmed": true,
-      "note": "本周快照于2026-07-29修订: 补入BI行长提前辞职(institutional_checks 30→25),生产V3制度37→35同步。"
+      "humanConfirmed": true
     }
   ]
 }
