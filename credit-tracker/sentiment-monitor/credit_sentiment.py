@@ -342,7 +342,12 @@ def automatic_event_id(text: str, explicit: str | None = None) -> str:
     if explicit:
         return explicit
     normalized = normalize_text(text)
-    if ("kredivo" in normalized or "kredifazz" in normalized) and "purworejo" in normalized:
+    if (
+        ("kredivo" in normalized or "kredifazz" in normalized)
+        and any(term in normalized for term in (
+            "purworejo", "ojk panggil", "penagihan", "pelecehan", "intimidasi",
+        ))
+    ):
         return "kredivo-kredifazz-purworejo-2026-07"
     if "tadpole" in normalized:
         return "pindar-tadpole-practice-2026-07"
@@ -995,18 +1000,22 @@ def youtube_key(config: dict[str, Any]) -> str:
     )
 
 
-def collect_youtube(config: dict[str, Any], after: dt.date) -> list[dict[str, Any]]:
+def collect_youtube(
+    config: dict[str, Any], after: dt.date, before: dt.date
+) -> list[dict[str, Any]]:
     key = youtube_key(config)
     if not key:
         raise RuntimeError("YOUTUBE_API_KEY is not configured")
     published_after = dt.datetime.combine(after, dt.time(), tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    published_before = dt.datetime.combine(before, dt.time(), tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     videos: dict[str, dict[str, Any]] = {}
     for query in SOCIAL_QUERIES[:4]:
         payload = request_json(
             "https://www.googleapis.com/youtube/v3/search",
             params={
                 "part": "snippet", "q": query, "type": "video",
-                "publishedAfter": published_after, "maxResults": 25,
+                "publishedAfter": published_after, "publishedBefore": published_before,
+                "maxResults": 25,
                 "regionCode": "ID", "relevanceLanguage": "id",
                 "order": "date", "key": key,
             },
@@ -1147,7 +1156,7 @@ def collect_live(
     run("gdelt", lambda: collect_gdelt(latest), signals)
     run("google_trends", lambda: collect_google_trends(latest), signals)
     run("kaskus", lambda: collect_kaskus(as_of), social_items)
-    run("youtube", lambda: collect_youtube(config, after), social_items)
+    run("youtube", lambda: collect_youtube(config, after, before), social_items)
     run("reddit", lambda: collect_reddit(config), social_items)
     run("x", lambda: collect_x(config), social_items)
     if not articles and not social_items and not signals:
