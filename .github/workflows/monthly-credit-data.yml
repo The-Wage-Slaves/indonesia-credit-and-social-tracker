@@ -70,9 +70,16 @@ jobs:
         shell: bash
         run: |
           branch="bot/monthly-credit-data"
+          transfer_dir="$(mktemp -d)"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
+            pending.json pending.js \
+            credit-tracker/dashboard/p2p-pending.js \
+            credit-tracker/p2p-scraper/results \
+            outputs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch"
+          git checkout -B "$branch" origin/main
+          tar -xf "$transfer_dir/pending-output.tar"
           git add pending.json pending.js || true
           git add credit-tracker/dashboard/p2p-pending.js || true
           git add credit-tracker/p2p-scraper/results || true
