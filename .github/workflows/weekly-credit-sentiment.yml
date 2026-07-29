@@ -131,11 +131,11 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$branch"
-          git add \
-            credit-tracker/sentiment-monitor/output \
-            stability-monitor/scripts/output \
-            stability-monitor/scripts/street_heat_history.json \
-            pending.json pending.js outputs || true
+          git add credit-tracker/sentiment-monitor/output || true
+          git add stability-monitor/scripts/output || true
+          git add stability-monitor/scripts/street_heat_history.json || true
+          git add pending.json pending.js || true
+          git add outputs 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No pending-output change."
             exit 0
