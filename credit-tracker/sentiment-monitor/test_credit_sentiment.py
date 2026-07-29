@@ -112,7 +112,6 @@ class CreditSentimentTests(unittest.TestCase):
         )
         self.assertAlmostEqual(sum(MODULE.COMPONENT_WEIGHTS.values()), 1.0)
 
-
     def test_blank_local_config_does_not_hide_shared_credentials(self):
         merged = MODULE.merge_nonempty_config(
             {"youtube": {"api_key": "shared-key"}, "llm": {"api_key": "shared-llm"}},
@@ -137,7 +136,6 @@ class CreditSentimentTests(unittest.TestCase):
         self.assertEqual(counts["NEG"], 1)
         self.assertEqual(counts["IRR"], 1)
 
-
     def test_kredivo_ojk_headlines_share_one_event_id(self):
         ids = {
             MODULE.automatic_event_id(text)
@@ -148,6 +146,43 @@ class CreditSentimentTests(unittest.TestCase):
             )
         }
         self.assertEqual(ids, {"kredivo-kredifazz-purworejo-2026-07"})
+
+    def test_verified_kredivo_seed_contains_primary_and_independent_sources(self):
+        articles = MODULE.load_verified_event_articles(dt.date(2026, 7, 29))
+        events = MODULE.cluster_events(MODULE.enrich_articles(articles), [])
+        kredivo = next(
+            event for event in events
+            if event["id"] == "kredivo-kredifazz-purworejo-2026-07"
+        )
+        self.assertTrue(kredivo["hasPrimarySource"])
+        self.assertGreaterEqual(kredivo["independentSourceCount"], 3)
+
+    def test_review_candidates_are_evidence_filtered_and_capped(self):
+        events = [
+            {
+                "id": f"candidate-{index}",
+                "eventType": "consumer_harm",
+                "severity": 0.86,
+                "hasPrimarySource": False,
+                "independentSourceCount": 2,
+            }
+            for index in range(12)
+        ] + [{
+            "id": "single-source-noise",
+            "eventType": "consumer_harm",
+            "severity": 0.86,
+            "hasPrimarySource": False,
+            "independentSourceCount": 1,
+        }]
+        alert = MODULE.alert_for_week(
+            events, 60, 60, 60, 60, 10, [],
+        )
+        self.assertEqual(len(alert["reviewCandidates"]), 5)
+        self.assertGreater(alert["suppressedCandidateCount"], 0)
+        self.assertNotIn(
+            "single-source-noise",
+            {event["id"] for event in alert["reviewCandidates"]},
+        )
 
 
 if __name__ == "__main__":

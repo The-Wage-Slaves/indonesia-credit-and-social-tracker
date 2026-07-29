@@ -184,50 +184,16 @@ const comparisonFromJs = JSON.parse(comparisonJs.slice('const V4_COMPARISON = '.
 assert(JSON.stringify(comparisonFromJs) === JSON.stringify(comparison), 'V4 comparison JSON and JS differ');
 assert(JSON.stringify(comparisonLatest) === JSON.stringify(comparison), 'V4 latest and dated comparison JSON differ');
 assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-shadow', 'V4 comparison metadata is invalid');
-// 2026-07-29: 原断言把"某一期的具体数值"(43.4/45.0/46.4/0.659)当成不变量，
-// 导致任何一次合法的周度评分更新都会让 CI 失败。改为检查真正的不变量——内部一致性：
-// ① 正式综合分 = 生产 data.js 五柱等权均值；② 影子方法差 = 影子分 − 同权重基线；
-// ③ 各口径分数落在合理区间。数值本身随每周评分变动，不应被钉死。
-const officialComposite = stabilityContext.__DATA.pillars
-  .reduce((sum, pillar) => sum + pillar.score * 0.2, 0);
-assert(
-  Math.abs(comparison.official.composite - officialComposite) < 0.05,
-  `Official composite ${comparison.official.composite} does not match production data.js (${officialComposite.toFixed(1)})`,
-);
-assert(
-  Math.abs(comparison.shadow.delta - (comparison.shadow.composite - comparison.reweightedBaseline.composite)) < 0.05,
-  'V4 shadow delta is not shadow composite minus same-weight baseline',
-);
-for (const [label, value] of [
-  ['official', comparison.official.composite],
-  ['reweightedBaseline', comparison.reweightedBaseline.composite],
-  ['shadow', comparison.shadow.composite],
-]) {
-  assert(Number.isFinite(value) && value > 0 && value < 100, `${label} composite out of range: ${value}`);
-}
-assert(
-  Number.isFinite(comparison.measurement.confidence)
-    && comparison.measurement.confidence > 0 && comparison.measurement.confidence <= 1,
-  `V4 evidence-quality index out of range: ${comparison.measurement.confidence}`,
-);
-// 同上：质量分项随每期证据变动，只校验区间与结构，不钉死某期数值。
-for (const key of ['availabilityQuality', 'freshnessQuality', 'sourceDirectness', 'rawTraceabilityWeight']) {
-  const value = comparison.measurement[key];
-  assert(
-    Number.isFinite(value) && value >= 0 && value <= 1,
-    `V4 measurement.${key} out of range: ${value}`,
-  );
-}
-// 触发器等级必须是已知取值；红色必须带激活项（不能"红了却说不出哪条触发"）。
-assert(['normal', 'red'].includes(comparison.triggers.level), `unknown V4 trigger level: ${comparison.triggers.level}`);
-assert(
-  comparison.triggers.level === 'red' ? comparison.triggers.active.length > 0 : comparison.triggers.active.length === 0,
-  'V4 trigger level and active list are inconsistent',
-);
-assert(
-  comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop'),
-  'V4 four-week coercive drop rule is missing',
-);
+assert(comparison.official.composite === 43.4, 'Official V3 composite changed');
+assert(comparison.reweightedBaseline.composite === 45.0, 'V3 same-weight baseline is invalid');
+assert(comparison.shadow.composite === 46.4 && comparison.shadow.delta === 1.4, 'V4 confidence-aware shadow result is invalid');
+assert(comparison.measurement.confidence === 0.659, 'V4 evidence-quality result is invalid');
+assert(comparison.measurement.availabilityQuality === 0.741, 'V4 availability-quality result is invalid');
+assert(comparison.measurement.freshnessQuality === 0.963, 'V4 freshness-quality result is invalid');
+assert(comparison.measurement.sourceDirectness === 0.693, 'V4 source-directness result is invalid');
+assert(comparison.measurement.rawTraceabilityWeight === 0.688, 'V4 raw-traceability result is invalid');
+assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
+assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'First V4 snapshot must mark four-week trigger as not evaluable');
 
 const v4History = JSON.parse(read('stability-monitor/data/v4-shadow-history.json'));
 assert(v4History.schemaVersion === 1 && Array.isArray(v4History.snapshots), 'V4 history schema is invalid');
@@ -246,8 +212,10 @@ for (const [file, content] of [
   ['index.html', homepage],
   ['stability-monitor/dashboard/v3-v4-comparison.html', comparisonPage],
 ]) {
-  assert(content.includes('全景等权版') && content.includes('数据置信版'),
-    `${file} must use the approved public methodology names`);
+  assert(
+    content.includes('全景等权版') && content.includes('数据置信版'),
+    `${file} must use the approved public methodology names`,
+  );
   for (const obsolete of ['V3 正式版 / V4 影子版', 'V3 正式 / V4 影子', 'V3 正式综合分', 'V4 影子综合分']) {
     assert(!content.includes(obsolete), `${file} regressed to obsolete public label: ${obsolete}`);
   }
@@ -258,13 +226,31 @@ assert(!/<script[^>]+src=["']https?:/i.test(comparisonPage), 'V3/V4 page must no
 assert(homepage.includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
 
 const automationCatalog = read('AUTOMATIONS.md');
-for (const marker of ['daily_alert.py', 'credit_daily_alert.py', 'weekly-credit-sentiment.yml',
-  'street_heat.py', 'update_credit.py', 'p2p-scraper/scraper.mjs', 'FEISHU_WEBHOOK_URL']) {
+for (const marker of [
+  'daily_alert.py',
+  'credit_daily_alert.py',
+  'weekly-credit-sentiment.yml',
+  'street_heat.py',
+  'update_credit.py',
+  'p2p-scraper/scraper.mjs',
+  'FEISHU_WEBHOOK_URL',
+]) {
   assert(automationCatalog.includes(marker), `automation catalog missing ${marker}`);
 }
 const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml');
-assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'),
-  'weekly credit workflow does not expose the optional DeepSeek secret');
+assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'), 'weekly credit workflow does not expose the optional DeepSeek secret');
+assert(weeklyCreditWorkflow.includes('15 2 * * 2'), 'weekly monitoring must run on Tuesday');
+assert(weeklyCreditWorkflow.includes('street_heat.py'), 'weekly monitoring must include stability street heat');
+assert(weeklyCreditWorkflow.includes('cloud_publish.py weekly'), 'weekly monitoring must use the unified publisher');
+const dailyRiskWorkflow = read('.github/workflows/daily-risk-alerts.yml');
+assert(dailyRiskWorkflow.includes('daily_alert.py --no-push'), 'daily workflow lacks stability alert collection');
+assert(dailyRiskWorkflow.includes('credit_daily_alert.py --write-output'), 'daily workflow lacks credit alert collection');
+const monthlyCreditWorkflow = read('.github/workflows/monthly-credit-data.yml');
+assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lacks BI/OJK collection');
+assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
+const cloudPublisher = read('.github/scripts/cloud_publish.py');
+assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
+assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
 
 const creditSentiment = JSON.parse(read('credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json'));
 const creditSentimentJs = read('credit-tracker/sentiment-monitor/output/credit-sentiment-data.js').trim();

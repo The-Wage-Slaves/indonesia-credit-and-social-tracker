@@ -1,8 +1,9 @@
-name: Weekly digital-credit sentiment
+name: Tuesday weekly monitoring
 
 on:
   schedule:
-    - cron: "15 2 * * 1"
+    # Tuesday 10:15 Asia/Shanghai / 09:15 WIB.
+    - cron: "15 2 * * 2"
   workflow_dispatch:
 
 permissions:
@@ -10,11 +11,15 @@ permissions:
   issues: write
 
 concurrency:
-  group: weekly-credit-sentiment
+  group: tuesday-weekly-monitoring
   cancel-in-progress: false
 
+env:
+  PRIVATE_DASHBOARD_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site
+  DASHBOARD_INGEST_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site/api/automation-files
+
 jobs:
-  collect-and-stage:
+  collect-publish-and-notify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,9 +28,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Install sentiment collectors
-        run: pip install -r credit-tracker/sentiment-monitor/requirements.txt
-      - name: Build pending two-week fear-index review
+      - name: Install weekly collectors
+        run: |
+          pip install -r credit-tracker/sentiment-monitor/requirements.txt
+          pip install requests
+      - name: Prepare ignored runtime configuration
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os, pathlib, yaml
+          cfg = {
+              "youtube": {"api_key": os.getenv("YOUTUBE_API_KEY", "")},
+              "reddit": {
+                  "client_id": os.getenv("REDDIT_CLIENT_ID", ""),
+                  "client_secret": os.getenv("REDDIT_CLIENT_SECRET", ""),
+                  "user_agent": "github-actions:indonesia-monitor:v1",
+              },
+              "llm": {
+                  "api_key": os.getenv("DEEPSEEK_API_KEY", ""),
+                  "base_url": "https://api.deepseek.com",
+                  "model": "deepseek-chat",
+              },
+          }
+          pathlib.Path("stability-monitor/scripts/street_heat_config.yaml").write_text(
+              yaml.safe_dump(cfg, allow_unicode=True), encoding="utf-8"
+          )
+          PY
+      - name: Build digital-credit fear-index review
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
@@ -35,7 +68,11 @@ jobs:
         run: |
           python credit-tracker/sentiment-monitor/credit_sentiment.py --write-output
           python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
-      - name: Read review summary
+      - name: Build stability street-heat review
+        id: street
+        continue-on-error: true
+        run: python stability-monitor/scripts/street_heat.py
+      - name: Read weekly decision summary
         id: summary
         shell: bash
         run: |
@@ -47,10 +84,12 @@ jobs:
           console.log(`news_score=${latest.engines.news.score ?? "NA"}`);
           console.log(`social_score=${latest.engines.social.score ?? "NA"}`);
           console.log(`data_status=${latest.dataStatus}`);
-          console.log(`alert_level=${data.latestAlert.level}`);
-          console.log(`active_count=${data.latestAlert.active.length}`);
+          console.log(`alert_level=${latest.alert.level}`);
+          console.log(`active_count=${latest.alert.active.length}`);
+          console.log(`candidate_count=${(latest.alert.reviewCandidates || []).length}`);
+          console.log(`suppressed_count=${latest.alert.suppressedCandidateCount || 0}`);
           NODE
-      - name: Add the pending result to the workflow summary
+      - name: Add human-readable summary
         env:
           WEEK_END: ${{ steps.summary.outputs.week_end }}
           FEAR_INDEX: ${{ steps.summary.outputs.fear_index }}
@@ -58,34 +97,52 @@ jobs:
           SOCIAL_SCORE: ${{ steps.summary.outputs.social_score }}
           DATA_STATUS: ${{ steps.summary.outputs.data_status }}
           ALERT_LEVEL: ${{ steps.summary.outputs.alert_level }}
+          ACTIVE_COUNT: ${{ steps.summary.outputs.active_count }}
+          CANDIDATE_COUNT: ${{ steps.summary.outputs.candidate_count }}
+          SUPPRESSED_COUNT: ${{ steps.summary.outputs.suppressed_count }}
+          STREET_STATUS: ${{ steps.street.outcome }}
         shell: bash
         run: |
           {
-            echo "## Digital-credit sentiment pending review"
+            echo "## Tuesday monitoring · pending human review"
             echo
-            echo "| Week end | Fear index | News | Social | Coverage | Alert |"
-            echo "|---|---:|---:|---:|---|---|"
-            echo "| ${WEEK_END} | ${FEAR_INDEX} | ${NEWS_SCORE} | ${SOCIAL_SCORE} | ${DATA_STATUS} | ${ALERT_LEVEL} |"
+            echo "| Week end | Fear index | News | Social | Coverage | Alert | Verified events | Review candidates |"
+            echo "|---|---:|---:|---:|---|---|---:|---:|"
+            echo "| ${WEEK_END} | ${FEAR_INDEX} | ${NEWS_SCORE} | ${SOCIAL_SCORE} | ${DATA_STATUS} | ${ALERT_LEVEL} | ${ACTIVE_COUNT} | ${CANDIDATE_COUNT} |"
             echo
-            echo "This is an unconfirmed observation. It does not update \`main\` or confirmed dashboard history."
+            echo "- Street-heat collector: **${STREET_STATUS}**"
+            echo "- ${SUPPRESSED_COUNT} low-evidence/repeated candidates were folded away and are not high-risk events."
+            echo "- No confirmed score or history was changed."
           } >> "$GITHUB_STEP_SUMMARY"
-      - name: Publish pending review data without a pull request
+      - name: Publish pending data to private dashboard and notify Feishu on risk
+        env:
+          SITES_BYPASS_BEARER_TOKEN: ${{ secrets.SITES_BYPASS_BEARER_TOKEN }}
+          DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET }}
+        run: python .github/scripts/cloud_publish.py weekly --publish-dashboard --push
+      - name: Stage pending review data without a pull request
+        if: always()
         env:
           WEEK_END: ${{ steps.summary.outputs.week_end }}
         shell: bash
         run: |
-          if git diff --quiet -- credit-tracker/sentiment-monitor/output; then
-            echo "No pending-output change."
-            exit 0
-          fi
-          branch="bot/weekly-credit-sentiment"
+          branch="bot/weekly-monitoring"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$branch"
-          git add credit-tracker/sentiment-monitor/output
-          git commit -m "data: prepare digital-credit sentiment review for ${WEEK_END}"
+          git add \
+            credit-tracker/sentiment-monitor/output \
+            stability-monitor/scripts/output \
+            stability-monitor/scripts/street_heat_history.json \
+            pending.json pending.js outputs || true
+          if git diff --cached --quiet; then
+            echo "No pending-output change."
+            exit 0
+          fi
+          git commit -m "data: prepare Tuesday monitoring review for ${WEEK_END:-unknown}"
           git push --force-with-lease origin "HEAD:${branch}"
-      - name: Create a deduplicated red-alert issue
+      - name: Create one deduplicated red-alert issue
         if: steps.summary.outputs.alert_level == 'red'
         env:
           GH_TOKEN: ${{ github.token }}
@@ -99,5 +156,5 @@ jobs:
           if [ -z "$existing" ]; then
             gh issue create \
               --title "$title" \
-              --body "Automated evidence gate passed for ${ACTIVE_COUNT} high-risk event(s). Fear index: **${FEAR_INDEX}**. Review the pending evidence on the \`bot/weekly-credit-sentiment\` branch and its cited primary and independent sources before acting. No confirmed dashboard history has been changed."
+              --body "Weekly evidence triggered red review. Fear index: **${FEAR_INDEX}**; verified event count: **${ACTIVE_COUNT}**. Open the private dashboard for the capped human-readable evidence list. No confirmed history was changed."
           fi

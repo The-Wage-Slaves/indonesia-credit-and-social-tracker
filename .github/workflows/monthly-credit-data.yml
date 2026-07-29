@@ -1,0 +1,86 @@
+name: Monthly credit data collection
+
+on:
+  schedule:
+    # First day of each month, 11:00 Asia/Shanghai / 10:00 WIB.
+    - cron: "0 3 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: monthly-credit-data
+  cancel-in-progress: false
+
+env:
+  PRIVATE_DASHBOARD_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site
+  DASHBOARD_INGEST_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site/api/automation-files
+
+jobs:
+  collect-stage-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: credit-tracker/p2p-scraper/package-lock.json
+      - name: Install monthly collectors
+        run: |
+          pip install requests pandas xlrd openpyxl
+          npm ci --prefix credit-tracker/p2p-scraper
+          npx --prefix credit-tracker/p2p-scraper playwright install --with-deps chromium
+      - name: Collect BI/OJK industry data
+        id: industry
+        continue-on-error: true
+        run: python credit-tracker/update_credit.py
+      - name: Collect P2P competitor disclosures
+        id: competitors
+        continue-on-error: true
+        run: npm --prefix credit-tracker/p2p-scraper run scrape
+      - name: Publish pending batch and notify Feishu when review is needed
+        env:
+          SITES_BYPASS_BEARER_TOKEN: ${{ secrets.SITES_BYPASS_BEARER_TOKEN }}
+          DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL }}
+          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET }}
+        run: python .github/scripts/cloud_publish.py monthly --publish-dashboard --push
+      - name: Add collection summary
+        env:
+          INDUSTRY_STATUS: ${{ steps.industry.outcome }}
+          COMPETITOR_STATUS: ${{ steps.competitors.outcome }}
+        shell: bash
+        run: |
+          {
+            echo "## Monthly credit data · pending human review"
+            echo
+            echo "- BI/OJK collector: **${INDUSTRY_STATUS}**"
+            echo "- P2P competitor collector: **${COMPETITOR_STATUS}**"
+            echo "- New data is staged for review; confirmed dashboard history was not changed."
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Stage monthly data without a pull request
+        if: always()
+        shell: bash
+        run: |
+          branch="bot/monthly-credit-data"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch"
+          git add \
+            pending.json pending.js \
+            credit-tracker/dashboard/p2p-pending.js \
+            credit-tracker/p2p-scraper/results \
+            outputs || true
+          if git diff --cached --quiet; then
+            echo "No monthly pending-data change."
+            exit 0
+          fi
+          git commit -m "data: stage monthly credit review $(date -u +%Y-%m)"
+          git push --force-with-lease origin "HEAD:${branch}"
