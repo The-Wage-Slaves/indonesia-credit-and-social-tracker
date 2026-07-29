@@ -37,7 +37,8 @@ DATA_DIR = HERE.parent / "data"
 EVENTS_DIR = DATA_DIR / "daily-events"
 CONFIG = HERE / "street_heat_config.yaml"          # 复用稳定性侧的 DeepSeek key
 SOURCES_YAML = HERE.parent / "brief" / "config" / "sources.yaml"
-INDO_NEWS_ENV = pathlib.Path(r"E:\AI Tools\CC\Work Session\indo_news\.env")  # 复用飞书机器人
+# Optional pointer to the existing indo_news .env; never commit a machine-specific path.
+INDO_NEWS_ENV_FILE = os.environ.get("INDO_NEWS_ENV_FILE", "")
 
 BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
@@ -70,9 +71,9 @@ def load_yaml_config() -> dict:
         return {}
 
 
-def load_env_file(path: pathlib.Path) -> dict:
+def load_env_file(path: pathlib.Path | None) -> dict:
     out = {}
-    if not path.exists():
+    if path is None or not path.exists():
         return out
     for line in path.read_text(encoding="utf-8").splitlines():
         line = line.strip()
@@ -223,9 +224,16 @@ def append_events(day: str, events: list[dict], graded: dict) -> pathlib.Path:
 
 # ============ 5. 推飞书 ============
 def push_feishu(day: str, graded: dict, n_items: int) -> None:
-    env = load_env_file(INDO_NEWS_ENV)
-    webhook = env.get("FEISHU_WEBHOOK_URL") or os.environ.get("FEISHU_WEBHOOK_URL")
-    secret = env.get("FEISHU_SIGN_SECRET") or os.environ.get("FEISHU_SIGN_SECRET", "")
+    env_path = pathlib.Path(INDO_NEWS_ENV_FILE) if INDO_NEWS_ENV_FILE else None
+    env = load_env_file(env_path)
+    webhook = (
+        os.environ.get("FEISHU_WEBHOOK_URL") or os.environ.get("FEISHU_WEBHOOK")
+        or env.get("FEISHU_WEBHOOK_URL") or env.get("FEISHU_WEBHOOK")
+    )
+    secret = (
+        os.environ.get("FEISHU_SIGN_SECRET") or os.environ.get("FEISHU_SECRET")
+        or env.get("FEISHU_SIGN_SECRET") or env.get("FEISHU_SECRET") or ""
+    )
     if not webhook:
         print("  ! 未找到飞书 webhook，跳过推送")
         return
