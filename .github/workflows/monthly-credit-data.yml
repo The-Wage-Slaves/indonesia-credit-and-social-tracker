@@ -73,11 +73,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$branch"
-          git add \
-            pending.json pending.js \
-            credit-tracker/dashboard/p2p-pending.js \
-            credit-tracker/p2p-scraper/results \
-            outputs || true
+          git add pending.json pending.js || true
+          git add credit-tracker/dashboard/p2p-pending.js || true
+          git add credit-tracker/p2p-scraper/results || true
+          git add outputs 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No monthly pending-data change."
             exit 0
