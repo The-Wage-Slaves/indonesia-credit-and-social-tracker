@@ -93,5 +93,14 @@ python credit-tracker/sentiment-monitor/credit_sentiment.py `
 ```
 
 仓库的 `Weekly digital-credit sentiment` 工作流每周一运行同一脚本，只更新
-`bot/weekly-credit-sentiment` 分支并新建或刷新待审 PR，不直接写入 `main`。
-通过红色证据门的事件会另开去重 GitHub issue，最终仍需人工复核原文。
+`bot/weekly-credit-sentiment` 待确认分支，不创建周度数据 PR，也不直接写入
+`main`。PR 只用于评分方法、采集器、页面和安全逻辑等系统级更改。
+
+工作流会把本周摘要写入 GitHub Actions run summary。后续通知出口计划接入飞书：
+使用仓库 Secret 保存 webhook/应用凭据，把指数、覆盖度、红色事件和证据链接推送
+到指定会话；在收到所有者的明确确认前，结果始终保持
+`pilot-pending-human-review`。现阶段不接入任何真实 Hook，接口设计和确认边界见
+[`REVIEW_REQUEST.md`](REVIEW_REQUEST.md)。
+
+通过红色证据门的事件仍会另开去重 GitHub Issue，作为异常升级记录；普通周度数据
+不会创建 Issue。
