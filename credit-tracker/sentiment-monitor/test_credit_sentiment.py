@@ -138,5 +138,17 @@ class CreditSentimentTests(unittest.TestCase):
         self.assertEqual(counts["IRR"], 1)
 
 
+    def test_kredivo_ojk_headlines_share_one_event_id(self):
+        ids = {
+            MODULE.automatic_event_id(text)
+            for text in (
+                "OJK panggil Kredivo soal penagihan debt collector",
+                "KrediFazz buka suara atas dugaan intimidasi penagihan",
+                "Pelecehan oleh penagih Kredivo menjadi sorotan",
+            )
+        }
+        self.assertEqual(ids, {"kredivo-kredifazz-purworejo-2026-07"})
+
+
 if __name__ == "__main__":
     unittest.main()
