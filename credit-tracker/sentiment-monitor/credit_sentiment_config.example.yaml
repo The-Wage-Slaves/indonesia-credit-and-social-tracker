@@ -1,6 +1,6 @@
 # Copy to credit_sentiment_config.yaml for local runs. The real file is ignored.
-# The collector also falls back to stability-monitor/scripts/street_heat_config.yaml,
-# so existing YouTube / Reddit credentials can be reused without duplication.
+# Values are merged with stability-monitor/scripts/street_heat_config.yaml,
+# so blank local fields do not hide an existing shared YouTube/Reddit/DeepSeek key.
 
 youtube:
   api_key: ""
@@ -14,8 +14,9 @@ x:
   bearer_token: ""
 
 llm:
-  # Reserved for reviewed model-based sentiment classification. The deterministic
-  # Indonesian lexicon remains the auditable fallback.
+  # Optional DeepSeek batch classification for public social posts. If absent or
+  # if the call fails, the deterministic Indonesian lexicon remains the fallback.
+  # In GitHub Actions use the DEEPSEEK_API_KEY repository secret.
   api_key: ""
   base_url: "https://api.deepseek.com"
   model: "deepseek-chat"
