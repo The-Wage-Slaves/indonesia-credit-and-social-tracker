@@ -7,7 +7,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
   issues: write
 
 concurrency:
@@ -15,7 +14,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  prepare-review:
+  collect-and-stage:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -50,15 +49,28 @@ jobs:
           console.log(`alert_level=${data.latestAlert.level}`);
           console.log(`active_count=${data.latestAlert.active.length}`);
           NODE
-      - name: Open or refresh a human-review PR
+      - name: Add the pending result to the workflow summary
         env:
-          GH_TOKEN: ${{ github.token }}
           WEEK_END: ${{ steps.summary.outputs.week_end }}
           FEAR_INDEX: ${{ steps.summary.outputs.fear_index }}
           NEWS_SCORE: ${{ steps.summary.outputs.news_score }}
           SOCIAL_SCORE: ${{ steps.summary.outputs.social_score }}
           DATA_STATUS: ${{ steps.summary.outputs.data_status }}
           ALERT_LEVEL: ${{ steps.summary.outputs.alert_level }}
+        shell: bash
+        run: |
+          {
+            echo "## Digital-credit sentiment pending review"
+            echo
+            echo "| Week end | Fear index | News | Social | Coverage | Alert |"
+            echo "|---|---:|---:|---:|---|---|"
+            echo "| ${WEEK_END} | ${FEAR_INDEX} | ${NEWS_SCORE} | ${SOCIAL_SCORE} | ${DATA_STATUS} | ${ALERT_LEVEL} |"
+            echo
+            echo "This is an unconfirmed observation. It does not update \`main\` or confirmed dashboard history."
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Publish pending review data without a pull request
+        env:
+          WEEK_END: ${{ steps.summary.outputs.week_end }}
         shell: bash
         run: |
           if git diff --quiet -- credit-tracker/sentiment-monitor/output; then
@@ -72,18 +84,6 @@ jobs:
           git add credit-tracker/sentiment-monitor/output
           git commit -m "data: prepare digital-credit sentiment review for ${WEEK_END}"
           git push --force-with-lease origin "HEAD:${branch}"
-          existing="$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')"
-          if [ -z "$existing" ]; then
-            gh pr create \
-              --base main \
-              --head "$branch" \
-              --title "data: weekly digital-credit sentiment review (${WEEK_END})" \
-              --body "Human review required. Fear index: **${FEAR_INDEX}**; news: **${NEWS_SCORE}**; social: **${SOCIAL_SCORE}**; coverage: **${DATA_STATUS}**; alert: **${ALERT_LEVEL}**. Review source-health gaps before approval. This PR contains pending artifacts only and cannot update confirmed dashboard history without merge approval."
-          else
-            gh pr edit "$existing" \
-              --title "data: weekly digital-credit sentiment review (${WEEK_END})" \
-              --body "Human review required. Fear index: **${FEAR_INDEX}**; news: **${NEWS_SCORE}**; social: **${SOCIAL_SCORE}**; coverage: **${DATA_STATUS}**; alert: **${ALERT_LEVEL}**. Review source-health gaps before approval. This PR contains pending artifacts only and cannot update confirmed dashboard history without merge approval."
-          fi
       - name: Create a deduplicated red-alert issue
         if: steps.summary.outputs.alert_level == 'red'
         env:
@@ -98,5 +98,5 @@ jobs:
           if [ -z "$existing" ]; then
             gh issue create \
               --title "$title" \
-              --body "Automated evidence gate passed for ${ACTIVE_COUNT} high-risk event(s). Fear index: **${FEAR_INDEX}**. Review the weekly sentiment PR and its cited primary and independent sources before acting."
+              --body "Automated evidence gate passed for ${ACTIVE_COUNT} high-risk event(s). Fear index: **${FEAR_INDEX}**. Review the pending evidence on the \`bot/weekly-credit-sentiment\` branch and its cited primary and independent sources before acting. No confirmed dashboard history has been changed."
           fi
