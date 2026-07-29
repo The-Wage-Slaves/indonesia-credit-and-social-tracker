@@ -4,7 +4,7 @@ const V4_COMPARISON = {
   "asOf": "2026-07-28",
   "official": {
     "methodology": "V3",
-    "composite": 43.0,
+    "composite": 43.4,
     "displayScore": 43,
     "pillarWeights": {
       "fiscal": 0.2,
@@ -16,14 +16,14 @@ const V4_COMPARISON = {
     "scores": {
       "fiscal": 48.0,
       "currency": 40.0,
-      "institutions": 35.0,
+      "institutions": 37.0,
       "social": 55.0,
       "coercive": 37.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 44.7,
+    "composite": 45.0,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -34,8 +34,8 @@ const V4_COMPARISON = {
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 46.2,
-    "delta": 1.5,
+    "composite": 46.4,
+    "delta": 1.4,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -46,11 +46,11 @@ const V4_COMPARISON = {
     "publicationStatus": "provisional-shadow"
   },
   "measurement": {
-    "confidence": 0.66,
+    "confidence": 0.659,
     "label": "evidence quality index; not a probability of correctness",
     "availabilityQuality": 0.741,
     "freshnessQuality": 0.963,
-    "sourceDirectness": 0.696,
+    "sourceDirectness": 0.693,
     "rawTraceabilityWeight": 0.688,
     "lowConfidenceWeight": 0.17,
     "missingWeight": 0.038,
@@ -359,16 +359,16 @@ const V4_COMPARISON = {
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 35.0,
-      "v4ShadowScore": 35.9,
-      "delta": 0.9,
+      "v3Score": 37.0,
+      "v4ShadowScore": 36.9,
+      "delta": -0.1,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
-      "measurementConfidence": 0.636,
+      "measurementConfidence": 0.63,
       "availabilityQuality": 0.715,
       "freshnessQuality": 1.0,
-      "sourceDirectness": 0.72,
+      "sourceDirectness": 0.7,
       "rawTraceabilityWeight": 0.25,
       "nonOrdinalPlannedWeight": 0.9,
       "pillarWeight": 0.15,
@@ -440,19 +440,18 @@ const V4_COMPARISON = {
           "id": "institutional_checks",
           "label": "关键机构独立与制衡",
           "weight": 0.2,
-          "score": 25.0,
+          "score": 30.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
-          "evidenceQuality": 0.675,
+          "evidenceQuality": 0.645,
           "freshnessQuality": 1.0,
-          "sourceDirectness": 0.75,
+          "sourceDirectness": 0.65,
           "observationIds": [
-            "institutional_checks_2026_07",
-            "bi_governor_resignation_2026_07"
+            "institutional_checks_2026_07"
           ],
-          "basis": "只测制衡事件，不使用通胀、汇率或外储结果。2026-07 计入BI行长提前辞职(治理层动荡)。",
+          "basis": "只测制衡事件，不使用通胀、汇率或外储结果。",
           "missingReason": null
         },
         {
