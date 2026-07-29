@@ -3,6 +3,9 @@
     {
       "id": "kredivo-kredifazz-purworejo-2026-07",
       "label": "Kredivo/KrediFazz Purworejo collection incident",
+      "headlineZh": "OJK 就 Kredivo/KrediFazz 涉嫌违反催收伦理一事进行约谈",
+      "summaryZh": "Purworejo 一宗催收纠纷引发监管介入。OJK 已约谈 Kredivo 与 KrediFazz；后续媒体称双方已和解、公司承诺加强催收监督，但监管介入和消费者伤害风险仍值得正式留痕。",
+      "reviewQuestionZh": "是否将该事件作为本周线上信贷风险正式留痕？",
       "reviewStatus": "human-verified-source-pack",
       "articles": [
         {
@@ -42,3 +45,4 @@
     }
   ]
 }
+
