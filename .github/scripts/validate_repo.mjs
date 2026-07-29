@@ -251,6 +251,9 @@ assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2
 const cloudPublisher = read('.github/scripts/cloud_publish.py');
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
 assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
+assert(cloudPublisher.includes('"OAI-Sites-Authorization"'), 'Sites ingest must use the platform bypass header');
+assert(cloudPublisher.includes('Keep Feishu independent from dashboard delivery'), 'dashboard failure must not suppress Feishu');
+assert(cloudPublisher.includes('Keep dashboard delivery independent from Feishu'), 'Feishu failure must not suppress dashboard');
 
 const creditSentiment = JSON.parse(read('credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json'));
 const creditSentimentJs = read('credit-tracker/sentiment-monitor/output/credit-sentiment-data.js').trim();
