@@ -1,17 +1,18 @@
 # Agent Handoff
 
-Last updated: 2026-07-28
+Last updated: 2026-07-29
 
 ## Current state
 
 - Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker` (private).
-- `main` contains PR #1–#5 and the 2026-07-28 confirmed production snapshot.
+- `main` contains PR #1–#5 and PR #7, plus the 2026-07-28 confirmed
+  production snapshot. Number #6 is a red-alert Issue, not a pull request.
 - 全景等权版（内部代号 V3）仍是唯一正式口径。
 - 数据置信版（内部代号 V4）仍是只读影子口径，不得自动替换正式分数。
-- PR #6 is a review-only branch upgrading the fear monitor to a news/social
-  dual engine. Do not merge it without human review.
+- PR #7 merged the news/social fear-monitor v2 and the final weekly staging
+  boundary. Routine weekly observations no longer create pull requests.
 
-## PR #6 — news/social fear monitor v2 (pending review)
+## PR #7 — news/social fear monitor v2 (merged)
 
 The v2 formula is 25% news-density shock + 20% news negativity + 20% social
 volume shock + 20% social negativity + 15% verified-event severity. Data
@@ -26,7 +27,9 @@ official X API adapter. YouTube captures comments as well as video titles.
 The reviewed two-week fixture contains news evidence only, so the regenerated
 preview correctly shows social pressure as unavailable rather than inventing
 social observations. A live weekly run fills social evidence where configured.
-The weekly workflow remains human-in-the-loop and does not write `main`.
+The weekly workflow remains human-in-the-loop. It writes pending results to
+`bot/weekly-credit-sentiment`, adds a GitHub Actions run summary, and never
+opens a routine data PR or writes confirmed history to `main`.
 
 ## PR #5 — V4 evidence-quality upgrade
 
@@ -62,7 +65,7 @@ Important changes:
   production mode must carry forward with expiry or withhold publication.
 - Trigger tests include the exact four-week boundary and stale-evidence cases.
 
-## PR #5 — digital-credit fear monitor
+## PR #5 / #7 — digital-credit fear monitor
 
 Main files:
 
@@ -76,17 +79,19 @@ Pilot results:
 
 | Complete week | Fear index | Alert |
 |---|---:|---|
-| 2026-07-13–2026-07-19 | 63.8 | Amber |
-| 2026-07-20–2026-07-26 | 69.6 | Red |
+| 2026-07-13–2026-07-19 | 65.2 | Amber |
+| 2026-07-20–2026-07-26 | 69.9 | Red |
 
 The Kredivo/KrediFazz Purworejo collection incident passes the red evidence
 gate because it has an OJK primary release and independent corroborating media.
 The index measures short-term fear/attention shock, not solvency or brand favorability.
 
 The scheduled workflow runs every Monday. It writes only pending artifacts to
-`bot/weekly-credit-sentiment`, opens or refreshes a review PR, and creates a
-deduplicated red-alert GitHub issue only when the strict evidence gate passes.
-It never writes confirmed dashboard history directly.
+`bot/weekly-credit-sentiment`, adds a review summary to the Actions run, and
+creates a deduplicated red-alert GitHub Issue only when the strict evidence
+gate passes. It does not create a routine data PR or write confirmed dashboard
+history directly. Feishu delivery is designed but not yet connected; see
+`credit-tracker/sentiment-monitor/REVIEW_REQUEST.md`.
 
 ## Validation
 
@@ -102,11 +107,13 @@ node .github/scripts/validate_repo.mjs
 
 ## Next priorities
 
-1. Accumulate at least eight weekly credit-sentiment observations, then replace
+1. Integrate the owner's existing daily Indonesia-news Hooks into the future
+   Feishu review adapter after the payload format is provided.
+2. Accumulate at least eight weekly credit-sentiment observations, then replace
    the pilot week-on-week volume component with rolling median + MAD.
-2. Replace V4 migration-anchor transforms with 24–36 months of raw histories.
-3. Add YouTube comments and Kaskus forum/21 to the stability street-heat source pool.
-4. Complete OJK new-portal parsing and the remaining P2P source gaps.
+3. Replace V4 migration-anchor transforms with 24–36 months of raw histories.
+4. Add YouTube comments and Kaskus forum/21 to the stability street-heat source pool.
+5. Complete OJK new-portal parsing and the remaining P2P source gaps.
 
 ## Takeover prompt
 
@@ -119,6 +126,7 @@ the first unfinished priority without bypassing human confirmation.
 ## Operating notes
 
 - Never commit keys, tokens, cookies or private account data.
-- Scripts prepare review artifacts; only a human-approved merge may publish them.
+- Scripts prepare review artifacts; only an explicit human approval may publish
+  confirmed data. Routine observations are not code-review pull requests.
 - The current local root `.git` metadata is unreliable. GitHub `main` and PR
   branches are the source of truth until a clean clone is made.
