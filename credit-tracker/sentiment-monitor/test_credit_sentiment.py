@@ -112,6 +112,98 @@ class CreditSentimentTests(unittest.TestCase):
         )
         self.assertAlmostEqual(sum(MODULE.COMPONENT_WEIGHTS.values()), 1.0)
 
+    def test_blank_local_config_does_not_hide_shared_credentials(self):
+        merged = MODULE.merge_nonempty_config(
+            {"youtube": {"api_key": "shared-key"}, "llm": {"api_key": "shared-llm"}},
+            {"youtube": {"api_key": ""}, "x": {"bearer_token": "credit-x"}},
+        )
+        self.assertEqual(merged["youtube"]["api_key"], "shared-key")
+        self.assertEqual(merged["llm"]["api_key"], "shared-llm")
+        self.assertEqual(merged["x"]["bearer_token"], "credit-x")
+
+    def test_deepseek_labels_drop_irrelevant_and_keep_lexicon_trace(self):
+        items = [
+            {"platform": "youtube", "text": "pinjol debt collector intimidasi"},
+            {"platform": "kaskus", "text": "promo telepon genggam"},
+        ]
+        mapped, counts = MODULE.apply_llm_social_labels(items, [
+            {"index": 1, "label": "NEG", "confidence": 0.91},
+            {"index": 2, "label": "IRR", "confidence": 0.99},
+        ])
+        self.assertEqual(len(mapped), 1)
+        self.assertEqual(mapped[0]["sentiment"]["method"], "deepseek_credit_social_v1")
+        self.assertIn("lexiconRisk", mapped[0]["sentiment"])
+        self.assertEqual(counts["NEG"], 1)
+        self.assertEqual(counts["IRR"], 1)
+
+    def test_kredivo_ojk_headlines_share_one_event_id(self):
+        ids = {
+            MODULE.automatic_event_id(text)
+            for text in (
+                "OJK panggil Kredivo soal penagihan debt collector",
+                "KrediFazz buka suara atas dugaan intimidasi penagihan",
+                "Pelecehan oleh penagih Kredivo menjadi sorotan",
+            )
+        }
+        self.assertEqual(ids, {"kredivo-kredifazz-purworejo-2026-07"})
+
+    def test_generic_pinjol_terror_mentions_do_not_merge(self):
+        school_threat = MODULE.automatic_event_id(
+            "Peneror bom di SDN Srengseng Sawah ternyata terjerat pinjol"
+        )
+        consumer_protection = MODULE.automatic_event_id(
+            "DPR soroti teror dan pencurian data oleh pinjol ilegal"
+        )
+        fisherman_protection = MODULE.automatic_event_id(
+            "OJK APPK dan IASC lindungi nelayan dari teror pinjol ilegal"
+        )
+        self.assertEqual(len({school_threat, consumer_protection, fisherman_protection}), 3)
+        self.assertNotIn(
+            "debt-linked-school-threat-2026-07",
+            {school_threat, consumer_protection, fisherman_protection},
+        )
+
+    def test_verified_kredivo_seed_contains_primary_and_independent_sources(self):
+        articles = MODULE.load_verified_event_articles(dt.date(2026, 7, 29))
+        events = MODULE.cluster_events(MODULE.enrich_articles(articles), [])
+        kredivo = next(
+            event for event in events
+            if event["id"] == "kredivo-kredifazz-purworejo-2026-07"
+        )
+        self.assertTrue(kredivo["hasPrimarySource"])
+        self.assertGreaterEqual(kredivo["independentSourceCount"], 3)
+        self.assertIn("OJK", kredivo["headlineZh"])
+        self.assertIn("监管介入", kredivo["summaryZh"])
+        self.assertIn("正式留痕", kredivo["reviewQuestionZh"])
+        self.assertEqual(kredivo["reviewedSourceCount"], 3)
+
+    def test_review_candidates_are_evidence_filtered_and_capped(self):
+        events = [
+            {
+                "id": f"candidate-{index}",
+                "eventType": "consumer_harm",
+                "severity": 0.86,
+                "hasPrimarySource": False,
+                "independentSourceCount": 2,
+            }
+            for index in range(12)
+        ] + [{
+            "id": "single-source-noise",
+            "eventType": "consumer_harm",
+            "severity": 0.86,
+            "hasPrimarySource": False,
+            "independentSourceCount": 1,
+        }]
+        alert = MODULE.alert_for_week(
+            events, 60, 60, 60, 60, 10, [],
+        )
+        self.assertEqual(len(alert["reviewCandidates"]), 5)
+        self.assertGreater(alert["suppressedCandidateCount"], 0)
+        self.assertNotIn(
+            "single-source-noise",
+            {event["id"] for event in alert["reviewCandidates"]},
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

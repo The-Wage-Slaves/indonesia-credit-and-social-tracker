@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>稳定性指数 · V3 / V4 同日比较</title>
+<title>稳定性指数 · 全景等权版 / 数据置信版 同日比较</title>
 <style>
   :root {
     --bg:#f5f6f8; --panel:#fff; --ink:#16202a; --muted:#647181; --line:#dfe4e9;
@@ -83,25 +83,25 @@
 <main class="wrap">
   <a class="back" href="../../index.html">← 返回监测中心</a>
   <div class="eyebrow">Methodology migration · review only</div>
-  <h1>V3 正式版 / V4 影子版同日比较</h1>
+  <h1>全景等权版（正式） / 数据置信版（影子） 同日比较</h1>
   <p class="lede">同一截止日期、同一批已审阅证据，只改变指标归属和计算结构，用来观察 MECE 重构本身会怎样改变分数。</p>
-  <div class="notice"><b>当前正式口径仍是 V3。</b> V4 不是新一期正式指数，也不能接到 V3 历史曲线上。方法差异必须以“V3支柱分按V4权重重算”的基线比较。证据质量指数综合可用性、新鲜度和来源直达度，不是统计准确率。</div>
+  <div class="notice"><b>当前正式口径仍是全景等权版（内部代号 v3）。</b> 数据置信版（内部代号 v4）不是新一期正式指数，也不能接到全景等权版历史曲线上。方法差异必须以“全景等权版支柱分按数据置信版权重重算”的基线比较。证据质量指数综合可用性、新鲜度和来源直达度，不是统计准确率。</div>
 
   <section class="summary" id="summary" aria-label="综合比较"></section>
 
   <section class="panel">
     <h2>五支柱比较</h2>
-    <p class="hint">每行上方为 V3 正式分，下方为 V4 影子分；满刻度为 100。</p>
-    <div class="legend"><span><i class="dot" style="background:var(--v3)"></i>V3 正式</span><span><i class="dot" style="background:var(--v4)"></i>V4 影子</span></div>
+    <p class="hint">每行上方为全景等权版（v3）分数，下方为数据置信版（v4）分数；满刻度为 100。</p>
+    <div class="legend"><span><i class="dot" style="background:var(--v3)"></i>全景等权版 · 正式</span><span><i class="dot" style="background:var(--v4)"></i>数据置信版 · 影子</span></div>
     <div id="chart"></div>
   </section>
 
   <section class="panel">
     <h2>分数与数据质量</h2>
-    <p class="hint">覆盖率不足时，V4 只在有数据的权重内归一化，不用主观分数填补。</p>
+    <p class="hint">覆盖率不足时，数据置信版只在有数据的权重内归一化，不用主观分数填补。</p>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>支柱</th><th>V4权重</th><th>V3</th><th>V4</th><th>变化</th><th>覆盖率</th><th>证据质量</th><th>新鲜度</th><th>来源直达度</th><th>原始输入可追溯</th><th>低置信权重</th></tr></thead>
+        <thead><tr><th>支柱</th><th>置信版权重</th><th>全景等权</th><th>数据置信</th><th>变化</th><th>覆盖率</th><th>证据质量</th><th>新鲜度</th><th>来源直达度</th><th>原始输入可追溯</th><th>低置信权重</th></tr></thead>
         <tbody id="comparisonBody"></tbody>
       </table>
     </div>
@@ -115,7 +115,7 @@
   </section>
 
   <section class="panel">
-    <h2>V4 子维度与证据归属</h2>
+    <h2>数据置信版子维度与证据归属</h2>
     <p class="hint">每个支柱保持 4–5 项。每条证据只有一个 primaryOwner，从结构上阻止跨支柱重复计分。</p>
     <div id="driverDetails"></div>
   </section>
@@ -126,9 +126,9 @@
     <div class="sources">
       <a id="evidenceLink" href="../data/evidence/2026-07-28.json">查看统一证据台账</a>
       <a href="../data/v4-comparison-latest.json">查看机器可读比较结果</a>
-      <a href="../docs/METHODOLOGY_V4_DRAFT.md">查看 V4 方法论草案</a>
-      <a href="../docs/V4_WEEKLY_RUNBOOK.md">查看 V4 周度运行手册</a>
-      <a href="../docs/METHODOLOGY_V3_PROPOSAL.md">查看 V3 校验档案</a>
+      <a href="../docs/METHODOLOGY_V4_DRAFT.md">查看数据置信版方法论草案</a>
+      <a href="../docs/V4_WEEKLY_RUNBOOK.md">查看数据置信版周度运行手册</a>
+      <a href="../docs/METHODOLOGY_V3_PROPOSAL.md">查看全景等权版校验档案</a>
     </div>
   </section>
   <footer id="footer"></footer>
@@ -155,10 +155,10 @@
 
   var summary = document.getElementById("summary");
   [
-    ["V3 正式综合分", score(data.official.composite), "生产口径；页面显示整数 " + data.official.displayScore, "v3"],
-    ["V3 按V4权重", score(data.reweightedBaseline.composite), "隔离顶层权重变化", "v3"],
-    ["V4 影子综合分", score(data.shadow.composite), "暂定结构迁移实验", "v4"],
-    ["方法论变化", delta(data.shadow.delta), "V4减去同权重V3；非周度变化", data.shadow.delta >= 0 ? "positive" : "negative"],
+    ["全景等权版综合分", score(data.official.composite), "正式生产口径（v3）；页面显示整数 " + data.official.displayScore, "v3"],
+    ["等权版按置信版权重", score(data.reweightedBaseline.composite), "隔离顶层权重变化", "v3"],
+    ["数据置信版综合分", score(data.shadow.composite), "暂定影子结构（v4）", "v4"],
+    ["方法论变化", delta(data.shadow.delta), "数据置信版减去同权重的全景等权版；非周度变化", data.shadow.delta >= 0 ? "positive" : "negative"],
     ["证据质量指数", pct(data.measurement.confidence), "可用性 " + pct(data.measurement.availabilityQuality) + " · 新鲜度 " + pct(data.measurement.freshnessQuality) + " · 来源 " + pct(data.measurement.sourceDirectness), "v4"]
   ].forEach(function (item) {
     var card = node("div", "metric");
@@ -229,7 +229,7 @@
   data.pillars.forEach(function (pillar) {
     var details = document.createElement("details");
     var summaryEl = document.createElement("summary");
-    summaryEl.textContent = pillar.label + " · 权重 " + pct(pillar.pillarWeight) + " · V4 " + score(pillar.v4ShadowScore) + " · 证据质量 " + pct(pillar.measurementConfidence);
+    summaryEl.textContent = pillar.label + " · 权重 " + pct(pillar.pillarWeight) + " · 数据置信版 " + score(pillar.v4ShadowScore) + " · 证据质量 " + pct(pillar.measurementConfidence);
     details.appendChild(summaryEl);
     var grid = node("div", "driver-grid");
     pillar.drivers.forEach(function (driver) {
@@ -246,7 +246,7 @@
   var caveats = document.getElementById("caveats");
   data.caveats.forEach(function (item) { caveats.appendChild(node("li", "", item)); });
   document.getElementById("evidenceLink").href = "../data/" + data.evidenceFile;
-  document.getElementById("footer").textContent = "静态只读页面 · 数据截止 " + data.asOf + " · 证据质量指数 " + pct(data.measurement.confidence) + "（非准确率） · V3 official / V4 provisional shadow";
+  document.getElementById("footer").textContent = "静态只读页面 · 数据截止 " + data.asOf + " · 证据质量指数 " + pct(data.measurement.confidence) + "（非准确率） · 全景等权版正式 / 数据置信版影子";
 }());
 </script>
 </body>

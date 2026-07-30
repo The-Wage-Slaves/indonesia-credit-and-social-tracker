@@ -186,14 +186,14 @@ assert(JSON.stringify(comparisonLatest) === JSON.stringify(comparison), 'V4 late
 assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-shadow', 'V4 comparison metadata is invalid');
 assert(comparison.official.composite === 43.4, 'Official V3 composite changed');
 assert(comparison.reweightedBaseline.composite === 45.0, 'V3 same-weight baseline is invalid');
-assert(comparison.shadow.composite === 46.4 && comparison.shadow.delta === 1.4, 'V4 confidence-aware shadow result is invalid');
+assert(comparison.shadow.composite === 46.5 && comparison.shadow.delta === 1.5, 'V4 confidence-aware shadow result is invalid');
 assert(comparison.measurement.confidence === 0.659, 'V4 evidence-quality result is invalid');
 assert(comparison.measurement.availabilityQuality === 0.741, 'V4 availability-quality result is invalid');
-assert(comparison.measurement.freshnessQuality === 0.963, 'V4 freshness-quality result is invalid');
+assert(comparison.measurement.freshnessQuality === 0.962, 'V4 freshness-quality result is invalid');
 assert(comparison.measurement.sourceDirectness === 0.693, 'V4 source-directness result is invalid');
 assert(comparison.measurement.rawTraceabilityWeight === 0.688, 'V4 raw-traceability result is invalid');
 assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
-assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'First V4 snapshot must mark four-week trigger as not evaluable');
+assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'V4 history shorter than four weeks must mark the rapid-drop trigger as not evaluable');
 
 const v4History = JSON.parse(read('stability-monitor/data/v4-shadow-history.json'));
 assert(v4History.schemaVersion === 1 && Array.isArray(v4History.snapshots), 'V4 history schema is invalid');
@@ -207,11 +207,71 @@ assert(historyDates.has(v4Input.asOf), 'V4 history lacks the current confirmed s
 
 const comparisonPage = read('stability-monitor/dashboard/v3-v4-comparison.html');
 assert(comparisonPage.includes('../data/v4-comparison-data.js'), 'V3/V4 page does not load the local comparison data');
-assert(comparisonPage.includes('V3 正式版 / V4 影子版'), 'V3/V4 page does not clearly label official versus shadow');
+const homepage = read('index.html');
+for (const [file, content] of [
+  ['index.html', homepage],
+  ['stability-monitor/dashboard/v3-v4-comparison.html', comparisonPage],
+]) {
+  assert(
+    content.includes('全景等权版') && content.includes('数据置信版'),
+    `${file} must use the approved public methodology names`,
+  );
+  for (const obsolete of ['V3 正式版 / V4 影子版', 'V3 正式 / V4 影子', 'V3 正式综合分', 'V4 影子综合分']) {
+    assert(!content.includes(obsolete), `${file} regressed to obsolete public label: ${obsolete}`);
+  }
+}
 assert(comparisonPage.includes('../data/v4-comparison-latest.json'), 'V3/V4 page does not link the latest machine-readable result');
 assert(comparisonPage.includes('../docs/V4_WEEKLY_RUNBOOK.md'), 'V3/V4 page does not link the weekly runbook');
 assert(!/<script[^>]+src=["']https?:/i.test(comparisonPage), 'V3/V4 page must not load remote scripts');
-assert(read('index.html').includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
+assert(homepage.includes('stability-monitor/dashboard/v3-v4-comparison.html'), 'homepage lacks V3/V4 comparison link');
+
+const automationCatalog = read('AUTOMATIONS.md');
+for (const marker of [
+  'daily_alert.py',
+  'credit_daily_alert.py',
+  'weekly-credit-sentiment.yml',
+  'street_heat.py',
+  'macro_monitor.py',
+  'update_credit.py',
+  'p2p-scraper/scraper.mjs',
+  'FEISHU_WEBHOOK_URL',
+]) {
+  assert(automationCatalog.includes(marker), `automation catalog missing ${marker}`);
+}
+const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml');
+assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'), 'weekly credit workflow does not expose the optional DeepSeek secret');
+assert(weeklyCreditWorkflow.includes('15 2 * * 2'), 'weekly monitoring must run on Tuesday');
+assert(weeklyCreditWorkflow.includes('street_heat.py'), 'weekly monitoring must include stability street heat');
+assert(weeklyCreditWorkflow.includes('STREET_STATUS: ${{ steps.street.outcome }}'), 'weekly card must receive the current street-heat outcome');
+assert(weeklyCreditWorkflow.includes('cloud_publish.py weekly'), 'weekly monitoring must use the unified publisher');
+const dailyRiskWorkflow = read('.github/workflows/daily-risk-alerts.yml');
+assert(dailyRiskWorkflow.includes('daily_alert.py --no-push'), 'daily workflow lacks stability alert collection');
+assert(dailyRiskWorkflow.includes('credit_daily_alert.py --write-output'), 'daily workflow lacks credit alert collection');
+const monthlyCreditWorkflow = read('.github/workflows/monthly-credit-data.yml');
+assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lacks BI/OJK collection');
+assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthly workflow lacks national macro collection');
+assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
+assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
+const cloudPublisher = read('.github/scripts/cloud_publish.py');
+assert(cloudPublisher.includes('macro-monitor/output/macro-pending.json'), 'monthly macro result is not published to Sites');
+assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
+assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
+assert(cloudPublisher.includes('"OAI-Sites-Authorization"'), 'Sites ingest must use the platform bypass header');
+assert(cloudPublisher.includes('Keep Feishu independent from dashboard delivery'), 'dashboard failure must not suppress Feishu');
+assert(cloudPublisher.includes('Keep dashboard delivery independent from Feishu'), 'Feishu failure must not suppress dashboard');
+assert(!cloudPublisher.includes('"title": f"周二监测'), 'weekly Feishu title must disclose cadence and purpose');
+for (const marker of [
+  '【每周二例行】',
+  '【日频异常触发】',
+  '较上周',
+  '需要你决定什么',
+  '确认留痕',
+  '降级为观察',
+  '驳回',
+  '本次未出分',
+]) {
+  assert(cloudPublisher.includes(marker), `Feishu decision card missing ${marker}`);
+}
 
 const creditSentiment = JSON.parse(read('credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json'));
 const creditSentimentJs = read('credit-tracker/sentiment-monitor/output/credit-sentiment-data.js').trim();

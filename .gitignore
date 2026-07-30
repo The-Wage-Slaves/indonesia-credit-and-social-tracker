@@ -16,3 +16,4 @@ credit-tracker/conversation_history.html
 
 # 备份
 *.bak-*
+stability-monitor/data/daily-events/

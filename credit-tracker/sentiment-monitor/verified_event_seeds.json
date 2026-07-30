@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "id": "kredivo-kredifazz-purworejo-2026-07",
+      "label": "Kredivo/KrediFazz Purworejo collection incident",
+      "headlineZh": "OJK 就 Kredivo/KrediFazz 涉嫌违反催收伦理一事进行约谈",
+      "summaryZh": "Purworejo 一宗催收纠纷引发监管介入。OJK 已约谈 Kredivo 与 KrediFazz；后续媒体称双方已和解、公司承诺加强催收监督，但监管介入和消费者伤害风险仍值得正式留痕。",
+      "reviewQuestionZh": "是否将该事件作为本周线上信贷风险正式留痕？",
+      "reviewStatus": "human-verified-source-pack",
+      "articles": [
+        {
+          "date": "2026-07-24",
+          "title": "OJK Panggil Kredivo dan KrediFazz Terkait Dugaan Pelanggaran Etika Penagihan di Purworejo",
+          "url": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/OJK-Panggil-Kredivo-dan-KrediFazz-Terkait-Dugaan-Pelanggaran-Etika-Penagihan-di-Purworejo.aspx",
+          "publisherUrl": "https://ojk.go.id",
+          "source": "OJK",
+          "sourceClass": "primary",
+          "eventId": "kredivo-kredifazz-purworejo-2026-07",
+          "eventType": "regulatory_action",
+          "eventSeverity": 0.92
+        },
+        {
+          "date": "2026-07-25",
+          "title": "Kasus Debt Collector dan Nasabah Digerebek di Purworejo Berakhir Damai",
+          "url": "https://daerah.sindonews.com/newsread/1731977/174/kasus-debt-collector-dan-nasabah-digerebek-di-purworejo-berakhir-damai-1784902039",
+          "publisherUrl": "https://sindonews.com",
+          "source": "SindoNews",
+          "sourceClass": "established_media",
+          "eventId": "kredivo-kredifazz-purworejo-2026-07",
+          "eventType": "regulatory_action",
+          "eventSeverity": 0.92
+        },
+        {
+          "date": "2026-07-25",
+          "title": "Kasus Debt Collector Kredivo di Purworejo Berakhir Damai, Perusahaan Perkuat Pengawasan Penagihan",
+          "url": "https://www.suara.com/bisnis/2026/07/25/161717/kasus-debt-collector-kredivo-di-purworejo-berakhir-damai-perusahaan-perkuat-pengawasan-penagihan",
+          "publisherUrl": "https://suara.com",
+          "source": "Suara",
+          "sourceClass": "established_media",
+          "eventId": "kredivo-kredifazz-purworejo-2026-07",
+          "eventType": "regulatory_action",
+          "eventSeverity": 0.92
+        }
+      ]
+    }
+  ]
+}
+

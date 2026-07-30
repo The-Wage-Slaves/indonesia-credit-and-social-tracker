@@ -10,9 +10,13 @@
 <script src="https://cdn.jsdelivr.net/npm/recharts@2.12.7/umd/Recharts.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.25.6/babel.min.js"></script>
 <script src="p2p-pending.js"></script><!-- scraper生成的待确认数据; 文件不存在时静默跳过 -->
+<script src="p2p-confirmed.js"></script><!-- 人工确认后固化的P2P批次 -->
+<script src="confirmed-decisions.js"></script><!-- 人工决策留痕 -->
+<script src="macro-pending.js"></script><!-- ① 月度宏观指标候选; 人工确认前不改正式序列 -->
 <script src="app-metrics-data.js"></script><!-- ③3.2 APP量级数据(点点数据口径) -->
 <script src="app-metrics-panel.js"></script><!-- APP量级图表组件(多实例适配版) -->
 <script src="../sentiment-monitor/output/credit-sentiment-data.js"></script><!-- ④ 周度线上信贷舆情待确认数据 -->
+<script src="../sentiment-monitor/output/credit-sentiment-confirmed.js"></script><!-- 已确认周度舆情历史优先于待确认输出 -->
 <style>
   html,body{margin:0;padding:0;background:#f7f8fa;}
   html{scroll-behavior:smooth;}
@@ -27,12 +31,16 @@
 <script type="text/babel" data-presets="react">
 const { useState, useMemo, useEffect, useRef } = React;
 const { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, ReferenceLine } = Recharts;
-const CREDIT_SENTIMENT_DATA = typeof CREDIT_SENTIMENT === "undefined" ? null : CREDIT_SENTIMENT;
+const CREDIT_SENTIMENT_DATA = typeof window.CREDIT_SENTIMENT_CONFIRMED !== "undefined"
+  ? window.CREDIT_SENTIMENT_CONFIRMED
+  : (typeof CREDIT_SENTIMENT === "undefined" ? null : CREDIT_SENTIMENT);
+const CONFIRMED_DECISIONS_DATA = window.CONFIRMED_DECISIONS || null;
+const MACRO_PENDING_DATA = window.MACRO_PENDING || null;
 
 // ===== 汇率（暗门里可一键更改，全站USD图表联动重算）=====
 // DEFAULT_FX=15000 是历史口径基准: ②板块Rp原值按所选FX换算; ③板块P2P底数以15000采集换算,再按所选FX折算
 const DEFAULT_FX = 15000;
-const DASHBOARD_DATA_AS_OF = "2026-07-17";
+const DASHBOARD_DATA_AS_OF = "2026-07-30";
 const FX_KEY = "ct_fx";
 const parseNonNegativeNumber = (value) => {
   const text = String(value ?? "").trim();
@@ -159,10 +167,16 @@ const SHORT_NAMES = {
 };
 const shortName = (n) => SHORT_NAMES[n] || n;
 
-// ===== P2P 待确认数据合并层（scraper抓取 → 暗门确认 → localStorage → 图表） =====
+// ===== P2P 数据合并层（已确认批次为正式底层；暗门仅保留本机覆盖） =====
 const P2P_PENDING_DATA = (typeof P2P_PENDING !== "undefined") ? P2P_PENDING : null;
+const P2P_CONFIRMED_DATA = window.P2P_CONFIRMED || {batches:[]};
 const P2P_EXTRA_KEY = "ct_p2pExtra";
-const loadP2pExtra = () => { try { return JSON.parse(localStorage.getItem(P2P_EXTRA_KEY) || "[]"); } catch(e) { return []; } };
+const loadP2pExtra = () => {
+  const confirmed = Array.isArray(P2P_CONFIRMED_DATA.batches) ? P2P_CONFIRMED_DATA.batches : [];
+  let local = [];
+  try { local = JSON.parse(localStorage.getItem(P2P_EXTRA_KEY) || "[]"); } catch(e) { local = []; }
+  return [...confirmed.filter(batch=>!local.some(row=>row.srcDate===batch.srcDate)), ...local];
+};
 const saveP2pExtra = (v) => localStorage.setItem(P2P_EXTRA_KEY, JSON.stringify(v));
 const firstWord = (n) => (n||"").split(/[ (]/)[0].toLowerCase();
 const samePlayer = (a,b) => firstWord(a)===firstWord(b) || (/lentera|shopee/i.test(a) && /lentera|shopee/i.test(b));
@@ -248,8 +262,21 @@ function MacroChart({title,data,xKey,yKey,color,suffix,domain,refLines}) {
 
 // ===== ① 宏观板块 =====
 function MacroSection() {
+  const macroChanges = MACRO_PENDING_DATA?.changes || [];
+  const macroFailures = Object.entries(MACRO_PENDING_DATA?.sourceHealth || {})
+    .filter(([,health]) => health.status !== "ok");
   return (<section id="sec1" style={{scrollMarginTop:64}}>
     <SectionHead no="①" title="国家宏观数据" en="ID Macro Monitor" note="来源: BPS · Bank Indonesia · 采集日 2026-07-15" />
+    {MACRO_PENDING_DATA?.reviewRequired && (
+      <div style={{background:"#fffbeb",border:"1px solid #fde68a",borderLeft:"4px solid #d97706",borderRadius:8,padding:"11px 14px",fontSize:12,color:"#78350f",lineHeight:1.65,marginBottom:12}}>
+        <b>月度宏观指标待确认：</b>
+        {macroChanges.length > 0
+          ? macroChanges.map(item => `${item.label} ${item.confirmed.period} ${item.confirmed.value} → ${item.candidate.period} ${item.candidate.value}`).join("；")
+          : "本次没有新数值候选。"}
+        {macroFailures.length > 0 && <span>　采集异常/待配置：{macroFailures.map(([name])=>name).join("、")}。</span>}
+        <div style={{fontSize:10,color:"#92400e",marginTop:3}}>核对官方期间、单位与原文后才写入下方正式序列；本提示不会自动改数。</div>
+      </div>
+    )}
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(170px,1fr))",gap:10,marginBottom:12}}>
       {macroKPI.map((k,i)=>(<div key={i} style={cardS}>
         <div style={{fontSize:11,color:"#6b7280",marginBottom:4}}>{k.label}</div>
@@ -539,6 +566,9 @@ function SentimentSection() {
   };
   const currentArticles=(data.articles||[]).filter(a=>(latest.articleIds||[]).includes(a.id));
   const currentSocial=(data.socialItems||[]).filter(a=>(latest.socialItemIds||[]).includes(a.id));
+  const reviewCandidates=latest.alert.reviewCandidates||latest.alert.pendingHighSeverity||[];
+  const confirmedDecision=CONFIRMED_DECISIONS_DATA?.decisions?.creditSentiment;
+  const isConfirmed=confirmedDecision?.weekEnd===latest.weekEnd&&confirmedDecision?.status?.startsWith("confirmed");
   const trendData=data.weeks.map(w=>({...w,news:w.engines?.news?.score??null,social:w.engines?.social?.score??null}));
   const levelColor=latest.alert.level==="red"?"#b91c1c":latest.alert.level==="amber"?"#b45309":"#15803d";
   const levelBg=latest.alert.level==="red"?"#fef2f2":latest.alert.level==="amber"?"#fffbeb":"#f0fdf4";
@@ -569,7 +599,7 @@ function SentimentSection() {
   ];
   return (<section id="sec4" style={{scrollMarginTop:64}}>
     <SectionHead no="④" title="舆情监测" en="Digital Credit Fear Monitor"
-      note={`周频 · ${latest.weekStart}–${latest.weekEnd} · 试运行/待人工确认`} />
+      note={`周频 · ${latest.weekStart}–${latest.weekEnd} · ${isConfirmed?"已人工确认（部分覆盖试运行）":"待人工确认"}`} />
     <div style={{...cardS,border:"1.5px solid #c7d2fe",background:"#f8faff",marginBottom:12}}>
       <div style={{fontSize:12,color:"#3730a3",fontWeight:700,marginBottom:5}}>线上信贷恐慌指数 · 0平静 / 100急性冲击</div>
       <div style={{fontSize:11,color:"#4b5563",lineHeight:1.7}}>
@@ -582,7 +612,10 @@ function SentimentSection() {
         ["综合恐慌指数",fmt(latest.fearIndex),change==null?"首期/无可比":`${change>=0?"+":""}${change.toFixed(1)} 周环比`],
         ["新闻压力",fmt(news.score),`${news.itemCount||0}篇去重 · 负面${fmt(news.negativeShare)}%`],
         ["社媒压力",fmt(social.score),`${social.itemCount||0}条 · ${social.platformCount||0}个平台 · 负面${fmt(social.negativeShare)}%`],
-        ["警报层级",latest.alert.level.toUpperCase(),latest.alert.active.length?`${latest.alert.active.length}个事件满足规则`:"无合格红色事件"]
+        ["警报层级",latest.alert.level.toUpperCase(),
+          latest.alert.active.length?`${latest.alert.active.length}个事件通过证据门`:
+          latest.alert.triggerReasons?.length?"新闻＋社媒综合信号触发":
+          reviewCandidates.length?`${reviewCandidates.length}个重点候选待核`:"无合格风险事件"]
       ].map((item,i)=><div key={i} style={{...cardS,padding:"13px 14px",borderTop:i===3?`3px solid ${levelColor}`:"1px solid #e7e9ee"}}>
         <div style={{fontSize:10,color:"#6b7280"}}>{item[0]}</div>
         <div style={{fontSize:24,fontWeight:750,color:i===3?levelColor:"#111827",margin:"4px 0"}}>{item[1]}</div>
@@ -650,11 +683,26 @@ function SentimentSection() {
     <div style={{...cardS,border:`1.5px solid ${levelColor}`,background:levelBg,marginBottom:12}}>
       <h3 style={{...h3S,color:levelColor}}>🚨 高风险事件触发器 · {latest.alert.level.toUpperCase()}</h3>
       {latest.alert.active.length?latest.alert.active.map(event=><div key={event.id} style={{fontSize:12,lineHeight:1.7,color:"#374151",marginBottom:6}}>
-        <b>{event.headline}</b><br/>
+        <b>{event.headlineZh||event.headline}</b>
+        {event.decisionStatus==="confirmed-red-retained"&&<span style={{marginLeft:7,color:"#b91c1c",fontWeight:700,fontSize:10}}>已确认红色留痕</span>}<br/>
+        {event.summaryZh&&<span style={{display:"block",margin:"3px 0",color:"#4b5563"}}>{event.summaryZh}</span>}
         类型 {event.eventType} · 严重度 {(event.severity*100).toFixed(0)} · 独立来源 {event.independentSourceCount} ·
         {event.platforms?.length?` 社媒 ${event.platforms.join(" / ")} ·`:""} {event.hasPrimarySource?"含监管/原始来源":"无原始来源"}
-      </div>):<div style={{fontSize:12,color:"#4b5563"}}>本周没有满足事件证据门或新闻＋社媒同步急升规则的红色事件。</div>}
+      </div>):latest.alert.triggerReasons?.length?<div style={{fontSize:12,color:"#4b5563"}}>
+        本周由新闻＋社媒综合急升规则触发；没有新增事件单独通过严格证据门。
+      </div>:<div style={{fontSize:12,color:"#4b5563"}}>本周没有事件通过严格证据门。</div>}
       {latest.alert.triggerReasons?.length>0&&<div style={{fontSize:10,color:levelColor,marginTop:5}}>触发路径：{latest.alert.triggerReasons.join(" · ")}</div>}
+      {reviewCandidates.length>0&&<div style={{marginTop:10,paddingTop:9,borderTop:"1px solid #fed7aa"}}>
+        <div style={{fontSize:10,fontWeight:700,color:"#9a3412",marginBottom:5}}>
+          重点待核候选（最多5条；其余关键词噪声自动折叠）
+        </div>
+        {reviewCandidates.map(event=><div key={event.id} style={{fontSize:11,lineHeight:1.6,color:"#4b5563",marginBottom:4}}>
+          • {event.headline} · 独立来源 {event.independentSourceCount} · {event.hasPrimarySource?"含原始来源":"缺原始来源"}
+        </div>)}
+        {(latest.alert.suppressedCandidateCount||0)>0&&<div style={{fontSize:9,color:"#9ca3af"}}>
+          已自动折叠 {latest.alert.suppressedCandidateCount} 条低证据或重复候选，不视为高危事件。
+        </div>}
+      </div>}
       <div style={{fontSize:10,color:"#6b7280",marginTop:6}}>{latest.alert.rule}</div>
     </div>
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:12}}>
@@ -672,11 +720,15 @@ function SentimentSection() {
             {item.text.length>135?item.text.slice(0,135)+"…":item.text}
           </a>
           <div style={{fontSize:9,color:"#6b7280",marginTop:3}}>{item.date} · {item.platform}/{item.contentType} · 互动 {item.engagement||0} · {item.sentiment.label}/{fmt(item.sentiment.risk)}</div>
-        </div>):<div style={{fontSize:11,color:"#6b7280"}}>本周没有成功采集的社媒条目；请查看上方信源状态，不能据此判断“舆情平静”。</div>}
+        </div>):<div style={{fontSize:11,color:"#6b7280"}}>
+          {data.evidenceMode==="reviewed-summary"
+            ?"可转发版仅展示已确认汇总；原始YouTube样本保留在云端审计输出，不在分享文件中批量展开。"
+            :"本周没有成功采集的社媒条目；请查看上方信源状态，不能据此判断“舆情平静”。"}
+        </div>}
       </div>
     </div>
     <div style={{fontSize:10,color:"#9aa1ab",marginTop:10,lineHeight:1.6}}>
-      状态：{data.status}。需人工确认后才可转入正式历史；积累8周后声量基准自动切换为滚动中位数/MAD。
+      状态：{data.status}。{isConfirmed?"本周结果已于2026-07-30人工确认并进入正式展示；低覆盖标签继续保留。":"需人工确认后才可转入正式历史；"}积累8周后声量基准自动切换为滚动中位数/MAD。
     </div>
   </section>);
 }
@@ -784,6 +836,7 @@ function P2PPendingPanel({p2pExtra,onChange}) {
   const pend = P2P_PENDING_DATA;
   const pendDate = pend ? pend.date.replace(/-0?/g,".").replace(/^(\d{4})\./,"$1.") : null; // 2026-07-17 → 2026.7.17
   const applied = pend && p2pExtra.some(e=>e.srcDate===pend.date);
+  const committed = pend && (P2P_CONFIRMED_DATA.batches||[]).some(e=>e.srcDate===pend.date);
   // 全部平台都显示——抓到的预填，没抓到的留空行供手工补录
   const initRows = () => (pend?.players||[])
     .map(p=>({name:p.name, dataDate:p.dataDate, note:p.note,
@@ -828,9 +881,10 @@ function P2PPendingPanel({p2pExtra,onChange}) {
   };
   const th = {textAlign:"right",padding:"4px 6px",color:"#6b7280",fontWeight:600,fontSize:10,whiteSpace:"nowrap"};
   return (<div style={{...cardS,border:"1.5px solid #fcd34d",background:"#fffdf5",marginTop:14}}>
-    <h3 style={{...h3S,color:"#92400e"}}>🔔 P2P 竞对抓取数据 · 待确认（{pend.date} 抓取，{rows.length} 家）</h3>
+    <h3 style={{...h3S,color:committed?"#166534":"#92400e"}}>{committed?"✓":"🔔"} P2P 竞对抓取数据 · {committed?"已正式确认":"待确认"}（{pend.date} 抓取，{rows.length} 家）</h3>
     {applied ? (<div style={{fontSize:12,color:"#15803d"}}>
-      ✓ 本批已写入看板（数据列 {pendDate}）。<span onClick={revert} style={{color:"#dc2626",cursor:"pointer",fontWeight:600,marginLeft:8}}>撤销本批</span>
+      ✓ 本批已写入看板（数据列 {pendDate}）。{!committed&&<span onClick={revert} style={{color:"#dc2626",cursor:"pointer",fontWeight:600,marginLeft:8}}>撤销本批</span>}
+      {committed&&<span style={{marginLeft:8}}>M1–M9 于 2026-07-30 人工确认；所有查看者均可见。</span>}
       <button onClick={copyJSON} style={{marginLeft:12,padding:"4px 12px",borderRadius:6,border:"1px solid #d1d5db",cursor:"pointer",fontSize:11,background:"#fff",color:"#4b5563"}}>复制JSON（固化用）</button>
       <span style={{fontSize:11,color:"#15803d",marginLeft:8}}>{msg}</span>
     </div>) : (<div>

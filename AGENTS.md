@@ -23,6 +23,7 @@ pending.json / pending.js       # 待确认事项（脚本写入，首页读取�
 credit-tracker/
   dashboard/credit-dashboard.html   # 信贷看板（数据+逻辑单一真源，手工维护，React/Recharts CDN）
   update_credit.py                  # 月度取数: BI Tabel_17 / OJK监控 / Shopee直抓
+  macro-monitor/macro_monitor.py    # 月度宏观: BI利率/JISDOR + BPS CPI/GDP/失业率 → 待确认
   p2p-scraper/scraper.mjs           # Playwright 10家P2P官网抓取(8/10已通,逐家定制提取器)
   sentiment-monitor/credit_sentiment.py # 周度新闻+社媒双引擎恐慌指数 → pending待确认 + 红色证据门
   PROJECT_BRIEF.md                  # 数据源行列映射 + 技术决策（改提取逻辑前必读）
@@ -48,12 +49,16 @@ stability-monitor/
    已被 .gitignore 排除。只提交各自的 example 模板，不要把key写进任何会提交的文件。
 5. **外部接口的已知坑**：GDELT 限流约1次/5秒勿密集测试；Google Trends/OJK新门户
    (data.ojk.go.id) 在部分网络不可达；Kaskus 偶发掐连接需退避重试；unpkg 不可用。
+6. **方法论名称不可回退**：对外页面和文档固定使用「全景等权版」（内部代号 v3）
+   与「数据置信版」（内部代号 v4）。`v3`/`v4` 只可用于代码、文件名和括号内技术别名，
+   不得重新作为页面主标题、卡片名或面向读者的独立标签。CI 会拦截旧称回归。
 
 ## 例行任务（人类或agent均可跑）
 
 - 周度：`python stability-monitor/scripts/street_heat.py` → 确认单+首页待确认
 - 信贷舆情周度：`python credit-tracker/sentiment-monitor/credit_sentiment.py --write-output` → 仅生成待确认结果
-- 月度：`python credit-tracker/update_credit.py` + `cd credit-tracker/p2p-scraper && node scraper.mjs`
+- 月度：`python credit-tracker/macro-monitor/macro_monitor.py` + `python credit-tracker/update_credit.py` +
+  `cd credit-tracker/p2p-scraper && node scraper.mjs`
 - 评分确认后写入：改 `data.js` → `python scripts/apply_week.py append <date> fiscal=.. ...`
 
 ## 当前遗留（按优先级）

@@ -35,6 +35,8 @@ jobs:
           python stability-monitor/scripts/score_v4_shadow.py --check-output
       - name: Validate digital-credit fear monitor
         run: python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
+      - name: Validate national macro monitor
+        run: python -m unittest discover -s credit-tracker/macro-monitor -p "test_*.py"
       - name: Verify Node dependency lock and vulnerabilities
         working-directory: credit-tracker/p2p-scraper
         run: |

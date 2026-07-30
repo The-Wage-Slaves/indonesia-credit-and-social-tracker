@@ -1,0 +1,104 @@
+name: Daily risk alerts
+
+on:
+  schedule:
+    # Daily 10:00 Asia/Shanghai / 09:00 WIB.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-risk-alerts
+  cancel-in-progress: false
+
+env:
+  PRIVATE_DASHBOARD_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site
+  DASHBOARD_INGEST_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site/api/automation-files
+
+jobs:
+  detect-and-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install daily collectors
+        run: |
+          pip install -r credit-tracker/sentiment-monitor/requirements.txt
+          pip install requests
+      - name: Prepare ignored runtime configuration
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          python - <<'PY'
+          import os, pathlib, yaml
+          cfg = {
+              "youtube": {"api_key": os.getenv("YOUTUBE_API_KEY", "")},
+              "reddit": {
+                  "client_id": os.getenv("REDDIT_CLIENT_ID", ""),
+                  "client_secret": os.getenv("REDDIT_CLIENT_SECRET", ""),
+                  "user_agent": "github-actions:indonesia-monitor:v1",
+              },
+              "llm": {
+                  "api_key": os.getenv("DEEPSEEK_API_KEY", ""),
+                  "base_url": "https://api.deepseek.com",
+                  "model": "deepseek-chat",
+              },
+          }
+          pathlib.Path("stability-monitor/scripts/street_heat_config.yaml").write_text(
+              yaml.safe_dump(cfg, allow_unicode=True), encoding="utf-8"
+          )
+          PY
+      - name: Detect stability institutional shocks
+        id: stability
+        continue-on-error: true
+        run: python stability-monitor/scripts/daily_alert.py --no-push
+      - name: Detect Pinjol/Pindar daily volatility
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: |
+          python credit-tracker/sentiment-monitor/credit_daily_alert.py --write-output
+          python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
+      - name: Publish pending data and notify Feishu only when abnormal
+        env:
+          SITES_BYPASS_BEARER_TOKEN: ${{ secrets.SITES_BYPASS_BEARER_TOKEN }}
+          DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
+          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
+        run: python .github/scripts/cloud_publish.py daily --publish-dashboard --push
+      - name: Stage daily evidence without a pull request
+        if: always()
+        shell: bash
+        run: |
+          branch="bot/daily-risk-alerts"
+          transfer_dir="$(mktemp -d)"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
+            credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json \
+            stability-monitor/data/daily-events \
+            pending.json pending.js outputs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$branch" origin/main
+          tar -xf "$transfer_dir/pending-output.tar"
+          git add credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json || true
+          git add stability-monitor/data/daily-events || true
+          git add pending.json pending.js || true
+          git add outputs 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No daily evidence change."
+            exit 0
+          fi
+          git commit -m "data: stage daily risk review $(date -u +%F)"
+          git push --force-with-lease origin "HEAD:${branch}"
