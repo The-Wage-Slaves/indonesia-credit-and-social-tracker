@@ -103,6 +103,63 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("不作为本周结果", card_text)
 
 
+    def test_daily_failure_does_not_replay_stale_stability_event(self):
+        today = MODULE.dt.date.today().isoformat()
+        credit = {"date": today, "level": "normal"}
+        stale = {"date": "2026-07-29", "level": "red", "events": [
+            {"headline": "不应重放的旧事件", "severity": 0.9},
+        ]}
+
+        def fake_read(path, default=None):
+            return credit if path.endswith("daily-credit-alert-pending.json") else default
+
+        with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
+            with mock.patch.object(MODULE, "latest_stability_daily_event", return_value=stale):
+                with mock.patch.dict(MODULE.os.environ, {"STABILITY_STATUS": "failure"}):
+                    summary = MODULE.daily_summary()
+
+        card_text = "\n".join(summary["lines"])
+        self.assertTrue(summary["risk"])
+        self.assertEqual(summary["level"], "orange")
+        self.assertIn("本次没有复用历史事件", card_text)
+        self.assertNotIn("不应重放的旧事件", card_text)
+
+    def test_monthly_collector_failure_is_not_reported_as_healthy(self):
+        with mock.patch.object(MODULE, "read_json", return_value={"boards": {"credit": []}}):
+            with mock.patch.dict(MODULE.os.environ, {
+                "INDUSTRY_STATUS": "success",
+                "MACRO_STATUS": "failure",
+                "COMPETITOR_STATUS": "success",
+            }):
+                summary = MODULE.monthly_summary()
+
+        card_text = "\n".join(summary["lines"])
+        self.assertTrue(summary["risk"])
+        self.assertEqual(summary["level"], "orange")
+        self.assertIn("国家宏观指标：FAILURE", card_text)
+        self.assertIn("不能据此判断源头没有新月份", card_text)
+        self.assertNotIn("采集正常", card_text)
+
+    def test_machine_summary_is_explicitly_marked_unverified(self):
+        headline, explanation = MODULE.event_explanation({
+            "headlineZh": "平台出现投诉",
+            "summaryZh": "某平台相关投诉增加",
+            "_summaryZhGenerated": True,
+        })
+        self.assertEqual(headline, "平台出现投诉")
+        self.assertIn("AI辅助释义", explanation)
+        self.assertIn("待核实", explanation)
+
+    def test_enrich_without_key_keeps_grounded_fallback(self):
+        event = {"headline": "Judul berita", "eventType": "regulatory_action", "severity": 0.8}
+        with mock.patch.object(MODULE, "deepseek_key", return_value=""):
+            MODULE.enrich_zh([event])
+        self.assertNotIn("headlineZh", event)
+        headline, explanation = MODULE.event_explanation(event)
+        self.assertEqual(headline, "Judul berita")
+        self.assertIn("监管介入", explanation)
+
+
 if __name__ == "__main__":
     unittest.main()
 
