@@ -66,7 +66,8 @@ class CloudPublishCardTests(unittest.TestCase):
             return default
 
         with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
-            summary = MODULE.weekly_summary()
+            with mock.patch.dict(MODULE.os.environ, {"STREET_STATUS": "failure"}):
+                summary = MODULE.weekly_summary()
 
         card_text = "\n".join(summary["lines"])
         self.assertIn("【每周二例行】", summary["title"])
@@ -74,6 +75,32 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("即使指数比上周下降也会触发", card_text)
         self.assertIn("监管介入", card_text)
         self.assertIn("①确认留痕；②降级为观察；③驳回", card_text)
+
+    def test_stale_street_heat_is_not_presented_as_current(self):
+        data = {
+            "weeks": [{
+                "weekEnd": "2026-07-26",
+                "fearIndex": 70,
+                "engines": {"news": {"score": 70}, "social": {"score": 70}},
+                "alert": {"level": "red", "active": [], "reviewCandidates": []},
+            }],
+        }
+
+        def fake_read(path, default=None):
+            if path.endswith("credit-sentiment-pending.json"):
+                return data
+            if path.endswith("street_heat_history.json"):
+                return [{"date": "2026-07-16", "heat": 29.6, "suggested_score": 67}]
+            return default
+
+        with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
+            with mock.patch.dict(MODULE.os.environ, {"STREET_STATUS": "failure"}):
+                summary = MODULE.weekly_summary()
+
+        card_text = "\n".join(summary["lines"])
+        self.assertIn("本次未出分", card_text)
+        self.assertIn("2026-07-16", card_text)
+        self.assertIn("不作为本周结果", card_text)
 
 
 if __name__ == "__main__":
