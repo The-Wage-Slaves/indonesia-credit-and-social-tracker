@@ -474,6 +474,10 @@ def cluster_events(
             ),
             None,
         )
+        reviewed_source_count = max(
+            (int(item.get("reviewedSourceCount", 0)) for item in items),
+            default=0,
+        )
         events.append({
             "id": event_id,
             "eventType": strongest["eventType"],
@@ -488,6 +492,7 @@ def cluster_events(
             "headlineZh": headline_zh,
             "summaryZh": summary_zh,
             "reviewQuestionZh": review_question_zh,
+            "reviewedSourceCount": reviewed_source_count or None,
         })
     return sorted(events, key=lambda item: (-item["severity"], item["id"]))
 
@@ -1278,6 +1283,7 @@ def load_verified_event_articles(as_of: dt.date) -> list[dict[str, Any]]:
     for event in payload.get("events") or []:
         if event.get("reviewStatus") != "human-verified-source-pack":
             continue
+        reviewed_source_count = len(event.get("articles") or [])
         for article in event.get("articles") or []:
             article_date = parse_date(article.get("date"), as_of)
             if cutoff <= article_date <= as_of:
@@ -1285,6 +1291,7 @@ def load_verified_event_articles(as_of: dt.date) -> list[dict[str, Any]]:
                 for field in ("headlineZh", "summaryZh", "reviewQuestionZh"):
                     if event.get(field):
                         reviewed_article.setdefault(field, event[field])
+                reviewed_article["reviewedSourceCount"] = reviewed_source_count
                 output.append(reviewed_article)
     return output
 
