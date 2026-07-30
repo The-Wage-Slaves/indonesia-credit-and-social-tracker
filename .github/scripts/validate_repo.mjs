@@ -241,6 +241,7 @@ const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml
 assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'), 'weekly credit workflow does not expose the optional DeepSeek secret');
 assert(weeklyCreditWorkflow.includes('15 2 * * 2'), 'weekly monitoring must run on Tuesday');
 assert(weeklyCreditWorkflow.includes('street_heat.py'), 'weekly monitoring must include stability street heat');
+assert(weeklyCreditWorkflow.includes('STREET_STATUS: ${{ steps.street.outcome }}'), 'weekly card must receive the current street-heat outcome');
 assert(weeklyCreditWorkflow.includes('cloud_publish.py weekly'), 'weekly monitoring must use the unified publisher');
 const dailyRiskWorkflow = read('.github/workflows/daily-risk-alerts.yml');
 assert(dailyRiskWorkflow.includes('daily_alert.py --no-push'), 'daily workflow lacks stability alert collection');
@@ -263,6 +264,7 @@ for (const marker of [
   '确认留痕',
   '降级为观察',
   '驳回',
+  '本次未出分',
 ]) {
   assert(cloudPublisher.includes(marker), `Feishu decision card missing ${marker}`);
 }
