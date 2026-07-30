@@ -121,6 +121,9 @@ jobs:
           DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
           FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
+          # 卡片里的印尼语标题要转成中文，靠 cloud_publish.py 的 enrich_zh()。
+          # 不传这个 key 不会报错，只会静默退回印尼语原文——务必保留。
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           # 未启用私有 Sites 看板发布(缺 SITES_BYPASS_BEARER_TOKEN/DASHBOARD_INGEST_TOKEN)，
           # 故不传 --publish-dashboard：否则 cloud_publish.py 判定「要求的通道未配置」返回 2，
           # 让整个工作流红灯(2026-07-30 实测)。飞书推送不受影响。
