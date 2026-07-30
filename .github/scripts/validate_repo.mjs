@@ -273,6 +273,23 @@ for (const [name, workflow] of [
 }
 assert(cloudPublisher.includes('def enrich_zh'), 'publisher must translate Indonesian headlines for Chinese readers');
 assert(cloudPublisher.includes('MANUAL_ZH'), 'human-verified Chinese summaries must outrank machine output');
+
+// 采集步骤允许 continue-on-error，因此发布步骤必须拿到本次 outcome。
+const dailyPublishAt = dailyRiskWorkflow.indexOf('run: python .github/scripts/cloud_publish.py');
+const dailyPublishStart = dailyRiskWorkflow.lastIndexOf('\n      - name:', dailyPublishAt);
+assert(
+  dailyRiskWorkflow.slice(dailyPublishStart, dailyPublishAt).includes('STABILITY_STATUS'),
+  'daily publisher must receive STABILITY_STATUS to reject stale stability events',
+);
+const monthlyPublishAt = monthlyCreditWorkflow.indexOf('run: python .github/scripts/cloud_publish.py');
+const monthlyPublishStart = monthlyCreditWorkflow.lastIndexOf('\n      - name:', monthlyPublishAt);
+for (const statusName of ['INDUSTRY_STATUS', 'MACRO_STATUS', 'COMPETITOR_STATUS']) {
+  assert(
+    monthlyCreditWorkflow.slice(monthlyPublishStart, monthlyPublishAt).includes(statusName),
+    `monthly publisher must receive ${statusName} to distinguish failure from no new month`,
+  );
+}
+
 assert(cloudPublisher.includes('macro-monitor/output/macro-pending.json'), 'monthly macro result is not published to Sites');
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
 assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
