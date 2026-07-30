@@ -162,6 +162,7 @@ def weekly_summary() -> dict[str, Any]:
         "stability-monitor/scripts/street_heat_history.json", []
     )
     street = street_history[-1] if street_history else {}
+    street_status = os.getenv("STREET_STATUS", "").lower()
     street_risk = (
         street.get("suggested_score") is not None
         and float(street["suggested_score"]) <= 45
@@ -193,18 +194,32 @@ def weekly_summary() -> dict[str, Any]:
         "所以即使指数比上周下降也会触发；这不表示指数本身正在恶化。",
     ]
     for index, event in enumerate((active or candidates)[:3], 1):
+        reviewed_count = event.get("reviewedSourceCount")
         evidence = (
-            f"{event.get('independentSourceCount', 0)}个独立来源"
-            + ("＋原始来源" if event.get("hasPrimarySource") else "")
+            (
+                f"{reviewed_count}个已人工核验来源"
+                if reviewed_count
+                else f"{event.get('independentSourceCount', 0)}个独立来源"
+            )
+            + ("（含原始来源）" if event.get("hasPrimarySource") else "")
         )
         headline, explanation = event_explanation(event)
         lines.append(
             f"**风险事件 {index}｜{headline}**\n{explanation}\n证据：{evidence}。"
         )
-    if street:
+    if street_status and street_status != "success":
+        last_record = (
+            f"上次有效记录为 {street.get('date')}（热度 {street.get('heat')}）"
+            if street else "暂无有效历史记录"
+        )
+        lines.append(
+            "**稳定性街头热度｜本次未出分**\n"
+            f"本次采集未通过覆盖质量门；{last_record}，仅供历史参考，不作为本周结果。"
+        )
+    elif street:
         lines.append(
             "**稳定性街头热度**\n"
-            f"热度 {street.get('heat', '—')}；建议稳定性分数 "
+            f"数据日期 {street.get('date', '—')}；热度 {street.get('heat', '—')}；建议稳定性分数 "
             f"{street.get('suggested_score', '—')}（尚未写入正式评分）。"
         )
     lines.append(
