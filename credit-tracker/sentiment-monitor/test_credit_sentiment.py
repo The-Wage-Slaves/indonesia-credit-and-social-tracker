@@ -159,6 +159,7 @@ class CreditSentimentTests(unittest.TestCase):
         self.assertIn("OJK", kredivo["headlineZh"])
         self.assertIn("监管介入", kredivo["summaryZh"])
         self.assertIn("正式留痕", kredivo["reviewQuestionZh"])
+        self.assertEqual(kredivo["reviewedSourceCount"], 3)
 
     def test_review_candidates_are_evidence_filtered_and_capped(self):
         events = [
