@@ -116,6 +116,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
       - name: Publish pending data to private dashboard and notify Feishu on risk
         env:
+          STREET_STATUS: ${{ steps.street.outcome }}
           SITES_BYPASS_BEARER_TOKEN: ${{ secrets.SITES_BYPASS_BEARER_TOKEN }}
           DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
@@ -165,3 +166,4 @@ jobs:
               --title "$title" \
               --body "Weekly evidence triggered red review. Fear index: **${FEAR_INDEX}**; verified event count: **${ACTIVE_COUNT}**. Open the private dashboard for the capped human-readable evidence list. No confirmed history was changed."
           fi
+
