@@ -28,7 +28,9 @@ jobs:
           node credit-tracker/dashboard/build_credit_html.mjs
           node .github/scripts/validate_repo.mjs
       - name: Validate Python syntax
-        run: python -m compileall -q credit-tracker stability-monitor
+        run: python -m compileall -q .github/scripts credit-tracker stability-monitor
+      - name: Validate cloud publisher cards
+        run: python -m unittest discover -s .github/scripts -p "test_*.py"
       - name: Validate V4 shadow comparison artifacts
         run: |
           python -m unittest discover -s stability-monitor/scripts -p "test_*.py"
