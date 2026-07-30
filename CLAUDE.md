@@ -65,12 +65,15 @@ GitHub 私有仓 `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`（仓
 
 **街头动员热度**（社会支柱的"网络政治情绪"driver输入）`scripts/street_heat.py`：6源三角测量(Google Trends双篮/Kaskus开放接口/YouTube/GDELT×2/大众RSS) + **DeepSeek反对率分类**（民间YouTube vs 媒体RSS分侧，民媒差是核心信号）→ HTML确认单+首页待确认卡。**人在环**：跑完给用户看确认单、确认后才写入 data.js。Trends/GDELT 常限流(别密集测)；YouTube/DeepSeek/Kaskus/RSS 可靠。key 在 `street_heat_config.yaml`(YouTube+DeepSeek已配)。近3周反对率 39.7→37.1→32.1%（降温）。
 
-**日频警报器**（2026-07-29 新增，`scripts/daily_alert.py`）：每天10:00(Windows计划任务 `IndoStabilityDailyAlert`)抓当日印尼新闻(brief源+Google News定向查询) → **DeepSeek 分类**9类制度/政治骤变事件(央行独立性/关键官员更替/仓促立法/司法工具化/表外负债/评级行动/市场失序/大规模抗议/军警冲突) → 分级(红需≥2独立源；**高严重度单源=🔺高危待核**；≥0.55=橙) → 推飞书 + 写 `data/daily-events/YYYY-MM.jsonl`(gitignore，`humanReviewed:false`)。
+**日频警报器**（`scripts/daily_alert.py`）：每天10:00抓当日印尼新闻(brief源+Google News定向查询) → **DeepSeek 分类**9类制度/政治骤变事件(央行独立性/关键官员更替/仓促立法/司法工具化/表外负债/评级行动/市场失序/大规模抗议/军警冲突) → 分级(红需≥2独立源；**高严重度单源=🔺高危待核**；≥0.55=橙) → 推飞书 + 写 `data/daily-events/YYYY-MM.jsonl`(`humanReviewed:false`)。
+- **执行位置：云端**（GitHub workflow `daily-risk-alerts.yml`，cron `0 2 * * *` = GMT+8 10:00）→ 产物提交到 **`bot/daily-risk-alerts` 分支**（不进 main），推送统一走 `cloud_publish.py`（`normal` 静默）。
+- **`daily-events/` 不可加入 .gitignore**——被忽略会让 workflow 的 `git add` 静默失败、判定「无变化」而永不上云（2026-07-30 踩过此坑）。
 - **存在意义**：① 补数据置信版触发器只覆盖【灾难型】事件(实弹/死亡)的盲区，专抓【渐进式制度骤变】；② 周频人工检索会漏事件——**实证**：2026-07-26 BI行长Perry Warjiyo提前两年辞职被 07-28 周更漏掉(当时只查"利率决议")，由本引擎捕获后于 07-29 补入本周快照(制度 37→35)。
 - **已知局限**：DeepSeek 常把同一事件多家报道合并成一条，导致独立源计数偏低→重大事件多落"高危待核"而非红色。**这是刻意的保守取舍**（宁可让人去看，不让机器自行升红）。
 - **铁律**：只推送/写证据池，**绝不改 data.js**；事件需人工复核后才能作为评分依据。
 
-**周更流程**：⓪ **先读当周 `data/daily-events/*.jsonl` 累积事件**（日频警报器已抓好，避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照 → `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
+**周更流程**：⓪ **先取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
+`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照 → `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
 
 ---
 
