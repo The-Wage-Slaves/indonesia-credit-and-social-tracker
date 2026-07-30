@@ -28,6 +28,20 @@
 
 新增任何云端产物路径时，必须先用 `git check-ignore -v <路径>` 确认未被忽略。
 
+### 卡片中文化依赖 key 必须显式传给发布步骤
+
+飞书卡片把印尼语标题转成中文，靠 `cloud_publish.py` 的 `enrich_zh()` 调 DeepSeek。
+拿不到 `DEEPSEEK_API_KEY` 时它**静默跳过**（推送可靠性优先于可读性），卡片照发但
+退回印尼语原文。GitHub Actions 的 `env:` 是 step 级的，采集步骤传了 key **不等于**
+发布步骤也拿到——2026-07-30 踩过一次：PR #8 建好 `headlineZh`/`summaryZh` 槽位却
+没写生成器，字段恒为 `null`，只有一条硬编码中文让它看起来是好的。
+
+`validate_repo.mjs` 已把「日频与周频发布步骤自身的 env 必须含 `DEEPSEEK_API_KEY`」
+固化为不变量（按 step 边界判定，不能只看文件里出现过该字符串）。
+
+人工核验过的中文摘要写入 `cloud_publish.py` 的 `MANUAL_ZH`，优先级高于模型输出，
+且不为其消耗 API 调用。
+
 ### 本机与云端不得同时运行同一任务
 
 同一任务在本机计划任务与云端工作流各跑一次，会**重复推送飞书**，且本机脚本不经

@@ -253,6 +253,26 @@ assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthl
 assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
 assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
 const cloudPublisher = read('.github/scripts/cloud_publish.py');
+// 卡片中文化只在 enrich_zh() 拿到 DEEPSEEK_API_KEY 时生效，拿不到时静默退回印尼语
+// 原文而不报错。这个组合已经两次导致「看起来修好了、云端其实没生效」，所以把
+// 「渲染事件的 cadence 必须把 key 传进 cloud_publish 步骤」固化为不变量。
+for (const [name, workflow] of [
+  ['daily-risk-alerts', dailyRiskWorkflow],
+  ['weekly-credit-sentiment', weeklyCreditWorkflow],
+]) {
+  // 锚定 run: 行本身（注释里也出现文件名，会把窗口挪到 env 之前），再回溯到该 step
+  // 自己的 `- name:` 边界。用固定字符窗口会读到上一个 step 的 env 而假通过。
+  const at = workflow.indexOf('run: python .github/scripts/cloud_publish.py');
+  assert(at > 0, `${name} must invoke cloud_publish.py`);
+  const stepStart = workflow.lastIndexOf('\n      - name:', at);
+  assert(stepStart > 0, `${name} publish step must be a named step`);
+  assert(
+    workflow.slice(stepStart, at).includes('DEEPSEEK_API_KEY'),
+    `${name} must pass DEEPSEEK_API_KEY to cloud_publish or cards silently fall back to Indonesian`,
+  );
+}
+assert(cloudPublisher.includes('def enrich_zh'), 'publisher must translate Indonesian headlines for Chinese readers');
+assert(cloudPublisher.includes('MANUAL_ZH'), 'human-verified Chinese summaries must outrank machine output');
 assert(cloudPublisher.includes('macro-monitor/output/macro-pending.json'), 'monthly macro result is not published to Sites');
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
 assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
