@@ -231,6 +231,7 @@ for (const marker of [
   'credit_daily_alert.py',
   'weekly-credit-sentiment.yml',
   'street_heat.py',
+  'macro_monitor.py',
   'update_credit.py',
   'p2p-scraper/scraper.mjs',
   'FEISHU_WEBHOOK_URL',
@@ -248,8 +249,11 @@ assert(dailyRiskWorkflow.includes('daily_alert.py --no-push'), 'daily workflow l
 assert(dailyRiskWorkflow.includes('credit_daily_alert.py --write-output'), 'daily workflow lacks credit alert collection');
 const monthlyCreditWorkflow = read('.github/workflows/monthly-credit-data.yml');
 assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lacks BI/OJK collection');
+assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthly workflow lacks national macro collection');
+assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
 assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
 const cloudPublisher = read('.github/scripts/cloud_publish.py');
+assert(cloudPublisher.includes('macro-monitor/output/macro-pending.json'), 'monthly macro result is not published to Sites');
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
 assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
 assert(cloudPublisher.includes('"OAI-Sites-Authorization"'), 'Sites ingest must use the platform bypass header');
@@ -298,4 +302,3 @@ assert(creditSentiment.latestAlert.active.some((event) => (
 assert(creditSentiment.articles.every((article) => /^https:\/\//.test(article.url)), 'credit sentiment evidence must use HTTPS source URLs');
 
 console.log('Repository invariants: OK');
-

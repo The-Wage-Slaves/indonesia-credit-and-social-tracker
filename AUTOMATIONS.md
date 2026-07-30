@@ -12,6 +12,7 @@
 | 每周二 10:15 | 线上信贷恐慌指数＋稳定性街头热度 | GitHub workflow `weekly-credit-sentiment.yml` | `bot/weekly-monitoring` 待确认数据；私有看板刷新；不建 PR | 确认分数、信源覆盖和告警证据 | 红/橙风险才推送 | 云端统一执行；不依赖本机开机 |
 | 每周二，采集后人工确认 | 稳定性两版周评 | 云端 `street_heat.py` 证据 → 人工确认后 `apply_week.py` / `score_v4_shadow.py` | 全景等权版与数据置信版同日结果 | 先确认街头热度与日频事件，再确认两版分数 | 风险或采集失败才推送 | 评分写入仍坚持人在环 |
 | 每月1日 11:00 | BI/OJK 行业数据更新 | GitHub workflow `monthly-credit-data.yml` → `update_credit.py` | `bot/monthly-credit-data` 暗门待确认项 | 核对月份、单位、来源和异常值 | 有新数据或失败时推送 | 云端自动；不依赖本机开机 |
+| 每月1日 11:00 | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
 | 每月1日 11:00 | P2P 竞对官网数据 | 同一 `monthly-credit-data.yml` → `p2p-scraper/scraper.mjs` | `p2p-pending.js` 暗门逐格确认 | 核对各公司口径与缺失项 | 有新数据或覆盖不足时推送 | 云端自动；不依赖本机开机 |
 | 每日/每周 | 印尼新闻简报 | `stability-monitor/brief/src/main.py` 或既有 `indo_news` | 新闻摘要/历史 | 新闻阅读；异常事件可转稳定性证据 | 既有飞书 Hook | 仓库 workflow 仍为手动；本机 `indo_news` 为整合目标 |
 
@@ -28,8 +29,8 @@
    重点证据候选或采集覆盖失败时，标题明确写「每周二例行」，给出分数、周环比、
    红色触发原因、中文事件解释和私有看板入口。指数下降但独立事件门触发时，必须
    明示“红色不是由指数上升造成”。历史满8周后再增加滚动中位数/MAD异常幅度。
-3. **月度数据卡**：BI/OJK/P2P 竞对采集。只报告有新月份、口径变化、抓取失败或
-   待补录的字段，不把成功抓取直接当成已确认数据。
+3. **月度数据卡**：BI/OJK、BPS/BI 宏观指标、P2P 竞对采集。只报告有新月份、
+   季度/半年度发布、口径变化、抓取失败或待补录字段，不把成功抓取直接当成已确认数据。
 
 所有卡片使用同一字段约定：
 
@@ -63,11 +64,16 @@
   `FEISHU_SIGN_SECRET`（兼容 `FEISHU_SECRET`）。
 - `DEEPSEEK_API_KEY` 同时服务信贷社媒分类、街头反对率和稳定性日频事件分类。
 - `YOUTUBE_API_KEY` 同时服务信贷舆情和稳定性街头热度。
+- `BPS_API_KEY` 只服务月度宏观采集器，用于 BPS 官方 CPI、GDP、失业率发布；
+  BI 基准利率和 JISDOR 公开页面不需要密钥。
 - YouTube、Reddit、X 分别使用现有官方 API 凭据。缺密钥时必须显示
   `unconfigured`，不能把“没采到”解释为“舆情平静”。
 - `SITES_BYPASS_BEARER_TOKEN` 与 `DASHBOARD_INGEST_TOKEN` 只用于 GitHub Actions
   把经过限制的待确认文件写入私有 Sites；端点只接受白名单路径，不接受正式评分历史。
 - 任何真实 Hook、API key、`.env` 或本机绝对路径都不得提交。
+
+宏观口径分开管理：国家宏观板块的 USD/IDR 使用 BI 官方 JISDOR；信贷行业板块的
+美元换算仍固定 `FX=15000` 以保持历史可比，宏观采集器不得联动改变该换算参数。
 
 ## 自动化边界
 
@@ -75,4 +81,3 @@
 - 每日/每周的印尼新闻简报不在本次改造范围内，仍由 `indo_news` / Claude Code 管理。
 - 例行产物只写 bot 待确认分支和私有看板待确认层；不会创建数据 PR，也不会自动修改
   全景等权版、数据置信版或信贷正式历史。
-

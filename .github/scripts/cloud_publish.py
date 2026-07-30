@@ -59,6 +59,8 @@ ROUTE_FILES = {
     ],
     "monthly": [
         "credit-tracker/dashboard/p2p-pending.js",
+        "credit-tracker/dashboard/macro-pending.js",
+        "credit-tracker/macro-monitor/output/macro-pending.json",
         "pending.json",
         "pending.js",
     ],
@@ -291,7 +293,7 @@ def monthly_summary() -> dict[str, Any]:
     pending = read_json("pending.json", {"boards": {}})
     items = [
         item for item in (pending.get("boards") or {}).get("credit", [])
-        if item.get("source") in {"credit-update", "p2p-scraper"}
+        if item.get("source") in {"credit-update", "p2p-scraper", "macro-monitor"}
     ]
     lines = [
         f"• {item.get('title', '新数据批次')}：{item.get('detail', '')[:180]}"
@@ -492,4 +494,3 @@ if __name__ == "__main__":
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
     raise SystemExit(main())
-

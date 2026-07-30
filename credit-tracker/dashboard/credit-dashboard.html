@@ -10,6 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/recharts@2.12.7/umd/Recharts.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.25.6/babel.min.js"></script>
 <script src="p2p-pending.js"></script><!-- scraper生成的待确认数据; 文件不存在时静默跳过 -->
+<script src="macro-pending.js"></script><!-- ① 月度宏观指标候选; 人工确认前不改正式序列 -->
 <script src="app-metrics-data.js"></script><!-- ③3.2 APP量级数据(点点数据口径) -->
 <script src="app-metrics-panel.js"></script><!-- APP量级图表组件(多实例适配版) -->
 <script src="../sentiment-monitor/output/credit-sentiment-data.js"></script><!-- ④ 周度线上信贷舆情待确认数据 -->
@@ -28,6 +29,7 @@
 const { useState, useMemo, useEffect, useRef } = React;
 const { LineChart, Line, AreaChart, Area, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart, ReferenceLine } = Recharts;
 const CREDIT_SENTIMENT_DATA = typeof CREDIT_SENTIMENT === "undefined" ? null : CREDIT_SENTIMENT;
+const MACRO_PENDING_DATA = window.MACRO_PENDING || null;
 
 // ===== 汇率（暗门里可一键更改，全站USD图表联动重算）=====
 // DEFAULT_FX=15000 是历史口径基准: ②板块Rp原值按所选FX换算; ③板块P2P底数以15000采集换算,再按所选FX折算
@@ -248,8 +250,21 @@ function MacroChart({title,data,xKey,yKey,color,suffix,domain,refLines}) {
 
 // ===== ① 宏观板块 =====
 function MacroSection() {
+  const macroChanges = MACRO_PENDING_DATA?.changes || [];
+  const macroFailures = Object.entries(MACRO_PENDING_DATA?.sourceHealth || {})
+    .filter(([,health]) => health.status !== "ok");
   return (<section id="sec1" style={{scrollMarginTop:64}}>
     <SectionHead no="①" title="国家宏观数据" en="ID Macro Monitor" note="来源: BPS · Bank Indonesia · 采集日 2026-07-15" />
+    {MACRO_PENDING_DATA?.reviewRequired && (
+      <div style={{background:"#fffbeb",border:"1px solid #fde68a",borderLeft:"4px solid #d97706",borderRadius:8,padding:"11px 14px",fontSize:12,color:"#78350f",lineHeight:1.65,marginBottom:12}}>
+        <b>月度宏观指标待确认：</b>
+        {macroChanges.length > 0
+          ? macroChanges.map(item => `${item.label} ${item.confirmed.period} ${item.confirmed.value} → ${item.candidate.period} ${item.candidate.value}`).join("；")
+          : "本次没有新数值候选。"}
+        {macroFailures.length > 0 && <span>　采集异常/待配置：{macroFailures.map(([name])=>name).join("、")}。</span>}
+        <div style={{fontSize:10,color:"#92400e",marginTop:3}}>核对官方期间、单位与原文后才写入下方正式序列；本提示不会自动改数。</div>
+      </div>
+    )}
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(170px,1fr))",gap:10,marginBottom:12}}>
       {macroKPI.map((k,i)=>(<div key={i} style={cardS}>
         <div style={{fontSize:11,color:"#6b7280",marginBottom:4}}>{k.label}</div>

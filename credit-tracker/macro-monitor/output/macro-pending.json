@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "status": "pending-human-review",
+  "asOf": null,
+  "reviewRequired": false,
+  "methodology": {
+    "cadence": "monthly",
+    "monthly": ["cpi", "bi_rate", "usd_idr"],
+    "quarterlyCheckedMonthly": ["gdp"],
+    "semiannualCheckedMonthly": ["unemployment"],
+    "humanInLoop": true,
+    "industryFxUnchanged": 15000
+  },
+  "confirmed": {},
+  "observations": {},
+  "changes": [],
+  "sourceHealth": {}
+}

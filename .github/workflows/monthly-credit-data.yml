@@ -41,6 +41,12 @@ jobs:
         id: industry
         continue-on-error: true
         run: python credit-tracker/update_credit.py
+      - name: Collect national macro indicators
+        id: macro
+        continue-on-error: true
+        env:
+          BPS_API_KEY: ${{ secrets.BPS_API_KEY }}
+        run: python credit-tracker/macro-monitor/macro_monitor.py
       - name: Collect P2P competitor disclosures
         id: competitors
         continue-on-error: true
@@ -55,6 +61,7 @@ jobs:
       - name: Add collection summary
         env:
           INDUSTRY_STATUS: ${{ steps.industry.outcome }}
+          MACRO_STATUS: ${{ steps.macro.outcome }}
           COMPETITOR_STATUS: ${{ steps.competitors.outcome }}
         shell: bash
         run: |
@@ -62,6 +69,7 @@ jobs:
             echo "## Monthly credit data · pending human review"
             echo
             echo "- BI/OJK collector: **${INDUSTRY_STATUS}**"
+            echo "- BPS/BI macro collector: **${MACRO_STATUS}**"
             echo "- P2P competitor collector: **${COMPETITOR_STATUS}**"
             echo "- New data is staged for review; confirmed dashboard history was not changed."
           } >> "$GITHUB_STEP_SUMMARY"
@@ -74,6 +82,8 @@ jobs:
           tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
             pending.json pending.js \
             credit-tracker/dashboard/p2p-pending.js \
+            credit-tracker/dashboard/macro-pending.js \
+            credit-tracker/macro-monitor/output \
             credit-tracker/p2p-scraper/results \
             outputs
           git config user.name "github-actions[bot]"
@@ -82,6 +92,8 @@ jobs:
           tar -xf "$transfer_dir/pending-output.tar"
           git add pending.json pending.js || true
           git add credit-tracker/dashboard/p2p-pending.js || true
+          git add credit-tracker/dashboard/macro-pending.js || true
+          git add credit-tracker/macro-monitor/output || true
           git add credit-tracker/p2p-scraper/results || true
           git add outputs 2>/dev/null || true
           if git diff --cached --quiet; then
