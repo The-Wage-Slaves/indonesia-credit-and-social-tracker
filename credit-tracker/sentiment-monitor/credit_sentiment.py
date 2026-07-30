@@ -366,4 +366,1025 @@ def automatic_event_id(text: str, explicit: str | None = None) -> str:
     ):
         return "kredivo-kredifazz-purworejo-2026-07"
     if "tadpole" in normalized:
-    ÷{¶‰žËkºwµç@€€€¡•…‘•ÉÌõì(€€€€€€€€€€€€‰ÕÑ¡½É¥é…Ñ¥½¸ˆè˜‰	…Í¥ŒíÉ•‘•¹Ñ¥…±Íôˆ°(€€€€€€€€€€€€‰UÍ•Èµ•¹Ðˆè€‰‘¥¥Ñ…°µÉ•‘¥Ðµµ½¹¥Ñ½È¼È¸Àˆ°(€€€€€€€€€€€€‰½¹Ñ•¹ÐµQåÁ”ˆè€‰…ÁÁ±¥…Ñ¥½¸½àµÝÝÜµ™½É´µÕÉ±•¹½‘•ˆ°(€€€€€€€ô°(€€€€¤(€€€Ý¥Ñ ÕÉ±½Á•¸¡É•ÅÕ•ÍÐ°Ñ¥µ•½ÕÐôÈÔ¤…ÌÉ•ÍÁ½¹Í”è(€€€€€€€É•ÑÕÉ¸©Í½¸¹±½…‘Ì¡É•ÍÁ½¹Í”¹É•… ¤¹‘•½‘” ¤¥l‰…•ÍÍ}Ñ½­•¸‰t(()‘•˜½±±•Ñ}É•‘‘¥Ð¡½¹™¥œè‘¥ÑmÍÑÈ°¹åt¤€´ø±¥ÍÑm‘¥ÑmÍÑÈ°¹åutè(€€€Ñ½­•¸€ôÉ•‘‘¥Ñ}Ñ½­•¸¡½¹™¥œ¤(€€€‰…Í”€ô€‰¡ÑÑÁÌè¼½½…ÕÑ ¹É•‘‘¥Ð¹½´ˆ¥˜Ñ½­•¸•±Í”€‰¡ÑÑÁÌè¼½ÝÝÜ¹É•‘‘¥Ð¹½´ˆ(€€€¡•…‘•ÉÌ€ôì‰UÍ•Èµ•¹Ðˆè€‰‘¥¥Ñ…°µÉ•‘¥Ðµµ½¹¥Ñ½È¼È¸À‰ô(€€€¥˜Ñ½­•¸è(€€€€€€€¡•…‘•ÉÍl‰ÕÑ¡½É¥é…Ñ¥½¸‰t€ô˜‰‰•…É•ÈíÑ½­•¹ôˆ(€€€ÅÕ•Éä€ô€ˆ=H€ˆ¹©½¥¸  ‰Á¥¹©½°ˆ°€œ‰Á¥¹©…µ…¸½¹±¥¹”ˆœ°€‰Á…å±…Ñ•Èˆ°€‰-É•‘¥Ù¼ˆ°€‰-É•‘¥…éèˆ¤¤(€€€Á…å±½…‘Ì€ômt(€€€™…¥±ÕÉ•Ì€ômt(€€€™½ÈÍÕ‰É•‘‘¥Ð¥¸€ ‰¥¹‘½¹•Í¥„ˆ°€‰™¥¹…¹Í¥…°ˆ¤è(€€€€€€€ÑÉäè(€€€€€€€€€€€Á…å±½…‘Ì¹…ÁÁ•¹¡É•ÅÕ•ÍÑ}©Í½¸ (€€€€€€€€€€€€€€€˜‰í‰…Í•ô½È½íÍÕ‰É•‘‘¥Ñô½Í•…É ¹©Í½¸ˆ°(€€€€€€€€€€€€€€€Á…É…µÌõì‰ÄˆèÅÕ•Éä°€‰É•ÍÑÉ¥Ñ}ÍÈˆè€Ä°€‰Í½ÉÐˆè€‰¹•Üˆ°€‰Ðˆè€‰µ½¹Ñ ˆ°€‰±¥µ¥Ðˆè€ÄÀÁô°(€€€€€€€€€€€€€€€¡•…‘•ÉÌõ¡•…‘•ÉÌ°(€€€€€€€€€€€€¤¤(€€€€€€€•á•ÁÐá•ÁÑ¥½¸…Ì•áŒè(€€€€€€€€€€€™…¥±ÕÉ•Ì¹…ÁÁ•¹¡˜‰íÍÕ‰É•‘‘¥Ñôèí•áôˆ¤(€€€¥˜¹½ÐÁ…å±½…‘Ìè(€€€€€€€É…¥Í”IÕ¹Ñ¥µ•ÉÉ½È ‰I•‘‘¥ÐÍ•…É¡•Ì™…¥±•è€ˆ€¬€ˆð€ˆ¹©½¥¸¡™…¥±ÕÉ•Ì¤¤(€€€½ÕÑÁÕÐ€ômt(€€€™½ÈÁ…å±½…¥¸Á…å±½…‘Ìè(€€€€€€€™½È¡¥±¥¸Á…å±½…¹•Ð ‰‘…Ñ„ˆ°íô¤¹•Ð ‰¡¥±‘É•¸ˆ°mt¤è(€€€€€€€€€€€¥Ñ•´€ô¡¥±¹•Ð ‰‘…Ñ„ˆ°íô¤(€€€€€€€€€€€Ñ•áÐ€ô˜‰í¥Ñ•´¹•Ð Ñ¥Ñ±”œ°€œœ¥ôí¥Ñ•´¹•Ð Í•±™Ñ•áÐœ°€œœ¥ôˆ(€€€€€€€€€€€¥˜¹½Ð…¹ä¡Á…ÑÑ•É¸¹Í•…É ¡Ñ•áÐ¤™½ÈÁ…ÑÑ•É¸¥¸I%Q}AQQI9L¤è(€€€€€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€€€€€½ÕÑÁÕÐ¹…ÁÁ•¹¡ì(€€€€€€€€€€€€€€€€‰Á±…Ñ™½É´ˆè€‰É•‘‘¥Ðˆ°(€€€€€€€€€€€€€€€€‰½¹Ñ•¹ÑQåÁ”ˆè€‰Á½ÍÐˆ°(€€€€€€€€€€€€€€€€‰•áÑ•É¹…±%ˆè¥Ñ•´¹•Ð ‰¥ˆ°€ˆˆ¤°(€€€€€€€€€€€€€€€€‰‘…Ñ”ˆèÁ…ÉÍ•}‘…Ñ”¡¥Ñ•´¹•Ð ‰É•…Ñ•‘}ÕÑŒˆ¤¤¹¥Í½™½Éµ…Ð ¤°(€€€€€€€€€€€€€€€€‰Ñ•áÐˆèÑ•áÑlèÈÀÀÁt°(€€€€€€€€€€€€€€€€‰ÕÉ°ˆè€‰¡ÑÑÁÌè¼½ÝÝÜ¹É•‘‘¥Ð¹½´ˆ€¬¥Ñ•´¹•Ð ‰Á•Éµ…±¥¹¬ˆ°€ˆˆ¤°(€€€€€€€€€€€€€€€€‰•¹…•µ•¹Ðˆèµ…à À°¥¹Ð¡¥Ñ•´¹•Ð ‰Í½É”ˆ°€À¤¤¤€¬€È€¨¥¹Ð¡¥Ñ•´¹•Ð ‰¹Õµ}½µµ•¹ÑÌˆ°€À¤¤°(€€€€€€€€€€€ô¤(€€€É•ÑÕÉ¸½ÕÑÁÕÐ(()‘•˜å½ÕÑÕ‰•}­•ä¡½¹™¥œè‘¥ÑmÍÑÈ°¹åt¤€´øÍÑÈè(€€€É•ÑÕÉ¸ÍÑÈ (€€€€€€€½Ì¹•Ñ•¹Ø ‰e=UQU	}A%}-dˆ¤(€€€€€€€½È€¡½¹™¥œ¹•Ð ‰å½ÕÑÕ‰”ˆ¤½Èíô¤¹•Ð ‰…Á¥}­•äˆ¤(€€€€€€€½È€ˆˆ(€€€€¤(()‘•˜½±±•Ñ}å½ÕÑÕ‰” (€€€½¹™¥œè‘¥ÑmÍÑÈ°¹åt°…™Ñ•Èè‘Ð¹‘…Ñ”°‰•™½É”è‘Ð¹‘…Ñ”(¤€´ø±¥ÍÑm‘¥ÑmÍÑÈ°¹åutè(€€€­•ä€ôå½ÕÑÕ‰•}­•ä¡½¹™¥œ¤(€€€¥˜¹½Ð­•äè(€€€€€€€É…¥Í”IÕ¹Ñ¥µ•ÉÉ½È ‰e=UQU	}A%}-d¥Ì¹½Ð½¹™¥ÕÉ•ˆ¤(€€€ÁÕ‰±¥Í¡•‘}…™Ñ•È€ô‘Ð¹‘…Ñ•Ñ¥µ”¹½µ‰¥¹”¡…™Ñ•È°‘Ð¹Ñ¥µ” ¤°Ñé¥¹™¼õ‘Ð¹Ñ¥µ•é½¹”¹ÕÑŒ¤¹ÍÑÉ™Ñ¥µ” ˆ•d´•´´•‘P• è•4è•Mhˆ¤(€€€ÁÕ‰±¥Í¡•‘}‰•™½É”€ô‘Ð¹‘…Ñ•Ñ¥µ”¹½µ‰¥¹”¡‰•™½É”°‘Ð¹Ñ¥µ” ¤°Ñé¥¹™¼õ‘Ð¹Ñ¥µ•é½¹”¹ÕÑŒ¤¹ÍÑÉ™Ñ¥µ” ˆ•d´•´´•‘P• è•4è•Mhˆ¤(€€€Ù¥‘•½Ìè‘¥ÑmÍÑÈ°‘¥ÑmÍÑÈ°¹åut€ôíô(€€€™½ÈÅÕ•Éä¥¸M=%1}EUI%MlèÑtè(€€€€€€€Á…å±½…€ôÉ•ÅÕ•ÍÑ}©Í½¸ (€€€€€€€€€€€€‰¡ÑÑÁÌè¼½ÝÝÜ¹½½±•…Á¥Ì¹½´½å½ÕÑÕ‰”½ØÌ½Í•…É ˆ°(€€€€€€€€€€€Á…É…µÌõì(€€€€€€€€€€€€€€€€‰Á…ÉÐˆè€‰Í¹¥ÁÁ•Ðˆ°€‰ÄˆèÅÕ•Éä°€‰ÑåÁ”ˆè€‰Ù¥‘•¼ˆ°(€€€€€€€€€€€€€€€€‰ÁÕ‰±¥Í¡•‘™Ñ•ÈˆèÁÕ‰±¥Í¡•‘}…™Ñ•È°€‰µ…áI•ÍÕ±ÑÌˆè€ÈÔ°(€€€€€€€€€€€€€€€€‰ÁÕ‰±¥Í¡•‘	•™½É”ˆèÁÕ‰±¥Í¡•‘}‰•™½É”°(€€€€€€€€€€€€€€€€‰É•¥½¹½‘”ˆè€‰%ˆ°€‰É•±•Ù…¹•1…¹Õ…”ˆè€‰¥ˆ°(€€€€€€€€€€€€€€€€‰½É‘•Èˆè€‰Ù¥•Ý½Õ¹Ðˆ°€‰­•äˆè­•ä°(€€€€€€€€€€€ô°(€€€€€€€€¤(€€€€€€€™½È¥Ñ•´¥¸Á…å±½…¹•Ð ‰¥Ñ•µÌˆ°mt¤è(€€€€€€€€€€€Ù¥‘•½}¥€ô¥Ñ•´¹•Ð ‰¥ˆ°íô¤¹•Ð ‰Ù¥‘•½%ˆ¤(€€€€€€€€€€€¥˜Ù¥‘•½}¥è(€€€€€€€€€€€€€€€Ù¥‘•½ÍmÙ¥‘•½}¥‘t€ô¥Ñ•´¹•Ð ‰Í¹¥ÁÁ•Ðˆ¤½Èíô(€€€ÍÑ…Ñ¥ÍÑ¥Í}‰å}Ù¥‘•¼è‘¥ÑmÍÑÈ°‘¥ÑmÍÑÈ°¹åut€ôíô(€€€Ù¥‘•½}¥‘Ì€ô±¥ÍÐ¡Ù¥‘•½Ì¤(€€€™½ÈÍÑ…ÉÐ¥¸É…¹” À°±•¸¡Ù¥‘•½}¥‘Ì¤°€ÔÀ¤è(€€€€€€€Á…å±½…€ôÉ•ÅÕ•ÍÑ}©Í½¸ (€€€€€€€€€€€€‰¡ÑÑÁÌè¼½ÝÝÜ¹½½±•…Á¥Ì¹½´½å½ÕÑÕ‰”½ØÌ½Ù¥‘•½Ìˆ°(€€€€€€€€€€€Á…É…µÌõì(€€€€€€€€€€€€€€€€‰Á…ÉÐˆè€‰ÍÑ…Ñ¥ÍÑ¥Ìˆ°(€€€€€€€€€€€€€€€€‰¥ˆè€ˆ°ˆ¹©½¥¸¡Ù¥‘•½}¥‘ÍmÍÑ…ÉÐéÍÑ…ÉÐ€¬€ÔÁt¤°(€€€€€€€€€€€€€€€€‰­•äˆè­•ä°(€€€€€€€€€€€ô°(€€€€€€€€¤(€€€€€€€™½È¥Ñ•´¥¸Á…å±½…¹•Ð ‰¥Ñ•µÌˆ°mt¤è(€€€€€€€€€€€ÍÑ…Ñ¥ÍÑ¥Í}‰å}Ù¥‘•½m¥Ñ•´¹•Ð ‰¥ˆ°€ˆˆ¥t€ô¥Ñ•´¹•Ð ‰ÍÑ…Ñ¥ÍÑ¥Ìˆ¤½Èíô(€€€É…¹­•‘}Ù¥‘•½}¥‘Ì€ôÍ½ÉÑ• (€€€€€€€Ù¥‘•½}¥‘Ì°(€€€€€€€­•äõ±…µ‰‘„¥Ñ•´è¥¹Ð¡ÍÑ…Ñ¥ÍÑ¥Í}‰å}Ù¥‘•¼¹•Ð¡¥Ñ•´°íô¤¹•Ð ‰Ù¥•Ý½Õ¹Ðˆ°€À¤½È€À¤°(€€€€€€€É•Ù•ÉÍ”õQÉÕ”°(€€€€¤(€€€½ÕÑÁÕÐ€ômt(€€€™½ÈÙ¥‘•½}¥¥¸É…¹­•‘}Ù¥‘•½}¥‘ÍlèÌÁtè(€€€€€€€Í¹¥ÁÁ•Ð€ôÙ¥‘•½ÍmÙ¥‘•½}¥‘t(€€€€€€€Ù¥‘•½}ÍÑ…ÑÌ€ôÍÑ…Ñ¥ÍÑ¥Í}‰å}Ù¥‘•¼¹•Ð¡Ù¥‘•½}¥°íô¤(€€€€€€€Ñ¥Ñ±”€ôÍ¹¥ÁÁ•Ð¹•Ð ‰Ñ¥Ñ±”ˆ°€ˆˆ¤(€€€€€€€Ù¥‘•½}ÕÉ°€ô˜‰¡ÑÑÁÌè¼½ÝÝÜ¹å½ÕÑÕ‰”¹½´½Ý…Ñ ýØõíÙ¥‘•½}¥‘ôˆ(€€€€€€€½ÕÑÁÕÐ¹…ÁÁ•¹¡ì(€€€€€€€€€€€€‰Á±…Ñ™½É´ˆè€‰å½ÕÑÕ‰”ˆ°(€€€€€€€€€€€€‰½¹Ñ•¹ÑQåÁ”ˆè€‰Ù¥‘•¼ˆ°(€€€€€€€€€€€€‰•áÑ•É¹…±%ˆèÙ¥‘•½}¥°(€€€€€€€€€€€€‰‘…Ñ”ˆèÁ…ÉÍ•}‘…Ñ”¡Í¹¥ÁÁ•Ð¹•Ð ‰ÁÕ‰±¥Í¡•‘Ðˆ¤°…™Ñ•È¤¹¥Í½™½Éµ…Ð ¤°(€€€€€€€€€€€€‰Ñ•áÐˆèÑ¥Ñ±”°(€€€€€€€€€€€€‰ÕÉ°ˆèÙ¥‘•½}ÕÉ°°(€€€€€€€€€€€€‰•¹…•µ•¹Ðˆè¥¹Ð¡Ù¥‘•½}ÍÑ…ÑÌ¹•Ð ‰Ù¥•Ý½Õ¹Ðˆ°€À¤½È€À¤(€€€€€€€€€€€€€€€€¬€ÈÀ€¨¥¹Ð¡Ù¥‘•½}ÍÑ…ÑÌ¹•Ð ‰½µµ•¹Ñ½Õ¹Ðˆ°€À¤½È€À¤°(€€€€€€€ô¤(€€€€€€€ÑÉäè(€€€€€€€€€€€½µµ•¹ÑÌ€ôÉ•ÅÕ•ÍÑ}©Í½¸ (€€€€€€€€€€€€€€€€‰¡ÑÑÁÌè¼½ÝÝÜ¹½½±•…Á¥Ì¹½´½å½ÕÑÕ‰”½ØÌ½½µµ•¹ÑQ¡É•…‘Ìˆ°(€€€€€€€€€€€€€€€Á…É…µÌõì(€€€€€€€€€€€€€€€€€€€€‰Á…ÉÐˆè€‰Í¹¥ÁÁ•Ðˆ°€‰Ù¥‘•½%ˆèÙ¥‘•½}¥°€‰µ…áI•ÍÕ±ÑÌˆè€ÈÀ°(€€€€€€€€€€€€€€€€€€€€‰½É‘•Èˆè€‰É•±•Ù…¹”ˆ°€‰Ñ•áÑ½Éµ…Ðˆè€‰Á±…¥¹Q•áÐˆ°€‰­•äˆè­•ä°(€€€€€€€€€€€€€€€ô°(€€€€€€€€€€€€¤(€€€€€€€•á•ÁÐ!QQAÉÉ½È…Ì•áŒè(€€€€€€€€€€€¥˜•áŒ¹½‘”¥¸€ ÐÀÌ°€ÐÀÐ¤è(€€€€€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€€€€€É…¥Í”(€€€€€€€™½ÈÑ¡É•…¥¸½µµ•¹ÑÌ¹•Ð ‰¥Ñ•µÌˆ°mt¤è(€€€€€€€€€€€Ñ½À€ô€¡Ñ¡É•…¹•Ð ‰Í¹¥ÁÁ•Ðˆ¤½Èíô¤¹•Ð ‰Ñ½Á1•Ù•±½µµ•¹Ðˆ°íô¤(€€€€€€€€€€€½µµ•¹Ð€ôÑ½À¹•Ð ‰Í¹¥ÁÁ•Ðˆ¤½Èíô(€€€€€€€€€€€½ÕÑÁÕÐ¹…ÁÁ•¹¡ì(€€€€€€€€€€€€€€€€‰Á±…Ñ™½É´ˆè€‰å½ÕÑÕ‰”ˆ°(€€€€€€€€€€€€€€€€‰½¹Ñ•¹ÑQåÁ”ˆè€‰½µµ•¹Ðˆ°(€€€€€€€€€€€€€€€€‰•áÑ•É¹…±%ˆèÑ½À¹•Ð ‰¥ˆ°€ˆˆ¤°(€€€€€€€€€€€€€€€€‰‘…Ñ”ˆèÁ…ÉÍ•}‘…Ñ”¡½µµ•¹Ð¹•Ð ‰ÁÕ‰±¥Í¡•‘Ðˆ¤°…™Ñ•È¤¹¥Í½™½Éµ…Ð ¤°(€€€€€€€€€€€€€€€€‰Ñ•áÐˆè½µµ•¹Ð¹•Ð ‰Ñ•áÑ¥ÍÁ±…äˆ°€ˆˆ¤°(€€€€€€€€€€€€€€€€‰ÕÉ°ˆèÙ¥‘•½}ÕÉ°°(€€€€€€€€€€€€€€€€‰•¹…•µ•¹Ðˆè¥¹Ð¡½µµ•¹Ð¹•Ð ‰±¥­•½Õ¹Ðˆ°€À¤½È€À¤(€€€€€€€€€€€€€€€€€€€€¬€È€¨¥¹Ð ¡Ñ¡É•…¹•Ð ‰Í¹¥ÁÁ•Ðˆ¤½Èíô¤¹•Ð ‰Ñ½Ñ…±I•Á±å½Õ¹Ðˆ°€À¤½È€À¤°(€€€€€€€€€€€ô¤(€€€É•ÑÕÉ¸½ÕÑÁÕÐ(()‘•˜½±±•Ñ}à¡½¹™¥œè‘¥ÑmÍÑÈ°¹åt¤€´ø±¥ÍÑm‘¥ÑmÍÑÈ°¹åutè(€€€‰•…É•È€ôÍÑÈ (€€€€€€€½Ì¹•Ñ•¹Ø ‰a}	II}Q=-8ˆ¤(€€€€€€€½È€¡½¹™¥œ¹•Ð ‰àˆ¤½Èíô¤¹•Ð ‰‰•…É•É}Ñ½­•¸ˆ¤(€€€€€€€½È€ˆˆ(€€€€¤(€€€¥˜¹½Ð‰•…É•Èè(€€€€€€€É…¥Í”IÕ¹Ñ¥µ•ÉÉ½È ‰a}	II}Q=-8¥Ì¹½Ð½¹™¥ÕÉ•ˆ¤(€€€Á…å±½…€ôÉ•ÅÕ•ÍÑ}©Í½¸ (€€€€€€€€‰¡ÑÑÁÌè¼½…Á¤¹à¹½´¼È½ÑÝ••ÑÌ½Í•…É ½É••¹Ðˆ°(€€€€€€€Á…É…µÌõì(€€€€€€€€€€€€‰ÅÕ•Éäˆè€œ¡Á¥¹©½°=H€‰Á¥¹©…µ…¸½¹±¥¹”ˆ=HÁ…å±…Ñ•È=H-É•‘¥Ù¼=H-É•‘¥…éè¤±…¹œé¥€µ¥ÌéÉ•ÑÝ••Ðœ°(€€€€€€€€€€€€‰ÑÝ••Ð¹™¥•±‘Ìˆè€‰É•…Ñ•‘}…Ð±ÁÕ‰±¥}µ•ÑÉ¥Ìˆ°(€€€€€€€€€€€€‰µ…á}É•ÍÕ±ÑÌˆè€ÄÀÀ°(€€€€€€€ô°(€€€€€€€¡•…‘•ÉÌõì‰ÕÑ¡½É¥é…Ñ¥½¸ˆè˜‰	•…É•Èí‰•…É•Éô‰ô°(€€€€¤(€€€½ÕÑÁÕÐ€ômt(€€€™½È¥Ñ•´¥¸Á…å±½…¹•Ð ‰‘…Ñ„ˆ°mt¤è(€€€€€€€µ•ÑÉ¥Ì€ô¥Ñ•´¹•Ð ‰ÁÕ‰±¥}µ•ÑÉ¥Ìˆ¤½Èíô(€€€€€€€½ÕÑÁÕÐ¹…ÁÁ•¹¡ì(€€€€€€€€€€€€‰Á±…Ñ™½É´ˆè€‰àˆ°(€€€€€€€€€€€€‰½¹Ñ•¹ÑQåÁ”ˆè€‰Á½ÍÐˆ°(€€€€€€€€€€€€‰•áÑ•É¹…±%ˆè¥Ñ•´¹•Ð ‰¥ˆ°€ˆˆ¤°(€€€€€€€€€€€€‰‘…Ñ”ˆèÁ…ÉÍ•}‘…Ñ”¡¥Ñ•´¹•Ð ‰É•…Ñ•‘}…Ðˆ¤¤¹¥Í½™½Éµ…Ð ¤°(€€€€€€€€€€€€‰Ñ•áÐˆè¥Ñ•´¹•Ð ‰Ñ•áÐˆ°€ˆˆ¤°(€€€€€€€€€€€€‰ÕÉ°ˆè˜‰¡ÑÑÁÌè¼½à¹½´½¤½Ý•ˆ½ÍÑ…ÑÕÌ½í¥Ñ•´¹•Ð ¥œ°€œœ¥ôˆ°(€€€€€€€€€€€€‰•¹…•µ•¹ÐˆèÍÕ´¡¥¹Ð¡µ•ÑÉ¥Ì¹•Ð¡­•ä°€À¤½È€À¤™½È­•ä¥¸€ (€€€€€€€€€€€€€€€€‰±¥­•}½Õ¹Ðˆ°€‰É•Á±å}½Õ¹Ðˆ°€‰É•ÑÝ••Ñ}½Õ¹Ðˆ°€‰ÅÕ½Ñ•}½Õ¹Ðˆ(€€€€€€€€€€€€¤¤°(€€€€€€€ô¤(€€€É•ÑÕÉ¸½ÕÑÁÕÐ(()‘•˜½±±•Ñ}±¥Ù” (€€€…Í}½˜è‘Ð¹‘…Ñ”°(€€€½¹™¥œè‘¥ÑmÍÑÈ°¹åt°(€€€€¨°(€€€…™Ñ•Èè‘Ð¹‘…Ñ”ð9½¹”€ô9½¹”°(€€€‰•™½É”è‘Ð¹‘…Ñ”ð9½¹”€ô9½¹”°(¤€´øÑÕÁ±•l(€€€±¥ÍÑm‘¥ÑmÍÑÈ°¹åut°±¥ÍÑm‘¥ÑmÍÑÈ°¹åut°±¥ÍÑm‘¥ÑmÍÑÈ°¹åut°‘¥ÑmÍÑÈ°‘¥ÑmÍÑÈ°¹åut)tè(€€€¥˜…™Ñ•È¥Ì9½¹”½È‰•™½É”¥Ì9½¹”è(€€€€€€€Ý••­}•¹‘Ì€ô½µÁ±•Ñ•}Ý••­}•¹‘Ì¡…Í}½˜°€È¤(€€€€€€€…™Ñ•È€ôÝ••­}•¹‘ÍlÁt€´‘Ð¹Ñ¥µ•‘•±Ñ„¡‘…åÌôØ¤(€€€€€€€‰•™½É”€ôÝ••­}•¹‘Íl´Åt€¬‘Ð¹Ñ¥µ•‘•±Ñ„¡‘…åÌôÄ¤(€€€€€€€±…Ñ•ÍÐ€ôÝ••­}•¹‘Íl´Åt(€€€•±Í”è(€€€€€€€±…Ñ•ÍÐ€ô…Í}½˜(€€€…ÉÑ¥±•Ìè±¥ÍÑm‘¥ÑmÍÑÈ°¹åut€ômt(€€€Í½¥…±}¥Ñ•µÌè±¥ÍÑm‘¥ÑmÍÑÈ°¹åut€ômt(€€€Í¥¹…±Ìè±¥ÍÑm‘¥ÑmÍÑÈ°¹åut€ômt(€€€¡•…±Ñ €ôì(€€€€€€€­•äèì¨©µ•Ñ„°€‰ÍÑ…ÑÕÌˆè€‰Á•¹‘¥¹œˆ°€‰‘•Ñ…¥°ˆè€ˆ‰ô(€€€€€€€™½È­•ä°µ•Ñ„¥¸M=UI}Q1=¹¥Ñ•µÌ ¤(€€€ô((€€€‘•˜ÉÕ¸¡­•äèÍÑÈ°½±±•Ñ½Èè…±±…‰±•mmt°¹åt°Í¥¹¬è±¥ÍÑm‘¥ÑmÍÑÈ°¹åut¤€´ø9½¹”è(€€€€€€€ÑÉäè(€€€€€€€€€€€É½ÝÌ€ô½±±•Ñ½È ¤(€€€€€€€€€€€Í¥¹¬¹•áÑ•¹¡É½ÝÌ¤(€€€€€€€€€€€¡•…±Ñ¡m­•åul‰ÍÑ…ÑÕÌ‰t€ô€‰½¬ˆ¥˜É½ÝÌ•±Í”€‰•µÁÑäˆ(€€€€€€€€€€€¡•…±Ñ¡m­•åul‰‘•Ñ…¥°‰t€ô€ (€€€€€€€€€€€€€€€˜‰½±±•Ñ•í±•¸¡É½ÝÌ¥ôÉ•±•Ù…¹ÐÉ•½É‘Ì½Í¥¹…±Ì¸ˆ(€€€€€€€€€€€€€€€¥˜É½ÝÌ•±Í”€‰½±±•Ñ½ÈÉ…¸ÍÕ•ÍÍ™Õ±±ä‰ÕÐ™½Õ¹¹¼É•±•Ù…¹ÐÉ•½É‘Ì¸ˆ(€€€€€€€€€€€€¤(€€€€€€€•á•ÁÐá•ÁÑ¥½¸…Ì•áŒè(€€€€€€€€€€€µ•ÍÍ…”€ôÍÑÈ¡•áŒ¥lèÈÈÁt(€€€€€€€€€€€¡•…±Ñ¡m­•åul‰ÍÑ…ÑÕÌ‰t€ô€‰Õ¹½¹™¥ÕÉ•ˆ¥˜€‰¹½Ð½¹™¥ÕÉ•ˆ¥¸µ•ÍÍ…”•±Í”€‰™…¥±•ˆ(€€€€€€€€€€€¡•…±Ñ¡m­•åul‰‘•Ñ…¥°‰t€ôµ•ÍÍ…”((€€€‘•˜½½±•}¹•ÝÌ ¤€´ø±¥ÍÑm‘¥ÑmÍÑÈ°¹åutè(€€€€€€€É½ÝÌ€ômt(€€€€€€€™…¥±ÕÉ•Ì€ômt(€€€€€€€™½ÈÅÕ•Éä¥¸9]M}EUI%Lè(€€€€€€€€€€€ÑÉäè(€€€€€€€€€€€€€€€É½ÝÌ¹•áÑ•¹¡™•Ñ¡}½½±•}¹•ÝÌ¡ÅÕ•Éä°…™Ñ•È°‰•™½É”¤¤(€€€€€€€€€€€•á•ÁÐá•ÁÑ¥½¸…Ì•áŒè(€€€€€€€€€€€€€€€™…¥±ÕÉ•Ì¹…ÁÁ•¹¡˜‰íÅÕ•Éåôèí•áôˆ¤(€€€€€€€¥˜¹½ÐÉ½ÝÌè(€€€€€€€€€€€É…¥Í”IÕ¹Ñ¥µ•ÉÉ½È ‰±°½½±”9•ÝÌÅÕ•É¥•Ì™…¥±•è€ˆ€¬€ˆð€ˆ¹©½¥¸¡™…¥±ÕÉ•Ì¤¤(€€€€€€€¥˜™…¥±ÕÉ•Ìè(€€€€€€€€€€€¡•…±Ñ¡l‰½½±•}¹•ÝÌ‰ul‰ÅÕ•Éå…¥±ÕÉ•Ì‰t€ô™…¥±ÕÉ•Ì(€€€€€€€É•ÑÕÉ¸É½ÝÌ((€€€ÉÕ¸ ‰½½±•}¹•ÝÌˆ°½½±•}¹•ÝÌ°…ÉÑ¥±•Ì¤(€€€ÉÕ¸ ‰µ•‘¥…}ÉÍÌˆ°±…µ‰‘„è™•Ñ¡}µ•‘¥…}ÉÍÌ¡…™Ñ•È°‰•™½É”¤°…ÉÑ¥±•Ì¤(€€€ÉÕ¸ ‰‘•±Ðˆ°±…µ‰‘„è½±±•Ñ}‘•±Ð¡±…Ñ•ÍÐ¤°Í¥¹…±Ì¤(€€€ÉÕ¸ ‰½½±•}ÑÉ•¹‘Ìˆ°±…µ‰‘„è½±±•Ñ}½½±•}ÑÉ•¹‘Ì¡±…Ñ•ÍÐ¤°Í¥¹…±Ì¤(€€€ÉÕ¸ ‰­…Í­ÕÌˆ°±…µ‰‘„è½±±•Ñ}­…Í­ÕÌ¡…Í}½˜¤°Í½¥…±}¥Ñ•µÌ¤(€€€ÉÕ¸ ‰å½ÕÑÕ‰”ˆ°±…µ‰‘„è½±±•Ñ}å½ÕÑÕ‰”¡½¹™¥œ°…™Ñ•È°‰•™½É”¤°Í½¥…±}¥Ñ•µÌ¤(€€€ÉÕ¸ ‰É•‘‘¥Ðˆ°±…µ‰‘„è½±±•Ñ}É•‘‘¥Ð¡½¹™¥œ¤°Í½¥…±}¥Ñ•µÌ¤(€€€ÉÕ¸ ‰àˆ°±…µ‰‘„è½±±•Ñ}à¡½¹™¥œ¤°Í½¥…±}¥Ñ•µÌ¤(€€€¥˜¹½Ð…ÉÑ¥±•Ì…¹¹½ÐÍ½¥…±}¥Ñ•µÌ…¹¹½ÐÍ¥¹…±Ìè(€€€€€€€É…¥Í”IÕ¹Ñ¥µ•ÉÉ½È ‰±°±¥Ù”Í½ÕÉ”¡…¹¹•±Ì™…¥±•ˆ¤(€€€É•ÑÕÉ¸…ÉÑ¥±•Ì°Í½¥…±}¥Ñ•µÌ°Í¥¹…±Ì°¡•…±Ñ (()‘•˜É•…‘}ÁÉ•Ù¥½ÕÍ}Ý••­Ì ¤€´ø±¥ÍÑm‘¥ÑmÍÑÈ°¹åutè(€€€¥˜¹½Ð=UQAUQ})M=8¹•á¥ÍÑÌ ¤è(€€€€€€€É•ÑÕÉ¸mt(€€€ÑÉäè(€€€€€€€Á…å±½…€ô©Í½¸¹±½…‘Ì¡=UQAUQ})M=8¹É•…‘}Ñ•áÐ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€€€€€É•ÑÕÉ¸±¥ÍÐ¡Á…å±½…¹•Ð ‰Ý••­Ìˆ¤½Èmt¤(€€€•á•ÁÐ€¡=MÉÉ½È°©Í½¸¹)M=9•½‘•ÉÉ½È¤è(€€€€€€€É•ÑÕÉ¸mt(()‘•˜±½…‘}Ù•É¥™¥•‘}•Ù•¹Ñ}…ÉÑ¥±•Ì¡…Í}½˜è‘Ð¹‘…Ñ”¤€´ø±¥ÍÑm‘¥ÑmÍÑÈ°¹åutè(€€€€ˆˆ‰1½…Íµ…±°°¡Õµ…¸µÉ•Ù¥•Ý•Í½ÕÉ”Á…­ÌÝ¥Ñ¡½ÕÐÑÕÉ¹¥¹œÑ¡•´¥¹Ñ¼¡¥ÍÑ½Éä¸ˆˆˆ(€€€¥˜¹½ÐYI%%}Y9Q}ML¹•á¥ÍÑÌ ¤è(€€€€€€€É•ÑÕÉ¸mt(€€€ÑÉäè(€€€€€€€Á…å±½…€ô©Í½¸¹±½…‘Ì¡YI%%}Y9Q}ML¹É•…‘}Ñ•áÐ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€•á•ÁÐ€¡=MÉÉ½È°©Í½¸¹)M=9•½‘•ÉÉ½È¤è(€€€€€€€É•ÑÕÉ¸mt(€€€ÕÑ½™˜€ô…Í}½˜€´‘Ð¹Ñ¥µ•‘•±Ñ„¡‘…åÌôÈÄ¤(€€€½ÕÑÁÕÐ€ômt(€€€™½È•Ù•¹Ð¥¸Á…å±½…¹•Ð ‰•Ù•¹ÑÌˆ¤½Èmtè(€€€€€€€¥˜•Ù•¹Ð¹•Ð ‰É•Ù¥•ÝMÑ…ÑÕÌˆ¤€„ô€‰¡Õµ…¸µÙ•É¥™¥•µÍ½ÕÉ”µÁ…¬ˆè(€€€€€€€€€€€½¹Ñ¥¹Õ”(€€€€€€€É•Ù¥•Ý•‘}Í½ÕÉ•}½Õ¹Ð€ô±•¸¡•Ù•¹Ð¹•Ð ‰…ÉÑ¥±•Ìˆ¤½Èmt¤(€€€€€€€™½È…ÉÑ¥±”¥¸•Ù•¹Ð¹•Ð ‰…ÉÑ¥±•Ìˆ¤½Èmtè(€€€€€€€€€€€…ÉÑ¥±•}‘…Ñ”€ôÁ…ÉÍ•}‘…Ñ”¡…ÉÑ¥±”¹•Ð ‰‘…Ñ”ˆ¤°…Í}½˜¤(€€€€€€€€€€€¥˜ÕÑ½™˜€ðô…ÉÑ¥±•}‘…Ñ”€ðô…Í}½˜è(€€€€€€€€€€€€€€€É•Ù¥•Ý•‘}…ÉÑ¥±”€ô‘¥Ð¡…ÉÑ¥±”¤(€€€€€€€€€€€€€€€™½È™¥•±¥¸€ ‰¡•…‘±¥¹•i ˆ°€‰ÍÕµµ…Éåi ˆ°€‰É•Ù¥•ÝEÕ•ÍÑ¥½¹i ˆ¤è(€€€€€€€€€€€€€€€€€€€¥˜•Ù•¹Ð¹•Ð¡™¥•±¤è(€€€€€€€€€€€€€€€€€€€€€€€É•Ù¥•Ý•‘}…ÉÑ¥±”¹Í•Ñ‘•™…Õ±Ð¡™¥•±°•Ù•¹Ñm™¥•±‘t¤(€€€€€€€€€€€€€€€É•Ù¥•Ý•‘}…ÉÑ¥±•l‰É•Ù¥•Ý•‘M½ÕÉ•½Õ¹Ð‰t€ôÉ•Ù¥•Ý•‘}Í½ÕÉ•}½Õ¹Ð(€€€€€€€€€€€€€€€½ÕÑÁÕÐ¹…ÁÁ•¹¡É•Ù¥•Ý•‘}…ÉÑ¥±”¤(€€€É•ÑÕÉ¸½ÕÑÁÕÐ(()‘•˜±½…‘}¥¹ÁÕÑÌ (€€€…ÉÌè…ÉÁ…ÉÍ”¹9…µ•ÍÁ…”°…Í}½˜è‘Ð¹‘…Ñ”(¤€´øÑÕÁ±•m±¥ÍÑm‘¥ÑmÍÑÈ°¹åut°±¥ÍÑm‘¥ÑmÍÑÈ°¹åut°±¥ÍÑm‘¥ÑmÍÑÈ°¹åut°‘¥ÑmÍÑÈ°‘¥ÑmÍÑÈ°¹åut°ÍÑÉtè(€€€¥˜…ÉÌ¹™¥áÑÕÉ”è(€€€€€€€Á…å±½…€ô©Í½¸¹±½…‘Ì¡…ÉÌ¹™¥áÑÕÉ”¹É•…‘}Ñ•áÐ¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤¤(€€€€€€€¡•…±Ñ €ôÁ…å±½…¹•Ð ‰Í½ÕÉ•!•…±Ñ ˆ¤½Èì(€€€€€€€€€€€­•äèì(€€€€€€€€€€€€€€€€¨©µ•Ñ„°(€€€€€€€€€€€€€€€€‰ÍÑ…ÑÕÌˆè€‰½¬ˆ¥˜­•ä€ôô€‰½½±•}¹•ÝÌˆ…¹Á…å±½…¹•Ð ‰…ÉÑ¥±•Ìˆ¤•±Í”€‰Õ¹…Ù…¥±…‰±”ˆ°(€€€€€€€€€€€€€€€€‰‘•Ñ…¥°ˆè€‰9½ÐÁÉ•Í•¹Ð¥¸É•Ù¥•Ý•™¥áÑÕÉ”¸ˆ°(€€€€€€€€€€€ô(€€€€€€€€€€€™½È­•ä°µ•Ñ„¥¸M=UI}Q1=¹¥Ñ•µÌ ¤(€€€€€€€ô(€€€€€€€É•ÑÕÉ¸€ (€€€€€€€€€€€Á…å±½…¹•Ð ‰…ÉÑ¥±•Ìˆ°mt¤°(€€€€€€€€€€€Á…å±½…¹•Ð ‰Í½¥…±%Ñ•µÌˆ°mt¤°(€€€€€€€€€€€Á…å±½…¹•Ð ‰Í¥¹…±Ìˆ°mt¤°(€€€€€€€€€€€¡•…±Ñ °(€€€€€€€€€€€˜‰™¥áÑÕÉ”éí…ÉÌ¹™¥áÑÕÉ”¹…Í}Á½Í¥à ¥ôˆ°(€€€€€€€€¤(€€€Í¡…É•‘}½¹™¥œ€ô±½…‘}å…µ°¡M!I}=9%¤(€€€±½…±}½¹™¥œ€ô±½…‘}å…µ°¡…ÉÌ¹½¹™¥œ½ÈU1Q}=9%¤(€€€½¹™¥œ€ôµ•É•}¹½¹•µÁÑå}½¹™¥œ¡Í¡…É•‘}½¹™¥œ°±½…±}½¹™¥œ¤(€€€…ÉÑ¥±•Ì°Í½¥…±}¥Ñ•µÌ°Í¥¹…±Ì°¡•…±Ñ €ô½±±•Ñ}±¥Ù”¡…Í}½˜°½¹™¥œ¤(€€€…ÉÑ¥±•Ì¹•áÑ•¹¡±½…‘}Ù•É¥™¥•‘}•Ù•¹Ñ}…ÉÑ¥±•Ì¡…Í}½˜¤¤(€€€Í½¥…±}¥Ñ•µÌ°±…ÍÍ¥™¥•È€ô±…ÍÍ¥™å}Í½¥…±}Ý¥Ñ¡}‘••ÁÍ••¬¡Í½¥…±}¥Ñ•µÌ°½¹™¥œ¤(€€€¡•…±Ñ¡l‰Í½¥…±}±…ÍÍ¥™¥•È‰t€ô±…ÍÍ¥™¥•È(€€€É•ÑÕÉ¸…ÉÑ¥±•Ì°Í½¥…±}¥Ñ•µÌ°Í¥¹…±Ì°¡•…±Ñ °€‰±¥Ù”éµÕ±Ñ¤µÍ½ÕÉ”µØÈ¸Äˆ(()‘•˜ÝÉ¥Ñ•}½ÕÑÁÕÑÌ¡É•ÍÕ±Ðè‘¥ÑmÍÑÈ°¹åt°Í½ÕÉ•}µ½‘”èÍÑÈ¤€´ø9½¹”è(€€€=UQAUQ}%H¹µ­‘¥È¡Á…É•¹ÑÌõQÉÕ”°•á¥ÍÑ}½¬õQÉÕ”¤(€€€É•ÍÕ±Ñl‰Í½ÕÉ•5½‘”‰t€ôÍ½ÕÉ•}µ½‘”(€€€©Í½¹}Ñ•áÐ€ô©Í½¸¹‘ÕµÁÌ¡É•ÍÕ±Ð°•¹ÍÕÉ•}…Í¥¤õ…±Í”°¥¹‘•¹ÐôÈ¤€¬€‰q¸ˆ(€€€=UQAUQ})M=8¹ÝÉ¥Ñ•}Ñ•áÐ¡©Í½¹}Ñ•áÐ°•¹½‘¥¹œô‰ÕÑ˜´àˆ¤(€€€=UQAUQ})L¹ÝÉ¥Ñ•}Ñ•áÐ ‰½¹ÍÐI%Q}M9Q%59P€ô€ˆ€¬©Í½¹}Ñ•áÐ¹ÉÍÑÉ¥À ¤€¬€ˆíq¸ˆ°•¹½‘¥¹œô‰ÕÑ˜´àˆ¤(()‘•˜µ…¥¸ ¤€´ø¥¹Ðè(€€€Á…ÉÍ•È€ô…ÉÁ…ÉÍ”¹ÉÕµ•¹ÑA…ÉÍ•È ¤(€€€Á…ÉÍ•È¹…‘‘}…ÉÕµ•¹Ð ˆ´µ…Ìµ½˜ˆ°‘•™…Õ±Ðõ‘Ð¹‘…Ñ”¹Ñ½‘…ä ¤¹¥Í½™½Éµ…Ð ¤¤(€€€Á…ÉÍ•È¹…‘‘}…ÉÕµ•¹Ð ˆ´µ™¥áÑÕÉ”ˆ°ÑåÁ”õÁ…Ñ¡±¥ˆ¹A…Ñ ¤(€€€Á…ÉÍ•È¹…‘‘}…ÉÕµ•¹Ð ˆ´µ½¹™¥œˆ°ÑåÁ”õÁ…Ñ¡±¥ˆ¹A…Ñ ¤(€€€Á…ÉÍ•È¹…‘‘}…ÉÕµ•¹Ð ˆ´µÝÉ¥Ñ”µ½ÕÑÁÕÐˆ°…Ñ¥½¸ô‰ÍÑ½É•}ÑÉÕ”ˆ¤(€€€…ÉÌ€ôÁ…ÉÍ•È¹Á…ÉÍ•}…ÉÌ ¤(€€€¥˜¡…Í…ÑÑÈ¡ÍåÌ¹ÍÑ‘½ÕÐ°€‰É•½¹™¥ÕÉ”ˆ¤è(€€€€€€€ÍåÌ¹ÍÑ‘½ÕÐ¹É•½¹™¥ÕÉ”¡•¹½‘¥¹œô‰ÕÑ˜´àˆ¤(€€€…Í}½˜€ôÁ…ÉÍ•}‘…Ñ”¡…ÉÌ¹…Í}½˜¤(€€€ÁÉ•Ù¥½ÕÌ€ôÉ•…‘}ÁÉ•Ù¥½ÕÍ}Ý••­Ì ¤¥˜¹½Ð…ÉÌ¹™¥áÑÕÉ”•±Í”mt(€€€…ÉÑ¥±•Ì°Í½¥…±}¥Ñ•µÌ°Í¥¹…±Ì°¡•…±Ñ °Í½ÕÉ•}µ½‘”€ô±½…‘}¥¹ÁÕÑÌ¡…ÉÌ°…Í}½˜¤(€€€±…ÍÍ¥™¥•È€ô¡•…±Ñ ¹Á½À ‰Í½¥…±}±…ÍÍ¥™¥•Èˆ°ì(€€€€€€€€‰µ•Ñ¡½ˆè€‰‘•Ñ•Éµ¥¹¥ÍÑ¥}¥‘}±•á¥½¹}ØÈˆ°(€€€€€€€€‰ÍÑ…ÑÕÌˆè€‰™¥áÑÕÉ•}½É}¹½Ñ}ÉÕ¸ˆ°(€€€ô¤(€€€É•ÍÕ±Ð€ô‰Õ¥±‘}É•ÍÕ±Ð (€€€€€€€…ÉÑ¥±•Ì°…Í}½˜°Í½¥…±}¥Ñ•µÌ°Í¥¹…±Ì°¡•…±Ñ °¡¥ÍÑ½É¥…±}Ý••­ÌõÁÉ•Ù¥½ÕÌ°(€€€€¤(€€€É•ÍÕ±Ñl‰½±±•Ñ¥½¹¥…¹½ÍÑ¥Ì‰t€ôì(€€€€€€€€‰µ½‘”ˆè€‰É•Ù¥•Ý•‘}™¥áÑÕÉ”ˆ¥˜…ÉÌ¹™¥áÑÕÉ”•±Í”€‰±¥Ù•}µÕ±Ñ¥}Í½ÕÉ•}ØÈˆ°(€€€€€€€€‰ÍÕ•ÍÍ™Õ±¡…¹¹•±Ìˆèl(€€€€€€€€€€€­•ä™½È­•ä°Ù…±Õ”¥¸¡•…±Ñ ¹¥Ñ•µÌ ¤¥˜Ù…±Õ”¹•Ð ‰ÍÑ…ÑÕÌˆ¤€ôô€‰½¬ˆ(€€€€€€€t°(€€€€€€€€‰™…¥±•‘=ÉU¹…Ù…¥±…‰±•¡…¹¹•±Ìˆèì(€€€€€€€€€€€­•äèÙ…±Õ”¹•Ð ‰‘•Ñ…¥°ˆ°€ˆˆ¤(€€€€€€€€€€€™½È­•ä°Ù…±Õ”¥¸¡•…±Ñ ¹¥Ñ•µÌ ¤(€€€€€€€€€€€¥˜­•ä¥¸M=UI}Q1=…¹Ù…±Õ”¹•Ð ‰ÍÑ…ÑÕÌˆ¤€„ô€‰½¬ˆ(€€€€€€€ô°(€€€€€€€€‰Í½¥…±±…ÍÍ¥™¥•Èˆè±…ÍÍ¥™¥•È°(€€€ô(€€€¥˜…ÉÌ¹ÝÉ¥Ñ•}½ÕÑÁÕÐè(€€€€€€€ÝÉ¥Ñ•}½ÕÑÁÕÑÌ¡É•ÍÕ±Ð°Í½ÕÉ•}µ½‘”¤(€€€™½ÈÝ••¬¥¸É•ÍÕ±Ñl‰Ý••­Ì‰tè(€€€€€€€¹•ÝÌ€ôÝ••­l‰•¹¥¹•Ì‰ul‰¹•ÝÌ‰ul‰Í½É”‰t(€€€€€€€Í½¥…°€ôÝ••­l‰•¹¥¹•Ì‰ul‰Í½¥…°‰ul‰Í½É”‰t(€€€€€€€ÁÉ¥¹Ð (€€€€€€€€€€€˜‰íÝ••­lÝ••­MÑ…ÉÐuô€´íÝ••­lÝ••­¹uô€ˆ(€€€€€€€€€€€˜‰™•…ÈõíÝ••­l™•…É%¹‘•àtè¸Å™ô€ˆ(€€€€€€€€€€€˜‰¹•ÝÌõí¹•ÝÌ¥˜¹•ÝÌ¥Ì¹½Ð9½¹”•±Í”€9ô€ˆ(€€€€€€€€€€€˜‰Í½¥…°õíÍ½¥…°¥˜Í½¥…°¥Ì¹½Ð9½¹”•±Í”€9ô€ˆ(€€€€€€€€€€€˜‰…±•ÉÐõíÝ••­l…±•ÉÐul±•Ù•°uô€ˆ(€€€€€€€€€€€˜‰½¹™¥‘•¹”õíÝ••­l½¹™¥‘•¹”tè¸Ä•ô€ˆ(€€€€€€€€€€€˜‰ÍÑ…ÑÕÌõíÝ••­l‘…Ñ…MÑ…ÑÕÌuôˆ(€€€€€€€€¤(€€€É•ÑÕÉ¸€À(()¥˜}}¹…µ•}|€ôô€‰}}µ…¥¹}|ˆè(€€€É…¥Í”MåÍÑ•µá¥Ð¡µ…¥¸ ¤¤(
+        return "pindar-tadpole-practice-2026-07"
+    # Do not cluster generic debt/terror coverage into one event.  The words
+    # "pinjol", "teror" and "bom" are common in unrelated consumer-protection,
+    # debt-collection and crime stories.  A stable event id is only assigned
+    # above when the text contains a distinctive entity + incident signature.
+    # Everything else keeps a title fingerprint, favouring precision over
+    # recall until a human reviewer or a verified seed supplies an explicit id.
+    return "auto-" + fingerprint(" ".join(normalized.split()[:9]))
+
+
+def complete_week_ends(as_of: dt.date, count: int = 2) -> list[dt.date]:
+    days_since_sunday = (as_of.weekday() + 1) % 7
+    last_sunday = as_of - dt.timedelta(days=days_since_sunday)
+    if last_sunday == as_of:
+        last_sunday -= dt.timedelta(days=7)
+    return [last_sunday - dt.timedelta(days=7 * offset) for offset in reversed(range(count))]
+
+
+def within_week(item_date: dt.date, week_end: dt.date) -> bool:
+    return week_end - dt.timedelta(days=6) <= item_date <= week_end
+
+
+def dedupe_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen: set[tuple[str, str]] = set()
+    output = []
+    for item in sorted(articles, key=lambda row: (row.get("date", ""), row.get("title", ""))):
+        key = (fingerprint(item.get("title", "")), canonical_domain(item.get("publisherUrl") or item.get("url", "")))
+        if key not in seen:
+            seen.add(key)
+            output.append(item)
+    return output
+
+
+def enrich_articles(articles: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    output = []
+    for raw in dedupe_articles(articles):
+        item = dict(raw)
+        text = f"{item.get('title', '')} {item.get('summary', '')}"
+        item["id"] = item.get("id") or fingerprint(item.get("title", ""), item.get("url", ""))
+        item["date"] = parse_date(item.get("date")).isoformat()
+        item["domain"] = canonical_domain(item.get("publisherUrl") or item.get("url", ""))
+        item["sourceClass"] = source_class(item)
+        item["sourceFactor"] = SOURCE_FACTORS[item["sourceClass"]]
+        item["sentiment"] = content_sentiment(text)
+        item["eventId"] = automatic_event_id(text, item.get("eventId"))
+        event_type, severity = event_profile(text)
+        item["eventType"] = item.get("eventType") or event_type
+        item["eventSeverity"] = max(float(item.get("eventSeverity", 0)), severity)
+        output.append(item)
+    return output
+
+
+def enrich_social_items(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen: set[tuple[str, str]] = set()
+    output = []
+    for raw in sorted(items, key=lambda row: (row.get("date", ""), row.get("text", ""))):
+        item = dict(raw)
+        text = str(item.get("text") or item.get("title") or "")
+        platform = str(item.get("platform") or "unknown").lower()
+        external_id = str(item.get("externalId") or "")
+        key = (platform, external_id or fingerprint(text, item.get("url", "")))
+        if key in seen:
+            continue
+        seen.add(key)
+        item["id"] = item.get("id") or fingerprint(platform, external_id, text)
+        item["platform"] = platform
+        item["date"] = parse_date(item.get("date")).isoformat()
+        item["text"] = text
+        item["url"] = item.get("url") or ""
+        item["engagement"] = max(0, int(item.get("engagement", 0) or 0))
+        item["contentType"] = item.get("contentType") or "post"
+        item["sentiment"] = item.get("sentiment") or content_sentiment(text)
+        item["eventId"] = automatic_event_id(text, item.get("eventId"))
+        event_type, severity = event_profile(text)
+        item["eventType"] = item.get("eventType") or event_type
+        item["eventSeverity"] = max(float(item.get("eventSeverity", 0)), severity)
+        output.append(item)
+    return output
+
+
+def cluster_events(
+    articles: list[dict[str, Any]], social_items: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in articles + social_items:
+        grouped.setdefault(item["eventId"], []).append(item)
+    events = []
+    for event_id, items in grouped.items():
+        domains = sorted({
+            item.get("domain") or (item.get("platform") + ".social")
+            for item in items
+        })
+        strongest = max(items, key=lambda item: float(item["eventSeverity"]))
+        article_items = [item for item in items if "sourceClass" in item]
+        platforms = sorted({item.get("platform") for item in items if item.get("platform")})
+        # Human-readable review metadata travels with the evidence cluster.
+        headline_zh = next(
+            (item.get("headlineZh") for item in items if item.get("headlineZh")),
+            None,
+        )
+        summary_zh = next(
+            (item.get("summaryZh") for item in items if item.get("summaryZh")),
+            None,
+        )
+        review_question_zh = next(
+            (
+                item.get("reviewQuestionZh")
+                for item in items
+                if item.get("reviewQuestionZh")
+            ),
+            None,
+        )
+        reviewed_source_count = max(
+            (int(item.get("reviewedSourceCount", 0)) for item in items),
+            default=0,
+        )
+        events.append({
+            "id": event_id,
+            "eventType": strongest["eventType"],
+            "severity": round(max(float(item["eventSeverity"]) for item in items), 2),
+            "articleIds": [item["id"] for item in article_items],
+            "socialItemIds": [item["id"] for item in items if "platform" in item],
+            "independentSourceCount": len(domains),
+            "domains": domains,
+            "platforms": platforms,
+            "hasPrimarySource": any(item.get("sourceClass") == "primary" for item in article_items),
+            "headline": strongest.get("title") or strongest.get("text", "")[:120],
+            "headlineZh": headline_zh,
+            "summaryZh": summary_zh,
+            "reviewQuestionZh": review_question_zh,
+            "reviewedSourceCount": reviewed_source_count or None,
+        })
+    return sorted(events, key=lambda item: (-item["severity"], item["id"]))
+
+
+def robust_volume_risk(current: float, history: list[float]) -> tuple[float, str]:
+    usable = [float(value) for value in history if value is not None]
+    if len(usable) >= 8:
+        baseline = statistics.median(usable[-8:])
+        deviations = [abs(value - baseline) for value in usable[-8:]]
+        mad = statistics.median(deviations)
+        scale = max(mad * 1.4826, max(1.0, baseline * 0.10))
+        z_score = (current - baseline) / scale
+        risk = clamp(50.0 + 15.0 * z_score)
+        return risk, f"8-week rolling median/MAD anomaly: z={z_score:.2f}."
+    if usable:
+        previous = usable[-1]
+        ratio = (current + 1) / (previous + 1)
+        risk = clamp(50.0 + 35.0 * math.tanh(math.log(ratio)))
+        return risk, f"Pilot week-on-week ratio: {ratio:.2f}x; {len(usable)}/8 baseline weeks."
+    return 50.0, "First observed week; neutral volume baseline pending 8 weeks of history."
+
+
+def weighted_sentiment(items: list[dict[str, Any]], social: bool = False) -> tuple[float | None, float]:
+    if not items:
+        return None, 0.0
+    weights = []
+    for item in items:
+        if social:
+            weights.append(1.0 + min(4.0, math.log1p(float(item.get("engagement", 0)))))
+        else:
+            weights.append(float(item.get("sourceFactor", 0.7)))
+    total = sum(weights)
+    risk = sum(item["sentiment"]["risk"] * weight for item, weight in zip(items, weights)) / total
+    negative_share = 100.0 * sum(
+        weight for item, weight in zip(items, weights) if item["sentiment"]["label"] == "negative"
+    ) / total
+    return risk, negative_share
+
+
+def combine_available(values: list[tuple[float | None, float]]) -> float | None:
+    available = [(float(value), weight) for value, weight in values if value is not None]
+    if not available:
+        return None
+    return sum(value * weight for value, weight in available) / sum(weight for _, weight in available)
+
+
+def aggregate_signals(
+    signals: list[dict[str, Any]], week_end: dt.date, metric: str
+) -> float | None:
+    values = [
+        (float(signal["risk"]), float(signal.get("weight", 1.0)))
+        for signal in signals
+        if signal.get("metric") == metric
+        and within_week(parse_date(signal.get("date"), week_end), week_end)
+        and signal.get("risk") is not None
+    ]
+    if not values:
+        return None
+    return sum(value * weight for value, weight in values) / sum(weight for _, weight in values)
+
+
+def alert_for_week(
+    events: list[dict[str, Any]],
+    fear_index: float,
+    news_score: float | None,
+    social_score: float | None,
+    social_volume: float | None,
+    social_negative_share: float,
+    social_items: list[dict[str, Any]],
+) -> dict[str, Any]:
+    red_types = {"regulatory_action", "consumer_harm", "systemic_platform_stress"}
+    verified_events = [
+        event for event in events
+        if event["eventType"] in red_types
+        and event["severity"] >= 0.8
+        and event["hasPrimarySource"]
+        and event["independentSourceCount"] >= 2
+    ]
+    cross_signal = (
+        fear_index >= 75
+        and news_score is not None and news_score >= 70
+        and social_score is not None and social_score >= 70
+    )
+    active_dates = {item["date"] for item in social_items if item["sentiment"]["label"] == "negative"}
+    social_spike = (
+        social_volume is not None and social_volume >= 80
+        and social_negative_share >= 65
+        and len({item["platform"] for item in social_items}) >= 2
+        and len(active_dates) >= 2
+    )
+    reasons = []
+    if verified_events:
+        reasons.append("verified_severe_event")
+    if cross_signal:
+        reasons.append("news_social_cross_signal")
+    if social_spike:
+        reasons.append("multi_platform_social_spike")
+    review_candidates = [
+        event for event in events
+        if event not in verified_events
+        and event["severity"] >= 0.8
+        and (event["hasPrimarySource"] or event["independentSourceCount"] >= 2)
+    ][:5]
+    suppressed_candidate_count = max(
+        0,
+        sum(
+            event not in verified_events and event["severity"] >= 0.7
+            for event in events
+        ) - len(review_candidates),
+    )
+    level = "red" if reasons else (
+        "amber" if review_candidates or fear_index >= 65 else "normal"
+    )
+    active = verified_events if verified_events else (
+        review_candidates if level == "amber" else []
+    )
+    return {
+        "level": level,
+        "active": active,
+        "triggerReasons": reasons,
+        "rule": (
+            "Red if a severe event has a primary source plus two independent sources; "
+            "or fear>=75 with both news and social>=70; or a two-day, two-platform "
+            "social spike with volume>=80 and negative share>=65%."
+        ),
+        "reviewCandidates": review_candidates,
+        "suppressedCandidateCount": suppressed_candidate_count,
+        # Backward-compatible alias. This list is intentionally capped and
+        # evidence-filtered; it is not a dump of every keyword-matched story.
+        "pendingHighSeverity": review_candidates,
+    }
+
+
+def score_week(
+    week_end: dt.date,
+    articles: list[dict[str, Any]],
+    social_items: list[dict[str, Any]],
+    signals: list[dict[str, Any]],
+    news_history: list[float],
+    social_history: list[float],
+    source_health: dict[str, dict[str, Any]],
+) -> dict[str, Any]:
+    week_articles = [
+        item for item in articles if within_week(parse_date(item["date"]), week_end)
+    ]
+    week_social = [
+        item for item in social_items if within_week(parse_date(item["date"]), week_end)
+    ]
+    article_count = len(week_articles)
+    social_units = sum(
+        1.0 + 0.25 * min(10.0, math.log1p(float(item.get("engagement", 0))))
+        for item in week_social
+    )
+    article_volume_risk, news_volume_note = robust_volume_risk(article_count, news_history)
+    social_item_volume_risk, social_volume_note = robust_volume_risk(social_units, social_history)
+    article_tone, negative_article_share = weighted_sentiment(week_articles)
+    social_tone, negative_social_share = weighted_sentiment(week_social, social=True)
+    news_volume = combine_available([
+        (article_volume_risk if week_articles else None, 0.65),
+        (aggregate_signals(signals, week_end, "news_volume"), 0.35),
+    ])
+    news_tone = combine_available([
+        (article_tone, 0.75),
+        (aggregate_signals(signals, week_end, "news_tone"), 0.25),
+    ])
+    social_volume = combine_available([
+        (social_item_volume_risk if week_social else None, 0.65),
+        (aggregate_signals(signals, week_end, "social_volume"), 0.35),
+    ])
+    social_negativity = combine_available([
+        (social_tone, 0.85),
+        (aggregate_signals(signals, week_end, "social_negativity"), 0.15),
+    ])
+    events = cluster_events(week_articles, week_social)
+    severe_event = 100.0 * max((event["severity"] for event in events), default=0.0)
+    components: dict[str, float | None] = {
+        "newsVolume": round1(news_volume) if news_volume is not None else None,
+        "newsTone": round1(news_tone) if news_tone is not None else None,
+        "socialVolume": round1(social_volume) if social_volume is not None else None,
+        "socialNegativity": round1(social_negativity) if social_negativity is not None else None,
+        "severeEvent": round1(severe_event),
+    }
+    available_weight = sum(
+        COMPONENT_WEIGHTS[key] for key, value in components.items() if value is not None
+    )
+    fear_index = sum(
+        float(value) * COMPONENT_WEIGHTS[key]
+        for key, value in components.items() if value is not None
+    ) / available_weight
+    news_score = combine_available([
+        (news_volume, COMPONENT_WEIGHTS["newsVolume"]),
+        (news_tone, COMPONENT_WEIGHTS["newsTone"]),
+    ])
+    social_score = combine_available([
+        (social_volume, COMPONENT_WEIGHTS["socialVolume"]),
+        (social_negativity, COMPONENT_WEIGHTS["socialNegativity"]),
+    ])
+    successful = [
+        key for key in SOURCE_CATALOG
+        if source_health.get(key, {}).get("status") == "ok"
+    ]
+    expected = list(SOURCE_CATALOG)
+    source_coverage = len(successful) / len(expected)
+    news_channels = sum(
+        source_health.get(key, {}).get("status") == "ok"
+        for key, meta in SOURCE_CATALOG.items() if meta["family"] == "news"
+    )
+    social_channels = sum(
+        source_health.get(key, {}).get("status") == "ok"
+        for key, meta in SOURCE_CATALOG.items() if meta["family"] == "social"
+    )
+    evidence_breadth = min(1.0, (
+        len({item["domain"] for item in week_articles})
+        + len({item["platform"] for item in week_social})
+    ) / 6.0)
+    confidence = 0.55 * source_coverage + 0.25 * evidence_breadth + 0.20 * min(
+        1.0, (news_channels > 0) * 0.5 + (social_channels > 0) * 0.5
+    )
+    data_status = "complete" if (
+        news_volume is not None and news_tone is not None
+        and social_volume is not None and social_negativity is not None
+        and news_channels >= 2 and social_channels >= 2
+    ) else "provisional-partial-coverage"
+    alert = alert_for_week(
+        events, fear_index, news_score, social_score, social_volume,
+        negative_social_share, week_social,
+    )
+    return {
+        "weekStart": (week_end - dt.timedelta(days=6)).isoformat(),
+        "weekEnd": week_end.isoformat(),
+        "fearIndex": round1(fear_index),
+        "dataStatus": data_status,
+        "availableFormulaWeight": round(available_weight, 3),
+        "engines": {
+            "news": {
+                "score": round1(news_score) if news_score is not None else None,
+                "volume": components["newsVolume"],
+                "negativity": components["newsTone"],
+                "itemCount": article_count,
+                "negativeShare": round1(negative_article_share),
+                "uniqueSources": len({item["domain"] for item in week_articles}),
+            },
+            "social": {
+                "score": round1(social_score) if social_score is not None else None,
+                "volume": components["socialVolume"],
+                "negativity": components["socialNegativity"],
+                "itemCount": len(week_social),
+                "negativeShare": round1(negative_social_share),
+                "platformCount": len({item["platform"] for item in week_social}),
+                "engagementUnits": round1(social_units),
+            },
+        },
+        "components": components,
+        "articleCount": article_count,
+        "socialPostCount": len(week_social),
+        "uniqueSourceCount": len({item["domain"] for item in week_articles}),
+        "socialPlatformCount": len({item["platform"] for item in week_social}),
+        "negativeArticleShare": round1(negative_article_share),
+        "negativeSocialShare": round1(negative_social_share),
+        "confidence": round(confidence, 3),
+        "coverage": {
+            "successfulChannels": successful,
+            "expectedChannels": expected,
+            "newsChannels": news_channels,
+            "socialChannels": social_channels,
+        },
+        "volumeNotes": {"news": news_volume_note, "social": social_volume_note},
+        "alert": alert,
+        "events": events,
+        "articleIds": [item["id"] for item in week_articles],
+        "socialItemIds": [item["id"] for item in week_social],
+        "_newsVolumeRaw": article_count,
+        "_socialVolumeRaw": round1(social_units),
+    }
+
+
+def build_result(
+    articles: list[dict[str, Any]],
+    as_of: dt.date,
+    social_items: list[dict[str, Any]] | None = None,
+    signals: list[dict[str, Any]] | None = None,
+    source_health: dict[str, dict[str, Any]] | None = None,
+    historical_weeks: list[dict[str, Any]] | None = None,
+) -> dict[str, Any]:
+    enriched_articles = enrich_articles(articles)
+    enriched_social = enrich_social_items(social_items or [])
+    signals = signals or []
+    source_health = source_health or {
+        key: {
+            **meta,
+            "status": "ok" if key == "google_news" and enriched_articles else "unavailable",
+            "detail": "Fixture did not provide this channel.",
+        }
+        for key, meta in SOURCE_CATALOG.items()
+    }
+    old_weeks = historical_weeks or []
+    news_history = [
+        float(week.get("_newsVolumeRaw", week.get("articleCount", 0)))
+        for week in old_weeks[-8:]
+    ]
+    social_history = [
+        float(week.get("_socialVolumeRaw", week.get("socialPostCount", 0)))
+        for week in old_weeks[-8:]
+    ]
+    weeks = []
+    for week_end in complete_week_ends(as_of, 2):
+        week = score_week(
+            week_end, enriched_articles, enriched_social, signals,
+            news_history, social_history, source_health,
+        )
+        news_history.append(float(week["_newsVolumeRaw"]))
+        social_history.append(float(week["_socialVolumeRaw"]))
+        weeks.append(week)
+    latest_alert = weeks[-1]["alert"]
+    return {
+        "schemaVersion": 2,
+        "status": "pilot-pending-human-review",
+        "asOf": as_of.isoformat(),
+        "cadence": "weekly-complete-weeks",
+        "indexDirection": "0=calm; 100=acute attention/fear/event shock",
+        "methodology": {
+            "name": "Indonesia Digital Credit Fear Index v2",
+            "formula": (
+                "25% news-density shock + 20% news negativity + 20% social-volume "
+                "shock + 20% social negativity + 15% verified-event severity"
+            ),
+            "componentWeights": COMPONENT_WEIGHTS,
+            "guardrails": [
+                "High news density raises risk even before sentiment is considered.",
+                "Confidence is shown separately and never reduces the risk score.",
+                "Missing components are excluded and the score is labelled provisional.",
+                "Syndicated articles and repeated posts are deduplicated; one event shares one eventId.",
+                "Red alerts use independent evidence gates and do not silently modify the score.",
+                "Volume uses an 8-week rolling median/MAD after enough reviewed history exists.",
+            ],
+        },
+        "sourceCatalog": SOURCE_CATALOG,
+        "sourceHealth": source_health,
+        "latestAlert": latest_alert,
+        "weeks": weeks,
+        "articles": enriched_articles,
+        "socialItems": enriched_social,
+        "reviewRequired": True,
+    }
+
+
+def request_json(
+    url: str,
+    *,
+    params: dict[str, Any] | None = None,
+    headers: dict[str, str] | None = None,
+    timeout: int = 30,
+) -> Any:
+    target = url + (("?" if "?" not in url else "&") + urlencode(params) if params else "")
+    request = Request(target, headers={
+        "User-Agent": "Mozilla/5.0 digital-credit-monitor/2.0",
+        "Accept": "application/json",
+        **(headers or {}),
+    })
+    with urlopen(request, timeout=timeout) as response:
+        return json.loads(response.read().decode("utf-8"))
+
+
+def fetch_google_news(query: str, after: dt.date, before: dt.date) -> list[dict[str, Any]]:
+    search = f"{query} after:{after.isoformat()} before:{before.isoformat()}"
+    url = "https://news.google.com/rss/search?q=" + quote(search) + "&hl=id&gl=ID&ceid=ID:id"
+    request = Request(url, headers={"User-Agent": "Mozilla/5.0 digital-credit-monitor/2.0"})
+    with urlopen(request, timeout=25) as response:
+        root = ET.fromstring(response.read())
+    articles = []
+    for item in root.findall("./channel/item"):
+        source_node = item.find("source")
+        articles.append({
+            "date": parse_date(item.findtext("pubDate", "")).isoformat(),
+            "title": item.findtext("title", "").strip(),
+            "url": item.findtext("link", "").strip(),
+            "publisherUrl": source_node.attrib.get("url", "").strip() if source_node is not None else "",
+            "source": (source_node.text or "").strip() if source_node is not None else "",
+            "summary": normalize_text(item.findtext("description", "")),
+        })
+    return articles
+
+
+def load_yaml(path: pathlib.Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    try:
+        import yaml
+    except ImportError:
+        return {}
+    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+
+
+def fetch_media_rss(after: dt.date, before: dt.date) -> list[dict[str, Any]]:
+    try:
+        import feedparser
+    except ImportError as exc:
+        raise RuntimeError("feedparser is not installed") from exc
+    feeds = load_yaml(RSS_CONFIG).get("feeds", [])
+    articles = []
+    for feed in feeds:
+        parsed = feedparser.parse(feed["url"], agent="Mozilla/5.0 digital-credit-monitor/2.0")
+        for entry in parsed.entries:
+            raw_date = entry.get("published") or entry.get("updated")
+            try:
+                item_date = parse_date(raw_date)
+            except ValueError:
+                continue
+            text = f"{entry.get('title', '')} {entry.get('summary', '')}"
+            if not (after <= item_date < before) or not any(pattern.search(text) for pattern in CREDIT_PATTERNS):
+                continue
+            articles.append({
+                "date": item_date.isoformat(),
+                "title": entry.get("title", "").strip(),
+                "url": entry.get("link", "").strip(),
+                "publisherUrl": feed["url"],
+                "source": feed.get("name", "RSS"),
+                "sourceClass": "established_media" if int(feed.get("tier", 3)) <= 2 else "other_media",
+                "summary": normalize_text(entry.get("summary", "")),
+            })
+    return articles
+
+
+def collect_gdelt(week_end: dt.date) -> list[dict[str, Any]]:
+    def timeline(mode: str) -> list[float]:
+        payload = request_json(
+            "https://api.gdeltproject.org/api/v2/doc/doc",
+            params={"query": GDELT_QUERY, "mode": mode, "timespan": "56d", "format": "json"},
+        )
+        return [float(item["value"]) for item in payload["timeline"][0]["data"]]
+
+    volume = timeline("timelinevol")
+    time.sleep(6)
+    tone = timeline("timelinetone")
+    if len(volume) < 14 or len(tone) < 7:
+        raise RuntimeError("GDELT returned insufficient timeline points")
+    recent = statistics.mean(volume[-7:])
+    baseline = statistics.mean(volume[:-7]) or recent or 1.0
+    ratio = recent / baseline
+    volume_risk = clamp(50.0 + 35.0 * math.tanh(math.log(max(ratio, 0.01))))
+    average_tone = statistics.mean(tone[-7:])
+    tone_risk = clamp(50.0 + max(0.0, -average_tone) * 9.0 - max(0.0, average_tone) * 4.0)
+    return [
+        {
+            "source": "gdelt", "family": "news", "metric": "news_volume",
+            "date": week_end.isoformat(), "risk": round1(volume_risk), "weight": 1.0,
+            "detail": f"7d/baseline article-density ratio {ratio:.2f}x",
+        },
+        {
+            "source": "gdelt", "family": "news", "metric": "news_tone",
+            "date": week_end.isoformat(), "risk": round1(tone_risk), "weight": 1.0,
+            "detail": f"7d average GDELT tone {average_tone:.2f}",
+        },
+    ]
+
+
+def collect_google_trends(week_end: dt.date) -> list[dict[str, Any]]:
+    try:
+        from pytrends.request import TrendReq
+    except ImportError as exc:
+        raise RuntimeError("pytrends is not installed") from exc
+    trend = TrendReq(hl="id-ID", tz=420, timeout=(10, 25))
+    trend.build_payload(TRENDS_BASKET, geo="ID", timeframe="today 3-m")
+    frame = trend.interest_over_time().drop(columns=["isPartial"], errors="ignore")
+    if frame.empty:
+        raise RuntimeError("Google Trends returned no rows")
+    series = frame.mean(axis=1)
+    recent = float(series.iloc[-7:].mean())
+    baseline = float(series.iloc[:-7].mean()) or recent or 1.0
+    ratio = recent / baseline
+    risk = clamp(50.0 + 35.0 * math.tanh(math.log(max(ratio, 0.01))))
+    return [{
+        "source": "google_trends", "family": "social", "metric": "social_volume",
+        "date": week_end.isoformat(), "risk": round1(risk), "weight": 1.0,
+        "detail": f"Credit-search attention 7d/baseline ratio {ratio:.2f}x",
+    }]
+
+
+def collect_kaskus(as_of: dt.date) -> list[dict[str, Any]]:
+    payload = None
+    last_error = ""
+    for attempt in range(4):
+        try:
+            payload = request_json(
+                "https://www.kaskus.co.id/api/hot_threads",
+                params={"limit": 50},
+                timeout=25,
+            )
+            break
+        except Exception as exc:
+            last_error = str(exc)
+            if attempt < 3:
+                time.sleep(5 * (attempt + 1))
+    if payload is None:
+        raise RuntimeError(f"Kaskus hot_threads unavailable after retries: {last_error[:140]}")
+    items = payload.get("data", [])
+    output = []
+    for item in items:
+        text = f"{item.get('title', '')} {((item.get('community') or {}).get('name') or '')}"
+        if not any(pattern.search(text) for pattern in CREDIT_PATTERNS):
+            continue
+        meta = item.get("meta") or {}
+        thread_id = str(item.get("id") or item.get("thread_id") or fingerprint(text))
+        output.append({
+            "platform": "kaskus",
+            "contentType": "thread",
+            "externalId": thread_id,
+            "date": parse_date(item.get("created_at"), as_of).isoformat(),
+            "text": item.get("title", ""),
+            "url": item.get("url") or f"https://www.kaskus.co.id/thread/{thread_id}",
+            "engagement": int(meta.get("total_views", 0) or 0) + 20 * int(meta.get("total_replies", 0) or 0),
+        })
+    return output
+
+
+def reddit_token(config: dict[str, Any]) -> str | None:
+    reddit = config.get("reddit") or {}
+    client_id = os.getenv("REDDIT_CLIENT_ID") or reddit.get("client_id")
+    client_secret = os.getenv("REDDIT_CLIENT_SECRET") or reddit.get("client_secret")
+    if not (client_id and client_secret):
+        return None
+    credentials = __import__("base64").b64encode(f"{client_id}:{client_secret}".encode()).decode()
+    request = Request(
+        "https://www.reddit.com/api/v1/access_token",
+        data=b"grant_type=client_credentials",
+        headers={
+            "Authorization": f"Basic {credentials}",
+            "User-Agent": "digital-credit-monitor/2.0",
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    )
+    with urlopen(request, timeout=25) as response:
+        return json.loads(response.read().decode())["access_token"]
+
+
+def collect_reddit(config: dict[str, Any]) -> list[dict[str, Any]]:
+    token = reddit_token(config)
+    base = "https://oauth.reddit.com" if token else "https://www.reddit.com"
+    headers = {"User-Agent": "digital-credit-monitor/2.0"}
+    if token:
+        headers["Authorization"] = f"bearer {token}"
+    query = " OR ".join(("pinjol", '"pinjaman online"', "paylater", "Kredivo", "KrediFazz"))
+    payloads = []
+    failures = []
+    for subreddit in ("indonesia", "finansial"):
+        try:
+            payloads.append(request_json(
+                f"{base}/r/{subreddit}/search.json",
+                params={"q": query, "restrict_sr": 1, "sort": "new", "t": "month", "limit": 100},
+                headers=headers,
+            ))
+        except Exception as exc:
+            failures.append(f"{subreddit}: {exc}")
+    if not payloads:
+        raise RuntimeError("Reddit searches failed: " + " | ".join(failures))
+    output = []
+    for payload in payloads:
+        for child in payload.get("data", {}).get("children", []):
+            item = child.get("data", {})
+            text = f"{item.get('title', '')} {item.get('selftext', '')}"
+            if not any(pattern.search(text) for pattern in CREDIT_PATTERNS):
+                continue
+            output.append({
+                "platform": "reddit",
+                "contentType": "post",
+                "externalId": item.get("id", ""),
+                "date": parse_date(item.get("created_utc")).isoformat(),
+                "text": text[:2000],
+                "url": "https://www.reddit.com" + item.get("permalink", ""),
+                "engagement": max(0, int(item.get("score", 0))) + 2 * int(item.get("num_comments", 0)),
+            })
+    return output
+
+
+def youtube_key(config: dict[str, Any]) -> str:
+    return str(
+        os.getenv("YOUTUBE_API_KEY")
+        or (config.get("youtube") or {}).get("api_key")
+        or ""
+    )
+
+
+def collect_youtube(
+    config: dict[str, Any], after: dt.date, before: dt.date
+) -> list[dict[str, Any]]:
+    key = youtube_key(config)
+    if not key:
+        raise RuntimeError("YOUTUBE_API_KEY is not configured")
+    published_after = dt.datetime.combine(after, dt.time(), tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    published_before = dt.datetime.combine(before, dt.time(), tzinfo=dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    videos: dict[str, dict[str, Any]] = {}
+    for query in SOCIAL_QUERIES[:4]:
+        payload = request_json(
+            "https://www.googleapis.com/youtube/v3/search",
+            params={
+                "part": "snippet", "q": query, "type": "video",
+                "publishedAfter": published_after, "maxResults": 25,
+                "publishedBefore": published_before,
+                "regionCode": "ID", "relevanceLanguage": "id",
+                "order": "viewCount", "key": key,
+            },
+        )
+        for item in payload.get("items", []):
+            video_id = item.get("id", {}).get("videoId")
+            if video_id:
+                videos[video_id] = item.get("snippet") or {}
+    statistics_by_video: dict[str, dict[str, Any]] = {}
+    video_ids = list(videos)
+    for start in range(0, len(video_ids), 50):
+        payload = request_json(
+            "https://www.googleapis.com/youtube/v3/videos",
+            params={
+                "part": "statistics",
+                "id": ",".join(video_ids[start:start + 50]),
+                "key": key,
+            },
+        )
+        for item in payload.get("items", []):
+            statistics_by_video[item.get("id", "")] = item.get("statistics") or {}
+    ranked_video_ids = sorted(
+        video_ids,
+        key=lambda item: int(statistics_by_video.get(item, {}).get("viewCount", 0) or 0),
+        reverse=True,
+    )
+    output = []
+    for video_id in ranked_video_ids[:30]:
+        snippet = videos[video_id]
+        video_stats = statistics_by_video.get(video_id, {})
+        title = snippet.get("title", "")
+        video_url = f"https://www.youtube.com/watch?v={video_id}"
+        output.append({
+            "platform": "youtube",
+            "contentType": "video",
+            "externalId": video_id,
+            "date": parse_date(snippet.get("publishedAt"), after).isoformat(),
+            "text": title,
+            "url": video_url,
+            "engagement": int(video_stats.get("viewCount", 0) or 0)
+                + 20 * int(video_stats.get("commentCount", 0) or 0),
+        })
+        try:
+            comments = request_json(
+                "https://www.googleapis.com/youtube/v3/commentThreads",
+                params={
+                    "part": "snippet", "videoId": video_id, "maxResults": 20,
+                    "order": "relevance", "textFormat": "plainText", "key": key,
+                },
+            )
+        except HTTPError as exc:
+            if exc.code in (403, 404):
+                continue
+            raise
+        for thread in comments.get("items", []):
+            top = (thread.get("snippet") or {}).get("topLevelComment", {})
+            comment = top.get("snippet") or {}
+            output.append({
+                "platform": "youtube",
+                "contentType": "comment",
+                "externalId": top.get("id", ""),
+                "date": parse_date(comment.get("publishedAt"), after).isoformat(),
+                "text": comment.get("textDisplay", ""),
+                "url": video_url,
+                "engagement": int(comment.get("likeCount", 0) or 0)
+                    + 2 * int((thread.get("snippet") or {}).get("totalReplyCount", 0) or 0),
+            })
+    return output
+
+
+def collect_x(config: dict[str, Any]) -> list[dict[str, Any]]:
+    bearer = str(
+        os.getenv("X_BEARER_TOKEN")
+        or (config.get("x") or {}).get("bearer_token")
+        or ""
+    )
+    if not bearer:
+        raise RuntimeError("X_BEARER_TOKEN is not configured")
+    payload = request_json(
+        "https://api.x.com/2/tweets/search/recent",
+        params={
+            "query": '(pinjol OR "pinjaman online" OR paylater OR Kredivo OR KrediFazz) lang:id -is:retweet',
+            "tweet.fields": "created_at,public_metrics",
+            "max_results": 100,
+        },
+        headers={"Authorization": f"Bearer {bearer}"},
+    )
+    output = []
+    for item in payload.get("data", []):
+        metrics = item.get("public_metrics") or {}
+        output.append({
+            "platform": "x",
+            "contentType": "post",
+            "externalId": item.get("id", ""),
+            "date": parse_date(item.get("created_at")).isoformat(),
+            "text": item.get("text", ""),
+            "url": f"https://x.com/i/web/status/{item.get('id', '')}",
+            "engagement": sum(int(metrics.get(key, 0) or 0) for key in (
+                "like_count", "reply_count", "retweet_count", "quote_count"
+            )),
+        })
+    return output
+
+
+def collect_live(
+    as_of: dt.date,
+    config: dict[str, Any],
+    *,
+    after: dt.date | None = None,
+    before: dt.date | None = None,
+) -> tuple[
+    list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, dict[str, Any]]
+]:
+    if after is None or before is None:
+        week_ends = complete_week_ends(as_of, 2)
+        after = week_ends[0] - dt.timedelta(days=6)
+        before = week_ends[-1] + dt.timedelta(days=1)
+        latest = week_ends[-1]
+    else:
+        latest = as_of
+    articles: list[dict[str, Any]] = []
+    social_items: list[dict[str, Any]] = []
+    signals: list[dict[str, Any]] = []
+    health = {
+        key: {**meta, "status": "pending", "detail": ""}
+        for key, meta in SOURCE_CATALOG.items()
+    }
+
+    def run(key: str, collector: Callable[[], Any], sink: list[dict[str, Any]]) -> None:
+        try:
+            rows = collector()
+            sink.extend(rows)
+            health[key]["status"] = "ok" if rows else "empty"
+            health[key]["detail"] = (
+                f"Collected {len(rows)} relevant records/signals."
+                if rows else "Collector ran successfully but found no relevant records."
+            )
+        except Exception as exc:
+            message = str(exc)[:220]
+            health[key]["status"] = "unconfigured" if "not configured" in message else "failed"
+            health[key]["detail"] = message
+
+    def google_news() -> list[dict[str, Any]]:
+        rows = []
+        failures = []
+        for query in NEWS_QUERIES:
+            try:
+                rows.extend(fetch_google_news(query, after, before))
+            except Exception as exc:
+                failures.append(f"{query}: {exc}")
+        if not rows:
+            raise RuntimeError("All Google News queries failed: " + " | ".join(failures))
+        if failures:
+            health["google_news"]["queryFailures"] = failures
+        return rows
+
+    run("google_news", google_news, articles)
+    run("media_rss", lambda: fetch_media_rss(after, before), articles)
+    run("gdelt", lambda: collect_gdelt(latest), signals)
+    run("google_trends", lambda: collect_google_trends(latest), signals)
+    run("kaskus", lambda: collect_kaskus(as_of), social_items)
+    run("youtube", lambda: collect_youtube(config, after, before), social_items)
+    run("reddit", lambda: collect_reddit(config), social_items)
+    run("x", lambda: collect_x(config), social_items)
+    if not articles and not social_items and not signals:
+        raise RuntimeError("All live source channels failed")
+    return articles, social_items, signals, health
+
+
+def read_previous_weeks() -> list[dict[str, Any]]:
+    if not OUTPUT_JSON.exists():
+        return []
+    try:
+        payload = json.loads(OUTPUT_JSON.read_text(encoding="utf-8"))
+        return list(payload.get("weeks") or [])
+    except (OSError, json.JSONDecodeError):
+        return []
+
+
+def load_verified_event_articles(as_of: dt.date) -> list[dict[str, Any]]:
+    """Load small, human-reviewed source packs without turning them into history."""
+    if not VERIFIED_EVENT_SEEDS.exists():
+        return []
+    try:
+        payload = json.loads(VERIFIED_EVENT_SEEDS.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return []
+    cutoff = as_of - dt.timedelta(days=21)
+    output = []
+    for event in payload.get("events") or []:
+        if event.get("reviewStatus") != "human-verified-source-pack":
+            continue
+        reviewed_source_count = len(event.get("articles") or [])
+        for article in event.get("articles") or []:
+            article_date = parse_date(article.get("date"), as_of)
+            if cutoff <= article_date <= as_of:
+                reviewed_article = dict(article)
+                for field in ("headlineZh", "summaryZh", "reviewQuestionZh"):
+                    if event.get(field):
+                        reviewed_article.setdefault(field, event[field])
+                reviewed_article["reviewedSourceCount"] = reviewed_source_count
+                output.append(reviewed_article)
+    return output
+
+
+def load_inputs(
+    args: argparse.Namespace, as_of: dt.date
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], list[dict[str, Any]], dict[str, dict[str, Any]], str]:
+    if args.fixture:
+        payload = json.loads(args.fixture.read_text(encoding="utf-8"))
+        health = payload.get("sourceHealth") or {
+            key: {
+                **meta,
+                "status": "ok" if key == "google_news" and payload.get("articles") else "unavailable",
+                "detail": "Not present in reviewed fixture.",
+            }
+            for key, meta in SOURCE_CATALOG.items()
+        }
+        return (
+            payload.get("articles", []),
+            payload.get("socialItems", []),
+            payload.get("signals", []),
+            health,
+            f"fixture:{args.fixture.as_posix()}",
+        )
+    shared_config = load_yaml(SHARED_CONFIG)
+    local_config = load_yaml(args.config or DEFAULT_CONFIG)
+    config = merge_nonempty_config(shared_config, local_config)
+    articles, social_items, signals, health = collect_live(as_of, config)
+    articles.extend(load_verified_event_articles(as_of))
+    social_items, classifier = classify_social_with_deepseek(social_items, config)
+    health["social_classifier"] = classifier
+    return articles, social_items, signals, health, "live:multi-source-v2.1"
+
+
+def write_outputs(result: dict[str, Any], source_mode: str) -> None:
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    result["sourceMode"] = source_mode
+    json_text = json.dumps(result, ensure_ascii=False, indent=2) + "\n"
+    OUTPUT_JSON.write_text(json_text, encoding="utf-8")
+    OUTPUT_JS.write_text("const CREDIT_SENTIMENT = " + json_text.rstrip() + ";\n", encoding="utf-8")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--as-of", default=dt.date.today().isoformat())
+    parser.add_argument("--fixture", type=pathlib.Path)
+    parser.add_argument("--config", type=pathlib.Path)
+    parser.add_argument("--write-output", action="store_true")
+    args = parser.parse_args()
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+    as_of = parse_date(args.as_of)
+    previous = read_previous_weeks() if not args.fixture else []
+    articles, social_items, signals, health, source_mode = load_inputs(args, as_of)
+    classifier = health.pop("social_classifier", {
+        "method": "deterministic_id_lexicon_v2",
+        "status": "fixture_or_not_run",
+    })
+    result = build_result(
+        articles, as_of, social_items, signals, health, historical_weeks=previous,
+    )
+    result["collectionDiagnostics"] = {
+        "mode": "reviewed_fixture" if args.fixture else "live_multi_source_v2",
+        "successfulChannels": [
+            key for key, value in health.items() if value.get("status") == "ok"
+        ],
+        "failedOrUnavailableChannels": {
+            key: value.get("detail", "")
+            for key, value in health.items()
+            if key in SOURCE_CATALOG and value.get("status") != "ok"
+        },
+        "socialClassifier": classifier,
+    }
+    if args.write_output:
+        write_outputs(result, source_mode)
+    for week in result["weeks"]:
+        news = week["engines"]["news"]["score"]
+        social = week["engines"]["social"]["score"]
+        print(
+            f"{week['weekStart']} - {week['weekEnd']} "
+            f"fear={week['fearIndex']:.1f} "
+            f"news={news if news is not None else 'NA'} "
+            f"social={social if social is not None else 'NA'} "
+            f"alert={week['alert']['level']} "
+            f"confidence={week['confidence']:.1%} "
+            f"status={week['dataStatus']}"
+        )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
