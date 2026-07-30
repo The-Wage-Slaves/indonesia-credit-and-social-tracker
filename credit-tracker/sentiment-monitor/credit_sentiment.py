@@ -457,6 +457,7 @@ def cluster_events(
         strongest = max(items, key=lambda item: float(item["eventSeverity"]))
         article_items = [item for item in items if "sourceClass" in item]
         platforms = sorted({item.get("platform") for item in items if item.get("platform")})
+        # Human-readable review metadata travels with the evidence cluster.
         headline_zh = next(
             (item.get("headlineZh") for item in items if item.get("headlineZh")),
             None,
@@ -477,8 +478,7 @@ def cluster_events(
             "id": event_id,
             "eventType": strongest["eventType"],
             "severity": round(max(float(item["eventSeverity"]) for item in items), 2),
-            "articleIds": [item["id"] for item in article_items],
-            "socialItemIds…4372 tokens truncated…title', '')} {entry.get('summary', '')}"
+            "art…4391 tokens truncated…title', '')} {entry.get('summary', '')}"
             if not (after <= item_date < before) or not any(pattern.search(text) for pattern in CREDIT_PATTERNS):
                 continue
             articles.append({
