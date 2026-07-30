@@ -186,14 +186,14 @@ assert(JSON.stringify(comparisonLatest) === JSON.stringify(comparison), 'V4 late
 assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-shadow', 'V4 comparison metadata is invalid');
 assert(comparison.official.composite === 43.4, 'Official V3 composite changed');
 assert(comparison.reweightedBaseline.composite === 45.0, 'V3 same-weight baseline is invalid');
-assert(comparison.shadow.composite === 46.4 && comparison.shadow.delta === 1.4, 'V4 confidence-aware shadow result is invalid');
+assert(comparison.shadow.composite === 46.5 && comparison.shadow.delta === 1.5, 'V4 confidence-aware shadow result is invalid');
 assert(comparison.measurement.confidence === 0.659, 'V4 evidence-quality result is invalid');
 assert(comparison.measurement.availabilityQuality === 0.741, 'V4 availability-quality result is invalid');
-assert(comparison.measurement.freshnessQuality === 0.963, 'V4 freshness-quality result is invalid');
+assert(comparison.measurement.freshnessQuality === 0.962, 'V4 freshness-quality result is invalid');
 assert(comparison.measurement.sourceDirectness === 0.693, 'V4 source-directness result is invalid');
 assert(comparison.measurement.rawTraceabilityWeight === 0.688, 'V4 raw-traceability result is invalid');
 assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
-assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'First V4 snapshot must mark four-week trigger as not evaluable');
+assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'V4 history shorter than four weeks must mark the rapid-drop trigger as not evaluable');
 
 const v4History = JSON.parse(read('stability-monitor/data/v4-shadow-history.json'));
 assert(v4History.schemaVersion === 1 && Array.isArray(v4History.snapshots), 'V4 history schema is invalid');

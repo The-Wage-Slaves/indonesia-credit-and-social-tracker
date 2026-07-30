@@ -1,7 +1,7 @@
 const V4_COMPARISON = {
   "schemaVersion": 1,
   "status": "review-only-shadow",
-  "asOf": "2026-07-28",
+  "asOf": "2026-07-30",
   "official": {
     "methodology": "V3",
     "composite": 43.4,
@@ -34,8 +34,8 @@ const V4_COMPARISON = {
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 46.4,
-    "delta": 1.4,
+    "composite": 46.5,
+    "delta": 1.5,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -49,7 +49,7 @@ const V4_COMPARISON = {
     "confidence": 0.659,
     "label": "evidence quality index; not a probability of correctness",
     "availabilityQuality": 0.741,
-    "freshnessQuality": 0.963,
+    "freshnessQuality": 0.962,
     "sourceDirectness": 0.693,
     "rawTraceabilityWeight": 0.688,
     "lowConfidenceWeight": 0.17,
@@ -111,9 +111,9 @@ const V4_COMPARISON = {
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
-      "measurementConfidence": 0.757,
+      "measurementConfidence": 0.756,
       "availabilityQuality": 0.815,
-      "freshnessQuality": 1.0,
+      "freshnessQuality": 0.999,
       "sourceDirectness": 0.79,
       "rawTraceabilityWeight": 0.9,
       "nonOrdinalPlannedWeight": 0.9,
@@ -137,8 +137,8 @@ const V4_COMPARISON = {
           ],
           "evidenceClass": "statistical",
           "availability": "medium",
-          "evidenceQuality": 0.645,
-          "freshnessQuality": 1.0,
+          "evidenceQuality": 0.643,
+          "freshnessQuality": 0.996,
           "sourceDirectness": 0.65,
           "observationIds": [
             "fiscal_public_finance_2026q1"
@@ -478,8 +478,8 @@ const V4_COMPARISON = {
       "id": "social",
       "label": "社会与街头",
       "v3Score": 55.0,
-      "v4ShadowScore": 50.7,
-      "delta": -4.3,
+      "v4ShadowScore": 51.0,
+      "delta": -4.0,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.4,
@@ -549,15 +549,15 @@ const V4_COMPARISON = {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
           "weight": 0.25,
-          "score": 62.0,
+          "score": 63.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "street_heat_and_opposition_proxy",
-              "value": "degraded multi-source week; opposition 37.1%",
+              "value": "heat 26.2 -> 69; opposition 39.6% -> 55; coverage 4/6",
               "unit": "crawler composite",
-              "transform": "migration_anchor_pending_12_26_week_baseline_and_classification_audit",
-              "score": 62,
+              "transform": "60pct_heat_score_plus_40pct_opposition_score",
+              "score": 63,
               "weight": 1
             }
           ],
@@ -567,9 +567,9 @@ const V4_COMPARISON = {
           "freshnessQuality": 1.0,
           "sourceDirectness": 0.7,
           "observationIds": [
-            "online_grievance_2026_07_22"
+            "online_grievance_2026_07_30"
           ],
-          "basis": "保留街头热度爬虫价值，但清楚标记覆盖退化；满12周基线和分类审计前仅作影子输入。",
+          "basis": "2026-07-30 W4人工确认：热度分69、反对率分55，60/40合成63；4/6覆盖降级标签保留。",
           "missingReason": null
         },
         {
@@ -684,7 +684,7 @@ const V4_COMPARISON = {
       ]
     }
   ],
-  "evidenceFile": "evidence/2026-07-28.json",
+  "evidenceFile": "evidence/2026-07-30.json",
   "caveats": [
     "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
     "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",

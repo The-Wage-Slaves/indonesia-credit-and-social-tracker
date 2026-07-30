@@ -147,6 +147,22 @@ class CreditSentimentTests(unittest.TestCase):
         }
         self.assertEqual(ids, {"kredivo-kredifazz-purworejo-2026-07"})
 
+    def test_generic_pinjol_terror_mentions_do_not_merge(self):
+        school_threat = MODULE.automatic_event_id(
+            "Peneror bom di SDN Srengseng Sawah ternyata terjerat pinjol"
+        )
+        consumer_protection = MODULE.automatic_event_id(
+            "DPR soroti teror dan pencurian data oleh pinjol ilegal"
+        )
+        fisherman_protection = MODULE.automatic_event_id(
+            "OJK APPK dan IASC lindungi nelayan dari teror pinjol ilegal"
+        )
+        self.assertEqual(len({school_threat, consumer_protection, fisherman_protection}), 3)
+        self.assertNotIn(
+            "debt-linked-school-threat-2026-07",
+            {school_threat, consumer_protection, fisherman_protection},
+        )
+
     def test_verified_kredivo_seed_contains_primary_and_independent_sources(self):
         articles = MODULE.load_verified_event_articles(dt.date(2026, 7, 29))
         events = MODULE.cluster_events(MODULE.enrich_articles(articles), [])
@@ -191,4 +207,3 @@ class CreditSentimentTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

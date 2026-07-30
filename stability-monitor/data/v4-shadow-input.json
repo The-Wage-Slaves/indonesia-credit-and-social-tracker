@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
   "status": "shadow-same-date",
-  "asOf": "2026-07-28",
+  "asOf": "2026-07-30",
   "purpose": "Compare the production V3 and a confidence-aware MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
   "warning": "V3 remains official. V4 scores are a migration experiment with explicit raw-input traceability, freshness and source-quality disclosure; they do not create a replacement time series.",
   "productionData": "../dashboard/data.js",
-  "evidenceFile": "evidence/2026-07-28.json",
+  "evidenceFile": "evidence/2026-07-30.json",
   "historyFile": "v4-shadow-history.json",
   "redTriggers": {
     "coerciveScoreFloor": 25,
@@ -266,7 +266,7 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 55,
+      "v3Score": 55.0,
       "drivers": [
         {
           "id": "livelihood_stress",
@@ -299,9 +299,9 @@
           "evidenceClass": "automated_proxy",
           "availability": "low",
           "observationIds": [
-            "online_grievance_2026_07_22"
+            "online_grievance_2026_07_30"
           ],
-          "bridgeBasis": "保留街头热度爬虫价值，但清楚标记覆盖退化；满12周基线和分类审计前仅作影子输入。",
+          "bridgeBasis": "2026-07-30 W4人工确认：热度分69、反对率分55，60/40合成63；4/6覆盖降级标签保留。",
           "scoreMethod": "evidence_weighted"
         },
         {
@@ -392,4 +392,3 @@
     "productionHandling": "carry_forward_with_expiry_then_withhold"
   }
 }
-
