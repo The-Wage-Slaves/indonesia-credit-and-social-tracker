@@ -1,18 +1,124 @@
 window.MACRO_PENDING = {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "asOf": null,
-  "reviewRequired": false,
+  "asOf": "2026-08-01",
+  "reviewRequired": true,
   "methodology": {
     "cadence": "monthly",
-    "monthly": ["cpi", "bi_rate", "usd_idr"],
-    "quarterlyCheckedMonthly": ["gdp"],
-    "semiannualCheckedMonthly": ["unemployment"],
+    "monthly": [
+      "cpi",
+      "bi_rate",
+      "usd_idr"
+    ],
+    "quarterlyCheckedMonthly": [
+      "gdp"
+    ],
+    "semiannualCheckedMonthly": [
+      "unemployment"
+    ],
     "humanInLoop": true,
     "industryFxUnchanged": 15000
   },
-  "confirmed": {},
-  "observations": {},
-  "changes": [],
-  "sourceHealth": {}
+  "confirmed": {
+    "gdp": {
+      "period": "2026Q1",
+      "value": 5.61
+    },
+    "cpi": {
+      "period": "26.06",
+      "value": 3.34
+    },
+    "bi_rate": {
+      "period": "26.07",
+      "value": 5.75
+    },
+    "usd_idr": {
+      "period": "26.07",
+      "value": 18128.0
+    },
+    "unemployment": {
+      "period": "2026.02",
+      "value": 4.68
+    }
+  },
+  "observations": {
+    "bi_rate": {
+      "indicator": "bi_rate",
+      "label": "BI 基准利率",
+      "period": "2026.07",
+      "value": 5.75,
+      "unit": "%",
+      "source": "Bank Indonesia",
+      "source_url": "https://www.bi.go.id/id/statistik/indikator/bi-rate.aspx",
+      "released": "2026-07-22",
+      "note": "当月最新一次 BI 决议值；正式序列按月末生效值确认。"
+    },
+    "usd_idr": {
+      "indicator": "usd_idr",
+      "label": "USD/IDR（JISDOR）",
+      "period": "2026.07",
+      "value": 18058.0,
+      "unit": "IDR/USD",
+      "source": "Bank Indonesia JISDOR",
+      "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
+      "released": "2026-07-31",
+      "note": "2026-07-31 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+    }
+  },
+  "changes": [
+    {
+      "indicator": "bi_rate",
+      "label": "BI 基准利率",
+      "confirmed": {
+        "period": "26.07",
+        "value": 5.75
+      },
+      "candidate": {
+        "indicator": "bi_rate",
+        "label": "BI 基准利率",
+        "period": "2026.07",
+        "value": 5.75,
+        "unit": "%",
+        "source": "Bank Indonesia",
+        "source_url": "https://www.bi.go.id/id/statistik/indikator/bi-rate.aspx",
+        "released": "2026-07-22",
+        "note": "当月最新一次 BI 决议值；正式序列按月末生效值确认。"
+      },
+      "reason": "new_period"
+    },
+    {
+      "indicator": "usd_idr",
+      "label": "USD/IDR（JISDOR）",
+      "confirmed": {
+        "period": "26.07",
+        "value": 18128.0
+      },
+      "candidate": {
+        "indicator": "usd_idr",
+        "label": "USD/IDR（JISDOR）",
+        "period": "2026.07",
+        "value": 18058.0,
+        "unit": "IDR/USD",
+        "source": "Bank Indonesia JISDOR",
+        "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
+        "released": "2026-07-31",
+        "note": "2026-07-31 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+      },
+      "reason": "new_period"
+    }
+  ],
+  "sourceHealth": {
+    "Bank Indonesia policy rate": {
+      "status": "ok",
+      "detail": "official source parsed"
+    },
+    "Bank Indonesia JISDOR": {
+      "status": "ok",
+      "detail": "official source parsed"
+    },
+    "BPS WebAPI": {
+      "status": "unconfigured",
+      "detail": "BPS_API_KEY is not configured"
+    }
+  }
 };
