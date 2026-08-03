@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "purpose": "已人工处置的日频事件 id。事件只要还在采集窗口内就会天天重新聚类出来，没有这张表就会天天重推同一条。脚本只读不写；确认动作由人做。",
+  "howToAdd": "收到卡片并做出①确认留痕/②降级观察/③驳回之后，把事件 id 连同 decision 和日期加到 events 里。",
+  "events": [
+    {
+      "id": "kredivo-kredifazz-purworejo-2026-07",
+      "decision": "confirmed",
+      "acknowledgedAt": "2026-08-03",
+      "note": "OJK 约谈 Kredivo/KrediFazz。已确认留痕并计入 2026-07-26 周度红色触发，无需继续日推。"
+    }
+  ]
+}

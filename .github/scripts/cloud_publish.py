@@ -409,6 +409,16 @@ def daily_summary() -> dict[str, Any]:
             blocks.append(f"**{headline}**\n{explanation}\n证据：{srcs}个独立来源{primary}。")
         lines.append("\n\n".join(blocks))
 
+    # 证据不足的线索不逐条打扰，但也不假装不存在——只报数量和查阅位置。
+    leads = [e for e in (credit.get("lowEvidenceLeads") or []) if isinstance(e, dict)]
+    if leads:
+        lines.append(
+            "**已折叠的低证据线索**\n"
+            f"另有 {len(leads)} 条命中关键词但只有单一来源、且无原始来源的条目"
+            "（多为科普提醒或个人转述），未逐条列出。"
+            "需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。"
+        )
+
     lines.append(
         "**需要你决定什么**\n"
         "风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。"

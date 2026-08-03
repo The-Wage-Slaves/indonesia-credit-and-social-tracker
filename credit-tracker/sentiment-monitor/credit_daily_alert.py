@@ -8,6 +8,33 @@ import credit_sentiment as monitor
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUTPUT = HERE / "output" / "daily-credit-alert-pending.json"
+ACKNOWLEDGED = HERE / "acknowledged-events.json"
+
+# 只有真实事件类才配打扰人。general_sentiment / industry_update 一类是话题热度，
+# 不是事件；credit_quality_stress 走周度指数，不走日频警报。
+ALERTABLE_EVENT_TYPES = {
+    "regulatory_action",
+    "consumer_harm",
+    "systemic_platform_stress",
+    "fraud_or_illegal_practice",
+}
+
+
+def load_acknowledged() -> set[str]:
+    """已人工处置的事件 id，不再重复推送。
+
+    事件只要还在采集窗口里就会天天重新聚类出来，级别也不会变；没有这张表，
+    一条确认过的事件会一直每天推一次。确认动作仍然是人做的，脚本只读不写。
+    """
+    try:
+        data = json.loads(ACKNOWLEDGED.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return {
+        str(entry["id"])
+        for entry in (data.get("events") or [])
+        if isinstance(entry, dict) and entry.get("id")
+    }
 
 
 def daily_counts(items: list[dict[str, Any]], day: dt.date, days: int = 8) -> list[int]:
@@ -39,13 +66,32 @@ def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
     recent_news = [x for x in articles if start <= monitor.parse_date(x["date"]) <= day]
     recent_social = [x for x in social_items if start <= monitor.parse_date(x["date"]) <= day]
     events = monitor.cluster_events(recent_news, recent_social)
+    acknowledged = load_acknowledged()
+    events = [event for event in events if event.get("id") not in acknowledged]
     verified = [
         event for event in events
-        if event["eventType"] in {"regulatory_action", "consumer_harm", "systemic_platform_stress"}
+        if event["eventType"] in ALERTABLE_EVENT_TYPES
         and event["severity"] >= 0.8 and event["hasPrimarySource"]
         and event["independentSourceCount"] >= 2
     ]
-    high_pending = [event for event in events if event["severity"] >= 0.8 and event not in verified]
+    # severity 来自 event_profile 的关键词匹配，只看标题：一篇「小心网贷高息、
+    # 会被催收恐吓」的科普文和一条真实催收恐吓事件同样命中 teror → 0.86。
+    # 所以 severity 单独不足以打扰人，必须再过证据门与事件类型门。
+    high_pending = [
+        event for event in events
+        if event["severity"] >= 0.8
+        and event not in verified
+        and event["eventType"] in ALERTABLE_EVENT_TYPES
+        and (event["independentSourceCount"] >= 2 or event["hasPrimarySource"])
+    ]
+    # 达到严重度但证据不足的不丢弃，降级为线索：写进待确认文件供周评查阅，
+    # 但不推飞书、不抬高 level。宁可让人主动去看，也不要每天用单来源标题打扰。
+    leads = [
+        event for event in events
+        if event["severity"] >= 0.8
+        and event not in verified
+        and event not in high_pending
+    ]
     news_risk, news_note = daily_volume_risk(daily_counts(articles, day))
     social_risk, social_note = daily_volume_risk(daily_counts(social_items, day))
     _, negative_share = monitor.weighted_sentiment(recent_social, social=True)
@@ -76,6 +122,8 @@ def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
         },
         "notes": {"newsVolume": news_note, "socialVolume": social_note},
         "verifiedRedEvents": verified, "highRiskPendingEvents": high_pending,
+        "lowEvidenceLeads": leads,
+        "acknowledgedSuppressedCount": len(acknowledged),
         "events": events,
         "coverage": {
             "successfulChannels": successful,
@@ -88,9 +136,13 @@ def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
         },
         "socialClassifier": classifier,
         "rule": (
-            "Red requires severity>=0.8, a primary source and >=2 independent sources. "
-            "High-severity events below the gate remain high-risk pending. Amber requires "
-            "simultaneous robust news/social spikes, >=65% negative share and >=2 platforms."
+            "Red requires severity>=0.8, an alertable event type, a primary source and >=2 "
+            "independent sources. High-risk pending requires severity>=0.8, an alertable "
+            "event type and either >=2 independent sources or a primary source. "
+            "Severity alone comes from headline keywords, so single-source, non-primary "
+            "items are recorded as low-evidence leads and never pushed. Acknowledged event "
+            "ids are suppressed. Amber requires simultaneous robust news/social spikes, "
+            ">=65% negative share and >=2 platforms."
         ),
         "reviewRequired": True,
     }
