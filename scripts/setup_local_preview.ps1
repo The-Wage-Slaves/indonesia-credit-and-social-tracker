@@ -11,7 +11,9 @@ if (-not $gh) { throw "GitHub CLI (gh) was not found." }
 
 & $gh.Source auth status --hostname github.com 2>$null | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    throw "GitHub CLI is not authenticated. Run: gh auth login --hostname github.com --git-protocol https --web"
+    Write-Host "One-time GitHub authorization is required for this private repository."
+    & $gh.Source auth login --hostname github.com --git-protocol https --web
+    if ($LASTEXITCODE -ne 0) { throw "GitHub authorization did not complete." }
 }
 
 if (Test-Path -LiteralPath $InstallPath) {
