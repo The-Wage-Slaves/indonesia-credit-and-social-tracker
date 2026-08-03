@@ -2,8 +2,10 @@ name: Daily risk alerts
 
 on:
   schedule:
-    # Daily 10:00 Asia/Shanghai / 09:00 WIB.
-    - cron: "0 2 * * *"
+    # 目标 09:43 Asia/Shanghai（01:43 UTC），留出约 17 分钟缓冲，让常见延迟后
+    # 仍落在 10 点附近。**不要改回整点**：cron 定在 :00 时 GitHub 排队最拥堵，
+    # 2026-07-31~08-02 实测连续三天延迟 192/192/200 分钟，10:00 的警报 13:12 才到。
+    - cron: "43 1 * * *"
   workflow_dispatch:
 
 permissions:

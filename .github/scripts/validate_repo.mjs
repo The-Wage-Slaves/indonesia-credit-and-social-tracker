@@ -240,7 +240,7 @@ for (const marker of [
 }
 const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml');
 assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'), 'weekly credit workflow does not expose the optional DeepSeek secret');
-assert(weeklyCreditWorkflow.includes('15 2 * * 2'), 'weekly monitoring must run on Tuesday');
+assert(/cron: "\d+ \d+ \* \* 2"/.test(weeklyCreditWorkflow), 'weekly monitoring must run on Tuesday');
 assert(weeklyCreditWorkflow.includes('street_heat.py'), 'weekly monitoring must include stability street heat');
 assert(weeklyCreditWorkflow.includes('STREET_STATUS: ${{ steps.street.outcome }}'), 'weekly card must receive the current street-heat outcome');
 assert(weeklyCreditWorkflow.includes('cloud_publish.py weekly'), 'weekly monitoring must use the unified publisher');
@@ -252,6 +252,36 @@ assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lac
 assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthly workflow lacks national macro collection');
 assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
 assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
+// cron 定在整点会被 GitHub 的排队高峰吃掉：2026-07-31~08-02 连续三天延迟
+// 192/192/200 分钟，本该 10:00 的日频警报 13:12 才送达。把「不得定在 :00」
+// 固化下来，避免以后有人为了「看起来整齐」改回去。
+for (const [name, workflow] of [
+  ['daily-risk-alerts', dailyRiskWorkflow],
+  ['weekly-credit-sentiment', weeklyCreditWorkflow],
+  ['monthly-credit-data', monthlyCreditWorkflow],
+]) {
+  const crons = [...workflow.matchAll(/cron:\s*"(\S+)\s/g)].map((match) => match[1]);
+  assert(crons.length > 0, `${name} lost its schedule trigger`);
+  for (const minute of crons) {
+    assert(
+      minute !== '0',
+      `${name} schedules on the hour; GitHub queues those worst (measured +192min). Use an off-hour minute.`,
+    );
+  }
+}
+// PR #10 曾给三个采集工作流加过 push 触发，导致每次提交都跑一遍采集、连续失败，
+// 并挤掉了当天排队中的定时运行。这些工作流只能由 schedule / workflow_dispatch 触发。
+for (const [name, workflow] of [
+  ['daily-risk-alerts', dailyRiskWorkflow],
+  ['weekly-credit-sentiment', weeklyCreditWorkflow],
+  ['monthly-credit-data', monthlyCreditWorkflow],
+]) {
+  const header = workflow.slice(0, workflow.indexOf('jobs:'));
+  assert(
+    !/^\s*push:/m.test(header),
+    `${name} must not run on push; collectors are schedule/dispatch only`,
+  );
+}
 for (const [name, workflow] of [
   ['daily-risk-alerts', dailyRiskWorkflow],
   ['weekly-credit-sentiment', weeklyCreditWorkflow],

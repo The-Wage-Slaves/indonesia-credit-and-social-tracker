@@ -7,18 +7,46 @@
 
 | 频率 | 工作 | 当前入口 | 自动产物 | 人工决策 | 飞书策略 | 状态 |
 |---|---|---|---|---|---|---|
-| 每日 10:00 | 稳定性重大新闻/制度骤变警报 | GitHub workflow `daily-risk-alerts.yml` → `daily_alert.py --no-push` | `bot/daily-risk-alerts` 证据池；不改分数 | 红/高危/橙事件是否纳入周评 | 仅异常日推送 | 云端自动；不依赖本机开机 |
-| 每日 10:00 | Pinjol/Pindar 舆情波动警报 | 同一 `daily-risk-alerts.yml` → `credit_daily_alert.py --write-output` | `daily-credit-alert-pending.json`；不改周度历史 | 严重事件、跨新闻/社媒异常是否升级 | 仅异常日推送 | 云端自动；不依赖本机开机 |
-| 每周二 10:15 | 线上信贷恐慌指数＋稳定性街头热度 | GitHub workflow `weekly-credit-sentiment.yml` | `bot/weekly-monitoring` 待确认数据；不建 PR | 确认分数、信源覆盖和告警证据 | 红/橙风险才推送 | 云端统一执行；不依赖本机开机 |
+| 每日 09:43* | 稳定性重大新闻/制度骤变警报 | GitHub workflow `daily-risk-alerts.yml` → `daily_alert.py --no-push` | `bot/daily-risk-alerts` 证据池；不改分数 | 红/高危/橙事件是否纳入周评 | 仅异常日推送 | 云端自动；不依赖本机开机 |
+| 每日 09:43* | Pinjol/Pindar 舆情波动警报 | 同一 `daily-risk-alerts.yml` → `credit_daily_alert.py --write-output` | `daily-credit-alert-pending.json`；不改周度历史 | 严重事件、跨新闻/社媒异常是否升级 | 仅异常日推送 | 云端自动；不依赖本机开机 |
+| 每周二 09:53* | 线上信贷恐慌指数＋稳定性街头热度 | GitHub workflow `weekly-credit-sentiment.yml` | `bot/weekly-monitoring` 待确认数据；不建 PR | 确认分数、信源覆盖和告警证据 | 红/橙风险才推送 | 云端统一执行；不依赖本机开机 |
 | 每周二，采集后人工确认 | 稳定性两版周评 | 云端 `street_heat.py` 证据 → 人工确认后 `apply_week.py` / `score_v4_shadow.py` | 全景等权版与数据置信版同日结果 | 先确认街头热度与日频事件，再确认两版分数 | 风险或采集失败才推送 | 评分写入仍坚持人在环 |
-| 每月1日 11:00 | BI/OJK 行业数据更新 | GitHub workflow `monthly-credit-data.yml` → `update_credit.py` | `bot/monthly-credit-data` 暗门待确认项 | 核对月份、单位、来源和异常值 | 有新数据或失败时推送 | 云端自动；不依赖本机开机 |
-| 每月1日 11:00 | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
-| 每月1日 11:00 | P2P 竞对官网数据 | 同一 `monthly-credit-data.yml` → `p2p-scraper/scraper.mjs` | `p2p-pending.js` 暗门逐格确认 | 核对各公司口径与缺失项 | 有新数据或覆盖不足时推送 | 云端自动；不依赖本机开机 |
+| 每月1日 10:43* | BI/OJK 行业数据更新 | GitHub workflow `monthly-credit-data.yml` → `update_credit.py` | `bot/monthly-credit-data` 暗门待确认项 | 核对月份、单位、来源和异常值 | 有新数据或失败时推送 | 云端自动；不依赖本机开机 |
+| 每月1日 10:43* | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
+| 每月1日 10:43* | P2P 竞对官网数据 | 同一 `monthly-credit-data.yml` → `p2p-scraper/scraper.mjs` | `p2p-pending.js` 暗门逐格确认 | 核对各公司口径与缺失项 | 有新数据或覆盖不足时推送 | 云端自动；不依赖本机开机 |
 | `main` 看板变更后 | 最新看板下载包 | `publish-dashboard-package.yml` | 覆盖同一个 Private Release ZIP | 无评分决策；仅通知已发布最新版 | 每次有效变更推送下载链接 | 云端事件触发；无本机常驻/轮询 |
 | 每日/每周 | 印尼新闻简报 | `stability-monitor/brief/src/main.py` 或既有 `indo_news` | 新闻摘要/历史 | 新闻阅读；异常事件可转稳定性证据 | 既有飞书 Hook | 仓库 workflow 仍为手动；本机 `indo_news` 为整合目标 |
 
+\* 为 cron 目标时间，实际送达受 GitHub 排队影响可能更晚，见下节。
+
 时间默认 Asia/Shanghai；印尼西部时间比北京时间慢一小时。正式部署时以任务调度器
 显示的时区为准，不能只看 cron 字符串。
+
+### 定时不是准点：cron 是「最早不早于」，不是承诺
+
+GitHub Actions 的 `schedule` 是尽力而为，高峰期排队。**整点（`:00`）是最堵的时刻**，
+官方文档明确建议避开。2026-07-31~08-02 连续三天实测，`0 2 * * *`（应 10:00
+Asia/Shanghai）的实际启动时间是 13:20 / 13:12 / 13:12——**稳定延迟约 3 小时 12 分**，
+证据见云端事件池记录里的 `generatedAt: 2026-08-02T05:12:46`（UTC）。
+
+因此三个采集工作流的 cron 都移到了非整点，并留出十几分钟缓冲：
+
+| 工作流 | cron (UTC) | 目标送达 (GMT+8) |
+|---|---|---|
+| `daily-risk-alerts` | `43 1 * * *` | 09:43 |
+| `weekly-credit-sentiment` | `53 1 * * 2` | 09:53 |
+| `monthly-credit-data` | `43 2 1 * *` | 10:43 |
+
+`validate_repo.mjs` 已把「cron 分钟位不得为 0」固化为不变量。**排查推送时间异常时，
+先看 Actions 的实际启动时间，不要假设 cron 准点执行。**
+
+### 采集工作流不得由 push 触发
+
+PR #10 的分支一度给三个采集工作流加了 `push:` 触发器，结果每个提交都跑一遍完整采集：
+2026-08-03 11:46–12:31 之间产生了十几次连续失败的运行，并且**当天的定时运行整个消失了**
+（同一 concurrency group 里排队中的运行被后来的 push 运行挤掉）。
+
+采集类工作流只能由 `schedule` 与 `workflow_dispatch` 触发，已固化为不变量。
 
 ### 产物路径不得被 .gitignore 排除
 
