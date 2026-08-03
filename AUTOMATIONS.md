@@ -9,7 +9,7 @@
 |---|---|---|---|---|---|---|
 | 每日 10:00 | 稳定性重大新闻/制度骤变警报 | GitHub workflow `daily-risk-alerts.yml` → `daily_alert.py --no-push` | `bot/daily-risk-alerts` 证据池；不改分数 | 红/高危/橙事件是否纳入周评 | 仅异常日推送 | 云端自动；不依赖本机开机 |
 | 每日 10:00 | Pinjol/Pindar 舆情波动警报 | 同一 `daily-risk-alerts.yml` → `credit_daily_alert.py --write-output` | `daily-credit-alert-pending.json`；不改周度历史 | 严重事件、跨新闻/社媒异常是否升级 | 仅异常日推送 | 云端自动；不依赖本机开机 |
-| 每周二 10:15 | 线上信贷恐慌指数＋稳定性街头热度 | GitHub workflow `weekly-credit-sentiment.yml` | `bot/weekly-monitoring` 待确认数据；私有看板刷新；不建 PR | 确认分数、信源覆盖和告警证据 | 红/橙风险才推送 | 云端统一执行；不依赖本机开机 |
+| 每周二 10:15 | 线上信贷恐慌指数＋稳定性街头热度 | GitHub workflow `weekly-credit-sentiment.yml` | `bot/weekly-monitoring` 待确认数据；不建 PR | 确认分数、信源覆盖和告警证据 | 红/橙风险才推送 | 云端统一执行；不依赖本机开机 |
 | 每周二，采集后人工确认 | 稳定性两版周评 | 云端 `street_heat.py` 证据 → 人工确认后 `apply_week.py` / `score_v4_shadow.py` | 全景等权版与数据置信版同日结果 | 先确认街头热度与日频事件，再确认两版分数 | 风险或采集失败才推送 | 评分写入仍坚持人在环 |
 | 每月1日 11:00 | BI/OJK 行业数据更新 | GitHub workflow `monthly-credit-data.yml` → `update_credit.py` | `bot/monthly-credit-data` 暗门待确认项 | 核对月份、单位、来源和异常值 | 有新数据或失败时推送 | 云端自动；不依赖本机开机 |
 | 每月1日 11:00 | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
@@ -56,7 +56,7 @@
    红色、高危待核、橙色才推送。卡片必须写清证据数、失效信源与“未写入看板”。
 2. **周度风险卡**：周二统一运行信贷恐慌指数与街头热度。正常静默；红/橙风险、
    重点证据候选或采集覆盖失败时，标题明确写「每周二例行」，给出分数、周环比、
-   红色触发原因、中文事件解释和私有看板入口。指数下降但独立事件门触发时，必须
+   红色触发原因、中文事件解释和本机看板入口。指数下降但独立事件门触发时，必须
    明示“红色不是由指数上升造成”。历史满8周后再增加滚动中位数/MAD异常幅度。
 3. **月度数据卡**：BI/OJK、BPS/BI 宏观指标、P2P 竞对采集。只报告有新月份、
    季度/半年度发布、口径变化、抓取失败或待补录字段，不把成功抓取直接当成已确认数据。
@@ -86,7 +86,7 @@
 风险门决定：`normal` 静默；`amber/high_pending/red` 或关键采集失败才发送。云端工作流
 统一调用 `.github/scripts/cloud_publish.py`，各业务脚本不再各自维护不同推送标准。
 
-## 密钥、云端与私有看板
+## 密钥、云端与本机看板
 
 - GitHub Actions 使用仓库 Secrets：
   `FEISHU_WEBHOOK_URL`（兼容 `FEISHU_WEBHOOK`）和
@@ -97,16 +97,26 @@
   BI 基准利率和 JISDOR 公开页面不需要密钥。
 - YouTube、Reddit、X 分别使用现有官方 API 凭据。缺密钥时必须显示
   `unconfigured`，不能把“没采到”解释为“舆情平静”。
-- `SITES_BYPASS_BEARER_TOKEN` 与 `DASHBOARD_INGEST_TOKEN` 只用于 GitHub Actions
-  把经过限制的待确认文件写入私有 Sites；端点只接受白名单路径，不接受正式评分历史。
 - 任何真实 Hook、API key、`.env` 或本机绝对路径都不得提交。
 
 宏观口径分开管理：国家宏观板块的 USD/IDR 使用 BI 官方 JISDOR；信贷行业板块的
 美元换算仍固定 `FX=15000` 以保持历史可比，宏观采集器不得联动改变该换算参数。
 
+
+## 飞书一键打开本机看板
+
+飞书卡片中的“打开本地看板”固定指向 `http://127.0.0.1:8777/`。该地址只在所有者的
+Windows 电脑上打开，不对互联网暴露，也不要求 OpenAI 账户。首次运行
+`scripts/setup_local_preview.ps1` 会把正式仓库克隆到固定目录、创建开机启动的本地
+只读服务器，并每15分钟快进同步 `main`。飞书和 GitHub Actions 仍在云端运行；只有
+点击看板且电脑开机时才依赖本机。
+
+本机看板展示 `main` 中已经确认并合并的最新版。bot 分支里的待确认产物不会越过
+人在环直接覆盖正式看板；风险事件的具体决策信息以飞书卡片和待确认记录为准。
+
 ## 自动化边界
 
 - 上述日/周/月采集均在 GitHub Actions 运行，不依赖本机或 Windows 计划任务。
 - 每日/每周的印尼新闻简报不在本次改造范围内，仍由 `indo_news` / Claude Code 管理。
-- 例行产物只写 bot 待确认分支和私有看板待确认层；不会创建数据 PR，也不会自动修改
+- 例行产物只写 bot 待确认分支；不会创建数据 PR，也不会自动修改
   全景等权版、数据置信版或信贷正式历史。
