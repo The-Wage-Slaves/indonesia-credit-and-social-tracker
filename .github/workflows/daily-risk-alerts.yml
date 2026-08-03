@@ -14,8 +14,6 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  PRIVATE_DASHBOARD_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site
-  DASHBOARD_INGEST_URL: https://indonesia-monitor-private.rafael-3954.chatgpt.site/api/automation-files
 
 jobs:
   detect-and-notify:
@@ -73,15 +71,12 @@ jobs:
           python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
       - name: Publish pending data and notify Feishu only when abnormal
         env:
-          SITES_BYPASS_BEARER_TOKEN: ${{ secrets.SITES_BYPASS_BEARER_TOKEN }}
-          DASHBOARD_INGEST_TOKEN: ${{ secrets.DASHBOARD_INGEST_TOKEN }}
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
           FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
           # 卡片里的印尼语标题要转成中文，靠 cloud_publish.py 的 enrich_zh()。
           # 不传这个 key 不会报错，只会静默退回印尼语原文——务必保留。
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
           STABILITY_STATUS: ${{ steps.stability.outcome }}
-          # 未启用私有 Sites 看板发布(缺 SITES_BYPASS_BEARER_TOKEN/DASHBOARD_INGEST_TOKEN)，
           # 故不传 --publish-dashboard：否则 cloud_publish.py 判定「要求的通道未配置」返回 2，
           # 让整个工作流红灯(2026-07-30 实测)。飞书推送不受影响。
         run: python .github/scripts/cloud_publish.py daily --push
@@ -109,3 +104,4 @@ jobs:
           fi
           git commit -m "data: stage daily risk review $(date -u +%F)"
           git push --force-with-lease origin "HEAD:${branch}"
+

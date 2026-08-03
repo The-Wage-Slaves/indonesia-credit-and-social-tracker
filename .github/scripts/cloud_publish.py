@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
-"""Publish human-review automation results to private Sites and Feishu.
+"""Publish human-review automation results to Feishu.
 
-Transport is controlled by --push/--publish-dashboard. Alert eligibility is
-decided inside this module so every cadence follows the same rule:
+Alert eligibility is decided inside this module so every cadence follows the
+same rule:
 
 * normal observations are silent;
 * red/amber evidence events and material collection failures are pushed;
 * monthly new-data batches are pushed;
 * no result writes confirmed dashboard history or scores.
+
+The dashboard link intentionally points to the owner's loopback preview.
+GitHub Actions never needs the owner's computer; the browser opens the local
+auto-updated clone only after the owner clicks the Feishu link.
 """
 from __future__ import annotations
 
@@ -22,49 +26,19 @@ import pathlib
 import sys
 import time
 from typing import Any
-from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 STATUS_FILE = ROOT / "outputs" / "cloud-publish-status.json"
-DASHBOARD_URL = os.getenv(
-    "PRIVATE_DASHBOARD_URL",
-    "https://indonesia-monitor-private.rafael-3954.chatgpt.site",
+LOCAL_DASHBOARD_URL = os.getenv(
+    "LOCAL_DASHBOARD_URL",
+    "http://127.0.0.1:8777/",
 )
 ALERT_REVIEW_URL = os.getenv(
     "ALERT_REVIEW_URL",
-    "https://github.com/rafaelbonanza279-wq/indonesia-credit-and-social-tracker/issues/6",
+    "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
 )
-
-CONTENT_TYPES = {
-    ".html": "text/html; charset=utf-8",
-    ".js": "text/javascript; charset=utf-8",
-    ".json": "application/json; charset=utf-8",
-}
-
-ROUTE_FILES = {
-    "weekly": [
-        "credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json",
-        "credit-tracker/sentiment-monitor/output/credit-sentiment-data.js",
-        "stability-monitor/scripts/output/street-heat-latest.html",
-        "stability-monitor/scripts/street_heat_history.json",
-        "pending.json",
-        "pending.js",
-    ],
-    "daily": [
-        "credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json",
-        "pending.json",
-        "pending.js",
-    ],
-    "monthly": [
-        "credit-tracker/dashboard/p2p-pending.js",
-        "credit-tracker/dashboard/macro-pending.js",
-        "credit-tracker/macro-monitor/output/macro-pending.json",
-        "pending.json",
-        "pending.js",
-    ],
-}
 
 
 def read_json(relative_path: str, default: Any = None) -> Any:
@@ -512,7 +486,7 @@ def monthly_summary() -> dict[str, Any]:
 def feishu_payload(summary: dict[str, Any]) -> dict[str, Any]:
     content = "\n\n---\n\n".join(summary["lines"])
     content += (
-        f"\n\n[打开私有看板]({DASHBOARD_URL})"
+        f"\n\n[打开本地看板]({LOCAL_DASHBOARD_URL})"
         f"　|　[打开风险待确认记录]({summary.get('reviewUrl', ALERT_REVIEW_URL)})"
         "\n\n**人在环边界：**机器人只提交证据和建议；不会自动改正式评分或历史数据。"
     )
@@ -574,59 +548,7 @@ def push_feishu(summary: dict[str, Any], requested: bool) -> str:
     return "sent"
 
 
-def dashboard_files(mode: str) -> dict[str, dict[str, str]]:
-    files: dict[str, dict[str, str]] = {}
-    for relative in ROUTE_FILES[mode]:
-        path = ROOT / relative
-        if not path.exists():
-            continue
-        route = "/" + relative.replace("\\", "/")
-        files[route] = {
-            "contentType": CONTENT_TYPES.get(
-                path.suffix.lower(), "text/plain; charset=utf-8"
-            ),
-            "contents": path.read_text(encoding="utf-8"),
-        }
-    return files
-
-
-def publish_dashboard(mode: str, requested: bool) -> str:
-    if not requested:
-        return "not_requested"
-    endpoint = os.getenv("DASHBOARD_INGEST_URL") or (
-        DASHBOARD_URL.rstrip("/") + "/api/automation-files"
-    )
-    bypass = os.getenv("SITES_BYPASS_BEARER_TOKEN", "")
-    ingest_token = os.getenv("DASHBOARD_INGEST_TOKEN", "")
-    if not (bypass and ingest_token):
-        return "unconfigured"
-    files = dashboard_files(mode)
-    if not files:
-        return "no_files"
-    request = Request(
-        endpoint,
-        data=json.dumps({"files": files}, ensure_ascii=False).encode("utf-8"),
-        headers={
-            "OAI-Sites-Authorization": f"Bearer {bypass}",
-            "X-Dashboard-Ingest-Token": ingest_token,
-            "Content-Type": "application/json",
-        },
-        method="POST",
-    )
-    try:
-        with urlopen(request, timeout=40) as response:
-            result = json.loads(response.read().decode("utf-8"))
-    except HTTPError as exc:
-        detail = exc.read().decode("utf-8", errors="replace")[:300]
-        raise RuntimeError(f"Dashboard ingest HTTP {exc.code}: {detail}") from exc
-    if result.get("updated") != len(files):
-        raise RuntimeError(f"Dashboard ingest rejected files: {result}")
-    return f"updated:{len(files)}"
-
-
-def write_status(
-    summary: dict[str, Any], feishu_status: str, dashboard_status: str
-) -> None:
+def write_status(summary: dict[str, Any], feishu_status: str) -> None:
     STATUS_FILE.parent.mkdir(parents=True, exist_ok=True)
     STATUS_FILE.write_text(
         json.dumps(
@@ -634,7 +556,6 @@ def write_status(
                 "generatedAt": dt.datetime.now(dt.timezone.utc).isoformat(),
                 "summary": summary,
                 "feishu": feishu_status,
-                "dashboard": dashboard_status,
             },
             ensure_ascii=False,
             indent=2,
@@ -648,7 +569,6 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("mode", choices=("daily", "weekly", "monthly"))
     parser.add_argument("--push", action="store_true")
-    parser.add_argument("--publish-dashboard", action="store_true")
     args = parser.parse_args()
     summary = {
         "daily": daily_summary,
@@ -657,23 +577,15 @@ def main() -> int:
     }[args.mode]()
     delivery_errors: list[str] = []
     try:
-        dashboard_status = publish_dashboard(args.mode, args.publish_dashboard)
-    except Exception as exc:  # Keep Feishu independent from dashboard delivery.
-        dashboard_status = f"error:{type(exc).__name__}"
-        delivery_errors.append(f"dashboard={exc}")
-    try:
         feishu_status = push_feishu(summary, args.push)
-    except Exception as exc:  # Keep dashboard delivery independent from Feishu.
+    except Exception as exc:
         feishu_status = f"error:{type(exc).__name__}"
         delivery_errors.append(f"feishu={exc}")
-    write_status(summary, feishu_status, dashboard_status)
+    write_status(summary, feishu_status)
     print(
-        f"mode={args.mode} risk={summary['risk']} "
-        f"dashboard={dashboard_status} feishu={feishu_status}"
+        f"mode={args.mode} risk={summary['risk']} feishu={feishu_status}"
     )
     missing_required = (
-        args.publish_dashboard and dashboard_status == "unconfigured"
-    ) or (
         args.push and summary["risk"] and feishu_status == "unconfigured"
     )
     if delivery_errors:
