@@ -13,7 +13,7 @@
    五支柱评分（财政/货币/制度/社会/强制机构），方法论 v3（73%硬数据权重）
 3. 入口 `index.html`（含"待确认事项"卡片，读 `pending.js`）
 
-本地预览：`python -m http.server 8777`（或直接双击 HTML；CDN 需联网，用 jsdelivr 勿用 unpkg）。
+本地预览：首次运行 `scripts/setup_local_preview.ps1`；之后访问 `http://127.0.0.1:8777/`。临时预览仍可用 `python -m http.server 8777 --bind 127.0.0.1`。
 
 ## 目录地图
 
@@ -67,4 +67,4 @@ stability-monitor/
 2. 反对率池升级：YouTube评论区、Kaskus forum/21 政治版
 3. Modalku 双口径待人工确认；ADA Pundi 官网撤统计页待另寻
 4. 信贷舆情积累满8周后，将声量项从周环比升级为滚动中位数+MAD稳健异常值；③3.2 APP量级等外部数据
-5. 飞书推送/云端部署（与所有者单独沟通后再动）
+5. 飞书决策确认闭环（当前仍需回到仓库待确认记录）
