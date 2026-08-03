@@ -1,6 +1,20 @@
 name: Publish dashboard download package
 
 on:
+  pull_request:
+    paths:
+      - index.html
+      - pending.json
+      - pending.js
+      - credit-tracker/dashboard/**
+      - credit-tracker/sentiment-monitor/output/**
+      - stability-monitor/dashboard/**
+      - stability-monitor/data/**
+      - stability-monitor/docs/**
+      - stability-monitor/scripts/output/**
+      - scripts/build_dashboard_package.py
+      - .github/scripts/cloud_publish.py
+      - .github/workflows/publish-dashboard-package.yml
   push:
     branches: [main]
     paths:
@@ -36,6 +50,7 @@ jobs:
       - name: Build and validate downloadable dashboard
         run: python scripts/build_dashboard_package.py
       - name: Publish rolling private release asset
+        if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -52,6 +67,7 @@ jobs:
               --notes "$notes"
           fi
       - name: Notify Feishu with the stable download link
+        if: github.event_name != 'pull_request'
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
           FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
