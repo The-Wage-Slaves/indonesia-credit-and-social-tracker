@@ -13,8 +13,6 @@ concurrency:
   group: daily-risk-alerts
   cancel-in-progress: false
 
-env:
-
 jobs:
   detect-and-notify:
     runs-on: ubuntu-latest
