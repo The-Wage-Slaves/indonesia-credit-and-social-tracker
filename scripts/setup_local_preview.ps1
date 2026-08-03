@@ -36,5 +36,19 @@ if (-not (Test-Path -LiteralPath $installer)) {
 & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $installer -RepoPath $InstallPath -Port $Port
 if ($LASTEXITCODE -ne 0) { throw "Local preview installation failed." }
 
+# When this bootstrap is launched from the old Codex workspace, remove only the
+# two directories that belonged exclusively to the retired Sites viewer.
+$sourceRoot = (Resolve-Path -LiteralPath (Split-Path -Parent $PSScriptRoot)).Path
+foreach ($legacyName in @("sites-viewer", ".pnpm-store")) {
+    $legacyPath = Join-Path $sourceRoot $legacyName
+    if (Test-Path -LiteralPath $legacyPath) {
+        $resolvedLegacy = (Resolve-Path -LiteralPath $legacyPath).Path
+        if (-not $resolvedLegacy.StartsWith($sourceRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+            throw "Refusing to remove an out-of-workspace legacy path: $resolvedLegacy"
+        }
+        Remove-Item -LiteralPath $resolvedLegacy -Recurse -Force
+    }
+}
+
 Write-Output "Ready: http://127.0.0.1:$Port/"
 
