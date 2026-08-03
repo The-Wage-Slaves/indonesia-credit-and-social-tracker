@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync } from 'fs';
+import { existsSync, readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import vm from 'vm';
@@ -290,12 +290,27 @@ for (const statusName of ['INDUSTRY_STATUS', 'MACRO_STATUS', 'COMPETITOR_STATUS'
   );
 }
 
-assert(cloudPublisher.includes('macro-monitor/output/macro-pending.json'), 'monthly macro result is not published to Sites');
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
-assert(cloudPublisher.includes('DASHBOARD_INGEST_TOKEN'), 'unified publisher must protect Sites ingestion');
-assert(cloudPublisher.includes('"OAI-Sites-Authorization"'), 'Sites ingest must use the platform bypass header');
-assert(cloudPublisher.includes('Keep Feishu independent from dashboard delivery'), 'dashboard failure must not suppress Feishu');
-assert(cloudPublisher.includes('Keep dashboard delivery independent from Feishu'), 'Feishu failure must not suppress dashboard');
+assert(cloudPublisher.includes('http://127.0.0.1:8777/'), 'Feishu card must link to the loopback preview');
+assert(cloudPublisher.includes('打开本地看板'), 'Feishu card must explain that the preview is local');
+for (const legacyMarker of [
+  'chatgpt.site',
+  'PRIVATE_DASHBOARD_URL',
+  'DASHBOARD_INGEST',
+  'SITES_BYPASS',
+  '--publish-dashboard',
+]) {
+  assert(!cloudPublisher.includes(legacyMarker), `publisher retained legacy Sites marker: ${legacyMarker}`);
+}
+for (const helper of [
+  'scripts/setup_local_preview.ps1',
+  'scripts/install_local_preview.ps1',
+  'scripts/local_preview.ps1',
+  'scripts/uninstall_local_preview.ps1',
+]) {
+  assert(existsSync(path.join(root, helper)), `missing local preview helper: ${helper}`);
+}
+assert(!existsSync(path.join(root, 'sites-viewer')), 'legacy sites-viewer directory must stay removed');
 assert(!cloudPublisher.includes('"title": f"周二监测'), 'weekly Feishu title must disclose cadence and purpose');
 for (const marker of [
   '【每周二例行】',
