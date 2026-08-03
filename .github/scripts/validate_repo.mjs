@@ -298,26 +298,46 @@ for (const statusName of ['INDUSTRY_STATUS', 'MACRO_STATUS', 'COMPETITOR_STATUS'
 }
 
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
-assert(cloudPublisher.includes('http://127.0.0.1:8777/'), 'Feishu card must link to the loopback preview');
-assert(cloudPublisher.includes('打开本地看板'), 'Feishu card must explain that the preview is local');
+assert(cloudPublisher.includes('indonesia-monitor-dashboard.zip'), 'Feishu card lacks the rolling dashboard ZIP');
+assert(cloudPublisher.includes('下载最新版看板 ZIP'), 'Feishu card must explain the download action');
 for (const legacyMarker of [
   'chatgpt.site',
   'PRIVATE_DASHBOARD_URL',
   'DASHBOARD_INGEST',
   'SITES_BYPASS',
   '--publish-dashboard',
+  '127.0.0.1:8777',
+  '打开本地看板',
 ]) {
-  assert(!cloudPublisher.includes(legacyMarker), `publisher retained legacy Sites marker: ${legacyMarker}`);
+  assert(!cloudPublisher.includes(legacyMarker), `publisher retained legacy delivery marker: ${legacyMarker}`);
 }
-for (const helper of [
+for (const legacyPath of [
   'scripts/setup_local_preview.ps1',
   'scripts/install_local_preview.ps1',
   'scripts/local_preview.ps1',
   'scripts/uninstall_local_preview.ps1',
+  'sites-viewer',
 ]) {
-  assert(existsSync(path.join(root, helper)), `missing local preview helper: ${helper}`);
+  assert(!existsSync(path.join(root, legacyPath)), `legacy preview path returned: ${legacyPath}`);
 }
-assert(!existsSync(path.join(root, 'sites-viewer')), 'legacy sites-viewer directory must stay removed');
+const packageBuilder = read('scripts/build_dashboard_package.py');
+for (const marker of ['REQUIRED_MEMBERS', 'validate_members', '打开看板.cmd', 'dashboard-package.json']) {
+  assert(packageBuilder.includes(marker), `dashboard package builder missing ${marker}`);
+}
+const packageWorkflow = read('.github/workflows/publish-dashboard-package.yml');
+for (const marker of [
+  'branches: [main]',
+  'gh release upload dashboard-latest',
+  '--clobber',
+  'cloud_publish.py release --push',
+  'FEISHU_WEBHOOK_URL',
+]) {
+  assert(packageWorkflow.includes(marker), `dashboard package workflow missing ${marker}`);
+}
+const projectMemory = read('PROJECT_MEMORY.md');
+for (const marker of ['一个用户目标只对应一个 PR', 'PR #10—#13', '上下文防腐流程', '人在环是铁律']) {
+  assert(projectMemory.includes(marker), `project memory missing ${marker}`);
+}
 assert(!cloudPublisher.includes('"title": f"周二监测'), 'weekly Feishu title must disclose cadence and purpose');
 for (const marker of [
   '【每周二例行】',
