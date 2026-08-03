@@ -168,4 +168,3 @@ jobs:
               --body "Weekly evidence triggered red review. Fear index: **${FEAR_INDEX}**; verified event count: **${ACTIVE_COUNT}**. Open the private dashboard for the capped human-readable evidence list. No confirmed history was changed."
           fi
 
-
