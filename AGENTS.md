@@ -1,7 +1,7 @@
 # Agent 工作指南（Codex / Claude Code 通用）
 
 > 本文件是 AI 编码代理（OpenAI Codex 读本文件；Claude Code 另有各目录的 CLAUDE.md，内容一致）
-> 的项目上下文。人类 reviewer 请先读 `REVIEW.md`。
+> 的项目上下文。人类 reviewer 请先读 `REVIEW.md`。\n> **强制冷启动：任何修改前先完整阅读 `PROJECT_MEMORY.md`；聊天摘要不能替代仓库记忆。**
 
 ## 这是什么项目
 
@@ -13,7 +13,7 @@
    五支柱评分（财政/货币/制度/社会/强制机构），方法论 v3（73%硬数据权重）
 3. 入口 `index.html`（含"待确认事项"卡片，读 `pending.js`）
 
-本地预览：首次运行 `scripts/setup_local_preview.ps1`；之后访问 `http://127.0.0.1:8777/`。临时预览仍可用 `python -m http.server 8777 --bind 127.0.0.1`。
+交付预览：`main` 中看板内容变化后，GitHub Actions 覆盖 rolling Release 的 `indonesia-monitor-dashboard.zip` 并推送飞书下载链接；不得安装开机服务器或轮询任务。临时开发预览可用 `python -m http.server 8777 --bind 127.0.0.1`。
 
 ## 目录地图
 
@@ -36,7 +36,7 @@ stability-monitor/
   CLAUDE.md / CONTEXT.md            # 项目沿革与分析交接
 ```
 
-## 铁律（改代码前必读）
+## PR 与上下文纪律（同样是铁律）\n\n- 一个用户目标只用一个 PR；测试、文档和 CI 修复继续推送原分支，完整验证前保持 Draft。\n- 开始前查开放 PR；结束前把长期决策写回 `PROJECT_MEMORY.md`，临时进度写 `HANDOFF.md`。\n- PR #10—#13 的连续补丁是反例，不得重复。\n\n## 铁律（改代码前必读）
 
 1. **人在环**：所有脚本只"抓取→写 pending 待确认"，**绝不直接改看板数据**。
    评分/数据写入必须经人类确认。不要"优化"掉这个流程。
