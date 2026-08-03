@@ -86,8 +86,15 @@ python stability-monitor/scripts/street_heat.py
 本仓库含竞对数据与政治稳定性分析，默认只允许本地访问。`.github/workflows/deploy-pages.yml`
 已改为手动说明工作流，不具备 Pages 发布权限，也不会在推送 `main` 时上传仓库内容。
 
-请在仓库根目录运行 `python -m http.server 8777`，再访问
-`http://localhost:8777/index.html`。不要为了使用 Pages 把仓库改成 Public。
+个人长期预览推荐在 Windows PowerShell 运行一次：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\\scripts\\setup_local_preview.ps1
+```
+
+之后飞书或桌面快捷方式可直接打开 `http://127.0.0.1:8777/`。后台任务每15分钟
+快进同步 `main`，本地服务器只绑定回环地址，不对局域网或互联网开放。临时预览仍可
+在仓库根目录运行 `python -m http.server 8777 --bind 127.0.0.1`。
 
 GitHub 的“私有仓库”不等于“Pages 站点仅协作者可见”。受访问控制的私有 Pages
 只适用于满足 GitHub Enterprise Cloud 组织条件的场景；个人 Pro/Team 计划不能作为本项目的
