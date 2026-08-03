@@ -252,6 +252,13 @@ assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lac
 assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthly workflow lacks national macro collection');
 assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
 assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
+for (const [name, workflow] of [
+  ['daily-risk-alerts', dailyRiskWorkflow],
+  ['weekly-credit-sentiment', weeklyCreditWorkflow],
+  ['monthly-credit-data', monthlyCreditWorkflow],
+]) {
+  assert(!/\nenv:\s*\n\s*jobs:/.test(workflow), `${name} contains an empty top-level env mapping`);
+}
 const cloudPublisher = read('.github/scripts/cloud_publish.py');
 // 卡片中文化只在 enrich_zh() 拿到 DEEPSEEK_API_KEY 时生效，拿不到时静默退回印尼语
 // 原文而不报错。这个组合已经两次导致「看起来修好了、云端其实没生效」，所以把
