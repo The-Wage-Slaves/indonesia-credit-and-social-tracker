@@ -14,7 +14,7 @@
 | 每月1日 11:00 | BI/OJK 行业数据更新 | GitHub workflow `monthly-credit-data.yml` → `update_credit.py` | `bot/monthly-credit-data` 暗门待确认项 | 核对月份、单位、来源和异常值 | 有新数据或失败时推送 | 云端自动；不依赖本机开机 |
 | 每月1日 11:00 | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
 | 每月1日 11:00 | P2P 竞对官网数据 | 同一 `monthly-credit-data.yml` → `p2p-scraper/scraper.mjs` | `p2p-pending.js` 暗门逐格确认 | 核对各公司口径与缺失项 | 有新数据或覆盖不足时推送 | 云端自动；不依赖本机开机 |
-| 每日/每周 | 印尼新闻简报 | `stability-monitor/brief/src/main.py` 或既有 `indo_news` | 新闻摘要/历史 | 新闻阅读；异常事件可转稳定性证据 | 既有飞书 Hook | 仓库 workflow 仍为手动；本机 `indo_news` 为整合目标 |
+| `main` 看板变更后 | 最新看板下载包 | `publish-dashboard-package.yml` | 覆盖同一个 Private Release ZIP | 无评分决策；仅通知已发布最新版 | 每次有效变更推送下载链接 | 云端事件触发；无本机常驻/轮询 |\n| 每日/每周 | 印尼新闻简报 | `stability-monitor/brief/src/main.py` 或既有 `indo_news` | 新闻摘要/历史 | 新闻阅读；异常事件可转稳定性证据 | 既有飞书 Hook | 仓库 workflow 仍为手动；本机 `indo_news` 为整合目标 |
 
 时间默认 Asia/Shanghai；印尼西部时间比北京时间慢一小时。正式部署时以任务调度器
 显示的时区为准，不能只看 cron 字符串。
@@ -103,16 +103,14 @@
 美元换算仍固定 `FX=15000` 以保持历史可比，宏观采集器不得联动改变该换算参数。
 
 
-## 飞书一键打开本机看板
+## 飞书下载最新版看板
 
-飞书卡片中的“打开本地看板”固定指向 `http://127.0.0.1:8777/`。该地址只在所有者的
-Windows 电脑上打开，不对互联网暴露，也不要求 OpenAI 账户。首次运行
-`scripts/setup_local_preview.ps1` 会把正式仓库克隆到固定目录、创建开机启动的本地
-只读服务器，并每15分钟快进同步 `main`。飞书和 GitHub Actions 仍在云端运行；只有
-点击看板且电脑开机时才依赖本机。
+`main` 中明确的看板/数据路径发生变化后，`publish-dashboard-package.yml` 才运行：
+生成经过白名单与本地引用校验的 ZIP，覆盖 Release tag `dashboard-latest` 下同名资产，
+再通过飞书发送固定下载链接。电脑上不安装开机服务、不轮询 GitHub，也不调用任何 LLM。
 
-本机看板展示 `main` 中已经确认并合并的最新版。bot 分支里的待确认产物不会越过
-人在环直接覆盖正式看板；风险事件的具体决策信息以飞书卡片和待确认记录为准。
+下载包只包含 `main` 中已经确认并合并的静态页面与数据；bot 分支待确认产物不会越过
+人在环进入包内。仓库为 Private，下载者需要 GitHub 登录和仓库只读权限。
 
 ## 自动化边界
 
