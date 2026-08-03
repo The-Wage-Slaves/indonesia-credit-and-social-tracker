@@ -35,8 +35,8 @@ REQUIRED_MEMBERS = {
     "stability-monitor/dashboard/indonesia-stability-index-pro.html",
     "stability-monitor/dashboard/data.js",
     "stability-monitor/dashboard/engine.js",
-    "鎵撳紑鐪嬫澘.cmd",
-    "README_鎵撳紑鏂瑰紡.txt",
+    "打开看板.cmd",
+    "README_打开方式.txt",
     "dashboard-package.json",
 }
 LOCAL_REF = re.compile(r"(?:href|src)=[\"']([^\"'#]+)[\"']", re.IGNORECASE)
@@ -58,15 +58,15 @@ def collect_files() -> dict[str, bytes]:
                 continue
             relative = path.relative_to(ROOT).as_posix()
             files[relative] = path.read_bytes()
-    files["鎵撳紑鐪嬫澘.cmd"] = (
+    files["打开看板.cmd"] = (
         '@echo off\r\nstart "" "%~dp0index.html"\r\n'
     ).encode("utf-8-sig")
-    files["README_鎵撳紑鏂瑰紡.txt"] = (
-        "鍗板凹甯傚満涓庣ǔ瀹氭€х洃娴嬬湅鏉縗n\n"
-        "1. 瑙ｅ帇鏁翠釜 ZIP锛屼笉瑕佸彧浠庡帇缂╁寘鍐呬复鏃舵墦寮€鍗曚釜鏂囦欢銆俓n"
-        "2. 鍙屽嚮 index.html锛屾垨鍙屽嚮鈥滄墦寮€鐪嬫澘.cmd鈥濄€俓n"
-        "3. 椤甸潰浼氳鍙栧悓涓€鏂囦欢澶瑰唴鐨勬暟鎹紱鍥捐〃 CDN 浠嶉渶瑕佽仈缃戙€俓n"
-        "4. 鏈寘鏉ヨ嚜绉佹湁 GitHub main锛屽彧鍖呭惈宸茬‘璁ゅ苟鍚堝苟鐨勭増鏈€俓n"
+    files["README_打开方式.txt"] = (
+        "印尼市场与稳定性监测看板\n\n"
+        "1. 解压整个 ZIP，不要只从压缩包内临时打开单个文件。\n"
+        "2. 双击 index.html，或双击“打开看板.cmd”。\n"
+        "3. 页面会读取同一文件夹内的数据；图表 CDN 仍需要联网。\n"
+        "4. 本包来自私有 GitHub main，只包含已确认并合并的版本。\n"
     ).encode("utf-8-sig")
     files["dashboard-package.json"] = json.dumps(
         {
