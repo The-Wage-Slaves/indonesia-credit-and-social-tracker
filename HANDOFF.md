@@ -1,10 +1,22 @@
 # Agent Handoff
 
-Last updated: 2026-07-29
+Last updated: 2026-08-03
+
+## 2026-08-03 delivery and process correction
+
+- PR #14 is the single container replacing the rejected startup-server/15-minute polling design.
+- Target delivery is one rolling Private GitHub Release ZIP plus a Feishu download link, triggered only
+  by confirmed dashboard changes on main.
+- PR #10–#13 are retained as immutable history and documented as a process anti-pattern. All PR #14
+  test fixes must stay on its branch until the full path passes.
+- Sites delivery code and repository secrets were removed; the old hosted OpenAI Site project itself
+  still awaits permanent deletion after the owner signs into Sites management.
+- Durable cross-agent rules and methodology live in PROJECT_MEMORY.md and must be re-read after
+  context compaction.
 
 ## Current state
 
-- Repository: `rafaelbonanza279-wq/indonesia-credit-and-social-tracker` (private).
+- Repository: `The-Wage-Slaves/indonesia-credit-and-social-tracker` (private).
 - `main` contains PR #1–#5 and PR #7, plus the 2026-07-28 confirmed
   production snapshot. Number #6 is a red-alert Issue, not a pull request.
 - 全景等权版（内部代号 V3）仍是唯一正式口径。

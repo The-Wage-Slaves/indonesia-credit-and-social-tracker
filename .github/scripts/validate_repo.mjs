@@ -240,7 +240,7 @@ for (const marker of [
 }
 const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml');
 assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'), 'weekly credit workflow does not expose the optional DeepSeek secret');
-assert(weeklyCreditWorkflow.includes('15 2 * * 2'), 'weekly monitoring must run on Tuesday');
+assert(/cron: "\d+ \d+ \* \* 2"/.test(weeklyCreditWorkflow), 'weekly monitoring must run on Tuesday');
 assert(weeklyCreditWorkflow.includes('street_heat.py'), 'weekly monitoring must include stability street heat');
 assert(weeklyCreditWorkflow.includes('STREET_STATUS: ${{ steps.street.outcome }}'), 'weekly card must receive the current street-heat outcome');
 assert(weeklyCreditWorkflow.includes('cloud_publish.py weekly'), 'weekly monitoring must use the unified publisher');
@@ -252,6 +252,36 @@ assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lac
 assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthly workflow lacks national macro collection');
 assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
 assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
+// cron 定在整点会被 GitHub 的排队高峰吃掉：2026-07-31~08-02 连续三天延迟
+// 192/192/200 分钟，本该 10:00 的日频警报 13:12 才送达。把「不得定在 :00」
+// 固化下来，避免以后有人为了「看起来整齐」改回去。
+for (const [name, workflow] of [
+  ['daily-risk-alerts', dailyRiskWorkflow],
+  ['weekly-credit-sentiment', weeklyCreditWorkflow],
+  ['monthly-credit-data', monthlyCreditWorkflow],
+]) {
+  const crons = [...workflow.matchAll(/cron:\s*"(\S+)\s/g)].map((match) => match[1]);
+  assert(crons.length > 0, `${name} lost its schedule trigger`);
+  for (const minute of crons) {
+    assert(
+      minute !== '0',
+      `${name} schedules on the hour; GitHub queues those worst (measured +192min). Use an off-hour minute.`,
+    );
+  }
+}
+// PR #10 曾给三个采集工作流加过 push 触发，导致每次提交都跑一遍采集、连续失败，
+// 并挤掉了当天排队中的定时运行。这些工作流只能由 schedule / workflow_dispatch 触发。
+for (const [name, workflow] of [
+  ['daily-risk-alerts', dailyRiskWorkflow],
+  ['weekly-credit-sentiment', weeklyCreditWorkflow],
+  ['monthly-credit-data', monthlyCreditWorkflow],
+]) {
+  const header = workflow.slice(0, workflow.indexOf('jobs:'));
+  assert(
+    !/^\s*push:/m.test(header),
+    `${name} must not run on push; collectors are schedule/dispatch only`,
+  );
+}
 for (const [name, workflow] of [
   ['daily-risk-alerts', dailyRiskWorkflow],
   ['weekly-credit-sentiment', weeklyCreditWorkflow],
@@ -298,26 +328,46 @@ for (const statusName of ['INDUSTRY_STATUS', 'MACRO_STATUS', 'COMPETITOR_STATUS'
 }
 
 assert(cloudPublisher.includes('suppressed_normal'), 'unified publisher must silence normal observations');
-assert(cloudPublisher.includes('http://127.0.0.1:8777/'), 'Feishu card must link to the loopback preview');
-assert(cloudPublisher.includes('打开本地看板'), 'Feishu card must explain that the preview is local');
+assert(cloudPublisher.includes('indonesia-monitor-dashboard.zip'), 'Feishu card lacks the rolling dashboard ZIP');
+assert(cloudPublisher.includes('下载最新版看板 ZIP'), 'Feishu card must explain the download action');
 for (const legacyMarker of [
   'chatgpt.site',
   'PRIVATE_DASHBOARD_URL',
   'DASHBOARD_INGEST',
   'SITES_BYPASS',
   '--publish-dashboard',
+  '127.0.0.1:8777',
+  '打开本地看板',
 ]) {
-  assert(!cloudPublisher.includes(legacyMarker), `publisher retained legacy Sites marker: ${legacyMarker}`);
+  assert(!cloudPublisher.includes(legacyMarker), `publisher retained legacy delivery marker: ${legacyMarker}`);
 }
-for (const helper of [
+for (const legacyPath of [
   'scripts/setup_local_preview.ps1',
   'scripts/install_local_preview.ps1',
   'scripts/local_preview.ps1',
   'scripts/uninstall_local_preview.ps1',
+  'sites-viewer',
 ]) {
-  assert(existsSync(path.join(root, helper)), `missing local preview helper: ${helper}`);
+  assert(!existsSync(path.join(root, legacyPath)), `legacy preview path returned: ${legacyPath}`);
 }
-assert(!existsSync(path.join(root, 'sites-viewer')), 'legacy sites-viewer directory must stay removed');
+const packageBuilder = read('scripts/build_dashboard_package.py');
+for (const marker of ['REQUIRED_MEMBERS', 'validate_members', '打开看板.cmd', 'dashboard-package.json']) {
+  assert(packageBuilder.includes(marker), `dashboard package builder missing ${marker}`);
+}
+const packageWorkflow = read('.github/workflows/publish-dashboard-package.yml');
+for (const marker of [
+  'branches: [main]',
+  'gh release upload dashboard-latest',
+  '--clobber',
+  'cloud_publish.py release --push',
+  'FEISHU_WEBHOOK_URL',
+]) {
+  assert(packageWorkflow.includes(marker), `dashboard package workflow missing ${marker}`);
+}
+const projectMemory = read('PROJECT_MEMORY.md');
+for (const marker of ['一个用户目标只对应一个 PR', 'PR #10—#13', '上下文防腐流程', '人在环是铁律']) {
+  assert(projectMemory.includes(marker), `project memory missing ${marker}`);
+}
 assert(!cloudPublisher.includes('"title": f"周二监测'), 'weekly Feishu title must disclose cadence and purpose');
 for (const marker of [
   '【每周二例行】',

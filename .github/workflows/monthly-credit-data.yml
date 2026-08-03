@@ -2,8 +2,9 @@ name: Monthly credit data collection
 
 on:
   schedule:
-    # First day of each month, 11:00 Asia/Shanghai / 10:00 WIB.
-    - cron: "0 3 1 * *"
+    # 目标每月1日 10:43 Asia/Shanghai（02:43 UTC）。避开整点排队高峰，理由见
+    # daily-risk-alerts.yml 与 AUTOMATIONS.md「定时不是准点」一节。
+    - cron: "43 2 1 * *"
   workflow_dispatch:
 
 permissions:

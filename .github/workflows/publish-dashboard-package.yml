@@ -1,0 +1,77 @@
+name: Publish dashboard download package
+
+on:
+  pull_request:
+    paths:
+      - index.html
+      - pending.json
+      - pending.js
+      - credit-tracker/dashboard/**
+      - credit-tracker/sentiment-monitor/output/**
+      - stability-monitor/dashboard/**
+      - stability-monitor/data/**
+      - stability-monitor/docs/**
+      - stability-monitor/scripts/output/**
+      - scripts/build_dashboard_package.py
+      - .github/scripts/cloud_publish.py
+      - .github/workflows/publish-dashboard-package.yml
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - pending.json
+      - pending.js
+      - credit-tracker/dashboard/**
+      - credit-tracker/sentiment-monitor/output/**
+      - stability-monitor/dashboard/**
+      - stability-monitor/data/**
+      - stability-monitor/docs/**
+      - stability-monitor/scripts/output/**
+      - scripts/build_dashboard_package.py
+      - .github/scripts/cloud_publish.py
+      - .github/workflows/publish-dashboard-package.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: dashboard-download-package
+  cancel-in-progress: true
+
+jobs:
+  build-publish-notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build and validate downloadable dashboard
+        run: python scripts/build_dashboard_package.py
+      - name: Publish rolling private release asset
+        if: github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          asset="dist/indonesia-monitor-dashboard.zip"
+          notes="Latest confirmed dashboard package from main. Commit: ${GITHUB_SHA}."
+          if gh release view dashboard-latest >/dev/null 2>&1; then
+            gh release upload dashboard-latest "$asset" --clobber
+            gh release edit dashboard-latest --title "Latest Indonesia monitoring dashboard" --notes "$notes"
+          else
+            gh release create dashboard-latest "$asset" \
+              --target "$GITHUB_SHA" \
+              --title "Latest Indonesia monitoring dashboard" \
+              --notes "$notes"
+          fi
+      - name: Notify Feishu with the stable download link
+        if: github.event_name != 'pull_request'
+        env:
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
+          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
+          DASHBOARD_COMMIT: ${{ github.sha }}
+        run: python .github/scripts/cloud_publish.py release --push
+
+

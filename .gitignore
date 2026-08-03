@@ -20,5 +20,4 @@ credit-tracker/conversation_history.html
 # 提交到 bot/daily-risk-alerts 分支作为周更输入。被 ignore 会让 workflow 的
 # `git add` 静默失败、判定「无变化」而永不上云。产物只进 bot 分支，不进 main。
 .pnpm-store/
-outputs/local-preview-*.log
-outputs/local-preview-status.json
+dist/

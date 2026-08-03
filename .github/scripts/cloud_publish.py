@@ -9,9 +9,9 @@ same rule:
 * monthly new-data batches are pushed;
 * no result writes confirmed dashboard history or scores.
 
-The dashboard link intentionally points to the owner's loopback preview.
-GitHub Actions never needs the owner's computer; the browser opens the local
-auto-updated clone only after the owner clicks the Feishu link.
+The dashboard link points to a rolling private GitHub Release asset. GitHub
+Actions rebuilds that ZIP only after confirmed dashboard content reaches main;
+viewing requires no background process or polling on the owner's computer.
 """
 from __future__ import annotations
 
@@ -31,9 +31,10 @@ from urllib.request import Request, urlopen
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 STATUS_FILE = ROOT / "outputs" / "cloud-publish-status.json"
-LOCAL_DASHBOARD_URL = os.getenv(
-    "LOCAL_DASHBOARD_URL",
-    "http://127.0.0.1:8777/",
+DASHBOARD_DOWNLOAD_URL = os.getenv(
+    "DASHBOARD_DOWNLOAD_URL",
+    "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/"
+    "releases/download/dashboard-latest/indonesia-monitor-dashboard.zip",
 )
 ALERT_REVIEW_URL = os.getenv(
     "ALERT_REVIEW_URL",
@@ -483,11 +484,39 @@ def monthly_summary() -> dict[str, Any]:
         "decisionId": f"monthly:{month}:{len(items)}:{','.join(failures) or 'ok'}",
     }
 
+
+def release_summary() -> dict[str, Any]:
+    commit = os.getenv("DASHBOARD_COMMIT", "unknown")
+    short_commit = commit[:7] if commit != "unknown" else commit
+    generated = dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    return {
+        "kind": "release",
+        "title": f"【看板更新】最新版下载包已生成｜{short_commit}",
+        "risk": True,
+        "level": "blue",
+        "lines": [
+            "**更新内容**\n"
+            "GitHub main 中的已确认看板或数据发生变化，最新版 ZIP 已覆盖发布。\n"
+            f"Commit：{short_commit}；生成时间：{generated}。",
+            "**如何查看**\n"
+            "点击下载、解压整个 ZIP，再双击 index.html 或“打开看板.cmd”。"
+            "本流程不会安装开机任务，也不会在电脑上定时轮询。",
+            "**权限边界**\n"
+            "仓库为 Private；下载者需要登录 GitHub 且拥有仓库只读权限。"
+            "包内只含已确认并合并到 main 的看板内容。",
+        ],
+        "downloadUrl": DASHBOARD_DOWNLOAD_URL,
+        "decisionId": f"release:{commit}",
+    }
+
+
 def feishu_payload(summary: dict[str, Any]) -> dict[str, Any]:
     content = "\n\n---\n\n".join(summary["lines"])
+    download_url = summary.get("downloadUrl", DASHBOARD_DOWNLOAD_URL)
+    content += f"\n\n[下载最新版看板 ZIP]({download_url})"
+    if summary.get("reviewUrl"):
+        content += f"　|　[打开风险待确认记录]({summary['reviewUrl']})"
     content += (
-        f"\n\n[打开本地看板]({LOCAL_DASHBOARD_URL})"
-        f"　|　[打开风险待确认记录]({summary.get('reviewUrl', ALERT_REVIEW_URL)})"
         "\n\n**人在环边界：**机器人只提交证据和建议；不会自动改正式评分或历史数据。"
     )
     elements: list[dict[str, Any]] = [
@@ -567,13 +596,14 @@ def write_status(summary: dict[str, Any], feishu_status: str) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=("daily", "weekly", "monthly"))
+    parser.add_argument("mode", choices=("daily", "weekly", "monthly", "release"))
     parser.add_argument("--push", action="store_true")
     args = parser.parse_args()
     summary = {
         "daily": daily_summary,
         "weekly": weekly_summary,
         "monthly": monthly_summary,
+        "release": release_summary,
     }[args.mode]()
     delivery_errors: list[str] = []
     try:

@@ -1,8 +1,8 @@
 # CLAUDE.md — 印尼监测系统 · 核心参考（防上下文腐烂用）
 
 > 本仓库由「人在环」的 AI 代理（Claude Code / Codex）与一位分析师共同维护。
-> 接手先读：本文件 → `AGENTS.md` → `HANDOFF.md`（当前状态）→ `REVIEW.md`（综述）→ `AUTOMATIONS.md`（定时任务）。
-> 本文件是**项目全貌的单一真源**，任何会话冷启动读完即可接上，不必依赖历史对话。
+> 接手先读：`PROJECT_MEMORY.md` → 本文件 → `AGENTS.md` → `HANDOFF.md`（当前状态）→ `REVIEW.md`（综述）→ `AUTOMATIONS.md`（定时任务）。
+> `PROJECT_MEMORY.md` 是跨代理长期决策的单一真源；本文件保存 Claude 需要的项目全貌。任何会话冷启动必须重读两者，不得只依赖历史对话或压缩摘要。
 
 ---
 
@@ -11,7 +11,13 @@
 一个面向印尼消费信贷业务的**双看板决策支持系统**（纯静态 HTML，双击即用，零构建）：
 ①**消费信贷市场追踪**（量：谁在放款、余额多少）②**五支柱稳定性指数**（势：离临界多远）。
 数据由半自动脚本抓取，**所有写入走人在环确认**。入口 `index.html`。
-GitHub 私有仓 `rafaelbonanza279-wq/indonesia-credit-and-social-tracker`（仓库根=本目录）。
+GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库根=本目录）。
+
+---
+
+## 0.5 PR 与上下文纪律
+
+一个用户目标只建立一个 PR；同一目标的测试修复、文档和 CI 修复继续推送原分支，完整验证前保持 Draft。PR #10—#13 的连续补丁是反例。每次上下文压缩或冷启动后必须重新读取 `PROJECT_MEMORY.md`。
 
 ---
 

@@ -2,8 +2,9 @@ name: Tuesday weekly monitoring
 
 on:
   schedule:
-    # Tuesday 10:15 Asia/Shanghai / 09:15 WIB.
-    - cron: "15 2 * * 2"
+    # 目标周二 09:53 Asia/Shanghai（01:53 UTC）。避开整点排队高峰，理由见
+    # daily-risk-alerts.yml 与 AUTOMATIONS.md「定时不是准点」一节。
+    - cron: "53 1 * * 2"
   workflow_dispatch:
 
 permissions:
