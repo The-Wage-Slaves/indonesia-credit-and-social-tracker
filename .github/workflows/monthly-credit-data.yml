@@ -13,8 +13,6 @@ concurrency:
   group: monthly-credit-data
   cancel-in-progress: false
 
-env:
-
 jobs:
   collect-stage-and-notify:
     runs-on: ubuntu-latest
