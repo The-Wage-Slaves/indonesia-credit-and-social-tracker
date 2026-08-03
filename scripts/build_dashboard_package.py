@@ -9,6 +9,7 @@ import os
 import pathlib
 import posixpath
 import re
+import subprocess
 import zipfile
 
 
@@ -27,6 +28,10 @@ INCLUDE_DIRS = (
     "stability-monitor/docs",
     "stability-monitor/scripts/output",
 )
+# 待确认产物即使已提交到 main 也不进包：包的契约是「已确认内容」，而没有任何页面
+# 引用这些 JSON——留在包里只会让拿到包的人把未复核数字当成已确认结论。
+# 注意只排除 `*-pending.json`；暗门确实要读 `p2p-pending.js` / `macro-pending.js`。
+EXCLUDE_SUFFIXES = ("-pending.json",)
 REQUIRED_MEMBERS = {
     "index.html",
     "pending.js",
@@ -42,12 +47,38 @@ REQUIRED_MEMBERS = {
 LOCAL_REF = re.compile(r"(?:href|src)=[\"']([^\"'#]+)[\"']", re.IGNORECASE)
 
 
+def tracked_paths() -> set[str]:
+    """只认 git 已跟踪的文件。
+
+    直接遍历文件系统会把工作区里的未跟踪产物一起打包——采集器写出的
+    `daily-events/*.jsonl`、`*-pending.json` 都是 humanReviewed=false 的未复核数据。
+    云端 checkout 恰好干净所以看不出问题，但那是巧合，不是保证。以 git 为准，
+    「只发布已确认并合并到 main 的内容」才是结构性成立的。
+    """
+    result = subprocess.run(
+        ["git", "-C", str(ROOT), "ls-files", "-z"],
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            "Cannot list git-tracked files; refusing to package an unverified working tree."
+        )
+    paths = {name.decode("utf-8") for name in result.stdout.split(b"\0") if name}
+    if not paths:
+        raise RuntimeError("git reported no tracked files; refusing to build an empty package.")
+    return paths
+
+
 def collect_files() -> dict[str, bytes]:
+    tracked = tracked_paths()
     files: dict[str, bytes] = {}
     for relative in INCLUDE_FILES:
         path = ROOT / relative
         if not path.is_file():
             raise FileNotFoundError(f"Required dashboard file is missing: {relative}")
+        if relative not in tracked:
+            raise ValueError(f"Refusing to package untracked file: {relative}")
         files[relative] = path.read_bytes()
     for relative_dir in INCLUDE_DIRS:
         directory = ROOT / relative_dir
@@ -57,6 +88,10 @@ def collect_files() -> dict[str, bytes]:
             if not path.is_file() or "__pycache__" in path.parts:
                 continue
             relative = path.relative_to(ROOT).as_posix()
+            if relative not in tracked:
+                continue
+            if relative.endswith(EXCLUDE_SUFFIXES):
+                continue
             files[relative] = path.read_bytes()
     files["打开看板.cmd"] = (
         '@echo off\r\nstart "" "%~dp0index.html"\r\n'
