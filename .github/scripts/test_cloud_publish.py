@@ -160,6 +160,20 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("监管介入", explanation)
 
 
+    def test_release_card_uses_stable_zip_without_local_background_service(self):
+        with mock.patch.dict(MODULE.os.environ, {"DASHBOARD_COMMIT": "abcdef123456"}):
+            summary = MODULE.release_summary()
+        payload = MODULE.feishu_payload(summary)
+        content = payload["card"]["elements"][0]["text"]["content"]
+        self.assertEqual(summary["kind"], "release")
+        self.assertIn("abcdef1", summary["title"])
+        self.assertIn("indonesia-monitor-dashboard.zip", content)
+        self.assertIn("下载最新版看板 ZIP", content)
+        self.assertNotIn("127.0.0.1", content)
+        self.assertNotIn("打开风险待确认记录", content)
+        self.assertIn("不会安装开机任务", "\n".join(summary["lines"]))
+
+
 if __name__ == "__main__":
     unittest.main()
 
