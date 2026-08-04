@@ -72,11 +72,27 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 **街头动员热度**（社会支柱的"网络政治情绪"driver输入）`scripts/street_heat.py`：6源三角测量(Google Trends双篮/Kaskus开放接口/YouTube/GDELT×2/大众RSS) + **DeepSeek反对率分类**（民间YouTube vs 媒体RSS分侧，民媒差是核心信号）→ HTML确认单+首页待确认卡。**人在环**：跑完给用户看确认单、确认后才写入 data.js。Trends/GDELT 常限流(别密集测)；YouTube/DeepSeek/Kaskus/RSS 可靠。key 在 `street_heat_config.yaml`(YouTube+DeepSeek已配)。近3周反对率 39.7→37.1→32.1%（降温）。
 
 **日频警报器**（`scripts/daily_alert.py`）：每天10:00抓当日印尼新闻(brief源+Google News定向查询) → **DeepSeek 分类**9类制度/政治骤变事件(央行独立性/关键官员更替/仓促立法/司法工具化/表外负债/评级行动/市场失序/大规模抗议/军警冲突) → 分级(红需≥2独立源；**高严重度单源=🔺高危待核**；≥0.55=橙) → 推飞书 + 写 `data/daily-events/YYYY-MM.jsonl`(`humanReviewed:false`)。
-- **执行位置：云端**（GitHub workflow `daily-risk-alerts.yml`，cron `0 2 * * *` = GMT+8 10:00）→ 产物提交到 **`bot/daily-risk-alerts` 分支**（不进 main），推送统一走 `cloud_publish.py`（`normal` 静默）。
+- **执行位置：云端**（GitHub workflow `daily-risk-alerts.yml`，cron `43 1 * * *` = 目标 GMT+8 **09:43**）→ 产物提交到 **`bot/daily-risk-alerts` 分支**（不进 main），推送统一走 `cloud_publish.py`（`normal` 静默）。
+- **cron 不是准点，且不得改回整点**：GitHub 的 schedule 在整点排队最严重，2026-07-31~08-02 连续三天实测 `0 2 * * *` 的实际启动是 13:20/13:12/13:12（延迟约 192 分钟），所以推送才会「变成下午 1 点」。已移到非整点并由 `validate_repo.mjs` 固化「分钟位不得为 0」。排查推送时间先看 Actions 实际启动时间，别假设 cron 准点。详见 `AUTOMATIONS.md`。
+- **采集工作流不得由 push 触发**：PR #10 曾给三个采集工作流加过 `push:`，导致每个提交都跑一遍采集、十几次连续失败，并把当天排队中的定时运行挤掉（2026-08-03 整天没跑）。已固化为不变量。
 - **`daily-events/` 不可加入 .gitignore**——被忽略会让 workflow 的 `git add` 静默失败、判定「无变化」而永不上云（2026-07-30 踩过此坑）。
-- **存在意义**：① 补数据置信版触发器只覆盖【灾难型】事件(实弹/死亡)的盲区，专抓【渐进式制度骤变】；② 周频人工检索会漏事件——**实证**：2026-07-26 BI行长Perry Warjiyo提前两年辞职被 07-28 周更漏掉(当时只查"利率决议")，由本引擎捕获后于 07-29 补入本周快照(制度 37→35)。
+- **存在意义**：① 补数据置信版触发器只覆盖【灾难型】事件(实弹/死亡)的盲区，专抓【渐进式制度骤变】；② 周频人工检索会漏事件——**实证**：2026-07-26 BI行长Perry Warjiyo提前两年辞职被 07-28 周更漏掉(当时只查"利率决议")，由本引擎于 07-28 捕获。
+- **⚠️ 但捕获≠入账**：上述事件被引擎抓到后**并没有写进评分**——data.js 的 weekly 在 07-22/28/30 三期制度分都是 37 从未动过，直到 2026-08-04 周更才补记(制度 37→35、货币政策可信度 40→30)。本文件此前写着「07-29 已补入快照」，与数据不符。**引擎负责不漏检，写入评分仍是独立的人工步骤，两者不可互相假定。** 周更时必须核对：本周日频证据池里的红/高危事件，是否每一条都在 data.js 里有对应的 driver 变动或明确的"不计分"理由。
 - **已知局限**：DeepSeek 常把同一事件多家报道合并成一条，导致独立源计数偏低→重大事件多落"高危待核"而非红色。**这是刻意的保守取舍**（宁可让人去看，不让机器自行升红）。
 - **铁律**：只推送/写证据池，**绝不改 data.js**；事件需人工复核后才能作为评分依据。
+- **地域门（2026-08-04 起）**：信源池混有国际新闻，曾把巴基斯坦警察局爆炸、摩洛哥移民事件判成印尼稳定性事件并标 🔺高危待核。提示词要求输出 `country`，非印尼一律剔除。
+
+**信贷日频裁定链**（`credit-tracker/sentiment-monitor/event_intelligence.py`，2026-08-04 重建，PR #15）：
+同属 `daily-risk-alerts.yml`，但与稳定性侧是两套逻辑。**关键词只负责召回，不再决定类型与严重度**：
+
+① 粗筛（`CANDIDATE_TERMS`，上限 `MAX_CANDIDATES=40`）→ ② 抓正文（失败留痕 `bodyStatus`，退回标题判断而非丢弃）→ ③ **一次 DeepSeek 调用**读正文判定：是否「具体发生的事件」（科普提醒/观点评论/个人轶事/营销稿一律排除），并按机构与当事人**归组** → ④ 社媒按实体词交叉验证（未采到补 `null` 而非 0）→ ⑤ 三档裁定。
+
+- **裁定门**：证据充分（≥2 独立来源 **或** 含原始来源）**且**社媒 ≥3 条提及 → `red`；仅证据充分 → `high_pending`；其余 → `lowEvidenceLeads`（写入待确认文件供周评查阅，**不推飞书、不抬高当日 level**）。
+- **为什么必须由 LLM 归组**：旧的 `automatic_event_id` 按「标题前 9 词指纹」分组，同一事件换个措辞就各算一条——2026-08-02 当天 109 条事件**全部** `independentSourceCount == 1`，证据门无从谈起。
+- **`acknowledged-events.json`**：人工登记已处置的事件 id，不再重复推送。事件只要还在采集窗口内就会天天重新聚类出来、级别也不变，没有这张表就会天天重推同一条。**脚本只读不写，确认动作由人做。**
+- **降级契约**：裁定层跑不起来（缺 key/调用失败）时 `level=degraded`，卡片明写「今天的无事件是**没判出来**、不是没有风险」。**不得把「没判出来」呈现为「没有风险」。**
+- **成本旋钮**：`MAX_CANDIDATES`（40）与 `MAX_BODY_CHARS`（1200）在模块顶部。满负荷 prompt 约 5.5 万字符 ≈ 2.2 万 token，**每天只调 1 次**（全部候选合并进同一 prompt）。
+- **待校准**：红色要求的「社媒 ≥3 条提及」是拍的。若真事件长期卡在 `high_pending` 上不去红，先怀疑这个阈值或社媒覆盖率。
 
 **周更流程**：⓪ **先取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
 `git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照 → `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
@@ -88,8 +104,10 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 定时任务、执行器、人工确认点和飞书推送边界以根目录 `AUTOMATIONS.md` 为单一真源；例行数据不得创建 PR。
 
 - **GitHub 私有仓**（含竞对数据+政治分析，**保持私有**）。离线备份 bundle 在 `D:\...\100 Dashboard with AI\`。Pages 私有仓需 Pro，默认禁用（`deploy-pages.yml` 是禁止误发布的守卫）。
+- **看板交付＝滚动 Release ZIP**（2026-08-03 起，PR #14）：`main` 上看板/数据路径变化后，`publish-dashboard-package.yml` 构建 `indonesia-monitor-dashboard.zip` 覆盖 Release tag `dashboard-latest`，飞书发固定下载链接。解压双击 `index.html` 即用（已验证 `file://` 下三个页面含 Recharts 图表全部正常渲染）。**本机不装开机服务、不轮询。** 下载者需登录 GitHub 且有本仓只读权限。
+  - 打包**以 `git ls-files` 为准**，不是遍历文件系统——否则会把工作区里未跟踪的 `daily-events/*.jsonl`、`*-pending.json` 等 `humanReviewed:false` 数据一起发出去（云端 checkout 干净只是巧合）。另排除无人引用的 `*-pending.json`。已由 `test_build_dashboard_package.py` 固化。
 - **CI** `.github/workflows/validate.yml` → `.github/scripts/validate_repo.mjs`：每次 PR/push 校验 JS/Python 语法、pending.json↔js 一致、链接安全、五支柱权重和=1/支柱分=加权和/provenance、数据置信版 comparison/history 一致。**改 data.js 或 v4 后本地先跑它。**
-- **周更提醒**：本机 Windows 计划任务 `IndoStabilityWeeklyReminder`，每周二10:00(本机时区≈GMT+8)跑 `E:\AI Tools\CC\Work Session\indo_news\weekly_stability_reminder.py`(复用 indo_news 的飞书机器人+`.env` 里 FEISHU_WEBHOOK_URL/FEISHU_SIGN_SECRET)推飞书提醒卡。用户收到后回 CC/Codex 手动周更。
+- **本机计划任务已全部停用**（2026-08-04）：`IndoStabilityDailyAlert`、`IndoStabilityWeeklyReminder` 均为 `Disabled`，日/周/月全部由云端工作流承担。停用前它们其实**已经推不出飞书**（`run.log` 里 `! 未找到飞书 webhook，跳过推送`，最后一次成功推送停在 07-30），处于「照跑、照写本地证据池、就是不推」的静默失效状态——所以用户每天收到的那一条一直来自云端。**别再把本机任务当作云端的备份**；要恢复得先修 webhook 读取，且注意与云端重复推送。
 - **待确认工作流**：脚本写 `pending.json`+`pending.js`（各 producer 用 `source` 标记，勿覆盖对方）；首页 index.html 读取展示，各条带确认单链接。
 - **Codex 加固(已合)**：原子写入、防提示注入(analyze.py)、XSS转义(index.html)、抓取覆盖率门槛、xlsx换SheetJS补丁版、validate_repo CI。
 
@@ -106,6 +124,9 @@ credit-tracker/
   p2p-scraper/scraper.mjs                    9家P2P抓取(8 Playwright + KrediOne API)
   update_credit.py                           月度取数(BI/OJK/Shopee)
   sentiment-monitor/credit_sentiment.py      周度新闻+社媒恐慌指数(pending待审)
+  sentiment-monitor/credit_daily_alert.py    信贷日频告警(调下面的裁定层)
+  sentiment-monitor/event_intelligence.py    ★裁定层: 粗筛→抓正文→LLM判定归组→社媒交叉验证→三档
+  sentiment-monitor/acknowledged-events.json 已人工处置事件id(抑制重推; 脚本只读)
   PROJECT_BRIEF.md                           数据源行列映射+技术决策
 stability-monitor/
   dashboard/indonesia-stability-index-pro.html  ★全景等权版看板(外链下面两js)
@@ -119,7 +140,9 @@ stability-monitor/
   data/v4-*.json, evidence/                  数据置信版输入/历史/对比/证据台账
   docs/METHODOLOGY*.md, TIMELINE.md, ANALYSIS.md
   brief/                                     每日新闻简报(Python，与 indo_news 飞书体系相关)
-.github/scripts/validate_repo.mjs            CI不变量校验(改data.js/v4后必跑)
+.github/scripts/validate_repo.mjs            CI不变量校验(改data.js/v4/工作流后必跑)
+scripts/build_dashboard_package.py           看板下载包构建(以git ls-files为准)
+AUTOMATIONS.md                               ★定时任务+推送边界单一真源(含各种踩坑记录)
 AGENTS.md / HANDOFF.md / REVIEW.md           Codex上下文 / 当前状态 / 给人的综述
 ```
 
