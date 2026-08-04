@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
   "status": "shadow-same-date",
-  "asOf": "2026-07-30",
+  "asOf": "2026-08-04",
   "purpose": "Compare the production V3 and a confidence-aware MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
   "warning": "V3 remains official. V4 scores are a migration experiment with explicit raw-input traceability, freshness and source-quality disclosure; they do not create a replacement time series.",
   "productionData": "../dashboard/data.js",
-  "evidenceFile": "evidence/2026-07-30.json",
+  "evidenceFile": "evidence/2026-08-04.json",
   "historyFile": "v4-shadow-history.json",
   "redTriggers": {
     "coerciveScoreFloor": 25,
@@ -141,7 +141,7 @@
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 40,
+      "v3Score": 39,
       "drivers": [
         {
           "id": "inflation_expectations",
@@ -195,7 +195,7 @@
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 37,
+      "v3Score": 35,
       "drivers": [
         {
           "id": "policy_predictability",
@@ -266,7 +266,7 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 55.0,
+      "v3Score": 52,
       "drivers": [
         {
           "id": "livelihood_stress",
@@ -322,7 +322,7 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 37,
+      "v3Score": 36,
       "drivers": [
         {
           "id": "interagency_cohesion",
