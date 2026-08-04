@@ -5,9 +5,37 @@ import argparse, base64, datetime as dt, hashlib, hmac, json, os, pathlib, stati
 from typing import Any
 from urllib.request import Request, urlopen
 import credit_sentiment as monitor
+import event_intelligence as intel
 
 HERE = pathlib.Path(__file__).resolve().parent
 OUTPUT = HERE / "output" / "daily-credit-alert-pending.json"
+ACKNOWLEDGED = HERE / "acknowledged-events.json"
+
+# 只有真实事件类才配打扰人。general_sentiment / industry_update 一类是话题热度，
+# 不是事件；credit_quality_stress 走周度指数，不走日频警报。
+ALERTABLE_EVENT_TYPES = {
+    "regulatory_action",
+    "consumer_harm",
+    "systemic_platform_stress",
+    "fraud_or_illegal_practice",
+}
+
+
+def load_acknowledged() -> set[str]:
+    """已人工处置的事件 id，不再重复推送。
+
+    事件只要还在采集窗口里就会天天重新聚类出来，级别也不会变；没有这张表，
+    一条确认过的事件会一直每天推一次。确认动作仍然是人做的，脚本只读不写。
+    """
+    try:
+        data = json.loads(ACKNOWLEDGED.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return {
+        str(entry["id"])
+        for entry in (data.get("events") or [])
+        if isinstance(entry, dict) and entry.get("id")
+    }
 
 
 def daily_counts(items: list[dict[str, Any]], day: dt.date, days: int = 8) -> list[int]:
@@ -32,20 +60,40 @@ def daily_volume_risk(counts: list[int]) -> tuple[float, str]:
 def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
                          social_items: list[dict[str, Any]],
                          source_health: dict[str, dict[str, Any]],
-                         classifier: dict[str, Any]) -> dict[str, Any]:
+                         classifier: dict[str, Any],
+                         config: dict[str, Any] | None = None) -> dict[str, Any]:
     articles = monitor.enrich_articles(articles)
     social_items = monitor.enrich_social_items(social_items)
     start = day - dt.timedelta(days=1)
     recent_news = [x for x in articles if start <= monitor.parse_date(x["date"]) <= day]
     recent_social = [x for x in social_items if start <= monitor.parse_date(x["date"]) <= day]
-    events = monitor.cluster_events(recent_news, recent_social)
-    verified = [
-        event for event in events
-        if event["eventType"] in {"regulatory_action", "consumer_harm", "systemic_platform_stress"}
-        and event["severity"] >= 0.8 and event["hasPrimarySource"]
-        and event["independentSourceCount"] >= 2
-    ]
-    high_pending = [event for event in events if event["severity"] >= 0.8 and event not in verified]
+    acknowledged = load_acknowledged()
+
+    # 裁定链：关键词粗筛保召回 → 抓正文 → LLM 判定并归组 → 社媒交叉验证 → 三档裁定。
+    # 关键词不再决定严重度，只负责挑送审对象；聚类由读过正文的模型按实体做，
+    # 否则同一事件换个措辞就各算一条，independentSourceCount 恒为 1（2026-08-02
+    # 实测 109 条事件全是 1 个来源），证据门形同虚设。
+    candidates = intel.select_candidates(recent_news)
+    body_stats = intel.attach_bodies(candidates) if candidates else {}
+    llm_events, llm_diag = intel.adjudicate(candidates, config or {})
+    llm_ok = llm_diag.get("status") in {"ok", "partial"}
+
+    if llm_ok:
+        intel.cross_check_social(llm_events, recent_social)
+        buckets = intel.classify(llm_events, acknowledged)
+        verified, high_pending, leads = (
+            buckets["verified"], buckets["pending"], buckets["leads"],
+        )
+        events = llm_events
+    else:
+        # 裁定层不可用时不假装今天没有风险，也不拿关键词结果冒充判定：
+        # 全部降级为线索，并由 level=degraded 让卡片明确说出「本次未完成裁定」。
+        events = [
+            event for event in monitor.cluster_events(recent_news, recent_social)
+            if event.get("id") not in acknowledged
+        ]
+        verified, high_pending = [], []
+        leads = [event for event in events if event["severity"] >= 0.8]
     news_risk, news_note = daily_volume_risk(daily_counts(articles, day))
     social_risk, social_note = daily_volume_risk(daily_counts(social_items, day))
     _, negative_share = monitor.weighted_sentiment(recent_social, social=True)
@@ -60,6 +108,10 @@ def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
     level = "red" if verified else (
         "high_pending" if high_pending else ("amber" if cross_spike else "normal")
     )
+    # 裁定层没跑成时，「没有事件」是不成立的推断——必须显式说出降级，
+    # 让人知道今天的静默是「没判」而不是「没事」。
+    if not llm_ok and level == "normal" and candidates:
+        level = "degraded"
     successful = [
         key for key in monitor.SOURCE_CATALOG
         if source_health.get(key, {}).get("status") == "ok"
@@ -76,6 +128,13 @@ def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
         },
         "notes": {"newsVolume": news_note, "socialVolume": social_note},
         "verifiedRedEvents": verified, "highRiskPendingEvents": high_pending,
+        "lowEvidenceLeads": leads,
+        "acknowledgedSuppressedCount": len(acknowledged),
+        "eventAdjudication": {
+            **llm_diag,
+            "articleBodyStatus": body_stats,
+            "socialCrossCheck": "applied" if llm_ok else "skipped",
+        },
         "events": events,
         "coverage": {
             "successfulChannels": successful,
@@ -88,9 +147,15 @@ def build_daily_decision(day: dt.date, articles: list[dict[str, Any]],
         },
         "socialClassifier": classifier,
         "rule": (
-            "Red requires severity>=0.8, a primary source and >=2 independent sources. "
-            "High-severity events below the gate remain high-risk pending. Amber requires "
-            "simultaneous robust news/social spikes, >=65% negative share and >=2 platforms."
+            "Keyword matching only selects candidates. An LLM reads the fetched article "
+            "body, decides whether each item is a concrete event (rejecting advisories, "
+            "opinion and personal anecdotes), and groups reports of the same event so "
+            "independent-source counts are real. Red requires an alertable type, "
+            "severity>=0.75, corroboration (>=2 independent sources or a primary source) "
+            "and >=3 matching social mentions. Without the social echo the same evidence "
+            "stays high-risk pending. Everything else is a low-evidence lead that is "
+            "recorded but never pushed. Acknowledged event ids are suppressed. If "
+            "adjudication cannot run, the day is reported as degraded rather than normal."
         ),
         "reviewRequired": True,
     }
@@ -100,6 +165,8 @@ def feishu_payload(decision: dict[str, Any]) -> dict[str, Any]:
     template, label = {
         "red": ("red", "🔴 红色警报"), "high_pending": ("orange", "🔺 高危待核"),
         "amber": ("orange", "🟠 异常升温"), "normal": ("green", "🟢 无异常"),
+        # 「没判成」不是「没事」，用灰色与其余级别区分开，别混进绿色。
+        "degraded": ("grey", "⚪ 裁定未完成"),
     }[decision["level"]]
     signals, coverage = decision["signals"], decision["coverage"]
     lines = [
@@ -159,6 +226,7 @@ def main() -> int:
         fixture = json.loads(args.fixture.read_text(encoding="utf-8"))
         articles, social_items = fixture.get("articles", []), fixture.get("socialItems", [])
         health, classifier = fixture.get("sourceHealth") or {}, {"method": "fixture", "status": "not_run"}
+        config = {}
     else:
         config = monitor.merge_nonempty_config(
             monitor.load_yaml(monitor.SHARED_CONFIG),
@@ -168,7 +236,7 @@ def main() -> int:
             day, config, after=day - dt.timedelta(days=14), before=day + dt.timedelta(days=1)
         )
         social_items, classifier = monitor.classify_social_with_deepseek(social_items, config)
-    decision = build_daily_decision(day, articles, social_items, health, classifier)
+    decision = build_daily_decision(day, articles, social_items, health, classifier, config)
     if args.write_output:
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         OUTPUT.write_text(json.dumps(decision, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

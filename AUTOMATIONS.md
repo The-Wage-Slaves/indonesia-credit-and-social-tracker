@@ -48,6 +48,28 @@ PR #10 的分支一度给三个采集工作流加了 `push:` 触发器，结果�
 
 采集类工作流只能由 `schedule` 与 `workflow_dispatch` 触发，已固化为不变量。
 
+### 严重度不等于证据：日频告警的三道门
+
+信贷侧的 `severity` 来自 `event_profile` 的**关键词匹配，只看标题**——一篇「小心网贷
+高息、会被催收恐吓」的科普文和一条真实催收恐吓事件同样命中 `teror`，都是 0.86。
+2026-08-02 实测推送的三条里，两条是科普提醒和个人转述，一条是已确认过的旧事件，
+三条都只有单一来源、无原始来源。
+
+因此 `high_pending` 除严重度外还必须同时满足：
+
+1. **事件类型门**：`eventType` 属于 `ALERTABLE_EVENT_TYPES`。`general_sentiment`、
+   `industry_update` 是话题热度不是事件；`credit_quality_stress` 走周度指数。
+2. **证据门**：`independentSourceCount >= 2` **或** `hasPrimarySource`。
+3. **已确认抑制**：id 在 `credit-tracker/sentiment-monitor/acknowledged-events.json`
+   里的不再推送——事件只要还在采集窗口内就会天天重新聚类出来，没有这张表就会天天重推。
+   **确认动作由人做，脚本只读不写。**
+
+达到严重度但过不了门的进 `lowEvidenceLeads`：写入待确认文件供周评查阅，**不推飞书、
+不抬高当日 level**。卡片只报折叠数量，不隐瞒也不打扰。
+
+稳定性侧另有地域门：信源池混有国际新闻，2026-08-03 实测把巴基斯坦警察局爆炸和摩洛哥
+移民事件判成了印尼稳定性事件并标为高危待核。提示词要求输出 `country`，非印尼一律剔除。
+
 ### 产物路径不得被 .gitignore 排除
 
 云端工作流以 `git add <路径>` 把待确认产物提交到 `bot/*` 分支。若该路径被
