@@ -184,14 +184,41 @@ const comparisonFromJs = JSON.parse(comparisonJs.slice('const V4_COMPARISON = '.
 assert(JSON.stringify(comparisonFromJs) === JSON.stringify(comparison), 'V4 comparison JSON and JS differ');
 assert(JSON.stringify(comparisonLatest) === JSON.stringify(comparison), 'V4 latest and dated comparison JSON differ');
 assert(comparison.asOf === v4Input.asOf && comparison.status === 'review-only-shadow', 'V4 comparison metadata is invalid');
-assert(comparison.official.composite === 43.4, 'Official V3 composite changed');
-assert(comparison.reweightedBaseline.composite === 45.0, 'V3 same-weight baseline is invalid');
-assert(comparison.shadow.composite === 46.5 && comparison.shadow.delta === 1.5, 'V4 confidence-aware shadow result is invalid');
-assert(comparison.measurement.confidence === 0.659, 'V4 evidence-quality result is invalid');
-assert(comparison.measurement.availabilityQuality === 0.741, 'V4 availability-quality result is invalid');
-assert(comparison.measurement.freshnessQuality === 0.962, 'V4 freshness-quality result is invalid');
-assert(comparison.measurement.sourceDirectness === 0.693, 'V4 source-directness result is invalid');
-assert(comparison.measurement.rawTraceabilityWeight === 0.688, 'V4 raw-traceability result is invalid');
+// 这些数字每周都会合法变化，钉死某一期的值会让每次周更都红灯（2026-08-04 踩过）。
+// 改为校验内部一致性与取值域：算得对、与生产口径一致、落在合法区间。
+const officialPillarScores = Object.values(comparison.official.scores ?? {});
+assert(officialPillarScores.length === 5, 'V3 official comparison must carry five pillars');
+const officialMean = officialPillarScores.reduce((sum, value) => sum + value, 0) / 5;
+assert(
+  Math.abs(comparison.official.composite - officialMean) < 0.05,
+  `Official V3 composite ${comparison.official.composite} is not the equal-weight mean ${officialMean.toFixed(2)}`,
+);
+assert(
+  comparison.official.displayScore === Math.round(officialMean),
+  'V4 comparison displayScore must be the rounded official composite',
+);
+for (const pillar of stabilityContext.__DATA.pillars) {
+  assert(
+    comparison.official.scores[pillar.id] === pillar.score,
+    `V4 comparison official ${pillar.id} drifted from production data.js`,
+  );
+}
+assert(
+  comparison.shadow.composite > 0 && comparison.shadow.composite < 100,
+  'V4 shadow composite out of range',
+);
+assert(
+  Math.abs(comparison.shadow.delta - (comparison.shadow.composite - comparison.reweightedBaseline.composite)) < 0.05,
+  'V4 shadow delta must equal shadow minus same-weight baseline',
+);
+for (const [name, value] of Object.entries(comparison.measurement)) {
+  if (typeof value !== 'number') continue;
+  assert(value >= 0 && value <= 1, `V4 measurement ${name} out of [0,1]: ${value}`);
+}
+assert(
+  comparison.measurement.confidence <= comparison.measurement.availabilityQuality,
+  'V4 confidence cannot exceed availability quality',
+);
 assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
 assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'V4 history shorter than four weeks must mark the rapid-drop trigger as not evaluable');
 

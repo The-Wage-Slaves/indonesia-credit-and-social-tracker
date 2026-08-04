@@ -51,6 +51,23 @@
       "activeTriggerIds": [],
       "status": "provisional-shadow",
       "confirmed": true
+    },
+    {
+      "date": "2026-08-04",
+      "scores": {
+        "fiscal": 52.2,
+        "currency": 44.6,
+        "institutions": 36.9,
+        "social": 48.5,
+        "coercive": 37.3
+      },
+      "composite": 45.6,
+      "measurementConfidence": 0.741,
+      "triggerLevel": "normal",
+      "activeTriggerIds": [],
+      "status": "provisional-shadow",
+      "confirmed": true,
+      "humanConfirmed": true
     }
   ]
 }

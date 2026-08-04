@@ -1,11 +1,11 @@
 const V4_COMPARISON = {
   "schemaVersion": 1,
   "status": "review-only-shadow",
-  "asOf": "2026-07-30",
+  "asOf": "2026-08-04",
   "official": {
     "methodology": "V3",
-    "composite": 43.4,
-    "displayScore": 43,
+    "composite": 42.0,
+    "displayScore": 42,
     "pillarWeights": {
       "fiscal": 0.2,
       "currency": 0.2,
@@ -15,15 +15,15 @@ const V4_COMPARISON = {
     },
     "scores": {
       "fiscal": 48.0,
-      "currency": 40.0,
-      "institutions": 37.0,
-      "social": 55.0,
-      "coercive": 37.0
+      "currency": 39.0,
+      "institutions": 35.0,
+      "social": 52.0,
+      "coercive": 36.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 45.0,
+    "composite": 43.6,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -34,8 +34,8 @@ const V4_COMPARISON = {
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 46.5,
-    "delta": 1.5,
+    "composite": 45.6,
+    "delta": 2.0,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -46,11 +46,11 @@ const V4_COMPARISON = {
     "publicationStatus": "provisional-shadow"
   },
   "measurement": {
-    "confidence": 0.659,
+    "confidence": 0.662,
     "label": "evidence quality index; not a probability of correctness",
     "availabilityQuality": 0.741,
-    "freshnessQuality": 0.962,
-    "sourceDirectness": 0.693,
+    "freshnessQuality": 0.961,
+    "sourceDirectness": 0.706,
     "rawTraceabilityWeight": 0.688,
     "lowConfidenceWeight": 0.17,
     "missingWeight": 0.038,
@@ -111,9 +111,9 @@ const V4_COMPARISON = {
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
-      "measurementConfidence": 0.756,
+      "measurementConfidence": 0.754,
       "availabilityQuality": 0.815,
-      "freshnessQuality": 0.999,
+      "freshnessQuality": 0.992,
       "sourceDirectness": 0.79,
       "rawTraceabilityWeight": 0.9,
       "nonOrdinalPlannedWeight": 0.9,
@@ -137,8 +137,8 @@ const V4_COMPARISON = {
           ],
           "evidenceClass": "statistical",
           "availability": "medium",
-          "evidenceQuality": 0.643,
-          "freshnessQuality": 0.996,
+          "evidenceQuality": 0.634,
+          "freshnessQuality": 0.975,
           "sourceDirectness": 0.65,
           "observationIds": [
             "fiscal_public_finance_2026q1"
@@ -243,8 +243,8 @@ const V4_COMPARISON = {
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 40.0,
-      "v4ShadowScore": 45.6,
+      "v3Score": 39.0,
+      "v4ShadowScore": 44.6,
       "delta": 5.6,
       "coverage": 0.85,
       "missingWeight": 0.15,
@@ -288,15 +288,15 @@ const V4_COMPARISON = {
           "id": "fx_stress",
           "label": "汇率压力",
           "weight": 0.3,
-          "score": 38.0,
+          "score": 35.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "USD_IDR_ytd_depreciation",
-              "value": -10.2,
+              "value": "18,025 IDR/USD; about -11.2 percent year to date",
               "unit": "percent",
               "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
-              "score": 38,
+              "score": 35,
               "weight": 1
             }
           ],
@@ -359,16 +359,16 @@ const V4_COMPARISON = {
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 37.0,
+      "v3Score": 35.0,
       "v4ShadowScore": 36.9,
-      "delta": -0.1,
+      "delta": 1.9,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
-      "measurementConfidence": 0.63,
+      "measurementConfidence": 0.654,
       "availabilityQuality": 0.715,
       "freshnessQuality": 1.0,
-      "sourceDirectness": 0.7,
+      "sourceDirectness": 0.79,
       "rawTraceabilityWeight": 0.25,
       "nonOrdinalPlannedWeight": 0.9,
       "pillarWeight": 0.15,
@@ -445,9 +445,9 @@ const V4_COMPARISON = {
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
-          "evidenceQuality": 0.645,
+          "evidenceQuality": 0.75,
           "freshnessQuality": 1.0,
-          "sourceDirectness": 0.65,
+          "sourceDirectness": 1.0,
           "observationIds": [
             "institutional_checks_2026_07"
           ],
@@ -463,9 +463,9 @@ const V4_COMPARISON = {
           "scoreInputs": [],
           "evidenceClass": "ordinal",
           "availability": "low",
-          "evidenceQuality": 0.344,
+          "evidenceQuality": 0.376,
           "freshnessQuality": 1.0,
-          "sourceDirectness": 0.65,
+          "sourceDirectness": 0.85,
           "observationIds": [
             "elite_continuity_2026_07"
           ],
@@ -477,9 +477,9 @@ const V4_COMPARISON = {
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 55.0,
-      "v4ShadowScore": 51.0,
-      "delta": -4.0,
+      "v3Score": 52.0,
+      "v4ShadowScore": 48.5,
+      "delta": -3.5,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.4,
@@ -549,15 +549,15 @@ const V4_COMPARISON = {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
           "weight": 0.25,
-          "score": 63.0,
+          "score": 53.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "street_heat_and_opposition_proxy",
-              "value": "heat 26.2 -> 69; opposition 39.6% -> 55; coverage 4/6",
+              "value": "heat 38.6; opposition 50.2 percent",
               "unit": "crawler composite",
               "transform": "60pct_heat_score_plus_40pct_opposition_score",
-              "score": 63,
+              "score": 53,
               "weight": 1
             }
           ],
@@ -595,9 +595,9 @@ const V4_COMPARISON = {
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 37.0,
+      "v3Score": 36.0,
       "v4ShadowScore": 37.3,
-      "delta": 0.3,
+      "delta": 1.3,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.3,
@@ -684,7 +684,7 @@ const V4_COMPARISON = {
       ]
     }
   ],
-  "evidenceFile": "evidence/2026-07-30.json",
+  "evidenceFile": "evidence/2026-08-04.json",
   "caveats": [
     "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
     "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",
