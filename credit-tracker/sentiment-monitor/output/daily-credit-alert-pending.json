@@ -1,0 +1,1237 @@
+{
+  "schemaVersion": 1,
+  "status": "pending-human-review",
+  "date": "2026-08-04",
+  "level": "normal",
+  "signals": {
+    "newsDailyVolumeRisk": 19.6,
+    "socialDailyVolumeRisk": 27.5,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
+    "crossChannelSpike": false
+  },
+  "notes": {
+    "newsVolume": "today=2; prior-7d median=26.0; robust z=-2.02",
+    "socialVolume": "today=2; prior-7d median=71.0; robust z=-1.50"
+  },
+  "verifiedRedEvents": [],
+  "highRiskPendingEvents": [],
+  "events": [
+    {
+      "id": "auto-686c0f7ee0e75f90",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "bdbc186df3f58359"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "pasardana.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Danamon dan OJK Bersatu, Bekali Pelajar Hadapi Pinjol Ilegal hingga Judi Online Lewat Literasi Keuangan di Jambi - pasardana.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-b4257cdd64088c05",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "1c8b9d840dbbcfe2"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "makassar.terkini.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pengaduan Pinjol Dominasi Layanan OJK Sulselbar, Makassar Jadi Daerah Terbanyak Kasus Scam - Makassar Terkini",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-c2145604bbcace46",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "059b2f514bf7c9ec"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "rakyatsulsel.fajar.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Catat 11.126 Laporan Korban Scam dan Pinjol Ilegal di Sulsel, Makassar Tertinggi - Rakyat Sulsel",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-2668bdf8d36a7025",
+      "eventType": "credit_quality_stress",
+      "severity": 0.58,
+      "articleIds": [
+        "d1cadd317e841a75"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "amp.kontan.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Risiko Gagal Bayar, Pefindo Pangkas Rating ADHI & Masukkan CreditWatch Negatif - KONTAN",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-04aba573415f3d1b",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "7e12791c32ce2cc7"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Masalah perceraian agak melebar karna bnyk org ikut komentar dlm masalah kita.kalau sarwendah  mau diam aja.karna kalau ",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-0a2f4f7c7eed2ed2",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "3319d7c7678c819b"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Ruben memperjuangkan sarwendah, lalu sarwendah menjerumuskan ruben😢\nKalo gak nikah sama ruben, belum tentu rakyat Indone",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-0aa527d52db442c6",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "776de62321ace75d"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Ngadi2 nih si sarden , pandai kali mngarang  cerita",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-0e5dbc43d5162352",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "f0b313515bf823ce"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "SARWEDAH   SELEBRITI PANSOS Sembako di Lampung Merah 😂😂😂😂😂",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-115c4060d99830d6",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "4a50baa924a35d6b"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "sabar ya mas...\nTuhan kasih sehat dan rejeki lancar...amin",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-13c09f00170498b7",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "5f6b6a48a8abcc91"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Alhamdulilah banyak yang sayang dan dukung Ruben Onsu.\nSemoga Allah Subhanahu wa ta'ala Senantiasa menjagamu di manapun ",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-1df3e390cc00a73c",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "5ed5c600682d26b7"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Orang hutang masak mau ngomong2",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-22723c15ff11fc43",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "4af7690c7d84e218"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "herald.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Tak Terima Difitnah, Ruben Onsu Siap Polisikan Penyebar Isu HIV Hingga Pinjol - Herald ID",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-23e6a8bdd63a82f7",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "039cfd8ee311eb7c"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "wartaekonomi.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Warga RI Makin Banyak Utang di Pinjol, Nilainya Tembus Rp105 Triliun - Warta Ekonomi",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-2591c8eec6c59109",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "d63c8f4634bbe23d"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "bogor.pojoksatu.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "AMPUN! Utang PayLater Masyarakat Indonesia Semakin Membengkak, Kebanyakan Terlibat Utang untuk Makan - Pojok Bogor - Pojok Bogor",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-518a7800def20abc",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "ead354f457570f8a"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Itu rekasa sarkawi  untuk menjatuh kan ro ...,hukum karma akan berbalik ...",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-54177c450a47c082",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "f0979e42fe2c6e08"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "sumateraekspres.bacakoran.co"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "CekNIKKTPTerdaftarPinjolatauTidakIniCaraResmiyangBisaDilakukanLewatOJK - https://sumateraekspres.bacakoran.co/ - Sumatera Ekspres",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-54f6d79098a91235",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "29c9a33176a673ef"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Gk usah bela sapapun..org luar bahkan tmn deket pun blum tentu tau bobroknya seseorang",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-56958b10dfb34cfd",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "76e6c8ac614877d8"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Si cong benar2 hebat😂😂",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-614ba380230c91c0",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "6d15a406592c6136"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Yg dukung Ruben angkat jempolnya donk sukses selalu ya' semua nya dan Endah pusing bingung cari perhatian mungkin mau' m",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-6471e8ec52e28a70",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "fd2e494a111e0645"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "muhammadiyah.or.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Maraknya Judol dan Pinjol, Muhammadiyah Tekankan Literasi Digital dan Peran Keluarga - Muhammadiyah",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-6630223c600a4493",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "a0fbfb944c69b36f"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Sarkawi sndr kali",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-711623d14b868423",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "1a2ad1c611294dc7"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Lebih percaya ruben",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-713b006bfdecd057",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "1ce03a2408412120"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "pasardana.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "AdaKami Sabet Penghargaan Bergengsi, Diakui sebagai Pindar Paling Transparan dan Bertanggung Jawab - pasardana.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-7a2d493d79ee85b7",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "58724ba882460cfe"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Kalo Ruben Nunggak.. harusnya Sarwendah yg udh banyak menikmati Keringat Ruben.. Bantu Angsur dong...",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-7cd7369100ad2071",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "c02a0a4a2f7a2650"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "cumicumi.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Ruben Tantang Bukti Tudingan Sarwendah Soal Pinjol | Intens Investigasi | Eps 7006 - Cumicumi",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-86ce4b3359adc0b9",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "81b6be2611e14502"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "achmadnurhidayat.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Ruben Onsu Ancam Jalur Hukum Penyebar Isu HIV dan Pinjol - achmadnurhidayat.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-877e67858794bf67",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "1deccab1ad0708ee"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "medan.kompas.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pemerasan Modus Kencan Sesama Jenis di Medan, Data Korban Dipakai untuk Pinjol - Kompas.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-943aa814f17d1eec",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "e8147c3a66da7f54"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "medcom.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Dituding Terlilit Pinjol hingga Idap HIV, Ruben Onsu Ancam Tempuh Jalur Hukum - Medcom.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-94f2bad7ab88542e",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "64b49a2f70ef430c"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Smoga ruben cepat dapat jodoh lagi yg baik lahir dan batin!!!!biar mbak sarw mkin kriting rambutnya😅",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-9926af9790f836d7",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "1f0d47239847f859"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "sudutpandang.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Wakil Ketua DPRD Kabupaten Tangerang Sorot Persoalan Sosial Dampak Pinjol Berujung Cerai - Sudutpandang.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a1a0b93dd3eaa454",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "ce6cc7f1a887ecf5"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "metrotvnews.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Populer Ekonomi: Penyaluran Bantuan Beras Mulai 17 Agustus hingga Daftar Pinjol Resmi - metrotvnews.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a43e1a6edd65243b",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "0d3975fcca43b3cc"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Sw harus kena pasal pencemaran nama baik",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a50d026073e8b599",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "20ecb91a7fa27dba"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Pencemaran nama baik, laporkan saja Sarwendah itu!!!",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-aa26b9cda5a0a2d4",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "1d3366a6bee67915",
+        "0442ca6dc5f0531c",
+        "ade97b9e827f04ce",
+        "e02149a4bbd0a24e"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 4,
+      "domains": [
+        "antaranews.com",
+        "harianbanten.com",
+        "kalbar.antaranews.com",
+        "prnewswire.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "AdaKami Raih Penghargaan Top Company in Transparent & Responsible P2P Lending di Indonesia - ANTARA News",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-aacfe01d1bbf82a2",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "148303aae4bad27d"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Akun aku kw",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-adb872e578ee9fab",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "21506f495a99c3c8"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Tdk percaya klo ruben punya hutang pinjol...namanya bermusuhan yg bgt laah...pasti akan menjelek jelekan...bnyk orang pe",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-ae4f03c0190bab66",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "670cfb7281e999ac"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "beritasatu.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Ruben Onsu Bantah Terjerat Pinjol dan Tantang Sarwendah Lapor Polisi - BeritaSatu.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-af21c5ded4d60e30",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "9137b7c3389f926a"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Manusia yg hina adlh manusia yg melakukan apa saja demi ego mereka sampai fitnah apapun dia akan lakukan. Satu fitnahan ",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-be6e7047bce7ab2a",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "95ccf857b31918ca"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "cumicumi.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "5 Fakta Panas: RO Tantang Sarwendah Lapor Polisi Jika Isu Pinjol Benar-Benar Ancam Anak | CUMI TOP V - Cumicumi",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-c3cb66d2960b0c9a",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "d3c7f371b3442ddb"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "BUAT APA MALU KALAU PUN NGUTANG KE PINJOL..",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-c7dea2090a96e80a",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "426acd72685f0b83"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Yg sabar Bu Wendah doa para ibu waras dan anak anak cerdas menyertaimu",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-c94b3d0dc2201c65",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "e62505e8f0ade184"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "kroniktotabuan.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Wabup Deddy Minta ASN Bolsel Bijak Kelola Keuangan, Hindari Pinjol dan Judi Online - Kronik Totabuan",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-ca00f10f74097897",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "534a404f02df9f3b"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "sekatojambi.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Kapolres Tanjab Barat Pimpin Apel Pagi, Tekankan Personel Jauhi Pinjol, Narkoba dan Tingkatkan Kepercayaan Masyarakat - Sekato Jambi",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-cec016ec71b6b242",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "4781729be8a744ff"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Sarwendah SDH kebingungan mahu ngomong apa lgi..utk membela diri..",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d152cdb3a3445857",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "efd34ca5f4c408c1"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "INSERT PAGI (02/08/26): Ruben Onsu Terlilit Pinjol?, Aura Kasih Sudah Punya Pacar Baru (FULL)",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d645a3a674a2d2b3",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "82fac8894595b8d8"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "lifestyle.sindonews.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Ruben Onsu Dituding Terlilit Pinjol hingga Kena HIV, Kuasa Hukum Ancam Ambil Jalur Hukum - SINDOnews Lifestyle",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d704b812b06b4116",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "f7f1d374521711bd"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "beritabuana.co"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "GURITA BANK EMOK DAN PINJOL: Racun Sosial Ditengah Rakyat Sulit - beritabuana.co",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d73aa5d2d0659a08",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "891898ba848c02c5"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Akun kw berleliaran😂😂😂",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d74da44302f44043",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "e7bb427196e096e0"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "bangsaonline.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Dominasi Korban Pinjol Capai 42 Persen, OJK dan Pemprov Jatim Perkuat Literasi Keuangan Guru - BANGSAONLINE.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-dbace0aebbd01049",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "0a285d1fbcff838f"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Semangat Koko Ruben semoga cepat selesai di lancarkan segala urusannya amin2 yrb 🤲🤲",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e174ed733d78c180",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "4ca48565fae64eae"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Pinjol itu pinjaman dua digit dan marketnya masyarakat menengah ke bawah..laaaaaah ngapain Ruben sampe ngelakuin pinjol.",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e8266a8176094848",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "34af58356b9bf9e0"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "video.kompas.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "5 Pinjol Terdaftar OJK yang Tawarkan Bunga Rendah - video.kompas.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e85bcaee58048df1",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "81563bd80f5486bc"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "unpad.ac.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "PAMUKA 2026 Hadirkan Edukasi Bebas Pinjol bagi Mahasiswa Baru Unpad - Unpad",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-ed99c202dc39994d",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "1b404af5975faf86"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Semangat mas Ruben,abaikan  sang mantan koar2 fokus aja ke karir yg udah lama dibangun dengan keringat dan air mata",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-fa4472e5c5a888dd",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "7fdb7e188fd2cbe5"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Kita do'a in aja yg terbaik buat mereka..jgn ada narasi\" yg membuat psikologis buat anak\" mereka...kita mengasihi mereka",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "kredivo-kredifazz-purworejo-2026-07",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "bb4836ecec6d945e"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "niaga.asia"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Dalami Dugaan Tindakan Tidak Patut Petugas Penagihan PT Kredivo dan KrediFazz - Niaga.Asia",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    }
+  ],
+  "coverage": {
+    "successfulChannels": [
+      "google_news",
+      "google_trends",
+      "youtube"
+    ],
+    "failedOrUnavailableChannels": {
+      "media_rss": "Collector ran successfully but found no relevant records.",
+      "gdelt": "HTTP Error 429: Too Many Requests",
+      "kaskus": "Collector ran successfully but found no relevant records.",
+      "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
+      "x": "X_BEARER_TOKEN is not configured"
+    },
+    "articleCount48h": 30,
+    "socialItemCount48h": 29
+  },
+  "socialClassifier": {
+    "method": "deepseek_credit_social_v1",
+    "status": "ok",
+    "inputCount": 604,
+    "classifiedCount": 122,
+    "irrelevantDropped": 118,
+    "model": "deepseek-chat",
+    "fallbackCount": 364,
+    "labelCounts": {
+      "NEG": 91,
+      "MIX": 7,
+      "POS": 24
+    }
+  },
+  "rule": "Red requires severity>=0.8, a primary source and >=2 independent sources. High-severity events below the gate remain high-risk pending. Amber requires simultaneous robust news/social spikes, >=65% negative share and >=2 platforms.",
+  "reviewRequired": true
+}
