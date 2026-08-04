@@ -14,7 +14,13 @@ SPEC.loader.exec_module(MODULE)
 
 
 class CreditDailyAlertTests(unittest.TestCase):
-    def test_verified_event_is_red_and_pending(self):
+    def test_without_adjudication_the_day_is_degraded_not_red(self):
+        """裁定层不可用时不得给出确定结论——无论正反。
+
+        旧契约里这两条（含 ojk.go.id 原始来源 + 2 个独立来源）直接判红。现在红色
+        还要求 LLM 读正文确认它确实是事件、并有社媒回响；拿不到裁定就只能说
+        「本次未完成裁定」，既不报红也不报平安。
+        """
         articles = [
             {"date": "2026-07-29", "title": "OJK panggil Kredivo soal intimidasi debt collector",
              "url": "https://ojk.go.id/a", "publisherUrl": "https://ojk.go.id", "eventId": "case-1"},
@@ -24,9 +30,11 @@ class CreditDailyAlertTests(unittest.TestCase):
         ]
         result = MODULE.build_daily_decision(
             dt.date(2026, 7, 29), articles, [],
-            {"google_news": {"status": "ok"}}, {"status": "unconfigured"},
+            {"google_news": {"status": "ok"}}, {"status": "unconfigured"}, {},
         )
-        self.assertEqual(result["level"], "red")
+        self.assertEqual(result["level"], "degraded")
+        self.assertEqual(result["verifiedRedEvents"], [])
+        self.assertIn(result["eventAdjudication"]["status"], {"unconfigured", "failed"})
         self.assertEqual(result["status"], "pending-human-review")
         self.assertTrue(result["reviewRequired"])
 
