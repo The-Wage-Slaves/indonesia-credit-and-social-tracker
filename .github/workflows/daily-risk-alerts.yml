@@ -92,8 +92,19 @@ jobs:
             pending.json pending.js outputs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch" origin/main
-          tar -xf "$transfer_dir/pending-output.tar"
+          # 证据池必须累积。从 main 重建分支会让每天的提交只含当天一条，前几天被
+          # 整个覆盖——周更第 ⓪ 步规定这个分支是日频事件的单一真源，那样等于每周
+          # 丢掉 6 天证据(2026-08-04 发现分支上只剩当天一条)。
+          # 所以：优先接续既有 bot 分支，并把本次产物「并入」而不是覆盖。
+          git fetch origin "$branch" || true
+          if git rev-parse --verify "refs/remotes/origin/$branch" >/dev/null 2>&1; then
+            git checkout -B "$branch" "refs/remotes/origin/$branch"
+          else
+            git checkout -B "$branch" origin/main
+          fi
+          mkdir -p "$transfer_dir/incoming"
+          tar -xf "$transfer_dir/pending-output.tar" -C "$transfer_dir/incoming"
+          python .github/scripts/merge_daily_evidence.py "$transfer_dir/incoming"
           git add credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json || true
           git add stability-monitor/data/daily-events || true
           git add pending.json pending.js || true

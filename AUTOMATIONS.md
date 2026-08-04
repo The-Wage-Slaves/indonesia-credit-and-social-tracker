@@ -79,6 +79,22 @@ PR #10 的分支一度给三个采集工作流加了 `push:` 触发器，结果�
 
 新增任何云端产物路径时，必须先用 `git check-ignore -v <路径>` 确认未被忽略。
 
+### bot 分支的证据池必须累积，不能从 main 重建
+
+`daily-risk-alerts.yml` 原本用 `git checkout -B bot/daily-risk-alerts origin/main`
+重建分支再解包产物。但 runner 从 `main` 检出，而 `daily-events/*.jsonl` 不在 `main` 上，
+于是**每天的提交只含当天一条，前几天被整个覆盖**。
+
+后果不是"少了点历史"：周更流程第 ⓪ 步规定这个分支是日频事件的单一真源，而它实际
+只保存一天，等于每周丢掉 6 天证据。2026-08-04 周更时发现分支上只剩当天一条记录，
+本周事件只能靠网络检索重建。
+
+现在优先接续既有 bot 分支（没有才回落 `main`），并由
+`.github/scripts/merge_daily_evidence.py` 按 `date` 做并集合并——同日重跑以本次为准，
+坏行留档不丢弃。已由 `test_merge_daily_evidence.py` 固化，含负向测试。
+
+**新增任何 bot 分支累积型产物时，先问一句：这个文件在 main 上吗？不在，就不能从 main 重建分支。**
+
 ### 卡片中文化依赖 key 必须显式传给发布步骤
 
 飞书卡片把印尼语标题转成中文，靠 `cloud_publish.py` 的 `enrich_zh()` 调 DeepSeek。
