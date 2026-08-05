@@ -266,7 +266,7 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 52,
+      "v3Score": 48,
       "drivers": [
         {
           "id": "livelihood_stress",

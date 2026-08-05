@@ -4,8 +4,8 @@
   "asOf": "2026-08-04",
   "official": {
     "methodology": "V3",
-    "composite": 42.0,
-    "displayScore": 42,
+    "composite": 41.2,
+    "displayScore": 41,
     "pillarWeights": {
       "fiscal": 0.2,
       "currency": 0.2,
@@ -17,13 +17,13 @@
       "fiscal": 48.0,
       "currency": 39.0,
       "institutions": 35.0,
-      "social": 52.0,
+      "social": 48.0,
       "coercive": 36.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 43.6,
+    "composite": 42.6,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -35,7 +35,7 @@
   "shadow": {
     "methodology": "V4",
     "composite": 45.6,
-    "delta": 2.0,
+    "delta": 3.0,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -477,9 +477,9 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 52.0,
+      "v3Score": 48.0,
       "v4ShadowScore": 48.5,
-      "delta": -3.5,
+      "delta": 0.5,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.4,
