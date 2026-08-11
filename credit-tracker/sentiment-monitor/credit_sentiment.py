@@ -558,6 +558,27 @@ def aggregate_signals(
     return sum(value * weight for value, weight in values) / sum(weight for _, weight in values)
 
 
+ACKNOWLEDGED_EVENTS = HERE / "acknowledged-events.json"
+
+
+def load_acknowledged_events() -> set[str]:
+    """已人工处置的事件 id，与日频告警共用同一张表。
+
+    这张表原本只接进了日频链路，周度从未查过它——于是所有者几周前就确认过的
+    Kredivo/KrediFazz 事件，一直出现在每周的待确认卡里(2026-08-11 发现)。
+    确认动作是人做的，脚本只读不写。
+    """
+    try:
+        data = json.loads(ACKNOWLEDGED_EVENTS.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    return {
+        str(entry["id"])
+        for entry in (data.get("events") or [])
+        if isinstance(entry, dict) and entry.get("id")
+    }
+
+
 def alert_for_week(
     events: list[dict[str, Any]],
     fear_index: float,
@@ -568,6 +589,11 @@ def alert_for_week(
     social_items: list[dict[str, Any]],
 ) -> dict[str, Any]:
     red_types = {"regulatory_action", "consumer_harm", "systemic_platform_stress"}
+    # 已人工处置的事件不再进入任何一档。事件只要还在采集窗口内就会每周重新
+    # 聚类出来、证据数也不变，没有这一步就会每周重复打扰同一件已确认的事。
+    acknowledged = load_acknowledged_events()
+    acknowledged_seen = [event for event in events if event.get("id") in acknowledged]
+    events = [event for event in events if event.get("id") not in acknowledged]
     verified_events = [
         event for event in events
         if event["eventType"] in red_types
@@ -624,6 +650,8 @@ def alert_for_week(
         ),
         "reviewCandidates": review_candidates,
         "suppressedCandidateCount": suppressed_candidate_count,
+        # 不隐瞒：报出因已人工确认而被剔除的事件数，便于核对抑制是否过度。
+        "acknowledgedSuppressed": sorted({str(event.get("id")) for event in acknowledged_seen}),
         # Backward-compatible alias. This list is intentionally capped and
         # evidence-filtered; it is not a dump of every keyword-matched story.
         "pendingHighSeverity": review_candidates,
