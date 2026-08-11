@@ -1,4 +1,4 @@
-window.V4_COMPARISON_DATA = {
+const V4_COMPARISON = {
   "schemaVersion": 1,
   "status": "review-only-shadow",
   "asOf": "2026-08-11",
