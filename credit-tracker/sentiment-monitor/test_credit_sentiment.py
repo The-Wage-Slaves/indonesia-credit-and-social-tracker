@@ -5,6 +5,7 @@ import importlib.util
 import json
 import pathlib
 import unittest
+from unittest import mock
 
 
 HERE = pathlib.Path(__file__).resolve().parent
@@ -23,6 +24,7 @@ class CreditSentimentTests(unittest.TestCase):
         fixture = json.loads(
             (HERE / "fixtures" / "recent-two-weeks.json").read_text(encoding="utf-8")
         )
+        cls.fixture_articles = fixture["articles"]
         cls.result = MODULE.build_result(
             fixture["articles"],
             dt.date(2026, 7, 28),
@@ -74,10 +76,27 @@ class CreditSentimentTests(unittest.TestCase):
         )
 
     def test_kredivo_event_triggers_red_multi_source_rule(self):
-        latest = self.result["weeks"][-1]
+        """验证的是「红色多源规则」，不是某个具体事件。
+
+        原写法直接断言 fixture 里的 Kredivo 事件判红。但该事件已于 2026-08-11
+        被人工确认并进入 acknowledged-events.json，周度链路接上这张表后它就被
+        正当地抑制了——测试随即失败。规则本身没变，所以这里把已确认表清空来
+        验证规则，另有 test_weekly_acknowledged.py 专门验证抑制行为。
+        """
+        with mock.patch.object(MODULE, "load_acknowledged_events", return_value=set()):
+            result = MODULE.build_result(self.fixture_articles, dt.date(2026, 7, 28))
+        latest = result["weeks"][-1]
         self.assertEqual(latest["alert"]["level"], "red")
         active_ids = {event["id"] for event in latest["alert"]["active"]}
         self.assertIn("kredivo-kredifazz-purworejo-2026-07", active_ids)
+
+    def test_acknowledged_event_no_longer_drives_the_weekly_alert(self):
+        """同一批 fixture，事件被确认后本周应当降级——这是当前的真实状态。"""
+        latest = self.result["weeks"][-1]
+        active_ids = {event["id"] for event in latest["alert"]["active"]}
+        self.assertNotIn("kredivo-kredifazz-purworejo-2026-07", active_ids)
+        self.assertIn("kredivo-kredifazz-purworejo-2026-07",
+                      latest["alert"]["acknowledgedSuppressed"])
 
     def test_duplicate_reporting_is_one_event(self):
         latest = self.result["weeks"][-1]
