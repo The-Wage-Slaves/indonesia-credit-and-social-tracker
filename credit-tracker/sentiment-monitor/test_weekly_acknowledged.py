@@ -1,12 +1,7 @@
 # -*- coding: utf-8 -*-
-"""周度告警必须尊重「已人工处置」表——与日频共用同一张。
-
-这张表原本只接进了日频链路，周度从未查过它：所有者几周前就确认过的
-Kredivo/KrediFazz 事件，一直出现在每周的待确认卡里（2026-08-11 发现）。
-"""
+"""Acknowledgement stops repeat prompts without erasing confirmed history."""
 from __future__ import annotations
 
-import json
 import pathlib
 import sys
 import unittest
@@ -28,41 +23,46 @@ def event(eid: str, severity: float = 0.92, sources: int = 2, primary: bool = Tr
 
 
 def build(events, acknowledged):
-    with mock.patch.object(monitor, "load_acknowledged_events", return_value=set(acknowledged)):
+    registry = {
+        eid: {"id": eid, "decision": "confirmed", "acknowledgedAt": "2026-08-03"}
+        for eid in acknowledged
+    }
+    with mock.patch.object(monitor, "load_acknowledged_events", return_value=registry):
         return monitor.alert_for_week(events, 56.2, None, None, None, 0.0, [])
 
 
 class WeeklyAcknowledgedTests(unittest.TestCase):
-    def test_acknowledged_event_leaves_the_weekly_card(self):
+    def test_confirmed_event_remains_red_history_but_is_not_actionable(self):
         result = build([event(ACK_ID)], {ACK_ID})
-        self.assertEqual(result["active"], [])
-        self.assertEqual(result["reviewCandidates"], [])
-        self.assertEqual(result["level"], "normal",
-                         "唯一撑着告警的是已确认事件时，本周应当静默")
-        self.assertEqual(result["acknowledgedSuppressed"], [ACK_ID])
-
-    def test_unacknowledged_event_still_alerts(self):
-        result = build([event("new-case-2026-08")], {ACK_ID})
-        self.assertEqual(len(result["active"]), 1, "未确认的事件不得被误伤")
         self.assertEqual(result["level"], "red")
-        self.assertEqual(result["acknowledgedSuppressed"], [])
+        self.assertEqual([e["id"] for e in result["active"]], [ACK_ID])
+        self.assertFalse(result["active"][0]["requiresReview"])
+        self.assertEqual(result["actionableActive"], [])
+        self.assertEqual(result["reviewCandidates"], [])
+        self.assertEqual(result["notificationLevel"], "normal")
+        self.assertEqual(result["acknowledgedRetained"], [ACK_ID])
 
-    def test_suppression_is_disclosed_not_hidden(self):
+    def test_unacknowledged_event_still_alerts_and_notifies(self):
+        result = build([event("new-case-2026-08")], {ACK_ID})
+        self.assertEqual(len(result["active"]), 1)
+        self.assertEqual(len(result["actionableActive"]), 1)
+        self.assertEqual(result["level"], "red")
+        self.assertEqual(result["notificationLevel"], "red")
+        self.assertEqual(result["acknowledgedRetained"], [])
+
+    def test_confirmed_and_new_events_are_separated(self):
         result = build([event(ACK_ID), event("new-case-2026-08")], {ACK_ID})
-        self.assertEqual(result["acknowledgedSuppressed"], [ACK_ID],
-                         "被抑制的事件必须报出来，便于核对抑制是否过度")
-        self.assertEqual([e["id"] for e in result["active"]], ["new-case-2026-08"])
+        self.assertEqual({e["id"] for e in result["active"]}, {ACK_ID, "new-case-2026-08"})
+        self.assertEqual([e["id"] for e in result["actionableActive"]], ["new-case-2026-08"])
+        self.assertEqual(result["acknowledgedRetained"], [ACK_ID])
 
-    def test_missing_registry_degrades_to_no_suppression(self):
+    def test_missing_registry_degrades_to_no_acknowledgement(self):
         with mock.patch.object(monitor, "ACKNOWLEDGED_EVENTS", HERE / "does-not-exist.json"):
-            self.assertEqual(monitor.load_acknowledged_events(), set())
+            self.assertEqual(monitor.load_acknowledged_events(), {})
 
     def test_daily_and_weekly_read_the_same_registry(self):
         import credit_daily_alert as daily
-        self.assertEqual(daily.ACKNOWLEDGED.resolve(), monitor.ACKNOWLEDGED_EVENTS.resolve(),
-                         "两条链路必须共用同一张表，否则确认一次只生效一半")
-        shipped = json.loads(monitor.ACKNOWLEDGED_EVENTS.read_text(encoding="utf-8"))
-        self.assertIn(ACK_ID, {entry["id"] for entry in shipped["events"]})
+        self.assertEqual(daily.ACKNOWLEDGED.resolve(), monitor.ACKNOWLEDGED_EVENTS.resolve())
 
 
 if __name__ == "__main__":

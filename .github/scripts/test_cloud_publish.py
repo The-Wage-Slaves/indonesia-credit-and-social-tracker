@@ -76,6 +76,43 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("监管介入", card_text)
         self.assertIn("①确认留痕；②降级为观察；③驳回", card_text)
 
+    def test_acknowledged_red_history_does_not_repeat_weekly_prompt(self):
+        data = {
+            "weeks": [{
+                "weekEnd": "2026-08-09",
+                "fearIndex": 56.2,
+                "engines": {"news": {"score": 55}, "social": {"score": 57}},
+                "alert": {
+                    "level": "red",
+                    "notificationLevel": "normal",
+                    "active": [{
+                        "id": "kredivo-kredifazz-purworejo-2026-07",
+                        "requiresReview": False,
+                        "acknowledgement": {"decision": "confirmed"},
+                    }],
+                    "actionableActive": [],
+                    "reviewCandidates": [],
+                },
+            }],
+        }
+
+        def fake_read(path, default=None):
+            if path.endswith("credit-sentiment-pending.json"):
+                return data
+            if path.endswith("street_heat_history.json"):
+                return []
+            return default
+
+        with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
+            with mock.patch.dict(MODULE.os.environ, {"STREET_STATUS": "success"}):
+                summary = MODULE.weekly_summary()
+
+        self.assertFalse(summary["risk"])
+        card_text = "\n".join(summary["lines"])
+        self.assertNotIn("Kredivo", card_text)
+        self.assertNotIn("①确认留痕", card_text)
+        self.assertIn("旧事件不会重复催办", card_text)
+
     def test_stale_street_heat_is_not_presented_as_current(self):
         data = {
             "weeks": [{

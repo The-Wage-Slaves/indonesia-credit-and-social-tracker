@@ -230,12 +230,19 @@ def weekly_summary() -> dict[str, Any]:
     latest = weeks[-1]
     previous = weeks[-2] if len(weeks) >= 2 else {}
     alert = latest.get("alert") or data.get("latestAlert") or {}
-    active = list(alert.get("active") or [])
+    historical_active = list(alert.get("active") or [])
+    active = list(alert.get("actionableActive") or [
+        event for event in historical_active
+        if event.get("requiresReview", True)
+    ])
     candidates = list(
         alert.get("reviewCandidates")
         or alert.get("pendingHighSeverity")
         or []
     )[:5]
+    notification_level = str(
+        alert.get("notificationLevel") or alert.get("level") or "normal"
+    )
     street_history = read_json(
         "stability-monitor/scripts/street_heat_history.json", []
     )
@@ -248,8 +255,8 @@ def weekly_summary() -> dict[str, Any]:
         (street.get("opposition") or {}).get("rate") is not None
         and float(street["opposition"]["rate"]) >= 60
     )
-    credit_risk = alert.get("level") in {"red", "amber"} and (
-        alert.get("level") == "red" or active or candidates
+    credit_risk = notification_level in {"red", "amber"} and (
+        notification_level == "red" or active or candidates
     )
     latest_engines = latest.get("engines") or {}
     previous_engines = previous.get("engines") or {}
@@ -257,7 +264,8 @@ def weekly_summary() -> dict[str, Any]:
     social_score = (latest_engines.get("social") or {}).get("score")
     lines = [
         "**为什么收到**\n"
-        "这是每周二例行监测；本周达到风险推送门槛，因此发送。正常周保持静默。",
+        "这是每周二例行监测；只有新风险、指数异常或街头热度异常才推送。"
+        "已经确认留痕的旧事件不会重复催办。",
         "**指数与上周比较**\n"
         f"信贷恐慌指数 **{latest.get('fearIndex', '—')} / 100**"
         "（0=平静，100=急性冲击）\n"
@@ -267,10 +275,13 @@ def weekly_summary() -> dict[str, Any]:
         f"社媒压力 {social_score if social_score is not None else '—'}"
         f"（{score_change(social_score, (previous_engines.get('social') or {}).get('score'))}）\n"
         "当前只有周环比；积累满8周后增加滚动中位数/MAD异常幅度。",
-        "**为何仍为红色**\n"
-        f"{trigger_explanation(alert, bool(active))}。红色可由独立事件证据触发，"
-        "所以即使指数比上周下降也会触发；这不表示指数本身正在恶化。",
     ]
+    if credit_risk:
+        lines.append(
+            "**为何触发本周信贷提醒**\n"
+            f"{trigger_explanation(alert, bool(active))}。红色可由独立事件证据触发，"
+            "所以即使指数比上周下降也会触发；这不表示指数本身正在恶化。"
+        )
     weekly_events = (active or candidates)[:3]
     enrich_zh(weekly_events)   # 与日频卡同一套中文化，避免周度卡也落到无信息量的套话
     for index, event in enumerate(weekly_events, 1):
@@ -302,12 +313,18 @@ def weekly_summary() -> dict[str, Any]:
             f"数据日期 {street.get('date', '—')}；热度 {street.get('heat', '—')}；建议稳定性分数 "
             f"{street.get('suggested_score', '—')}（尚未写入正式评分）。"
         )
-    lines.append(
-        "**需要你决定什么**\n"
-        "请确认风险事件应当：①确认留痕；②降级为观察；③驳回并说明原因。"
-        "这里确认的是“是否作为风险事件留痕及其级别”，不是直接确认或改写指数分数。"
-    )
-    level = str(alert.get("level", "unknown")).upper()
+    if weekly_events:
+        lines.append(
+            "**需要你决定什么**\n"
+            "请确认上述新风险事件应当：①确认留痕；②降级为观察；③驳回并说明原因。"
+            "这里确认的是“是否作为风险事件留痕及其级别”，不是直接确认或改写指数分数。"
+        )
+    elif street_risk:
+        lines.append(
+            "**需要你决定什么**\n"
+            "本次仅由稳定性街头热度门触发；请核对采集覆盖与是否纳入本周稳定性评分。"
+        )
+    level = notification_level.upper()
     return {
         "kind": "weekly",
         "title": (
@@ -315,10 +332,10 @@ def weekly_summary() -> dict[str, Any]:
             f"｜{latest.get('weekEnd', dt.date.today().isoformat())}"
         ),
         "risk": bool(credit_risk or street_risk),
-        "level": "red" if alert.get("level") == "red" else "orange",
+        "level": "red" if notification_level == "red" else "orange",
         "lines": lines,
         "reviewUrl": ALERT_REVIEW_URL,
-        "decisionId": f"weekly:{latest.get('weekEnd', 'unknown')}:{alert.get('level', 'unknown')}",
+        "decisionId": f"weekly:{latest.get('weekEnd', 'unknown')}:{notification_level}",
     }
 
 

@@ -83,20 +83,26 @@ class CreditSentimentTests(unittest.TestCase):
         正当地抑制了——测试随即失败。规则本身没变，所以这里把已确认表清空来
         验证规则，另有 test_weekly_acknowledged.py 专门验证抑制行为。
         """
-        with mock.patch.object(MODULE, "load_acknowledged_events", return_value=set()):
+        with mock.patch.object(MODULE, "load_acknowledged_events", return_value={}):
             result = MODULE.build_result(self.fixture_articles, dt.date(2026, 7, 28))
         latest = result["weeks"][-1]
         self.assertEqual(latest["alert"]["level"], "red")
         active_ids = {event["id"] for event in latest["alert"]["active"]}
         self.assertIn("kredivo-kredifazz-purworejo-2026-07", active_ids)
 
-    def test_acknowledged_event_no_longer_drives_the_weekly_alert(self):
-        """同一批 fixture，事件被确认后本周应当降级——这是当前的真实状态。"""
+    def test_acknowledged_event_is_retained_but_no_longer_actionable(self):
+        """确认停止重复催办，但不得抹掉已确认的历史红色留痕。"""
         latest = self.result["weeks"][-1]
-        active_ids = {event["id"] for event in latest["alert"]["active"]}
-        self.assertNotIn("kredivo-kredifazz-purworejo-2026-07", active_ids)
+        alert = latest["alert"]
+        active = {event["id"]: event for event in alert["active"]}
+        event = active["kredivo-kredifazz-purworejo-2026-07"]
+        self.assertEqual(alert["level"], "red")
+        self.assertFalse(event["requiresReview"])
+        self.assertEqual(alert["actionableActive"], [])
+        self.assertEqual(alert["reviewCandidates"], [])
+        self.assertEqual(alert["notificationLevel"], "normal")
         self.assertIn("kredivo-kredifazz-purworejo-2026-07",
-                      latest["alert"]["acknowledgedSuppressed"])
+                      alert["acknowledgedRetained"])
 
     def test_duplicate_reporting_is_one_event(self):
         latest = self.result["weeks"][-1]
