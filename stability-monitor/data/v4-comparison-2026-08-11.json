@@ -14,11 +14,11 @@
       "coercive": 0.2
     },
     "scores": {
-      "fiscal": 48,
-      "currency": 40,
-      "institutions": 35,
-      "social": 58,
-      "coercive": 36
+      "fiscal": 48.0,
+      "currency": 40.0,
+      "institutions": 35.0,
+      "social": 58.0,
+      "coercive": 36.0
     }
   },
   "reweightedBaseline": {
@@ -35,7 +35,7 @@
   "shadow": {
     "methodology": "V4",
     "composite": 46.3,
-    "delta": 0.9,
+    "delta": 1.0,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -77,7 +77,7 @@
         "rating": "BBB",
         "commonRating": "BBB",
         "outlook": "stable",
-        "effectiveIndex": 8,
+        "effectiveIndex": 8.0,
         "score": 61.9,
         "source": "https://www.bi.go.id/en/iru/highlight-news/Pages/-S%26P-Affirmed-Indonesia%E2%80%99s-Sovereign-Credit-Rating-at-BBB-with-Stable-Outlook.aspx"
       },
@@ -105,11 +105,11 @@
     {
       "id": "fiscal",
       "label": "财政与外部脆弱性",
-      "v3Score": 48,
+      "v3Score": 48.0,
       "v4ShadowScore": 52.2,
       "delta": 4.2,
-      "coverage": 1,
-      "missingWeight": 0,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
       "measurementConfidence": 0.75,
       "availabilityQuality": 0.815,
@@ -123,7 +123,7 @@
           "id": "public_finance",
           "label": "预算流量与债务负担",
           "weight": 0.3,
-          "score": 55,
+          "score": 55.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -150,7 +150,7 @@
           "id": "external_liquidity",
           "label": "官方外部流动性缓冲",
           "weight": 0.25,
-          "score": 60,
+          "score": 60.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -164,20 +164,20 @@
           ],
           "evidenceClass": "statistical",
           "availability": "high",
-          "evidenceQuality": 1,
-          "freshnessQuality": 1,
-          "sourceDirectness": 1,
+          "evidenceQuality": 1.0,
+          "freshnessQuality": 1.0,
+          "sourceDirectness": 1.0,
           "observationIds": [
             "bi_reserves_2026_06"
           ],
-          "basis": "BI 2026年6月官方外储145.6亿美元、覆盖5.5个月进口；只在财政/外部支柱计一次。",
+          "basis": "BI 2026年6月官方外储145.6亿美元、覆盖5.5个月进口；截至截点未归档更新月份，只在财政/外部支柱计一次。",
           "missingReason": null
         },
         {
           "id": "funding_mismatch",
           "label": "外部融资与币种期限错配",
           "weight": 0.2,
-          "score": 40,
+          "score": 40.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -192,7 +192,7 @@
           "evidenceClass": "statistical",
           "availability": "medium",
           "evidenceQuality": 0.645,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "funding_mismatch_2026_05"
@@ -204,13 +204,13 @@
           "id": "contingent_liabilities",
           "label": "或有与准财政负债",
           "weight": 0.1,
-          "score": 38,
+          "score": 38.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "ordinal",
           "availability": "low",
           "evidenceQuality": 0.344,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "contingent_liabilities_2026_07"
@@ -227,9 +227,9 @@
           "scoreInputs": [],
           "evidenceClass": "external_rating",
           "availability": "high",
-          "evidenceQuality": 1,
-          "freshnessQuality": 1,
-          "sourceDirectness": 1,
+          "evidenceQuality": 1.0,
+          "freshnessQuality": 1.0,
+          "sourceDirectness": 1.0,
           "observationIds": [
             "rating_sp_2026_07_13",
             "rating_fitch_2026_03_04",
@@ -243,25 +243,25 @@
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 40,
+      "v3Score": 40.0,
       "v4ShadowScore": 45.6,
-      "delta": 2.6,
+      "delta": 5.6,
       "coverage": 0.85,
       "missingWeight": 0.15,
-      "lowConfidenceWeight": 0,
+      "lowConfidenceWeight": 0.0,
       "measurementConfidence": 0.653,
       "availabilityQuality": 0.787,
       "freshnessQuality": 0.796,
       "sourceDirectness": 0.552,
       "rawTraceabilityWeight": 0.85,
-      "nonOrdinalPlannedWeight": 1,
+      "nonOrdinalPlannedWeight": 1.0,
       "pillarWeight": 0.25,
       "drivers": [
         {
           "id": "inflation_expectations",
           "label": "通胀与预期锚定",
           "weight": 0.3,
-          "score": 60,
+          "score": 60.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -276,7 +276,7 @@
           "evidenceClass": "statistical",
           "availability": "high",
           "evidenceQuality": 0.86,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "inflation_2026_06"
@@ -288,7 +288,7 @@
           "id": "fx_stress",
           "label": "汇率压力",
           "weight": 0.3,
-          "score": 38,
+          "score": 38.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -303,7 +303,7 @@
           "evidenceClass": "statistical",
           "availability": "high",
           "evidenceQuality": 0.86,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "fx_idr_2026_08_11"
@@ -320,9 +320,9 @@
           "scoreInputs": [],
           "evidenceClass": "statistical",
           "availability": "missing",
-          "evidenceQuality": 0,
-          "freshnessQuality": 0,
-          "sourceDirectness": 0,
+          "evidenceQuality": 0.0,
+          "freshnessQuality": 0.0,
+          "sourceDirectness": 0.0,
           "observationIds": [],
           "basis": "缺失权重按可用项归一化，不以主观分数补洞。",
           "missingReason": "截至本期未形成政策利率—同业—贷款利率的同口径历史序列。"
@@ -359,15 +359,15 @@
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 35,
+      "v3Score": 35.0,
       "v4ShadowScore": 36.9,
       "delta": 1.9,
-      "coverage": 1,
-      "missingWeight": 0,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
       "measurementConfidence": 0.654,
       "availabilityQuality": 0.715,
-      "freshnessQuality": 1,
+      "freshnessQuality": 1.0,
       "sourceDirectness": 0.79,
       "rawTraceabilityWeight": 0.25,
       "nonOrdinalPlannedWeight": 0.9,
@@ -377,13 +377,13 @@
           "id": "policy_predictability",
           "label": "决策可预见性",
           "weight": 0.25,
-          "score": 30,
+          "score": 30.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
           "evidenceQuality": 0.705,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.85,
           "observationIds": [
             "dsi_policy_shift_2026_07"
@@ -395,7 +395,7 @@
           "id": "implementation_capacity",
           "label": "行政执行能力",
           "weight": 0.25,
-          "score": 42,
+          "score": 42.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -410,7 +410,7 @@
           "evidenceClass": "statistical",
           "availability": "medium",
           "evidenceQuality": 0.645,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "governance_effectiveness_proxy_2026"
@@ -422,13 +422,13 @@
           "id": "legal_impartiality",
           "label": "法律适用公正性",
           "weight": 0.2,
-          "score": 42,
+          "score": 42.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
           "evidenceQuality": 0.645,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "legal_case_registry_2026_07"
@@ -440,14 +440,14 @@
           "id": "institutional_checks",
           "label": "关键机构独立与制衡",
           "weight": 0.2,
-          "score": 30,
+          "score": 30.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
           "evidenceQuality": 0.75,
-          "freshnessQuality": 1,
-          "sourceDirectness": 1,
+          "freshnessQuality": 1.0,
+          "sourceDirectness": 1.0,
           "observationIds": [
             "institutional_checks_2026_07"
           ],
@@ -458,13 +458,13 @@
           "id": "elite_continuity",
           "label": "执政联盟连续性",
           "weight": 0.1,
-          "score": 45,
+          "score": 45.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "ordinal",
           "availability": "low",
           "evidenceQuality": 0.376,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.85,
           "observationIds": [
             "elite_continuity_2026_07"
@@ -477,25 +477,25 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 58,
+      "v3Score": 58.0,
       "v4ShadowScore": 50.5,
-      "delta": 0.5,
-      "coverage": 1,
-      "missingWeight": 0,
+      "delta": -7.5,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
       "lowConfidenceWeight": 0.4,
       "measurementConfidence": 0.585,
       "availabilityQuality": 0.672,
-      "freshnessQuality": 1,
+      "freshnessQuality": 1.0,
       "sourceDirectness": 0.692,
       "rawTraceabilityWeight": 0.85,
-      "nonOrdinalPlannedWeight": 1,
+      "nonOrdinalPlannedWeight": 1.0,
       "pillarWeight": 0.25,
       "drivers": [
         {
           "id": "livelihood_stress",
           "label": "家庭生计压力",
           "weight": 0.35,
-          "score": 40,
+          "score": 40.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -510,7 +510,7 @@
           "evidenceClass": "statistical",
           "availability": "medium",
           "evidenceQuality": 0.645,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "labour_stress_2026_05"
@@ -522,7 +522,7 @@
           "id": "subjective_confidence",
           "label": "主观经济信心",
           "weight": 0.25,
-          "score": 50,
+          "score": 50.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -537,7 +537,7 @@
           "evidenceClass": "statistical",
           "availability": "high",
           "evidenceQuality": 0.86,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "consumer_confidence_2026_06"
@@ -549,7 +549,7 @@
           "id": "online_grievance",
           "label": "线上不满与议题关注",
           "weight": 0.25,
-          "score": 61,
+          "score": 61.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -564,7 +564,7 @@
           "evidenceClass": "automated_proxy",
           "availability": "low",
           "evidenceQuality": 0.352,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.7,
           "observationIds": [
             "online_grievance_2026_08_11"
@@ -576,13 +576,13 @@
           "id": "offline_mobilization",
           "label": "线下动员与升级",
           "weight": 0.15,
-          "score": 58,
+          "score": 58.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "low",
           "evidenceQuality": 0.376,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.85,
           "observationIds": [
             "offline_mobilization_2026_07_22"
@@ -595,17 +595,17 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 36,
+      "v3Score": 36.0,
       "v4ShadowScore": 37.3,
       "delta": 1.3,
-      "coverage": 1,
-      "missingWeight": 0,
+      "coverage": 1.0,
+      "missingWeight": 0.0,
       "lowConfidenceWeight": 0.3,
       "measurementConfidence": 0.597,
       "availabilityQuality": 0.645,
-      "freshnessQuality": 1,
+      "freshnessQuality": 1.0,
       "sourceDirectness": 0.79,
-      "rawTraceabilityWeight": 0,
+      "rawTraceabilityWeight": 0.0,
       "nonOrdinalPlannedWeight": 0.7,
       "pillarWeight": 0.1,
       "drivers": [
@@ -613,13 +613,13 @@
           "id": "interagency_cohesion",
           "label": "军警跨机构协调",
           "weight": 0.4,
-          "score": 32,
+          "score": 32.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
           "evidenceQuality": 0.705,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.85,
           "observationIds": [
             "armed_interagency_registry_2026_07"
@@ -631,13 +631,13 @@
           "id": "role_boundary",
           "label": "军队角色边界与政治中立",
           "weight": 0.3,
-          "score": 40,
+          "score": 40.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
           "evidenceQuality": 0.705,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.85,
           "observationIds": [
             "military_role_boundary_2026_07"
@@ -649,13 +649,13 @@
           "id": "command_cohesion",
           "label": "垂直指挥链完整性",
           "weight": 0.15,
-          "score": 38,
+          "score": 38.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "ordinal",
           "availability": "low",
           "evidenceQuality": 0.344,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "command_cohesion_2026_07"
@@ -667,13 +667,13 @@
           "id": "defection_discipline",
           "label": "执行纪律与倒戈信号",
           "weight": 0.15,
-          "score": 45,
+          "score": 45.0,
           "scoreMethod": "bridge",
           "scoreInputs": [],
           "evidenceClass": "ordinal",
           "availability": "low",
           "evidenceQuality": 0.344,
-          "freshnessQuality": 1,
+          "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
             "security_discipline_2026_07"
