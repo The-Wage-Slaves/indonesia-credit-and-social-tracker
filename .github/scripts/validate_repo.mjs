@@ -207,9 +207,12 @@ assert(
   comparison.shadow.composite > 0 && comparison.shadow.composite < 100,
   'V4 shadow composite out of range',
 );
+// delta is computed from unrounded composites, while the two displayed
+// composites are independently rounded to one decimal. Their visible
+// subtraction may therefore differ from delta by up to 0.1.
 assert(
-  Math.abs(comparison.shadow.delta - (comparison.shadow.composite - comparison.reweightedBaseline.composite)) < 0.05,
-  'V4 shadow delta must equal shadow minus same-weight baseline',
+  Math.abs(comparison.shadow.delta - (comparison.shadow.composite - comparison.reweightedBaseline.composite)) <= 0.11,
+  'V4 shadow delta must equal shadow minus same-weight baseline within display rounding',
 );
 for (const [name, value] of Object.entries(comparison.measurement)) {
   if (typeof value !== 'number') continue;
