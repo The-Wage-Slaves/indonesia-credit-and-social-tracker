@@ -114,13 +114,17 @@ class MergeDailyEvidenceTests(unittest.TestCase):
         self.assertIn("outputs", artifacts)
         self.assertIn("stability-monitor/data/daily-events", artifacts)
 
-    def test_data_workflow_does_not_run_unit_tests(self):
-        """数据工作流不跑单测——一次断言失败不该杀掉当天的采集与推送。
+    def test_data_workflows_do_not_run_unit_tests(self):
+        """数据工作流一律不跑单测——一次断言失败不该杀掉当期的采集与推送。
 
         同一套测试 validate.yml 已在每次 PR/push 上跑过。
+        2026-08-05~08-11 日频与周度先后死于此：周度更糟，它挂在第一步，
+        后面的街头热度采集与飞书推送全被跳过。
         """
-        workflow = (ROOT / ".github" / "workflows" / "daily-risk-alerts.yml").read_text(encoding="utf-8")
-        self.assertNotIn("unittest discover", workflow)
+        for name in ("daily-risk-alerts.yml", "weekly-credit-sentiment.yml",
+                     "monthly-credit-data.yml"):
+            workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
+            self.assertNotIn("unittest discover", workflow, f"{name} 不得在数据工作流里跑单测")
         validate = (ROOT / ".github" / "workflows" / "validate.yml").read_text(encoding="utf-8")
         self.assertIn("credit-tracker/sentiment-monitor", validate)
 
