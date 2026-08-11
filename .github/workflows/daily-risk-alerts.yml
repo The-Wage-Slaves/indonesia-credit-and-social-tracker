@@ -96,6 +96,9 @@ jobs:
             pending.js
             outputs"
           tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts
+          # 合并脚本也要先备份出去：bot 分支建自旧 main，上面没有这个文件，
+          # 切过去之后脚本就从工作区消失了。
+          cp .github/scripts/merge_daily_evidence.py "$transfer_dir/"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # 产物已装进 tar，切分支前必须全部从工作区移走：bot 分支上已有这些路径，
@@ -114,7 +117,7 @@ jobs:
           fi
           mkdir -p "$transfer_dir/incoming"
           tar -xf "$transfer_dir/pending-output.tar" -C "$transfer_dir/incoming"
-          python .github/scripts/merge_daily_evidence.py "$transfer_dir/incoming"
+          python "$transfer_dir/merge_daily_evidence.py" "$transfer_dir/incoming"
           git add credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json || true
           git add stability-monitor/data/daily-events || true
           git add pending.json pending.js || true

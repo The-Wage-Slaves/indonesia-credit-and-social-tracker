@@ -21,11 +21,14 @@
 from __future__ import annotations
 
 import json
+import os
 import pathlib
 import shutil
 import sys
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
+# 以工作目录为仓库根，而不是脚本自身位置：本脚本会被复制到临时目录再执行——
+# 切到 bot 分支后脚本文件本身就不在工作区了（该分支建自旧 main，没有这个文件）。
+ROOT = pathlib.Path(os.environ.get("GITHUB_WORKSPACE") or os.getcwd())
 EVENTS_DIR = pathlib.Path("stability-monitor/data/daily-events")
 
 
