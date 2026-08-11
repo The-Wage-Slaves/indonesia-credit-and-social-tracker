@@ -88,6 +88,35 @@ class MergeDailyEvidenceTests(unittest.TestCase):
         self.assertIn("merge_daily_evidence.py", workflow)
         self.assertIn('git checkout -B "$branch" "refs/remotes/origin/$branch"', workflow)
 
+    def test_generated_artifacts_are_cleared_before_switching_branch(self):
+        """接续 bot 分支前必须先移走本次产物，否则 checkout 会被未跟踪文件挡住。
+
+        bot 分支上已有 daily-events 与 daily-credit-alert-pending.json，而 runner
+        工作区里刚生成的同名文件是未跟踪的，git 会中止 checkout。
+        2026-08-05~08-10 连续 6 天的失败就是这个原因。
+        """
+        workflow = (ROOT / ".github" / "workflows" / "daily-risk-alerts.yml").read_text(encoding="utf-8")
+        stage = workflow[workflow.index("Stage daily evidence"):]
+        tar_at = stage.index("tar -cf")
+        checkout_at = stage.index('git checkout -B "$branch"')
+        for path in ("stability-monitor/data/daily-events",
+                     "credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json"):
+            rm_at = stage.find(f"rm -rf {path}")
+            if rm_at < 0:
+                rm_at = stage.find(f"rm -f {path}")
+            self.assertGreater(rm_at, tar_at, f"{path} 必须在打包之后才移走")
+            self.assertLess(rm_at, checkout_at, f"{path} 必须在切分支之前移走")
+
+    def test_data_workflow_does_not_run_unit_tests(self):
+        """数据工作流不跑单测——一次断言失败不该杀掉当天的采集与推送。
+
+        同一套测试 validate.yml 已在每次 PR/push 上跑过。
+        """
+        workflow = (ROOT / ".github" / "workflows" / "daily-risk-alerts.yml").read_text(encoding="utf-8")
+        self.assertNotIn("unittest discover", workflow)
+        validate = (ROOT / ".github" / "workflows" / "validate.yml").read_text(encoding="utf-8")
+        self.assertIn("credit-tracker/sentiment-monitor", validate)
+
 
 if __name__ == "__main__":
     unittest.main()

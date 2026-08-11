@@ -66,9 +66,10 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: |
-          python credit-tracker/sentiment-monitor/credit_daily_alert.py --write-output
-          python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
+        # 这里不跑单测。同一套测试 validate.yml 已在每次 PR/push 上跑过，
+        # 放在数据工作流里只会让一次测试失败杀掉当天的数据采集与推送——
+        # 2026-08-05~08-10 连续 6 天正是这样死的，飞书一条没发。
+        run: python credit-tracker/sentiment-monitor/credit_daily_alert.py --write-output
       - name: Publish pending data and notify Feishu only when abnormal
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
@@ -92,6 +93,12 @@ jobs:
             pending.json pending.js outputs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 本次产物已装进 tar，先从工作区移走再切分支。
+          # bot 分支上已经有这些路径，而工作区里的同名文件是未跟踪的，
+          # git 会以「未跟踪文件将被覆盖」为由中止 checkout——
+          # 2026-08-05~08-10 连续 6 天正是死在这一步。
+          rm -f credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json
+          rm -rf stability-monitor/data/daily-events
           # 证据池必须累积。从 main 重建分支会让每天的提交只含当天一条，前几天被
           # 整个覆盖——周更第 ⓪ 步规定这个分支是日频事件的单一真源，那样等于每周
           # 丢掉 6 天证据(2026-08-04 发现分支上只剩当天一条)。
