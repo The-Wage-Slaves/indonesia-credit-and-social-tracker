@@ -87,18 +87,21 @@ jobs:
         run: |
           branch="bot/daily-risk-alerts"
           transfer_dir="$(mktemp -d)"
-          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
-            credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json \
-            stability-monitor/data/daily-events \
-            pending.json pending.js outputs
+          # 单一清单同时驱动「打包」与「清理」。逐个列举两遍必然漏——
+          # 2026-08-11 就漏了 outputs/：它由飞书发布步骤生成，而那一步此前一直被
+          # skip，所以直到前两个路径修好、它才第一次暴露出来。
+          artifacts="credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json
+            stability-monitor/data/daily-events
+            pending.json
+            pending.js
+            outputs"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 本次产物已装进 tar，先从工作区移走再切分支。
-          # bot 分支上已经有这些路径，而工作区里的同名文件是未跟踪的，
-          # git 会以「未跟踪文件将被覆盖」为由中止 checkout——
-          # 2026-08-05~08-10 连续 6 天正是死在这一步。
-          rm -f credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json
-          rm -rf stability-monitor/data/daily-events
+          # 产物已装进 tar，切分支前必须全部从工作区移走：bot 分支上已有这些路径，
+          # 而工作区里的同名文件是未跟踪的，git 会以「未跟踪文件将被覆盖」中止
+          # checkout——2026-08-05~08-11 连续失败都是这个原因。
+          for path in $artifacts; do rm -rf "$path"; done
           # 证据池必须累积。从 main 重建分支会让每天的提交只含当天一条，前几天被
           # 整个覆盖——周更第 ⓪ 步规定这个分支是日频事件的单一真源，那样等于每周
           # 丢掉 6 天证据(2026-08-04 发现分支上只剩当天一条)。
