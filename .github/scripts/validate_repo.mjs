@@ -207,9 +207,12 @@ assert(
   comparison.shadow.composite > 0 && comparison.shadow.composite < 100,
   'V4 shadow composite out of range',
 );
+// delta is computed from unrounded composites, while the two displayed
+// composites are independently rounded to one decimal. Their visible
+// subtraction may therefore differ from delta by up to 0.1.
 assert(
-  Math.abs(comparison.shadow.delta - (comparison.shadow.composite - comparison.reweightedBaseline.composite)) < 0.05,
-  'V4 shadow delta must equal shadow minus same-weight baseline',
+  Math.abs(comparison.shadow.delta - (comparison.shadow.composite - comparison.reweightedBaseline.composite)) <= 0.11,
+  'V4 shadow delta must equal shadow minus same-weight baseline within display rounding',
 );
 for (const [name, value] of Object.entries(comparison.measurement)) {
   if (typeof value !== 'number') continue;
@@ -230,7 +233,16 @@ for (const snapshot of v4History.snapshots) {
   assert(!historyDates.has(snapshot.date), `duplicate V4 history date: ${snapshot.date}`);
   historyDates.add(snapshot.date);
 }
-assert(historyDates.has(v4Input.asOf), 'V4 history lacks the current confirmed shadow snapshot');
+// A review PR may carry a same-date shadow comparison before the owner confirms it.
+ // Confirmed history is append-only: if the current date is present it has already
+ // passed the strict confirmed=true gate above; otherwise the comparison remains
+ // review-only and must not be smuggled into history as human-confirmed.
+ if (!historyDates.has(v4Input.asOf)) {
+   assert(
+     comparison.status === 'review-only-shadow',
+     'Unconfirmed current V4 comparison must remain review-only',
+   );
+ }
 
 const comparisonPage = read('stability-monitor/dashboard/v3-v4-comparison.html');
 assert(comparisonPage.includes('../data/v4-comparison-data.js'), 'V3/V4 page does not load the local comparison data');

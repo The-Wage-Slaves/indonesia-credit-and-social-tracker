@@ -696,6 +696,7 @@ def history_snapshot(result: dict[str, Any]) -> dict[str, Any]:
         ],
         "status": result["shadow"]["publicationStatus"],
         "confirmed": True,
+        "humanConfirmed": True,
     }
 
 

@@ -558,6 +558,26 @@ def aggregate_signals(
     return sum(value * weight for value, weight in values) / sum(weight for _, weight in values)
 
 
+ACKNOWLEDGED_EVENTS = HERE / "acknowledged-events.json"
+
+
+def load_acknowledged_events() -> dict[str, dict[str, Any]]:
+    """Return human decisions keyed by event id.
+
+    Confirmation stops repeated prompts; it does not erase or downgrade the
+    historical risk record.  Missing/corrupt files fail open (no event is
+    treated as acknowledged).
+    """
+    try:
+        data = json.loads(ACKNOWLEDGED_EVENTS.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return {
+        str(entry["id"]): dict(entry)
+        for entry in (data.get("events") or [])
+        if isinstance(entry, dict) and entry.get("id")
+    }
+
 def alert_for_week(
     events: list[dict[str, Any]],
     fear_index: float,
@@ -568,6 +588,18 @@ def alert_for_week(
     social_items: list[dict[str, Any]],
 ) -> dict[str, Any]:
     red_types = {"regulatory_action", "consumer_harm", "systemic_platform_stress"}
+    acknowledged = load_acknowledged_events()
+    annotated_events: list[dict[str, Any]] = []
+    acknowledged_seen: list[dict[str, Any]] = []
+    for raw_event in events:
+        event = dict(raw_event)
+        decision = acknowledged.get(str(event.get("id") or ""))
+        event["requiresReview"] = not bool(decision)
+        if decision:
+            event["acknowledgement"] = decision
+            acknowledged_seen.append(event)
+        annotated_events.append(event)
+    events = annotated_events
     verified_events = [
         event for event in events
         if event["eventType"] in red_types
@@ -594,24 +626,38 @@ def alert_for_week(
         reasons.append("news_social_cross_signal")
     if social_spike:
         reasons.append("multi_platform_social_spike")
-    review_candidates = [
+    historical_candidates = [
         event for event in events
         if event not in verified_events
         and event["severity"] >= 0.8
         and (event["hasPrimarySource"] or event["independentSourceCount"] >= 2)
     ][:5]
+    review_candidates = [
+        event for event in historical_candidates if event.get("requiresReview", True)
+    ]
+    actionable_verified = [
+        event for event in verified_events if event.get("requiresReview", True)
+    ]
     suppressed_candidate_count = max(
         0,
         sum(
             event not in verified_events and event["severity"] >= 0.7
             for event in events
-        ) - len(review_candidates),
+        ) - len(historical_candidates),
     )
+    # level/active describe what happened and remain stable after acknowledgement.
     level = "red" if reasons else (
-        "amber" if review_candidates or fear_index >= 65 else "normal"
+        "amber" if historical_candidates or fear_index >= 65 else "normal"
     )
     active = verified_events if verified_events else (
-        review_candidates if level == "amber" else []
+        historical_candidates if level == "amber" else []
+    )
+    notification_reasons = [
+        reason for reason in reasons
+        if reason != "verified_severe_event" or actionable_verified
+    ]
+    notification_level = "red" if notification_reasons else (
+        "amber" if review_candidates or fear_index >= 65 else "normal"
     )
     return {
         "level": level,
@@ -623,9 +669,15 @@ def alert_for_week(
             "social spike with volume>=80 and negative share>=65%."
         ),
         "reviewCandidates": review_candidates,
+        "actionableActive": actionable_verified,
+        "notificationLevel": notification_level,
+        "notificationReasons": notification_reasons,
         "suppressedCandidateCount": suppressed_candidate_count,
-        # Backward-compatible alias. This list is intentionally capped and
-        # evidence-filtered; it is not a dump of every keyword-matched story.
+        # Confirmed events remain in active/history but no longer require action.
+        "acknowledgedRetained": sorted({str(event.get("id")) for event in acknowledged_seen}),
+        # Backward-compatible diagnostic alias; nothing is removed from history.
+        "acknowledgedSuppressed": sorted({str(event.get("id")) for event in acknowledged_seen}),
+        # Backward-compatible alias for events that still need a human decision.
         "pendingHighSeverity": review_candidates,
     }
 
