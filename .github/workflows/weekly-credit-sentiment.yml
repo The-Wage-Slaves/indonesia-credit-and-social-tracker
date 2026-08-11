@@ -62,9 +62,10 @@ jobs:
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
           X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
-        run: |
-          python credit-tracker/sentiment-monitor/credit_sentiment.py --write-output
-          python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
+        # 与日频同理，这里不跑单测：validate.yml 已在每次 PR/push 上跑过，
+        # 放在数据工作流里只会让一次断言失败杀掉当周的采集。2026-08-11 周度
+        # 就是这样挂的——而且它挂在第一步，后面的街头热度、飞书推送全被跳过。
+        run: python credit-tracker/sentiment-monitor/credit_sentiment.py --write-output
       - name: Build stability street-heat review
         id: street
         continue-on-error: true
