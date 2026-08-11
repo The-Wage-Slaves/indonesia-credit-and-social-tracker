@@ -100,7 +100,8 @@ class CreditSentimentTests(unittest.TestCase):
         self.assertFalse(event["requiresReview"])
         self.assertEqual(alert["actionableActive"], [])
         self.assertEqual(alert["reviewCandidates"], [])
-        self.assertEqual(alert["notificationLevel"], "normal")
+        self.assertEqual(alert["notificationLevel"], "amber")
+        self.assertNotIn("verified_severe_event", alert["notificationReasons"])
         self.assertIn("kredivo-kredifazz-purworejo-2026-07",
                       alert["acknowledgedRetained"])
 
