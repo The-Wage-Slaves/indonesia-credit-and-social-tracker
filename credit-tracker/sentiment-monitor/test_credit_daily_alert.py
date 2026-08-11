@@ -1,9 +1,11 @@
 from __future__ import annotations
 import datetime as dt
 import importlib.util
+import os
 import pathlib
 import sys
 import unittest
+from unittest import mock
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -28,10 +30,15 @@ class CreditDailyAlertTests(unittest.TestCase):
              "url": "https://antaranews.com/b", "publisherUrl": "https://antaranews.com",
              "eventId": "case-1"},
         ]
-        result = MODULE.build_daily_decision(
-            dt.date(2026, 7, 29), articles, [],
-            {"google_news": {"status": "ok"}}, {"status": "unconfigured"}, {},
-        )
+        # 必须清掉环境里的真 key。云端工作流会注入 DEEPSEEK_API_KEY，
+        # 不隔离的话这个测试会真的去调 DeepSeek，裁定层跑通 → level 变成 normal，
+        # 断言随即失败——2026-08-05~08-10 日频工作流连续 6 天挂在这里。
+        # 测试也绝不该发出真实 API 请求。
+        with mock.patch.dict(os.environ, {"DEEPSEEK_API_KEY": ""}, clear=False):
+            result = MODULE.build_daily_decision(
+                dt.date(2026, 7, 29), articles, [],
+                {"google_news": {"status": "ok"}}, {"status": "unconfigured"}, {},
+            )
         self.assertEqual(result["level"], "degraded")
         self.assertEqual(result["verifiedRedEvents"], [])
         self.assertIn(result["eventAdjudication"]["status"], {"unconfigured", "failed"})
