@@ -88,24 +88,31 @@ class MergeDailyEvidenceTests(unittest.TestCase):
         self.assertIn("merge_daily_evidence.py", workflow)
         self.assertIn('git checkout -B "$branch" "refs/remotes/origin/$branch"', workflow)
 
-    def test_generated_artifacts_are_cleared_before_switching_branch(self):
-        """接续 bot 分支前必须先移走本次产物，否则 checkout 会被未跟踪文件挡住。
+    def test_every_packed_artifact_is_cleared_before_switching_branch(self):
+        """打包与清理必须由同一份清单驱动，且清理在打包之后、切分支之前。
 
-        bot 分支上已有 daily-events 与 daily-credit-alert-pending.json，而 runner
-        工作区里刚生成的同名文件是未跟踪的，git 会中止 checkout。
-        2026-08-05~08-10 连续 6 天的失败就是这个原因。
+        bot 分支上已有这些路径，工作区里刚生成的同名文件是未跟踪的，
+        git 会以「未跟踪文件将被覆盖」中止 checkout。逐个列举两遍必然漏——
+        2026-08-11 就漏了 outputs/（由飞书步骤生成，此前一直被 skip 所以没暴露）。
         """
         workflow = (ROOT / ".github" / "workflows" / "daily-risk-alerts.yml").read_text(encoding="utf-8")
         stage = workflow[workflow.index("Stage daily evidence"):]
+
+        self.assertIn('tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts', stage,
+                      "tar 必须用 $artifacts 清单，不得再逐个列举")
+        self.assertIn('for path in $artifacts; do rm -rf "$path"; done', stage,
+                      "清理必须遍历同一份 $artifacts 清单")
+
         tar_at = stage.index("tar -cf")
+        rm_at = stage.index("for path in $artifacts")
         checkout_at = stage.index('git checkout -B "$branch"')
-        for path in ("stability-monitor/data/daily-events",
-                     "credit-tracker/sentiment-monitor/output/daily-credit-alert-pending.json"):
-            rm_at = stage.find(f"rm -rf {path}")
-            if rm_at < 0:
-                rm_at = stage.find(f"rm -f {path}")
-            self.assertGreater(rm_at, tar_at, f"{path} 必须在打包之后才移走")
-            self.assertLess(rm_at, checkout_at, f"{path} 必须在切分支之前移走")
+        self.assertGreater(rm_at, tar_at, "清理必须在打包之后")
+        self.assertLess(rm_at, checkout_at, "清理必须在切分支之前")
+
+        # 飞书发布步骤会写 outputs/cloud-publish-status.json，它也必须在清单里
+        artifacts = stage[stage.index("artifacts=\""):stage.index("tar -cf")]
+        self.assertIn("outputs", artifacts)
+        self.assertIn("stability-monitor/data/daily-events", artifacts)
 
     def test_data_workflow_does_not_run_unit_tests(self):
         """数据工作流不跑单测——一次断言失败不该杀掉当天的采集与推送。
