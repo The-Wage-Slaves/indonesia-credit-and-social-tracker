@@ -392,10 +392,13 @@ def daily_summary() -> dict[str, Any]:
             f"{reason}。为避免误报，本次没有复用历史事件；请检查工作流后重新运行。"
         )
 
-    stability_events = [
+    all_stability_events = [
         e for e in (stability.get("events") or [])
         if stability_fresh and isinstance(e, dict) and e.get("headline")
     ]
+    # 已确认且无实质进展的事件留在证据池里，但不再上卡片催办。
+    stability_events = [e for e in all_stability_events if not e.get("acknowledged")]
+    stability_quiet = [e for e in all_stability_events if e.get("acknowledged")]
     stability_events.sort(key=lambda e: e.get("severity") or 0, reverse=True)
     if stability_events:
         blocks = ["**制度/政治骤变**"]
@@ -411,6 +414,15 @@ def daily_summary() -> dict[str, Any]:
                 f"严重度 {severity:.2f}｜{src_txt}｜影响支柱：{event.get('pillar') or '—'}"
             )
         lines.append("\n\n".join(blocks))
+
+    # 不隐瞒：报出因已人工处置而静默的事件，并说明它们仍在证据池里留痕。
+    if stability_quiet:
+        marks = "、".join(str(e.get("typeLabel") or "事件") for e in stability_quiet[:3])
+        lines.append(
+            "**已确认、本次不再催办**\n"
+            f"另有 {len(stability_quiet)} 条已人工处置且无实质新进展的事件（{marks}），未逐条列出；"
+            "它们仍写入证据池留痕。若后续出现实质进展会重新推送并标为「进展升级」。"
+        )
 
     credit_events = (
         list(credit.get("verifiedRedEvents") or [])
