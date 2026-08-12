@@ -27,6 +27,10 @@ jobs:
           node --check credit-tracker/p2p-scraper/update_excel.mjs
           node credit-tracker/dashboard/build_credit_html.mjs
           node .github/scripts/validate_repo.mjs
+      - name: Install test dependencies
+        # stability-monitor/scripts/daily_alert.py 顶层 import requests，
+        # 测它的纯函数也会连带加载该模块。其余步骤仍只依赖标准库。
+        run: pip install requests
       - name: Validate Python syntax
         run: python -m compileall -q .github/scripts credit-tracker stability-monitor
       - name: Validate cloud publisher cards
