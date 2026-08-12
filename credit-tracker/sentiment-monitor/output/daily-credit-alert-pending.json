@@ -1,201 +1,63 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-11",
+  "date": "2026-08-12",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 34.4,
+    "newsDailyVolumeRisk": 23.0,
     "socialDailyVolumeRisk": 39.9,
     "negativeSocialShare": 0.0,
     "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=3; prior-7d median=23.0; robust z=-1.04",
-    "socialVolume": "today=0; prior-7d median=3.0; robust z=-0.67"
+    "newsVolume": "today=0; prior-7d median=24.0; robust z=-1.80",
+    "socialVolume": "today=0; prior-7d median=1.0; robust z=-0.67"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-1c6fbb2c226a",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Awasi 16 Pindar dengan Kredit Macet di Atas 5 Persen - Infobanknews",
-      "headlineZh": "OJK监控16家高坏账网贷",
-      "summaryZh": "OJK对16家坏账率超5%的网贷平台加强监控，显示资产质量承压，值得留痕。",
-      "rationale": "监管监控高坏账平台，资产质量事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "ab26120a1b691b4a"
-      ],
-      "articles": [
-        {
-          "title": "OJK Awasi 16 Pindar dengan Kredit Macet di Atas 5 Persen - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNkhyMkNQcWw0QUM1ZnRXS3BZc01RMGRkVGw3OFVNczZYWHlpU0JWcG5UNTJrWlJhT2RYNmdiTGF0RUI2VnMwaGcxU2hQTDNGTTNnUThYdnEzUENFaDZKTkhtSGl4ZVpGaVEtZEQ2b0NtVzlZTDM1VDdOckUyWVZDSlJXX1hyQWMz?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e1faa19e5640",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Sumbar"
-      ],
-      "headline": "Utang Pinjol di Sumbar Tembus Rp 1,49 Triliun, Warga Mulai Sulit Dapat Kredit Bank - regional.kompas.com",
-      "headlineZh": "西苏门答腊网贷债务高企",
-      "summaryZh": "西苏门答腊省网贷债务达1.49万亿盾，居民信贷受限，反映消费者债务负担加重。",
-      "rationale": "区域债务高企影响消费者，具体数据事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3a03fcc4689d7fbb"
-      ],
-      "articles": [
-        {
-          "title": "Utang Pinjol di Sumbar Tembus Rp 1,49 Triliun, Warga Mulai Sulit Dapat Kredit Bank - regional.kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdmttVHY2NUV3amVBSm5fd1g3UHdkdmRMMlB6NklDRTNRYjM2S3JPRjAzSHVIS2t5LXFwN01tY2RBOUt0RE1aWlFCRzYybkV1cWctbDYzODQ3bi0wWDM3bVFTMHpOdmh5M0tNOTBLUEZmSHo4bmFXSV9yRXdXeDVyeElJRks3alEwLVR4aDFNWGNMUnVKQ1VvNmxlUlM3T1pGeXVLTFlodXd1THA3cXh1VHduckU5d3gyZ0dvMG5hQzdYWEkybVVkUVZtRlRZWWpyd2RWUA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "lowEvidenceLeads": [],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 11,
-    "eventGroupCount": 2,
+    "candidateCount": 14,
+    "eventGroupCount": 0,
     "rejectedNonEvents": 9,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 11
+      "ok": 14
     },
     "socialCrossCheck": "applied"
   },
-  "events": [
-    {
-      "id": "llm-1c6fbb2c226a",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Awasi 16 Pindar dengan Kredit Macet di Atas 5 Persen - Infobanknews",
-      "headlineZh": "OJK监控16家高坏账网贷",
-      "summaryZh": "OJK对16家坏账率超5%的网贷平台加强监控，显示资产质量承压，值得留痕。",
-      "rationale": "监管监控高坏账平台，资产质量事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "ab26120a1b691b4a"
-      ],
-      "articles": [
-        {
-          "title": "OJK Awasi 16 Pindar dengan Kredit Macet di Atas 5 Persen - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNkhyMkNQcWw0QUM1ZnRXS3BZc01RMGRkVGw3OFVNczZYWHlpU0JWcG5UNTJrWlJhT2RYNmdiTGF0RUI2VnMwaGcxU2hQTDNGTTNnUThYdnEzUENFaDZKTkhtSGl4ZVpGaVEtZEQ2b0NtVzlZTDM1VDdOckUyWVZDSlJXX1hyQWMz?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e1faa19e5640",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Sumbar"
-      ],
-      "headline": "Utang Pinjol di Sumbar Tembus Rp 1,49 Triliun, Warga Mulai Sulit Dapat Kredit Bank - regional.kompas.com",
-      "headlineZh": "西苏门答腊网贷债务高企",
-      "summaryZh": "西苏门答腊省网贷债务达1.49万亿盾，居民信贷受限，反映消费者债务负担加重。",
-      "rationale": "区域债务高企影响消费者，具体数据事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3a03fcc4689d7fbb"
-      ],
-      "articles": [
-        {
-          "title": "Utang Pinjol di Sumbar Tembus Rp 1,49 Triliun, Warga Mulai Sulit Dapat Kredit Bank - regional.kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdmttVHY2NUV3amVBSm5fd1g3UHdkdmRMMlB6NklDRTNRYjM2S3JPRjAzSHVIS2t5LXFwN01tY2RBOUt0RE1aWlFCRzYybkV1cWctbDYzODQ3bi0wWDM3bVFTMHpOdmh5M0tNOTBLUEZmSHo4bmFXSV9yRXdXeDVyeElJRks3alEwLVR4aDFNWGNMUnVKQ1VvNmxlUlM3T1pGeXVLTFlodXd1THA3cXh1VHduckU5d3gyZ0dvMG5hQzdYWEkybVVkUVZtRlRZWWpyd2RWUA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "events": [],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "google_trends",
+      "gdelt",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 11,
+    "articleCount48h": 15,
     "socialItemCount48h": 2
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 590,
-    "classifiedCount": 107,
-    "irrelevantDropped": 133,
+    "inputCount": 606,
+    "classifiedCount": 77,
+    "irrelevantDropped": 163,
     "model": "deepseek-chat",
-    "fallbackCount": 350,
+    "fallbackCount": 366,
     "labelCounts": {
-      "NEG": 82,
-      "MIX": 2,
+      "NEG": 47,
+      "MIX": 7,
       "POS": 23
     }
   },

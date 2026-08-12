@@ -1,19 +1,18 @@
 {
-  "generatedAt": "2026-08-11T03:46:36.646842+00:00",
+  "generatedAt": "2026-08-12T03:52:13.093898+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-08-11",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-08-12",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜总统普拉博沃提名Destry Damayanti为央行行长唯一候选人，央行独立性受关注**\n严重度 0.75｜16个独立来源（achmadnurhidayat.id、antaranews.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜Destry Damayanti成为印尼央行行长唯一候选人**\n严重度 0.75｜10个独立来源（bisnis.com、investing.comindonesia）｜影响支柱：institutions",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "daily:2026-08-11:normal:red:success"
+    "decisionId": "daily:2026-08-12:normal:red:success"
   },
   "feishu": "sent"
 }
