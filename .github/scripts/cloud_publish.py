@@ -409,8 +409,9 @@ def daily_summary() -> dict[str, Any]:
             srcs = event.get("independentSourceCount") or 0
             domains = [d for d in (event.get("domains") or []) if d][:2]
             src_txt = f"{srcs}个独立来源" + (f"（{'、'.join(domains)}）" if domains else "")
+            progress = "【进展升级】" if event.get("resumedFromAcknowledged") else ""
             blocks.append(
-                f"{mark} **{event.get('typeLabel') or '事件'}｜{event.get('headline')}**\n"
+                f"{mark} **{progress}{event.get('typeLabel') or '事件'}｜{event.get('headline')}**\n"
                 f"严重度 {severity:.2f}｜{src_txt}｜影响支柱：{event.get('pillar') or '—'}"
             )
         lines.append("\n\n".join(blocks))
