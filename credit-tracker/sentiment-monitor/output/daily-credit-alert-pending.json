@@ -1,64 +1,200 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-12",
+  "date": "2026-08-13",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 23.0,
-    "socialDailyVolumeRisk": 39.9,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "newsDailyVolumeRisk": 31.0,
+    "socialDailyVolumeRisk": 35.0,
+    "negativeSocialShare": 100.0,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=0; prior-7d median=24.0; robust z=-1.80",
-    "socialVolume": "today=0; prior-7d median=1.0; robust z=-0.67"
+    "newsVolume": "today=2; prior-7d median=17.0; robust z=-1.26",
+    "socialVolume": "today=0; prior-7d median=1.0; robust z=-1.00"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [],
+  "lowEvidenceLeads": [
+    {
+      "id": "llm-f6c41812cb3a",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "DPR Komisi III"
+      ],
+      "headline": "Debt Collector Bekasi Pukul Warga Saat Menagih Utang, Komisi III DPR: Ini Pidana - Jawa Pos",
+      "headlineZh": "催收员殴打居民引议员关注",
+      "summaryZh": "勿加西一名催收员在收债时殴打居民，印尼国会第三委员会称此行为构成刑事犯罪。",
+      "rationale": "催收暴力伤害事件，有官方回应",
+      "independentSourceCount": 1,
+      "domains": [
+        "jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "0ff56bb9098c7ec8"
+      ],
+      "articles": [
+        {
+          "title": "Debt Collector Bekasi Pukul Warga Saat Menagih Utang, Komisi III DPR: Ini Pidana - Jawa Pos",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPLWJDeFhOT0NMaW1wcmM4Z0xQQVBxbzVyYi1HbGNXQURzRHFLOHhZX04xWFBvYk5IcW9TdTNMUW1oRmxHUnBwTDF0NElyZS15bEFwWThrdlM4NlhydXNsRl9vUjhnSW91X3pZYThtbnA2VGJFSDRtZDg2cEJLVkNxVUdjZDVGUW1oNUdlRGFNclc4clg0ejE1Szk1bG5pY1JIRFlvY19wQ09HM1BlVXFfaDNyT01fc0FiakgzTFpUY0hxbVdzXzRLSkZB?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-32546a95631a",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [],
+      "headline": "Jebakan Manis Wanita 21 Tahun di Ciamis: Untung 10 Persen Berujung Teror Debt Collector dan Utang Pinjol - Insiden 24 - Insiden 24",
+      "headlineZh": "女子陷网贷骗局遭催收恐吓",
+      "summaryZh": "西爪哇Ciamis一名21岁女子因轻信10%高回报承诺陷入网贷骗局，随后遭受催收员恐吓。",
+      "rationale": "消费者受害个案，涉及欺诈与恐吓",
+      "independentSourceCount": 1,
+      "domains": [
+        "insiden24.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "0d0f4893f49e2624"
+      ],
+      "articles": [
+        {
+          "title": "Jebakan Manis Wanita 21 Tahun di Ciamis: Untung 10 Persen Berujung Teror Debt Collector dan Utang Pinjol - Insiden 24 - Insiden 24",
+          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQWDVtdXBzeHFpVWdDX05Cblpma0lhaFpFMEdHU3B2dFg2ZzB6TjVTQ3l4S1hhUWpQV2Q1NDVUX0Z1WjRsT3g0SDhRdk8xbVhFc0d2cVAtc0VIcWFsT085WklCdlhTQzQ0OEJRVXEwc011aTItUzE1MFozcmtKaGFOMEc0bW9HUzgzak1MM1hZRi1tanZDbHpaNmpESU5WOEI0UlZSQXRNUldEaVd6UVY4ZEVHdUhnQlJCWWVST25lVW80dTNFM0lId3EtNHRkRmdxdmw4eUpkdlA5R3JsZnE0dFhPONIB6AFBVV95cUxNZTlta0RZa0NhNGpzWnRqX0pKdDNFMVNmV0lUaFJTWjBRX1NrQmxWelY0eGlVOGNlSVBfemYweXdraWl3a3ZvUF9lNVpuLUlaSTc3UGttaGFrakRMRWFRZktwenZJQWFrcUZWRUhRakU0YlgxMF9GUXNaR25sZ0JwQ3d2ZHphT3B5ZmFPVnNPR0wyRjFCQV9kcmFMVGxrUF9KLUg3SjRvbGZaX05qNXhnQTBYTW04SVhFMnl1LWxfMzh2cWVVLUlzTEI2T2xfei12dUlfd0VJeFg2aVdROTcwZWUzOTZTUW5M?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    }
+  ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 14,
-    "eventGroupCount": 0,
-    "rejectedNonEvents": 9,
+    "candidateCount": 7,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 5,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 14
+      "ok": 7
     },
     "socialCrossCheck": "applied"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "llm-f6c41812cb3a",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "DPR Komisi III"
+      ],
+      "headline": "Debt Collector Bekasi Pukul Warga Saat Menagih Utang, Komisi III DPR: Ini Pidana - Jawa Pos",
+      "headlineZh": "催收员殴打居民引议员关注",
+      "summaryZh": "勿加西一名催收员在收债时殴打居民，印尼国会第三委员会称此行为构成刑事犯罪。",
+      "rationale": "催收暴力伤害事件，有官方回应",
+      "independentSourceCount": 1,
+      "domains": [
+        "jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "0ff56bb9098c7ec8"
+      ],
+      "articles": [
+        {
+          "title": "Debt Collector Bekasi Pukul Warga Saat Menagih Utang, Komisi III DPR: Ini Pidana - Jawa Pos",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPLWJDeFhOT0NMaW1wcmM4Z0xQQVBxbzVyYi1HbGNXQURzRHFLOHhZX04xWFBvYk5IcW9TdTNMUW1oRmxHUnBwTDF0NElyZS15bEFwWThrdlM4NlhydXNsRl9vUjhnSW91X3pZYThtbnA2VGJFSDRtZDg2cEJLVkNxVUdjZDVGUW1oNUdlRGFNclc4clg0ejE1Szk1bG5pY1JIRFlvY19wQ09HM1BlVXFfaDNyT01fc0FiakgzTFpUY0hxbVdzXzRLSkZB?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-32546a95631a",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [],
+      "headline": "Jebakan Manis Wanita 21 Tahun di Ciamis: Untung 10 Persen Berujung Teror Debt Collector dan Utang Pinjol - Insiden 24 - Insiden 24",
+      "headlineZh": "女子陷网贷骗局遭催收恐吓",
+      "summaryZh": "西爪哇Ciamis一名21岁女子因轻信10%高回报承诺陷入网贷骗局，随后遭受催收员恐吓。",
+      "rationale": "消费者受害个案，涉及欺诈与恐吓",
+      "independentSourceCount": 1,
+      "domains": [
+        "insiden24.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "0d0f4893f49e2624"
+      ],
+      "articles": [
+        {
+          "title": "Jebakan Manis Wanita 21 Tahun di Ciamis: Untung 10 Persen Berujung Teror Debt Collector dan Utang Pinjol - Insiden 24 - Insiden 24",
+          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQWDVtdXBzeHFpVWdDX05Cblpma0lhaFpFMEdHU3B2dFg2ZzB6TjVTQ3l4S1hhUWpQV2Q1NDVUX0Z1WjRsT3g0SDhRdk8xbVhFc0d2cVAtc0VIcWFsT085WklCdlhTQzQ0OEJRVXEwc011aTItUzE1MFozcmtKaGFOMEc0bW9HUzgzak1MM1hZRi1tanZDbHpaNmpESU5WOEI0UlZSQXRNUldEaVd6UVY4ZEVHdUhnQlJCWWVST25lVW80dTNFM0lId3EtNHRkRmdxdmw4eUpkdlA5R3JsZnE0dFhPONIB6AFBVV95cUxNZTlta0RZa0NhNGpzWnRqX0pKdDNFMVNmV0lUaFJTWjBRX1NrQmxWelY0eGlVOGNlSVBfemYweXdraWl3a3ZvUF9lNVpuLUlaSTc3UGttaGFrakRMRWFRZktwenZJQWFrcUZWRUhRakU0YlgxMF9GUXNaR25sZ0JwQ3d2ZHphT3B5ZmFPVnNPR0wyRjFCQV9kcmFMVGxrUF9KLUg3SjRvbGZaX05qNXhnQTBYTW04SVhFMnl1LWxfMzh2cWVVLUlzTEI2T2xfei12dUlfd0VJeFg2aVdROTcwZWUzOTZTUW5M?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    }
+  ],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "gdelt",
+      "media_rss",
+      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
-      "google_trends": "The request failed: Google returned a response with code 429",
+      "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 15,
+    "articleCount48h": 12,
     "socialItemCount48h": 2
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
     "inputCount": 606,
-    "classifiedCount": 77,
-    "irrelevantDropped": 163,
+    "classifiedCount": 113,
+    "irrelevantDropped": 127,
     "model": "deepseek-chat",
     "fallbackCount": 366,
     "labelCounts": {
-      "NEG": 47,
-      "MIX": 7,
-      "POS": 23
+      "NEG": 70,
+      "MIX": 14,
+      "POS": 29
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
