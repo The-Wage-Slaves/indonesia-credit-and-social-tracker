@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "purpose": "稳定性侧已人工处置的事件。与信贷侧的 credit-tracker/sentiment-monitor/acknowledged-events.json 是两张表，因为事件身份空间不同（稳定性按 type+实体 指纹，信贷按 pinjol 事件 id）。",
+  "semantics": "确认只停止「重复催办」，不抹掉证据池里的历史留痕——事件仍会写进 daily-events，只是不再推送、不再抬高当日级别。这与信贷侧 PR #25 采用的「留痕但停止催办」语义一致。",
+  "howToResume": "acknowledgedState 记录「已确认到什么程度」。每日分类时，模型会拿当天的报道与这段描述比对；只有出现实质性新进展（materialChange=true）才重新推送，并在卡片上标为『进展升级』。若改提名他人或换了主体，实体集合改变会生成不同的 id，本身就会自动重新告警。",
+  "howToAdd": "收到卡片并做出①确认留痕/②降级为观察/③驳回之后，把事件 id、decision、acknowledgedState、resumeIf 加进 events。脚本只读不写；确认动作由人做。",
+  "events": [
+    {
+      "id": "key_official_change:11c49b57a7",
+      "idBasis": "type+entities",
+      "entities": [
+        "Bank Indonesia",
+        "Destry Damayanti",
+        "Prabowo Subianto",
+        "DPR"
+      ],
+      "decision": "observation",
+      "acknowledgedAt": "2026-08-12",
+      "acknowledgedState": "总统提名代理行长 Destry Damayanti 为央行行长唯一候选人，提名尚待国会（DPR）批准。截至确认时，尚无国会表决结果，也无改提名他人的迹象。",
+      "resumeIf": "国会否决或搁置该提名；改提名他人；出现该提名之外的央行独立性新事实（例如法定目标再修订、其他理事被替换）。",
+      "note": "所有者 2026-08-12 判断：Destry 本为高级副行长、技术官僚出身，内部续任与空降亲信是两回事，不作为风险事件计分。因此货币政策可信度维持 30，不再下调。此判断了结了 data.js 中该 driver 的『待补：正式继任人选与国会批准结果』。",
+      "matchEntities": [
+        "Bank Indonesia",
+        "Destry Damayanti"
+      ]
+    }
+  ]
+}

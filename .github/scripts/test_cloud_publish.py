@@ -197,6 +197,34 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("监管介入", explanation)
 
 
+    def test_daily_card_marks_reopened_stability_event(self):
+        today = MODULE.dt.date.today().isoformat()
+        credit = {"date": today, "level": "normal"}
+        stability = {
+            "date": today,
+            "level": "red",
+            "events": [{
+                "headline": "国会否决央行行长提名",
+                "typeLabel": "关键官员更替/清洗",
+                "severity": 0.8,
+                "independentSourceCount": 3,
+                "domains": ["a.example", "b.example"],
+                "pillar": "institutions",
+                "resumedFromAcknowledged": True,
+            }],
+        }
+
+        def fake_read(path, default=None):
+            return credit if path.endswith("daily-credit-alert-pending.json") else default
+
+        with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
+            with mock.patch.object(MODULE, "latest_stability_daily_event", return_value=stability):
+                with mock.patch.dict(MODULE.os.environ, {"STABILITY_STATUS": "success"}):
+                    summary = MODULE.daily_summary()
+
+        self.assertIn("【进展升级】", "\n".join(summary["lines"]))
+
+
     def test_release_card_uses_stable_zip_without_local_background_service(self):
         with mock.patch.dict(MODULE.os.environ, {"DASHBOARD_COMMIT": "abcdef123456"}):
             summary = MODULE.release_summary()
