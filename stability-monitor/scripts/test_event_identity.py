@@ -81,6 +81,23 @@ class AcknowledgementTests(unittest.TestCase):
         with mock.patch.object(MODULE, "ACKNOWLEDGED", HERE / "nope.json"):
             self.assertEqual(MODULE.load_acknowledged(), {})
 
+    def test_model_match_requires_deterministic_entity_anchors(self):
+        entry = {
+            "entities": BI_ENTITIES,
+            "matchEntities": ["Bank Indonesia", "Destry Damayanti"],
+        }
+        self.assertTrue(MODULE.acknowledgement_anchor_matches(
+            entry, ["BI", "Destry", "DPR"]
+        ))
+        self.assertFalse(MODULE.acknowledgement_anchor_matches(
+            entry, ["DPR", "Prabowo Subianto", "Constitutional Court"]
+        ))
+
+    def test_model_boolean_string_false_is_false(self):
+        self.assertFalse(MODULE.model_bool("false"))
+        self.assertTrue(MODULE.model_bool("true"))
+        self.assertTrue(MODULE.model_bool("unexpected", default=True))
+
 
 class GradeTests(unittest.TestCase):
     def event(self, eid: str, severity: float = 0.75, sources: int = 3, **kw) -> dict:
@@ -127,6 +144,11 @@ class PromptContractTests(unittest.TestCase):
         source = (HERE / "daily_alert.py").read_text(encoding="utf-8")
         self.assertIn("matchesAcknowledgedId", source)
         self.assertIn("materialChange", source)
+
+    def test_missing_country_or_member_ids_cannot_create_an_alert(self):
+        source = (HERE / "daily_alert.py").read_text(encoding="utf-8")
+        self.assertIn("country or 'missing'", source)
+        self.assertIn("if not refs:", source)
 
 
 if __name__ == "__main__":
