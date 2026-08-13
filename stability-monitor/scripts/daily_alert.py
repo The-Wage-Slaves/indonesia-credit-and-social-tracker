@@ -186,10 +186,54 @@ def load_acknowledged() -> dict[str, dict]:
     return index
 
 
+def normalize_entity(value: str) -> str:
+    """Normalize common entity aliases before acknowledgement matching."""
+    cleaned = re.sub(r"[^a-z0-9]", "", str(value).casefold())
+    aliases = {
+        "bi": "bankindonesia",
+        "bankindonesiabank": "bankindonesia",
+        "dprri": "dpr",
+        "dewaperwakilanrakyat": "dpr",
+        "prabowo": "prabowosubianto",
+        "destry": "destrydamayanti",
+    }
+    return aliases.get(cleaned, cleaned)
+
+
+def normalized_entities(entities: list[str]) -> set[str]:
+    return {normalize_entity(e) for e in entities if normalize_entity(e)}
+
+
 def entity_key(entities: list[str]) -> str:
     """只按实体集合的键，与事件类型无关。"""
-    cleaned = sorted({re.sub(r"\s+", "", str(e)).lower() for e in entities if str(e).strip()})
+    cleaned = sorted(normalized_entities(entities))
     return "entities:" + hashlib.sha1("|".join(cleaned).encode("utf-8")).hexdigest()[:10]
+
+
+def acknowledgement_anchor_matches(entry: dict, entities: list[str]) -> bool:
+    """LLM-declared matches must still share deterministic entity anchors."""
+    observed = normalized_entities(entities)
+    required = normalized_entities(entry.get("matchEntities") or [])
+    if required:
+        return required.issubset(observed)
+    registered = normalized_entities(entry.get("entities") or [])
+    overlap = observed & registered
+    return len(overlap) >= 2 and len(overlap) >= min(len(observed), len(registered)) / 2
+
+
+def model_bool(value: Any, default: bool = True) -> bool:
+    """Parse a model JSON boolean without treating the string 'false' as truthy."""
+    if isinstance(value, bool):
+        return value
+    if isinstance(value, str):
+        lowered = value.strip().casefold()
+        if lowered == "true":
+            return True
+        if lowered == "false":
+            return False
+    if isinstance(value, (int, float)) and value in (0, 1):
+        return bool(value)
+    return default
 
 
 def classify_events(items: list[dict], cfg: dict) -> list[dict]:
@@ -208,10 +252,15 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
     acknowledged = load_acknowledged()
     ack_block = ""
     if acknowledged:
+        # load_acknowledged() exposes several lookup aliases for each event. Keep only
+        # one registry row in the prompt, otherwise every event is repeated 2-3 times.
+        unique_acknowledged = {
+            str(entry.get("id")): entry for entry in acknowledged.values() if entry.get("id")
+        }
         lines = [
             f"- {entry.get('id')}：已确认状态＝{entry.get('acknowledgedState', '')} "
             f"｜重新告警条件＝{entry.get('resumeIf', '')}"
-            for entry in acknowledged.values()
+            for entry in unique_acknowledged.values()
         ]
         ack_block = (
             "\n\n**已人工处置的事件**（下列事项所有者已看过并作出判断）：\n"
@@ -261,11 +310,15 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
         # 爆炸和摩洛哥移民事件判成了印尼稳定性事件，还标成高危待核。提示词之外再加
         # 一道确定性过滤——宁可漏掉一条措辞含糊的印尼事件，也不能让别国事件进评分证据池。
         country = str(ev.get("country") or "").strip()
-        if country and not any(token in country for token in ("印尼", "印度尼西亚", "Indonesia")):
-            dropped_foreign.append(f"{country}:{str(ev.get('headline',''))[:40]}")
+        if not any(token in country for token in ("印尼", "印度尼西亚", "Indonesia")):
+            dropped_foreign.append(f"{country or 'missing'}:{str(ev.get('headline',''))[:40]}")
             continue
         member_ids = [str(m).strip().strip("[]") for m in (ev.get("memberIds") or [])]
         refs = [labels[m] for m in member_ids if m in labels]
+        # Never promote a model-created event without at least one traceable input item.
+        if not refs:
+            print(f"  ! 丢弃无有效 memberIds 的模型事件: {str(ev.get('headline',''))[:60]}")
+            continue
         domains = sorted({r["domain"] for r in refs if r.get("domain")})
         try:
             severity = max(0.0, min(1.0, float(ev.get("severity", 0))))
@@ -280,11 +333,19 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
         ack = None
         matched_id = str(ev.get("matchesAcknowledgedId") or "").strip() or None
         for candidate in (matched_id, entity_key(entities) if entities else None, event_id):
-            if candidate and candidate in acknowledged:
-                ack = acknowledged[candidate]
-                event_id = str(ack["id"])   # 统一回归表里的正式 id，保持跨日稳定
-                break
-        material = bool(ev.get("materialChange", True))
+            if not candidate or candidate not in acknowledged:
+                continue
+            candidate_entry = acknowledged[candidate]
+            # matchesAcknowledgedId comes from the model and is untrusted. Require
+            # deterministic entity anchors before it may silence an alert.
+            if candidate == matched_id and not acknowledgement_anchor_matches(
+                candidate_entry, entities
+            ):
+                continue
+            ack = candidate_entry
+            event_id = str(ack["id"])   # 统一回归表里的正式 id，保持跨日稳定
+            break
+        material = model_bool(ev.get("materialChange", True), default=True)
         events.append({
             "id": event_id,
             "idBasis": id_basis,
@@ -371,7 +432,8 @@ def push_feishu(day: str, graded: dict, n_items: int) -> None:
     for e in graded["red"] + graded["highPending"] + graded["amber"]:
         badge = "🔴" if e in graded["red"] else ("🔺" if e in graded["highPending"] else "🟠")
         srcs = f"{e['independentSourceCount']}源" + (f"（{', '.join(e['domains'][:3])}）" if e["domains"] else "")
-        lines.append(f"{badge} **[{e['typeLabel']}]** {e['headline']}\n"
+        progress = "【进展升级】" if e.get("resumedFromAcknowledged") else ""
+        lines.append(f"{badge} **{progress}[{e['typeLabel']}]** {e['headline']}\n"
                      f"<font color='grey'>严重度 {e['severity']} · {srcs} · 影响支柱: {e['pillar']}</font>")
     body = ("\n\n".join(lines) if lines else "无") + (
         f"\n\n<font color='grey'>当日扫描 {n_items} 条标题 · DeepSeek 机器分类，"
