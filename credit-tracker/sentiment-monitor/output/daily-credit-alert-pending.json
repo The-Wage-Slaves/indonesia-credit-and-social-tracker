@@ -1,24 +1,56 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-14",
+  "date": "2026-08-15",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 31.5,
-    "socialDailyVolumeRisk": 34.8,
-    "negativeSocialShare": 18.5,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 9.5,
+    "socialDailyVolumeRisk": 29.8,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=15.0; robust z=-1.24",
-    "socialVolume": "today=0; prior-7d median=3.0; robust z=-1.01"
+    "newsVolume": "today=0; prior-7d median=12.0; robust z=-2.70",
+    "socialVolume": "today=0; prior-7d median=2.0; robust z=-1.35"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
+    {
+      "id": "llm-e850e2da332c",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK Malang"
+      ],
+      "headline": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
+      "headlineZh": "OJK玛琅处理179起非法金融案",
+      "summaryZh": "OJK玛琅办事处处理179起非法金融案件，包括非法网贷和投资骗局，属于监管机构常规执法统计。",
+      "rationale": "监管机构处理案件统计，具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "surabaya.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "8e30e5eef05bddb0"
+      ],
+      "articles": [
+        {
+          "title": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMFRyMVg5RGhBa1lWR0c3TjVtN1lUZWJ3LTNKOEZGdGRlMWxMSzBaLUVaYnBKQy1qRVBhT2lpR3NUZlNfbWZ2NWtIN1ljUDI2aEJlcEdIRXVPSFVZUTFRVFgwQjBvb25hYk15TG5ReEFMek41VlNYUFU3cHZNYzV2Vkg1Z0tlbzVXT1BfOEs5WWMwTThnLWxaUEN2UGtDZWhTWTJpaVlpSm1pTlNXWk1uUFJyOERIeER3YVFmRnVFSGE2cEpXMmN3RlRtNnBleFU?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
     {
       "id": "llm-d5fe04d54f32",
       "eventType": "fraud_or_illegal_practice",
@@ -27,9 +59,9 @@
         "非法网贷集团"
       ],
       "headline": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
-      "headlineZh": "警方突袭非法网贷集团",
-      "summaryZh": "警方突袭涉嫌非法网贷的集团，涉及25000起案件，并没收52亿印尼盾现金。",
-      "rationale": "警方行动，涉及具体案件和资产扣押。",
+      "headlineZh": "警方捣毁非法网贷集团",
+      "summaryZh": "警方捣毁一个涉及25,000起案件的非法网贷集团，查获现金52亿印尼盾，属于重大执法行动。",
+      "rationale": "警方破获非法网贷集团，具体事件",
       "independentSourceCount": 1,
       "domains": [
         "cnbcindonesia.com"
@@ -42,136 +74,6 @@
         {
           "title": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaWh4bGx2Y2otMEYwR2poemdPNVJJOEIxMlcwWjR0TW5KWlEwQ0FDUWFiTWhfNUhrNi1nYWRjeE9YLVFDWldzYkY1Rk1jSTgtQ1NXT1NnQURUWENKQzViY2pHR01vdTJFdEhBZlVmdGIyOTA1T2dNS3c2RHZYQkh0RXp6SVJjVFh5T3pmUklZTE9veEsyTm5EUXc1SUlMYWp6RU5wWXVsSGdZMXBTMVM4WV9Ndk5jLVk2VHdyUWJ6Q3jSAcYBQVVfeXFMT3QwNEVtX0dwZi1LOFFDT0FYWjR4ZFdnbjY1ODJwMXo3Q1d2MjBQbDlraGYwZzJSaGJWN3BDZVFHUjRNN0M2T1ZRYklYcWNwZkdwcnNZV0hzdjc5TVpZTUdtSWxDa0xpckNlRDFKVWxMOVk5R0x5bkJjVEtEaVdSYW9hTVJ1LVE2MFNqczF1dDE1WjNDWVpGUVJ1TFBSV0NBbG9hb3h4bEt0Z1NTYzJ4SlJZQXp3dDRTdUdjeklSQUFTYzRxYVhn?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-12fc51d96415",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "AdaKami"
-      ],
-      "headline": "AdaKami Perketat Seleksi Peminjam demi Tekan Risiko Gagal Bayar - Infobanknews",
-      "headlineZh": "AdaKami收紧贷款审核",
-      "summaryZh": "AdaKami因客户投诉和坏账风险，宣布收紧借款人筛选标准，以降低违约率。",
-      "rationale": "平台因资产质量承压调整策略，属具体事件。",
-      "independentSourceCount": 5,
-      "domains": [
-        "finansial.bisnis.com",
-        "infobanknews.com",
-        "money.kompas.com",
-        "readers.id",
-        "tirto.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b807953179a9647c",
-        "06683628675158f1",
-        "6768fdfb5beeda2c",
-        "1c7d13c47cd1ca51",
-        "b909071e17c41f20",
-        "c3ae36f8026c3ebc"
-      ],
-      "articles": [
-        {
-          "title": "AdaKami Perketat Seleksi Peminjam demi Tekan Risiko Gagal Bayar - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONnVTdGRCUEFJMzExMmtQSkxqWUdrc0tlREIyYVktbGdDc29YeFN2aUN4S0Jvbkk0VTExNnNVNDFjOXlZTHVpc0RqUkZzenpGdXNiaG96M2dRMHdPc0NBYmNTMmxaZ1hNQVNGeFhsZFgyc0ZXMmpINXc2UG1JQml2azZRVkgyNVpxVXZqNHJoMEpQQQ?oc=5"
-        },
-        {
-          "title": "AdaKami Perketat Seleksi Pinjaman Tekan Kredit Macet P2P Lending - Readers.id",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xNllBTlZ6SzUyQW9ocmNCNkFXaF93ZVJBYUdSX3pJQzJDalh6S19SSEVpcHJFeVc0d3FwMzFuYVpZZ3R0NVczWVoycU1BMUs1U2JxU3c0cVBWU0RTMGx3VXJGbWRrcFhVZHVYeXJkYmVSSldqLXc?oc=5"
-        },
-        {
-          "title": "Banyak Nasabah Keluhkan Pinjaman Ditolak, AdaKami Perketat Pembiayaan demi Cegah Galbay - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQR1pvVkp6MHpKeldEMFNvczJLZml6VE11NG9ZLXcyd1NGWE92UXV6MlJrek1xNV9NVmhDaUUza0VDYWRleDIxZE9lMUxYUkdBTTRHaHcwakdjMWIxU3RwZGJGeUtGSFpCRk56RG1saUx4ZjdHcFJyei1kcklYUld5Y0J4TTZLMlltSVFTbkJ5Rld2UzVBUndWZjR6UDZCZmFNZllMWTFuOVc5OXNiVEREcEh4RXhIelBxVE9ISjBpY1loM195UDVOUEZwU25UY1NQdlp6VFRlQkU?oc=5"
-        },
-        {
-          "title": "Cegah Gagal Bayar, AdaKami Curhat Banyak Dikomplain Nasabah - Tirto.id",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPczduOG1hV09Qc0YtbkY4Y2x6Rm1IUmNJNXczWTBfdHVRX1gyRzUxcUhWbUZnV0xBLVM3bzdXUnd2dHNkMFBQVzl4WXBPWG83eFZ5LVdmVUpIbFZ6eTVUYjdXMEhmSi1uMDhhaUtEWkt3enIxOGNYN0MyUTB6THFwdk96M2U5UkU?oc=5"
-        },
-        {
-          "title": "Foto : Tekan Risiko Gagal Bayar, AdaKami Perketat Seleksi Peminjam Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNLWE2WkVER3AwbVp6RjJQSFByX1dpQVRENzV1clY1SFNNNFRqa19WRS1uMmc2dnFpdzA2V1ZBb19NTTYyYUxoM2VRbzluZXE5R3I5alF3RU50cDZ2dTd3VEtWYmw0aVhHckhkdVJxODV6aUF5WnhzNXdVeEhSUjhOczVjT3Ytbk91b0QtNUhIczU3aGRoWjRBODd4ZnM4c01PNW5aZm44c3N0U1VrZi1DdVpZcTVxNnRK?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 6,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-9c25c3c9044e",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Kemensos",
-        "Kabupaten Tangerang"
-      ],
-      "headline": "Kemensos Tangguhkan Bansos 259 KPM Terindikasi Pinjol di Kabupaten Tangerang - Kabar6.com",
-      "headlineZh": "259户因网贷被停社保",
-      "summaryZh": "社会部因259个家庭疑似卷入网贷，暂停其在唐格朗县的社会援助。",
-      "rationale": "具体行政措施，影响特定人群。",
-      "independentSourceCount": 1,
-      "domains": [
-        "kabar6.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b5c961ed5a7665c1"
-      ],
-      "articles": [
-        {
-          "title": "Kemensos Tangguhkan Bansos 259 KPM Terindikasi Pinjol di Kabupaten Tangerang - Kabar6.com",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQRGJVNEQ0WDJxRmRTOHlXd2pzVEJYRm9TVFpmc1hHdVZldWhldUFOcUYxRm9wN3VnQ2FhRnRPTzB1d3RIaXdydENsVDlUcTBwbG9kcWVwOEZfdHB0YlZqZGY0cm1Vd2xSRVJmNzFGVUdfVklBcDNHUlN5UzRjSFlxcnNtVWlPVERCN2lWUWZGa2F1eVRFU19Ld3ZoQTg?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-650ad58be110",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Polda Kepri"
-      ],
-      "headline": "Polda Kepri Bentuk Satgas Judol dan Pinjol, Anggota Terlibat Bisa Kena Sanksi - iNews.ID",
-      "headlineZh": "廖内群岛警察成立专案组",
-      "summaryZh": "廖内群岛地区警察成立特别工作组，打击在线赌博和非法网贷，并约束内部成员。",
-      "rationale": "警方成立专项工作组，属监管介入。",
-      "independentSourceCount": 1,
-      "domains": [
-        "batam.inews.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d904079474880dd8"
-      ],
-      "articles": [
-        {
-          "title": "Polda Kepri Bentuk Satgas Judol dan Pinjol, Anggota Terlibat Bisa Kena Sanksi - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbG1BVUNiRXhoM3JnWXJzb0NPTVB3c3NDX0cxemk0dzgyUmd4UEVDcWo5TjJyQTU3OVJFc2pZVHc3Sl9vOWJCcGFUNzVUMmczQjNWOUV5LVV2N3ZreTFKejcyU2VxellaODFGSUhJTVBuOTlFcXBCUXlzUzhzcll4UHlKbUE5MnM0Y2Y1WENMUGFrSFFZWG52aTFGcHRpYkIyTjlmUG9KN2syZ3BTUjM40gGvAUFVX3lxTFBsbUFVQ2JFeGgzcmdZcnNvQ09NUHdzc0NfRzF6aTR3ODJSZ3hQRUNxajlOMnJBNTc5UkVzallUdzdKX285YkJwYVQ3NVQyZzNCM1Y5RXktVXY3dmt5MUp6NzJTZXF6WVo4MUZJSElNUG45OUVxcEJReXNTOHNyWXhQeUptQTkyczRjZjVYQ0xQYWtIUVlYbnZpMUZwdGliQjJOOWZQb0o3azJncFNSMzg?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -188,16 +90,50 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 25,
-    "eventGroupCount": 4,
-    "rejectedNonEvents": 6,
+    "candidateCount": 6,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 4,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 25
+      "ok": 6
     },
     "socialCrossCheck": "applied"
   },
   "events": [
+    {
+      "id": "llm-e850e2da332c",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK Malang"
+      ],
+      "headline": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
+      "headlineZh": "OJK玛琅处理179起非法金融案",
+      "summaryZh": "OJK玛琅办事处处理179起非法金融案件，包括非法网贷和投资骗局，属于监管机构常规执法统计。",
+      "rationale": "监管机构处理案件统计，具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "surabaya.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "8e30e5eef05bddb0"
+      ],
+      "articles": [
+        {
+          "title": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMFRyMVg5RGhBa1lWR0c3TjVtN1lUZWJ3LTNKOEZGdGRlMWxMSzBaLUVaYnBKQy1qRVBhT2lpR3NUZlNfbWZ2NWtIN1ljUDI2aEJlcEdIRXVPSFVZUTFRVFgwQjBvb25hYk15TG5ReEFMek41VlNYUFU3cHZNYzV2Vkg1Z0tlbzVXT1BfOEs5WWMwTThnLWxaUEN2UGtDZWhTWTJpaVlpSm1pTlNXWk1uUFJyOERIeER3YVFmRnVFSGE2cEpXMmN3RlRtNnBleFU?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
     {
       "id": "llm-d5fe04d54f32",
       "eventType": "fraud_or_illegal_practice",
@@ -206,9 +142,9 @@
         "非法网贷集团"
       ],
       "headline": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
-      "headlineZh": "警方突袭非法网贷集团",
-      "summaryZh": "警方突袭涉嫌非法网贷的集团，涉及25000起案件，并没收52亿印尼盾现金。",
-      "rationale": "警方行动，涉及具体案件和资产扣押。",
+      "headlineZh": "警方捣毁非法网贷集团",
+      "summaryZh": "警方捣毁一个涉及25,000起案件的非法网贷集团，查获现金52亿印尼盾，属于重大执法行动。",
+      "rationale": "警方破获非法网贷集团，具体事件",
       "independentSourceCount": 1,
       "domains": [
         "cnbcindonesia.com"
@@ -221,136 +157,6 @@
         {
           "title": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaWh4bGx2Y2otMEYwR2poemdPNVJJOEIxMlcwWjR0TW5KWlEwQ0FDUWFiTWhfNUhrNi1nYWRjeE9YLVFDWldzYkY1Rk1jSTgtQ1NXT1NnQURUWENKQzViY2pHR01vdTJFdEhBZlVmdGIyOTA1T2dNS3c2RHZYQkh0RXp6SVJjVFh5T3pmUklZTE9veEsyTm5EUXc1SUlMYWp6RU5wWXVsSGdZMXBTMVM4WV9Ndk5jLVk2VHdyUWJ6Q3jSAcYBQVVfeXFMT3QwNEVtX0dwZi1LOFFDT0FYWjR4ZFdnbjY1ODJwMXo3Q1d2MjBQbDlraGYwZzJSaGJWN3BDZVFHUjRNN0M2T1ZRYklYcWNwZkdwcnNZV0hzdjc5TVpZTUdtSWxDa0xpckNlRDFKVWxMOVk5R0x5bkJjVEtEaVdSYW9hTVJ1LVE2MFNqczF1dDE1WjNDWVpGUVJ1TFBSV0NBbG9hb3h4bEt0Z1NTYzJ4SlJZQXp3dDRTdUdjeklSQUFTYzRxYVhn?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-12fc51d96415",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "AdaKami"
-      ],
-      "headline": "AdaKami Perketat Seleksi Peminjam demi Tekan Risiko Gagal Bayar - Infobanknews",
-      "headlineZh": "AdaKami收紧贷款审核",
-      "summaryZh": "AdaKami因客户投诉和坏账风险，宣布收紧借款人筛选标准，以降低违约率。",
-      "rationale": "平台因资产质量承压调整策略，属具体事件。",
-      "independentSourceCount": 5,
-      "domains": [
-        "finansial.bisnis.com",
-        "infobanknews.com",
-        "money.kompas.com",
-        "readers.id",
-        "tirto.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b807953179a9647c",
-        "06683628675158f1",
-        "6768fdfb5beeda2c",
-        "1c7d13c47cd1ca51",
-        "b909071e17c41f20",
-        "c3ae36f8026c3ebc"
-      ],
-      "articles": [
-        {
-          "title": "AdaKami Perketat Seleksi Peminjam demi Tekan Risiko Gagal Bayar - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxONnVTdGRCUEFJMzExMmtQSkxqWUdrc0tlREIyYVktbGdDc29YeFN2aUN4S0Jvbkk0VTExNnNVNDFjOXlZTHVpc0RqUkZzenpGdXNiaG96M2dRMHdPc0NBYmNTMmxaZ1hNQVNGeFhsZFgyc0ZXMmpINXc2UG1JQml2azZRVkgyNVpxVXZqNHJoMEpQQQ?oc=5"
-        },
-        {
-          "title": "AdaKami Perketat Seleksi Pinjaman Tekan Kredit Macet P2P Lending - Readers.id",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE8xNllBTlZ6SzUyQW9ocmNCNkFXaF93ZVJBYUdSX3pJQzJDalh6S19SSEVpcHJFeVc0d3FwMzFuYVpZZ3R0NVczWVoycU1BMUs1U2JxU3c0cVBWU0RTMGx3VXJGbWRrcFhVZHVYeXJkYmVSSldqLXc?oc=5"
-        },
-        {
-          "title": "Banyak Nasabah Keluhkan Pinjaman Ditolak, AdaKami Perketat Pembiayaan demi Cegah Galbay - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQR1pvVkp6MHpKeldEMFNvczJLZml6VE11NG9ZLXcyd1NGWE92UXV6MlJrek1xNV9NVmhDaUUza0VDYWRleDIxZE9lMUxYUkdBTTRHaHcwakdjMWIxU3RwZGJGeUtGSFpCRk56RG1saUx4ZjdHcFJyei1kcklYUld5Y0J4TTZLMlltSVFTbkJ5Rld2UzVBUndWZjR6UDZCZmFNZllMWTFuOVc5OXNiVEREcEh4RXhIelBxVE9ISjBpY1loM195UDVOUEZwU25UY1NQdlp6VFRlQkU?oc=5"
-        },
-        {
-          "title": "Cegah Gagal Bayar, AdaKami Curhat Banyak Dikomplain Nasabah - Tirto.id",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPczduOG1hV09Qc0YtbkY4Y2x6Rm1IUmNJNXczWTBfdHVRX1gyRzUxcUhWbUZnV0xBLVM3bzdXUnd2dHNkMFBQVzl4WXBPWG83eFZ5LVdmVUpIbFZ6eTVUYjdXMEhmSi1uMDhhaUtEWkt3enIxOGNYN0MyUTB6THFwdk96M2U5UkU?oc=5"
-        },
-        {
-          "title": "Foto : Tekan Risiko Gagal Bayar, AdaKami Perketat Seleksi Peminjam Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNLWE2WkVER3AwbVp6RjJQSFByX1dpQVRENzV1clY1SFNNNFRqa19WRS1uMmc2dnFpdzA2V1ZBb19NTTYyYUxoM2VRbzluZXE5R3I5alF3RU50cDZ2dTd3VEtWYmw0aVhHckhkdVJxODV6aUF5WnhzNXdVeEhSUjhOczVjT3Ytbk91b0QtNUhIczU3aGRoWjRBODd4ZnM4c01PNW5aZm44c3N0U1VrZi1DdVpZcTVxNnRK?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 6,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-9c25c3c9044e",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Kemensos",
-        "Kabupaten Tangerang"
-      ],
-      "headline": "Kemensos Tangguhkan Bansos 259 KPM Terindikasi Pinjol di Kabupaten Tangerang - Kabar6.com",
-      "headlineZh": "259户因网贷被停社保",
-      "summaryZh": "社会部因259个家庭疑似卷入网贷，暂停其在唐格朗县的社会援助。",
-      "rationale": "具体行政措施，影响特定人群。",
-      "independentSourceCount": 1,
-      "domains": [
-        "kabar6.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b5c961ed5a7665c1"
-      ],
-      "articles": [
-        {
-          "title": "Kemensos Tangguhkan Bansos 259 KPM Terindikasi Pinjol di Kabupaten Tangerang - Kabar6.com",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQRGJVNEQ0WDJxRmRTOHlXd2pzVEJYRm9TVFpmc1hHdVZldWhldUFOcUYxRm9wN3VnQ2FhRnRPTzB1d3RIaXdydENsVDlUcTBwbG9kcWVwOEZfdHB0YlZqZGY0cm1Vd2xSRVJmNzFGVUdfVklBcDNHUlN5UzRjSFlxcnNtVWlPVERCN2lWUWZGa2F1eVRFU19Ld3ZoQTg?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-650ad58be110",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Polda Kepri"
-      ],
-      "headline": "Polda Kepri Bentuk Satgas Judol dan Pinjol, Anggota Terlibat Bisa Kena Sanksi - iNews.ID",
-      "headlineZh": "廖内群岛警察成立专案组",
-      "summaryZh": "廖内群岛地区警察成立特别工作组，打击在线赌博和非法网贷，并约束内部成员。",
-      "rationale": "警方成立专项工作组，属监管介入。",
-      "independentSourceCount": 1,
-      "domains": [
-        "batam.inews.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d904079474880dd8"
-      ],
-      "articles": [
-        {
-          "title": "Polda Kepri Bentuk Satgas Judol dan Pinjol, Anggota Terlibat Bisa Kena Sanksi - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQbG1BVUNiRXhoM3JnWXJzb0NPTVB3c3NDX0cxemk0dzgyUmd4UEVDcWo5TjJyQTU3OVJFc2pZVHc3Sl9vOWJCcGFUNzVUMmczQjNWOUV5LVV2N3ZreTFKejcyU2VxellaODFGSUhJTVBuOTlFcXBCUXlzUzhzcll4UHlKbUE5MnM0Y2Y1WENMUGFrSFFZWG52aTFGcHRpYkIyTjlmUG9KN2syZ3BTUjM40gGvAUFVX3lxTFBsbUFVQ2JFeGgzcmdZcnNvQ09NUHdzc0NfRzF6aTR3ODJSZ3hQRUNxajlOMnJBNTc5UkVzallUdzdKX285YkJwYVQ3NVQyZzNCM1Y5RXktVXY3dmt5MUp6NzJTZXF6WVo4MUZJSElNUG45OUVxcEJReXNTOHNyWXhQeUptQTkyczRjZjVYQ0xQYWtIUVlYbnZpMUZwdGliQjJOOWZQb0o3azJncFNSMzg?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -371,26 +177,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "list index out of range",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 35,
-    "socialItemCount48h": 23
+    "articleCount48h": 9,
+    "socialItemCount48h": 1
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 586,
-    "classifiedCount": 7,
-    "irrelevantDropped": 233,
+    "inputCount": 514,
+    "classifiedCount": 134,
+    "irrelevantDropped": 106,
     "model": "deepseek-chat",
-    "fallbackCount": 346,
+    "fallbackCount": 274,
     "labelCounts": {
-      "NEG": 6,
-      "MIX": 0,
-      "POS": 1
+      "NEG": 59,
+      "MIX": 1,
+      "POS": 74
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
