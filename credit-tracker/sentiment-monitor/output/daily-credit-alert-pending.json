@@ -1,82 +1,56 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-15",
+  "date": "2026-08-16",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 9.5,
-    "socialDailyVolumeRisk": 29.8,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "newsDailyVolumeRisk": 27.2,
+    "socialDailyVolumeRisk": 4.5,
+    "negativeSocialShare": 18.2,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=0; prior-7d median=12.0; robust z=-2.70",
-    "socialVolume": "today=0; prior-7d median=2.0; robust z=-1.35"
+    "newsVolume": "today=1; prior-7d median=10.0; robust z=-1.52",
+    "socialVolume": "today=1; prior-7d median=10.0; robust z=-3.04"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-e850e2da332c",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK Malang"
-      ],
-      "headline": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
-      "headlineZh": "OJK玛琅处理179起非法金融案",
-      "summaryZh": "OJK玛琅办事处处理179起非法金融案件，包括非法网贷和投资骗局，属于监管机构常规执法统计。",
-      "rationale": "监管机构处理案件统计，具体事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "surabaya.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8e30e5eef05bddb0"
-      ],
-      "articles": [
-        {
-          "title": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMFRyMVg5RGhBa1lWR0c3TjVtN1lUZWJ3LTNKOEZGdGRlMWxMSzBaLUVaYnBKQy1qRVBhT2lpR3NUZlNfbWZ2NWtIN1ljUDI2aEJlcEdIRXVPSFVZUTFRVFgwQjBvb25hYk15TG5ReEFMek41VlNYUFU3cHZNYzV2Vkg1Z0tlbzVXT1BfOEs5WWMwTThnLWxaUEN2UGtDZWhTWTJpaVlpSm1pTlNXWk1uUFJyOERIeER3YVFmRnVFSGE2cEpXMmN3RlRtNnBleFU?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-d5fe04d54f32",
-      "eventType": "fraud_or_illegal_practice",
+      "id": "llm-fbc5e1a176b9",
+      "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "非法网贷集团"
+        "Kredivo",
+        "OJK"
       ],
-      "headline": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
-      "headlineZh": "警方捣毁非法网贷集团",
-      "summaryZh": "警方捣毁一个涉及25,000起案件的非法网贷集团，查获现金52亿印尼盾，属于重大执法行动。",
-      "rationale": "警方破获非法网贷集团，具体事件",
+      "headline": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
+      "headlineZh": "Kredivo催收骚扰媒体遭投诉",
+      "summaryZh": "Kredivo催收方式被指骚扰媒体编辑部及员工，主编已向OJK投诉，涉及消费者受害。",
+      "rationale": "具体催收骚扰事件，且有向监管机构投诉，构成消费者受害事件。",
       "independentSourceCount": 1,
       "domains": [
-        "cnbcindonesia.com"
+        "prioritastv.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "90b1e8b32eaf8b40"
+        "f37504f65324248f",
+        "e7a8e0bcd233d30f"
       ],
       "articles": [
         {
-          "title": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaWh4bGx2Y2otMEYwR2poemdPNVJJOEIxMlcwWjR0TW5KWlEwQ0FDUWFiTWhfNUhrNi1nYWRjeE9YLVFDWldzYkY1Rk1jSTgtQ1NXT1NnQURUWENKQzViY2pHR01vdTJFdEhBZlVmdGIyOTA1T2dNS3c2RHZYQkh0RXp6SVJjVFh5T3pmUklZTE9veEsyTm5EUXc1SUlMYWp6RU5wWXVsSGdZMXBTMVM4WV9Ndk5jLVk2VHdyUWJ6Q3jSAcYBQVVfeXFMT3QwNEVtX0dwZi1LOFFDT0FYWjR4ZFdnbjY1ODJwMXo3Q1d2MjBQbDlraGYwZzJSaGJWN3BDZVFHUjRNN0M2T1ZRYklYcWNwZkdwcnNZV0hzdjc5TVpZTUdtSWxDa0xpckNlRDFKVWxMOVk5R0x5bkJjVEtEaVdSYW9hTVJ1LVE2MFNqczF1dDE1WjNDWVpGUVJ1TFBSV0NBbG9hb3h4bEt0Z1NTYzJ4SlJZQXp3dDRTdUdjeklSQUFTYzRxYVhn?oc=5"
+          "title": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBjaGF4Vkptb3NVUDhKT2JFTVJpYjJDTXF2NFhCb0tHX2JmV3hJVjhwSnlqT09HLVdHR3RGb2xuRkxua3ltRDZoV1ZweG5HVnNmNEh6NEZaeUctQzUzT2FWd3dfdTktUHF6UHdR?oc=5"
+        },
+        {
+          "title": "Tagihan Pribadi Ganggu Redaksi dan Awak Perusahaan, Cara Penagihan Kredivo Dipersoalkan, Pemimpin Redaksi Lapor OJK - Prioritastv",
+          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUXJKUFowMU0tWEw1anFHVmplVW9LeGdNcGJJNjQwRmhpM3FqdmRROG1nWWFtMm9YTUhqTXZoZlFsVThMVGhXMzZuQjNxX0VxeFBnUFBrSGZVVUswR2RJdmN4T0NtdEExaVJWN2k0UFlwc3pjWmxOZ2g3QnNja3g0Ni11VkVYN3JvUGw2TjZkcWZzQThqOE9sVWM2ZF9aWFFCTjhfUktBbENaRHBpdXJrekpwdXFEZG5DU0R0a0NfLVdCZnkwcy1SYkw5TzdQUnU0WGNTMGE5VlR1eDdZZEFONUh4NA?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -90,76 +64,48 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 6,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 4,
+    "candidateCount": 4,
+    "eventGroupCount": 1,
+    "rejectedNonEvents": 2,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 6
+      "ok": 4
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-e850e2da332c",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK Malang"
-      ],
-      "headline": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
-      "headlineZh": "OJK玛琅处理179起非法金融案",
-      "summaryZh": "OJK玛琅办事处处理179起非法金融案件，包括非法网贷和投资骗局，属于监管机构常规执法统计。",
-      "rationale": "监管机构处理案件统计，具体事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "surabaya.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8e30e5eef05bddb0"
-      ],
-      "articles": [
-        {
-          "title": "OJK Malang Tangani 179 Kasus Keuangan Ilegal, dari Pinjol hingga Investasi Bodong - Bisnis.com - Surabaya",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQMFRyMVg5RGhBa1lWR0c3TjVtN1lUZWJ3LTNKOEZGdGRlMWxMSzBaLUVaYnBKQy1qRVBhT2lpR3NUZlNfbWZ2NWtIN1ljUDI2aEJlcEdIRXVPSFVZUTFRVFgwQjBvb25hYk15TG5ReEFMek41VlNYUFU3cHZNYzV2Vkg1Z0tlbzVXT1BfOEs5WWMwTThnLWxaUEN2UGtDZWhTWTJpaVlpSm1pTlNXWk1uUFJyOERIeER3YVFmRnVFSGE2cEpXMmN3RlRtNnBleFU?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-d5fe04d54f32",
-      "eventType": "fraud_or_illegal_practice",
+      "id": "llm-fbc5e1a176b9",
+      "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "非法网贷集团"
+        "Kredivo",
+        "OJK"
       ],
-      "headline": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
-      "headlineZh": "警方捣毁非法网贷集团",
-      "summaryZh": "警方捣毁一个涉及25,000起案件的非法网贷集团，查获现金52亿印尼盾，属于重大执法行动。",
-      "rationale": "警方破获非法网贷集团，具体事件",
+      "headline": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
+      "headlineZh": "Kredivo催收骚扰媒体遭投诉",
+      "summaryZh": "Kredivo催收方式被指骚扰媒体编辑部及员工，主编已向OJK投诉，涉及消费者受害。",
+      "rationale": "具体催收骚扰事件，且有向监管机构投诉，构成消费者受害事件。",
       "independentSourceCount": 1,
       "domains": [
-        "cnbcindonesia.com"
+        "prioritastv.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "90b1e8b32eaf8b40"
+        "f37504f65324248f",
+        "e7a8e0bcd233d30f"
       ],
       "articles": [
         {
-          "title": "Sindikat Pinjol Ilegal 25.000 Kasus Digerebek, Uang Rp 5,2 M Disita - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNaWh4bGx2Y2otMEYwR2poemdPNVJJOEIxMlcwWjR0TW5KWlEwQ0FDUWFiTWhfNUhrNi1nYWRjeE9YLVFDWldzYkY1Rk1jSTgtQ1NXT1NnQURUWENKQzViY2pHR01vdTJFdEhBZlVmdGIyOTA1T2dNS3c2RHZYQkh0RXp6SVJjVFh5T3pmUklZTE9veEsyTm5EUXc1SUlMYWp6RU5wWXVsSGdZMXBTMVM4WV9Ndk5jLVk2VHdyUWJ6Q3jSAcYBQVVfeXFMT3QwNEVtX0dwZi1LOFFDT0FYWjR4ZFdnbjY1ODJwMXo3Q1d2MjBQbDlraGYwZzJSaGJWN3BDZVFHUjRNN0M2T1ZRYklYcWNwZkdwcnNZV0hzdjc5TVpZTUdtSWxDa0xpckNlRDFKVWxMOVk5R0x5bkJjVEtEaVdSYW9hTVJ1LVE2MFNqczF1dDE1WjNDWVpGUVJ1TFBSV0NBbG9hb3h4bEt0Z1NTYzJ4SlJZQXp3dDRTdUdjeklSQUFTYzRxYVhn?oc=5"
+          "title": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBjaGF4Vkptb3NVUDhKT2JFTVJpYjJDTXF2NFhCb0tHX2JmV3hJVjhwSnlqT09HLVdHR3RGb2xuRkxua3ltRDZoV1ZweG5HVnNmNEh6NEZaeUctQzUzT2FWd3dfdTktUHF6UHdR?oc=5"
+        },
+        {
+          "title": "Tagihan Pribadi Ganggu Redaksi dan Awak Perusahaan, Cara Penagihan Kredivo Dipersoalkan, Pemimpin Redaksi Lapor OJK - Prioritastv",
+          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUXJKUFowMU0tWEw1anFHVmplVW9LeGdNcGJJNjQwRmhpM3FqdmRROG1nWWFtMm9YTUhqTXZoZlFsVThMVGhXMzZuQjNxX0VxeFBnUFBrSGZVVUswR2RJdmN4T0NtdEExaVJWN2k0UFlwc3pjWmxOZ2g3QnNja3g0Ni11VkVYN3JvUGw2TjZkcWZzQThqOE9sVWM2ZF9aWFFCTjhfUktBbENaRHBpdXJrekpwdXFEZG5DU0R0a0NfLVdCZnkwcy1SYkw5TzdQUnU0WGNTMGE5VlR1eDdZZEFONUh4NA?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -172,31 +118,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "list index out of range",
+      "gdelt": "HTTP Error 429: Too Many Requests",
+      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 9,
-    "socialItemCount48h": 1
+    "articleCount48h": 7,
+    "socialItemCount48h": 11
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 514,
-    "classifiedCount": 134,
-    "irrelevantDropped": 106,
+    "inputCount": 477,
+    "classifiedCount": 95,
+    "irrelevantDropped": 145,
     "model": "deepseek-chat",
-    "fallbackCount": 274,
+    "fallbackCount": 237,
     "labelCounts": {
-      "NEG": 59,
-      "MIX": 1,
-      "POS": 74
+      "NEG": 49,
+      "MIX": 7,
+      "POS": 39
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
