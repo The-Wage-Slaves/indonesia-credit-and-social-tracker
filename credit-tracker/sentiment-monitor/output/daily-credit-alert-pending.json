@@ -1,56 +1,49 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-16",
+  "date": "2026-08-17",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 27.2,
-    "socialDailyVolumeRisk": 4.5,
-    "negativeSocialShare": 18.2,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 0.0,
+    "socialDailyVolumeRisk": 9.5,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=1; prior-7d median=10.0; robust z=-1.52",
-    "socialVolume": "today=1; prior-7d median=10.0; robust z=-3.04"
+    "newsVolume": "today=0; prior-7d median=10.0; robust z=-3.37",
+    "socialVolume": "today=0; prior-7d median=12.0; robust z=-2.70"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-fbc5e1a176b9",
+      "id": "llm-4c40393b6f6c",
       "eventType": "consumer_harm",
-      "severity": 0.75,
+      "severity": 0.55,
       "entities": [
-        "Kredivo",
-        "OJK"
+        "Tamansari",
+        "Bobby Mochammad Zulfikar"
       ],
-      "headline": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
-      "headlineZh": "Kredivo催收骚扰媒体遭投诉",
-      "summaryZh": "Kredivo催收方式被指骚扰媒体编辑部及员工，主编已向OJK投诉，涉及消费者受害。",
-      "rationale": "具体催收骚扰事件，且有向监管机构投诉，构成消费者受害事件。",
+      "headline": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
+      "headlineZh": "警方被要求调查催收员伤人",
+      "summaryZh": "有报道要求警方调查一名催收员涉嫌的虐待行为，事件涉及具体投诉，但尚未有官方立案确认。",
+      "rationale": "具体投诉，但无官方介入确认。",
       "independentSourceCount": 1,
       "domains": [
-        "prioritastv.com"
+        "penabicara.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f37504f65324248f",
-        "e7a8e0bcd233d30f"
+        "339dd06753020e31"
       ],
       "articles": [
         {
-          "title": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
-          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBjaGF4Vkptb3NVUDhKT2JFTVJpYjJDTXF2NFhCb0tHX2JmV3hJVjhwSnlqT09HLVdHR3RGb2xuRkxua3ltRDZoV1ZweG5HVnNmNEh6NEZaeUctQzUzT2FWd3dfdTktUHF6UHdR?oc=5"
-        },
-        {
-          "title": "Tagihan Pribadi Ganggu Redaksi dan Awak Perusahaan, Cara Penagihan Kredivo Dipersoalkan, Pemimpin Redaksi Lapor OJK - Prioritastv",
-          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUXJKUFowMU0tWEw1anFHVmplVW9LeGdNcGJJNjQwRmhpM3FqdmRROG1nWWFtMm9YTUhqTXZoZlFsVThMVGhXMzZuQjNxX0VxeFBnUFBrSGZVVUswR2RJdmN4T0NtdEExaVJWN2k0UFlwc3pjWmxOZ2g3QnNja3g0Ni11VkVYN3JvUGw2TjZkcWZzQThqOE9sVWM2ZF9aWFFCTjhfUktBbENaRHBpdXJrekpwdXFEZG5DU0R0a0NfLVdCZnkwcy1SYkw5TzdQUnU0WGNTMGE5VlR1eDdZZEFONUh4NA?oc=5"
+          "title": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSlpaYWFkWURndjhJREFFcUVLUHpqZVhCV2dPUzZIQkJCeVBfdmZPaDNQQjN6SlJvZDZ0Y3VGbjZYeGVwZTM5M1BRaHdlSG9qT3MxV3FmSTRmUTVFUnVzUWpHN0psV0FsRy1PS1h2TWtEX0l6WUQzNlQyVExfa3VQekpZeHo3ZTFNQ1MyZzl0UXh0SGNXME9tM3hxQ0pyTXZEOEVwUW1CSV96djFKNnJhcXRNSm5DbzJES19Vdk5jVFMyaHVnMUs3aHlDTVAxczJJeTR5YTNoRG05X2RrNnVtVkxR0gHnAUFVX3lxTE5WTUptNHh6T3hqM3Q5X05lTDRQVkZ0X20zNjN0ckJ6aWQ4alg1bFFLTDhUbjlPWjFEaENwOHpndkJtZEVZQXVKREFKX2lUUEJabW15aUVNT3FyUFEyUnNONzNkelhYdl8xQmZWMEE5OFo5Y1NGNHl2a1JRcVIxZnpWR1R0NGtfQXpxRmNXT3NxUEkwN0Q1c0NnNXI2M0tvSGZJUDVOMG9jSGo3bTNSaDctYUpvNTB5Y0prTmFJdF80M2xjWkJaYjlKVWZTVzRpX2NIR1pHTFY3Z1gydW1mWDAtZEJycHFKOA?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -64,48 +57,43 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 4,
+    "candidateCount": 8,
     "eventGroupCount": 1,
-    "rejectedNonEvents": 2,
+    "rejectedNonEvents": 5,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 4
+      "ok": 8
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-fbc5e1a176b9",
+      "id": "llm-4c40393b6f6c",
       "eventType": "consumer_harm",
-      "severity": 0.75,
+      "severity": 0.55,
       "entities": [
-        "Kredivo",
-        "OJK"
+        "Tamansari",
+        "Bobby Mochammad Zulfikar"
       ],
-      "headline": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
-      "headlineZh": "Kredivo催收骚扰媒体遭投诉",
-      "summaryZh": "Kredivo催收方式被指骚扰媒体编辑部及员工，主编已向OJK投诉，涉及消费者受害。",
-      "rationale": "具体催收骚扰事件，且有向监管机构投诉，构成消费者受害事件。",
+      "headline": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
+      "headlineZh": "警方被要求调查催收员伤人",
+      "summaryZh": "有报道要求警方调查一名催收员涉嫌的虐待行为，事件涉及具体投诉，但尚未有官方立案确认。",
+      "rationale": "具体投诉，但无官方介入确认。",
       "independentSourceCount": 1,
       "domains": [
-        "prioritastv.com"
+        "penabicara.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f37504f65324248f",
-        "e7a8e0bcd233d30f"
+        "339dd06753020e31"
       ],
       "articles": [
         {
-          "title": "Penagihan Kredivo Dipersoalkan Arsip - Prioritastv",
-          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBjaGF4Vkptb3NVUDhKT2JFTVJpYjJDTXF2NFhCb0tHX2JmV3hJVjhwSnlqT09HLVdHR3RGb2xuRkxua3ltRDZoV1ZweG5HVnNmNEh6NEZaeUctQzUzT2FWd3dfdTktUHF6UHdR?oc=5"
-        },
-        {
-          "title": "Tagihan Pribadi Ganggu Redaksi dan Awak Perusahaan, Cara Penagihan Kredivo Dipersoalkan, Pemimpin Redaksi Lapor OJK - Prioritastv",
-          "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQUXJKUFowMU0tWEw1anFHVmplVW9LeGdNcGJJNjQwRmhpM3FqdmRROG1nWWFtMm9YTUhqTXZoZlFsVThMVGhXMzZuQjNxX0VxeFBnUFBrSGZVVUswR2RJdmN4T0NtdEExaVJWN2k0UFlwc3pjWmxOZ2g3QnNja3g0Ni11VkVYN3JvUGw2TjZkcWZzQThqOE9sVWM2ZF9aWFFCTjhfUktBbENaRHBpdXJrekpwdXFEZG5DU0R0a0NfLVdCZnkwcy1SYkw5TzdQUnU0WGNTMGE5VlR1eDdZZEFONUh4NA?oc=5"
+          "title": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
+          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSlpaYWFkWURndjhJREFFcUVLUHpqZVhCV2dPUzZIQkJCeVBfdmZPaDNQQjN6SlJvZDZ0Y3VGbjZYeGVwZTM5M1BRaHdlSG9qT3MxV3FmSTRmUTVFUnVzUWpHN0psV0FsRy1PS1h2TWtEX0l6WUQzNlQyVExfa3VQekpZeHo3ZTFNQ1MyZzl0UXh0SGNXME9tM3hxQ0pyTXZEOEVwUW1CSV96djFKNnJhcXRNSm5DbzJES19Vdk5jVFMyaHVnMUs3aHlDTVAxczJJeTR5YTNoRG05X2RrNnVtVkxR0gHnAUFVX3lxTE5WTUptNHh6T3hqM3Q5X05lTDRQVkZ0X20zNjN0ckJ6aWQ4alg1bFFLTDhUbjlPWjFEaENwOHpndkJtZEVZQXVKREFKX2lUUEJabW15aUVNT3FyUFEyUnNONzNkelhYdl8xQmZWMEE5OFo5Y1NGNHl2a1JRcVIxZnpWR1R0NGtfQXpxRmNXT3NxUEkwN0Q1c0NnNXI2M0tvSGZJUDVOMG9jSGo3bTNSaDctYUpvNTB5Y0prTmFJdF80M2xjWkJaYjlKVWZTVzRpX2NIR1pHTFY3Z1gydW1mWDAtZEJycHFKOA?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -118,31 +106,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
-      "google_trends": "The request failed: Google returned a response with code 429",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 7,
-    "socialItemCount48h": 11
+    "articleCount48h": 10,
+    "socialItemCount48h": 9
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 477,
-    "classifiedCount": 95,
-    "irrelevantDropped": 145,
+    "inputCount": 430,
+    "classifiedCount": 104,
+    "irrelevantDropped": 136,
     "model": "deepseek-chat",
-    "fallbackCount": 237,
+    "fallbackCount": 190,
     "labelCounts": {
-      "NEG": 49,
-      "MIX": 7,
-      "POS": 39
+      "NEG": 83,
+      "MIX": 8,
+      "POS": 13
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
