@@ -1,54 +1,109 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-17",
+  "date": "2026-08-18",
   "level": "normal",
   "signals": {
     "newsDailyVolumeRisk": 0.0,
-    "socialDailyVolumeRisk": 9.5,
+    "socialDailyVolumeRisk": 12.9,
     "negativeSocialShare": 0.0,
     "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=0; prior-7d median=10.0; robust z=-3.37",
-    "socialVolume": "today=0; prior-7d median=12.0; robust z=-2.70"
+    "newsVolume": "today=0; prior-7d median=10.0; robust z=-5.00",
+    "socialVolume": "today=0; prior-7d median=22.0; robust z=-2.47"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-4c40393b6f6c",
-      "eventType": "consumer_harm",
+      "id": "llm-1bc66ac94aa4",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
-        "Tamansari",
-        "Bobby Mochammad Zulfikar"
+        "AdaKami"
       ],
-      "headline": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
-      "headlineZh": "警方被要求调查催收员伤人",
-      "summaryZh": "有报道要求警方调查一名催收员涉嫌的虐待行为，事件涉及具体投诉，但尚未有官方立案确认。",
-      "rationale": "具体投诉，但无官方介入确认。",
-      "independentSourceCount": 1,
+      "headline": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
+      "headlineZh": "AdaKami监控冒名非法平台",
+      "summaryZh": "AdaKami发现仍有非法实体冒用其品牌进行借贷活动，公司加强监控并提醒用户警惕。",
+      "rationale": "公司披露冒名欺诈现象，属具体违规经营事件。",
+      "independentSourceCount": 5,
       "domains": [
-        "penabicara.com"
+        "amp.kontan.co.id",
+        "mediakompeten.co.id",
+        "readers.id",
+        "sekbernews.id",
+        "tradersunion.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "339dd06753020e31"
+        "9d45cbd528318676",
+        "05f9d7b5237a28aa",
+        "75d7841cd51b2c63",
+        "25393cb6b9eb4687",
+        "37ef030b684bc83c"
       ],
       "articles": [
         {
-          "title": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSlpaYWFkWURndjhJREFFcUVLUHpqZVhCV2dPUzZIQkJCeVBfdmZPaDNQQjN6SlJvZDZ0Y3VGbjZYeGVwZTM5M1BRaHdlSG9qT3MxV3FmSTRmUTVFUnVzUWpHN0psV0FsRy1PS1h2TWtEX0l6WUQzNlQyVExfa3VQekpZeHo3ZTFNQ1MyZzl0UXh0SGNXME9tM3hxQ0pyTXZEOEVwUW1CSV96djFKNnJhcXRNSm5DbzJES19Vdk5jVFMyaHVnMUs3aHlDTVAxczJJeTR5YTNoRG05X2RrNnVtVkxR0gHnAUFVX3lxTE5WTUptNHh6T3hqM3Q5X05lTDRQVkZ0X20zNjN0ckJ6aWQ4alg1bFFLTDhUbjlPWjFEaENwOHpndkJtZEVZQXVKREFKX2lUUEJabW15aUVNT3FyUFEyUnNONzNkelhYdl8xQmZWMEE5OFo5Y1NGNHl2a1JRcVIxZnpWR1R0NGtfQXpxRmNXT3NxUEkwN0Q1c0NnNXI2M0tvSGZJUDVOMG9jSGo3bTNSaDctYUpvNTB5Y0prTmFJdF80M2xjWkJaYjlKVWZTVzRpX2NIR1pHTFY3Z1gydW1mWDAtZEJycHFKOA?oc=5"
+          "title": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zLWtWb08xQnlkSUFNSFBhcTFLVjVoOWlheExmc29zQ1BJN2Yzc2ltczdEN1VZRTdIbFRUbHhaZTE5c0ZpbW02MURFTVdWMjNnVFFiSDAzNndOblpJaXhIRkgwYVNSdVo5TVhZZUNWUXloVHM?oc=5"
+        },
+        {
+          "title": "AdaKami Perketat Pengawasan Terhadap Maraknya Pinjol Ilegal Namanya - mediakompeten.co.id",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jS1ZlaFY2YzFxTndHN3lDQUhsLUExQVZKTjQzMUNfcGg2Q2ZIdVNKMmdwc0JiWWotcDNCNnl2akxTREJFeXM3TVZnZ2ZLYUZvZUZhcUQ0TTB2MXFRenBZczFKRlNqV1piQlI5cDlSdGZjazJXMVZObWRRcHItZw?oc=5"
+        },
+        {
+          "title": "AdaKami Perketat Pengawasan Terhadap Platform Ilegal Tiruan - sekbernews.id",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE10SUMtSEdjTGdMN1ZyOFNndmVvVjBFM0dBLU9wMXB2UFR0bXJjaklfUTZFZUN4X2VocFRqbjdwbHd0VGd1WFVzNlZtZ1YzZ2JCWVdRQUFZR0xSWGhzV1BJY3JxbFZLVTZ4WEFwWThFLVFTQ00ycndtaA?oc=5"
+        },
+        {
+          "title": "AdaKami terus memantau entitas ilegal yang mencatut merek di sektor pinjol - Traders Union",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNVVwTmVpRU5nUlFWb0pRVF93c2U5eG9pTHRycmFSalhEakJsSENSV0JTU1YtRmVSdjBNVVBZS0ZqNjAtR29qaVhsQzVyc2Y1ME5lWmlTR3RmYTMzU0VnRTF6RmhkelZhcTZyQjBzajI3UUdFOG1vLWw2dmdRWk4xTGloM19jSDA2c3I5U3hvX2hxZnRURnc0LURjYjFpMlREbWc?oc=5"
+        },
+        {
+          "title": "Fintech AdaKami Masih Temukan Entitas Ilegal yang Mengatasnamakan Perusahaan - KONTAN",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQdIBqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 5,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 0,
         "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-63b62c229c71",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [],
+      "headline": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
+      "headlineZh": "冒充警察诈骗致存款损失",
+      "summaryZh": "诈骗分子冒充警察，在3小时内骗走受害者188亿印尼盾存款，属消费者受害案件。",
+      "rationale": "具体诈骗案件，造成重大财产损失。",
+      "independentSourceCount": 1,
+      "domains": [
+        "malangtimes.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f080c5546f10ad13"
+      ],
+      "articles": [
+        {
+          "title": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSdIB1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
         "platforms": []
       }
     }
@@ -57,48 +112,103 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 8,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 5,
+    "candidateCount": 9,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 3,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 8
+      "ok": 9
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-4c40393b6f6c",
-      "eventType": "consumer_harm",
+      "id": "llm-1bc66ac94aa4",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
-        "Tamansari",
-        "Bobby Mochammad Zulfikar"
+        "AdaKami"
       ],
-      "headline": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
-      "headlineZh": "警方被要求调查催收员伤人",
-      "summaryZh": "有报道要求警方调查一名催收员涉嫌的虐待行为，事件涉及具体投诉，但尚未有官方立案确认。",
-      "rationale": "具体投诉，但无官方介入确认。",
-      "independentSourceCount": 1,
+      "headline": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
+      "headlineZh": "AdaKami监控冒名非法平台",
+      "summaryZh": "AdaKami发现仍有非法实体冒用其品牌进行借贷活动，公司加强监控并提醒用户警惕。",
+      "rationale": "公司披露冒名欺诈现象，属具体违规经营事件。",
+      "independentSourceCount": 5,
       "domains": [
-        "penabicara.com"
+        "amp.kontan.co.id",
+        "mediakompeten.co.id",
+        "readers.id",
+        "sekbernews.id",
+        "tradersunion.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "339dd06753020e31"
+        "9d45cbd528318676",
+        "05f9d7b5237a28aa",
+        "75d7841cd51b2c63",
+        "25393cb6b9eb4687",
+        "37ef030b684bc83c"
       ],
       "articles": [
         {
-          "title": "Kapolsek Tamansari Bobby Mochammad Zulfikar Didesak Usut Dugaan Penganiayaan oleh Oknum Debt Collector - Pena Bicara - Pena Bicara",
-          "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQSlpaYWFkWURndjhJREFFcUVLUHpqZVhCV2dPUzZIQkJCeVBfdmZPaDNQQjN6SlJvZDZ0Y3VGbjZYeGVwZTM5M1BRaHdlSG9qT3MxV3FmSTRmUTVFUnVzUWpHN0psV0FsRy1PS1h2TWtEX0l6WUQzNlQyVExfa3VQekpZeHo3ZTFNQ1MyZzl0UXh0SGNXME9tM3hxQ0pyTXZEOEVwUW1CSV96djFKNnJhcXRNSm5DbzJES19Vdk5jVFMyaHVnMUs3aHlDTVAxczJJeTR5YTNoRG05X2RrNnVtVkxR0gHnAUFVX3lxTE5WTUptNHh6T3hqM3Q5X05lTDRQVkZ0X20zNjN0ckJ6aWQ4alg1bFFLTDhUbjlPWjFEaENwOHpndkJtZEVZQXVKREFKX2lUUEJabW15aUVNT3FyUFEyUnNONzNkelhYdl8xQmZWMEE5OFo5Y1NGNHl2a1JRcVIxZnpWR1R0NGtfQXpxRmNXT3NxUEkwN0Q1c0NnNXI2M0tvSGZJUDVOMG9jSGo3bTNSaDctYUpvNTB5Y0prTmFJdF80M2xjWkJaYjlKVWZTVzRpX2NIR1pHTFY3Z1gydW1mWDAtZEJycHFKOA?oc=5"
+          "title": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zLWtWb08xQnlkSUFNSFBhcTFLVjVoOWlheExmc29zQ1BJN2Yzc2ltczdEN1VZRTdIbFRUbHhaZTE5c0ZpbW02MURFTVdWMjNnVFFiSDAzNndOblpJaXhIRkgwYVNSdVo5TVhZZUNWUXloVHM?oc=5"
+        },
+        {
+          "title": "AdaKami Perketat Pengawasan Terhadap Maraknya Pinjol Ilegal Namanya - mediakompeten.co.id",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jS1ZlaFY2YzFxTndHN3lDQUhsLUExQVZKTjQzMUNfcGg2Q2ZIdVNKMmdwc0JiWWotcDNCNnl2akxTREJFeXM3TVZnZ2ZLYUZvZUZhcUQ0TTB2MXFRenBZczFKRlNqV1piQlI5cDlSdGZjazJXMVZObWRRcHItZw?oc=5"
+        },
+        {
+          "title": "AdaKami Perketat Pengawasan Terhadap Platform Ilegal Tiruan - sekbernews.id",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE10SUMtSEdjTGdMN1ZyOFNndmVvVjBFM0dBLU9wMXB2UFR0bXJjaklfUTZFZUN4X2VocFRqbjdwbHd0VGd1WFVzNlZtZ1YzZ2JCWVdRQUFZR0xSWGhzV1BJY3JxbFZLVTZ4WEFwWThFLVFTQ00ycndtaA?oc=5"
+        },
+        {
+          "title": "AdaKami terus memantau entitas ilegal yang mencatut merek di sektor pinjol - Traders Union",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNVVwTmVpRU5nUlFWb0pRVF93c2U5eG9pTHRycmFSalhEakJsSENSV0JTU1YtRmVSdjBNVVBZS0ZqNjAtR29qaVhsQzVyc2Y1ME5lWmlTR3RmYTMzU0VnRTF6RmhkelZhcTZyQjBzajI3UUdFOG1vLWw2dmdRWk4xTGloM19jSDA2c3I5U3hvX2hxZnRURnc0LURjYjFpMlREbWc?oc=5"
+        },
+        {
+          "title": "Fintech AdaKami Masih Temukan Entitas Ilegal yang Mengatasnamakan Perusahaan - KONTAN",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQdIBqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 5,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 0,
         "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-63b62c229c71",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [],
+      "headline": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
+      "headlineZh": "冒充警察诈骗致存款损失",
+      "summaryZh": "诈骗分子冒充警察，在3小时内骗走受害者188亿印尼盾存款，属消费者受害案件。",
+      "rationale": "具体诈骗案件，造成重大财产损失。",
+      "independentSourceCount": 1,
+      "domains": [
+        "malangtimes.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f080c5546f10ad13"
+      ],
+      "articles": [
+        {
+          "title": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSdIB1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
         "platforms": []
       }
     }
@@ -111,26 +221,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
+      "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 10,
-    "socialItemCount48h": 9
+    "articleCount48h": 9,
+    "socialItemCount48h": 2
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 430,
-    "classifiedCount": 104,
-    "irrelevantDropped": 136,
+    "inputCount": 451,
+    "classifiedCount": 132,
+    "irrelevantDropped": 108,
     "model": "deepseek-chat",
-    "fallbackCount": 190,
+    "fallbackCount": 211,
     "labelCounts": {
-      "NEG": 83,
-      "MIX": 8,
-      "POS": 13
+      "NEG": 85,
+      "MIX": 31,
+      "POS": 16
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
