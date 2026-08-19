@@ -1,72 +1,49 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-18",
+  "date": "2026-08-19",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 0.0,
-    "socialDailyVolumeRisk": 12.9,
+    "newsDailyVolumeRisk": 14.6,
+    "socialDailyVolumeRisk": 21.1,
     "negativeSocialShare": 0.0,
     "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=0; prior-7d median=10.0; robust z=-5.00",
-    "socialVolume": "today=0; prior-7d median=22.0; robust z=-2.47"
+    "newsVolume": "today=4; prior-7d median=11.0; robust z=-2.36",
+    "socialVolume": "today=0; prior-7d median=20.0; robust z=-1.93"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-1bc66ac94aa4",
-      "eventType": "fraud_or_illegal_practice",
+      "id": "llm-ebc710b329d4",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "AdaKami"
+        "Polres Kupang",
+        "Propam"
       ],
-      "headline": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
-      "headlineZh": "AdaKami监控冒名非法平台",
-      "summaryZh": "AdaKami发现仍有非法实体冒用其品牌进行借贷活动，公司加强监控并提醒用户警惕。",
-      "rationale": "公司披露冒名欺诈现象，属具体违规经营事件。",
-      "independentSourceCount": 5,
+      "headline": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
+      "headlineZh": "古邦警方严打警员涉网赌网贷",
+      "summaryZh": "古邦警局Propam部门积极打击警员参与在线赌博和非法网贷，属内部纪律行动。",
+      "rationale": "警方内部执法行动，具体机构介入",
+      "independentSourceCount": 1,
       "domains": [
-        "amp.kontan.co.id",
-        "mediakompeten.co.id",
-        "readers.id",
-        "sekbernews.id",
-        "tradersunion.com"
+        "tribratanewskupang.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "9d45cbd528318676",
-        "05f9d7b5237a28aa",
-        "75d7841cd51b2c63",
-        "25393cb6b9eb4687",
-        "37ef030b684bc83c"
+        "b3dac6f94df00da2"
       ],
       "articles": [
         {
-          "title": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
-          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zLWtWb08xQnlkSUFNSFBhcTFLVjVoOWlheExmc29zQ1BJN2Yzc2ltczdEN1VZRTdIbFRUbHhaZTE5c0ZpbW02MURFTVdWMjNnVFFiSDAzNndOblpJaXhIRkgwYVNSdVo5TVhZZUNWUXloVHM?oc=5"
-        },
-        {
-          "title": "AdaKami Perketat Pengawasan Terhadap Maraknya Pinjol Ilegal Namanya - mediakompeten.co.id",
-          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jS1ZlaFY2YzFxTndHN3lDQUhsLUExQVZKTjQzMUNfcGg2Q2ZIdVNKMmdwc0JiWWotcDNCNnl2akxTREJFeXM3TVZnZ2ZLYUZvZUZhcUQ0TTB2MXFRenBZczFKRlNqV1piQlI5cDlSdGZjazJXMVZObWRRcHItZw?oc=5"
-        },
-        {
-          "title": "AdaKami Perketat Pengawasan Terhadap Platform Ilegal Tiruan - sekbernews.id",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE10SUMtSEdjTGdMN1ZyOFNndmVvVjBFM0dBLU9wMXB2UFR0bXJjaklfUTZFZUN4X2VocFRqbjdwbHd0VGd1WFVzNlZtZ1YzZ2JCWVdRQUFZR0xSWGhzV1BJY3JxbFZLVTZ4WEFwWThFLVFTQ00ycndtaA?oc=5"
-        },
-        {
-          "title": "AdaKami terus memantau entitas ilegal yang mencatut merek di sektor pinjol - Traders Union",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNVVwTmVpRU5nUlFWb0pRVF93c2U5eG9pTHRycmFSalhEakJsSENSV0JTU1YtRmVSdjBNVVBZS0ZqNjAtR29qaVhsQzVyc2Y1ME5lWmlTR3RmYTMzU0VnRTF6RmhkelZhcTZyQjBzajI3UUdFOG1vLWw2dmdRWk4xTGloM19jSDA2c3I5U3hvX2hxZnRURnc0LURjYjFpMlREbWc?oc=5"
-        },
-        {
-          "title": "Fintech AdaKami Masih Temukan Entitas Ilegal yang Mengatasnamakan Perusahaan - KONTAN",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQdIBqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQQ?oc=5"
+          "title": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRXhGcnFUbGduZkxjTzZaclVPZE1wd3ZPY2REaUV0b0lsbVpacGUzU3YwVDFNUVlvR0ZhNkhJUkZ6X2V1QWpMaTdHMG8wNThrLWFSRUpmUkFpcDNIbHJGMjREU0t4UDdGMUdRZVVmSDhKaW9oNWtaekY1RU4wTnlDcTdXeFV4c2paSWNLbnNkX0wxNk1HNDQxY3ZWdTFadlpadnZVelNJQVV3R2F3UjhYbUxPMnNLbTZPOThN?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 5,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -76,34 +53,106 @@
       }
     },
     {
-      "id": "llm-63b62c229c71",
-      "eventType": "consumer_harm",
+      "id": "llm-3ffdd82dea68",
+      "eventType": "credit_quality_stress",
       "severity": 0.75,
-      "entities": [],
-      "headline": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
-      "headlineZh": "冒充警察诈骗致存款损失",
-      "summaryZh": "诈骗分子冒充警察，在3小时内骗走受害者188亿印尼盾存款，属消费者受害案件。",
-      "rationale": "具体诈骗案件，造成重大财产损失。",
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
+      "headlineZh": "OJK警示16家网贷平台高坏账",
+      "summaryZh": "OJK指出16家Pindar平台不良贷款率高，提醒相关风险，显示资产质量承压。",
+      "rationale": "监管机构披露具体平台风险数据",
       "independentSourceCount": 1,
       "domains": [
-        "malangtimes.com"
+        "cnbcindonesia.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f080c5546f10ad13"
+        "1cd6247f9544a2f1"
       ],
       "articles": [
         {
-          "title": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSdIB1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSQ?oc=5"
+          "title": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWW1kanRGTEcxa2JWTUZrVGxDR3RLS3lXMklUeVNLbFNuN1B0SGJnS0kxSG5IUE82eXRtZmFJVnZGdjNVanFyTU96eHdzS2xPRGdCdGUtMlZIRTFnS2VKUHh2MW1xcmJFT3pqLTdpbXo5SkJ3bkZUdlQzbWN2alNJRkZwR0gtWUpHdzZZUFdONlM1YVBOT3NuYkU1WXJmSnV4VzRWV2ZhWjQ0Y0tkZDBjVm9zMGdRel9nZFHSAb8BQVVfeXFMUC1ad1h0Um82eFY3UGhsMm50Z180bjZVUlJpMGlrdGhZd3Y2WjBsVl9vTURiU0xtN1A5YXZUdG9lUXFxbTJ2LThkNnRWUFowUktTYlBkZU9nUTE1UWZhcTB5eFNJOHNkZXdsUk5nVW9ETWhhYVdpcVFwRm1McHNpREFhdVN0a1ZsY0NaaXF1c01HWGtjTFVJWk1NUHNrZkl0OS1FMlFkeEc0R09DdmRLcDZ4Vmh3WDUwZERjSmxHZ2M?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-7220192d5dab",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
+      "entities": [
+        "Yusril",
+        "Debt Collector"
+      ],
+      "headline": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
+      "headlineZh": "部长警告停止催收恐吓消费者",
+      "summaryZh": "统筹部长Yusril向企业发出最后通牒，要求停止催收员恐吓消费者的行为。",
+      "rationale": "政府高层明确警告，监管介入信号",
+      "independentSourceCount": 1,
+      "domains": [
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "cc2f41d978b8a972"
+      ],
+      "articles": [
+        {
+          "title": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOUFQVFYxd1hoWDF6aG5Fb1lfUkdGRk1saXBRSVM1eW14T2dod1NISWVIbkttYjVHdDRUeGNiRG5YTmowVTZ2M1RuOUQ2OTJFV0ZvVF9ITUNzYUtMQlJicmxIaU9XOVVOSE5Ha3dZQkxIWi0xMlYxVjc4SmtyVDNNQk1Nczdzd2ZRZS1hQ1FhMHpXZGlwbVlCQ1piYUNfN3FvT01aVS1LZTlXQdIBrwFBVV95cUxOUmdmYWpIVlBrNFV5WmtXam92YUZ0LUJoSVpJQ2hqZGx1c3lhS0VjcnU1bGRGdFlmNjhmSGxtSTI5RnRxVkRxRU0wTU9BS01PaFFfRkxuNFUzeGxFbUhwSHJOU3lHLWdhdzQ1dGFQOE9KWTAzS2h6MWhLaER1VjFreEt1STBKbk1MbndVX21WZzRxYm1IM2dtYVYwR2pKWnRqZk94VEpBd19yeGJwY2tr?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-96582ddfcf07",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK Maluku Utara"
+      ],
+      "headline": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
+      "headlineZh": "OJK记录1104起投诉含网贷",
+      "summaryZh": "OJK Maluku Utara上半年记录1104起投诉，主要涉及网购诈骗和网贷，显示消费者受害。",
+      "rationale": "官方投诉数据，反映消费者受害情况",
+      "independentSourceCount": 1,
+      "domains": [
+        "tandaseru.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "068de8cdacdfde30"
+      ],
+      "articles": [
+        {
+          "title": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPT0p4Rl9BeEZtRTVBMUNVT3p1YjRzcl9RaVFqZlVWYVZ3M0ZONVZOOE9NdEpBVV85ZnJKUjV5a2dCalhsZi1USUdEN1Z5OU1UbXZrM0pXZ0c0Y05ucldhWjJPOWJlSTBaX0RMRmxkNUxfMkRoREhfZ2h2aTA3VWZHUGtCM2dINzRMMTRnU0tINHJ3OVFNY0ZVQ2FuS3p5NENTbHlFVjRGd3JKRHFnMXhKcUV5TTNFM29YQ0JkOG5LR0hha0UwcE9iT0hOLVk4RVIyQVpKdUwzZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
         "platforms": []
       }
     }
@@ -112,66 +161,43 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 9,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 3,
+    "candidateCount": 15,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 9
+      "ok": 15
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-1bc66ac94aa4",
-      "eventType": "fraud_or_illegal_practice",
+      "id": "llm-ebc710b329d4",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "AdaKami"
+        "Polres Kupang",
+        "Propam"
       ],
-      "headline": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
-      "headlineZh": "AdaKami监控冒名非法平台",
-      "summaryZh": "AdaKami发现仍有非法实体冒用其品牌进行借贷活动，公司加强监控并提醒用户警惕。",
-      "rationale": "公司披露冒名欺诈现象，属具体违规经营事件。",
-      "independentSourceCount": 5,
+      "headline": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
+      "headlineZh": "古邦警方严打警员涉网赌网贷",
+      "summaryZh": "古邦警局Propam部门积极打击警员参与在线赌博和非法网贷，属内部纪律行动。",
+      "rationale": "警方内部执法行动，具体机构介入",
+      "independentSourceCount": 1,
       "domains": [
-        "amp.kontan.co.id",
-        "mediakompeten.co.id",
-        "readers.id",
-        "sekbernews.id",
-        "tradersunion.com"
+        "tribratanewskupang.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "9d45cbd528318676",
-        "05f9d7b5237a28aa",
-        "75d7841cd51b2c63",
-        "25393cb6b9eb4687",
-        "37ef030b684bc83c"
+        "b3dac6f94df00da2"
       ],
       "articles": [
         {
-          "title": "AdaKami Perketat Pengawasan Entitas Ilegal Peniru Perusahaan - Readers.id",
-          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE0zLWtWb08xQnlkSUFNSFBhcTFLVjVoOWlheExmc29zQ1BJN2Yzc2ltczdEN1VZRTdIbFRUbHhaZTE5c0ZpbW02MURFTVdWMjNnVFFiSDAzNndOblpJaXhIRkgwYVNSdVo5TVhZZUNWUXloVHM?oc=5"
-        },
-        {
-          "title": "AdaKami Perketat Pengawasan Terhadap Maraknya Pinjol Ilegal Namanya - mediakompeten.co.id",
-          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1jS1ZlaFY2YzFxTndHN3lDQUhsLUExQVZKTjQzMUNfcGg2Q2ZIdVNKMmdwc0JiWWotcDNCNnl2akxTREJFeXM3TVZnZ2ZLYUZvZUZhcUQ0TTB2MXFRenBZczFKRlNqV1piQlI5cDlSdGZjazJXMVZObWRRcHItZw?oc=5"
-        },
-        {
-          "title": "AdaKami Perketat Pengawasan Terhadap Platform Ilegal Tiruan - sekbernews.id",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE10SUMtSEdjTGdMN1ZyOFNndmVvVjBFM0dBLU9wMXB2UFR0bXJjaklfUTZFZUN4X2VocFRqbjdwbHd0VGd1WFVzNlZtZ1YzZ2JCWVdRQUFZR0xSWGhzV1BJY3JxbFZLVTZ4WEFwWThFLVFTQ00ycndtaA?oc=5"
-        },
-        {
-          "title": "AdaKami terus memantau entitas ilegal yang mencatut merek di sektor pinjol - Traders Union",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQNVVwTmVpRU5nUlFWb0pRVF93c2U5eG9pTHRycmFSalhEakJsSENSV0JTU1YtRmVSdjBNVVBZS0ZqNjAtR29qaVhsQzVyc2Y1ME5lWmlTR3RmYTMzU0VnRTF6RmhkelZhcTZyQjBzajI3UUdFOG1vLWw2dmdRWk4xTGloM19jSDA2c3I5U3hvX2hxZnRURnc0LURjYjFpMlREbWc?oc=5"
-        },
-        {
-          "title": "Fintech AdaKami Masih Temukan Entitas Ilegal yang Mengatasnamakan Perusahaan - KONTAN",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQdIBqgFBVV95cUxNdVdMMUtpaGtZWTRGb1JFYVBJV0Z0NHpObnhIS3pVdVF1U0xQSEpEUW40NU9DRHk0UXB4TGxwYk85ZnZ3NU9tTHlWYklxdEJvdkxMQzhGRmNlQlJkLVh6M003cDZLT09GYU5xLXdlSURhZmtEV2JfdXVBZWlPc1Zqb1VOckFVSzhsaUZYYjg5aTNneVZsN0pGWTduXzh2bm1VNlZaRms0c3IxQQ?oc=5"
+          "title": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRXhGcnFUbGduZkxjTzZaclVPZE1wd3ZPY2REaUV0b0lsbVpacGUzU3YwVDFNUVlvR0ZhNkhJUkZ6X2V1QWpMaTdHMG8wNThrLWFSRUpmUkFpcDNIbHJGMjREU0t4UDdGMUdRZVVmSDhKaW9oNWtaekY1RU4wTnlDcTdXeFV4c2paSWNLbnNkX0wxNk1HNDQxY3ZWdTFadlpadnZVelNJQVV3R2F3UjhYbUxPMnNLbTZPOThN?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 5,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -181,34 +207,106 @@
       }
     },
     {
-      "id": "llm-63b62c229c71",
-      "eventType": "consumer_harm",
+      "id": "llm-3ffdd82dea68",
+      "eventType": "credit_quality_stress",
       "severity": 0.75,
-      "entities": [],
-      "headline": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
-      "headlineZh": "冒充警察诈骗致存款损失",
-      "summaryZh": "诈骗分子冒充警察，在3小时内骗走受害者188亿印尼盾存款，属消费者受害案件。",
-      "rationale": "具体诈骗案件，造成重大财产损失。",
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
+      "headlineZh": "OJK警示16家网贷平台高坏账",
+      "summaryZh": "OJK指出16家Pindar平台不良贷款率高，提醒相关风险，显示资产质量承压。",
+      "rationale": "监管机构披露具体平台风险数据",
       "independentSourceCount": 1,
       "domains": [
-        "malangtimes.com"
+        "cnbcindonesia.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f080c5546f10ad13"
+        "1cd6247f9544a2f1"
       ],
       "articles": [
         {
-          "title": "Waspada! Modus Scam Ngaku Polisi Bikin Tabungan Rp 188 Juta Ludes dalam 3 Jam - Malangtimes",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSdIB1wFBVV95cUxQSkV5dzNKWEpNWHFPSmNIZU5FSjFoMVNUUXpFWkNFUmJJcEJoa2dFNzdxSHphU0ROTjBOamZwWTBmMnFkcXRXVUFHNjV3WnltZkJBa2h1eTdmVDE4TmpfNmpMQ0hFdGhiUUlGTi1aZDBDaXh4bUZEVHVaZXpoYXFaSnlTUjVlMEcyOV8xdC1PVEM3R3JYS182TkpjUEI3RkJBbTRxZWJkdE9HQm5nQUk1NkRfN3BaSTVQOXlCejVMSVZBQ25pZnBodHY4X1VPWUgzTE1WZDhnSQ?oc=5"
+          "title": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWW1kanRGTEcxa2JWTUZrVGxDR3RLS3lXMklUeVNLbFNuN1B0SGJnS0kxSG5IUE82eXRtZmFJVnZGdjNVanFyTU96eHdzS2xPRGdCdGUtMlZIRTFnS2VKUHh2MW1xcmJFT3pqLTdpbXo5SkJ3bkZUdlQzbWN2alNJRkZwR0gtWUpHdzZZUFdONlM1YVBOT3NuYkU1WXJmSnV4VzRWV2ZhWjQ0Y0tkZDBjVm9zMGdRel9nZFHSAb8BQVVfeXFMUC1ad1h0Um82eFY3UGhsMm50Z180bjZVUlJpMGlrdGhZd3Y2WjBsVl9vTURiU0xtN1A5YXZUdG9lUXFxbTJ2LThkNnRWUFowUktTYlBkZU9nUTE1UWZhcTB5eFNJOHNkZXdsUk5nVW9ETWhhYVdpcVFwRm1McHNpREFhdVN0a1ZsY0NaaXF1c01HWGtjTFVJWk1NUHNrZkl0OS1FMlFkeEc0R09DdmRLcDZ4Vmh3WDUwZERjSmxHZ2M?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-7220192d5dab",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
+      "entities": [
+        "Yusril",
+        "Debt Collector"
+      ],
+      "headline": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
+      "headlineZh": "部长警告停止催收恐吓消费者",
+      "summaryZh": "统筹部长Yusril向企业发出最后通牒，要求停止催收员恐吓消费者的行为。",
+      "rationale": "政府高层明确警告，监管介入信号",
+      "independentSourceCount": 1,
+      "domains": [
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "cc2f41d978b8a972"
+      ],
+      "articles": [
+        {
+          "title": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOUFQVFYxd1hoWDF6aG5Fb1lfUkdGRk1saXBRSVM1eW14T2dod1NISWVIbkttYjVHdDRUeGNiRG5YTmowVTZ2M1RuOUQ2OTJFV0ZvVF9ITUNzYUtMQlJicmxIaU9XOVVOSE5Ha3dZQkxIWi0xMlYxVjc4SmtyVDNNQk1Nczdzd2ZRZS1hQ1FhMHpXZGlwbVlCQ1piYUNfN3FvT01aVS1LZTlXQdIBrwFBVV95cUxOUmdmYWpIVlBrNFV5WmtXam92YUZ0LUJoSVpJQ2hqZGx1c3lhS0VjcnU1bGRGdFlmNjhmSGxtSTI5RnRxVkRxRU0wTU9BS01PaFFfRkxuNFUzeGxFbUhwSHJOU3lHLWdhdzQ1dGFQOE9KWTAzS2h6MWhLaER1VjFreEt1STBKbk1MbndVX21WZzRxYm1IM2dtYVYwR2pKWnRqZk94VEpBd19yeGJwY2tr?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-96582ddfcf07",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK Maluku Utara"
+      ],
+      "headline": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
+      "headlineZh": "OJK记录1104起投诉含网贷",
+      "summaryZh": "OJK Maluku Utara上半年记录1104起投诉，主要涉及网购诈骗和网贷，显示消费者受害。",
+      "rationale": "官方投诉数据，反映消费者受害情况",
+      "independentSourceCount": 1,
+      "domains": [
+        "tandaseru.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "068de8cdacdfde30"
+      ],
+      "articles": [
+        {
+          "title": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
+          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPT0p4Rl9BeEZtRTVBMUNVT3p1YjRzcl9RaVFqZlVWYVZ3M0ZONVZOOE9NdEpBVV85ZnJKUjV5a2dCalhsZi1USUdEN1Z5OU1UbXZrM0pXZ0c0Y05ucldhWjJPOWJlSTBaX0RMRmxkNUxfMkRoREhfZ2h2aTA3VWZHUGtCM2dINzRMMTRnU0tINHJ3OVFNY0ZVQ2FuS3p5NENTbHlFVjRGd3JKRHFnMXhKcUV5TTNFM29YQ0JkOG5LR0hha0UwcE9iT0hOLVk4RVIyQVpKdUwzZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
         "platforms": []
       }
     }
@@ -226,21 +324,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 9,
-    "socialItemCount48h": 2
+    "articleCount48h": 17,
+    "socialItemCount48h": 21
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 451,
-    "classifiedCount": 132,
-    "irrelevantDropped": 108,
+    "inputCount": 432,
+    "classifiedCount": 115,
+    "irrelevantDropped": 125,
     "model": "deepseek-chat",
-    "fallbackCount": 211,
+    "fallbackCount": 192,
     "labelCounts": {
-      "NEG": 85,
-      "MIX": 31,
-      "POS": 16
+      "NEG": 91,
+      "MIX": 10,
+      "POS": 14
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

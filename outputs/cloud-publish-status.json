@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-18T02:42:42.867062+00:00",
+  "generatedAt": "2026-08-19T02:45:36.900273+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-08-18",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-08-19",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼总统提名Destry Damayanti为央行行长唯一候选人，市场反应积极但担忧未消**\n严重度 0.75｜3个独立来源（kontan、pasardana.id）｜影响支柱：institutions\n\n🔴 **军警冲突/安全事件｜印尼亚齐省和平纪念活动发生骚乱，警方与民众冲突，警察总长称已控制局势**\n严重度 0.75｜2个独立来源（katadata.co.id、liputan6.com）｜影响支柱：coercive\n\n🟠 **大规模抗议/镇压｜印尼大学学生组织BEM UI在雅加达Bundaran HI举行示威，提出八项诉求**\n严重度 0.55｜2个独立来源（bbc.com、liputan6.com）｜影响支柱：social\n\n🟠 **关键官员更替/清洗｜印尼农业部长Amran解职14名农业部官员，涉嫌数亿盾违规行为**\n严重度 0.55｜1个独立来源（ekonomi.republika.co.id）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **大规模抗议/镇压｜雅加达大学生示威遭警方拦截，发生冲突并收缴利器**\n严重度 0.75｜2个独立来源（bbc.com、liputan6.com）｜影响支柱：social\n\n🔴 **市场失序(汇股债)｜FTSE宣布冻结印尼股票指数再平衡至2026年12月，印尼盾汇率持续走弱**\n严重度 0.75｜2个独立来源（antaranews.com、katadata.co.id）｜影响支柱：currency\n\n🟠 **央行独立性｜印尼央行行长候选人资格测试定于8月26-27日进行，新行长任命程序推进**\n严重度 0.55｜3个独立来源（bloombergtechnoz.com、detiknews）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "daily:2026-08-18:normal:red:success"
+    "decisionId": "daily:2026-08-19:normal:red:success"
   },
   "feishu": "sent"
 }
