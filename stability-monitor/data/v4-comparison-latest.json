@@ -4,7 +4,7 @@
   "asOf": "2026-08-20",
   "official": {
     "methodology": "V3",
-    "composite": 44.0,
+    "composite": 43.8,
     "displayScore": 44,
     "pillarWeights": {
       "fiscal": 0.2,
@@ -17,13 +17,13 @@
       "fiscal": 48.0,
       "currency": 43.0,
       "institutions": 35.0,
-      "social": 58.0,
+      "social": 57.0,
       "coercive": 36.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 46.1,
+    "composite": 45.9,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -34,7 +34,7 @@
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 46.3,
+    "composite": 46.1,
     "delta": 0.2,
     "pillarWeights": {
       "fiscal": 0.25,
@@ -477,8 +477,8 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 58.0,
-      "v4ShadowScore": 50.5,
+      "v3Score": 57.0,
+      "v4ShadowScore": 49.5,
       "delta": -7.5,
       "coverage": 1.0,
       "missingWeight": 0.0,
@@ -549,7 +549,7 @@
           "id": "online_grievance",
           "label": "线上不满与议题关注",
           "weight": 0.25,
-          "score": 61.0,
+          "score": 57.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -557,7 +557,7 @@
               "value": "heat 32.6; opposition 37.2 percent",
               "unit": "crawler composite",
               "transform": "60pct_heat_score_plus_40pct_opposition_score",
-              "score": 61,
+              "score": 57,
               "weight": 1
             }
           ],
@@ -567,7 +567,7 @@
           "freshnessQuality": 1.0,
           "sourceDirectness": 0.7,
           "observationIds": [
-            "online_grievance_2026_08_11"
+            "online_grievance_2026_08_20"
           ],
           "basis": "2026-08-11云端实采：热度稳定分65、反对率分55，60/40合成61；覆盖缺口与crawler低置信标签保留。",
           "missingReason": null

@@ -92,10 +92,10 @@
         "fiscal": 52.2,
         "currency": 45.6,
         "institutions": 36.9,
-        "social": 50.5,
+        "social": 49.5,
         "coercive": 37.3
       },
-      "composite": 46.3,
+      "composite": 46.1,
       "measurementConfidence": 0.67,
       "triggerLevel": "normal",
       "activeTriggerIds": [],

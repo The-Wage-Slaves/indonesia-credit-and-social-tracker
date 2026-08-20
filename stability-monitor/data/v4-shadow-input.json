@@ -266,7 +266,7 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 58,
+      "v3Score": 57,
       "drivers": [
         {
           "id": "livelihood_stress",
@@ -299,7 +299,7 @@
           "evidenceClass": "automated_proxy",
           "availability": "low",
           "observationIds": [
-            "online_grievance_2026_08_11"
+            "online_grievance_2026_08_20"
           ],
           "bridgeBasis": "2026-08-11云端实采：热度稳定分65、反对率分55，60/40合成61；覆盖缺口与crawler低置信标签保留。",
           "scoreMethod": "evidence_weighted"
