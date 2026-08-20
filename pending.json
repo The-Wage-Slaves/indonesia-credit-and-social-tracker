@@ -1,7 +1,16 @@
 {
   "boards": {
     "credit": [],
-    "stability": []
+    "stability": [
+      {
+        "title": "街头热度周报 2026-08-20: 建议分数 59/100",
+        "detail": "合成热度 43.2 · 反对率 34.8%（5/6 源成功）",
+        "link": "stability-monitor/scripts/output/street-heat-latest.html",
+        "action": "看确认单后对Claude Code说\"确认本期街头热度\"或提出质疑",
+        "source": "street-heat",
+        "id": "street-heat:8eefe518c7da"
+      }
+    ]
   },
-  "updated": "2026-07-30 18:00"
+  "updated": "2026-08-20 10:35"
 }

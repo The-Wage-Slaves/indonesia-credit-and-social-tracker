@@ -61,5 +61,93 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-08-20",
+    "version": 3,
+    "heat": 43.2,
+    "suggested_score": 59,
+    "opposition": {
+      "status": "ok",
+      "rate": 34.8,
+      "detail": "250条中政治条目204条(浓度82%)，反对71/中性103/支持30 → 总反对率 34.8%（分侧: 民间YouTube 51% · 论坛Kaskus 20% · 媒体RSS 9%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 45.8,
+        "raw": {
+          "ratio_street": 0.8162230671736376,
+          "ratio_anger": 1.0148493848112008,
+          "per_kw": {
+            "demo hari ini": 5,
+            "demonstrasi": 1,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 25,
+            "kejaksaan": 19,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 7
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 45.2,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 6,
+          "share": 22.584386962069367,
+          "examples": [
+            "China ketar-ketir! Prabowo: Kalau Kita Tak Bisa Tentukan Harga, Nikel Tetap di T",
+            "Tampil Beda dengan Presiden Lainnya! Foto Prabowo Berkibar saat HUT RI ke 81",
+            "Foto Prabowo Bareng Jokowi Gibran Full Senyum malah Dinyinyirin, Emang Kenapa?",
+            "Rencana Bursa Komoditas Baru Prabowo",
+            "Prabowo Ajukan Dwi Kewarganegaraan ke DPR RI, Setujukah Gansist?"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "n_searched": 143,
+          "n_big": 40
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 46.7,
+        "raw": {
+          "avg7": 0.015142857142857142,
+          "baseline": 0.01621777777777778,
+          "ratio": 0.9337196100692948
+        }
+      },
+      "gdelt_tone": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 6.8,
+        "raw": {
+          "total": 146,
+          "matched": 1,
+          "share": 0.684931506849315,
+          "examples": [
+            "[BBC Indonesia] BEM UI dan Front Mahasiswa Nasional gelar demo, diadang aparat dekat Bundaran HI"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
