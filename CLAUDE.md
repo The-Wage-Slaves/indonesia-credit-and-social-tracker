@@ -81,6 +81,12 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 - **已知局限**：DeepSeek 常把同一事件多家报道合并成一条，导致独立源计数偏低→重大事件多落"高危待核"而非红色。**这是刻意的保守取舍**（宁可让人去看，不让机器自行升红）。
 - **铁律**：只推送/写证据池，**绝不改 data.js**；事件需人工复核后才能作为评分依据。
 - **地域门（2026-08-04 起）**：信源池混有国际新闻，曾把巴基斯坦警察局爆炸、摩洛哥移民事件判成印尼稳定性事件并标 🔺高危待核。提示词要求输出 `country`，非印尼一律剔除。
+- **事件身份与已确认表（2026-08-18 起，PR #26）**：`data/acknowledged-events.json`，脚本只读、确认动作由人做。
+  - id = **`类型 + 规范化实体集合` 指纹**，不是标题措辞——同一件央行行长提名换个说法就是另一条记录，抑制和跨日追踪都无从谈起（08-11 与 08-12 各推了一次）。实体缺失时退回标题指纹并标 `idBasis: headline`，这种 id 不稳定、不该写进已确认表。
+  - **查表必须多键**：完整 id / 裸哈希 / 纯实体键。实测模型只回哈希不带类型前缀，且**类型本身会漂移**（同一条提名在同一天两次运行分别被归为 `key_official_change` 与 `central_bank_independence`），只按完整 id 查必然漏配。
+  - 语义是**留痕但停止催办**：已确认事件仍留在证据池（周更能看到），只是不再推送、不再抬高当日 level；条目里的 `resumeIf` 描述什么算实质进展，模型判出 `materialChange` 则重新推送。
+  - 提示词用 `[N1]` 标签 + `memberIds` 归组，**不要用 `itemIndexes`**——模型会给 0-based 下标，与 1-based 展示错位。
+  - `test_event_identity.py` 里 `test_shipped_registry_id_matches_computed_fingerprint` 是防手写哈希的：曾经手算了一个 `0d1f3ac2b7` 填进表里、真实指纹是 `11c49b57a7`，表看着有条目、实际一条都匹配不上，静默失效。**新增条目必须用脚本算 id，不许手写。**
 
 **信贷日频裁定链**（`credit-tracker/sentiment-monitor/event_intelligence.py`，2026-08-04 重建，PR #15）：
 同属 `daily-risk-alerts.yml`，但与稳定性侧是两套逻辑。**关键词只负责召回，不再决定类型与严重度**：
@@ -150,6 +156,8 @@ AGENTS.md / HANDOFF.md / REVIEW.md           Codex上下文 / 当前状态 / 给
 
 ## 6. 当前待办 / 留白
 
+- **已知缺陷（待单开 PR）**：`bot/weekly-monitoring` 分支每次都从 main 重建，`street_heat_history.json` 每周被覆盖——与日频那个已修的坑（`merge_daily_evidence.py` 按 date 合并）是同一类，周频这边还没修。
+- **两个 driver 在等数据**：「执法不对称比」需 8–12 周证据池（2026-08-11 才开始攒，约 10 月可用）才能替掉序数版的 法治与执法工具化；购买力口径对齐等 BPS Sakernas 8 月轮（约 11 月发布）。总统支持率 driver 冻在 75，等 Indikator 下一次**官方**全国民调——只被媒体广泛报道不算数（Indikator 曾officially否认发布过 2026-07 那份，全序列已纠错）。
 - 数据置信版 V4：影子跑 4–6 周攒历史后，与全景等权版对比，重点验证"低政治权重是否钝化制度骤变预警"；两条方法论分歧届时定夺。**勿擅自转正**。
 - OJK 新门户 `data.ojk.go.id/SJKPublic` 直爬（屏蔽非印尼IP，需本地/印尼网络）。
 - 街头热度：Trends/GDELT 限流→可切 GDELT BigQuery；反对率池升级(YouTube评论区/Kaskus政治版)。已记录待决策。

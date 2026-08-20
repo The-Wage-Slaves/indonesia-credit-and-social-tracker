@@ -1,6 +1,48 @@
 # Agent Handoff
 
-Last updated: 2026-08-03
+Last updated: 2026-08-18
+
+## Current state (2026-08-18)
+
+- Repository `The-Wage-Slaves/indonesia-credit-and-social-tracker` (private). No open PRs;
+  everything through #26 is merged into `main`.
+- Latest confirmed stability snapshot: `asOf 2026-08-11`, composite **43.4**,
+  pillars 48 / 40 / 35 / 58 / 36, seven weekly points (47.6 → 43.4).
+- Nothing runs on the owner's computer. Both local scheduled tasks were disabled on
+  2026-08-04 and must not be recreated; all cadences are GitHub Actions.
+- 全景等权版 (V3) is still the only production methodology. 数据置信版 (V4) stays a
+  read-only shadow.
+
+### What #18–#26 changed (the alerting rework)
+
+- **#18–#23** — added a presidential-approval driver and a purchasing-power driver
+  (BPS wages vs necessities inflation, marked approximate), then re-adjusted both
+  historical series in one PR so the curve stays comparable. Measured weekly impact
+  was ±1.0, not the 2–4 points first estimated; always dry-run a methodology change
+  before shipping the write-up.
+- **#24–#25** — credit side keeps acknowledged events in the evidence pool but marks
+  them `requiresReview: false` / `notificationLevel` instead of dropping them.
+- **#26** — stability events finally have a stable identity: `type + normalized
+  entities` fingerprint, `memberIds` instead of positional indexes, an
+  `acknowledged-events.json` registry with `acknowledgedState` / `resumeIf`, and a
+  multi-key lookup (full id / bare hash / entity key). The multi-key part is not
+  defensive padding — the model returns a bare hash, and classified the same central
+  bank nomination as `key_official_change` and `central_bank_independence` in two runs
+  on the same day. Semantics are **retain the trace, stop nagging**; a `materialChange`
+  reopens the alert.
+
+### Known open defects
+
+1. `bot/weekly-monitoring` still rebuilds from `main` each run, so
+   `stability-monitor/scripts/street_heat_history.json` is overwritten weekly. This is
+   the same class of bug fixed for the daily branch in `merge_daily_evidence.py` and
+   needs its own PR.
+2. 「执法不对称比」 is meant to replace the ordinal 法治与执法工具化 driver but needs
+   8–12 weeks of evidence pool; accumulation only started 2026-08-11, so ~October.
+3. Purchasing-power period alignment waits on the BPS Sakernas August round (~November).
+4. The approval-rating driver is frozen at 75 until Indikator publishes another
+   official national survey. Do not use secondary reporting of a poll — Indikator
+   officially denied publishing the July 2026 survey that was in use before.
 
 ## 2026-08-03 delivery and process correction
 
