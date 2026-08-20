@@ -223,7 +223,22 @@ assert(
   'V4 confidence cannot exceed availability quality',
 );
 assert(comparison.triggers.level === 'normal' && comparison.triggers.active.length === 0, 'Unexpected current V4 red trigger');
-assert(comparison.triggers.rules.some((rule) => rule.id === 'four_week_coercive_drop' && rule.status === 'not_evaluable'), 'V4 history shorter than four weeks must mark the rapid-drop trigger as not evaluable');
+// 四周骤降触发器：校验状态与其自身观测量一致，**不得把某一期的状态写死**。
+// 原断言要求 status 恒为 'not_evaluable'，那只在影子历史不足四周时成立；2026-08-20
+// 历史首次跨过四周后它必然误报，属于把当期状态当成不变量的老毛病。
+const rapidDrop = comparison.triggers.rules.find((rule) => rule.id === 'four_week_coercive_drop');
+assert(rapidDrop, 'V4 triggers must include four_week_coercive_drop');
+const rapidObserved = rapidDrop.observed || {};
+if (rapidDrop.status === 'not_evaluable') {
+  assert(!rapidObserved.baselineDate, 'not_evaluable requires that no four-week baseline exists');
+} else {
+  assert(typeof rapidObserved.drop === 'number' && rapidObserved.baselineDate, 'evaluable rapid-drop rule must report a baseline and a drop');
+  const crossed = rapidObserved.drop >= v4Input.redTriggers.fourWeekDrop;
+  const reviewed = rapidObserved.reviewConfirmed === true
+    && rapidObserved.independentSourceCount >= v4Input.redTriggers.minimumIndependentSources;
+  const expected = crossed ? (reviewed ? 'active' : 'pending_confirmation') : 'clear';
+  assert(rapidDrop.status === expected, `four_week_coercive_drop status ${rapidDrop.status} contradicts its own observation (expected ${expected})`);
+}
 
 const v4History = JSON.parse(read('stability-monitor/data/v4-shadow-history.json'));
 assert(v4History.schemaVersion === 1 && Array.isArray(v4History.snapshots), 'V4 history schema is invalid');
