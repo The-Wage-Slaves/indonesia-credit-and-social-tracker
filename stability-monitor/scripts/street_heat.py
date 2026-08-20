@@ -443,13 +443,16 @@ def validate_coverage(ok_keys):
     return coverage, missing_groups
 
 
+TABLE_WIDTH = 78
+
+
 def print_source_table(today, results, ok):
     """打印分源状态。**必须在覆盖率闸门之前调用。**
 
     2026-08-18 的教训：脚本在 sys.exit(2) 之前只说了「有效权重 60%」，没说是哪几个
     源挂了，日志里也就没有任何可诊断的东西——拒绝出分是对的，不可诊断是缺陷。
     """
-    W = 78
+    W = TABLE_WIDTH
     print("=" * W)
     print(f"  街头动员热度 · 周度确认单 (v2)     采集日 {today}   (人在环)")
     print("=" * W)
@@ -580,16 +583,14 @@ def main():
     except Exception as ex:
         opp = {"status": "fail", "rate": None, "detail": f"分类失败: {str(ex)[:80]}"}
 
-    # ---- 终端确认单 ----
-    print_source_table(today, results, ok)
     flag_g = STATUS_LABEL.get(opp["status"], "?")
     rate_s = f"{opp['rate']:.1f}%" if opp.get("rate") is not None else "—"
     print(f"  {flag_g:<7} G. 反对率(DeepSeek分类)      [领先] {rate_s}  (独立分量，不计入热度)")
     print(f"          {opp['detail']}")
-    print("-" * W)
+    print("-" * TABLE_WIDTH)
     print(f"  合成热度  {heat:.1f} / 100   （与基线持平≈41）")
     print(f"  建议分数  {score} / 100     （" + "; ".join(f"≤{e}→{s}" for e, s in SCORE_BANDS) + "）")
-    print("=" * W)
+    print("=" * TABLE_WIDTH)
 
     # ---- 历史留档 + HTML确认单 ----
     hist = json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else []

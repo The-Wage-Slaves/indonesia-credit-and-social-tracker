@@ -14,6 +14,7 @@ import importlib.util
 import io
 import pathlib
 import sys
+import tempfile
 import unittest
 from contextlib import redirect_stdout
 from unittest import mock
@@ -116,6 +117,51 @@ class DiagnosabilityTests(unittest.TestCase):
         coverage, missing_groups = SH.validate_coverage(ok)
         self.assertAlmostEqual(coverage, 0.45, places=2)
         self.assertIn("领先", missing_groups)
+
+
+class MainSuccessPathTests(unittest.TestCase):
+    """真正跑一遍 main() 的成功路径。
+
+    2026-08-20 的教训：把状态表提成函数时，`W = 78` 被一并挪进了函数，main() 里
+    其余 print 全部变成未定义；同时旧调用点没删干净，表打了两遍。**上面那些单元测试
+    全绿**，因为它们从来没进过 main()。真实路径直接 NameError 崩在成功分支上——
+    这个仓库反复栽在「建好了、测过了、真跑就是坏的」上面。
+    """
+
+    def _run_main(self):
+        collectors = {
+            "trends": lambda: _result("ok", 46.6, "篮子正常"),
+            "kaskus": lambda: _result("ok", 45.2, "热帖正常"),
+            "youtube": lambda: _result("ok", 100.0, "视频正常"),
+            "gdelt_vol": lambda: (_ for _ in ()).throw(RuntimeError("429")),
+            "gdelt_tone": lambda: _result("ok", 53.0, "tone 正常"),
+            "rss": lambda: _result("ok", 2.9, "RSS 正常"),
+        }
+        writes: list[str] = []
+        with mock.patch.object(SH, "load_config", return_value={}),              mock.patch.object(SH, "collect_trends", collectors["trends"]),              mock.patch.object(SH, "collect_kaskus", collectors["kaskus"]),              mock.patch.object(SH, "collect_youtube", lambda cfg: collectors["youtube"]()),              mock.patch.object(SH, "collect_gdelt_volume", collectors["gdelt_vol"]),              mock.patch.object(SH, "collect_gdelt_tone", collectors["gdelt_tone"]),              mock.patch.object(SH, "collect_rss", collectors["rss"]),              mock.patch.object(SH, "collect_opposition",
+                               return_value={"status": "ok", "rate": 37.2, "detail": "分类正常"}),              mock.patch.object(SH, "update_pending"),              mock.patch.object(SH.time, "sleep"),              mock.patch.object(SH, "_atomic_write_text",
+                               side_effect=lambda path, content: writes.append(str(path))),              tempfile.TemporaryDirectory() as tmp,              mock.patch.object(SH, "HISTORY_FILE", pathlib.Path(tmp) / "history.json"),              mock.patch.object(SH, "OUT_DIR", pathlib.Path(tmp) / "output"):
+            buf = io.StringIO()
+            with redirect_stdout(buf):
+                SH.main()
+        return buf.getvalue(), writes
+
+    def test_success_path_completes_without_error(self):
+        """覆盖率 85%（只挂 gdelt_vol）时必须走完全程并落一次历史。"""
+        out, writes = self._run_main()
+        self.assertIn("合成热度", out)
+        self.assertIn("建议分数", out)
+        self.assertTrue(any(w.endswith("history.json") for w in writes),
+                        "成功路径必须写历史留档")
+
+    def test_status_table_is_printed_exactly_once(self):
+        """闸门前打印一次即可；旧调用点没删干净会让确认单出现两遍。"""
+        out, _ = self._run_main()
+        self.assertEqual(out.count("街头动员热度 · 周度确认单"), 1)
+
+    def test_table_width_is_module_level(self):
+        """W 必须是模块常量：它被 print_source_table 和 main() 两处使用。"""
+        self.assertEqual(SH.TABLE_WIDTH, 78)
 
 
 if __name__ == "__main__":
