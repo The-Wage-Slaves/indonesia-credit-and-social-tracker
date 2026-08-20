@@ -45,12 +45,13 @@ Last updated: 2026-08-20
 
 ### Known open defects
 
-1. `bot/weekly-monitoring` still rebuilds from `main` each run, so
-   `stability-monitor/scripts/street_heat_history.json` is overwritten weekly. Confirmed
-   live on 2026-08-20: the branch holds only two entries (07-16 and 08-20) because 08-04
-   and 08-11 were wiped. Same class as the daily-branch bug fixed in
-   `merge_daily_evidence.py`; still needs its own PR. **This is the highest-value fix
-   outstanding** — the driver's own week-on-week comparison depends on that file.
+1. ~~`bot/weekly-monitoring` overwrites `street_heat_history.json` weekly.~~ **Fixed in
+   #31**: both pipelines now share `merge_bot_evidence.py`, which merges JSONL and
+   JSON-array artifacts by `date`, and the weekly job continues the existing bot branch
+   instead of rebuilding from `main`. **The 08-04 and 08-11 readings are permanently
+   lost** — their values survive only in `data.js` changeReason text (heat 38.6 /
+   opposition 50.2%, and heat 32.6 / 37.2%). The fix stops further loss; it cannot
+   recover those two records.
 2. **Repression intensity against civilians has no home driver.** 军警冲突烈度 counts only
    TNI-vs-POLRI institutional conflict by definition, and the social pillar's 动员性质
    grades protester character rather than the force used against them. The Aceh riots
