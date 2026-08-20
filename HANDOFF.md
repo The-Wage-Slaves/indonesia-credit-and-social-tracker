@@ -1,13 +1,14 @@
 # Agent Handoff
 
-Last updated: 2026-08-18
+Last updated: 2026-08-20
 
-## Current state (2026-08-18)
+## Current state (2026-08-20)
 
 - Repository `The-Wage-Slaves/indonesia-credit-and-social-tracker` (private). No open PRs;
-  everything through #26 is merged into `main`.
-- Latest confirmed stability snapshot: `asOf 2026-08-11`, composite **43.4**,
-  pillars 48 / 40 / 35 / 58 / 36, seven weekly points (47.6 → 43.4).
+  everything through #29 is merged into `main`.
+- Latest confirmed stability snapshot: `asOf 2026-08-20`, composite **43.8**,
+  pillars 48 / 43 / 35 / 57 / 36, eight weekly points (47.6 → 43.8).
+  V4 shadow 46.1, evidence quality 67.0%, source directness 73.2%.
 - Nothing runs on the owner's computer. Both local scheduled tasks were disabled on
   2026-08-04 and must not be recreated; all cadences are GitHub Actions.
 - 全景等权版 (V3) is still the only production methodology. 数据置信版 (V4) stays a
@@ -31,16 +32,39 @@ Last updated: 2026-08-18
   on the same day. Semantics are **retain the trace, stop nagging**; a `materialChange`
   reopens the alert.
 
+### What #27-#29 changed (2026-08-20)
+
+- **#29** — the street-heat collector printed its per-source table *after* the coverage
+  gate, and the gate calls `sys.exit(2)`, so a refusal to score left no diagnosable trace.
+  The table now prints first and the refusal names the failed sources. Trends carried the
+  largest weight (0.25) yet was the only collector with no retry, while GDELT had three;
+  it now has the same backoff. `MIN_WEIGHT_COVERAGE` stays 0.65 and is pinned by a test —
+  the floor is a methodology commitment, not a knob for producing an answer.
+- **#28** — the week of 2026-08-20. Only two drivers moved and they nearly cancel:
+  PMI 35→55 (50.2 crosses the band edge) and online political sentiment 61→57.
+
 ### Known open defects
 
 1. `bot/weekly-monitoring` still rebuilds from `main` each run, so
-   `stability-monitor/scripts/street_heat_history.json` is overwritten weekly. This is
-   the same class of bug fixed for the daily branch in `merge_daily_evidence.py` and
-   needs its own PR.
-2. 「执法不对称比」 is meant to replace the ordinal 法治与执法工具化 driver but needs
+   `stability-monitor/scripts/street_heat_history.json` is overwritten weekly. Confirmed
+   live on 2026-08-20: the branch holds only two entries (07-16 and 08-20) because 08-04
+   and 08-11 were wiped. Same class as the daily-branch bug fixed in
+   `merge_daily_evidence.py`; still needs its own PR. **This is the highest-value fix
+   outstanding** — the driver's own week-on-week comparison depends on that file.
+2. **Repression intensity against civilians has no home driver.** 军警冲突烈度 counts only
+   TNI-vs-POLRI institutional conflict by definition, and the social pillar's 动员性质
+   grades protester character rather than the force used against them. The Aceh riots
+   (08-16, 08-18), the Jakarta student dispersal with weapons confiscated (08-19) and the
+   Papua kidnapping (08-20) therefore score nowhere.
+3. **Index-provider access decisions have no home driver.** 股市与外资流向 is defined on
+   USD-denominated YTD return alone, so FTSE Russell's second deferral of Indonesian
+   additions and MSCI's removal of GOTO/CPIN scored nothing in the week they happened.
+4. **The PMI band is a cliff at 50** (48–50=45, 50–52=55): a reading of 50.2 triggers +20.
+   Applied as written this week; whether to smooth around the threshold is open.
+5. 「执法不对称比」 is meant to replace the ordinal 法治与执法工具化 driver but needs
    8–12 weeks of evidence pool; accumulation only started 2026-08-11, so ~October.
-3. Purchasing-power period alignment waits on the BPS Sakernas August round (~November).
-4. The approval-rating driver is frozen at 75 until Indikator publishes another
+6. Purchasing-power period alignment waits on the BPS Sakernas August round (~November).
+7. The approval-rating driver is frozen at 75 until Indikator publishes another
    official national survey. Do not use secondary reporting of a poll — Indikator
    officially denied publishing the July 2026 survey that was in use before.
 
