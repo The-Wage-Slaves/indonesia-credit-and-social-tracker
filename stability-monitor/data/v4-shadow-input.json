@@ -141,7 +141,7 @@
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 43,
+      "v3Score": 42,
       "drivers": [
         {
           "id": "inflation_expectations",
@@ -322,7 +322,7 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 36,
+      "v3Score": 35,
       "drivers": [
         {
           "id": "interagency_cohesion",

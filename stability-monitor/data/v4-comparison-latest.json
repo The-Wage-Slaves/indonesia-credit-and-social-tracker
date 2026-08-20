@@ -4,8 +4,8 @@
   "asOf": "2026-08-20",
   "official": {
     "methodology": "V3",
-    "composite": 43.8,
-    "displayScore": 44,
+    "composite": 43.4,
+    "displayScore": 43,
     "pillarWeights": {
       "fiscal": 0.2,
       "currency": 0.2,
@@ -15,15 +15,15 @@
     },
     "scores": {
       "fiscal": 48.0,
-      "currency": 43.0,
+      "currency": 42.0,
       "institutions": 35.0,
       "social": 57.0,
-      "coercive": 36.0
+      "coercive": 35.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 45.9,
+    "composite": 45.5,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -35,7 +35,7 @@
   "shadow": {
     "methodology": "V4",
     "composite": 46.1,
-    "delta": 0.2,
+    "delta": 0.6,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -243,9 +243,9 @@
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 43.0,
+      "v3Score": 42.0,
       "v4ShadowScore": 45.6,
-      "delta": 2.6,
+      "delta": 3.6,
       "coverage": 0.85,
       "missingWeight": 0.15,
       "lowConfidenceWeight": 0.0,
@@ -595,9 +595,9 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 36.0,
+      "v3Score": 35.0,
       "v4ShadowScore": 37.3,
-      "delta": 1.3,
+      "delta": 2.3,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.3,
