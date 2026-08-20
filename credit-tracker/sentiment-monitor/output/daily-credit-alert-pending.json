@@ -1,150 +1,48 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-19",
+  "date": "2026-08-20",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 14.6,
-    "socialDailyVolumeRisk": 21.1,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "newsDailyVolumeRisk": 24.7,
+    "socialDailyVolumeRisk": 26.1,
+    "negativeSocialShare": 34.2,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=11.0; robust z=-2.36",
-    "socialVolume": "today=0; prior-7d median=20.0; robust z=-1.93"
+    "newsVolume": "today=2; prior-7d median=12.0; robust z=-1.69",
+    "socialVolume": "today=1; prior-7d median=27.0; robust z=-1.59"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-ebc710b329d4",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Polres Kupang",
-        "Propam"
-      ],
-      "headline": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
-      "headlineZh": "古邦警方严打警员涉网赌网贷",
-      "summaryZh": "古邦警局Propam部门积极打击警员参与在线赌博和非法网贷，属内部纪律行动。",
-      "rationale": "警方内部执法行动，具体机构介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "tribratanewskupang.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b3dac6f94df00da2"
-      ],
-      "articles": [
-        {
-          "title": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRXhGcnFUbGduZkxjTzZaclVPZE1wd3ZPY2REaUV0b0lsbVpacGUzU3YwVDFNUVlvR0ZhNkhJUkZ6X2V1QWpMaTdHMG8wNThrLWFSRUpmUkFpcDNIbHJGMjREU0t4UDdGMUdRZVVmSDhKaW9oNWtaekY1RU4wTnlDcTdXeFV4c2paSWNLbnNkX0wxNk1HNDQxY3ZWdTFadlpadnZVelNJQVV3R2F3UjhYbUxPMnNLbTZPOThN?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-3ffdd82dea68",
+      "id": "llm-f1a809557a64",
       "eventType": "credit_quality_stress",
       "severity": 0.75,
       "entities": [
-        "OJK",
-        "Pindar"
+        "WIKA",
+        "BEI"
       ],
-      "headline": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
-      "headlineZh": "OJK警示16家网贷平台高坏账",
-      "summaryZh": "OJK指出16家Pindar平台不良贷款率高，提醒相关风险，显示资产质量承压。",
-      "rationale": "监管机构披露具体平台风险数据",
+      "headline": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
+      "headlineZh": "WIKA债务违约停牌",
+      "summaryZh": "WIKA因未能支付债务利息，被印尼证券交易所延长股票停牌，显示公司财务压力。",
+      "rationale": "债务违约导致停牌，具体事件",
       "independentSourceCount": 1,
       "domains": [
-        "cnbcindonesia.com"
+        "asatunews.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "1cd6247f9544a2f1"
+        "4c97cba1d3354524"
       ],
       "articles": [
         {
-          "title": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWW1kanRGTEcxa2JWTUZrVGxDR3RLS3lXMklUeVNLbFNuN1B0SGJnS0kxSG5IUE82eXRtZmFJVnZGdjNVanFyTU96eHdzS2xPRGdCdGUtMlZIRTFnS2VKUHh2MW1xcmJFT3pqLTdpbXo5SkJ3bkZUdlQzbWN2alNJRkZwR0gtWUpHdzZZUFdONlM1YVBOT3NuYkU1WXJmSnV4VzRWV2ZhWjQ0Y0tkZDBjVm9zMGdRel9nZFHSAb8BQVVfeXFMUC1ad1h0Um82eFY3UGhsMm50Z180bjZVUlJpMGlrdGhZd3Y2WjBsVl9vTURiU0xtN1A5YXZUdG9lUXFxbTJ2LThkNnRWUFowUktTYlBkZU9nUTE1UWZhcTB5eFNJOHNkZXdsUk5nVW9ETWhhYVdpcVFwRm1McHNpREFhdVN0a1ZsY0NaaXF1c01HWGtjTFVJWk1NUHNrZkl0OS1FMlFkeEc0R09DdmRLcDZ4Vmh3WDUwZERjSmxHZ2M?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-7220192d5dab",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "Yusril",
-        "Debt Collector"
-      ],
-      "headline": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
-      "headlineZh": "部长警告停止催收恐吓消费者",
-      "summaryZh": "统筹部长Yusril向企业发出最后通牒，要求停止催收员恐吓消费者的行为。",
-      "rationale": "政府高层明确警告，监管介入信号",
-      "independentSourceCount": 1,
-      "domains": [
-        "wartaekonomi.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "cc2f41d978b8a972"
-      ],
-      "articles": [
-        {
-          "title": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOUFQVFYxd1hoWDF6aG5Fb1lfUkdGRk1saXBRSVM1eW14T2dod1NISWVIbkttYjVHdDRUeGNiRG5YTmowVTZ2M1RuOUQ2OTJFV0ZvVF9ITUNzYUtMQlJicmxIaU9XOVVOSE5Ha3dZQkxIWi0xMlYxVjc4SmtyVDNNQk1Nczdzd2ZRZS1hQ1FhMHpXZGlwbVlCQ1piYUNfN3FvT01aVS1LZTlXQdIBrwFBVV95cUxOUmdmYWpIVlBrNFV5WmtXam92YUZ0LUJoSVpJQ2hqZGx1c3lhS0VjcnU1bGRGdFlmNjhmSGxtSTI5RnRxVkRxRU0wTU9BS01PaFFfRkxuNFUzeGxFbUhwSHJOU3lHLWdhdzQ1dGFQOE9KWTAzS2h6MWhLaER1VjFreEt1STBKbk1MbndVX21WZzRxYm1IM2dtYVYwR2pKWnRqZk94VEpBd19yeGJwY2tr?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-96582ddfcf07",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Maluku Utara"
-      ],
-      "headline": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
-      "headlineZh": "OJK记录1104起投诉含网贷",
-      "summaryZh": "OJK Maluku Utara上半年记录1104起投诉，主要涉及网购诈骗和网贷，显示消费者受害。",
-      "rationale": "官方投诉数据，反映消费者受害情况",
-      "independentSourceCount": 1,
-      "domains": [
-        "tandaseru.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "068de8cdacdfde30"
-      ],
-      "articles": [
-        {
-          "title": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPT0p4Rl9BeEZtRTVBMUNVT3p1YjRzcl9RaVFqZlVWYVZ3M0ZONVZOOE9NdEpBVV85ZnJKUjV5a2dCalhsZi1USUdEN1Z5OU1UbXZrM0pXZ0c0Y05ucldhWjJPOWJlSTBaX0RMRmxkNUxfMkRoREhfZ2h2aTA3VWZHUGtCM2dINzRMMTRnU0tINHJ3OVFNY0ZVQ2FuS3p5NENTbHlFVjRGd3JKRHFnMXhKcUV5TTNFM29YQ0JkOG5LR0hha0UwcE9iT0hOLVk4RVIyQVpKdUwzZw?oc=5"
+          "title": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1FZGwzelhlenJhUkk0WE5MSDh3QXZ2c3N6amhGSUowNmJCbDAxVnRyTDdFUGRQUV9zb0hyQnVMNkN0eXVEenpCd05VUUFudTdLOUxDUHdYdDl6eEdoQS1FSUp3N2tfX0UwaVZRS2NLbw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -161,144 +59,40 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 15,
-    "eventGroupCount": 4,
-    "rejectedNonEvents": 10,
+    "candidateCount": 21,
+    "eventGroupCount": 1,
+    "rejectedNonEvents": 16,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 15
+      "ok": 21
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-ebc710b329d4",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Polres Kupang",
-        "Propam"
-      ],
-      "headline": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
-      "headlineZh": "古邦警方严打警员涉网赌网贷",
-      "summaryZh": "古邦警局Propam部门积极打击警员参与在线赌博和非法网贷，属内部纪律行动。",
-      "rationale": "警方内部执法行动，具体机构介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "tribratanewskupang.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b3dac6f94df00da2"
-      ],
-      "articles": [
-        {
-          "title": "Propam Polres Kupang Gencar Berantas Judi Online dan Pinjaman Online di Kalangan Anggota - Polres Kupang",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRXhGcnFUbGduZkxjTzZaclVPZE1wd3ZPY2REaUV0b0lsbVpacGUzU3YwVDFNUVlvR0ZhNkhJUkZ6X2V1QWpMaTdHMG8wNThrLWFSRUpmUkFpcDNIbHJGMjREU0t4UDdGMUdRZVVmSDhKaW9oNWtaekY1RU4wTnlDcTdXeFV4c2paSWNLbnNkX0wxNk1HNDQxY3ZWdTFadlpadnZVelNJQVV3R2F3UjhYbUxPMnNLbTZPOThN?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-3ffdd82dea68",
+      "id": "llm-f1a809557a64",
       "eventType": "credit_quality_stress",
       "severity": 0.75,
       "entities": [
-        "OJK",
-        "Pindar"
+        "WIKA",
+        "BEI"
       ],
-      "headline": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
-      "headlineZh": "OJK警示16家网贷平台高坏账",
-      "summaryZh": "OJK指出16家Pindar平台不良贷款率高，提醒相关风险，显示资产质量承压。",
-      "rationale": "监管机构披露具体平台风险数据",
+      "headline": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
+      "headlineZh": "WIKA债务违约停牌",
+      "summaryZh": "WIKA因未能支付债务利息，被印尼证券交易所延长股票停牌，显示公司财务压力。",
+      "rationale": "债务违约导致停牌，具体事件",
       "independentSourceCount": 1,
       "domains": [
-        "cnbcindonesia.com"
+        "asatunews.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "1cd6247f9544a2f1"
+        "4c97cba1d3354524"
       ],
       "articles": [
         {
-          "title": "16 Pindar Kredit Macetnya Tinggi, OJK Ingatkan Risiko Ini - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWW1kanRGTEcxa2JWTUZrVGxDR3RLS3lXMklUeVNLbFNuN1B0SGJnS0kxSG5IUE82eXRtZmFJVnZGdjNVanFyTU96eHdzS2xPRGdCdGUtMlZIRTFnS2VKUHh2MW1xcmJFT3pqLTdpbXo5SkJ3bkZUdlQzbWN2alNJRkZwR0gtWUpHdzZZUFdONlM1YVBOT3NuYkU1WXJmSnV4VzRWV2ZhWjQ0Y0tkZDBjVm9zMGdRel9nZFHSAb8BQVVfeXFMUC1ad1h0Um82eFY3UGhsMm50Z180bjZVUlJpMGlrdGhZd3Y2WjBsVl9vTURiU0xtN1A5YXZUdG9lUXFxbTJ2LThkNnRWUFowUktTYlBkZU9nUTE1UWZhcTB5eFNJOHNkZXdsUk5nVW9ETWhhYVdpcVFwRm1McHNpREFhdVN0a1ZsY0NaaXF1c01HWGtjTFVJWk1NUHNrZkl0OS1FMlFkeEc0R09DdmRLcDZ4Vmh3WDUwZERjSmxHZ2M?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-7220192d5dab",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "Yusril",
-        "Debt Collector"
-      ],
-      "headline": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
-      "headlineZh": "部长警告停止催收恐吓消费者",
-      "summaryZh": "统筹部长Yusril向企业发出最后通牒，要求停止催收员恐吓消费者的行为。",
-      "rationale": "政府高层明确警告，监管介入信号",
-      "independentSourceCount": 1,
-      "domains": [
-        "wartaekonomi.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "cc2f41d978b8a972"
-      ],
-      "articles": [
-        {
-          "title": "Menko Yusril Ultimatum Pengusaha: Setop Debt Collector Ancam Konsumen! - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOOUFQVFYxd1hoWDF6aG5Fb1lfUkdGRk1saXBRSVM1eW14T2dod1NISWVIbkttYjVHdDRUeGNiRG5YTmowVTZ2M1RuOUQ2OTJFV0ZvVF9ITUNzYUtMQlJicmxIaU9XOVVOSE5Ha3dZQkxIWi0xMlYxVjc4SmtyVDNNQk1Nczdzd2ZRZS1hQ1FhMHpXZGlwbVlCQ1piYUNfN3FvT01aVS1LZTlXQdIBrwFBVV95cUxOUmdmYWpIVlBrNFV5WmtXam92YUZ0LUJoSVpJQ2hqZGx1c3lhS0VjcnU1bGRGdFlmNjhmSGxtSTI5RnRxVkRxRU0wTU9BS01PaFFfRkxuNFUzeGxFbUhwSHJOU3lHLWdhdzQ1dGFQOE9KWTAzS2h6MWhLaER1VjFreEt1STBKbk1MbndVX21WZzRxYm1IM2dtYVYwR2pKWnRqZk94VEpBd19yeGJwY2tr?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-96582ddfcf07",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Maluku Utara"
-      ],
-      "headline": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
-      "headlineZh": "OJK记录1104起投诉含网贷",
-      "summaryZh": "OJK Maluku Utara上半年记录1104起投诉，主要涉及网购诈骗和网贷，显示消费者受害。",
-      "rationale": "官方投诉数据，反映消费者受害情况",
-      "independentSourceCount": 1,
-      "domains": [
-        "tandaseru.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "068de8cdacdfde30"
-      ],
-      "articles": [
-        {
-          "title": "OJK Maluku Utara Catat 1.104 Pengaduan IASC Semester I-2026, Dominan Penipuan Belanja Online dan Pinjol - tandaseru.com",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPT0p4Rl9BeEZtRTVBMUNVT3p1YjRzcl9RaVFqZlVWYVZ3M0ZONVZOOE9NdEpBVV85ZnJKUjV5a2dCalhsZi1USUdEN1Z5OU1UbXZrM0pXZ0c0Y05ucldhWjJPOWJlSTBaX0RMRmxkNUxfMkRoREhfZ2h2aTA3VWZHUGtCM2dINzRMMTRnU0tINHJ3OVFNY0ZVQ2FuS3p5NENTbHlFVjRGd3JKRHFnMXhKcUV5TTNFM29YQ0JkOG5LR0hha0UwcE9iT0hOLVk4RVIyQVpKdUwzZw?oc=5"
+          "title": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
+          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1FZGwzelhlenJhUkk0WE5MSDh3QXZ2c3N6amhGSUowNmJCbDAxVnRyTDdFUGRQUV9zb0hyQnVMNkN0eXVEenpCd05VUUFudTdLOUxDUHdYdDl6eEdoQS1FSUp3N2tfX0UwaVZRS2NLbw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -324,21 +118,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 17,
-    "socialItemCount48h": 21
+    "articleCount48h": 23,
+    "socialItemCount48h": 15
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 432,
-    "classifiedCount": 115,
-    "irrelevantDropped": 125,
+    "inputCount": 503,
+    "classifiedCount": 112,
+    "irrelevantDropped": 128,
     "model": "deepseek-chat",
-    "fallbackCount": 192,
+    "fallbackCount": 263,
     "labelCounts": {
-      "NEG": 91,
-      "MIX": 10,
-      "POS": 14
+      "NEG": 74,
+      "MIX": 7,
+      "POS": 31
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
