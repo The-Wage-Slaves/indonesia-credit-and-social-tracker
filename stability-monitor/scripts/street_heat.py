@@ -122,15 +122,37 @@ def load_config():
 
 
 # ============ A. Google Trends（领先）============
+TRENDS_RETRIES = 3
+
+
+def _trends_series(py, basket, retries=TRENDS_RETRIES):
+    """带退避重试地取一个篮子。
+
+    Trends 是六个源里权重最大的一个(0.25)，却曾是唯一没有重试的——一次瞬时 429
+    就直接抹掉 25 个百分点的覆盖率，再挂任何一个 ≥10% 的源就跌破 65% 门槛、整周
+    拒绝出分。2026-08-18 那次 60% 覆盖率很可能就是这么来的。退避节奏与 _gdelt 一致。
+    """
+    last = None
+    for attempt in range(retries):
+        try:
+            py.build_payload(basket, geo="ID", timeframe="today 3-m")
+            df = py.interest_over_time()
+            if df.empty:
+                raise RuntimeError("Trends 返回空数据")
+            return df
+        except Exception as ex:
+            last = ex
+            if attempt < retries - 1:
+                time.sleep(12 * (attempt + 1))
+    raise RuntimeError(f"Trends 重试{retries}次仍失败: {str(last)[:80]}")
+
+
 def collect_trends():
     from pytrends.request import TrendReq
     py = TrendReq(hl="id-ID", tz=420, timeout=(10, 25))
     ratios, per_kw = [], {}
     for basket in (TRENDS_BASKET_STREET, TRENDS_BASKET_ANGER):
-        py.build_payload(basket, geo="ID", timeframe="today 3-m")
-        df = py.interest_over_time()
-        if df.empty:
-            raise RuntimeError("Trends 返回空数据")
+        df = _trends_series(py, basket)
         df = df.drop(columns=["isPartial"], errors="ignore")
         series = df.mean(axis=1)
         latest, baseline = float(series.iloc[-1]), float(series.iloc[:-1].mean())
@@ -421,6 +443,31 @@ def validate_coverage(ok_keys):
     return coverage, missing_groups
 
 
+TABLE_WIDTH = 78
+
+
+def print_source_table(today, results, ok):
+    """打印分源状态。**必须在覆盖率闸门之前调用。**
+
+    2026-08-18 的教训：脚本在 sys.exit(2) 之前只说了「有效权重 60%」，没说是哪几个
+    源挂了，日志里也就没有任何可诊断的东西——拒绝出分是对的，不可诊断是缺陷。
+    """
+    W = TABLE_WIDTH
+    print("=" * W)
+    print(f"  街头动员热度 · 周度确认单 (v2)     采集日 {today}   (人在环)")
+    print("=" * W)
+    for k in ORDER:
+        r = results[k]
+        flag = STATUS_LABEL[r["status"]]
+        hs = f"{r['heat']:5.1f}" if r["heat"] is not None else "  —  "
+        wt = f"{WEIGHTS[k]*100:.0f}%" if r["status"] == "ok" else "(重分配)"
+        print(f"  {flag:<7} {NAMES[k]:<26} [{GROUP[k]}] 热度 {hs}  权重 {wt}")
+        print(f"          {r['detail']}")
+    n_off = len(results) - len(ok)
+    if n_off:
+        print(f"  ⚠ {n_off} 个源未参与，热度按剩余源权重归一化")
+
+
 def render_html(today, results, ok, heat, score, hist, opp=None):
     rows = []
     for k in ORDER:
@@ -505,10 +552,21 @@ def main():
 
     ok = {k: v for k, v in results.items() if v["status"] == "ok"}
     wsum, missing_groups = validate_coverage(ok)
+    # 闸门之前先把状态表打出来，否则拒绝出分的原因不可诊断（见 print_source_table）。
+    print_source_table(today, results, ok)
     if wsum < MIN_WEIGHT_COVERAGE or missing_groups:
         missing = f"；缺少组别: {', '.join(missing_groups)}" if missing_groups else ""
+        failed = ", ".join(
+            f"{NAMES[k].split('.')[0]}={results[k]['status']}({WEIGHTS[k]:.0%})"
+            for k in ORDER if k not in ok
+        ) or "无"
         print(f"数据覆盖不足（有效权重 {wsum:.0%}，最低 {MIN_WEIGHT_COVERAGE:.0%}{missing}）。")
+        print(f"未参与的源: {failed}")
+        for k in ORDER:
+            if k not in ok:
+                print(f"  - {NAMES[k]}: {results[k]['detail']}")
         print("本周不生成分数、不写历史、不推送待确认事项。")
+        print("注意：这是「没采到」，不是「本周无变化」；评分侧必须按结转处理并标注。")
         sys.exit(2)
     heat = sum(results[k]["heat"] * WEIGHTS[k] for k in ok) / wsum
     score = heat_to_score(heat)
@@ -525,29 +583,14 @@ def main():
     except Exception as ex:
         opp = {"status": "fail", "rate": None, "detail": f"分类失败: {str(ex)[:80]}"}
 
-    # ---- 终端确认单 ----
-    W = 78
-    print("=" * W)
-    print(f"  街头动员热度 · 周度确认单 (v2)     采集日 {today}   (人在环)")
-    print("=" * W)
-    for k in ORDER:
-        r = results[k]
-        flag = STATUS_LABEL[r["status"]]
-        hs = f"{r['heat']:5.1f}" if r["heat"] is not None else "  —  "
-        wt = f"{WEIGHTS[k]*100:.0f}%" if r["status"] == "ok" else "(重分配)"
-        print(f"  {flag:<7} {NAMES[k]:<26} [{GROUP[k]}] 热度 {hs}  权重 {wt}")
-        print(f"          {r['detail']}")
-    n_off = len(results) - len(ok)
-    if n_off:
-        print(f"  ⚠ {n_off} 个源未参与，热度按剩余源权重归一化")
     flag_g = STATUS_LABEL.get(opp["status"], "?")
     rate_s = f"{opp['rate']:.1f}%" if opp.get("rate") is not None else "—"
     print(f"  {flag_g:<7} G. 反对率(DeepSeek分类)      [领先] {rate_s}  (独立分量，不计入热度)")
     print(f"          {opp['detail']}")
-    print("-" * W)
+    print("-" * TABLE_WIDTH)
     print(f"  合成热度  {heat:.1f} / 100   （与基线持平≈41）")
     print(f"  建议分数  {score} / 100     （" + "; ".join(f"≤{e}→{s}" for e, s in SCORE_BANDS) + "）")
-    print("=" * W)
+    print("=" * TABLE_WIDTH)
 
     # ---- 历史留档 + HTML确认单 ----
     hist = json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else []

@@ -69,7 +69,11 @@ jobs:
       - name: Build stability street-heat review
         id: street
         continue-on-error: true
-        run: python stability-monitor/scripts/street_heat.py
+        # 留存 stdout：采集器拒绝出分时会打印分源状态与失败原因，这些必须能进
+        # 运行摘要，否则只看到一个 failure、不知道是哪个源挂了（2026-08-18 的教训）。
+        run: |
+          set -o pipefail
+          python stability-monitor/scripts/street_heat.py 2>&1 | tee /tmp/street-heat.log
       - name: Read weekly decision summary
         id: summary
         shell: bash
@@ -109,6 +113,11 @@ jobs:
             echo "| ${WEEK_END} | ${FEAR_INDEX} | ${NEWS_SCORE} | ${SOCIAL_SCORE} | ${DATA_STATUS} | ${ALERT_LEVEL} | ${ACTIVE_COUNT} | ${CANDIDATE_COUNT} |"
             echo
             echo "- Street-heat collector: **${STREET_STATUS}**"
+          if [ "${STREET_STATUS}" != "success" ] && [ -f /tmp/street-heat.log ]; then
+            echo "  - 采集器未出分。分源状态："
+            sed -n 's/^数据覆盖不足/    - 数据覆盖不足/p;s/^未参与的源: /    - 未参与的源: /p' /tmp/street-heat.log
+            echo "  - 这是「没采到」，不是「本周无变化」；评分侧须按结转处理并标注。"
+          fi
             echo "- ${SUPPRESSED_COUNT} low-evidence/repeated candidates were folded away and are not high-risk events."
             echo "- No confirmed score or history was changed."
           } >> "$GITHUB_STEP_SUMMARY"
