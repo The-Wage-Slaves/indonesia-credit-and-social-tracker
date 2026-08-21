@@ -72,6 +72,29 @@ for (const pillar of stabilityContext.__DATA.pillars) {
     assert(driver.updated && driver.changeReason, `${pillar.id}/${driver.name} lacks update provenance`);
     assert(Array.isArray(driver.sources) && driver.sources.length > 0, `${pillar.id}/${driver.name} lacks sources`);
   }
+  // hist1998Reason 里写死的「当前N」必须等于支柱分。这是给人看的读法文字，
+  // 一旦落后就会在看板上讲一个与分数矛盾的故事——2026-08-20 复核时五个支柱
+  // **全部**对不上（财政写49实为48、社会写55实为57），最早的已经陈旧了一个多月。
+  const claimed = /当前(\d+)/.exec(pillar.hist1998Reason || '');
+  if (claimed) {
+    assert(Number(claimed[1]) === pillar.score,
+      `${pillar.id} hist1998Reason claims 当前${claimed[1]} but the pillar score is ${pillar.score}`);
+  }
+}
+
+// 导出文件必须与 data.js 同步。它由 apply_week.py export 生成、供「接入自动更新」
+// 那条路径使用；2026-08-20 复核时它停在 07-30、落后 5 期，而没有任何东西报错。
+{
+  const exported = JSON.parse(read('stability-monitor/data/dashboard-data.json'));
+  const live = stabilityContext.__DATA;
+  assert(exported.asOf === live.asOf,
+    `dashboard-data.json asOf ${exported.asOf} is stale; data.js is ${live.asOf} (run apply_week.py export)`);
+  assert(exported.weekly.length === live.weekly.length,
+    `dashboard-data.json has ${exported.weekly.length} weekly points; data.js has ${live.weekly.length}`);
+  const lastExported = JSON.stringify(exported.weekly.at(-1));
+  const lastLive = JSON.stringify(live.weekly.at(-1));
+  assert(lastExported === lastLive,
+    `dashboard-data.json latest snapshot differs from data.js: ${lastExported} vs ${lastLive}`);
 }
 
 const v4Input = JSON.parse(read('stability-monitor/data/v4-shadow-input.json'));

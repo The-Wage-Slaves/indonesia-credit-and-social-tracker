@@ -113,6 +113,22 @@ class NewDriverContractTests(unittest.TestCase):
         self.assertIn('name: "军警冲突烈度(机构间)"', self.text)
         self.assertNotIn('name: "军警冲突烈度(计数)"', self.text)
 
+    def test_new_drivers_declare_no_previous_measurement(self):
+        """新设 driver 的 prev 必须是 null，不能编一个上期值。
+
+        engine.js 会把 prev 原样渲染成「相对上期(45)」。给「国际市场准入」填
+        prev=45（FTSE 六月那次推迟的追认分）看着合理，实际是在看板上宣称上期
+        测过、本周从45暴跌到20——而那 25 分的跌幅从未发生。validate_repo、
+        单测、CI 当时全绿，只有把 HTML 真渲染出来才看得见。
+        """
+        for marker in ("国际市场准入", "对平民镇压强度(计数)"):
+            with self.subTest(driver=marker):
+                start = self.text.index(f'name: "{marker}"')
+                head = self.text[start:self.text.index(chr(10), start)]
+                self.assertIn("prev: null", head,
+                              f"{marker} 是本期新设，prev 必须为 null；"
+                              "填任何数字都会在看板上渲染成一次没发生过的变动")
+
     def test_both_new_drivers_document_the_unmeasured_history_rule(self):
         for marker in ("国际市场准入", "对平民镇压强度(计数)"):
             with self.subTest(driver=marker):
