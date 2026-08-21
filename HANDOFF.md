@@ -62,15 +62,15 @@ Last updated: 2026-08-20
 
 **Structural — worth real work**
 
-1. **V3 keeps no driver-level history.** `weekly` stores only pillar scores, so a
-   methodology change cannot be replayed or verified against the past. The
-   "unmeasured drivers revert to the old weights" rule that keeps the 2026-08-20
-   changes history-neutral exists only as prose; nothing can recompute it. The
-   2026-07-07 currency reconstruction already fails (44 reconstructed vs 42
-   archived) and never will be recoverable. **Fix:** have `apply_week.py append`
-   also write `data/driver-snapshots/YYYY-MM-DD.json` with every driver's score and
-   weight, then add an invariant that each archived snapshot still reproduces its
-   pillar score. From that point on, methodology changes become replayable.
+1. ~~**V3 keeps no driver-level history.**~~ **Fixed in #32.** `apply_week.py append` now
+   also archives `data/driver-snapshots/YYYY-MM-DD.json` holding every driver's name, type,
+   weight and score, and `apply_week.py snapshot` backfills it after a manual edit. The
+   writer refuses to archive a snapshot that cannot reproduce its own pillar score, and
+   `validate_repo.mjs` re-checks every archived snapshot plus requires the newest one to
+   match `data.js` exactly. **Archiving starts at 2026-08-20**; earlier periods have no
+   driver-level record and never will — the 2026-07-07 currency pillar already cannot be
+   reconstructed (44 reconstructed vs 42 archived). From here on a methodology change can
+   be replayed period by period instead of resting on prose.
 2. **Collector rate limiting is chronic, not incidental.** GDELT still returns 429
    despite three retries; YouTube and Trends fail intermittently. #29 gave Trends
    the retry it lacked, which is why 2026-08-20 scored at 90% coverage, but the
