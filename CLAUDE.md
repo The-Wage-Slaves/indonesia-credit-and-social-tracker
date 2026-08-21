@@ -25,7 +25,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 
 1. **人在环**：脚本只「抓取→写待确认区（首页卡片 / 信贷看板"✎数据管理"暗门）」，**绝不直接改看板数值/评分**；人确认后才写入。
 2. **事实/判断分离**：稳定性证据每条标 事实/引述/判断/待补 四类标签。
-3. **改 `stability-monitor/dashboard/data.js` 必须**：同步更新该 driver 的 `score/prev/changeReason/sources/updated`；支柱分 = round(Σ driver.score×weight)，改分后**本地跑 `node .github/scripts/validate_repo.mjs` 必须通过**（它校验权重和=1、支柱分=加权和、provenance 齐全、pending/V4 一致性）。
+3. **改 `stability-monitor/dashboard/data.js` 必须**：同步更新该 driver 的 `score/prev/changeReason/sources/updated`；支柱分 = round(Σ driver.score×weight)，改分后**本地跑 `node .github/scripts/validate_repo.mjs` 必须通过**（它校验权重和=1、支柱分=加权和、provenance 齐全、pending/V4 一致性、支柱读法文字里的「当前N」与分数一致、导出文件与 data.js 同步、driver 级快照自洽且最新一期与 data.js 一致）。**手改评分后必须补跑 `python scripts/apply_week.py snapshot`**——`append` 会自动归档，手改不会。
 4. **FX 固定 15000**（历史可比口径），除非所有者明确批准改方法论。
 5. **密钥永不入库**：`stability-monitor/scripts/street_heat_config.yaml` 与 `credit-tracker/sentiment-monitor/credit_sentiment_config.yaml` 已 .gitignore，**切勿 `git add -f`**；克隆后用 `.example.yaml` 模板自填。
 6. **CDN 用 jsDelivr，不用 unpkg**（unpkg 的 recharts 在此网络失败过）。
@@ -62,7 +62,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 **五支柱**：财政与外部脆弱性 / 货币与市场信心 / 制度与政策可预见性 / 社会与街头 / 强制机构内聚性。每支柱 = Σ(子因子×权重)+pillarAdj；子因子分 quant(阈值公式)/ordinal(5档序数)；与 1998 危机位置对照。方法论 v3 经跨国(中/美/马/日)+跨时代(2019/2024/2026)校验，见 `docs/METHODOLOGY.md` + `METHODOLOGY_V3_PROPOSAL.md`；数据置信版见 `docs/METHODOLOGY_V4_DRAFT.md` + `V4_WEEKLY_RUNBOOK.md`。
 
 **当前分（截至 2026-08-20，weekly 8 期）**：
-- 全景等权版：综合 **43.8**（橙红·预警区）；财政48/货币43/制度35/社会57/强制36。**读法：看支柱不看综合——制度35/强制36是最弱、已贴近或低于1998位置；而社会57高于1998的50，平均之后这个结构差异就消失了。**
+- 全景等权版：综合 **43.4**（橙红·预警区）；财政48/货币42/制度35/社会57/强制35。**读法：看支柱不看综合——制度35/强制35是最弱、已贴近或低于1998位置；而社会57高于1998的50，平均之后这个结构差异就消失了。**
 - 数据置信版（影子）：综合 **46.1**；证据质量67.0%、来源直达度73.2%。**这+2.3差是"换尺子的结构迁移"非基本面改善。**
 - ⚠️ **具体分数以 `data.js` 为准，本文件的数字必然滞后**；周更后若没同步这里，以 data.js 与 `HANDOFF.md` 为准。
 
@@ -106,7 +106,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 - **待校准**：红色要求的「社媒 ≥3 条提及」是拍的。若真事件长期卡在 `high_pending` 上不去红，先怀疑这个阈值或社媒覆盖率。
 
 **周更流程**：⓪ **先取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
-`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照 → `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
+`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照（**会自动归档一份 driver 级快照到 `data/driver-snapshots/YYYY-MM-DD.json`**；手改评分后若没跑 append，补跑 `python scripts/apply_week.py snapshot`）→ `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
 
 ---
 

@@ -70,7 +70,7 @@ function driverBlock(d){
       </div>
       ${zone}
       <ul class="srcList">${srcs}</ul>
-      <div class="change"><b>相对上期(${d.prev}):</b> ${d.changeReason}</div>
+      <div class="change"><b>${d.prev==null?'本期新设(上期未测量)':`相对上期(${d.prev})`}:</b> ${d.changeReason}</div>
     </div>`;
 }
 

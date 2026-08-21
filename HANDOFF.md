@@ -6,8 +6,8 @@ Last updated: 2026-08-20
 
 - Repository `The-Wage-Slaves/indonesia-credit-and-social-tracker` (private). No open PRs;
   everything through #29 is merged into `main`.
-- Latest confirmed stability snapshot: `asOf 2026-08-20`, composite **43.8**,
-  pillars 48 / 43 / 35 / 57 / 36, eight weekly points (47.6 → 43.8).
+- Latest confirmed stability snapshot: `asOf 2026-08-20`, composite **43.4**,
+  pillars 48 / 42 / 35 / 57 / 35, eight weekly points (47.6 → 43.4).
   V4 shadow 46.1, evidence quality 67.0%, source directness 73.2%.
 - Nothing runs on the owner's computer. Both local scheduled tasks were disabled on
   2026-08-04 and must not be recreated; all cadences are GitHub Actions.
@@ -43,31 +43,68 @@ Last updated: 2026-08-20
 - **#28** — the week of 2026-08-20. Only two drivers moved and they nearly cancel:
   PMI 35→55 (50.2 crosses the band edge) and online political sentiment 61→57.
 
+### What #31-#32 changed (2026-08-20, second pass)
+
+- **#31** — the weekly bot branch stopped overwriting `street_heat_history.json`.
+  `merge_daily_evidence.py` became `merge_bot_evidence.py`, shared by both pipelines,
+  and gained JSON-array-by-date merging. Workflow assertions are parameterised over
+  both pipelines so a third collector cannot silently skip the merge step.
+- **#32** — PMI band smoothed to a continuous mapping; two new drivers
+  (国际市场准入 0.06 in currency, 对平民镇压强度 0.15 in coercive) close the two
+  scoring gaps; a devil's-advocate pass then caught four content bugs that every
+  existing check had passed: fabricated `prev` values on the new drivers, all five
+  pillars' `hist1998Reason` quoting stale scores, and a five-period-stale
+  `dashboard-data.json`. New guards: two internal-consistency invariants in
+  `validate_repo.mjs`, a Node render harness (`test_dashboard_render.mjs`) wired into
+  CI, and `test_methodology_history.py` pinning the confirmed history as a tripwire.
+
 ### Known open defects
 
-1. ~~`bot/weekly-monitoring` overwrites `street_heat_history.json` weekly.~~ **Fixed in
-   #31**: both pipelines now share `merge_bot_evidence.py`, which merges JSONL and
-   JSON-array artifacts by `date`, and the weekly job continues the existing bot branch
-   instead of rebuilding from `main`. **The 08-04 and 08-11 readings are permanently
-   lost** — their values survive only in `data.js` changeReason text (heat 38.6 /
-   opposition 50.2%, and heat 32.6 / 37.2%). The fix stops further loss; it cannot
-   recover those two records.
-2. **Repression intensity against civilians has no home driver.** 军警冲突烈度 counts only
-   TNI-vs-POLRI institutional conflict by definition, and the social pillar's 动员性质
-   grades protester character rather than the force used against them. The Aceh riots
-   (08-16, 08-18), the Jakarta student dispersal with weapons confiscated (08-19) and the
-   Papua kidnapping (08-20) therefore score nowhere.
-3. **Index-provider access decisions have no home driver.** 股市与外资流向 is defined on
-   USD-denominated YTD return alone, so FTSE Russell's second deferral of Indonesian
-   additions and MSCI's removal of GOTO/CPIN scored nothing in the week they happened.
-4. **The PMI band is a cliff at 50** (48–50=45, 50–52=55): a reading of 50.2 triggers +20.
-   Applied as written this week; whether to smooth around the threshold is open.
-5. 「执法不对称比」 is meant to replace the ordinal 法治与执法工具化 driver but needs
-   8–12 weeks of evidence pool; accumulation only started 2026-08-11, so ~October.
-6. Purchasing-power period alignment waits on the BPS Sakernas August round (~November).
-7. The approval-rating driver is frozen at 75 until Indikator publishes another
-   official national survey. Do not use secondary reporting of a poll — Indikator
+**Structural — worth real work**
+
+1. ~~**V3 keeps no driver-level history.**~~ **Fixed in #32.** `apply_week.py append` now
+   also archives `data/driver-snapshots/YYYY-MM-DD.json` holding every driver's name, type,
+   weight and score, and `apply_week.py snapshot` backfills it after a manual edit. The
+   writer refuses to archive a snapshot that cannot reproduce its own pillar score, and
+   `validate_repo.mjs` re-checks every archived snapshot plus requires the newest one to
+   match `data.js` exactly. **Archiving starts at 2026-08-20**; earlier periods have no
+   driver-level record and never will — the 2026-07-07 currency pillar already cannot be
+   reconstructed (44 reconstructed vs 42 archived). From here on a methodology change can
+   be replayed period by period instead of resting on prose.
+2. **Collector rate limiting is chronic, not incidental.** GDELT still returns 429
+   despite three retries; YouTube and Trends fail intermittently. #29 gave Trends
+   the retry it lacked, which is why 2026-08-20 scored at 90% coverage, but the
+   floor will keep being missed. **Fix:** move GDELT to BigQuery, or reduce the
+   pillar's dependence on any single 0.25-weight source.
+3. **Scheduled runs are ~192 minutes late** and moving off the hour only recovered
+   ~16 minutes. The queueing hypothesis is largely unconfirmed. **Fix:** unclear;
+   treat delay as normal and never infer failure from a late push.
+
+**Waiting on external data — not defects**
+
+4. 「执法不对称比」 needs 8–12 weeks of evidence pool before it can replace the
+   ordinal 法治与执法工具化 driver; accumulation started 2026-08-11, so ~October.
+5. Purchasing-power period alignment waits on the BPS Sakernas August round (~November).
+6. The approval-rating driver is frozen at 75 until Indikator publishes another
+   official national survey. Never use secondary reporting of a poll — Indikator
    officially denied publishing the July 2026 survey that was in use before.
+7. The red-alert gate's "social mentions >= 3" threshold is still a guess. If real
+   events keep stalling at `high_pending`, suspect this before anything else.
+
+**Permanent losses**
+
+8. The 2026-08-04 and 2026-08-11 street-heat records are gone; their values survive
+   only in `data.js` changeReason text (heat 38.6 / opposition 50.2%, and 32.6 / 37.2%).
+9. Daily evidence for 2026-08-05 to 2026-08-10 is gone (workflow dead six days).
+
+**Housekeeping**
+
+10. `bot/monthly-credit-data` has held the August collection since 2026-08-01 with
+    nobody confirming it into the dashboard.
+11. `bot/weekly-credit-sentiment` is a leftover branch frozen at 2026-07-29; no
+    workflow writes it. Delete it once the owner confirms nothing reads it.
+12. The `hist1998Reason` invariant only recognises the literal 当前N form. Prose that
+    states the score another way still rots undetected.
 
 ## 2026-08-03 delivery and process correction
 
@@ -171,6 +208,11 @@ creates a deduplicated red-alert GitHub Issue only when the strict evidence
 gate passes. It does not create a routine data PR or write confirmed dashboard
 history directly. Feishu delivery is designed but not yet connected; see
 `credit-tracker/sentiment-monitor/REVIEW_REQUEST.md`.
+
+> **Superseded (2026-08-20).** The cadence is now Tuesday and the workflow is
+> `Tuesday weekly monitoring`, which stages to `bot/weekly-monitoring` and pushes
+> Feishu directly. No workflow writes `bot/weekly-credit-sentiment` any more; that
+> branch is a leftover frozen at 2026-07-29 and should not be read as current data.
 
 ## Validation
 

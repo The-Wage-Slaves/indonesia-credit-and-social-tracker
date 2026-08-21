@@ -72,6 +72,69 @@ for (const pillar of stabilityContext.__DATA.pillars) {
     assert(driver.updated && driver.changeReason, `${pillar.id}/${driver.name} lacks update provenance`);
     assert(Array.isArray(driver.sources) && driver.sources.length > 0, `${pillar.id}/${driver.name} lacks sources`);
   }
+  // hist1998Reason 里写死的「当前N」必须等于支柱分。这是给人看的读法文字，
+  // 一旦落后就会在看板上讲一个与分数矛盾的故事——2026-08-20 复核时五个支柱
+  // **全部**对不上（财政写49实为48、社会写55实为57），最早的已经陈旧了一个多月。
+  const claimed = /当前(\d+)/.exec(pillar.hist1998Reason || '');
+  if (claimed) {
+    assert(Number(claimed[1]) === pillar.score,
+      `${pillar.id} hist1998Reason claims 当前${claimed[1]} but the pillar score is ${pillar.score}`);
+  }
+}
+
+// driver 级快照必须自洽，且最新一期必须与 data.js 一致。
+// 存在意义：weekly 只存支柱分，方法论变更因此无法重放——2026-08-20 新增两个 driver 时
+// 「未测量的权重原样退回、历史不变」只能写在文字里，没有任何东西能重算验证；同一次干跑中
+// 2026-07-07 的货币支柱已经反推不出来（反推44、归档42）。从 2026-08-20 起逐期归档，
+// 往后的方法论变更就可以逐期重放。
+{
+  const dir = 'stability-monitor/data/driver-snapshots';
+  const files = readdirSync(path.join(root, dir)).filter((f) => f.endsWith('.json')).sort();
+  assert(files.length > 0, 'driver-snapshots is empty; run apply_week.py snapshot');
+  for (const file of files) {
+    const snap = JSON.parse(read(`${dir}/${file}`));
+    assert(snap.date === file.replace('.json', ''),
+      `${file} records date ${snap.date}`);
+    for (const [id, pillar] of Object.entries(snap.pillars)) {
+      const weightSum = pillar.drivers.reduce((sum, d) => sum + d.weight, 0);
+      assert(Math.abs(weightSum - 1) < 1e-9,
+        `${file} ${id} driver weights sum to ${weightSum}`);
+      const computed = Math.round(
+        pillar.drivers.reduce((sum, d) => sum + d.score * d.weight, 0) + (pillar.pillarAdj || 0),
+      );
+      assert(computed === pillar.score,
+        `${file} ${id} snapshot recomputes to ${computed} but records ${pillar.score} — ` +
+        'an archived snapshot that cannot reproduce its own pillar score is worse than none');
+    }
+  }
+  // 最新快照必须就是当期 data.js，否则归档会悄悄落后一期。
+  const live = stabilityContext.__DATA;
+  const latest = JSON.parse(read(`${dir}/${files[files.length - 1]}`));
+  assert(latest.date === live.asOf,
+    `latest driver snapshot is ${latest.date} but data.js asOf is ${live.asOf} (run apply_week.py snapshot)`);
+  for (const pillar of live.pillars) {
+    const archived = latest.pillars[pillar.id];
+    assert(archived, `latest snapshot lacks pillar ${pillar.id}`);
+    assert(archived.score === pillar.score,
+      `latest snapshot ${pillar.id}=${archived.score} but data.js says ${pillar.score}`);
+    assert(archived.drivers.length === pillar.drivers.length,
+      `latest snapshot ${pillar.id} has ${archived.drivers.length} drivers; data.js has ${pillar.drivers.length}`);
+  }
+}
+
+// 导出文件必须与 data.js 同步。它由 apply_week.py export 生成、供「接入自动更新」
+// 那条路径使用；2026-08-20 复核时它停在 07-30、落后 5 期，而没有任何东西报错。
+{
+  const exported = JSON.parse(read('stability-monitor/data/dashboard-data.json'));
+  const live = stabilityContext.__DATA;
+  assert(exported.asOf === live.asOf,
+    `dashboard-data.json asOf ${exported.asOf} is stale; data.js is ${live.asOf} (run apply_week.py export)`);
+  assert(exported.weekly.length === live.weekly.length,
+    `dashboard-data.json has ${exported.weekly.length} weekly points; data.js has ${live.weekly.length}`);
+  const lastExported = JSON.stringify(exported.weekly.at(-1));
+  const lastLive = JSON.stringify(live.weekly.at(-1));
+  assert(lastExported === lastLive,
+    `dashboard-data.json latest snapshot differs from data.js: ${lastExported} vs ${lastLive}`);
 }
 
 const v4Input = JSON.parse(read('stability-monitor/data/v4-shadow-input.json'));
