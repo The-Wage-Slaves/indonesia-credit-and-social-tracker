@@ -1,48 +1,261 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-20",
+  "date": "2026-08-21",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 24.7,
-    "socialDailyVolumeRisk": 26.1,
-    "negativeSocialShare": 34.2,
+    "newsDailyVolumeRisk": 31.8,
+    "socialDailyVolumeRisk": 30.7,
+    "negativeSocialShare": 37.9,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=2; prior-7d median=12.0; robust z=-1.69",
-    "socialVolume": "today=1; prior-7d median=27.0; robust z=-1.59"
+    "newsVolume": "today=5; prior-7d median=14.0; robust z=-1.21",
+    "socialVolume": "today=3; prior-7d median=24.0; robust z=-1.29"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-f1a809557a64",
-      "eventType": "credit_quality_stress",
-      "severity": 0.75,
+      "id": "llm-3d0fa3704d59",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
       "entities": [
-        "WIKA",
-        "BEI"
+        "Pemerintah Kota Semarang",
+        "OJK"
       ],
-      "headline": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
-      "headlineZh": "WIKA债务违约停牌",
-      "summaryZh": "WIKA因未能支付债务利息，被印尼证券交易所延长股票停牌，显示公司财务压力。",
-      "rationale": "债务违约导致停牌，具体事件",
+      "headline": "3.000 Penerima Bansos di Semarang Dicoret, Rekening Terindikasi Judol dan Pinjol - Espos.id",
+      "headlineZh": "三宝垄取消3000名涉赌涉贷补贴领取者",
+      "summaryZh": "三宝垄市政府因受益人账户涉嫌在线赌博和非法网贷，取消了3000名社会援助（bansos）领取资格。",
+      "rationale": "政府基于金融行为数据采取具体行政剔除行动，属监管介入。",
       "independentSourceCount": 1,
       "domains": [
-        "asatunews.co.id"
+        "regional.espos.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "4c97cba1d3354524"
+        "354a28e343e4ed65"
       ],
       "articles": [
         {
-          "title": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1FZGwzelhlenJhUkk0WE5MSDh3QXZ2c3N6amhGSUowNmJCbDAxVnRyTDdFUGRQUV9zb0hyQnVMNkN0eXVEenpCd05VUUFudTdLOUxDUHdYdDl6eEdoQS1FSUp3N2tfX0UwaVZRS2NLbw?oc=5"
+          "title": "3.000 Penerima Bansos di Semarang Dicoret, Rekening Terindikasi Judol dan Pinjol - Espos.id",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQOVpuWTNDZlhPZElpOFhnQ2l3Znh2eVdRTmZZM001TUk2bmJlSk9XQjNxa0hqb3ZyU2gzbF8wbGFDcDViSEYwM1duSEI4RnlOWWUySE9EbFNNQWRGakVBU1NpelpIbEdfd0NxdFpLSC1McFBjOEFkSHJfUlZsUGZ1UFdsY0JKdzNOLTZrVko4cTdXcWViMWJxMGtiTVpvd195WnRoanZkQlM5V09SV0NHMy130gG3AUFVX3lxTE1hQlhCYkJqZzVxamtlQ2NnUkxFQ3U1R1NWX2xtTjQ4aGNCMmNJVWY3V1NVRExHNnVyU1dIaUpka1RsNDYtRGlURnFSa2loSG5Pa0NNdGJxUWFONnYtd05Bakw0Y3lyeEF6ZzBuS2V3cXh2ZmZmQTlJVjdSanotWmpkZ3JrYXZKMUt0M1BkUnQxbXJ4cDE0ZGhoeXlUTUUzLV9jLWd3TkNzSm41VTRjeG0xc3JXNjRyTQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-bacaf4bd8ca8",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Propam Polda NTT",
+        "Bidpropam Polda Jateng",
+        "Sipropam Polres Ogan Ilir",
+        "Propam Polda Sulteng",
+        "Propam Polres Lahat",
+        "Propam Polres Sibolga"
+      ],
+      "headline": "Bid Propam Polda NTT Perketat Pengawasan, Cek Aktivitas Judol dan Pinjol Personel Polri - Tribrata News Polda NTT",
+      "headlineZh": "多地警方内部排查涉赌涉贷",
+      "summaryZh": "印尼多地区警察部门（Propam）对内部人员开展纪律检查，排查手机中是否安装在线赌博和非法网贷应用，以防范警员涉入。",
+      "rationale": "多地警方开展内部纪律检查，属行业常规动态，非具体事件。",
+      "independentSourceCount": 9,
+      "domains": [
+        "medanmerdeka.com",
+        "polres.karanganyarkab.go.id",
+        "sriwijayaonline.com",
+        "sumut.antaranews.com",
+        "tribratanews.sulteng.polri.go.id",
+        "tribratanews.sumsel.polri.go.id"
+      ],
+      "hasPrimarySource": true,
+      "articleIds": [
+        "57757440e4cf917b",
+        "3d0f2f5bf04e4eda",
+        "ad9b9d210c84dc91",
+        "6a09ab0475bd2fed",
+        "150a185eaaae49b8",
+        "6237fa0cf8e03916",
+        "a6b400ae01e2f4a0",
+        "5102795e696770da",
+        "4e2ea734688a6d45"
+      ],
+      "articles": [
+        {
+          "title": "Bid Propam Polda NTT Perketat Pengawasan, Cek Aktivitas Judol dan Pinjol Personel Polri - Tribrata News Polda NTT",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUnZScW1QMTFqVjJvU2k0QTNpYVVRdGdtQ3dtRVNWU3Y3c1dhUV9RSUl3V2d4b0Y0alpjdWFOd094TkY2MTRybDNydWtObFNhQkZOS0pjcjllVmxLSGVlNWxSYTVsV3k0UVFpMUFyTDVhV1ZlSFNBeEQzZ3NNTFRqVGdvbzN2dk9sTXg2cUNWRnJLbGRoem5zU1VLU1QzOGhMc1lXU3NLQlVWRFRISUVGVTZIUTA?oc=5"
+        },
+        {
+          "title": "Bidpropam Polda Jateng Gelar Gaktibplin di Polres Karanganyar, Cek Kedisiplinan hingga Mitigasi Pinjol dan Judol - Polres Karanganyar",
+          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdDZLMkluWFFWUUF1TkVPR0Ffejh4cjZXNkdtbWp6M2NwdndzSHdoRkd5ekUxMDZOTG55V3Fsc25YbUwwcVJLclNWeGVRa1I1VW44dEtiTllXcGM1SG9Ud01URWNkeEVjUEhXbVo3X3BmTW1fQ2N1NXBtSUFJMlJlQzNfdlZGaTgtb1dOQTBSR18zek1jOUNoNE9wSGxkVkpKTGQtdlNrU0hsNGhpRjdLWEp0MTJZWlc0WjVCSVpPX1BISzVRY0c1UWJxckdoZnFZRkpSeHNITGRwTzJfVlgzSm95b0tka0VCVzc1UQ?oc=5"
+        },
+        {
+          "title": "Cegah Personel Polri Terlibat Judol dan Pinjol, Sipropam Polres Ogan Ilir Gelar Gaktibplin di Polsek Rantau Alai - tribratanews.sumsel.polri.go.id",
+          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQUk1reUNGOXdZRjVfUkRnYXowa0h6VkEzbGtZazM1S1VXdl9ZREt2UWxkeE5STGZTZ09xNURQWldtMEZYT0VPYm9Uems0dVhRbmZIY0M2VV94UHBUOXowSDM2MS1yMERRUjJuZ2ZOdkR1X1RjOC1qODgtbE53UkdKelNjM0RBbTllZFVvOWxnVFlLTUlPQ1dpOHFuMHlVN0pGV0FWSUtpQzdwQnpqVXdIVnJzeXJsRmFMdGdjSE92WXZ3b0NuUE5WTzFPN0pGM2M2cUJsVG55RnUyd0kwdnFvV201LVhqR1JpT1ZBZ1pycw?oc=5"
+        },
+        {
+          "title": "Propam Polda Sulteng Laksanakan Gaktiblin Judol dan Pinjol, Ingatkan Personel Bijak Bermedia Digital - Website Resmi Polri",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOQWIxdnI5U1NDUkdvUVhNUW1ManFYZmd3ZkJsSkVncnhFY1ljNmVYUFhNekNnUUJ4MEdLWTJlWGdTWTdhRlRLVkg0OWxlTDBBOU94ZE1OQnFjZDlXLTFveWlXWVN0bHYybHZMZDRIbXVQRzcxZnkzd2hNd0UyZEc3cGtqVTVxNWdtY1NfZU9yZ3ZvSHlZMWptRWd4R2dHUHNxYXZaSFRETVZOV3ZBQi13QmF3Ym5OWWRwZDdBM01ZQVltZ041MnFiM1c4SVhyZ2RGMGY5RmI4TG1KbmtyR2ZMZ0FuZDVsVnM?oc=5"
+        },
+        {
+          "title": "Propam Polres Lahat Periksa Handphone Personel, Cegah Keterlibatan Judi Online dan Pinjol - Sriwijaya Online",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRUxhSEVodVFmRVNhcXBiaW1TTFpYTXlCZ0s2aDlQUXRQY1hUZlhnTzRyUDRnMldJb0UxT3ZERkdSRVpGZm9wYlZVQ3BpeWNmdzlMbnZNelVaX05XTWQ2RnlkQnBrS2xET1FMWE53a1ZLR2cybm1hZ0p3Vm1DMFk5dmR3OE51ZTdiSXJqZmF1b0dWQUNvdGtvNjZHU1JwcmVwb2ZVT0dGVmRtQVRBYmpyR016WDZWTmNEOGVudmc1U1JycjZiYWpj?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 9,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-3196a06daa6b",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "16 Pindar Punya Kredit Macet di Atas 5 Persen, OJK Minta Perbaikan - Pojok Satu - Pojoksatu.id",
+      "headlineZh": "16家Pindar坏账率超5%，OJK要求整改",
+      "summaryZh": "OJK指出有16家Pindar（金融科技贷款机构）的TWP90（逾期90天以上）不良率超过5%，要求其改善，并建议利用AI防范欺诈。",
+      "rationale": "OJK披露具体行业资产质量数据并要求整改，属资产质量承压事件。",
+      "independentSourceCount": 2,
+      "domains": [
+        "pojoksatu.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ab486b0eb2176f0c",
+        "cdb5995f06d9053a"
+      ],
+      "articles": [
+        {
+          "title": "16 Pindar Punya Kredit Macet di Atas 5 Persen, OJK Minta Perbaikan - Pojok Satu - Pojoksatu.id",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOGloN24yRWRlcHFTcmdzdERuZFZIbEZWS18wUXpfT2t0R3IyTzBjWFYxcFRfb2ZCOXBrRjZUaE9NWnY2ZUFOVTdHU0RETWs0X3hoWkFKRVZndzZuS0o1aEJEWjRncVRuOVNZbXBON1VCMC05TWhLZE1XaU9RbjF0YlZjVnpuYUdxeGdQaUQzcG5rUXYySHBiZWJ5Z0FRRG1OalY1VjJYSkRPZE1udmZDdW8zZUXSAbQBQVVfeXFMTjhpaDduMkVkZXBxU3Jnc3REbmRWSGxGVktfMFF6X09rdEdyMk8wY1hWMXBUX29mQjlwa0Y2VGhPTVp2NmVBTlU3R1NERE1rNF94aFpBSkVWZ3c2bktKNWhCRFo0Z3FUbjlTWW1wTjdVQjAtOU1oS2RNV2lPUW4xdGJWY1Z6bmFHcXhnUGlEM3Bua1F2MkhwYmVieWdBUURtTmpWNVYyWEpET2RNbnZmQ3VvM2VF?oc=5"
+        },
+        {
+          "title": "16 Pindar TWP90 di Atas 5%, OJK Dorong Pindar Manfaatkan AI untuk Cegah Fraud - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOckl2THpXN3FxMTRsWXhZa21KSzdZUVVvZ19UUXBFN2lhRk1VWXp6VGZKb2VyeUNUMDJYUVdLb1plTFQ0UmJPV05NNDZVeVJqaGhhZ09CTUNJVGRBR3ZXRUJHM1hKSmd0V2lqVFZfSUktRFVBb3ZncERMLW0yMWVJUnQ4czhSUXRiSnRfWGxzT29aV1AyV0JIVXFLQUlkREpWN1d4TVZqa2xJXzhiZVI4REdUSjUyVk5y0gG4AUFVX3lxTE5ySXZMelc3cXExNGxZeFlrbUpLN1lRVW9nX1RRcEU3aWFGTVVZenpUZkpvZXJ5Q1QwMlhRV0tvWmVMVDRSYk9XTk00NlV5UmpoaGFnT0JNQ0lUZEFHdldFQkczWEpKZ3RXaWpUVl9JSS1EVUFvdmdwREwtbTIxZUlSdDhzOFJRdGJKdF9YbHNPb1pXUDJXQkhVcUtBSWRESlY3V3hNVmprbElfOGJlUjhER1RKNTJWTnI?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-934290a01bc2",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "KPPU",
+        "Pindar"
+      ],
+      "headline": "Ahli Sebut Perintah Lisan OJK Sah dalam Sidang Banding Pindar KPPU - AsatuNews.co.id",
+      "headlineZh": "Pindar利率纠纷上诉案开庭，专家称OJK指令有效",
+      "summaryZh": "Pindar（金融科技贷款）行业针对KPPU（商业竞争监督委员会）的利率裁决提起上诉，专家在庭上表示OJK关于利率的口头指令具有法律效力。",
+      "rationale": "Pindar与监管机构的法律纠纷进入上诉程序，属监管介入事件。",
+      "independentSourceCount": 6,
+      "domains": [
+        "asatunews.co.id",
+        "finansial.bisnis.com",
+        "mediaindonesia.com",
+        "money.kompas.com",
+        "readers.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "a3c45aaf516f1b56",
+        "b8155bb4c4ba6f6e",
+        "c649f2a05f508595",
+        "ff2c401427997259",
+        "43c3b2453062a209",
+        "c95526c31e62bf86",
+        "a665f6332b6ffbff"
+      ],
+      "articles": [
+        {
+          "title": "Ahli Sebut Perintah Lisan OJK Sah dalam Sidang Banding Pindar KPPU - AsatuNews.co.id",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBpbTRNb3F5TDhvd0I1UlhzcDlRT0ZiZUJKOUc5XzhZSXRXdWJwemZfUlMyNXdkZXpuU1VVNlFINGExZlJrR2RiYlpYT190U3I1OUV4X1JKRzk0VEZqYnlGdndGRWQtTGlJazdVMkhLNjNYQWxL?oc=5"
+        },
+        {
+          "title": "Foto : Sidang Banding Pindar Berlanjut, Pakar Sebut Perintah Lisan Regulator Sah Secara Hukum Halaman 1 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMXlqV1RvUnQyZlBaNWk2Z2hiWWtmVkJNRFU3TjJHRWcwc1pUUXk5ZHRscHQ1bTE2cHRiUkhaaHNvdnh2NmlONkNDWjluMm1OVmZKWWpfWE5iRkRad1ZRSnk5X0l5dlpSbmtHQjUwMFZaSE9tanRQZ1NVMUsxMklVelJQTnRfbXhWSHhxZjIxT2piRnBWUXg3N0JBbnYzUC0yVVNqbEJOR2F1ZUhQbHhSdkNQeHhiYkRmUHcwTHppdDR0U1FOWG42RHJKQQ?oc=5"
+        },
+        {
+          "title": "Pakar Nilai KPPU Perlu Perhatikan Kewenangan OJK dalam Sengketa Bunga Pindar - Media Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNGFkbHFDeHpNeXZNYURjUU5PbzJlcFBqTldIQUFGUWJYOGY2XzZtU19jN2g4eUsydW9jZUNoNGx5NWt2NEFvS3hBeThZQWFRRFF2UDNoWk5TcUVVT0RXekhhZFByNHl6RE5xa2dNdDBKLVVlcUs4Nm5XRlFNZWVIWUY1Q3R0VnBfVWw3d0VtMlRVdTBmQ09QUmNFd1JFVTBiMFdzT2JIYm13RDJKalRfWnk1OHF2VUpuVnc?oc=5"
+        },
+        {
+          "title": "Pakar Sebut Perintah Lisan OJK Sah dalam Sidang Banding Pindar - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBiSnhtSnNwYnQ1OHVybzk4YnpkWGg3b2xSamtsYkJ2WjVHcjdXWjRvZmswQUxVNEFPV2RKTXp5NGdXNWowT2hXWW01T0VaN2d3ZllKU3FvVG9nekdjUTNraHhvWThHcWxJ?oc=5"
+        },
+        {
+          "title": "Sengketa Bunga Pinjol, Pakar Nilai Perintah Atur Bunga OJK Sah Administratif - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWm0wYVRjR0FnOF92S0xEYlpjOVJTekNUYXBPeVFXQnhpMWhuQW1FdUxCTzljaUpjUWc2X2FVQkxzZFRkYk1qa1UtcldqLXNaaVRvdXUwSEl3ZHp3a1pMTzNxNGFxWFpwT1Vzb3FJbWd6U3U3NnJvZnQ2bTFkN0VGbnNNcUUwX2NhaGVYQk5hU2xjWWxNVFpxMS1RazN5VVlBYXdhUnhJbkhzV3NpbFFpNUxDVGR4UFdQQlk3M1c2MEhEMEpMT0syMEhn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 7,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-7ba3692ab8dd",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "GBK",
+        "Debt Collector"
+      ],
+      "headline": "Dua Pria Gesek Nomor Rangka Mobil di GBK Diduga Debt Collector",
+      "headlineZh": "两男子在GBK划车架号疑为催收员",
+      "summaryZh": "两名男子在雅加达GBK区域划伤车辆识别码（VIN），被怀疑是债务催收员（debt collector）所为。",
+      "rationale": "疑似催收员进行破坏行为，涉及消费者受害，但具体影响待核实。",
+      "independentSourceCount": 1,
+      "domains": [
+        "feed.liputan6.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3e88e8b6fa600ad3"
+      ],
+      "articles": [
+        {
+          "title": "Dua Pria Gesek Nomor Rangka Mobil di GBK Diduga Debt Collector",
+          "link": "https://www.liputan6.com/news/read/8274230/dua-pria-gesek-nomor-rangka-mobil-di-gbk-diduga-debt-collector"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -52,6 +265,43 @@
         "mentionCount": 0,
         "negativeShare": 0.0,
         "platforms": []
+      }
+    },
+    {
+      "id": "llm-6820d68bed9c",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Venture Capital"
+      ],
+      "headline": "Perusahaan Modal Ventura Berizin Masuk Radar Pengawasan OJK - detikFinance",
+      "headlineZh": "OJK将持牌风投公司纳入监管雷达",
+      "summaryZh": "OJK（金融服务管理局）宣布将持牌的风险投资（Modal Ventura）公司纳入其监管范围。",
+      "rationale": "监管机构扩大监管范围，属监管介入。",
+      "independentSourceCount": 1,
+      "domains": [
+        "finance.detik.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f26ac5ca1f45dfdf"
+      ],
+      "articles": [
+        {
+          "title": "Perusahaan Modal Ventura Berizin Masuk Radar Pengawasan OJK - detikFinance",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNT2FKaFhHOWZQd1d3ZmZIbVJXRkpzOWpXMlh2d3BFanFnT09qcUdTRVp6Y2hoQXlRYnkyRENWaWhfU214VS1CM0pwYVlzYlVvcW53QzFsWGlLdjdfdE1Hd1h1WUJ5dndfVTFTaTRadHRmaVQwMG1sdDdyMDRmTDYyVHpNdEYxQzNwUjhQREZqU0k1czZxb3ZIdlBiLUJHVUpkbXhZaUxB0gGrAUFVX3lxTE5UcGdpMmNjcURoNW1iN3o5MjdiSk1Ra2RpcEFtejQyVVNMRDNXa1BGWEtrNTFLNG9ySFRMalBUNS14UmRiR1FaZXpza016b0ZiaWdRbmUxWWg5TmtPZUt0REJDTnNMWjJ0NFZicVFVM3czWWxYQ1ZVRWRuRHdKNVNycFlLbFdtMFNWX3M3UVhWSVFTTm9UcDVhS1ZOVFdyRGExVHc2VnpBeldyMA?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -59,40 +309,253 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 21,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 16,
+    "candidateCount": 30,
+    "eventGroupCount": 6,
+    "rejectedNonEvents": 8,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 21
+      "ok": 30
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-f1a809557a64",
-      "eventType": "credit_quality_stress",
-      "severity": 0.75,
+      "id": "llm-3d0fa3704d59",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
       "entities": [
-        "WIKA",
-        "BEI"
+        "Pemerintah Kota Semarang",
+        "OJK"
       ],
-      "headline": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
-      "headlineZh": "WIKA债务违约停牌",
-      "summaryZh": "WIKA因未能支付债务利息，被印尼证券交易所延长股票停牌，显示公司财务压力。",
-      "rationale": "债务违约导致停牌，具体事件",
+      "headline": "3.000 Penerima Bansos di Semarang Dicoret, Rekening Terindikasi Judol dan Pinjol - Espos.id",
+      "headlineZh": "三宝垄取消3000名涉赌涉贷补贴领取者",
+      "summaryZh": "三宝垄市政府因受益人账户涉嫌在线赌博和非法网贷，取消了3000名社会援助（bansos）领取资格。",
+      "rationale": "政府基于金融行为数据采取具体行政剔除行动，属监管介入。",
       "independentSourceCount": 1,
       "domains": [
-        "asatunews.co.id"
+        "regional.espos.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "4c97cba1d3354524"
+        "354a28e343e4ed65"
       ],
       "articles": [
         {
-          "title": "Gagal Bayar Bunga Utang BEI Perpanjang Suspensi Saham WIKA - AsatuNews.co.id",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1FZGwzelhlenJhUkk0WE5MSDh3QXZ2c3N6amhGSUowNmJCbDAxVnRyTDdFUGRQUV9zb0hyQnVMNkN0eXVEenpCd05VUUFudTdLOUxDUHdYdDl6eEdoQS1FSUp3N2tfX0UwaVZRS2NLbw?oc=5"
+          "title": "3.000 Penerima Bansos di Semarang Dicoret, Rekening Terindikasi Judol dan Pinjol - Espos.id",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQOVpuWTNDZlhPZElpOFhnQ2l3Znh2eVdRTmZZM001TUk2bmJlSk9XQjNxa0hqb3ZyU2gzbF8wbGFDcDViSEYwM1duSEI4RnlOWWUySE9EbFNNQWRGakVBU1NpelpIbEdfd0NxdFpLSC1McFBjOEFkSHJfUlZsUGZ1UFdsY0JKdzNOLTZrVko4cTdXcWViMWJxMGtiTVpvd195WnRoanZkQlM5V09SV0NHMy130gG3AUFVX3lxTE1hQlhCYkJqZzVxamtlQ2NnUkxFQ3U1R1NWX2xtTjQ4aGNCMmNJVWY3V1NVRExHNnVyU1dIaUpka1RsNDYtRGlURnFSa2loSG5Pa0NNdGJxUWFONnYtd05Bakw0Y3lyeEF6ZzBuS2V3cXh2ZmZmQTlJVjdSanotWmpkZ3JrYXZKMUt0M1BkUnQxbXJ4cDE0ZGhoeXlUTUUzLV9jLWd3TkNzSm41VTRjeG0xc3JXNjRyTQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-bacaf4bd8ca8",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Propam Polda NTT",
+        "Bidpropam Polda Jateng",
+        "Sipropam Polres Ogan Ilir",
+        "Propam Polda Sulteng",
+        "Propam Polres Lahat",
+        "Propam Polres Sibolga"
+      ],
+      "headline": "Bid Propam Polda NTT Perketat Pengawasan, Cek Aktivitas Judol dan Pinjol Personel Polri - Tribrata News Polda NTT",
+      "headlineZh": "多地警方内部排查涉赌涉贷",
+      "summaryZh": "印尼多地区警察部门（Propam）对内部人员开展纪律检查，排查手机中是否安装在线赌博和非法网贷应用，以防范警员涉入。",
+      "rationale": "多地警方开展内部纪律检查，属行业常规动态，非具体事件。",
+      "independentSourceCount": 9,
+      "domains": [
+        "medanmerdeka.com",
+        "polres.karanganyarkab.go.id",
+        "sriwijayaonline.com",
+        "sumut.antaranews.com",
+        "tribratanews.sulteng.polri.go.id",
+        "tribratanews.sumsel.polri.go.id"
+      ],
+      "hasPrimarySource": true,
+      "articleIds": [
+        "57757440e4cf917b",
+        "3d0f2f5bf04e4eda",
+        "ad9b9d210c84dc91",
+        "6a09ab0475bd2fed",
+        "150a185eaaae49b8",
+        "6237fa0cf8e03916",
+        "a6b400ae01e2f4a0",
+        "5102795e696770da",
+        "4e2ea734688a6d45"
+      ],
+      "articles": [
+        {
+          "title": "Bid Propam Polda NTT Perketat Pengawasan, Cek Aktivitas Judol dan Pinjol Personel Polri - Tribrata News Polda NTT",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQUnZScW1QMTFqVjJvU2k0QTNpYVVRdGdtQ3dtRVNWU3Y3c1dhUV9RSUl3V2d4b0Y0alpjdWFOd094TkY2MTRybDNydWtObFNhQkZOS0pjcjllVmxLSGVlNWxSYTVsV3k0UVFpMUFyTDVhV1ZlSFNBeEQzZ3NNTFRqVGdvbzN2dk9sTXg2cUNWRnJLbGRoem5zU1VLU1QzOGhMc1lXU3NLQlVWRFRISUVGVTZIUTA?oc=5"
+        },
+        {
+          "title": "Bidpropam Polda Jateng Gelar Gaktibplin di Polres Karanganyar, Cek Kedisiplinan hingga Mitigasi Pinjol dan Judol - Polres Karanganyar",
+          "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQdDZLMkluWFFWUUF1TkVPR0Ffejh4cjZXNkdtbWp6M2NwdndzSHdoRkd5ekUxMDZOTG55V3Fsc25YbUwwcVJLclNWeGVRa1I1VW44dEtiTllXcGM1SG9Ud01URWNkeEVjUEhXbVo3X3BmTW1fQ2N1NXBtSUFJMlJlQzNfdlZGaTgtb1dOQTBSR18zek1jOUNoNE9wSGxkVkpKTGQtdlNrU0hsNGhpRjdLWEp0MTJZWlc0WjVCSVpPX1BISzVRY0c1UWJxckdoZnFZRkpSeHNITGRwTzJfVlgzSm95b0tka0VCVzc1UQ?oc=5"
+        },
+        {
+          "title": "Cegah Personel Polri Terlibat Judol dan Pinjol, Sipropam Polres Ogan Ilir Gelar Gaktibplin di Polsek Rantau Alai - tribratanews.sumsel.polri.go.id",
+          "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQUk1reUNGOXdZRjVfUkRnYXowa0h6VkEzbGtZazM1S1VXdl9ZREt2UWxkeE5STGZTZ09xNURQWldtMEZYT0VPYm9Uems0dVhRbmZIY0M2VV94UHBUOXowSDM2MS1yMERRUjJuZ2ZOdkR1X1RjOC1qODgtbE53UkdKelNjM0RBbTllZFVvOWxnVFlLTUlPQ1dpOHFuMHlVN0pGV0FWSUtpQzdwQnpqVXdIVnJzeXJsRmFMdGdjSE92WXZ3b0NuUE5WTzFPN0pGM2M2cUJsVG55RnUyd0kwdnFvV201LVhqR1JpT1ZBZ1pycw?oc=5"
+        },
+        {
+          "title": "Propam Polda Sulteng Laksanakan Gaktiblin Judol dan Pinjol, Ingatkan Personel Bijak Bermedia Digital - Website Resmi Polri",
+          "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOQWIxdnI5U1NDUkdvUVhNUW1ManFYZmd3ZkJsSkVncnhFY1ljNmVYUFhNekNnUUJ4MEdLWTJlWGdTWTdhRlRLVkg0OWxlTDBBOU94ZE1OQnFjZDlXLTFveWlXWVN0bHYybHZMZDRIbXVQRzcxZnkzd2hNd0UyZEc3cGtqVTVxNWdtY1NfZU9yZ3ZvSHlZMWptRWd4R2dHUHNxYXZaSFRETVZOV3ZBQi13QmF3Ym5OWWRwZDdBM01ZQVltZ041MnFiM1c4SVhyZ2RGMGY5RmI4TG1KbmtyR2ZMZ0FuZDVsVnM?oc=5"
+        },
+        {
+          "title": "Propam Polres Lahat Periksa Handphone Personel, Cegah Keterlibatan Judi Online dan Pinjol - Sriwijaya Online",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPRUxhSEVodVFmRVNhcXBiaW1TTFpYTXlCZ0s2aDlQUXRQY1hUZlhnTzRyUDRnMldJb0UxT3ZERkdSRVpGZm9wYlZVQ3BpeWNmdzlMbnZNelVaX05XTWQ2RnlkQnBrS2xET1FMWE53a1ZLR2cybm1hZ0p3Vm1DMFk5dmR3OE51ZTdiSXJqZmF1b0dWQUNvdGtvNjZHU1JwcmVwb2ZVT0dGVmRtQVRBYmpyR016WDZWTmNEOGVudmc1U1JycjZiYWpj?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 9,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-3196a06daa6b",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "16 Pindar Punya Kredit Macet di Atas 5 Persen, OJK Minta Perbaikan - Pojok Satu - Pojoksatu.id",
+      "headlineZh": "16家Pindar坏账率超5%，OJK要求整改",
+      "summaryZh": "OJK指出有16家Pindar（金融科技贷款机构）的TWP90（逾期90天以上）不良率超过5%，要求其改善，并建议利用AI防范欺诈。",
+      "rationale": "OJK披露具体行业资产质量数据并要求整改，属资产质量承压事件。",
+      "independentSourceCount": 2,
+      "domains": [
+        "pojoksatu.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ab486b0eb2176f0c",
+        "cdb5995f06d9053a"
+      ],
+      "articles": [
+        {
+          "title": "16 Pindar Punya Kredit Macet di Atas 5 Persen, OJK Minta Perbaikan - Pojok Satu - Pojoksatu.id",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOOGloN24yRWRlcHFTcmdzdERuZFZIbEZWS18wUXpfT2t0R3IyTzBjWFYxcFRfb2ZCOXBrRjZUaE9NWnY2ZUFOVTdHU0RETWs0X3hoWkFKRVZndzZuS0o1aEJEWjRncVRuOVNZbXBON1VCMC05TWhLZE1XaU9RbjF0YlZjVnpuYUdxeGdQaUQzcG5rUXYySHBiZWJ5Z0FRRG1OalY1VjJYSkRPZE1udmZDdW8zZUXSAbQBQVVfeXFMTjhpaDduMkVkZXBxU3Jnc3REbmRWSGxGVktfMFF6X09rdEdyMk8wY1hWMXBUX29mQjlwa0Y2VGhPTVp2NmVBTlU3R1NERE1rNF94aFpBSkVWZ3c2bktKNWhCRFo0Z3FUbjlTWW1wTjdVQjAtOU1oS2RNV2lPUW4xdGJWY1Z6bmFHcXhnUGlEM3Bua1F2MkhwYmVieWdBUURtTmpWNVYyWEpET2RNbnZmQ3VvM2VF?oc=5"
+        },
+        {
+          "title": "16 Pindar TWP90 di Atas 5%, OJK Dorong Pindar Manfaatkan AI untuk Cegah Fraud - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOckl2THpXN3FxMTRsWXhZa21KSzdZUVVvZ19UUXBFN2lhRk1VWXp6VGZKb2VyeUNUMDJYUVdLb1plTFQ0UmJPV05NNDZVeVJqaGhhZ09CTUNJVGRBR3ZXRUJHM1hKSmd0V2lqVFZfSUktRFVBb3ZncERMLW0yMWVJUnQ4czhSUXRiSnRfWGxzT29aV1AyV0JIVXFLQUlkREpWN1d4TVZqa2xJXzhiZVI4REdUSjUyVk5y0gG4AUFVX3lxTE5ySXZMelc3cXExNGxZeFlrbUpLN1lRVW9nX1RRcEU3aWFGTVVZenpUZkpvZXJ5Q1QwMlhRV0tvWmVMVDRSYk9XTk00NlV5UmpoaGFnT0JNQ0lUZEFHdldFQkczWEpKZ3RXaWpUVl9JSS1EVUFvdmdwREwtbTIxZUlSdDhzOFJRdGJKdF9YbHNPb1pXUDJXQkhVcUtBSWRESlY3V3hNVmprbElfOGJlUjhER1RKNTJWTnI?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-934290a01bc2",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "KPPU",
+        "Pindar"
+      ],
+      "headline": "Ahli Sebut Perintah Lisan OJK Sah dalam Sidang Banding Pindar KPPU - AsatuNews.co.id",
+      "headlineZh": "Pindar利率纠纷上诉案开庭，专家称OJK指令有效",
+      "summaryZh": "Pindar（金融科技贷款）行业针对KPPU（商业竞争监督委员会）的利率裁决提起上诉，专家在庭上表示OJK关于利率的口头指令具有法律效力。",
+      "rationale": "Pindar与监管机构的法律纠纷进入上诉程序，属监管介入事件。",
+      "independentSourceCount": 6,
+      "domains": [
+        "asatunews.co.id",
+        "finansial.bisnis.com",
+        "mediaindonesia.com",
+        "money.kompas.com",
+        "readers.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "a3c45aaf516f1b56",
+        "b8155bb4c4ba6f6e",
+        "c649f2a05f508595",
+        "ff2c401427997259",
+        "43c3b2453062a209",
+        "c95526c31e62bf86",
+        "a665f6332b6ffbff"
+      ],
+      "articles": [
+        {
+          "title": "Ahli Sebut Perintah Lisan OJK Sah dalam Sidang Banding Pindar KPPU - AsatuNews.co.id",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBpbTRNb3F5TDhvd0I1UlhzcDlRT0ZiZUJKOUc5XzhZSXRXdWJwemZfUlMyNXdkZXpuU1VVNlFINGExZlJrR2RiYlpYT190U3I1OUV4X1JKRzk0VEZqYnlGdndGRWQtTGlJazdVMkhLNjNYQWxL?oc=5"
+        },
+        {
+          "title": "Foto : Sidang Banding Pindar Berlanjut, Pakar Sebut Perintah Lisan Regulator Sah Secara Hukum Halaman 1 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPMXlqV1RvUnQyZlBaNWk2Z2hiWWtmVkJNRFU3TjJHRWcwc1pUUXk5ZHRscHQ1bTE2cHRiUkhaaHNvdnh2NmlONkNDWjluMm1OVmZKWWpfWE5iRkRad1ZRSnk5X0l5dlpSbmtHQjUwMFZaSE9tanRQZ1NVMUsxMklVelJQTnRfbXhWSHhxZjIxT2piRnBWUXg3N0JBbnYzUC0yVVNqbEJOR2F1ZUhQbHhSdkNQeHhiYkRmUHcwTHppdDR0U1FOWG42RHJKQQ?oc=5"
+        },
+        {
+          "title": "Pakar Nilai KPPU Perlu Perhatikan Kewenangan OJK dalam Sengketa Bunga Pindar - Media Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNGFkbHFDeHpNeXZNYURjUU5PbzJlcFBqTldIQUFGUWJYOGY2XzZtU19jN2g4eUsydW9jZUNoNGx5NWt2NEFvS3hBeThZQWFRRFF2UDNoWk5TcUVVT0RXekhhZFByNHl6RE5xa2dNdDBKLVVlcUs4Nm5XRlFNZWVIWUY1Q3R0VnBfVWw3d0VtMlRVdTBmQ09QUmNFd1JFVTBiMFdzT2JIYm13RDJKalRfWnk1OHF2VUpuVnc?oc=5"
+        },
+        {
+          "title": "Pakar Sebut Perintah Lisan OJK Sah dalam Sidang Banding Pindar - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBiSnhtSnNwYnQ1OHVybzk4YnpkWGg3b2xSamtsYkJ2WjVHcjdXWjRvZmswQUxVNEFPV2RKTXp5NGdXNWowT2hXWW01T0VaN2d3ZllKU3FvVG9nekdjUTNraHhvWThHcWxJ?oc=5"
+        },
+        {
+          "title": "Sengketa Bunga Pinjol, Pakar Nilai Perintah Atur Bunga OJK Sah Administratif - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQWm0wYVRjR0FnOF92S0xEYlpjOVJTekNUYXBPeVFXQnhpMWhuQW1FdUxCTzljaUpjUWc2X2FVQkxzZFRkYk1qa1UtcldqLXNaaVRvdXUwSEl3ZHp3a1pMTzNxNGFxWFpwT1Vzb3FJbWd6U3U3NnJvZnQ2bTFkN0VGbnNNcUUwX2NhaGVYQk5hU2xjWWxNVFpxMS1RazN5VVlBYXdhUnhJbkhzV3NpbFFpNUxDVGR4UFdQQlk3M1c2MEhEMEpMT0syMEhn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 7,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-7ba3692ab8dd",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "GBK",
+        "Debt Collector"
+      ],
+      "headline": "Dua Pria Gesek Nomor Rangka Mobil di GBK Diduga Debt Collector",
+      "headlineZh": "两男子在GBK划车架号疑为催收员",
+      "summaryZh": "两名男子在雅加达GBK区域划伤车辆识别码（VIN），被怀疑是债务催收员（debt collector）所为。",
+      "rationale": "疑似催收员进行破坏行为，涉及消费者受害，但具体影响待核实。",
+      "independentSourceCount": 1,
+      "domains": [
+        "feed.liputan6.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3e88e8b6fa600ad3"
+      ],
+      "articles": [
+        {
+          "title": "Dua Pria Gesek Nomor Rangka Mobil di GBK Diduga Debt Collector",
+          "link": "https://www.liputan6.com/news/read/8274230/dua-pria-gesek-nomor-rangka-mobil-di-gbk-diduga-debt-collector"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -103,36 +566,73 @@
         "negativeShare": 0.0,
         "platforms": []
       }
+    },
+    {
+      "id": "llm-6820d68bed9c",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Venture Capital"
+      ],
+      "headline": "Perusahaan Modal Ventura Berizin Masuk Radar Pengawasan OJK - detikFinance",
+      "headlineZh": "OJK将持牌风投公司纳入监管雷达",
+      "summaryZh": "OJK（金融服务管理局）宣布将持牌的风险投资（Modal Ventura）公司纳入其监管范围。",
+      "rationale": "监管机构扩大监管范围，属监管介入。",
+      "independentSourceCount": 1,
+      "domains": [
+        "finance.detik.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f26ac5ca1f45dfdf"
+      ],
+      "articles": [
+        {
+          "title": "Perusahaan Modal Ventura Berizin Masuk Radar Pengawasan OJK - detikFinance",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNT2FKaFhHOWZQd1d3ZmZIbVJXRkpzOWpXMlh2d3BFanFnT09qcUdTRVp6Y2hoQXlRYnkyRENWaWhfU214VS1CM0pwYVlzYlVvcW53QzFsWGlLdjdfdE1Hd1h1WUJ5dndfVTFTaTRadHRmaVQwMG1sdDdyMDRmTDYyVHpNdEYxQzNwUjhQREZqU0k1czZxb3ZIdlBiLUJHVUpkbXhZaUxB0gGrAUFVX3lxTE5UcGdpMmNjcURoNW1iN3o5MjdiSk1Ra2RpcEFtejQyVVNMRDNXa1BGWEtrNTFLNG9ySFRMalBUNS14UmRiR1FaZXpza016b0ZiaWdRbmUxWWg5TmtPZUt0REJDTnNMWjJ0NFZicVFVM3czWWxYQ1ZVRWRuRHdKNVNycFlLbFdtMFNWX3M3UVhWSVFTTm9UcDVhS1ZOVFdyRGExVHc2VnpBeldyMA?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 23,
-    "socialItemCount48h": 15
+    "articleCount48h": 35,
+    "socialItemCount48h": 6
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 503,
-    "classifiedCount": 112,
-    "irrelevantDropped": 128,
+    "inputCount": 467,
+    "classifiedCount": 117,
+    "irrelevantDropped": 123,
     "model": "deepseek-chat",
-    "fallbackCount": 263,
+    "fallbackCount": 227,
     "labelCounts": {
-      "NEG": 74,
-      "MIX": 7,
-      "POS": 31
+      "NEG": 61,
+      "MIX": 13,
+      "POS": 43
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
