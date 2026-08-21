@@ -161,7 +161,7 @@ AGENTS.md / HANDOFF.md / REVIEW.md           Codex上下文 / 当前状态 / 给
 
 ## 6. 当前待办 / 留白
 
-- **已知缺陷（待单开 PR）**：`bot/weekly-monitoring` 分支每次都从 main 重建，`street_heat_history.json` 每周被覆盖——与日频那个已修的坑（`merge_daily_evidence.py` 按 date 合并）是同一类，周频这边还没修。
+- **bot 分支累积型文件（2026-08-20 起两条流水线共用 `merge_bot_evidence.py`）**：日频 `daily-events/*.jsonl` 与周频 `street_heat_history.json` 都不在 main 上，从 main 重建分支会静静抹掉历史。周频这个坑到 08-20 才发现，届时 08-04 与 08-11 的街头热度读数已永久丢失。**新增任何 bot 分支累积型产物时先问：这个文件在 main 上吗？不在就必须登记到 `JSON_ARRAY_BY_DATE` 并走合并脚本。**
 - **两个 driver 在等数据**：「执法不对称比」需 8–12 周证据池（2026-08-11 才开始攒，约 10 月可用）才能替掉序数版的 法治与执法工具化；购买力口径对齐等 BPS Sakernas 8 月轮（约 11 月发布）。总统支持率 driver 冻在 75，等 Indikator 下一次**官方**全国民调——只被媒体广泛报道不算数（Indikator 曾officially否认发布过 2026-07 那份，全序列已纠错）。
 - 数据置信版 V4：影子跑 4–6 周攒历史后，与全景等权版对比，重点验证"低政治权重是否钝化制度骤变预警"；两条方法论分歧届时定夺。**勿擅自转正**。
 - OJK 新门户 `data.ojk.go.id/SJKPublic` 直爬（屏蔽非印尼IP，需本地/印尼网络）。

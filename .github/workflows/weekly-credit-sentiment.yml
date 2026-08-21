@@ -140,15 +140,34 @@ jobs:
         run: |
           branch="bot/weekly-monitoring"
           transfer_dir="$(mktemp -d)"
-          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
-            credit-tracker/sentiment-monitor/output \
-            stability-monitor/scripts/output \
-            stability-monitor/scripts/street_heat_history.json \
-            pending.json pending.js outputs
+          # 单一清单同时驱动「打包」与「清理」，逐个列举两遍必然漏（见日频同一步注释）。
+          artifacts="credit-tracker/sentiment-monitor/output
+            stability-monitor/scripts/output
+            stability-monitor/scripts/street_heat_history.json
+            pending.json
+            pending.js
+            outputs"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts
+          # 合并脚本先备份出去：bot 分支建自旧 main，切过去后脚本会从工作区消失。
+          cp .github/scripts/merge_bot_evidence.py "$transfer_dir/"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch" origin/main
-          tar -xf "$transfer_dir/pending-output.tar"
+          # 产物已装进 tar，切分支前必须全部从工作区移走，否则 git 会以
+          # 「未跟踪文件将被覆盖」中止 checkout。
+          for path in $artifacts; do rm -rf "$path"; done
+          # street_heat_history.json 必须累积。从 main 重建分支会让每次提交只含当次
+          # 一条：2026-08-20 实测分支上只剩 07-16 与 08-20，08-04 与 08-11 已被抹掉，
+          # 而「网络政治情绪」driver 的环比恰恰依赖这个文件。
+          # 与日频同一处理：优先接续既有 bot 分支，并把本次产物「并入」而非覆盖。
+          git fetch origin "$branch" || true
+          if git rev-parse --verify "refs/remotes/origin/$branch" >/dev/null 2>&1; then
+            git checkout -B "$branch" "refs/remotes/origin/$branch"
+          else
+            git checkout -B "$branch" origin/main
+          fi
+          mkdir -p "$transfer_dir/incoming"
+          tar -xf "$transfer_dir/pending-output.tar" -C "$transfer_dir/incoming"
+          python "$transfer_dir/merge_bot_evidence.py" "$transfer_dir/incoming"
           git add credit-tracker/sentiment-monitor/output || true
           git add stability-monitor/scripts/output || true
           git add stability-monitor/scripts/street_heat_history.json || true

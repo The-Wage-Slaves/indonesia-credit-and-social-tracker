@@ -90,8 +90,15 @@ PR #10 的分支一度给三个采集工作流加了 `push:` 触发器，结果�
 本周事件只能靠网络检索重建。
 
 现在优先接续既有 bot 分支（没有才回落 `main`），并由
-`.github/scripts/merge_daily_evidence.py` 按 `date` 做并集合并——同日重跑以本次为准，
-坏行留档不丢弃。已由 `test_merge_daily_evidence.py` 固化，含负向测试。
+`.github/scripts/merge_bot_evidence.py` 按 `date` 做并集合并——同日重跑以本次为准，
+坏行留档不丢弃。已由 `test_merge_bot_evidence.py` 固化，含负向测试。
+
+**周频是同一个坑，2026-08-20 才修（PR #31）。** `bot/weekly-monitoring` 上的
+`street_heat_history.json` 同样每周被抹掉：实测只剩 07-16 与 08-20 两条，08-04 与
+08-11 的读数已永久丢失（数值仅存于 `data.js` 的 changeReason）。而「网络政治情绪」
+driver 的环比恰恰依赖这个文件。日频修完后周频原样留着没人动——所以合并脚本现在
+**两条流水线共用同一份**，累积型文件登记在 `JSON_ARRAY_BY_DATE`，工作流断言也
+参数化到两条流水线上跑（subTest），再加一条采集流水线而忘了接就会立刻红。
 
 **新增任何 bot 分支累积型产物时，先问一句：这个文件在 main 上吗？不在，就不能从 main 重建分支。**
 
