@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-21T02:50:37.325071+00:00",
+  "generatedAt": "2026-08-22T02:42:16.701157+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-08-21",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-08-22",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **央行独立性｜印尼央行行长候选人提名引发独立性担忧，政府否认央行并入政府**\n严重度 0.75｜2个独立来源（antaranews.com、kompas.id）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 6 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜肃贪委逮捕梭罗国立大学校长等六人，涉新生录取受贿**\n严重度 0.75｜3个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **央行独立性｜印尼央行独立性受关注，面临财政压力与稳定挑战**\n严重度 0.55｜2个独立来源（mediaindonesia、swa.co.id）｜影响支柱：institutions\n\n🟠 **军警冲突/安全事件｜雅加达KRL列车运营因民众斗殴中断，乘客受影响**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：coercive\n\n🟠 **军警冲突/安全事件｜海军士兵在马特拉曼遭围攻**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：coercive",
+      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "daily:2026-08-21:normal:red:success"
+    "decisionId": "daily:2026-08-22:normal:red:success"
   },
   "feishu": "sent"
 }
