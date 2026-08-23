@@ -1,51 +1,81 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-22",
+  "date": "2026-08-23",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 39.9,
-    "socialDailyVolumeRisk": 21.7,
-    "negativeSocialShare": 76.2,
+    "newsDailyVolumeRisk": 25.7,
+    "socialDailyVolumeRisk": 0.0,
+    "negativeSocialShare": 37.1,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=8; prior-7d median=18.0; robust z=-0.67",
-    "socialVolume": "today=0; prior-7d median=14.0; robust z=-1.89"
+    "newsVolume": "today=1; prior-7d median=25.0; robust z=-1.62",
+    "socialVolume": "today=0; prior-7d median=20.0; robust z=-3.37"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-2006300fc4a0",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
+      "id": "llm-25634eb09c18",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "Semarang",
-        "Bansos"
+        "OJK"
       ],
-      "headline": "Identitas Dipinjam untuk Pinjol, Warga Semarang Bisa Kehilangan Bansos - IDN Times Jateng",
-      "headlineZh": "三宝垄居民身份被盗用陷网贷",
-      "summaryZh": "三宝垄居民身份被冒用申请网贷，导致可能失去社会救助金资格，反映身份盗用危害。",
-      "rationale": "具体身份盗用致救助受影响事件",
-      "independentSourceCount": 1,
+      "headline": "Dukungan pindar untuk UMKM tumbuh 23,25 persen per Juni 2026 - ANTARA News Bali",
+      "headlineZh": "OJK公布网贷融资增长数据",
+      "summaryZh": "OJK数据显示，截至2026年6月，对UMKM的网贷融资达35.12万亿印尼盾，同比增长23.25%。",
+      "rationale": "行业常规数据披露，非风险事件",
+      "independentSourceCount": 10,
       "domains": [
-        "jateng.idntimes.com"
+        "achmadnurhidayat.id",
+        "afbtvkupang.com",
+        "bali.antaranews.com",
+        "batamtoday.com",
+        "belitongekspres.bacakoran.co",
+        "beritasatu.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5061c3323b83ee4c"
+        "30c0489dffabc80d",
+        "ebc82de4feda1017",
+        "1c9a8cd573549896",
+        "fda994c837e5bd15",
+        "7af97e9db14ea70b",
+        "234f14c9221a1e16",
+        "2253e329b46bf725",
+        "85651f18b19854cd",
+        "12a29049cf6d900d",
+        "884255b12b247038",
+        "1e2a0f83a29ceb2d"
       ],
       "articles": [
         {
-          "title": "Identitas Dipinjam untuk Pinjol, Warga Semarang Bisa Kehilangan Bansos - IDN Times Jateng",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLVZFczJpbkdYbVFFM3FqUkx4UGNvM01nc1JRUk9HblBpNlAtQ2FZazlSTUlfU2xyVGNFek1GNDVraTN4M0toRWxXeDJWMWdBNEItNzlNX3pFQVpkay1EMGlJZEI1clVpN1ZIVU5uTDdPM09CWGtJbzhjVWwwSkRZZkZ0dk5vMlNrTExMZUl6WEg4V3daYUczUGV2UTY1aXFQbnJaYkhEU0xJX0FFUDJNT1pzelVMVE80N0xYWHdxMzNYbEU5dDc2TXVB0gHPAUFVX3lxTFBFb1BDRGI1d1pEWFhVRlhjdWJTUFdqSngyaWhMOGc4cG1YVXJzOFY2MHlzenpXbmtLVDRCVkROdGdwNHZDM2R0YWxRdC13dGpOVElON1AyRERHUTByWFBLUklBN0V2RDlBU2pIalNJT3lUeW9nRXF3dU5SeFptYkpFZ0RidHRWVHhPS2kxcGotY2JRTklPLWNFWEdINlVYa1luMXNxYXlZbU1pRThCMHBNa1dKbU1UZ1NaNzVRN1N3ZzFPNVd2c1FEQUlqSl9kbw?oc=5"
+          "title": "Dukungan pindar untuk UMKM tumbuh 23,25 persen per Juni 2026 - ANTARA News Bali",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdUtDdWo0LWo5R29CNGJjSFdLYTJrY2t2QzM0NngxTmtXczV5WXV3bVMwc2tKS3FPX2pVQk44eHBXOS1JYVRqX196aDhsdVhZR2I0cHFCZXgweE9TcW9VQkYzR2RYcEM4cGpDQm1FSmZfYVMxdHJvdnVkejFSVG00eEdCLXlfcGVkSW56RnhuRjlBM21DUjVYYXF2LThTQTRuVHhUQ0pUaDLSAagBQVVfeXFMTnVLQ3VqNC1qOUdvQjRiY0hXS2Eya2NrdkMzNDZ4MU5rV3M1eVl1d21TMHNrSktxT19qVUJOOHhwVzktSWFUal9femg4bHVYWUdiNHBxQmV4MHhPU3FvVUJGM0dkWHBDOHBqQ0JtRUpmX2FTMXRyb3Z1ZHoxUlRtNHhHQi15X3BlZEluekZ4bkY5QTNtQ1I1WGFxdi04U0E0blR4VENKVGgy?oc=5"
+        },
+        {
+          "title": "Makin Diminati UMKM, Pembiayaan Pindar Melonjak 23,25 Persen - BeritaSatu.com",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPOWcyU04xcWMyRjdsdFhyeFpOajdYQXdFdm5YeUkxQ2pQMjk1emNrb0dJZFVfd3c1YjRQVWtYWUM2aXQ2U3o1YUpSWC0xZHR4LWNVVnEtYTlsZUhnbXpRd3ZfTTNnV2ZwanQzdU9kR0pnRnlIWjlxSzZGRzEzTUVxVFQyN3F4M3ZJdms3UDdlQmtpbnNVZGpTMFBMSEtNUzFyUENn?oc=5"
+        },
+        {
+          "title": "OJK Catat Pembiayaan Pinjaman Daring untuk UMKM Tumbuh 23,25 Persen - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOc0ZlbHh3SW5FRkJFTmZ4RnNsazM4X0pCSXNBN0dQVUdCOFAyaVJCU2k0Y2xhSWZPcWFJRTV0eXNjcHRqNXAxbThZTHdmRUV3aTdwZEd6SE5SWlloYng3Zk1hSEFqMXlOSHRZZjc4MWRlZ1QtYl94V2Rkc1c5a2hadWU5T2FFZzZLa2FFNG9FNlFfWG5CMDVlQ0MyczFFdFpBZGItN3E4b1BmSFNiM3c?oc=5"
+        },
+        {
+          "title": "OJK Catat Penyaluran Pindar UMKM Capai Rp35 Triliun - achmadnurhidayat.id",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1kNUVUZzkzOXRmWTZRUDRHNkhPVzd2UEZXT0VnM3lHdzFoSzNwc05YQnh4bjZVWEtlYU5OUFpnRDE4NDF4Y0FhNkVGZkM3c2hXNWhzSHRqUHQwLU5PZHVxZFdMRzJrd09lTUEw?oc=5"
+        },
+        {
+          "title": "OJK: Pembiayaan Pinjaman Daring ke UMKM Tumbuh 23,25 Persen - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZEhLVFJtNlRkb21kWFQzY2ZYbHh6WFo5NjA2RUxnOVZoZWlDMVF2c2s2cjZhYV9JSjRGLTQ0aEJ6Rl9wNXBxTU5UdkhNYkNNblJUNzBXbWtTZGVPSDliVWNIU2RjdVN4V294V0lPRXFrTEVrajRqbDB1T3dYQjhybWpjSERqUDBOTlJfU1hYLUVuM3pwNUoyN2hlbjdjemY0U0wzWGV1dDJHUQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 11,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -55,28 +85,127 @@
       }
     },
     {
-      "id": "llm-d8da88c514a7",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
+      "id": "llm-95a4363d2c11",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "Veedana"
+        "Pemprov Bali",
+        "Koster"
       ],
-      "headline": "Link https//down.vee-dana.cc/j52nct Aplikasi Veedana Sfile Pinjol Apk Cair Rp 80 Juta, Download Vee Dana - Berita DIY - beritadiy.pikiran-rakyat.com",
-      "headlineZh": "Veedana非法网贷APP推广链接",
-      "summaryZh": "文章推广Veedana非法网贷APP下载链接，宣称可贷8000万，涉嫌违规推广。",
-      "rationale": "非法网贷APP推广，属违规经营",
-      "independentSourceCount": 1,
+      "headline": "Gubernur Bali minta pindar banyak sasar sektor produktif lokal - ANTARA News",
+      "headlineZh": "巴厘省长呼吁网贷支持实体",
+      "summaryZh": "巴厘省长Koster呼吁网贷平台更多支持本地生产性行业，如UMKM和农业，属政策倡导。",
+      "rationale": "政府倡导性言论，非具体事件",
+      "independentSourceCount": 5,
       "domains": [
-        "beritadiy.pikiran-rakyat.com"
+        "antaranews.com",
+        "bali.antaranews.com",
+        "bali.jpnn.com",
+        "balipost.com",
+        "swa.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b7b40e589a8b7e78"
+        "e23d126c51ef99d0",
+        "1a4a5cb3788c99a9",
+        "c4e59d9701d3ecc8",
+        "4c2e876aac8976b9",
+        "fd6286191935f23f"
       ],
       "articles": [
         {
-          "title": "Link https//down.vee-dana.cc/j52nct Aplikasi Veedana Sfile Pinjol Apk Cair Rp 80 Juta, Download Vee Dana - Berita DIY - beritadiy.pikiran-rakyat.com",
-          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNQVI1R2E3RS1TT2dnX21UWkJjRlA1ZXdQQjRfcW10WE9NWTBmVUMyT2Z2eHdnenQ4QXRTSzU3TkNvbmpNVGVlSFpLLU5VaGpLR2RYWWtoV2VvR1hDalc1V0wteTQxdEt2N3lqYUl5R3lxVG5meWRmLXFiekxINnpZbjdqS3dDQmxHMElmN0lqRzJnTFNPMGlxamV3ZGRVZGRMdk9IbW94dS1HTDJLZHd5LXN5YlM4Q0NEU1dlWTF4a2h5R3lWSGh0WmprZlNKWHQzWTMtMUZoZTZrTVZqdmMwMGZ6akJGejhXV2xoanVyR0E4MTZuekdrSk9R0gHzAUFVX3lxTE42R0MyUzNoUkQ2S2VxWWxGcGYyZHE0Wl9RUUc5RW1MUl9uSzlIRUE0QWFSbjhZYzBZOU8wUnpvcTZRc01XZmgzYjVHOWxMLWo2b05QWHBrN2ZPUlZpV3JYRXMxZzVkcU55akpHVDU4Z3F3RVVPSEtPOS0tczgtOE9YcDF5N3hlV3BjOHFSMmhuR0g2VDlWRmJWcjQwcWNCX21GVzZXMXVKR0VJS3BHbVEtSjgwT08zTHVxR2dHQjNwY2FDd0NVUTBYUXFTQTVOOXdSQmZTb3N3aG94elhXN1MxTzQ5ZDNMd2dEdnFnQW9GUXI0NA?oc=5"
+          "title": "Gubernur Bali minta pindar banyak sasar sektor produktif lokal - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcWhSdG1wYy1hLUdJSDFvUWdKOU9EYVpMQjQtRXprQnpXVGtPLVIta2R1UUg3R0E1ZlFhYjM5Z1d6dzJBUzVXVFYtWHg2cDJ6bVBySVpUWnBKSVpHcDlIQzFLU3FTbHdIcXpsMUQxbGpzdVdNbkxlVk1TU0ZXcG9kZUFpdWpiNWluOWJ4ZzRRdGFzYTNiS3RsOG9uRlUtODBHU21GS3NUVdIBqgFBVV95cUxNMTIwa2ZNX3FBcGRlRU1tRmtSQ2c2YURadURuMzhYaGFqU3c4blJTdWNRT2V6aE5aSzZ0bmFSZGtOMVBLWVIzMnNmMXEzYXFUTkk3UjRmV2VxTXFzbFJZZXVjVzAwX0NFMlJfYlI1WllabEp3YW9McUFTNG92RWFNZks4aVptNDBleVpDbVUtSXlGZFVPNXFzVl9fN3pmZllOa0J3WTZKWG5nQQ?oc=5"
+        },
+        {
+          "title": "Gubernur Koster Ingin Pengembangan Fintech Diimbangi Penguatan Literasi Keuangan - BALIPOST.com",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZ1JNejhndnRVSVFvSzVCUjJOamozbVBRNW1sTWFnaUdfTXNVU3VJU2drcFFsRU5wLVh6dUhFVVJ5TGxTdXhJRlFaR2M5eW5iWkpGQW5oOEFZOVBpcWlrX0RwNEMtNGNUR2cwb3U0V2FpUDZUUkxKSGdubEtha0xJWXJkc0NoQWh6S004WGtuNDJtejJGdDVoeXJUQW11QQ?oc=5"
+        },
+        {
+          "title": "Koster Sentil Pinjol Konsumtif, Minta Membiayai UMKM dan Petani Bali - JPNN.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSnhBZTVSQ2hOel91R0cwd3M2MmppQ3p3bXhpblM4ak1QeGVaT2FpRk9xenZka3I2QnhQclRfTnBqejEzUVZQU1lRRGt0N1lOcEx0OUJvRjU0SmdpbWUtakpGbVk1RXV2Nmp5XzlGZUthbktqNEVYQTdHNDNUaXBSWnJ5U1ZpWVZ6OFJkSElWYkVZWndwNzNLZnYyTFhkQkVuMlg2UEkydVE3M1hT?oc=5"
+        },
+        {
+          "title": "Koster minta penyalur pembiayaan pinjaman daring banyak sasar sektor produktif - ANTARA News Bali",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZGJzWXl1LTFYWVU5X1FDNjNIdkhfN3RwZ0gwZUVnVHl4UEUwZUpkZ1BpN1lCT1ZYdWFuTDJBQVRyWTBtQ0JVbVVXVFpRQW5sYzZVeGJoZm54NGhybzROTkNlMWVJc3gwcFZJRHhXQWhGNEpfOHg1R05QU2dfaFcwY2I2a1RlSndHd2ZGM1VOdlRiMExnOXFEcEVJZkVWLTlFcXZJVkhWV1F6VVdnZ1RyNXdzTTlsdGs2akZOadIBwgFBVV95cUxOOFhYUGdabnVYZ3RyVExCMDlMOHBwMXFDTXpVNW50SjNwMWF5UTNlRm5LeHRqVnRSOWpNa3lnek5rRjd4YlBDRm9qU1hJNEhZMmtndzNWN3NoYjIwb0lmeTdNbWpsYkhHVUMweFp2YktpdFNBcEphdTZ4RVR2dy1GTlkyM1llb0tRWWdoanE1RUZzUDdNSDJtS0xhMm12dlFrNUtwMGVxVXp3MkNzb2YwTWplVlFJTzd4WlVIM1ZHWE1kUQ?oc=5"
+        },
+        {
+          "title": "Pemprov Bali Dorong Pindar Menyalurkan Pendanaan untuk UMKM dan Ekonomi Kreatif di Bali - SWA.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNaVUtRGs2dXAzSmstM1c4VFowM2hNVnA3eXV2d0FZNVd2RkltazZEMWFKdGJWNll3Qk9wcmprWF9nMEl0R1M5amZYVlhoYXVFeGxxSy1HSmE0cjNKSXFGbVNISkFiREhuU1BzS0FjZm1tZXRrT0lyLVJEZDl3UC1MeFZVQjQzMWFvSWRuSzVPTDJHMTdRRjNxQ2FJSnNqUlpETEFSWkprdFB3dDlKcXlNNDRXNWVVdXgt?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-cd2441d75e9b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Menerima 77 Laporan Aktivitas Keuangan Ilegal di Regional Papua Barat - pantau.com",
+      "headlineZh": "OJK收到77份非法金融举报",
+      "summaryZh": "OJK在巴布亚西部地区收到77份关于非法金融活动的报告，显示监管关注度提升。",
+      "rationale": "监管收到举报，属具体监管动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "antaranews.com",
+        "pantau.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "c1884f6589cd85a7",
+        "f9b4488505461b5a"
+      ],
+      "articles": [
+        {
+          "title": "OJK Menerima 77 Laporan Aktivitas Keuangan Ilegal di Regional Papua Barat - pantau.com",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNlN1LUVkVU5CTlVkSTdYQ2l4V1doYkdpbk5zRnU3V0ZPZnRHNG9MdUdzUXZCcDdkcXdodVphZ1pVVHhnT0V2RXBKSGRLdTZzblpzVVhtbC1VU3JBMUM1WTVQYTVOSWJ2T1k2ZDR5V1NwaXludW1xTDhBVXh0SFBGWFgxaUd2cjJwYTlVZzVVSi1xeExlMFQ3NEl1LWNSWVRYclN2V3BZQlltWHQxY3JJdA?oc=5"
+        },
+        {
+          "title": "OJK terima 77 laporan keuangan ilegal di Regional Papua Barat - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQN0F5ZVFkOVNwREZTbmpBRGt4MVg4WEV1ZTRPUnE5VGlyUGJQUF9Qd2M0M3dOMVFYRHhlbU5LeVpDS2t0NnpORVN5QUVzMGtPa01oY0JacjZ1eVZ4Ti1DTEVVQ1BTLWxYdnJmcGlxenk0RFN5SjRYRllxQURHX29OaTFXanhzVTNqZzdvVmlqcHgydDNHeTRENmF5ODQ2WmZpY2hoR2h30gGoAUFVX3lxTE9FZHNRazlLdjNJWDg2cFZvLWRKdEhMUGFMcXlVekN0dlJJZzZ1dllSWHNMb1Q4QXlrNjJWQ29LdW9MVmpRckFoYWV3amlCdG1NUFltZXdpcTkzelZzVE4zcXJ6eU1XWWprTjFPYUNwQmRBZUJ1engtcW4wN3NxMGhwRXlXc0xsS0JSeEhPcjZPd3MxUndTZEE5YzluMzhSR3B5ZVgwc1ppMw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a5ee14a2ef05",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.75,
+      "entities": [
+        "Polrestabes Surabaya"
+      ],
+      "headline": "Polrestabes Surabaya Tangani Serius Kasus Dugaan Pencurian Data Pribadi Dipakai Pinjol - Kabar Jawa Timur",
+      "headlineZh": "泗水警方调查数据盗用案",
+      "summaryZh": "泗水警方严肃处理一起涉嫌盗用个人数据用于网贷的案件，已介入调查。",
+      "rationale": "警方立案调查，属具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "kabarjawatimur.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ff2ddc4c75f79f8f"
+      ],
+      "articles": [
+        {
+          "title": "Polrestabes Surabaya Tangani Serius Kasus Dugaan Pencurian Data Pribadi Dipakai Pinjol - Kabar Jawa Timur",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOQjNnRWE3bjNPVlZ3TnBwQWVPUUpBNWNUdU1kOVUxQm1pd1R3ODJGR0g3LW9ERWJPTHZwcmMtcW5DMEZIXzB6YzFrVm5GRnJTMXNJY01uY0lwaUMwemVBWW5NTjFxSEdoMlE5d0otZExrdUVDYkVjZnE0UzFQc2lXT19uUWM4Nl96emF0cWdZb0Z2NmFxQ0RtaDBIU2xVTXFqTm01M1hZMnB6aHR2MnRnWjgwQkp6Tkk1NTI3YnlZVQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -93,43 +222,73 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 40,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 11,
+    "candidateCount": 28,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 7,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 40
+      "ok": 28
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-2006300fc4a0",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
+      "id": "llm-25634eb09c18",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "Semarang",
-        "Bansos"
+        "OJK"
       ],
-      "headline": "Identitas Dipinjam untuk Pinjol, Warga Semarang Bisa Kehilangan Bansos - IDN Times Jateng",
-      "headlineZh": "三宝垄居民身份被盗用陷网贷",
-      "summaryZh": "三宝垄居民身份被冒用申请网贷，导致可能失去社会救助金资格，反映身份盗用危害。",
-      "rationale": "具体身份盗用致救助受影响事件",
-      "independentSourceCount": 1,
+      "headline": "Dukungan pindar untuk UMKM tumbuh 23,25 persen per Juni 2026 - ANTARA News Bali",
+      "headlineZh": "OJK公布网贷融资增长数据",
+      "summaryZh": "OJK数据显示，截至2026年6月，对UMKM的网贷融资达35.12万亿印尼盾，同比增长23.25%。",
+      "rationale": "行业常规数据披露，非风险事件",
+      "independentSourceCount": 10,
       "domains": [
-        "jateng.idntimes.com"
+        "achmadnurhidayat.id",
+        "afbtvkupang.com",
+        "bali.antaranews.com",
+        "batamtoday.com",
+        "belitongekspres.bacakoran.co",
+        "beritasatu.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5061c3323b83ee4c"
+        "30c0489dffabc80d",
+        "ebc82de4feda1017",
+        "1c9a8cd573549896",
+        "fda994c837e5bd15",
+        "7af97e9db14ea70b",
+        "234f14c9221a1e16",
+        "2253e329b46bf725",
+        "85651f18b19854cd",
+        "12a29049cf6d900d",
+        "884255b12b247038",
+        "1e2a0f83a29ceb2d"
       ],
       "articles": [
         {
-          "title": "Identitas Dipinjam untuk Pinjol, Warga Semarang Bisa Kehilangan Bansos - IDN Times Jateng",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNLVZFczJpbkdYbVFFM3FqUkx4UGNvM01nc1JRUk9HblBpNlAtQ2FZazlSTUlfU2xyVGNFek1GNDVraTN4M0toRWxXeDJWMWdBNEItNzlNX3pFQVpkay1EMGlJZEI1clVpN1ZIVU5uTDdPM09CWGtJbzhjVWwwSkRZZkZ0dk5vMlNrTExMZUl6WEg4V3daYUczUGV2UTY1aXFQbnJaYkhEU0xJX0FFUDJNT1pzelVMVE80N0xYWHdxMzNYbEU5dDc2TXVB0gHPAUFVX3lxTFBFb1BDRGI1d1pEWFhVRlhjdWJTUFdqSngyaWhMOGc4cG1YVXJzOFY2MHlzenpXbmtLVDRCVkROdGdwNHZDM2R0YWxRdC13dGpOVElON1AyRERHUTByWFBLUklBN0V2RDlBU2pIalNJT3lUeW9nRXF3dU5SeFptYkpFZ0RidHRWVHhPS2kxcGotY2JRTklPLWNFWEdINlVYa1luMXNxYXlZbU1pRThCMHBNa1dKbU1UZ1NaNzVRN1N3ZzFPNVd2c1FEQUlqSl9kbw?oc=5"
+          "title": "Dukungan pindar untuk UMKM tumbuh 23,25 persen per Juni 2026 - ANTARA News Bali",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdUtDdWo0LWo5R29CNGJjSFdLYTJrY2t2QzM0NngxTmtXczV5WXV3bVMwc2tKS3FPX2pVQk44eHBXOS1JYVRqX196aDhsdVhZR2I0cHFCZXgweE9TcW9VQkYzR2RYcEM4cGpDQm1FSmZfYVMxdHJvdnVkejFSVG00eEdCLXlfcGVkSW56RnhuRjlBM21DUjVYYXF2LThTQTRuVHhUQ0pUaDLSAagBQVVfeXFMTnVLQ3VqNC1qOUdvQjRiY0hXS2Eya2NrdkMzNDZ4MU5rV3M1eVl1d21TMHNrSktxT19qVUJOOHhwVzktSWFUal9femg4bHVYWUdiNHBxQmV4MHhPU3FvVUJGM0dkWHBDOHBqQ0JtRUpmX2FTMXRyb3Z1ZHoxUlRtNHhHQi15X3BlZEluekZ4bkY5QTNtQ1I1WGFxdi04U0E0blR4VENKVGgy?oc=5"
+        },
+        {
+          "title": "Makin Diminati UMKM, Pembiayaan Pindar Melonjak 23,25 Persen - BeritaSatu.com",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPOWcyU04xcWMyRjdsdFhyeFpOajdYQXdFdm5YeUkxQ2pQMjk1emNrb0dJZFVfd3c1YjRQVWtYWUM2aXQ2U3o1YUpSWC0xZHR4LWNVVnEtYTlsZUhnbXpRd3ZfTTNnV2ZwanQzdU9kR0pnRnlIWjlxSzZGRzEzTUVxVFQyN3F4M3ZJdms3UDdlQmtpbnNVZGpTMFBMSEtNUzFyUENn?oc=5"
+        },
+        {
+          "title": "OJK Catat Pembiayaan Pinjaman Daring untuk UMKM Tumbuh 23,25 Persen - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOc0ZlbHh3SW5FRkJFTmZ4RnNsazM4X0pCSXNBN0dQVUdCOFAyaVJCU2k0Y2xhSWZPcWFJRTV0eXNjcHRqNXAxbThZTHdmRUV3aTdwZEd6SE5SWlloYng3Zk1hSEFqMXlOSHRZZjc4MWRlZ1QtYl94V2Rkc1c5a2hadWU5T2FFZzZLa2FFNG9FNlFfWG5CMDVlQ0MyczFFdFpBZGItN3E4b1BmSFNiM3c?oc=5"
+        },
+        {
+          "title": "OJK Catat Penyaluran Pindar UMKM Capai Rp35 Triliun - achmadnurhidayat.id",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1kNUVUZzkzOXRmWTZRUDRHNkhPVzd2UEZXT0VnM3lHdzFoSzNwc05YQnh4bjZVWEtlYU5OUFpnRDE4NDF4Y0FhNkVGZkM3c2hXNWhzSHRqUHQwLU5PZHVxZFdMRzJrd09lTUEw?oc=5"
+        },
+        {
+          "title": "OJK: Pembiayaan Pinjaman Daring ke UMKM Tumbuh 23,25 Persen - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZEhLVFJtNlRkb21kWFQzY2ZYbHh6WFo5NjA2RUxnOVZoZWlDMVF2c2s2cjZhYV9JSjRGLTQ0aEJ6Rl9wNXBxTU5UdkhNYkNNblJUNzBXbWtTZGVPSDliVWNIU2RjdVN4V294V0lPRXFrTEVrajRqbDB1T3dYQjhybWpjSERqUDBOTlJfU1hYLUVuM3pwNUoyN2hlbjdjemY0U0wzWGV1dDJHUQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 11,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -139,28 +298,127 @@
       }
     },
     {
-      "id": "llm-d8da88c514a7",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
+      "id": "llm-95a4363d2c11",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "Veedana"
+        "Pemprov Bali",
+        "Koster"
       ],
-      "headline": "Link https//down.vee-dana.cc/j52nct Aplikasi Veedana Sfile Pinjol Apk Cair Rp 80 Juta, Download Vee Dana - Berita DIY - beritadiy.pikiran-rakyat.com",
-      "headlineZh": "Veedana非法网贷APP推广链接",
-      "summaryZh": "文章推广Veedana非法网贷APP下载链接，宣称可贷8000万，涉嫌违规推广。",
-      "rationale": "非法网贷APP推广，属违规经营",
-      "independentSourceCount": 1,
+      "headline": "Gubernur Bali minta pindar banyak sasar sektor produktif lokal - ANTARA News",
+      "headlineZh": "巴厘省长呼吁网贷支持实体",
+      "summaryZh": "巴厘省长Koster呼吁网贷平台更多支持本地生产性行业，如UMKM和农业，属政策倡导。",
+      "rationale": "政府倡导性言论，非具体事件",
+      "independentSourceCount": 5,
       "domains": [
-        "beritadiy.pikiran-rakyat.com"
+        "antaranews.com",
+        "bali.antaranews.com",
+        "bali.jpnn.com",
+        "balipost.com",
+        "swa.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b7b40e589a8b7e78"
+        "e23d126c51ef99d0",
+        "1a4a5cb3788c99a9",
+        "c4e59d9701d3ecc8",
+        "4c2e876aac8976b9",
+        "fd6286191935f23f"
       ],
       "articles": [
         {
-          "title": "Link https//down.vee-dana.cc/j52nct Aplikasi Veedana Sfile Pinjol Apk Cair Rp 80 Juta, Download Vee Dana - Berita DIY - beritadiy.pikiran-rakyat.com",
-          "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNQVI1R2E3RS1TT2dnX21UWkJjRlA1ZXdQQjRfcW10WE9NWTBmVUMyT2Z2eHdnenQ4QXRTSzU3TkNvbmpNVGVlSFpLLU5VaGpLR2RYWWtoV2VvR1hDalc1V0wteTQxdEt2N3lqYUl5R3lxVG5meWRmLXFiekxINnpZbjdqS3dDQmxHMElmN0lqRzJnTFNPMGlxamV3ZGRVZGRMdk9IbW94dS1HTDJLZHd5LXN5YlM4Q0NEU1dlWTF4a2h5R3lWSGh0WmprZlNKWHQzWTMtMUZoZTZrTVZqdmMwMGZ6akJGejhXV2xoanVyR0E4MTZuekdrSk9R0gHzAUFVX3lxTE42R0MyUzNoUkQ2S2VxWWxGcGYyZHE0Wl9RUUc5RW1MUl9uSzlIRUE0QWFSbjhZYzBZOU8wUnpvcTZRc01XZmgzYjVHOWxMLWo2b05QWHBrN2ZPUlZpV3JYRXMxZzVkcU55akpHVDU4Z3F3RVVPSEtPOS0tczgtOE9YcDF5N3hlV3BjOHFSMmhuR0g2VDlWRmJWcjQwcWNCX21GVzZXMXVKR0VJS3BHbVEtSjgwT08zTHVxR2dHQjNwY2FDd0NVUTBYUXFTQTVOOXdSQmZTb3N3aG94elhXN1MxTzQ5ZDNMd2dEdnFnQW9GUXI0NA?oc=5"
+          "title": "Gubernur Bali minta pindar banyak sasar sektor produktif lokal - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPcWhSdG1wYy1hLUdJSDFvUWdKOU9EYVpMQjQtRXprQnpXVGtPLVIta2R1UUg3R0E1ZlFhYjM5Z1d6dzJBUzVXVFYtWHg2cDJ6bVBySVpUWnBKSVpHcDlIQzFLU3FTbHdIcXpsMUQxbGpzdVdNbkxlVk1TU0ZXcG9kZUFpdWpiNWluOWJ4ZzRRdGFzYTNiS3RsOG9uRlUtODBHU21GS3NUVdIBqgFBVV95cUxNMTIwa2ZNX3FBcGRlRU1tRmtSQ2c2YURadURuMzhYaGFqU3c4blJTdWNRT2V6aE5aSzZ0bmFSZGtOMVBLWVIzMnNmMXEzYXFUTkk3UjRmV2VxTXFzbFJZZXVjVzAwX0NFMlJfYlI1WllabEp3YW9McUFTNG92RWFNZks4aVptNDBleVpDbVUtSXlGZFVPNXFzVl9fN3pmZllOa0J3WTZKWG5nQQ?oc=5"
+        },
+        {
+          "title": "Gubernur Koster Ingin Pengembangan Fintech Diimbangi Penguatan Literasi Keuangan - BALIPOST.com",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOZ1JNejhndnRVSVFvSzVCUjJOamozbVBRNW1sTWFnaUdfTXNVU3VJU2drcFFsRU5wLVh6dUhFVVJ5TGxTdXhJRlFaR2M5eW5iWkpGQW5oOEFZOVBpcWlrX0RwNEMtNGNUR2cwb3U0V2FpUDZUUkxKSGdubEtha0xJWXJkc0NoQWh6S004WGtuNDJtejJGdDVoeXJUQW11QQ?oc=5"
+        },
+        {
+          "title": "Koster Sentil Pinjol Konsumtif, Minta Membiayai UMKM dan Petani Bali - JPNN.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSnhBZTVSQ2hOel91R0cwd3M2MmppQ3p3bXhpblM4ak1QeGVaT2FpRk9xenZka3I2QnhQclRfTnBqejEzUVZQU1lRRGt0N1lOcEx0OUJvRjU0SmdpbWUtakpGbVk1RXV2Nmp5XzlGZUthbktqNEVYQTdHNDNUaXBSWnJ5U1ZpWVZ6OFJkSElWYkVZWndwNzNLZnYyTFhkQkVuMlg2UEkydVE3M1hT?oc=5"
+        },
+        {
+          "title": "Koster minta penyalur pembiayaan pinjaman daring banyak sasar sektor produktif - ANTARA News Bali",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPZGJzWXl1LTFYWVU5X1FDNjNIdkhfN3RwZ0gwZUVnVHl4UEUwZUpkZ1BpN1lCT1ZYdWFuTDJBQVRyWTBtQ0JVbVVXVFpRQW5sYzZVeGJoZm54NGhybzROTkNlMWVJc3gwcFZJRHhXQWhGNEpfOHg1R05QU2dfaFcwY2I2a1RlSndHd2ZGM1VOdlRiMExnOXFEcEVJZkVWLTlFcXZJVkhWV1F6VVdnZ1RyNXdzTTlsdGs2akZOadIBwgFBVV95cUxOOFhYUGdabnVYZ3RyVExCMDlMOHBwMXFDTXpVNW50SjNwMWF5UTNlRm5LeHRqVnRSOWpNa3lnek5rRjd4YlBDRm9qU1hJNEhZMmtndzNWN3NoYjIwb0lmeTdNbWpsYkhHVUMweFp2YktpdFNBcEphdTZ4RVR2dy1GTlkyM1llb0tRWWdoanE1RUZzUDdNSDJtS0xhMm12dlFrNUtwMGVxVXp3MkNzb2YwTWplVlFJTzd4WlVIM1ZHWE1kUQ?oc=5"
+        },
+        {
+          "title": "Pemprov Bali Dorong Pindar Menyalurkan Pendanaan untuk UMKM dan Ekonomi Kreatif di Bali - SWA.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNaVUtRGs2dXAzSmstM1c4VFowM2hNVnA3eXV2d0FZNVd2RkltazZEMWFKdGJWNll3Qk9wcmprWF9nMEl0R1M5amZYVlhoYXVFeGxxSy1HSmE0cjNKSXFGbVNISkFiREhuU1BzS0FjZm1tZXRrT0lyLVJEZDl3UC1MeFZVQjQzMWFvSWRuSzVPTDJHMTdRRjNxQ2FJSnNqUlpETEFSWkprdFB3dDlKcXlNNDRXNWVVdXgt?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-cd2441d75e9b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Menerima 77 Laporan Aktivitas Keuangan Ilegal di Regional Papua Barat - pantau.com",
+      "headlineZh": "OJK收到77份非法金融举报",
+      "summaryZh": "OJK在巴布亚西部地区收到77份关于非法金融活动的报告，显示监管关注度提升。",
+      "rationale": "监管收到举报，属具体监管动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "antaranews.com",
+        "pantau.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "c1884f6589cd85a7",
+        "f9b4488505461b5a"
+      ],
+      "articles": [
+        {
+          "title": "OJK Menerima 77 Laporan Aktivitas Keuangan Ilegal di Regional Papua Barat - pantau.com",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQNlN1LUVkVU5CTlVkSTdYQ2l4V1doYkdpbk5zRnU3V0ZPZnRHNG9MdUdzUXZCcDdkcXdodVphZ1pVVHhnT0V2RXBKSGRLdTZzblpzVVhtbC1VU3JBMUM1WTVQYTVOSWJ2T1k2ZDR5V1NwaXludW1xTDhBVXh0SFBGWFgxaUd2cjJwYTlVZzVVSi1xeExlMFQ3NEl1LWNSWVRYclN2V3BZQlltWHQxY3JJdA?oc=5"
+        },
+        {
+          "title": "OJK terima 77 laporan keuangan ilegal di Regional Papua Barat - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQN0F5ZVFkOVNwREZTbmpBRGt4MVg4WEV1ZTRPUnE5VGlyUGJQUF9Qd2M0M3dOMVFYRHhlbU5LeVpDS2t0NnpORVN5QUVzMGtPa01oY0JacjZ1eVZ4Ti1DTEVVQ1BTLWxYdnJmcGlxenk0RFN5SjRYRllxQURHX29OaTFXanhzVTNqZzdvVmlqcHgydDNHeTRENmF5ODQ2WmZpY2hoR2h30gGoAUFVX3lxTE9FZHNRazlLdjNJWDg2cFZvLWRKdEhMUGFMcXlVekN0dlJJZzZ1dllSWHNMb1Q4QXlrNjJWQ29LdW9MVmpRckFoYWV3amlCdG1NUFltZXdpcTkzelZzVE4zcXJ6eU1XWWprTjFPYUNwQmRBZUJ1engtcW4wN3NxMGhwRXlXc0xsS0JSeEhPcjZPd3MxUndTZEE5YzluMzhSR3B5ZVgwc1ppMw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a5ee14a2ef05",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.75,
+      "entities": [
+        "Polrestabes Surabaya"
+      ],
+      "headline": "Polrestabes Surabaya Tangani Serius Kasus Dugaan Pencurian Data Pribadi Dipakai Pinjol - Kabar Jawa Timur",
+      "headlineZh": "泗水警方调查数据盗用案",
+      "summaryZh": "泗水警方严肃处理一起涉嫌盗用个人数据用于网贷的案件，已介入调查。",
+      "rationale": "警方立案调查，属具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "kabarjawatimur.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ff2ddc4c75f79f8f"
+      ],
+      "articles": [
+        {
+          "title": "Polrestabes Surabaya Tangani Serius Kasus Dugaan Pencurian Data Pribadi Dipakai Pinjol - Kabar Jawa Timur",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOQjNnRWE3bjNPVlZ3TnBwQWVPUUpBNWNUdU1kOVUxQm1pd1R3ODJGR0g3LW9ERWJPTHZwcmMtcW5DMEZIXzB6YzFrVm5GRnJTMXNJY01uY0lwaUMwemVBWW5NTjFxSEdoMlE5d0otZExrdUVDYkVjZnE0UzFQc2lXT19uUWM4Nl96emF0cWdZb0Z2NmFxQ0RtaDBIU2xVTXFqTm01M1hZMnB6aHR2MnRnWjgwQkp6Tkk1NTI3YnlZVQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -186,21 +444,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 53,
-    "socialItemCount48h": 10
+    "articleCount48h": 30,
+    "socialItemCount48h": 2
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 488,
-    "classifiedCount": 134,
-    "irrelevantDropped": 106,
+    "inputCount": 475,
+    "classifiedCount": 129,
+    "irrelevantDropped": 111,
     "model": "deepseek-chat",
-    "fallbackCount": 248,
+    "fallbackCount": 235,
     "labelCounts": {
-      "NEG": 99,
-      "MIX": 4,
-      "POS": 31
+      "NEG": 107,
+      "MIX": 6,
+      "POS": 16
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
