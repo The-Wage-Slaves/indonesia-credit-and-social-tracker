@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-"""探明 OJK GetGridCSVData 的参数与维度取值。只在 runner 上跑。"""
+"""确认 OJK Dataset 71 的维度取值与数据量级，决定聚合可行性。只在 runner 上跑。"""
 from __future__ import annotations
 import json
-from collections import Counter
+from collections import defaultdict
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -12,38 +12,40 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0",
       "Referer": "https://data.ojk.go.id/SJKPublic/Dataset/Dataset/Dataset/71"}
 
 
-def call(metric: int, take: int = 2000, extra: dict | None = None):
-    q = {"skip": 0, "take": take, "requireTotalCount": "true", "metricID": metric}
-    q.update(extra or {})
-    url = f"{BASE}?{urlencode(q)}"
-    try:
-        with urlopen(Request(url, headers=UA), timeout=90) as r:
-            return json.loads(r.read().decode("utf-8", errors="replace")), None
-    except Exception as exc:
-        return None, f"{type(exc).__name__}: {str(exc)[:160]}"
+def fetch(months: list[str], skip: int = 0, take: int = 5000, table="PP_PiutangPembiayaan", metric=71):
+    q = {"skip": skip, "take": take, "requireTotalCount": "true",
+         "_filter": "?".join(f"Bulan\=\{m}" for m in months),
+         "_field": ",".join("Bulan" for _ in months),
+         "_data": ",".join(months),
+         "namaTable": table, "metricID": metric}
+    with urlopen(Request(f"{BASE}?{urlencode(q)}", headers=UA), timeout=120) as r:
+        return json.loads(r.read().decode("utf-8", errors="replace"))
 
 
-for metric in (71,):
-    print(f"\n{'='*74}\n### metricID={metric}")
-    payload, err = call(metric)
-    if err:
-        print("  ✗", err); continue
-    rows = payload.get("data") or []
-    print(f"  totalCount={payload.get('totalCount')}  本次返回 {len(rows)} 行")
-    if not rows:
-        print("  (空)"); continue
-    print("  字段:", list(rows[0]))
-    print("  首行:", json.dumps(rows[0], ensure_ascii=False)[:400])
-    # 各分类维度的取值分布——用来找「车辆/多用途」在哪个字段
-    for field in rows[0]:
-        vals = [r.get(field) for r in rows]
-        uniq = [v for v in dict.fromkeys(vals) if v not in (None, "")]
-        if 0 < len(uniq) <= 40 and isinstance(uniq[0], str):
-            print(f"  --- {field} ({len(uniq)} 种) ---")
-            for v in uniq[:40]:
-                print(f"      {v}")
-    bulan = sorted({r.get("Bulan") for r in rows if r.get("Bulan")})
-    if bulan:
-        print(f"  Bulan 范围: {bulan[0]} → {bulan[-1]}  (共 {len(bulan)} 期)")
-        print("  最近 8 期:", bulan[-8:])
-    print("  Nilai 量级样本:", Counter(len(str(int(r["Nilai"]))) for r in rows if isinstance(r.get("Nilai"), (int, float))).most_common(5))
+month = "2026-05"
+print(f"### 单月 {month} 量级探测")
+try:
+    head = fetch([month], take=1)
+    total = head.get("totalCount")
+    print(f"  totalCount = {total:,}")
+except Exception as exc:
+    print("  ✗", type(exc).__name__, str(exc)[:160]); raise SystemExit(0)
+
+page = fetch([month], take=5000)
+rows = page.get("data") or []
+print(f"  取回 {len(rows):,} 行")
+print("  字段:", ", ".join(rows[0]) if rows else "-")
+
+for field in ("ObjekPembiayaan", "JenisUsaha", "KategoriUsahaDebitur", "SektorPariwisata"):
+    vals = sorted({r.get(field) for r in rows if r.get(field)})
+    print(f"\n  --- {field} ({len(vals)} 种) ---")
+    for v in vals[:45]:
+        print(f"      {v}")
+
+agg = defaultdict(float)
+for r in rows:
+    if isinstance(r.get("Nilai"), (int, float)):
+        agg[r.get("ObjekPembiayaan") or "(空)"] += r["Nilai"]
+print(f"\n  --- 按 ObjekPembiayaan 合计（仅前 {len(rows)} 行样本，单位 Rupiah 满额）---")
+for k, v in sorted(agg.items(), key=lambda x: -x[1])[:15]:
+    print(f"      {v/1e12:12,.1f} 万亿   {k}")
