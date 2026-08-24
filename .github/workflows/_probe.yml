@@ -16,15 +16,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - name: Install Playwright
-        run: |
-          npm --prefix credit-tracker/p2p-scraper ci --ignore-scripts
-          npx --prefix credit-tracker/p2p-scraper playwright install --with-deps chromium
       - name: Probe OJK endpoints
-        run: |
-          python credit-tracker/probes/probe_ojk.py || true
-          cp credit-tracker/probes/probe_ojk.mjs credit-tracker/p2p-scraper/_probe.mjs
-          node credit-tracker/p2p-scraper/_probe.mjs
+        run: python credit-tracker/probes/probe_ojk.py
