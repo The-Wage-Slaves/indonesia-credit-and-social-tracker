@@ -1,52 +1,45 @@
-// 用 Playwright 驱动 OJK Dataset 页面：数据是前端渲染 + FileSaver 导出，
-// 静态抓 HTML 拿不到。只在 runner 上跑（data.ojk.go.id 从中国网络不可达）。
+// 捕获 OJK GetGridCSVData 的完整请求与响应，然后原样重放并放大 take。
 import { chromium } from 'playwright';
+const URL_71 = 'https://data.ojk.go.id/SJKPublic/Dataset/Dataset/Dataset/71';
+const b = await chromium.launch();
+const page = await b.newPage({ userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0' });
+let captured = null, body = null;
+page.on('response', async (r) => {
+  if (!r.url().includes('GetGridCSVData')) return;
+  captured = r.url();
+  try { body = (await r.body()).toString('utf8'); } catch {}
+});
+await page.goto(URL_71, { waitUntil: 'networkidle', timeout: 90000 });
+await page.waitForTimeout(8000);
 
-const TARGETS = [
-  ['Dataset 71 · Perusahaan Pembiayaan', 'https://data.ojk.go.id/SJKPublic/Dataset/Dataset/Dataset/71'],
-];
+if (!captured) { console.log('没抓到 GetGridCSVData'); await b.close(); process.exit(0); }
+console.log('=== 完整 URL ===');
+console.log(captured);
+console.log('\n=== 参数拆解 ===');
+for (const [k, v] of new URL(captured).searchParams) console.log(`  ${k} = ${decodeURIComponent(v)}`);
+console.log('\n=== 响应前 900 字符 ===');
+console.log((body || '').slice(0, 900));
 
-const browser = await chromium.launch();
-for (const [label, url] of TARGETS) {
-  const page = await browser.newPage({ userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/126.0' });
-  const xhr = [];
-  page.on('response', async (r) => {
-    const u = r.url();
-    if (u === url || /\.(png|jpg|svg|css|woff2?|ico)$/i.test(u)) return;
-    let size = 0, sample = '';
-    try { const b = await r.body(); size = b.length; sample = b.toString('utf8').slice(0, 300); } catch {}
-    xhr.push({ status: r.status(), method: r.request().method(), url: u.slice(0, 150), size, sample });
-  });
-  console.log(`\n${'='.repeat(74)}\n### ${label}\n${url}`);
-  await page.goto(url, { waitUntil: 'networkidle', timeout: 90000 });
-  await page.waitForTimeout(6000);
-
-  console.log(`  --- 网络请求 (${xhr.length}) ---`);
-  for (const r of xhr) {
-    console.log(`    ${r.method} ${r.status} ${r.size.toLocaleString()}B  ${r.url}`);
-    if (r.size > 400 && !/\.js$/i.test(r.url)) console.log(`      样本: ${r.sample.replace(/\s+/g, ' ').slice(0, 220)}`);
+// 原样重放，只放大 take
+const bigger = captured.replace(/([?&]take=)\d+/, '$1' + 3000);
+const res = await page.evaluate(async (u) => {
+  const r = await fetch(u, { headers: { 'X-Requested-With': 'XMLHttpRequest' } });
+  return { status: r.status, text: (await r.text()).slice(0, 200000) };
+}, bigger);
+console.log(`\n=== 放大 take=3000 重放: HTTP ${res.status} ===`);
+try {
+  const j = JSON.parse(res.text);
+  const rows = j.data || [];
+  console.log(`  totalCount=${j.totalCount}  返回 ${rows.length} 行`);
+  console.log('  字段:', Object.keys(rows[0] || {}).join(', '));
+  for (const f of Object.keys(rows[0] || {})) {
+    const u = [...new Set(rows.map((r) => r[f]))].filter((x) => x !== null && x !== '');
+    if (u.length && u.length <= 40 && typeof u[0] === 'string') {
+      console.log(`  --- ${f} (${u.length}) ---`);
+      u.slice(0, 40).forEach((x) => console.log(`      ${x}`));
+    }
   }
-  const dom = await page.evaluate(() => {
-    const tables = [...document.querySelectorAll('table')].map((t) => ({
-      rows: t.rows.length, cols: t.rows[0]?.cells.length ?? 0,
-      head: [...(t.rows[0]?.cells ?? [])].map((c) => c.innerText.trim().slice(0, 22)),
-      first: [...(t.rows[1]?.cells ?? [])].map((c) => c.innerText.trim().slice(0, 22)),
-      last: [...(t.rows[t.rows.length - 1]?.cells ?? [])].map((c) => c.innerText.trim().slice(0, 22)),
-    }));
-    const globals = Object.keys(window).filter((k) =>
-      /data|dataset|series|chart|json|tabel|table/i.test(k)).slice(0, 25);
-    return { tables, globals, selects: [...document.querySelectorAll('select')].map((s) => ({
-      name: s.name || s.id, options: [...s.options].slice(0, 6).map((o) => `${o.value}=${o.text.trim().slice(0, 24)}`) })) };
-  });
-  console.log('  --- 表格 ---');
-  for (const t of dom.tables) {
-    console.log(`    ${t.rows}行×${t.cols}列  表头: ${JSON.stringify(t.head)}`);
-    console.log(`      首行: ${JSON.stringify(t.first)}`);
-    console.log(`      末行: ${JSON.stringify(t.last)}`);
-  }
-  console.log('  --- 下拉选项 ---');
-  for (const s of dom.selects) console.log(`    ${s.name}: ${JSON.stringify(s.options)}`);
-  console.log('  --- 可疑全局变量 ---', JSON.stringify(dom.globals));
-  await page.close();
-}
-await browser.close();
+  const bl = [...new Set(rows.map((r) => r.Bulan))].filter(Boolean).sort();
+  if (bl.length) console.log(`  Bulan: ${bl[0]} → ${bl[bl.length - 1]} (${bl.length} 期)`);
+} catch (e) { console.log('  解析失败:', res.text.slice(0, 300)); }
+await b.close();
