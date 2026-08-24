@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-23T02:50:40.494418+00:00",
+  "generatedAt": "2026-08-24T02:51:10.634623+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-08-23",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-08-24",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **央行独立性｜印尼央行行长过渡期引发独立性担忧，BI被敦促保持独立但加强与政府协调**\n严重度 0.75｜4个独立来源（idxchannel、maklumat.id）｜影响支柱：institutions\n\n🔴 **仓促立法/政策骤变｜印尼国会加速审议《资产没收法》草案，设定2026年12月新期限，民间计划大规模示威施压**\n严重度 0.75｜8个独立来源（afu.id、asatunews.co.id）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜印尼反腐败委员会逮捕梭罗国立大学校长等六人，涉新生录取受贿案**\n严重度 0.55｜5个独立来源（bbc.com、beritabuana.co）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **央行独立性｜印尼央行行长唯一候选人Destry Damayanti将于8月26日接受国会资格测试**\n严重度 0.90｜3个独立来源（cnbcindonesia、kompas.com）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 1 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "daily:2026-08-23:normal:red:success"
+    "decisionId": "daily:2026-08-24:normal:red:success"
   },
   "feishu": "sent"
 }
