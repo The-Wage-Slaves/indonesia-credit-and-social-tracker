@@ -26,7 +26,15 @@ _spec = importlib.util.spec_from_file_location(
 MODULE = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(MODULE)
 
+# 两个不同的契约，别混：
+# ACCUMULATING —— 产物按 date 累积（日频证据池、街头热度历史），必须走合并脚本，
+#   否则每次运行只留当次一条、把历史抹掉。
+# STAGING —— 所有会往 bot 分支暂存产物的流水线，无论是否累积，都必须用单一
+#   artifacts 清单驱动打包与清理，并在切分支前清空工作区；否则 bot 分支一旦
+#   开始跟踪某路径，下次 checkout 就会以「未跟踪文件将被覆盖」中止。
+# 月频只属于后者：它的产物是当期全量快照，覆盖即正确。
 ACCUMULATING_WORKFLOWS = ("daily-risk-alerts.yml", "weekly-credit-sentiment.yml")
+STAGING_WORKFLOWS = ACCUMULATING_WORKFLOWS + ("monthly-credit-data.yml",)
 
 
 def write_jsonl(path: pathlib.Path, records: list[dict]) -> None:
@@ -192,8 +200,8 @@ class WorkflowContractTests(unittest.TestCase):
             MODULE.JSON_ARRAY_BY_DATE,
         )
 
-    def test_both_pipelines_use_the_merge_step_and_keep_their_bot_branch(self):
-        """日频与周频都必须接续既有 bot 分支并走合并脚本。
+    def test_accumulating_pipelines_use_the_merge_step(self):
+        """按 date 累积的流水线必须走合并脚本，否则每次运行都会抹掉历史。
 
         只断言日频的话，周频那条就是 2026-08-20 之前的状态：静静地每周抹掉历史。
         """
@@ -204,6 +212,12 @@ class WorkflowContractTests(unittest.TestCase):
                     "merge_bot_evidence.py", workflow,
                     f"{name} 必须走共用的合并脚本，不得直接解包覆盖",
                 )
+
+    def test_every_staging_pipeline_continues_its_existing_bot_branch(self):
+        """凡往 bot 分支暂存的流水线，都不得每次从 main 重建。"""
+        for name in STAGING_WORKFLOWS:
+            with self.subTest(workflow=name):
+                workflow = (ROOT / ".github" / "workflows" / name).read_text(encoding="utf-8")
                 self.assertIn(
                     'git checkout -B "$branch" "refs/remotes/origin/$branch"', workflow,
                     f"{name} 必须优先接续既有 bot 分支",
@@ -221,6 +235,11 @@ class WorkflowContractTests(unittest.TestCase):
              ("outputs", "stability-monitor/data/daily-events")),
             ("weekly-credit-sentiment.yml", "Stage pending review data",
              ("outputs", "stability-monitor/scripts/street_heat_history.json")),
+            # 月频 2026-08-24 才补上。此前它还是 PR #31 之前的旧写法：tar 与 git add
+            # 各列一份清单，于是 seki-bank-credit.json 只进了 git add、没进 tar。
+            # 那种漏法第一次运行不报错，等 bot 分支开始跟踪该路径后第二次才炸。
+            ("monthly-credit-data.yml", "Stage monthly data",
+             ("outputs", "credit-tracker/data/seki-bank-credit.json")),
         )
         for name, stage_title, must_pack in cases:
             with self.subTest(workflow=name):
