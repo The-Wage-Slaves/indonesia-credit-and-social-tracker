@@ -149,5 +149,94 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-08-25",
+    "version": 3,
+    "heat": 41.3,
+    "suggested_score": 60,
+    "opposition": {
+      "status": "ok",
+      "rate": 42.0,
+      "detail": "250条中政治条目205条(浓度82%)，反对86/中性83/支持36 → 总反对率 42.0%（分侧: 民间YouTube 48% · 论坛Kaskus 17% · 媒体RSS 33%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 40.4,
+        "raw": {
+          "ratio_street": 0.9411764705882354,
+          "ratio_anger": 0.6753022452504319,
+          "per_kw": {
+            "demo hari ini": 5,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 20,
+            "kejaksaan": 9,
+            "Indonesia gelap": 0,
+            "turunkan presiden": 0,
+            "krisis": 5
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 33.8,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 3,
+          "share": 16.890801506186122,
+          "examples": [
+            "Tampil Beda dengan Presiden Lainnya! Foto Prabowo Berkibar saat HUT RI ke 81",
+            "Wow, Menteri Jerman Puji Toleransi Antar Umat Beragama di Indonesia! Role Model ",
+            "Prabowo Ajukan Dwi Kewarganegaraan ke DPR RI, Setujukah Gansist?"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 85.0,
+        "raw": {
+          "n_searched": 127,
+          "n_big": 34
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 43.4,
+        "raw": {
+          "avg7": 0.013328571428571427,
+          "baseline": 0.015348888888888888,
+          "ratio": 0.8683736995594531
+        }
+      },
+      "gdelt_tone": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 26.7,
+        "raw": {
+          "total": 150,
+          "matched": 4,
+          "share": 2.666666666666667,
+          "examples": [
+            "[BBC Indonesia] BEM UI dan Front Mahasiswa Nasional gelar demo, diadang aparat dekat Bundaran HI",
+            "[Liputan6 News] Mengurai Polemik Pemblokiran Rekening Donasi Demo Pati",
+            "[Liputan6 News] Polda Metro Jaya Terima Pemberitahuan Demo, Tapi Melarang di Lokasi Ini",
+            "[Liputan6 News] Rekening Demo Pati Diblokir, DPR Duga Ada Transaksi Berbahaya"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
