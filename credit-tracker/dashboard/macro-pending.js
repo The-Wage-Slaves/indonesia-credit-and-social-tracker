@@ -1,7 +1,7 @@
 window.MACRO_PENDING = {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "asOf": "2026-08-24",
+  "asOf": "2026-08-25",
   "reviewRequired": true,
   "methodology": {
     "cadence": "monthly",
@@ -57,12 +57,12 @@ window.MACRO_PENDING = {
       "indicator": "usd_idr",
       "label": "USD/IDR（JISDOR）",
       "period": "2026.08",
-      "value": 17705.0,
+      "value": 17703.0,
       "unit": "IDR/USD",
       "source": "Bank Indonesia JISDOR",
       "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
-      "released": "2026-08-21",
-      "note": "2026-08-21 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+      "released": "2026-08-24",
+      "note": "2026-08-24 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
     }
   },
   "changes": [
@@ -97,12 +97,12 @@ window.MACRO_PENDING = {
         "indicator": "usd_idr",
         "label": "USD/IDR（JISDOR）",
         "period": "2026.08",
-        "value": 17705.0,
+        "value": 17703.0,
         "unit": "IDR/USD",
         "source": "Bank Indonesia JISDOR",
         "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
-        "released": "2026-08-21",
-        "note": "2026-08-21 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+        "released": "2026-08-24",
+        "note": "2026-08-24 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
       },
       "reason": "new_period"
     }
@@ -117,8 +117,8 @@ window.MACRO_PENDING = {
       "detail": "official source parsed"
     },
     "BPS WebAPI": {
-      "status": "unconfigured",
-      "detail": "BPS_API_KEY is not configured"
+      "status": "failed",
+      "detail": "BPS API returned no recognized CPI/GDP/unemployment releases"
     }
   }
 };

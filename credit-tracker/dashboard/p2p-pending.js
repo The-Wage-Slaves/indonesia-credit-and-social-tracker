@@ -1,5 +1,5 @@
 const P2P_PENDING = {
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "players": [
     {
       "name": "AdaKami",
@@ -12,12 +12,12 @@ const P2P_PENDING = {
     },
     {
       "name": "Lentera Dana (Shopee Loan)",
-      "dataDate": "17 Agustus 2026",
+      "dataDate": "24 Agustus 2026",
       "note": null,
-      "disb": 4.463,
-      "out": 0.38,
-      "tot": 18184635,
-      "act": 7600645
+      "disb": 4.597,
+      "out": 0.514,
+      "tot": 18283811,
+      "act": 7739602
     },
     {
       "name": "Kredifazz",
@@ -61,8 +61,8 @@ const P2P_PENDING = {
       "note": "官网未披露outstanding",
       "disb": 0.067,
       "out": null,
-      "tot": 3353722,
-      "act": 164744
+      "tot": 3354221,
+      "act": 165313
     },
     {
       "name": "ADA Pundi",

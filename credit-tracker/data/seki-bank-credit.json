@@ -1,0 +1,87 @@
+{
+  "source": "BI SEKI I.4",
+  "sourceUrl": "https://www.bi.go.id/SEKI/tabel/TABEL1_4.xls",
+  "sheet": "I.4_3",
+  "unit": "Rp Miliar",
+  "note": "替代已停更的 SSKI Tabel_17（冻结于 2025.12）。口径与旧源不同：SEKI 无 Multiguna 项，原多用途并入 Lainnya，历史需整体替换。BNPL 不在本源内，来自 OJK 月度公报。",
+  "calibratedAgainst": {
+    "period": "2026.05",
+    "bankVeh": 128846,
+    "bankOth": 1411357
+  },
+  "latest": "2026.06",
+  "series": {
+    "2025.01": {
+      "bankVeh": 141531,
+      "bankOth": 1263554
+    },
+    "2025.02": {
+      "bankVeh": 141704,
+      "bankOth": 1284842
+    },
+    "2025.03": {
+      "bankVeh": 142917,
+      "bankOth": 1290948
+    },
+    "2025.04": {
+      "bankVeh": 141755,
+      "bankOth": 1292634
+    },
+    "2025.05": {
+      "bankVeh": 142718,
+      "bankOth": 1303585
+    },
+    "2025.06": {
+      "bankVeh": 143020,
+      "bankOth": 1311480
+    },
+    "2025.07": {
+      "bankVeh": 141757,
+      "bankOth": 1324205
+    },
+    "2025.08": {
+      "bankVeh": 140398,
+      "bankOth": 1333937
+    },
+    "2025.09": {
+      "bankVeh": 138800,
+      "bankOth": 1346306
+    },
+    "2025.10": {
+      "bankVeh": 136727,
+      "bankOth": 1360757
+    },
+    "2025.11": {
+      "bankVeh": 135166,
+      "bankOth": 1370211
+    },
+    "2025.12": {
+      "bankVeh": 132557,
+      "bankOth": 1383545
+    },
+    "2026.01": {
+      "bankVeh": 131150,
+      "bankOth": 1391114
+    },
+    "2026.02": {
+      "bankVeh": 130059,
+      "bankOth": 1396730
+    },
+    "2026.03": {
+      "bankVeh": 129681,
+      "bankOth": 1398311
+    },
+    "2026.04": {
+      "bankVeh": 128554,
+      "bankOth": 1404344
+    },
+    "2026.05": {
+      "bankVeh": 128846,
+      "bankOth": 1411357
+    },
+    "2026.06": {
+      "bankVeh": 128338,
+      "bankOth": 1421522
+    }
+  }
+}
