@@ -187,13 +187,32 @@ def load_acknowledged() -> dict[str, dict]:
 
 
 def normalize_entity(value: str) -> str:
-    """Normalize common entity aliases before acknowledgement matching."""
-    cleaned = re.sub(r"[^a-z0-9]", "", str(value).casefold())
+    """归一化实体名，供已确认表匹配用。
+
+    **绝不能用 `[^a-z0-9]` 过滤**：那会把所有非 ASCII 字符整个删掉，中文实体名
+    直接变成空串。2026-08-21~08-25 央行行长那条连推五天就是这么来的——模型输出的
+    是中文实体（印尼央行 / 国会 / 印尼总统），归一化后只剩下拉丁字母写的人名一个，
+    与登记表里印尼语实体的重叠数永远达不到锚点要求的 2 个，抑制因此完全失效。
+    这类失败不会报错，只会天天推同一条。
+
+    改为按 Unicode 词字符过滤：保留各语种字母与数字，只去掉空白与标点。
+    """
+    text = str(value).casefold()
+    cleaned = re.sub(r"[^\w]", "", text, flags=re.UNICODE).replace("_", "")
+    # 跨语言别名。**只映射机构名，不把「印尼总统」这类职位映射到具体人名**——
+    # 职位会换人，那种别名迟早制造错误匹配。
     aliases = {
         "bi": "bankindonesia",
         "bankindonesiabank": "bankindonesia",
+        "印尼央行": "bankindonesia",
+        "印尼银行": "bankindonesia",
+        "印度尼西亚银行": "bankindonesia",
+        "印尼中央银行": "bankindonesia",
         "dprri": "dpr",
         "dewaperwakilanrakyat": "dpr",
+        "国会": "dpr",
+        "印尼国会": "dpr",
+        "人民代表会议": "dpr",
         "prabowo": "prabowosubianto",
         "destry": "destrydamayanti",
     }
