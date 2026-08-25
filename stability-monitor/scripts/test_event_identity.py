@@ -151,5 +151,80 @@ class PromptContractTests(unittest.TestCase):
         self.assertIn("if not refs:", source)
 
 
+class CjkEntityNormalisationTests(unittest.TestCase):
+    """实体归一化必须保住非 ASCII 字符。
+
+    2026-08-21~08-25 央行行长那条连推五天：模型输出的是中文实体（印尼央行 /
+    国会 / 印尼总统），而 normalize_entity 当时用 `[^a-z0-9]` 过滤，**把中文整个
+    删成空串**。归一化后只剩拉丁字母写的人名一个，与登记表印尼语实体的重叠数
+    永远达不到锚点要求的 2 个，抑制彻底失效。
+
+    这类失败不报错、不留痕，只会天天推同一条——所以必须有测试。
+    """
+
+    def test_chinese_entity_survives_normalisation(self):
+        for name in ("印尼总统", "梭罗国立大学", "肃贪委"):
+            with self.subTest(entity=name):
+                self.assertTrue(MODULE.normalize_entity(name),
+                                f"{name} 被归一化成空串——非 ASCII 字符被删掉了")
+
+    def test_punctuation_and_whitespace_are_still_stripped(self):
+        self.assertEqual(MODULE.normalize_entity("  Bank  Indonesia "), "bankindonesia")
+        self.assertEqual(MODULE.normalize_entity("D.P.R."), "dpr")
+
+    def test_distinct_chinese_entities_do_not_collapse_together(self):
+        """曾经三个中文实体全变空串，于是不同的实体集合算出同一个 key。"""
+        first = MODULE.entity_key(["Destry Damayanti", "印尼央行", "印尼政府"])
+        second = MODULE.entity_key(["Destry Damayanti", "印尼海关", "印尼农业部"])
+        self.assertNotEqual(first, second,
+                            "不同的中文实体集合算出了相同的 key——归一化又在吃字符")
+
+    def test_cross_language_aliases_map_institutions_only(self):
+        self.assertEqual(MODULE.normalize_entity("印尼央行"),
+                         MODULE.normalize_entity("Bank Indonesia"))
+        self.assertEqual(MODULE.normalize_entity("国会"), MODULE.normalize_entity("DPR"))
+
+    def test_role_titles_are_not_aliased_to_a_person(self):
+        """「印尼总统」是职位，不是人。映射到具体人名迟早制造错误匹配。"""
+        self.assertNotEqual(MODULE.normalize_entity("印尼总统"),
+                            MODULE.normalize_entity("Prabowo Subianto"))
+
+
+class RegistryAnchorAgainstRealDriftTests(unittest.TestCase):
+    """用 2026-08-21~08-25 实际推送过的实体集合回归验证。"""
+
+    OBSERVED = {
+        "2026-08-21": ["Destry Damayanti", "印尼央行", "印尼政府"],
+        "2026-08-23": ["Destry Damayanti", "印尼央行"],
+        "2026-08-24": ["Destry Damayanti", "印尼央行", "国会"],
+        "2026-08-25": ["Destry Damayanti", "印尼央行", "印尼总统", "国会"],
+    }
+
+    def setUp(self):
+        registry = json.loads(
+            (HERE.parent / "data" / "acknowledged-events.json").read_text(encoding="utf-8"))
+        self.entry = registry["events"][0]
+
+    def test_registry_declares_a_cross_language_anchor(self):
+        """靠「与登记实体重叠≥2」跨不了语言，必须显式声明 matchEntities。"""
+        self.assertTrue(self.entry.get("matchEntities"),
+                        "缺 matchEntities：机构名在印尼语/中文之间对不上，"
+                        "重叠计数永远够不着门槛")
+
+    def test_every_real_day_that_named_the_nominee_is_suppressed(self):
+        for date, entities in self.OBSERVED.items():
+            with self.subTest(date=date):
+                self.assertTrue(
+                    MODULE.acknowledgement_anchor_matches(self.entry, entities),
+                    f"{date} 的实体集合仍匹配不上登记表——那天就会再推一次")
+
+    def test_an_unrelated_event_is_not_swallowed_by_the_anchor(self):
+        """锚点不能宽到把无关事件也一起吞掉。"""
+        self.assertFalse(
+            MODULE.acknowledgement_anchor_matches(
+                self.entry, ["肃贪委", "梭罗国立大学"]),
+            "无关事件被已确认表吞掉了，抑制过宽")
+
+
 if __name__ == "__main__":
     unittest.main()
