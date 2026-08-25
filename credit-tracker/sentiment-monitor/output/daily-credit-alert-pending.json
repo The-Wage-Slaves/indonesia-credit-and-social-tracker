@@ -1,77 +1,168 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-24",
+  "date": "2026-08-25",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 11.2,
+    "newsDailyVolumeRisk": 5.5,
     "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "negativeSocialShare": 4.1,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=3; prior-7d median=26.0; robust z=-2.59",
-    "socialVolume": "today=0; prior-7d median=22.0; robust z=-5.00"
+    "newsVolume": "today=1; prior-7d median=23.0; robust z=-2.97",
+    "socialVolume": "today=1; prior-7d median=28.0; robust z=-4.82"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-72b8dd395207",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-e824fb723837",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
       "entities": [
-        "OJK",
-        "Pindar",
-        "UMKM"
+        "Polsek Cengkareng",
+        "Debt Collector"
       ],
-      "headline": "Pembiayaan Pindar UMKM Tembus Rp35 Triliun Per Juni 2026 - achmadnurhidayat.id",
-      "headlineZh": "Pindar对UMKM融资达35.12万亿盾",
-      "summaryZh": "OJK数据显示，截至2026年6月，Pindar对UMKM的融资额达35.12万亿印尼盾，同比增长23.25%，属行业常规数据披露。",
-      "rationale": "常规行业数据披露，非异常事件",
-      "independentSourceCount": 7,
+      "headline": "Ancam Pengguna Mobil Saat Penagihan, Debt Collector Ditangkap Polisi",
+      "headlineZh": "收债人强行上车引冲突",
+      "summaryZh": "收债人追债时强行进入民众车内，在Cengkareng警局引发争吵，警方已介入调查。",
+      "rationale": "具体事件，涉及警方介入的收债冲突。",
+      "independentSourceCount": 3,
       "domains": [
-        "achmadnurhidayat.id",
-        "gosumut.com",
-        "jurnalmakassar.pikiran-rakyat.com",
-        "kabarbisnis.com",
-        "radarpalu.jawapos.com",
-        "seputarsumut.com"
+        "feed.liputan6.com",
+        "kompas.tv",
+        "suara.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b97f7039a086eb89",
-        "d50604b6441dfad3",
-        "6116ea4b627da650",
-        "8f7481792a77da89",
-        "5578066bceb358b1",
-        "4b5a167256f63b73",
-        "fc790d93a168adf4"
+        "3d3f4a4d777a7ad1",
+        "7160c356e4dc9507",
+        "b6cd255110405a66"
       ],
       "articles": [
         {
-          "title": "Pembiayaan Pindar UMKM Tembus Rp35 Triliun Per Juni 2026 - achmadnurhidayat.id",
-          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE54d25OMURYOUlobEtXVUlpc3hCckRHd01oVWM0ZWthYjNJTXhSTU5QV21BRUt4aUNxb0JJQlZ3TV90WmZiSmtaeUZEVXNrZS1oTXpWSWFmbjhhWElYd0FqZGJBLWpmZk9FMFZ2UDN3QnRObm1iUlc0?oc=5"
+          "title": "Ancam Pengguna Mobil Saat Penagihan, Debt Collector Ditangkap Polisi",
+          "link": "https://www.liputan6.com/news/read/8277067/ancam-pengguna-mobil-saat-penagihan-debt-collector-ditangkap-polisi"
         },
         {
-          "title": "Pembiayaan Pindar ke UMKM Melonjak 23,25%, Tembus Rp35,12 Triliun - kabarbisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUVI4UW1kcnRKNFVkR2txZExqOURKQTZLTC1jWDhoOXQ3OHgyWTBTWWtUMGhQQThFZFllcl9rTWZDWGRfYThGRmhEVlg5U1lUQlpJTHZlTGQtdTdEYVVyQlpQSlN3aWtSR2JQOTJuLTRwekNqSHRoa3VoS19DTFhDUkdaSFd6UHZQa0UwZDFaWF9sZDIwNmk2bWN0SHpmYzJkU2JFMHE2UjM?oc=5"
+          "title": "Polisi Ungkap Kronologi Debt Collector Masuk Mobil hingga Cekcok di Polsek Cengkareng - Kompas.tv",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUm84UnJwc1ByeUFUY0ZNanJGc1JBenNJSzlzaEFhZTNrWFlQdndSenpWTVI4c28wUUZrbzVxRjZPQmdTbWstNlRHVmFBQzNadWZCQ3FsZ3ZCaHc1dkNEV2pQZy1uSXhtdW9OOXRZc0tMNmVhemJBbVh6aUZ0bEppUkk2a1RBTHFvWHpzZWUxZkYzaVFNSFFiTFotZHFLbmlmTlhLYlBIR0FpZGNLR2tCeUcwdDlGZVZRUHBRbzYtRVZOZDNhelHSAcYBQVVfeXFMT1JvOFJycHNQcnlBVGNGTWpyRnNSQXpzSUs5c2hBYWUza1hZUHZ3Unp6Vk1SOHNvMFFGa281cUY2T0JnU21rLTZUR1ZhQUMzWnVmQkNxbGd2Qmh3NXZDRFdqUGctbkl4bXVvTjl0WXNLTDZlYXpiQW1YemlGdGxKaVJJNmtUQUxxb1h6c2VlMWZGM2lRTUhRYkxaLWRxS25pZk5YS2JQSEdBaWRjS0drQnlHMHQ5RmVWUVBwUW82LUVWTmQzYXpR?oc=5"
         },
         {
-          "title": "Kontribusi Pindar untuk UMKM Semakin Meningkat, Tembus Rp35,12 Triliun - Radar Palu",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOXVmTEh4b2NlWGxZWjR6T25hbm5tMVRtcXNkUHZkaVdRX21GSXJVNGh5VWl0VHU0TkVOaFVZRlJ0OWRaVWJSUklTbnU5eTljVzl6VWRFZ2F2S1RHX09CakI4YjNmX01CQThRdGtDV2RIQ1Zwcy00UTZMSGIyaWl6LVBGZWt1RlFJTWNKckVIX3g0VC1RU3JVdEI5OFVCUFlEOGRybzlmTHNPQzM0MDdpRWQ4aUx4UVph0gG-AUFVX3lxTFBtU3NMQ3hELXBFbUdkQUNfUTFTcHJ1STVnaHdEb0Y3RURJcl9SRTVsN1dpVWlpcEJuenlPYWNLd2toVXo4LTVDUkk5X2FXUXBDaXFBNW5RSnpRNXNGWlRSOWpLUGZQa2YzdkF3N2liYkpxUWw4ck1OeDFKeERyOFYtdU1ob2ZEVy1CM1owOFlBeUFRa01wMXp6RnQ1UU14VVpKMHcteG9Gc0xuemhncmpKWGJvQ0VUVDNoSHkyMkE?oc=5"
-        },
-        {
-          "title": "OJK Catat Pembiayaan Pinjaman Daring ke UMKM Tumbuh Jadi Rp35,12 Triliun per Juni 2026 - Jurnal Makassar - Jurnal Makassar",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOV1JqRzhWdXhXY2VRYU00MDNqcHBtWHdIUVJQRE1fbGlieXdxZ2pZM0NKODdYQjdTRENaMUFfQXlJYXprOUJ5RVFlSjNwckhhX3lpc2J0dVdYcXFUeEZWbEhzMGFYLU9qOFlWN3BMbUU5UXBFVEh6dkFPbFZNc2d1LUJOZlgzX21VU21rMkNjVVRtSnJRazlnb2h0T25ZRFJDMHVaM1JRVVpsNjNCUGpZQl95UzJEYU1jQ2Q3QW84d1FEVDdINzVmbGNCQVh5QmtubVR2VG1ITkMwN0VEUnlmYUFidUdVb3U20gHoAUFVX3lxTE5XUmpHOFZ1eFdjZVFhTTQwM2pwcG1Yd0hRUlBETV9saWJ5d3FnalkzQ0o4N1hCN1NEQ1oxQV9BeUlhems5QnlFUWVKM3BySGFfeWlzYnR1V1hxcVR4RlZsSHMwYVgtT2o4WVY3cExtRTlRcEVUSHp2QU9sVk1zZ3UtQk5mWDNfbVVTbWsyQ2NVVG1KclFrOWdvaHRPbllEUkMwdVozUlFVWmw2M0JQallCX3lTMkRhTWNDZDdBbzh3UURUN0g3NWZsY0JBWHlCa25tVHZUbUhOQzA3RURSeWZhQWJ1R1VvdTY?oc=5"
-        },
-        {
-          "title": "Pembiayaan Pindar ke UMKM Tembus Rp35,12 Triliun - GoSumut.com",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOVnB3Z3d2MEdBZng2UEpkR0xBX3BWeG41SUxWTVJWR2VSQVlfdUZ1LVEwS2txWWl6M0VOeHJDcDlCRHRnNm5GWmVhTkF4bEFTSHd6ZEp1aG1pei1oTWNrVk1BUmR2d3FyU2VRSWo5TGlsQW9JWjdRdExtcFBOR0s1QzlYb2ZHb2RqZnFXRlFPZGZZd2t3bU5VaUF3?oc=5"
+          "title": "Viral Cekcok di Polsek Cengkareng, Ternyata Buntut Debt Collector Paksa Masuk Mobil Warga - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNVB3amJ6RDJxNFhxN19Gck9keXpSRkFfajdseHpkNllhNkhsSnY4T2JHSWl4eTlxeGhJcENWUTBCSUZGYzAtd21ObmpPOHJRWldZc1UzMEtZYmQtNVVuRWVqZC1kUlJfc3hZQkJMTGsxaEJmQjMxSzRRTFkxX0hMa1FpWTFySjZ1NEp0T3o5YjNDbmV5MDNBZW9zSHdOem5DVk5NSHRRT20xbG41R3Y5aDdpVlh3Mnh6TmJHLWtreXd6Z1pHQ3A0UGhlN3hOUdIBzgFBVV95cUxQb3JEX1JyQW1uVmVqZXFleVBlSU9mWUNfbzRNeDNEU2xoNTFjT0tWMjJSZ2hVVnZWZmVrN2huY24zdWpEOGdOdU1QUkRrMXhRWlNtSDVmUVBrREFmSi1HYURwTXFoSVhUOHctUWFPWFhfYnd1dEFad3BZTnlDbVVkWF91Z1NPLXlNZkp4Y1MzbmVscVpTX2s3WVlrT2FWZXhqOVlzMVF4d1dQT2tyQnNQekl6aXZDX0xuZ3lVLWRtVU45clZDYTFKSGZ0SEdCZw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 7,
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-11ad6b715243",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Polda Jateng",
+        "Polres Sragen",
+        "Bidpropam"
+      ],
+      "headline": "Berantas Judol-Pinjol di Internal Polri, Bidpropam Polda Jateng Periksa HP Ratusan Personel Polres Sragen SRAGEN — Bid Propam Polda Jawa Tengah bersama Si Propam Polres Sragen menggelar kegiatan Peneg",
+      "headlineZh": "警方内部排查非法网贷",
+      "summaryZh": "中爪哇警方对Sragen警局数百名警员手机进行检查，以清除内部涉及非法网贷和在线赌博的行为。",
+      "rationale": "具体监管行动，涉及内部整顿。",
+      "independentSourceCount": 1,
+      "domains": [
+        "instagram.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ff3890d4185f814f"
+      ],
+      "articles": [
+        {
+          "title": "Berantas Judol-Pinjol di Internal Polri, Bidpropam Polda Jateng Periksa HP Ratusan Personel Polres Sragen SRAGEN — Bid Propam Polda Jawa Tengah bersama Si Propa",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1VejZXMEVlVzB3cy1QR0pLd0VHeUt0elhHMmdVcTNDVTRIdG0zS3VaamtqUnZ3azduQ0VFTDhPSmFrYklITjNraHR2V3NuMks3YkFENnBn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-26b7bfb0fbe4",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Kompas.com",
+        "Solo"
+      ],
+      "headline": "Desil Naik akibat Judol-Pinjol, Sejumlah Penerima Bansos di Solo Dicoret - Kompas.com",
+      "headlineZh": "非法网贷致低保被取消",
+      "summaryZh": "因受非法网贷和在线赌博影响，Solo地区部分居民的经济状况指数上升，导致其社会救助金被取消。",
+      "rationale": "具体事件，反映非法网贷对民众的实际影响。",
+      "independentSourceCount": 1,
+      "domains": [
+        "regional.kompas.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5fd34ff700b1fbdb"
+      ],
+      "articles": [
+        {
+          "title": "Desil Naik akibat Judol-Pinjol, Sejumlah Penerima Bansos di Solo Dicoret - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOLW5OUjJ2alRxelN5ek9QMmU5MVdqRzlsdUtVZloxYnRUWGVZWWZPRlNyX2JRTmhmU0NxM0dJTVBXV01iMmNiT19TZGw5Rm80Q1VQWVVVZVUzTnhJb0c4S3hYNTA3SzZDQ2pQUkNoRXFyUTBmSmlCeFAtWGdyMlY0eWRwZXZhQUlxQk5UVWI1LTBmODl4dXY3Vmhsd3JZV1BmSkVYc2FBRkhUQnlEeXp4OTVUS2FWNm5BbXJ2M3g3NUNUWWs?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-01067b16d08a",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Pinjol Ilegal Banjir Aduan, OJK Catat 22.394 Laporan hingga Juli 2026 - Kaltim Post",
+      "headlineZh": "非法网贷投诉达2.2万起",
+      "summaryZh": "OJK记录截至2026年7月，非法网贷相关投诉达22394起，显示非法活动猖獗。",
+      "rationale": "具体数据，反映非法网贷问题严重。",
+      "independentSourceCount": 1,
+      "domains": [
+        "kaltimpost.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5b41233cb1a11777"
+      ],
+      "articles": [
+        {
+          "title": "Pinjol Ilegal Banjir Aduan, OJK Catat 22.394 Laporan hingga Juli 2026 - Kaltim Post",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdUdrcHR3d2hKTVhMS1hFSWpiM0JhX28xVlBtYTJuTEh2NlRlX2JzNnlyRXFtNHpjSkVvYUtMMS03SklXOE9lNXRCWmdkd0FFTlZhREZnTk9BV3ZvZ2I4UExvbG94ckd4Wk5RZUNyUmJJc1JCSHEwX3Etc0FTR1d3WEhlSG93WHpCME54YWlWdHNieEpDeUVSYzlOb3R6NWZZYmw1dmJzTmcwbDQyeGJsMXN0cW9jZk4tYnhnetIBvAFBVV95cUxOdUdrcHR3d2hKTVhMS1hFSWpiM0JhX28xVlBtYTJuTEh2NlRlX2JzNnlyRXFtNHpjSkVvYUtMMS03SklXOE9lNXRCWmdkd0FFTlZhREZnTk9BV3ZvZ2I4UExvbG94ckd4Wk5RZUNyUmJJc1JCSHEwX3Etc0FTR1d3WEhlSG93WHpCME54YWlWdHNieEpDeUVSYzlOb3R6NWZZYmw1dmJzTmcwbDQyeGJsMXN0cW9jZk4tYnhneg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -85,71 +176,160 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 25,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 9,
+    "candidateCount": 37,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 7,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 25
+      "ok": 37
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-72b8dd395207",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-e824fb723837",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
       "entities": [
-        "OJK",
-        "Pindar",
-        "UMKM"
+        "Polsek Cengkareng",
+        "Debt Collector"
       ],
-      "headline": "Pembiayaan Pindar UMKM Tembus Rp35 Triliun Per Juni 2026 - achmadnurhidayat.id",
-      "headlineZh": "Pindar对UMKM融资达35.12万亿盾",
-      "summaryZh": "OJK数据显示，截至2026年6月，Pindar对UMKM的融资额达35.12万亿印尼盾，同比增长23.25%，属行业常规数据披露。",
-      "rationale": "常规行业数据披露，非异常事件",
-      "independentSourceCount": 7,
+      "headline": "Ancam Pengguna Mobil Saat Penagihan, Debt Collector Ditangkap Polisi",
+      "headlineZh": "收债人强行上车引冲突",
+      "summaryZh": "收债人追债时强行进入民众车内，在Cengkareng警局引发争吵，警方已介入调查。",
+      "rationale": "具体事件，涉及警方介入的收债冲突。",
+      "independentSourceCount": 3,
       "domains": [
-        "achmadnurhidayat.id",
-        "gosumut.com",
-        "jurnalmakassar.pikiran-rakyat.com",
-        "kabarbisnis.com",
-        "radarpalu.jawapos.com",
-        "seputarsumut.com"
+        "feed.liputan6.com",
+        "kompas.tv",
+        "suara.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b97f7039a086eb89",
-        "d50604b6441dfad3",
-        "6116ea4b627da650",
-        "8f7481792a77da89",
-        "5578066bceb358b1",
-        "4b5a167256f63b73",
-        "fc790d93a168adf4"
+        "3d3f4a4d777a7ad1",
+        "7160c356e4dc9507",
+        "b6cd255110405a66"
       ],
       "articles": [
         {
-          "title": "Pembiayaan Pindar UMKM Tembus Rp35 Triliun Per Juni 2026 - achmadnurhidayat.id",
-          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE54d25OMURYOUlobEtXVUlpc3hCckRHd01oVWM0ZWthYjNJTXhSTU5QV21BRUt4aUNxb0JJQlZ3TV90WmZiSmtaeUZEVXNrZS1oTXpWSWFmbjhhWElYd0FqZGJBLWpmZk9FMFZ2UDN3QnRObm1iUlc0?oc=5"
+          "title": "Ancam Pengguna Mobil Saat Penagihan, Debt Collector Ditangkap Polisi",
+          "link": "https://www.liputan6.com/news/read/8277067/ancam-pengguna-mobil-saat-penagihan-debt-collector-ditangkap-polisi"
         },
         {
-          "title": "Pembiayaan Pindar ke UMKM Melonjak 23,25%, Tembus Rp35,12 Triliun - kabarbisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOUVI4UW1kcnRKNFVkR2txZExqOURKQTZLTC1jWDhoOXQ3OHgyWTBTWWtUMGhQQThFZFllcl9rTWZDWGRfYThGRmhEVlg5U1lUQlpJTHZlTGQtdTdEYVVyQlpQSlN3aWtSR2JQOTJuLTRwekNqSHRoa3VoS19DTFhDUkdaSFd6UHZQa0UwZDFaWF9sZDIwNmk2bWN0SHpmYzJkU2JFMHE2UjM?oc=5"
+          "title": "Polisi Ungkap Kronologi Debt Collector Masuk Mobil hingga Cekcok di Polsek Cengkareng - Kompas.tv",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPUm84UnJwc1ByeUFUY0ZNanJGc1JBenNJSzlzaEFhZTNrWFlQdndSenpWTVI4c28wUUZrbzVxRjZPQmdTbWstNlRHVmFBQzNadWZCQ3FsZ3ZCaHc1dkNEV2pQZy1uSXhtdW9OOXRZc0tMNmVhemJBbVh6aUZ0bEppUkk2a1RBTHFvWHpzZWUxZkYzaVFNSFFiTFotZHFLbmlmTlhLYlBIR0FpZGNLR2tCeUcwdDlGZVZRUHBRbzYtRVZOZDNhelHSAcYBQVVfeXFMT1JvOFJycHNQcnlBVGNGTWpyRnNSQXpzSUs5c2hBYWUza1hZUHZ3Unp6Vk1SOHNvMFFGa281cUY2T0JnU21rLTZUR1ZhQUMzWnVmQkNxbGd2Qmh3NXZDRFdqUGctbkl4bXVvTjl0WXNLTDZlYXpiQW1YemlGdGxKaVJJNmtUQUxxb1h6c2VlMWZGM2lRTUhRYkxaLWRxS25pZk5YS2JQSEdBaWRjS0drQnlHMHQ5RmVWUVBwUW82LUVWTmQzYXpR?oc=5"
         },
         {
-          "title": "Kontribusi Pindar untuk UMKM Semakin Meningkat, Tembus Rp35,12 Triliun - Radar Palu",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOOXVmTEh4b2NlWGxZWjR6T25hbm5tMVRtcXNkUHZkaVdRX21GSXJVNGh5VWl0VHU0TkVOaFVZRlJ0OWRaVWJSUklTbnU5eTljVzl6VWRFZ2F2S1RHX09CakI4YjNmX01CQThRdGtDV2RIQ1Zwcy00UTZMSGIyaWl6LVBGZWt1RlFJTWNKckVIX3g0VC1RU3JVdEI5OFVCUFlEOGRybzlmTHNPQzM0MDdpRWQ4aUx4UVph0gG-AUFVX3lxTFBtU3NMQ3hELXBFbUdkQUNfUTFTcHJ1STVnaHdEb0Y3RURJcl9SRTVsN1dpVWlpcEJuenlPYWNLd2toVXo4LTVDUkk5X2FXUXBDaXFBNW5RSnpRNXNGWlRSOWpLUGZQa2YzdkF3N2liYkpxUWw4ck1OeDFKeERyOFYtdU1ob2ZEVy1CM1owOFlBeUFRa01wMXp6RnQ1UU14VVpKMHcteG9Gc0xuemhncmpKWGJvQ0VUVDNoSHkyMkE?oc=5"
-        },
-        {
-          "title": "OJK Catat Pembiayaan Pinjaman Daring ke UMKM Tumbuh Jadi Rp35,12 Triliun per Juni 2026 - Jurnal Makassar - Jurnal Makassar",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOV1JqRzhWdXhXY2VRYU00MDNqcHBtWHdIUVJQRE1fbGlieXdxZ2pZM0NKODdYQjdTRENaMUFfQXlJYXprOUJ5RVFlSjNwckhhX3lpc2J0dVdYcXFUeEZWbEhzMGFYLU9qOFlWN3BMbUU5UXBFVEh6dkFPbFZNc2d1LUJOZlgzX21VU21rMkNjVVRtSnJRazlnb2h0T25ZRFJDMHVaM1JRVVpsNjNCUGpZQl95UzJEYU1jQ2Q3QW84d1FEVDdINzVmbGNCQVh5QmtubVR2VG1ITkMwN0VEUnlmYUFidUdVb3U20gHoAUFVX3lxTE5XUmpHOFZ1eFdjZVFhTTQwM2pwcG1Yd0hRUlBETV9saWJ5d3FnalkzQ0o4N1hCN1NEQ1oxQV9BeUlhems5QnlFUWVKM3BySGFfeWlzYnR1V1hxcVR4RlZsSHMwYVgtT2o4WVY3cExtRTlRcEVUSHp2QU9sVk1zZ3UtQk5mWDNfbVVTbWsyQ2NVVG1KclFrOWdvaHRPbllEUkMwdVozUlFVWmw2M0JQallCX3lTMkRhTWNDZDdBbzh3UURUN0g3NWZsY0JBWHlCa25tVHZUbUhOQzA3RURSeWZhQWJ1R1VvdTY?oc=5"
-        },
-        {
-          "title": "Pembiayaan Pindar ke UMKM Tembus Rp35,12 Triliun - GoSumut.com",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOVnB3Z3d2MEdBZng2UEpkR0xBX3BWeG41SUxWTVJWR2VSQVlfdUZ1LVEwS2txWWl6M0VOeHJDcDlCRHRnNm5GWmVhTkF4bEFTSHd6ZEp1aG1pei1oTWNrVk1BUmR2d3FyU2VRSWo5TGlsQW9JWjdRdExtcFBOR0s1QzlYb2ZHb2RqZnFXRlFPZGZZd2t3bU5VaUF3?oc=5"
+          "title": "Viral Cekcok di Polsek Cengkareng, Ternyata Buntut Debt Collector Paksa Masuk Mobil Warga - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQNVB3amJ6RDJxNFhxN19Gck9keXpSRkFfajdseHpkNllhNkhsSnY4T2JHSWl4eTlxeGhJcENWUTBCSUZGYzAtd21ObmpPOHJRWldZc1UzMEtZYmQtNVVuRWVqZC1kUlJfc3hZQkJMTGsxaEJmQjMxSzRRTFkxX0hMa1FpWTFySjZ1NEp0T3o5YjNDbmV5MDNBZW9zSHdOem5DVk5NSHRRT20xbG41R3Y5aDdpVlh3Mnh6TmJHLWtreXd6Z1pHQ3A0UGhlN3hOUdIBzgFBVV95cUxQb3JEX1JyQW1uVmVqZXFleVBlSU9mWUNfbzRNeDNEU2xoNTFjT0tWMjJSZ2hVVnZWZmVrN2huY24zdWpEOGdOdU1QUkRrMXhRWlNtSDVmUVBrREFmSi1HYURwTXFoSVhUOHctUWFPWFhfYnd1dEFad3BZTnlDbVVkWF91Z1NPLXlNZkp4Y1MzbmVscVpTX2s3WVlrT2FWZXhqOVlzMVF4d1dQT2tyQnNQekl6aXZDX0xuZ3lVLWRtVU45clZDYTFKSGZ0SEdCZw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 7,
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-11ad6b715243",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Polda Jateng",
+        "Polres Sragen",
+        "Bidpropam"
+      ],
+      "headline": "Berantas Judol-Pinjol di Internal Polri, Bidpropam Polda Jateng Periksa HP Ratusan Personel Polres Sragen SRAGEN — Bid Propam Polda Jawa Tengah bersama Si Propam Polres Sragen menggelar kegiatan Peneg",
+      "headlineZh": "警方内部排查非法网贷",
+      "summaryZh": "中爪哇警方对Sragen警局数百名警员手机进行检查，以清除内部涉及非法网贷和在线赌博的行为。",
+      "rationale": "具体监管行动，涉及内部整顿。",
+      "independentSourceCount": 1,
+      "domains": [
+        "instagram.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ff3890d4185f814f"
+      ],
+      "articles": [
+        {
+          "title": "Berantas Judol-Pinjol di Internal Polri, Bidpropam Polda Jateng Periksa HP Ratusan Personel Polres Sragen SRAGEN — Bid Propam Polda Jawa Tengah bersama Si Propa",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1VejZXMEVlVzB3cy1QR0pLd0VHeUt0elhHMmdVcTNDVTRIdG0zS3VaamtqUnZ3azduQ0VFTDhPSmFrYklITjNraHR2V3NuMks3YkFENnBn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-26b7bfb0fbe4",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Kompas.com",
+        "Solo"
+      ],
+      "headline": "Desil Naik akibat Judol-Pinjol, Sejumlah Penerima Bansos di Solo Dicoret - Kompas.com",
+      "headlineZh": "非法网贷致低保被取消",
+      "summaryZh": "因受非法网贷和在线赌博影响，Solo地区部分居民的经济状况指数上升，导致其社会救助金被取消。",
+      "rationale": "具体事件，反映非法网贷对民众的实际影响。",
+      "independentSourceCount": 1,
+      "domains": [
+        "regional.kompas.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5fd34ff700b1fbdb"
+      ],
+      "articles": [
+        {
+          "title": "Desil Naik akibat Judol-Pinjol, Sejumlah Penerima Bansos di Solo Dicoret - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOLW5OUjJ2alRxelN5ek9QMmU5MVdqRzlsdUtVZloxYnRUWGVZWWZPRlNyX2JRTmhmU0NxM0dJTVBXV01iMmNiT19TZGw5Rm80Q1VQWVVVZVUzTnhJb0c4S3hYNTA3SzZDQ2pQUkNoRXFyUTBmSmlCeFAtWGdyMlY0eWRwZXZhQUlxQk5UVWI1LTBmODl4dXY3Vmhsd3JZV1BmSkVYc2FBRkhUQnlEeXp4OTVUS2FWNm5BbXJ2M3g3NUNUWWs?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-01067b16d08a",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Pinjol Ilegal Banjir Aduan, OJK Catat 22.394 Laporan hingga Juli 2026 - Kaltim Post",
+      "headlineZh": "非法网贷投诉达2.2万起",
+      "summaryZh": "OJK记录截至2026年7月，非法网贷相关投诉达22394起，显示非法活动猖獗。",
+      "rationale": "具体数据，反映非法网贷问题严重。",
+      "independentSourceCount": 1,
+      "domains": [
+        "kaltimpost.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5b41233cb1a11777"
+      ],
+      "articles": [
+        {
+          "title": "Pinjol Ilegal Banjir Aduan, OJK Catat 22.394 Laporan hingga Juli 2026 - Kaltim Post",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdUdrcHR3d2hKTVhMS1hFSWpiM0JhX28xVlBtYTJuTEh2NlRlX2JzNnlyRXFtNHpjSkVvYUtMMS03SklXOE9lNXRCWmdkd0FFTlZhREZnTk9BV3ZvZ2I4UExvbG94ckd4Wk5RZUNyUmJJc1JCSHEwX3Etc0FTR1d3WEhlSG93WHpCME54YWlWdHNieEpDeUVSYzlOb3R6NWZZYmw1dmJzTmcwbDQyeGJsMXN0cW9jZk4tYnhnetIBvAFBVV95cUxOdUdrcHR3d2hKTVhMS1hFSWpiM0JhX28xVlBtYTJuTEh2NlRlX2JzNnlyRXFtNHpjSkVvYUtMMS03SklXOE9lNXRCWmdkd0FFTlZhREZnTk9BV3ZvZ2I4UExvbG94ckd4Wk5RZUNyUmJJc1JCSHEwX3Etc0FTR1d3WEhlSG93WHpCME54YWlWdHNieEpDeUVSYzlOb3R6NWZZYmw1dmJzTmcwbDQyeGJsMXN0cW9jZk4tYnhneg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -162,31 +342,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 29,
-    "socialItemCount48h": 20
+    "articleCount48h": 39,
+    "socialItemCount48h": 30
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 482,
-    "classifiedCount": 119,
-    "irrelevantDropped": 121,
+    "inputCount": 491,
+    "classifiedCount": 107,
+    "irrelevantDropped": 133,
     "model": "deepseek-chat",
-    "fallbackCount": 242,
+    "fallbackCount": 251,
     "labelCounts": {
-      "NEG": 90,
-      "MIX": 7,
-      "POS": 22
+      "NEG": 72,
+      "MIX": 16,
+      "POS": 19
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
