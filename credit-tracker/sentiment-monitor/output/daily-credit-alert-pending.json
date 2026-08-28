@@ -1,53 +1,52 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-27",
-  "level": "high_pending",
+  "date": "2026-08-28",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 25.4,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 28.6,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 43.9,
+    "socialDailyVolumeRisk": 6.6,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=6; prior-7d median=23.0; robust z=-1.64",
-    "socialVolume": "today=1; prior-7d median=31.0; robust z=-4.05"
+    "newsVolume": "today=17; prior-7d median=20.0; robust z=-0.40",
+    "socialVolume": "today=3; prior-7d median=33.0; robust z=-2.89"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-33f8f18af124",
+      "id": "llm-dde5ffbb4143",
       "eventType": "consumer_harm",
-      "severity": 0.75,
+      "severity": 0.55,
       "entities": [
-        "Badung",
-        "Kompas.com"
+        "Semarang",
+        "Lombok Barat"
       ],
-      "headline": "Diduga Akibat Terlilit Pinjol, Karyawan Ditemukan Tak Bernyawa - BALIPOST.com",
-      "headlineZh": "巴东便利店员工疑因网贷自杀",
-      "summaryZh": "巴东一名便利店员工疑因被网贷催收困扰而上吊自杀，警方已介入调查。",
-      "rationale": "致死案件，涉及消费者受害，严重度高。",
+      "headline": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
+      "headlineZh": "多地取消涉网赌网贷者补贴",
+      "summaryZh": "三宝垄和西龙目岛数千名社会援助受益人因被检测到参与网络赌博或网贷而被取消资格，反映消费者陷入债务困境。",
+      "rationale": "多地取消补贴，反映消费者受害",
       "independentSourceCount": 2,
       "domains": [
-        "balipost.com",
-        "denpasar.kompas.com"
+        "detik.com",
+        "suarantb.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "abd260b04331a4fd",
-        "965b373a5180f27f"
+        "e91774f36de41587",
+        "39cfbfe7e4fa1915"
       ],
       "articles": [
         {
-          "title": "Diduga Akibat Terlilit Pinjol, Karyawan Ditemukan Tak Bernyawa - BALIPOST.com",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUV92MzNSTzJIRGR1ZGdnNDFiS29zRzh4OWtfZ3NrWnhrclB2RjlFQWU3VGZGZkc3NmctRlVJcUdETFpQNlBVcDZpeGtoVXdGcW1tS3BOVDdLNGJRZFhZTjJOQ1B1NFNqUGRfeWVfcW1Xc2xJX1dKRHZkOW5QMHhnVGVMQl9LZnoxLUpFZEhwODNJQ1RBN2RCdQ?oc=5"
+          "title": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYk1na2l0NDFEaXpVZGxZNHFqLVJ6VEpuMktRQnhFUkJHTVBQZkZlQnN0Sjhhbmxha0R0VE0yRjdtVjM5al9OeDdWeUVrUkNHRmg3QWtkYWtXaV9ZMVZBZWc0RnZtNmNoUUxvNTVxVEpLTnB2RGxrVDJUcGVuWnRGRzU5Y05xTjd1ZFVMZC1DZTg0MlJpRjR2TW8tYmRtSjQzbFV1MWVQeE81RTYxdS1qN1pn0gG3AUFVX3lxTE5XdVJnODNRVHdpZk95bHREUlRKemcyS3BjRVlXUUpFNHJxbUtTMnhMb1pkZThSSzBDQlBlVG1xTlRadmRSOWRmMllVSXdYZ0RVSDNMWmhUcU5iVWg2eGhINjIwa0toTUVXeXFwMEJGVmdjc3F4QnFjM1l6OHdidXpfc2JzTllHMklITWZGaDRGd1RDMHZyUS13ekhHTW5aY25za0xjdlYyNU03TTdweEpPVnotNGxmVQ?oc=5"
         },
         {
-          "title": "Sempat Gelisah Dikejar Pinjol, Pegawai Minimarket di Badung Ditemukan Tewas Gantung Diri - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTWNRMFJ5b2JfcmtRbWRadzBjVGY5UFFVM0FBalZvM3RhZGtSYXpkYVJlMzRCOXh3NmhkQTBuRkZWbzRaNGlHVFc0SjRIaU9kNE85Nm1ubnFHVkFrMEo0OGxwQklpdnQxUUxZT2dsVlhZVGFfWmRSX3dadG15VjBlT1gyVm5WTjlOcGN0Z3Jrd2I0RlpTdEh6T19vWUM3dk45aTFjazJBN3E0NlFsRmhFOHJkRVM2Rmd4TXd1aVFqeGNUa05aUnRv?oc=5"
+          "title": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR0pUU0Q0eWcxV0lKT25ZcHJBRnlfdnNrOXRuNUF5T0J4UVo4RlVCdUJSV2hpMU42TFN0NmVtSE1HYUZXY1VfekRPUHhhZVF6Tm1oVmk3ajlNMUpqNE1naElnYVlvckZRZXVvZUxxNzlBMGx1b3l0S2ZxTDNxSDV3OWhwRkxJQTI3QUVuS0lkeDFMYjFiX2pCWUE2OHBOb0VHZjRXWWZ2VkdET3M?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
@@ -58,56 +57,54 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    }
-  ],
-  "lowEvidenceLeads": [
+    },
     {
-      "id": "llm-3d461768bfbc",
-      "eventType": "consumer_harm",
+      "id": "llm-1c6fbb2c226a",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "Lombok Barat",
-        "Pemerintah Daerah"
+        "OJK"
       ],
-      "headline": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
-      "headlineZh": "龙目岛 Barat 受助者因涉网贷被除名",
-      "summaryZh": "西龙目岛多名社会援助金受助者因被检测到参与在线赌博或网贷而被取消资格，反映消费者陷入债务问题。",
-      "rationale": "具体事件，涉及受助者因网贷被取消资格，造成实际影响。",
+      "headline": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
+      "headlineZh": "OJK调整3家Pindar融资上限",
+      "summaryZh": "OJK调整了三家P2P借贷平台的融资上限，并说明原因，属监管机构对行业的常规调整措施。",
+      "rationale": "监管调整融资上限，属监管介入",
       "independentSourceCount": 1,
       "domains": [
-        "suarantb.com"
+        "infobanknews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "39cfbfe7e4fa1915"
+        "f29caab7c0cf1051"
       ],
       "articles": [
         {
-          "title": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR0pUU0Q0eWcxV0lKT25ZcHJBRnlfdnNrOXRuNUF5T0J4UVo4RlVCdUJSV2hpMU42TFN0NmVtSE1HYUZXY1VfekRPUHhhZVF6Tm1oVmk3ajlNMUpqNE1naElnYVlvckZRZXVvZUxxNzlBMGx1b3l0S2ZxTDNxSDV3OWhwRkxJQTI3QUVuS0lkeDFMYjFiX2pCWUE2OHBOb0VHZjRXWWZ2VkdET3M?oc=5"
+          "title": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPT2Z6ckVzbnMtN18zYWlpeDJlYmZ1NlFROEtnWnVFdUp0R2ZvX0pENExMX05DRWFFQ0YyZ1BLNkl5RmM0UG5LOWNKTTM4MVFZTk5HYm15SmV6dzQxVjBxUzFfN3pMRUE1MzE0Wk5sYlExbkxKb2JXQ2dsWC1LSWl3ZDdTcVZFN00teE9pbFB3?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-3aa5c914c53c",
+      "id": "llm-7dc6cfded4e2",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "Purworejo",
-        "OJK"
+        "Purworejo"
       ],
       "headline": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
-      "headlineZh": "普沃雷佐违规催收投诉已处理完毕",
-      "summaryZh": "针对普沃雷佐地区违规催收的投诉处理已结束，涉及监管介入，但影响局部。",
-      "rationale": "具体监管处理事件，影响局部。",
+      "headlineZh": "Purworejo催收违规处理完毕",
+      "summaryZh": "Purworejo地区涉嫌违规催收的案件已处理完毕，表明监管机构对催收行为进行了介入和处置。",
+      "rationale": "违规催收案件处理完毕，监管介入",
       "independentSourceCount": 1,
       "domains": [
         "economy.okezone.com"
@@ -120,111 +117,6 @@
         {
           "title": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSGNxdGhJM21TaWJ3VUUxc3E1RHFmeDBfaEVrTjhJZ3BBY1AwMFlYckJwdE1la0Y0V1ItZkRHWWs2SGlIU3F1S1JESTVDUWZYWUc2M0dVaF9COUxyRlRaXzVRVVdzRDNyWURWYVpRQy1PTXRVVTJHN2NUcmdMRUNjNzFxcHd0bldzTGdqRjcwNVRlRVNGZ3FSSlRhd0phSk1QRXc4amF0cEl6TTNyUUVuNm1XMVFfcDRTelhTOdIBuwFBVV95cUxNNDdSaFdKSVRsWlhYRHpBYndLZEZQdENveUpRZVlBVWRMSG1GbEp4aVdEUkVWVUFBbnh6eThGYmxzOG16NmxuanV4bENVVy13cnZhUmZCOUlEMGtNXzZBcTdHa2pFd1FSUndOczEwM3ZZaUVCcEpFTGFyVzBHOEs4UTVtZTl5bGk1UEhfWXJ5bTBMd2dvc1luVkJpQUpaLXFmSTFkc3VIRFowcGRJYnNuYVNMWUJ3YXUydFNV?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9dd8c487cedd",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "AMPB"
-      ],
-      "headline": "OJK Dalami Polemik Rekening Koordinator AMPB yang Tampang Donasi Rp80,9 Juta - Parapuan",
-      "headlineZh": "OJK 调查 AMPB 协调员账户争议",
-      "summaryZh": "OJK 正在调查 AMPB 协调员涉嫌挪用 8090 万印尼盾捐款的账户争议，属监管介入。",
-      "rationale": "监管调查具体事件，影响局部。",
-      "independentSourceCount": 1,
-      "domains": [
-        "parapuan.co"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "00fab58f0227b036"
-      ],
-      "articles": [
-        {
-          "title": "OJK Dalami Polemik Rekening Koordinator AMPB yang Tampang Donasi Rp80,9 Juta - Parapuan",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObmh4UFM3d1liaC1sbUROQXZRMVF0LTZ5ZnQwaklGMzQwU0NmODRzMmRobzJXRWNROUt1MExQdFV5S0RlZGdxOXRDU043aHZiczQ4dlFyNDhRN2ZEbXJfZDE2M2hPU0hUMjN0b0lIdnZIb2tSS1RlMWdsUHJEVGVBWW5UdlVUeVBxMm5XLTJWX1I5cUlKQlhvY1hHbFRGb0dIaWhnNHpiMjI0UjJIWWlsOURPdljSAbMBQVVfeXFMTzRVMkdjS0lzTnFNbVJOcmw0U3ZWTXkzRVRURVZTVDZ6aWNuTjlTUmZJVE1KUWItOUZ6ckdiaUc2QTJvMEJ1d1dVMWlNeTNCYmMwY3hJZjZhZ1p5Q3JnTHpaeWktZVhWVEVPNVBSMV9SZ25rQzJjbXhVeFdGdkdGd3dDajNuRnJQTWdWdHdhbHhzVkZxb1VocUpMbjNSOUlDUkdkeVFNaWVsUnMyRFI2Rkljb0U?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e5db770c1fb8",
-      "eventType": "regulatory_action",
-      "severity": 0.9,
-      "entities": [
-        "OJK",
-        "Pinjam Modal"
-      ],
-      "headline": "OJK Setujui Pencabutan Izin, Pinjol Pinjam Modal Hentikan Seluruh Kegiatan Usaha - Bisnis.com",
-      "headlineZh": "OJK 批准吊销 Pinjam Modal 牌照",
-      "summaryZh": "OJK 批准吊销网贷平台 Pinjam Modal 的营业执照，该平台已停止所有业务活动。",
-      "rationale": "监管吊销牌照，严重度高。",
-      "independentSourceCount": 1,
-      "domains": [
-        "finansial.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "30d1c72aa990d867"
-      ],
-      "articles": [
-        {
-          "title": "OJK Setujui Pencabutan Izin, Pinjol Pinjam Modal Hentikan Seluruh Kegiatan Usaha - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMnpKeXpucmdDNksydkpKVWNYcGFVV3ppWEc3dW1SYk1wWW9ydVBROU5JSGszNkdORWhVM29WVXZ6RGphcDVkUVhlYy1rVjVoZHpuMkhydlVwVW9DZWRxZ09mNDVWdFZLMVFFUGdhbWZuQmhiUWUyQVR2Y240N2U0WE9KRjR2Mlo4NjBsV3pEVXIzTUd1RVdvRDFEVmxqcFRvRkNuS2lqc1BnSE1yVnZFR3prWDN6OXcxTkpaY19MaTlZWEF1bjhvUjcweWNGSHc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-684ff41278a2",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Supriyono"
-      ],
-      "headline": "OJK dalami penundaan transaksi rekening milik Supriyono - ANTARA News Makassar",
-      "headlineZh": "OJK 调查 Supriyono 账户交易延迟",
-      "summaryZh": "OJK 正在调查 Supriyono 账户交易被延迟的问题，涉及监管介入。",
-      "rationale": "监管调查具体事件，影响局部。",
-      "independentSourceCount": 1,
-      "domains": [
-        "makassar.antaranews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e73e01c80373cd5c"
-      ],
-      "articles": [
-        {
-          "title": "OJK dalami penundaan transaksi rekening milik Supriyono - ANTARA News Makassar",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQX09UTnVFRHEtU1hhQS1VbFNZRXNvSVpWOUJNV0pybV9wLU5Nc3JEVHhDZm0tbHB5R0pEc01jcG5pbUtDdXdQRkJwSldIS1lhV3pkNzlQZGtXbERjMkNfTDJ4RGxSbG4zc0xqcVR3QUZJNVExM3A3dWdSaDNLeWZ2SUQ4Wk9yYnVrRmJ2dXhqeEtjZzgtSmYzNm5mY2FmTU5ESnZ3?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -241,43 +133,49 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 26,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 14,
+    "candidateCount": 22,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 13,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 26
+      "ok": 22
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-3d461768bfbc",
+      "id": "llm-dde5ffbb4143",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Lombok Barat",
-        "Pemerintah Daerah"
+        "Semarang",
+        "Lombok Barat"
       ],
-      "headline": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
-      "headlineZh": "龙目岛 Barat 受助者因涉网贷被除名",
-      "summaryZh": "西龙目岛多名社会援助金受助者因被检测到参与在线赌博或网贷而被取消资格，反映消费者陷入债务问题。",
-      "rationale": "具体事件，涉及受助者因网贷被取消资格，造成实际影响。",
-      "independentSourceCount": 1,
+      "headline": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
+      "headlineZh": "多地取消涉网赌网贷者补贴",
+      "summaryZh": "三宝垄和西龙目岛数千名社会援助受益人因被检测到参与网络赌博或网贷而被取消资格，反映消费者陷入债务困境。",
+      "rationale": "多地取消补贴，反映消费者受害",
+      "independentSourceCount": 2,
       "domains": [
+        "detik.com",
         "suarantb.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "e91774f36de41587",
         "39cfbfe7e4fa1915"
       ],
       "articles": [
+        {
+          "title": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYk1na2l0NDFEaXpVZGxZNHFqLVJ6VEpuMktRQnhFUkJHTVBQZkZlQnN0Sjhhbmxha0R0VE0yRjdtVjM5al9OeDdWeUVrUkNHRmg3QWtkYWtXaV9ZMVZBZWc0RnZtNmNoUUxvNTVxVEpLTnB2RGxrVDJUcGVuWnRGRzU5Y05xTjd1ZFVMZC1DZTg0MlJpRjR2TW8tYmRtSjQzbFV1MWVQeE81RTYxdS1qN1pn0gG3AUFVX3lxTE5XdVJnODNRVHdpZk95bHREUlRKemcyS3BjRVlXUUpFNHJxbUtTMnhMb1pkZThSSzBDQlBlVG1xTlRadmRSOWRmMllVSXdYZ0RVSDNMWmhUcU5iVWg2eGhINjIwa0toTUVXeXFwMEJGVmdjc3F4QnFjM1l6OHdidXpfc2JzTllHMklITWZGaDRGd1RDMHZyUS13ekhHTW5aY25za0xjdlYyNU03TTdweEpPVnotNGxmVQ?oc=5"
+        },
         {
           "title": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
           "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR0pUU0Q0eWcxV0lKT25ZcHJBRnlfdnNrOXRuNUF5T0J4UVo4RlVCdUJSV2hpMU42TFN0NmVtSE1HYUZXY1VfekRPUHhhZVF6Tm1oVmk3ajlNMUpqNE1naElnYVlvckZRZXVvZUxxNzlBMGx1b3l0S2ZxTDNxSDV3OWhwRkxJQTI3QUVuS0lkeDFMYjFiX2pCWUE2OHBOb0VHZjRXWWZ2VkdET3M?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -287,17 +185,52 @@
       }
     },
     {
-      "id": "llm-3aa5c914c53c",
+      "id": "llm-1c6fbb2c226a",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "Purworejo",
         "OJK"
       ],
+      "headline": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
+      "headlineZh": "OJK调整3家Pindar融资上限",
+      "summaryZh": "OJK调整了三家P2P借贷平台的融资上限，并说明原因，属监管机构对行业的常规调整措施。",
+      "rationale": "监管调整融资上限，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f29caab7c0cf1051"
+      ],
+      "articles": [
+        {
+          "title": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPT2Z6ckVzbnMtN18zYWlpeDJlYmZ1NlFROEtnWnVFdUp0R2ZvX0pENExMX05DRWFFQ0YyZ1BLNkl5RmM0UG5LOWNKTTM4MVFZTk5HYm15SmV6dzQxVjBxUzFfN3pMRUE1MzE0Wk5sYlExbkxKb2JXQ2dsWC1LSWl3ZDdTcVZFN00teE9pbFB3?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-7dc6cfded4e2",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Purworejo"
+      ],
       "headline": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
-      "headlineZh": "普沃雷佐违规催收投诉已处理完毕",
-      "summaryZh": "针对普沃雷佐地区违规催收的投诉处理已结束，涉及监管介入，但影响局部。",
-      "rationale": "具体监管处理事件，影响局部。",
+      "headlineZh": "Purworejo催收违规处理完毕",
+      "summaryZh": "Purworejo地区涉嫌违规催收的案件已处理完毕，表明监管机构对催收行为进行了介入和处置。",
+      "rationale": "违规催收案件处理完毕，监管介入",
       "independentSourceCount": 1,
       "domains": [
         "economy.okezone.com"
@@ -320,182 +253,36 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
-    {
-      "id": "llm-33f8f18af124",
-      "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [
-        "Badung",
-        "Kompas.com"
-      ],
-      "headline": "Diduga Akibat Terlilit Pinjol, Karyawan Ditemukan Tak Bernyawa - BALIPOST.com",
-      "headlineZh": "巴东便利店员工疑因网贷自杀",
-      "summaryZh": "巴东一名便利店员工疑因被网贷催收困扰而上吊自杀，警方已介入调查。",
-      "rationale": "致死案件，涉及消费者受害，严重度高。",
-      "independentSourceCount": 2,
-      "domains": [
-        "balipost.com",
-        "denpasar.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "abd260b04331a4fd",
-        "965b373a5180f27f"
-      ],
-      "articles": [
-        {
-          "title": "Diduga Akibat Terlilit Pinjol, Karyawan Ditemukan Tak Bernyawa - BALIPOST.com",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUV92MzNSTzJIRGR1ZGdnNDFiS29zRzh4OWtfZ3NrWnhrclB2RjlFQWU3VGZGZkc3NmctRlVJcUdETFpQNlBVcDZpeGtoVXdGcW1tS3BOVDdLNGJRZFhZTjJOQ1B1NFNqUGRfeWVfcW1Xc2xJX1dKRHZkOW5QMHhnVGVMQl9LZnoxLUpFZEhwODNJQ1RBN2RCdQ?oc=5"
-        },
-        {
-          "title": "Sempat Gelisah Dikejar Pinjol, Pegawai Minimarket di Badung Ditemukan Tewas Gantung Diri - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTWNRMFJ5b2JfcmtRbWRadzBjVGY5UFFVM0FBalZvM3RhZGtSYXpkYVJlMzRCOXh3NmhkQTBuRkZWbzRaNGlHVFc0SjRIaU9kNE85Nm1ubnFHVkFrMEo0OGxwQklpdnQxUUxZT2dsVlhZVGFfWmRSX3dadG15VjBlT1gyVm5WTjlOcGN0Z3Jrd2I0RlpTdEh6T19vWUM3dk45aTFjazJBN3E0NlFsRmhFOHJkRVM2Rmd4TXd1aVFqeGNUa05aUnRv?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9dd8c487cedd",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "AMPB"
-      ],
-      "headline": "OJK Dalami Polemik Rekening Koordinator AMPB yang Tampang Donasi Rp80,9 Juta - Parapuan",
-      "headlineZh": "OJK 调查 AMPB 协调员账户争议",
-      "summaryZh": "OJK 正在调查 AMPB 协调员涉嫌挪用 8090 万印尼盾捐款的账户争议，属监管介入。",
-      "rationale": "监管调查具体事件，影响局部。",
-      "independentSourceCount": 1,
-      "domains": [
-        "parapuan.co"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "00fab58f0227b036"
-      ],
-      "articles": [
-        {
-          "title": "OJK Dalami Polemik Rekening Koordinator AMPB yang Tampang Donasi Rp80,9 Juta - Parapuan",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObmh4UFM3d1liaC1sbUROQXZRMVF0LTZ5ZnQwaklGMzQwU0NmODRzMmRobzJXRWNROUt1MExQdFV5S0RlZGdxOXRDU043aHZiczQ4dlFyNDhRN2ZEbXJfZDE2M2hPU0hUMjN0b0lIdnZIb2tSS1RlMWdsUHJEVGVBWW5UdlVUeVBxMm5XLTJWX1I5cUlKQlhvY1hHbFRGb0dIaWhnNHpiMjI0UjJIWWlsOURPdljSAbMBQVVfeXFMTzRVMkdjS0lzTnFNbVJOcmw0U3ZWTXkzRVRURVZTVDZ6aWNuTjlTUmZJVE1KUWItOUZ6ckdiaUc2QTJvMEJ1d1dVMWlNeTNCYmMwY3hJZjZhZ1p5Q3JnTHpaeWktZVhWVEVPNVBSMV9SZ25rQzJjbXhVeFdGdkdGd3dDajNuRnJQTWdWdHdhbHhzVkZxb1VocUpMbjNSOUlDUkdkeVFNaWVsUnMyRFI2Rkljb0U?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e5db770c1fb8",
-      "eventType": "regulatory_action",
-      "severity": 0.9,
-      "entities": [
-        "OJK",
-        "Pinjam Modal"
-      ],
-      "headline": "OJK Setujui Pencabutan Izin, Pinjol Pinjam Modal Hentikan Seluruh Kegiatan Usaha - Bisnis.com",
-      "headlineZh": "OJK 批准吊销 Pinjam Modal 牌照",
-      "summaryZh": "OJK 批准吊销网贷平台 Pinjam Modal 的营业执照，该平台已停止所有业务活动。",
-      "rationale": "监管吊销牌照，严重度高。",
-      "independentSourceCount": 1,
-      "domains": [
-        "finansial.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "30d1c72aa990d867"
-      ],
-      "articles": [
-        {
-          "title": "OJK Setujui Pencabutan Izin, Pinjol Pinjam Modal Hentikan Seluruh Kegiatan Usaha - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMnpKeXpucmdDNksydkpKVWNYcGFVV3ppWEc3dW1SYk1wWW9ydVBROU5JSGszNkdORWhVM29WVXZ6RGphcDVkUVhlYy1rVjVoZHpuMkhydlVwVW9DZWRxZ09mNDVWdFZLMVFFUGdhbWZuQmhiUWUyQVR2Y240N2U0WE9KRjR2Mlo4NjBsV3pEVXIzTUd1RVdvRDFEVmxqcFRvRkNuS2lqc1BnSE1yVnZFR3prWDN6OXcxTkpaY19MaTlZWEF1bjhvUjcweWNGSHc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-684ff41278a2",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Supriyono"
-      ],
-      "headline": "OJK dalami penundaan transaksi rekening milik Supriyono - ANTARA News Makassar",
-      "headlineZh": "OJK 调查 Supriyono 账户交易延迟",
-      "summaryZh": "OJK 正在调查 Supriyono 账户交易被延迟的问题，涉及监管介入。",
-      "rationale": "监管调查具体事件，影响局部。",
-      "independentSourceCount": 1,
-      "domains": [
-        "makassar.antaranews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e73e01c80373cd5c"
-      ],
-      "articles": [
-        {
-          "title": "OJK dalami penundaan transaksi rekening milik Supriyono - ANTARA News Makassar",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQX09UTnVFRHEtU1hhQS1VbFNZRXNvSVpWOUJNV0pybV9wLU5Nc3JEVHhDZm0tbHB5R0pEc01jcG5pbUtDdXdQRkJwSldIS1lhV3pkNzlQZGtXbERjMkNfTDJ4RGxSbG4zc0xqcVR3QUZJNVExM3A3dWdSaDNLeWZ2SUQ4Wk9yYnVrRmJ2dXhqeEtjZzgtSmYzNm5mY2FmTU5ESnZ3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
+      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "<urlopen error _ssl.c:993: The handshake operation timed out>",
-      "google_trends": "The request failed: Google returned a response with code 429",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 29,
-    "socialItemCount48h": 7
+    "articleCount48h": 28,
+    "socialItemCount48h": 14
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 502,
-    "classifiedCount": 102,
-    "irrelevantDropped": 138,
+    "inputCount": 493,
+    "classifiedCount": 119,
+    "irrelevantDropped": 121,
     "model": "deepseek-chat",
-    "fallbackCount": 262,
+    "fallbackCount": 253,
     "labelCounts": {
-      "NEG": 92,
-      "MIX": 1,
-      "POS": 9
+      "NEG": 67,
+      "MIX": 13,
+      "POS": 39
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

@@ -1,20 +1,19 @@
 {
-  "generatedAt": "2026-08-27T12:03:31.615340+00:00",
+  "generatedAt": "2026-08-28T13:23:45.945207+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-08-27",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-08-28",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **【进展升级】央行独立性｜印尼国会批准Destry Damayanti出任央行行长，Aida Budiman任高级副行长**\n严重度 0.90｜5个独立来源（antaranews.com、antaranewsjambi）｜影响支柱：institutions\n\n🔴 **大规模抗议/镇压｜印尼多地爆发大规模示威，抗议《资产没收法案》拖延，要求严惩腐败，警方逮捕数十人**\n严重度 0.75｜5个独立来源（antaranews.com、bbc.com）｜影响支柱：social\n\n🟠 **仓促立法/政策骤变｜印尼国会承诺于2026年12月15日前通过《资产没收法案》**\n严重度 0.55｜2个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜印尼国会批准Solikin为央行副行长候选人**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions",
-      "**Pinjol/Pindar 舆情事件**\n\n**巴东便利店员工疑因网贷自杀**\n巴东一名便利店员工疑因被网贷催收困扰而上吊自杀，警方已介入调查。\n证据：2个独立来源。",
-      "**已折叠的低证据线索**\n另有 5 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **大规模抗议/镇压｜印尼雅加达爆发大规模示威，警方逮捕322人，1人死亡，多处设施被破坏**\n严重度 0.75｜5个独立来源（antaranews.com、bbc.com）｜影响支柱：social\n\n🟠 **关键官员更替/清洗｜肃贪委前特别检察官Febrie被指涉ASABRI和Jiwasraya贪腐案受贿400亿印尼盾，预审法庭确认其嫌疑人身份**\n严重度 0.55｜2个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜国会承诺2026年12月15日通过《资产没收法》，但反腐活动人士担忧关键条款缺失**\n严重度 0.55｜1个独立来源（bbc.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜印尼《国籍法》修订完成，将规定双重国籍条件**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "daily:2026-08-27:high_pending:red:success"
+    "decisionId": "daily:2026-08-28:normal:red:success"
   },
   "feishu": "sent"
 }
