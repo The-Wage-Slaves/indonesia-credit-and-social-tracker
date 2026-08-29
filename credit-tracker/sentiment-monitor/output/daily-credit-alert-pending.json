@@ -1,122 +1,47 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-28",
+  "date": "2026-08-29",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 43.9,
-    "socialDailyVolumeRisk": 6.6,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "newsDailyVolumeRisk": 28.1,
+    "socialDailyVolumeRisk": 0.0,
+    "negativeSocialShare": 11.1,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=17; prior-7d median=20.0; robust z=-0.40",
-    "socialVolume": "today=3; prior-7d median=33.0; robust z=-2.89"
+    "newsVolume": "today=5; prior-7d median=18.0; robust z=-1.46",
+    "socialVolume": "today=8; prior-7d median=34.0; robust z=-3.82"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-dde5ffbb4143",
+      "id": "llm-51d204734c0c",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Semarang",
-        "Lombok Barat"
+        "Semarang"
       ],
       "headline": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
-      "headlineZh": "多地取消涉网赌网贷者补贴",
-      "summaryZh": "三宝垄和西龙目岛数千名社会援助受益人因被检测到参与网络赌博或网贷而被取消资格，反映消费者陷入债务困境。",
-      "rationale": "多地取消补贴，反映消费者受害",
-      "independentSourceCount": 2,
+      "headlineZh": "三宝垄数千人因网赌网贷被取消补贴",
+      "summaryZh": "三宝垄数千名社会救助金领取者因涉及网赌和网贷被取消资格，反映消费者因债务问题失去福利。",
+      "rationale": "具体事件，消费者因网贷受损失",
+      "independentSourceCount": 1,
       "domains": [
-        "detik.com",
-        "suarantb.com"
+        "detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e91774f36de41587",
-        "39cfbfe7e4fa1915"
+        "e91774f36de41587"
       ],
       "articles": [
         {
           "title": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYk1na2l0NDFEaXpVZGxZNHFqLVJ6VEpuMktRQnhFUkJHTVBQZkZlQnN0Sjhhbmxha0R0VE0yRjdtVjM5al9OeDdWeUVrUkNHRmg3QWtkYWtXaV9ZMVZBZWc0RnZtNmNoUUxvNTVxVEpLTnB2RGxrVDJUcGVuWnRGRzU5Y05xTjd1ZFVMZC1DZTg0MlJpRjR2TW8tYmRtSjQzbFV1MWVQeE81RTYxdS1qN1pn0gG3AUFVX3lxTE5XdVJnODNRVHdpZk95bHREUlRKemcyS3BjRVlXUUpFNHJxbUtTMnhMb1pkZThSSzBDQlBlVG1xTlRadmRSOWRmMllVSXdYZ0RVSDNMWmhUcU5iVWg2eGhINjIwa0toTUVXeXFwMEJGVmdjc3F4QnFjM1l6OHdidXpfc2JzTllHMklITWZGaDRGd1RDMHZyUS13ekhHTW5aY25za0xjdlYyNU03TTdweEpPVnotNGxmVQ?oc=5"
-        },
-        {
-          "title": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR0pUU0Q0eWcxV0lKT25ZcHJBRnlfdnNrOXRuNUF5T0J4UVo4RlVCdUJSV2hpMU42TFN0NmVtSE1HYUZXY1VfekRPUHhhZVF6Tm1oVmk3ajlNMUpqNE1naElnYVlvckZRZXVvZUxxNzlBMGx1b3l0S2ZxTDNxSDV3OWhwRkxJQTI3QUVuS0lkeDFMYjFiX2pCWUE2OHBOb0VHZjRXWWZ2VkdET3M?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-1c6fbb2c226a",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
-      "headlineZh": "OJK调整3家Pindar融资上限",
-      "summaryZh": "OJK调整了三家P2P借贷平台的融资上限，并说明原因，属监管机构对行业的常规调整措施。",
-      "rationale": "监管调整融资上限，属监管介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "f29caab7c0cf1051"
-      ],
-      "articles": [
-        {
-          "title": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPT2Z6ckVzbnMtN18zYWlpeDJlYmZ1NlFROEtnWnVFdUp0R2ZvX0pENExMX05DRWFFQ0YyZ1BLNkl5RmM0UG5LOWNKTTM4MVFZTk5HYm15SmV6dzQxVjBxUzFfN3pMRUE1MzE0Wk5sYlExbkxKb2JXQ2dsWC1LSWl3ZDdTcVZFN00teE9pbFB3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-7dc6cfded4e2",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Purworejo"
-      ],
-      "headline": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
-      "headlineZh": "Purworejo催收违规处理完毕",
-      "summaryZh": "Purworejo地区涉嫌违规催收的案件已处理完毕，表明监管机构对催收行为进行了介入和处置。",
-      "rationale": "违规催收案件处理完毕，监管介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "economy.okezone.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b1d42050419f132b"
-      ],
-      "articles": [
-        {
-          "title": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSGNxdGhJM21TaWJ3VUUxc3E1RHFmeDBfaEVrTjhJZ3BBY1AwMFlYckJwdE1la0Y0V1ItZkRHWWs2SGlIU3F1S1JESTVDUWZYWUc2M0dVaF9COUxyRlRaXzVRVVdzRDNyWURWYVpRQy1PTXRVVTJHN2NUcmdMRUNjNzFxcHd0bldzTGdqRjcwNVRlRVNGZ3FSSlRhd0phSk1QRXc4amF0cEl6TTNyUUVuNm1XMVFfcDRTelhTOdIBuwFBVV95cUxNNDdSaFdKSVRsWlhYRHpBYndLZEZQdENveUpRZVlBVWRMSG1GbEp4aVdEUkVWVUFBbnh6eThGYmxzOG16NmxuanV4bENVVy13cnZhUmZCOUlEMGtNXzZBcTdHa2pFd1FSUndOczEwM3ZZaUVCcEpFTGFyVzBHOEs4UTVtZTl5bGk1UEhfWXJ5bTBMd2dvc1luVkJpQUpaLXFmSTFkc3VIRFowcGRJYnNuYVNMWUJ3YXUydFNV?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -133,116 +58,39 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 22,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 13,
+    "candidateCount": 24,
+    "eventGroupCount": 1,
+    "rejectedNonEvents": 12,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 22
+      "ok": 24
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-dde5ffbb4143",
+      "id": "llm-51d204734c0c",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Semarang",
-        "Lombok Barat"
+        "Semarang"
       ],
       "headline": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
-      "headlineZh": "多地取消涉网赌网贷者补贴",
-      "summaryZh": "三宝垄和西龙目岛数千名社会援助受益人因被检测到参与网络赌博或网贷而被取消资格，反映消费者陷入债务困境。",
-      "rationale": "多地取消补贴，反映消费者受害",
-      "independentSourceCount": 2,
+      "headlineZh": "三宝垄数千人因网赌网贷被取消补贴",
+      "summaryZh": "三宝垄数千名社会救助金领取者因涉及网赌和网贷被取消资格，反映消费者因债务问题失去福利。",
+      "rationale": "具体事件，消费者因网贷受损失",
+      "independentSourceCount": 1,
       "domains": [
-        "detik.com",
-        "suarantb.com"
+        "detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e91774f36de41587",
-        "39cfbfe7e4fa1915"
+        "e91774f36de41587"
       ],
       "articles": [
         {
           "title": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYk1na2l0NDFEaXpVZGxZNHFqLVJ6VEpuMktRQnhFUkJHTVBQZkZlQnN0Sjhhbmxha0R0VE0yRjdtVjM5al9OeDdWeUVrUkNHRmg3QWtkYWtXaV9ZMVZBZWc0RnZtNmNoUUxvNTVxVEpLTnB2RGxrVDJUcGVuWnRGRzU5Y05xTjd1ZFVMZC1DZTg0MlJpRjR2TW8tYmRtSjQzbFV1MWVQeE81RTYxdS1qN1pn0gG3AUFVX3lxTE5XdVJnODNRVHdpZk95bHREUlRKemcyS3BjRVlXUUpFNHJxbUtTMnhMb1pkZThSSzBDQlBlVG1xTlRadmRSOWRmMllVSXdYZ0RVSDNMWmhUcU5iVWg2eGhINjIwa0toTUVXeXFwMEJGVmdjc3F4QnFjM1l6OHdidXpfc2JzTllHMklITWZGaDRGd1RDMHZyUS13ekhHTW5aY25za0xjdlYyNU03TTdweEpPVnotNGxmVQ?oc=5"
-        },
-        {
-          "title": "Banyak Penerima Bansos di Lobar Dicoret, Diduga Terdeteksi Judol dan Pinjol - SUARANTB.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQR0pUU0Q0eWcxV0lKT25ZcHJBRnlfdnNrOXRuNUF5T0J4UVo4RlVCdUJSV2hpMU42TFN0NmVtSE1HYUZXY1VfekRPUHhhZVF6Tm1oVmk3ajlNMUpqNE1naElnYVlvckZRZXVvZUxxNzlBMGx1b3l0S2ZxTDNxSDV3OWhwRkxJQTI3QUVuS0lkeDFMYjFiX2pCWUE2OHBOb0VHZjRXWWZ2VkdET3M?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-1c6fbb2c226a",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
-      "headlineZh": "OJK调整3家Pindar融资上限",
-      "summaryZh": "OJK调整了三家P2P借贷平台的融资上限，并说明原因，属监管机构对行业的常规调整措施。",
-      "rationale": "监管调整融资上限，属监管介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "f29caab7c0cf1051"
-      ],
-      "articles": [
-        {
-          "title": "OJK Sesuaikan Batas Pendanaan 3 Fintech Pindar, Ini Alasannya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPT2Z6ckVzbnMtN18zYWlpeDJlYmZ1NlFROEtnWnVFdUp0R2ZvX0pENExMX05DRWFFQ0YyZ1BLNkl5RmM0UG5LOWNKTTM4MVFZTk5HYm15SmV6dzQxVjBxUzFfN3pMRUE1MzE0Wk5sYlExbkxKb2JXQ2dsWC1LSWl3ZDdTcVZFN00teE9pbFB3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-7dc6cfded4e2",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Purworejo"
-      ],
-      "headline": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
-      "headlineZh": "Purworejo催收违规处理完毕",
-      "summaryZh": "Purworejo地区涉嫌违规催收的案件已处理完毕，表明监管机构对催收行为进行了介入和处置。",
-      "rationale": "违规催收案件处理完毕，监管介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "economy.okezone.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b1d42050419f132b"
-      ],
-      "articles": [
-        {
-          "title": "Penanganan Dugaan Pelanggaran Penagihan di Purworejo Sudah Tuntas - economy.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPSGNxdGhJM21TaWJ3VUUxc3E1RHFmeDBfaEVrTjhJZ3BBY1AwMFlYckJwdE1la0Y0V1ItZkRHWWs2SGlIU3F1S1JESTVDUWZYWUc2M0dVaF9COUxyRlRaXzVRVVdzRDNyWURWYVpRQy1PTXRVVTJHN2NUcmdMRUNjNzFxcHd0bldzTGdqRjcwNVRlRVNGZ3FSSlRhd0phSk1QRXc4amF0cEl6TTNyUUVuNm1XMVFfcDRTelhTOdIBuwFBVV95cUxNNDdSaFdKSVRsWlhYRHpBYndLZEZQdENveUpRZVlBVWRMSG1GbEp4aVdEUkVWVUFBbnh6eThGYmxzOG16NmxuanV4bENVVy13cnZhUmZCOUlEMGtNXzZBcTdHa2pFd1FSUndOczEwM3ZZaUVCcEpFTGFyVzBHOEs4UTVtZTl5bGk1UEhfWXJ5bTBMd2dvc1luVkJpQUpaLXFmSTFkc3VIRFowcGRJYnNuYVNMWUJ3YXUydFNV?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -263,26 +111,26 @@
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "'timeline'",
+      "gdelt": "<urlopen error timed out>",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 28,
-    "socialItemCount48h": 14
+    "articleCount48h": 32,
+    "socialItemCount48h": 37
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 493,
-    "classifiedCount": 119,
-    "irrelevantDropped": 121,
+    "inputCount": 502,
+    "classifiedCount": 96,
+    "irrelevantDropped": 144,
     "model": "deepseek-chat",
-    "fallbackCount": 253,
+    "fallbackCount": 262,
     "labelCounts": {
-      "NEG": 67,
-      "MIX": 13,
-      "POS": 39
+      "NEG": 56,
+      "MIX": 2,
+      "POS": 38
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
