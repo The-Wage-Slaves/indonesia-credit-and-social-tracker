@@ -1,19 +1,18 @@
 {
-  "generatedAt": "2026-08-29T08:20:07.385314+00:00",
+  "generatedAt": "2026-08-30T07:25:56.308062+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-08-29",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-08-30",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **【进展升级】关键官员更替/清洗｜国会批准 Destry Damayanti 出任印尼央行行长，为印尼首位女性央行行长**\n严重度 0.90｜7个独立来源（brigadepasopati、idnfinancials.com）｜影响支柱：institutions\n\n🔴 **大规模抗议/镇压｜雅加达国会大厦前示威演变为骚乱，警方逮捕数百人并调查幕后组织者**\n严重度 0.75｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：social\n\n🔺 **仓促立法/政策骤变｜宪法法院裁定废除刑法中侮辱政府及议会条款**\n严重度 0.75｜1个独立来源（liputan6.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜国会承诺2026年12月15日通过《资产没收法》，但反腐活动人士担忧关键条款缺失**\n严重度 0.55｜1个独立来源（bbc.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 1 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **【进展升级】央行独立性｜印尼国会正式批准Destry Damayanti出任央行行长**\n严重度 0.90｜9个独立来源（achmadnurhidayat.id、belarakyat）｜影响支柱：institutions\n\n🔴 **仓促立法/政策骤变｜印尼国会承诺12月15日通过《资产没收法》，但条款缩水引发反腐人士担忧**\n严重度 0.75｜10个独立来源（aktual.com、batamtoday.com）｜影响支柱：institutions\n\n🔴 **大规模抗议/镇压｜8月27日示威后续：GRIB Jaya成员死亡，322人被捕，警方与民间组织各执一词**\n严重度 0.75｜2个独立来源（bbc.com、liputan6.com）｜影响支柱：social\n\n🟠 **关键官员更替/清洗｜印尼国会通过《资产没收法》相关条款，将13种罪行纳入适用范围**\n严重度 0.55｜3个独立来源（jakartamu.com、rri.co.id）｜影响支柱：institutions",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "daily:2026-08-29:normal:red:success"
+    "decisionId": "daily:2026-08-30:normal:red:success"
   },
   "feishu": "sent"
 }

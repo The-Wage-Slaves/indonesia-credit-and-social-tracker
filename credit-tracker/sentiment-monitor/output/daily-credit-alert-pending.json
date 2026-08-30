@@ -1,136 +1,66 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-29",
+  "date": "2026-08-30",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 28.1,
+    "newsDailyVolumeRisk": 34.8,
     "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 11.1,
+    "negativeSocialShare": 6.1,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=5; prior-7d median=18.0; robust z=-1.46",
-    "socialVolume": "today=8; prior-7d median=34.0; robust z=-3.82"
+    "newsVolume": "today=7; prior-7d median=19.0; robust z=-1.01",
+    "socialVolume": "today=6; prior-7d median=35.0; robust z=-3.91"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-51d204734c0c",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Semarang"
-      ],
-      "headline": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
-      "headlineZh": "三宝垄数千人因网赌网贷被取消补贴",
-      "summaryZh": "三宝垄数千名社会救助金领取者因涉及网赌和网贷被取消资格，反映消费者因债务问题失去福利。",
-      "rationale": "具体事件，消费者因网贷受损失",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e91774f36de41587"
-      ],
-      "articles": [
-        {
-          "title": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYk1na2l0NDFEaXpVZGxZNHFqLVJ6VEpuMktRQnhFUkJHTVBQZkZlQnN0Sjhhbmxha0R0VE0yRjdtVjM5al9OeDdWeUVrUkNHRmg3QWtkYWtXaV9ZMVZBZWc0RnZtNmNoUUxvNTVxVEpLTnB2RGxrVDJUcGVuWnRGRzU5Y05xTjd1ZFVMZC1DZTg0MlJpRjR2TW8tYmRtSjQzbFV1MWVQeE81RTYxdS1qN1pn0gG3AUFVX3lxTE5XdVJnODNRVHdpZk95bHREUlRKemcyS3BjRVlXUUpFNHJxbUtTMnhMb1pkZThSSzBDQlBlVG1xTlRadmRSOWRmMllVSXdYZ0RVSDNMWmhUcU5iVWg2eGhINjIwa0toTUVXeXFwMEJGVmdjc3F4QnFjM1l6OHdidXpfc2JzTllHMklITWZGaDRGd1RDMHZyUS13ekhHTW5aY25za0xjdlYyNU03TTdweEpPVnotNGxmVQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "lowEvidenceLeads": [],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 24,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 12,
+    "candidateCount": 11,
+    "eventGroupCount": 0,
+    "rejectedNonEvents": 7,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 24
+      "ok": 11
     },
     "socialCrossCheck": "applied"
   },
-  "events": [
-    {
-      "id": "llm-51d204734c0c",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Semarang"
-      ],
-      "headline": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
-      "headlineZh": "三宝垄数千人因网赌网贷被取消补贴",
-      "summaryZh": "三宝垄数千名社会救助金领取者因涉及网赌和网贷被取消资格，反映消费者因债务问题失去福利。",
-      "rationale": "具体事件，消费者因网贷受损失",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e91774f36de41587"
-      ],
-      "articles": [
-        {
-          "title": "Ribuan Penerima Bansos di Semarang Dicoret gegara Judol dan Pinjol - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNYk1na2l0NDFEaXpVZGxZNHFqLVJ6VEpuMktRQnhFUkJHTVBQZkZlQnN0Sjhhbmxha0R0VE0yRjdtVjM5al9OeDdWeUVrUkNHRmg3QWtkYWtXaV9ZMVZBZWc0RnZtNmNoUUxvNTVxVEpLTnB2RGxrVDJUcGVuWnRGRzU5Y05xTjd1ZFVMZC1DZTg0MlJpRjR2TW8tYmRtSjQzbFV1MWVQeE81RTYxdS1qN1pn0gG3AUFVX3lxTE5XdVJnODNRVHdpZk95bHREUlRKemcyS3BjRVlXUUpFNHJxbUtTMnhMb1pkZThSSzBDQlBlVG1xTlRadmRSOWRmMllVSXdYZ0RVSDNMWmhUcU5iVWg2eGhINjIwa0toTUVXeXFwMEJGVmdjc3F4QnFjM1l6OHdidXpfc2JzTllHMklITWZGaDRGd1RDMHZyUS13ekhHTW5aY25za0xjdlYyNU03TTdweEpPVnotNGxmVQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "events": [],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "<urlopen error timed out>",
+      "media_rss": "Collector ran successfully but found no relevant records.",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 32,
-    "socialItemCount48h": 37
+    "articleCount48h": 18,
+    "socialItemCount48h": 32
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 502,
-    "classifiedCount": 96,
-    "irrelevantDropped": 144,
+    "inputCount": 528,
+    "classifiedCount": 103,
+    "irrelevantDropped": 137,
     "model": "deepseek-chat",
-    "fallbackCount": 262,
+    "fallbackCount": 288,
     "labelCounts": {
-      "NEG": 56,
-      "MIX": 2,
-      "POS": 38
+      "NEG": 55,
+      "MIX": 7,
+      "POS": 41
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
