@@ -36,9 +36,26 @@ DASHBOARD_DOWNLOAD_URL = os.getenv(
     "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/"
     "releases/download/dashboard-latest/indonesia-monitor-dashboard.zip",
 )
-ALERT_REVIEW_URL = os.getenv(
-    "ALERT_REVIEW_URL",
-    "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
+REPO_URL = "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker"
+
+# 卡片上的「待确认」链接曾写死成 issues/6。那个 issue 是 2026-07-28 为 07-26 那周建的，
+# 而新 issue 只在 alert_level == 'red' 时才创建——之后几周都是 amber/normal，于是链接
+# 永远停在 07-26，用户点进去看到的是一个多月前的东西，也就找不到本周该确认什么。
+#
+# 正确的落点是**当期产物所在的 bot 分支**：周频看 bot/weekly-monitoring，
+# 日频看 bot/daily-risk-alerts。这两个分支每次运行都会更新，不依赖 issue 是否被创建。
+ALERT_REVIEW_URL = os.getenv("ALERT_REVIEW_URL", f"{REPO_URL}/issues/6")
+WEEKLY_REVIEW_URL = os.getenv(
+    "WEEKLY_REVIEW_URL",
+    f"{REPO_URL}/blob/bot/weekly-monitoring/"
+    "credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json",
+)
+DAILY_REVIEW_URL = os.getenv(
+    "DAILY_REVIEW_URL",
+    f"{REPO_URL}/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
+)
+MONTHLY_REVIEW_URL = os.getenv(
+    "MONTHLY_REVIEW_URL", f"{REPO_URL}/tree/bot/monthly-credit-data/credit-tracker",
 )
 
 
@@ -334,7 +351,7 @@ def weekly_summary() -> dict[str, Any]:
         "risk": bool(credit_risk or street_risk),
         "level": "red" if notification_level == "red" else "orange",
         "lines": lines,
-        "reviewUrl": ALERT_REVIEW_URL,
+        "reviewUrl": WEEKLY_REVIEW_URL,
         "decisionId": f"weekly:{latest.get('weekEnd', 'unknown')}:{notification_level}",
     }
 
@@ -470,7 +487,7 @@ def daily_summary() -> dict[str, Any]:
         "risk": risk,
         "level": "red" if "red" in {credit_level, stability_level} else "orange",
         "lines": lines,
-        "reviewUrl": ALERT_REVIEW_URL,
+        "reviewUrl": DAILY_REVIEW_URL,
         "decisionId": f"daily:{run_date}:{credit_level}:{stability_level}:{stability_status or 'local'}",
     }
 
@@ -531,6 +548,9 @@ def monthly_summary() -> dict[str, Any]:
             "请核对月份、单位、来源、异常值和缺失项；采集失败时先检查并重新运行。"
             "确认后才写入正式看板。"
         ],
+        # 月频卡片此前根本没有 reviewUrl，卡片上不显示任何入口——所有者因此完全
+        # 找不到月度采集的待确认数据在哪。补上，指向暂存分支。
+        "reviewUrl": MONTHLY_REVIEW_URL,
         "decisionId": f"monthly:{month}:{len(items)}:{','.join(failures) or 'ok'}",
     }
 
