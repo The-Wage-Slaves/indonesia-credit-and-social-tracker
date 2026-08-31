@@ -34,6 +34,12 @@ jobs:
           pip install requests pandas xlrd openpyxl
           npm ci --prefix credit-tracker/p2p-scraper
           npx --prefix credit-tracker/p2p-scraper playwright install --with-deps chromium
+      - name: Collect bank consumer credit from BI SEKI I.4
+        id: seki
+        continue-on-error: true
+        # 换源自 2026-08-24：SSKI Tabel_17 被 BI 冻结在 2025.12（两次云端运行交叉验证过），
+        # SEKI I.4 已有到 2026.06 的数据。采集器自带 2026-05 硬校准，抽错即拒绝输出。
+        run: python credit-tracker/seki_bank_credit.py --json > credit-tracker/data/seki-bank-credit.json
       - name: Collect BI/OJK industry data
         id: industry
         continue-on-error: true
@@ -52,12 +58,14 @@ jobs:
         env:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
           FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
+          SEKI_STATUS: ${{ steps.seki.outcome }}
           INDUSTRY_STATUS: ${{ steps.industry.outcome }}
           MACRO_STATUS: ${{ steps.macro.outcome }}
           COMPETITOR_STATUS: ${{ steps.competitors.outcome }}
         run: python .github/scripts/cloud_publish.py monthly --push
       - name: Add collection summary
         env:
+          SEKI_STATUS: ${{ steps.seki.outcome }}
           INDUSTRY_STATUS: ${{ steps.industry.outcome }}
           MACRO_STATUS: ${{ steps.macro.outcome }}
           COMPETITOR_STATUS: ${{ steps.competitors.outcome }}
@@ -66,6 +74,7 @@ jobs:
           {
             echo "## Monthly credit data · pending human review"
             echo
+            echo "- BI SEKI I.4 bank credit: **${SEKI_STATUS}**"
             echo "- BI/OJK collector: **${INDUSTRY_STATUS}**"
             echo "- BPS/BI macro collector: **${MACRO_STATUS}**"
             echo "- P2P competitor collector: **${COMPETITOR_STATUS}**"
@@ -77,23 +86,34 @@ jobs:
         run: |
           branch="bot/monthly-credit-data"
           transfer_dir="$(mktemp -d)"
-          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read \
-            pending.json pending.js \
-            credit-tracker/dashboard/p2p-pending.js \
-            credit-tracker/dashboard/macro-pending.js \
-            credit-tracker/macro-monitor/output \
-            credit-tracker/p2p-scraper/results \
-            outputs
+          # 单一清单同时驱动「打包」「清理」「入库」。逐处各列一遍必然漏——
+          # 本次就漏过一次：seki-bank-credit.json 只加进了 git add、没进 tar。
+          # 首次运行侥幸可过（文件未跟踪、checkout 不会删它），但 bot 分支一旦开始
+          # 跟踪该路径，第二次 checkout 就会以「未跟踪文件将被覆盖」中止——
+          # 2026-08-05~08-11 日频连续失败正是这个死法。
+          artifacts="pending.json
+            pending.js
+            credit-tracker/dashboard/p2p-pending.js
+            credit-tracker/dashboard/macro-pending.js
+            credit-tracker/macro-monitor/output
+            credit-tracker/data/seki-bank-credit.json
+            credit-tracker/p2p-scraper/results
+            outputs"
+          tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -B "$branch" origin/main
+          # 产物已装进 tar，切分支前必须全部从工作区移走。
+          for path in $artifacts; do rm -rf "$path"; done
+          # 月频产物都是「当期全量快照」，覆盖即可，无需按 date 合并；但仍优先接续
+          # 既有 bot 分支，避免每次从 main 重建。
+          git fetch origin "$branch" || true
+          if git rev-parse --verify "refs/remotes/origin/$branch" >/dev/null 2>&1; then
+            git checkout -B "$branch" "refs/remotes/origin/$branch"
+          else
+            git checkout -B "$branch" origin/main
+          fi
           tar -xf "$transfer_dir/pending-output.tar"
-          git add pending.json pending.js || true
-          git add credit-tracker/dashboard/p2p-pending.js || true
-          git add credit-tracker/dashboard/macro-pending.js || true
-          git add credit-tracker/macro-monitor/output || true
-          git add credit-tracker/p2p-scraper/results || true
-          git add outputs 2>/dev/null || true
+          for path in $artifacts; do git add "$path" 2>/dev/null || true; done
           if git diff --cached --quiet; then
             echo "No monthly pending-data change."
             exit 0

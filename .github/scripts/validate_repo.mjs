@@ -366,6 +366,13 @@ assert(dailyRiskWorkflow.includes('daily_alert.py --no-push'), 'daily workflow l
 assert(dailyRiskWorkflow.includes('credit_daily_alert.py --write-output'), 'daily workflow lacks credit alert collection');
 const monthlyCreditWorkflow = read('.github/workflows/monthly-credit-data.yml');
 assert(monthlyCreditWorkflow.includes('update_credit.py'), 'monthly workflow lacks BI/OJK collection');
+// 银行侧换源到 SEKI I.4（2026-08-24）：SSKI Tabel_17 被 BI 冻结在 2025.12。
+// 这类「建好了但忘了接线」是本仓库反复出现的失败模式（DeepSeek key、已确认表都栽过），
+// 所以采集器和它的产物路径都要在这里钉住。
+assert(monthlyCreditWorkflow.includes('seki_bank_credit.py'),
+  'monthly workflow lacks BI SEKI I.4 bank-credit collection');
+assert(monthlyCreditWorkflow.includes('credit-tracker/data/seki-bank-credit.json'),
+  'monthly workflow does not stage the SEKI bank-credit artifact');
 assert(monthlyCreditWorkflow.includes('macro-monitor/macro_monitor.py'), 'monthly workflow lacks national macro collection');
 assert(monthlyCreditWorkflow.includes('BPS_API_KEY'), 'monthly macro collection does not expose BPS API secret');
 assert(monthlyCreditWorkflow.includes('p2p-scraper'), 'monthly workflow lacks P2P collection');
