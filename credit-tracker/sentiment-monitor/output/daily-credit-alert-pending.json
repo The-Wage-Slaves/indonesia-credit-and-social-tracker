@@ -1,65 +1,135 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-30",
+  "date": "2026-08-31",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 34.8,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 6.1,
+    "newsDailyVolumeRisk": 32.7,
+    "socialDailyVolumeRisk": 8.3,
+    "negativeSocialShare": 28.1,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=7; prior-7d median=19.0; robust z=-1.01",
-    "socialVolume": "today=6; prior-7d median=35.0; robust z=-3.91"
+    "newsVolume": "today=6; prior-7d median=18.0; robust z=-1.16",
+    "socialVolume": "today=1; prior-7d median=34.0; robust z=-2.78"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [],
+  "lowEvidenceLeads": [
+    {
+      "id": "llm-82b29b12259f",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "Pegadaian"
+      ],
+      "headline": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
+      "headlineZh": "当铺客户还款被用于还网贷",
+      "summaryZh": "报道称Pegadaian客户还款资金被挪用去还网贷，涉及违规操作，需关注。",
+      "rationale": "涉及机构违规操作，具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "detakkaltim.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e116d01d0f1b73e4"
+      ],
+      "articles": [
+        {
+          "title": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUlgwR1N4WVVvd2t4MnpUN290STNuSHhWdWpYUWtpUWVFS0NXN2tjUEFWX2Q3amZqRVBpNDJBNWJsV3NabEVnUVBlZ2c0WldpUnVncUVxRF9FU2tRVUdJdXdDeFRRbUJiaWRPU0VCVVVhbWd0UDZHOS1uRzFFaEt0Z2VGSXJLeFU4dmRZTDJVVXpxM2tseC1FVHVYc29wYm1zeFk1dWFqVUpUMDdqOVE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 11,
-    "eventGroupCount": 0,
-    "rejectedNonEvents": 7,
+    "candidateCount": 22,
+    "eventGroupCount": 1,
+    "rejectedNonEvents": 8,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 11
+      "ok": 22
     },
     "socialCrossCheck": "applied"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "llm-82b29b12259f",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "Pegadaian"
+      ],
+      "headline": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
+      "headlineZh": "当铺客户还款被用于还网贷",
+      "summaryZh": "报道称Pegadaian客户还款资金被挪用去还网贷，涉及违规操作，需关注。",
+      "rationale": "涉及机构违规操作，具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "detakkaltim.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e116d01d0f1b73e4"
+      ],
+      "articles": [
+        {
+          "title": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUlgwR1N4WVVvd2t4MnpUN290STNuSHhWdWpYUWtpUWVFS0NXN2tjUEFWX2Q3amZqRVBpNDJBNWJsV3NabEVnUVBlZ2c0WldpUnVncUVxRF9FU2tRVUdJdXdDeFRRbUJiaWRPU0VCVVVhbWd0UDZHOS1uRzFFaEt0Z2VGSXJLeFU4dmRZTDJVVXpxM2tseC1FVHVYc29wYm1zeFk1dWFqVUpUMDdqOVE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
+      "gdelt": "<urlopen error _ssl.c:993: The handshake operation timed out>",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 18,
-    "socialItemCount48h": 32
+    "articleCount48h": 31,
+    "socialItemCount48h": 7
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 528,
-    "classifiedCount": 103,
-    "irrelevantDropped": 137,
+    "inputCount": 497,
+    "classifiedCount": 95,
+    "irrelevantDropped": 145,
     "model": "deepseek-chat",
-    "fallbackCount": 288,
+    "fallbackCount": 257,
     "labelCounts": {
-      "NEG": 55,
-      "MIX": 7,
+      "NEG": 49,
+      "MIX": 5,
       "POS": 41
     }
   },
