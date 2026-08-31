@@ -239,6 +239,48 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("不会安装开机任务", "\n".join(summary["lines"]))
 
 
+class ReviewLinkTests(unittest.TestCase):
+    """卡片上的「待确认」链接必须指向当期产物。
+
+    2026-08-31 发现：链接写死成 issues/6。那个 issue 是 2026-07-28 为 07-26 那周建的，
+    而新 issue 只在 alert_level == 'red' 时创建——之后几周都是 amber/normal，于是
+    链接永远停在一个多月前，所有者点进去根本找不到本周该确认什么。月频卡片更彻底，
+    此前压根没有 reviewUrl 字段。
+
+    正确落点是每次运行都会更新的 bot 分支。
+    """
+
+    def test_each_cadence_points_at_its_own_bot_branch(self):
+        cases = (
+            (MODULE.WEEKLY_REVIEW_URL, "bot/weekly-monitoring"),
+            (MODULE.DAILY_REVIEW_URL, "bot/daily-risk-alerts"),
+            (MODULE.MONTHLY_REVIEW_URL, "bot/monthly-credit-data"),
+        )
+        for url, branch in cases:
+            with self.subTest(branch=branch):
+                self.assertIn(branch, url, f"{branch} 的待确认链接没指向该分支")
+
+    def test_no_cadence_link_points_at_a_static_issue(self):
+        """静态 issue 链接不随运行更新，正是这次的病根。"""
+        for name in ("WEEKLY_REVIEW_URL", "DAILY_REVIEW_URL", "MONTHLY_REVIEW_URL"):
+            with self.subTest(constant=name):
+                self.assertNotIn("/issues/", getattr(MODULE, name),
+                                 f"{name} 又指回了静态 issue")
+
+    def test_every_cadence_card_exposes_a_review_link(self):
+        """月频卡片曾经完全没有这个字段，卡片上不显示任何入口。"""
+        source = pathlib.Path(MODULE.__file__).read_text(encoding="utf-8")
+        for cadence, url_const in (("weekly_summary", "WEEKLY_REVIEW_URL"),
+                                   ("daily_summary", "DAILY_REVIEW_URL"),
+                                   ("monthly_summary", "MONTHLY_REVIEW_URL")):
+            with self.subTest(cadence=cadence):
+                start = source.index(f"def {cadence}(")
+                nxt = source.find(chr(10) + "def ", start + 1)
+                block = source[start:nxt if nxt > 0 else len(source)]
+                self.assertIn('"reviewUrl"', block, f"{cadence} 卡片没有 reviewUrl")
+                self.assertIn(url_const, block, f"{cadence} 用错了链接常量")
+
+
 if __name__ == "__main__":
     unittest.main()
 
