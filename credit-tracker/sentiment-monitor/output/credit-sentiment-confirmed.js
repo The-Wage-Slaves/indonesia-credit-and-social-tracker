@@ -1,12 +1,16 @@
 window.CREDIT_SENTIMENT_CONFIRMED = {
   schemaVersion: 1,
   status: "confirmed-provisional-history",
-  asOf: "2026-07-30",
+  asOf: "2026-08-31",
   evidenceMode: "reviewed-summary",
   decision: {
     status: "confirmed-provisional",
-    decidedAt: "2026-07-30",
+    decidedAt: "2026-08-31",
     note: "W1确认74.0；覆盖率58.8%，保留部分覆盖/试运行标签。W2确认Kredivo/KrediFazz事件红色留痕。W3误聚类已驳回。"
+        + "2026-08-31 补确认 08-10~08-16(73.2, amber) 与 08-17~08-23(63.6, normal)："
+        + "两周均为 provisional-partial-coverage，且**新闻渠道只有 1 个存活**"
+        + "(media_rss 与 gdelt 均失败)，恐慌指数实际由单一新闻源算出，跨期比较须扣除这一点。"
+        + "两周都是 0 条待确认事件，折叠掉的 9/23 条为低证据或重复噪声，不是高危事件。"
   },
   sourceCatalog: {
     google_news:{family:"news",label:"Google News RSS",access:"public"},
@@ -70,6 +74,34 @@ window.CREDIT_SENTIMENT_CONFIRMED = {
         suppressedCandidateCount:31,
         rule:"红色：严重事件含监管/原始来源并有至少2个独立来源。W2已人工确认，本事件正式红色留痕。"
       }
+    },
+    {
+      weekStart:"2026-08-10",weekEnd:"2026-08-16",fearIndex:73.2,
+      dataStatus:"provisional-partial-coverage",availableFormulaWeight:1.0,confidence:0.656,
+      engines:{
+        news:{score:70.3,volume:83.9,negativity:53.3,itemCount:63,negativeShare:9.1,uniqueSources:46},
+        social:{score:71.7,volume:85.0,negativity:58.3,itemCount:155,negativeShare:29.1,platformCount:1}
+      },
+      components:{newsVolume:83.9,newsTone:53.3,socialVolume:85.0,socialNegativity:58.3,severeEvent:86.0},
+      articleCount:63,socialPostCount:155,uniqueSourceCount:46,socialPlatformCount:1,
+      negativeArticleShare:9.1,negativeSocialShare:29.1,articleIds:[],socialItemIds:[],
+      coverage:{successfulChannels:["google_news", "google_trends", "youtube"],newsChannels:1,socialChannels:2},
+      alert:{level:"amber",active:[],triggerReasons:[],reviewCandidates:[],suppressedCandidateCount:9,
+        rule:"红色需已核验严重事件（原始/独立来源≥2）或综合与新闻、社媒同时跨越各自阈值。"}
+    },
+    {
+      weekStart:"2026-08-17",weekEnd:"2026-08-23",fearIndex:63.6,
+      dataStatus:"provisional-partial-coverage",availableFormulaWeight:1.0,confidence:0.656,
+      engines:{
+        news:{score:63.7,volume:73.8,negativity:51.1,itemCount:146,negativeShare:8.7,uniqueSources:105},
+        social:{score:55.1,volume:51.0,negativity:59.2,itemCount:160,negativeShare:31.9,platformCount:1}
+      },
+      components:{newsVolume:73.8,newsTone:51.1,socialVolume:51.0,socialNegativity:59.2,severeEvent:86.0},
+      articleCount:146,socialPostCount:160,uniqueSourceCount:105,socialPlatformCount:1,
+      negativeArticleShare:8.7,negativeSocialShare:31.9,articleIds:[],socialItemIds:[],
+      coverage:{successfulChannels:["google_news", "google_trends", "youtube"],newsChannels:1,socialChannels:2},
+      alert:{level:"normal",active:[],triggerReasons:[],reviewCandidates:[],suppressedCandidateCount:23,
+        rule:"红色需已核验严重事件（原始/独立来源≥2）或综合与新闻、社媒同时跨越各自阈值。"}
     }
   ],
   articles: [
