@@ -1,47 +1,142 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-08-31",
+  "date": "2026-09-01",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 32.7,
-    "socialDailyVolumeRisk": 8.3,
-    "negativeSocialShare": 28.1,
+    "newsDailyVolumeRisk": 39.9,
+    "socialDailyVolumeRisk": 39.0,
+    "negativeSocialShare": 24.2,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=6; prior-7d median=18.0; robust z=-1.16",
-    "socialVolume": "today=1; prior-7d median=34.0; robust z=-2.78"
+    "newsVolume": "today=13; prior-7d median=18.0; robust z=-0.67",
+    "socialVolume": "today=4; prior-7d median=17.0; robust z=-0.73"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-82b29b12259f",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
+      "id": "llm-75bbbd512622",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "Pegadaian"
+        "OJK"
       ],
-      "headline": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
-      "headlineZh": "当铺客户还款被用于还网贷",
-      "summaryZh": "报道称Pegadaian客户还款资金被挪用去还网贷，涉及违规操作，需关注。",
-      "rationale": "涉及机构违规操作，具体事件",
-      "independentSourceCount": 1,
+      "headline": "Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi - Kompas.com",
+      "headlineZh": "OJK发布94家合法网贷名单",
+      "summaryZh": "OJK发布截至2026年9月共有94家持牌合法网贷平台名单，属常规监管信息更新。",
+      "rationale": "监管机构常规名单发布，非处罚或风险事件",
+      "independentSourceCount": 3,
       "domains": [
-        "detakkaltim.com"
+        "asatunews.co.id",
+        "money.kompas.com",
+        "readers.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e116d01d0f1b73e4"
+        "74d9ba4a8c9bb707",
+        "c869af3331943909",
+        "bffe54f330eb9c64",
+        "d51c7bf4014e46e3",
+        "bf624ffc8d8d7635",
+        "f12dfdb71b03b688"
       ],
       "articles": [
         {
-          "title": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUlgwR1N4WVVvd2t4MnpUN290STNuSHhWdWpYUWtpUWVFS0NXN2tjUEFWX2Q3amZqRVBpNDJBNWJsV3NabEVnUVBlZ2c0WldpUnVncUVxRF9FU2tRVUdJdXdDeFRRbUJiaWRPU0VCVVVhbWd0UDZHOS1uRzFFaEt0Z2VGSXJLeFU4dmRZTDJVVXpxM2tseC1FVHVYc29wYm1zeFk1dWFqVUpUMDdqOVE?oc=5"
+          "title": "Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNY3JDY0hJNWNVTXJTSDlqVmhQaUtFZzZhX0Iwb2pWLW1XZS1PdmU2Y1R6a0d4S2Y3VHllNE9vUmkzMlVBODVmaHMxLUZoNkNFNEs5N05zRjEzVXB0cG96a3ZUcW43bERLQy1SU2RYWXE5SDRYWl9lbzd6QzVXT3k1ZVJrNW5ndlhaUGVuOFY3aEN3R3ZVTDA4SlpTRU9BS1U1ZXVMeWtyRHFsR3B0MnRsR3pRLUxTdFJBZUpGZnBB?oc=5"
+        },
+        {
+          "title": "Foto : Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi Halaman 1 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNLVEzaW80Z0xCVXRzWklQblFiWU1EQi1MQy1QWFhwa1RDWHNLcEhhWHdQZUkwQmIyLUxpZUJuV2xkRzhhZlVJZXVpaksteEo0cncyYmE2QlVEVXJwWE1UalAtSTZENFVqRklPT2hjcGpYWHhhVlgwRnR3NlBWbXprTUxvUE1Id0o2X01XcXhyWGNhQUswTlpkSHp6SnNlM3lhc3lXNTVFSGkzTlZSclAyZTZuZDFCSEFUWDdpX0k4S1pvcENHUHp5WA?oc=5"
+        },
+        {
+          "title": "Foto : Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi Halaman 2 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSWQ1OTFLS1E0dGdWcUxEUTM3RDRueUxoa0Y4ZDhGeEJsSi1MUnd3VlI3SWxoaDZqWUMxRVQ0NC1HMktYbEw5RWdTMHdSWVRVRVFJYkV2OWw2bmJhYUFhSWNZNXUzQ2pqOUFBVWk4M21DbGNHQmdONGxXQkZqSjJEWHZFZ2R5cVhoVURIbEx6NGk4TERhR3VWaVowd19kcFBxUVRMVGFwUFlOZk5ONVJIQ3VobEFHeGFST2Y1dlQwM28yUHhHOXNQRQ?oc=5"
+        },
+        {
+          "title": "Foto : Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi Halaman 3 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZVpaZFhfRlBNcFlTd3pzQjhraFlQR1g0VG9VeXBnTmlCZ1BmeldtN2lpV2M2b1hTbUZjS1JyN01fWGIyRzA5NmhoNHFRY3NsMVRQVGJvM0JzZEJVZjZ3aWM4emRHZ2VNZDgzMDdIYkN4YzdpOU9tMUxiZ2xCM0hYTl9oZ3Z4R0hwUVBXRWFCMERDV1doQVVVUUJ2cVBxbi1XOTF4Q0J0TXo1bm5jbElZOVkwZlpoam5RVzBKZ2dtZlRhQS1LZUV2Vg?oc=5"
+        },
+        {
+          "title": "OJK Rilis Daftar 94 Pinjol Legal Berizin per September 2026 - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5JdDIzMWZ5TXJHdjc4R0pWQ0VEQVQxbWl0cVFPWDc1ZnRTOEgxSF9vMEZQSEc3OHF2akQ3dHRsY2N5dklwb25pejN3cVRnZXFoYnFRNDZ6bWZCanYyazZOT0h3dS1Qa1FmTjcwLXVlaWpFMzUybldnM2Jn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 6,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-9178e947a208",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Terima 22.206 Aduan Praktik Keuangan Ilegal, Pinjol Ilegal Mendominasi - Jawa Pos",
+      "headlineZh": "OJK接获2.2万起非法金融投诉",
+      "summaryZh": "OJK报告2026年收到22,206起非法金融活动投诉，其中非法网贷占主导，反映消费者受害情况。",
+      "rationale": "官方投诉数据，反映消费者受害规模",
+      "independentSourceCount": 1,
+      "domains": [
+        "jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "402f5d3a47794242"
+      ],
+      "articles": [
+        {
+          "title": "OJK Terima 22.206 Aduan Praktik Keuangan Ilegal, Pinjol Ilegal Mendominasi - Jawa Pos",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWlBUdEM3YUR5ZXp2aVZlWWRUdlVGU2JreE5kZWVkZEZJM1NScjNGRXlqS2RnbVBRMndabHMxc2hGZ0YzM2g0S3lpNGpGZUdtdmJvcVdDOG5mbHhPalpoWmF4QUJhckVBdG1yeEZlbG9EWTlSQXg4YjNqam40ZWxScm8xZ01YVEdWUk5VNEs2bldJTXExZ292U3EyTV9OUldzRzNlbFRsODI5SmdZTzdsRUk0WnBxV0VSQU5oU190Um1uUQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-6730fe85e9b4",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Pindar"
+      ],
+      "headline": "Outstanding Pindar Tembus Rp 105,14 Triliun, Transparansi Jadi Sorotan - InvestorTrust",
+      "headlineZh": "P2P贷款余额达105万亿盾",
+      "summaryZh": "印尼P2P贷款平台（Pindar）未偿余额达105.14万亿印尼盾，透明度问题受关注，属行业数据更新。",
+      "rationale": "行业数据披露，非具体风险事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5a27d99282f37a1b"
+      ],
+      "articles": [
+        {
+          "title": "Outstanding Pindar Tembus Rp 105,14 Triliun, Transparansi Jadi Sorotan - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOOHFIRmlqZWlyMVNwRzZnXzVUTXhGWUlCQzNPNVFoR1YyUlRPMGNnRlRfZVNpcjFldkFRRE1McGZ1bnRfOElubXZIdUxFaWpLXzNTRFZiVW9qZm1CcmlCQnBnYlNicmlidmFKcDY2ZHd5N3NkQ0JuVG5jN1gxeWM3MGNLdDhoUVQ2Vmo4bkw3N1ZBLV9Ld3MtRTgwWHFQdkIwNlpqb3QzWE5JcWdrRElBVQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -52,45 +147,176 @@
         "negativeShare": 0.0,
         "platforms": []
       }
+    },
+    {
+      "id": "llm-54f204cab1e7",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Jatuhkan 1.277 Sanksi Sepanjang 2026, Denda Pasar Modal Capai Rp327 Miliar - Detik 60 - Detik 60",
+      "headlineZh": "OJK今年已实施1277项制裁",
+      "summaryZh": "OJK在2026年共实施1,277项制裁，资本市场罚款达3270亿印尼盾，显示监管行动力度。",
+      "rationale": "监管制裁数据，反映监管行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "detik60.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "179b1288cfe10f38"
+      ],
+      "articles": [
+        {
+          "title": "OJK Jatuhkan 1.277 Sanksi Sepanjang 2026, Denda Pasar Modal Capai Rp327 Miliar - Detik 60 - Detik 60",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTjR4blFaMEpLTnlLMXZzSGdxYUdrUlBDcFFDTHk5Y3Y1aVlORDU4eFNnbmtrb2pQeEFrdkJtWXJFYnJzTi1pZVlROWlvVnc0T0NUSlRNLXJfakNQUUtjVjhlR3FRbnctWnpfbEhuT0EtcDhrMjlnVzN4bG9pMWc4ZUx0clp4R0JmeFFFaU9ZaE1rOVJLcW9FbXlKdG1XMHNsV0pxNTdzZTFXNVlGM1hybExFR3UzeGp3SzF4V2Nn0gHDAUFVX3lxTE9RRGNqdk8taUlKTEtGeGVOcWxpTnROcXpZWUtnR3JsbWJmbXk4R2l0WlNOb2ctMklrZGo4OXJxY3lDUzVRT3gyOGJtaDROYm42OUtmYTdYUWlKaTRVeEJyemY0bFp1bERjWU82cHRXZ3FVN0RvMEd6cEoteW83TE1BdUtyVTdPT0dyTFlPb2dWSHdQcXFJVXhEOHNiRjNnNWVTdkI4N3R0YnlKRXg4RjN4QWJNZGpNUmNDQlJ0a0xLbXAtTQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
     }
   ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 22,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 8,
+    "candidateCount": 28,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 12,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 22
+      "ok": 28
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-82b29b12259f",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
+      "id": "llm-75bbbd512622",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "Pegadaian"
+        "OJK"
       ],
-      "headline": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
-      "headlineZh": "当铺客户还款被用于还网贷",
-      "summaryZh": "报道称Pegadaian客户还款资金被挪用去还网贷，涉及违规操作，需关注。",
-      "rationale": "涉及机构违规操作，具体事件",
-      "independentSourceCount": 1,
+      "headline": "Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi - Kompas.com",
+      "headlineZh": "OJK发布94家合法网贷名单",
+      "summaryZh": "OJK发布截至2026年9月共有94家持牌合法网贷平台名单，属常规监管信息更新。",
+      "rationale": "监管机构常规名单发布，非处罚或风险事件",
+      "independentSourceCount": 3,
       "domains": [
-        "detakkaltim.com"
+        "asatunews.co.id",
+        "money.kompas.com",
+        "readers.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e116d01d0f1b73e4"
+        "74d9ba4a8c9bb707",
+        "c869af3331943909",
+        "bffe54f330eb9c64",
+        "d51c7bf4014e46e3",
+        "bf624ffc8d8d7635",
+        "f12dfdb71b03b688"
       ],
       "articles": [
         {
-          "title": "Perkara Pegadaian, Uang Pelunasan Nasabah Digunakan Bayar Pinjol - Detak Kaltim",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUlgwR1N4WVVvd2t4MnpUN290STNuSHhWdWpYUWtpUWVFS0NXN2tjUEFWX2Q3amZqRVBpNDJBNWJsV3NabEVnUVBlZ2c0WldpUnVncUVxRF9FU2tRVUdJdXdDeFRRbUJiaWRPU0VCVVVhbWd0UDZHOS1uRzFFaEt0Z2VGSXJLeFU4dmRZTDJVVXpxM2tseC1FVHVYc29wYm1zeFk1dWFqVUpUMDdqOVE?oc=5"
+          "title": "Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNY3JDY0hJNWNVTXJTSDlqVmhQaUtFZzZhX0Iwb2pWLW1XZS1PdmU2Y1R6a0d4S2Y3VHllNE9vUmkzMlVBODVmaHMxLUZoNkNFNEs5N05zRjEzVXB0cG96a3ZUcW43bERLQy1SU2RYWXE5SDRYWl9lbzd6QzVXT3k1ZVJrNW5ndlhaUGVuOFY3aEN3R3ZVTDA4SlpTRU9BS1U1ZXVMeWtyRHFsR3B0MnRsR3pRLUxTdFJBZUpGZnBB?oc=5"
+        },
+        {
+          "title": "Foto : Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi Halaman 1 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNLVEzaW80Z0xCVXRzWklQblFiWU1EQi1MQy1QWFhwa1RDWHNLcEhhWHdQZUkwQmIyLUxpZUJuV2xkRzhhZlVJZXVpaksteEo0cncyYmE2QlVEVXJwWE1UalAtSTZENFVqRklPT2hjcGpYWHhhVlgwRnR3NlBWbXprTUxvUE1Id0o2X01XcXhyWGNhQUswTlpkSHp6SnNlM3lhc3lXNTVFSGkzTlZSclAyZTZuZDFCSEFUWDdpX0k4S1pvcENHUHp5WA?oc=5"
+        },
+        {
+          "title": "Foto : Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi Halaman 2 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSWQ1OTFLS1E0dGdWcUxEUTM3RDRueUxoa0Y4ZDhGeEJsSi1MUnd3VlI3SWxoaDZqWUMxRVQ0NC1HMktYbEw5RWdTMHdSWVRVRVFJYkV2OWw2bmJhYUFhSWNZNXUzQ2pqOUFBVWk4M21DbGNHQmdONGxXQkZqSjJEWHZFZ2R5cVhoVURIbEx6NGk4TERhR3VWaVowd19kcFBxUVRMVGFwUFlOZk5ONVJIQ3VobEFHeGFST2Y1dlQwM28yUHhHOXNQRQ?oc=5"
+        },
+        {
+          "title": "Foto : Daftar Pinjol Resmi OJK September 2026, Ada 94 yang Berizin dan Diawasi Halaman 3 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNZVpaZFhfRlBNcFlTd3pzQjhraFlQR1g0VG9VeXBnTmlCZ1BmeldtN2lpV2M2b1hTbUZjS1JyN01fWGIyRzA5NmhoNHFRY3NsMVRQVGJvM0JzZEJVZjZ3aWM4emRHZ2VNZDgzMDdIYkN4YzdpOU9tMUxiZ2xCM0hYTl9oZ3Z4R0hwUVBXRWFCMERDV1doQVVVUUJ2cVBxbi1XOTF4Q0J0TXo1bm5jbElZOVkwZlpoam5RVzBKZ2dtZlRhQS1LZUV2Vg?oc=5"
+        },
+        {
+          "title": "OJK Rilis Daftar 94 Pinjol Legal Berizin per September 2026 - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5JdDIzMWZ5TXJHdjc4R0pWQ0VEQVQxbWl0cVFPWDc1ZnRTOEgxSF9vMEZQSEc3OHF2akQ3dHRsY2N5dklwb25pejN3cVRnZXFoYnFRNDZ6bWZCanYyazZOT0h3dS1Qa1FmTjcwLXVlaWpFMzUybldnM2Jn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 6,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-9178e947a208",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Terima 22.206 Aduan Praktik Keuangan Ilegal, Pinjol Ilegal Mendominasi - Jawa Pos",
+      "headlineZh": "OJK接获2.2万起非法金融投诉",
+      "summaryZh": "OJK报告2026年收到22,206起非法金融活动投诉，其中非法网贷占主导，反映消费者受害情况。",
+      "rationale": "官方投诉数据，反映消费者受害规模",
+      "independentSourceCount": 1,
+      "domains": [
+        "jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "402f5d3a47794242"
+      ],
+      "articles": [
+        {
+          "title": "OJK Terima 22.206 Aduan Praktik Keuangan Ilegal, Pinjol Ilegal Mendominasi - Jawa Pos",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWlBUdEM3YUR5ZXp2aVZlWWRUdlVGU2JreE5kZWVkZEZJM1NScjNGRXlqS2RnbVBRMndabHMxc2hGZ0YzM2g0S3lpNGpGZUdtdmJvcVdDOG5mbHhPalpoWmF4QUJhckVBdG1yeEZlbG9EWTlSQXg4YjNqam40ZWxScm8xZ01YVEdWUk5VNEs2bldJTXExZ292U3EyTV9OUldzRzNlbFRsODI5SmdZTzdsRUk0WnBxV0VSQU5oU190Um1uUQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-6730fe85e9b4",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Pindar"
+      ],
+      "headline": "Outstanding Pindar Tembus Rp 105,14 Triliun, Transparansi Jadi Sorotan - InvestorTrust",
+      "headlineZh": "P2P贷款余额达105万亿盾",
+      "summaryZh": "印尼P2P贷款平台（Pindar）未偿余额达105.14万亿印尼盾，透明度问题受关注，属行业数据更新。",
+      "rationale": "行业数据披露，非具体风险事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5a27d99282f37a1b"
+      ],
+      "articles": [
+        {
+          "title": "Outstanding Pindar Tembus Rp 105,14 Triliun, Transparansi Jadi Sorotan - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOOHFIRmlqZWlyMVNwRzZnXzVUTXhGWUlCQzNPNVFoR1YyUlRPMGNnRlRfZVNpcjFldkFRRE1McGZ1bnRfOElubXZIdUxFaWpLXzNTRFZiVW9qZm1CcmlCQnBnYlNicmlidmFKcDY2ZHd5N3NkQ0JuVG5jN1gxeWM3MGNLdDhoUVQ2Vmo4bkw3N1ZBLV9Ld3MtRTgwWHFQdkIwNlpqb3QzWE5JcWdrRElBVQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -100,6 +326,42 @@
         "mentionCount": 0,
         "negativeShare": 0.0,
         "platforms": []
+      }
+    },
+    {
+      "id": "llm-54f204cab1e7",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Jatuhkan 1.277 Sanksi Sepanjang 2026, Denda Pasar Modal Capai Rp327 Miliar - Detik 60 - Detik 60",
+      "headlineZh": "OJK今年已实施1277项制裁",
+      "summaryZh": "OJK在2026年共实施1,277项制裁，资本市场罚款达3270亿印尼盾，显示监管行动力度。",
+      "rationale": "监管制裁数据，反映监管行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "detik60.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "179b1288cfe10f38"
+      ],
+      "articles": [
+        {
+          "title": "OJK Jatuhkan 1.277 Sanksi Sepanjang 2026, Denda Pasar Modal Capai Rp327 Miliar - Detik 60 - Detik 60",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTjR4blFaMEpLTnlLMXZzSGdxYUdrUlBDcFFDTHk5Y3Y1aVlORDU4eFNnbmtrb2pQeEFrdkJtWXJFYnJzTi1pZVlROWlvVnc0T0NUSlRNLXJfakNQUUtjVjhlR3FRbnctWnpfbEhuT0EtcDhrMjlnVzN4bG9pMWc4ZUx0clp4R0JmeFFFaU9ZaE1rOVJLcW9FbXlKdG1XMHNsV0pxNTdzZTFXNVlGM1hybExFR3UzeGp3SzF4V2Nn0gHDAUFVX3lxTE9RRGNqdk8taUlKTEtGeGVOcWxpTnROcXpZWUtnR3JsbWJmbXk4R2l0WlNOb2ctMklrZGo4OXJxY3lDUzVRT3gyOGJtaDROYm42OUtmYTdYUWlKaTRVeEJyemY0bFp1bERjWU82cHRXZ3FVN0RvMEd6cEoteW83TE1BdUtyVTdPT0dyTFlPb2dWSHdQcXFJVXhEOHNiRjNnNWVTdkI4N3R0YnlKRXg4RjN4QWJNZGpNUmNDQlJ0a0xLbXAtTQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -111,25 +373,25 @@
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "<urlopen error _ssl.c:993: The handshake operation timed out>",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 31,
-    "socialItemCount48h": 7
+    "articleCount48h": 34,
+    "socialItemCount48h": 16
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 497,
-    "classifiedCount": 95,
-    "irrelevantDropped": 145,
+    "inputCount": 496,
+    "classifiedCount": 101,
+    "irrelevantDropped": 139,
     "model": "deepseek-chat",
-    "fallbackCount": 257,
+    "fallbackCount": 256,
     "labelCounts": {
-      "NEG": 49,
-      "MIX": 5,
+      "NEG": 51,
+      "MIX": 9,
       "POS": 41
     }
   },
