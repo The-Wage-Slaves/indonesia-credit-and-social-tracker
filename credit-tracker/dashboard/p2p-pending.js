@@ -1,23 +1,23 @@
 const P2P_PENDING = {
-  "date": "2026-08-25",
+  "date": "2026-09-01",
   "players": [
     {
       "name": "AdaKami",
       "dataDate": null,
       "note": null,
-      "disb": 0.851,
-      "out": 0.266,
-      "tot": 7470000,
-      "act": 2080000
+      "disb": 0.877,
+      "out": 0.267,
+      "tot": 7520000,
+      "act": 2130000
     },
     {
       "name": "Lentera Dana (Shopee Loan)",
-      "dataDate": "24 Agustus 2026",
+      "dataDate": "31 Agustus 2026",
       "note": null,
-      "disb": 4.597,
-      "out": 0.514,
-      "tot": 18283811,
-      "act": 7739602
+      "disb": 4.743,
+      "out": 0.66,
+      "tot": 18379142,
+      "act": 7871638
     },
     {
       "name": "Kredifazz",
@@ -34,7 +34,7 @@ const P2P_PENDING = {
       "note": "官网仅披露累计口径(无YTD/outstanding)",
       "disb": null,
       "out": null,
-      "tot": 25363510,
+      "tot": 25412202,
       "act": null
     },
     {
@@ -50,10 +50,10 @@ const P2P_PENDING = {
       "name": "Easycash",
       "dataDate": null,
       "note": null,
-      "disb": 0.798,
-      "out": 0.455,
-      "tot": 10441270,
-      "act": 1905416
+      "disb": 0.906,
+      "out": 0.449,
+      "tot": 10563572,
+      "act": 2045765
     },
     {
       "name": "Julo",
@@ -61,8 +61,8 @@ const P2P_PENDING = {
       "note": "官网未披露outstanding",
       "disb": 0.067,
       "out": null,
-      "tot": 3354221,
-      "act": 165313
+      "tot": 3357767,
+      "act": 169441
     },
     {
       "name": "ADA Pundi",
@@ -75,12 +75,12 @@ const P2P_PENDING = {
     },
     {
       "name": "KrediOne",
-      "dataDate": "2026-08-16",
+      "dataDate": "2026-08-23",
       "note": "官网JSON接口；无outstanding披露；LoanNumber按借款人口径对齐(与Excel序列连续,判断)",
-      "disb": 0.473,
+      "disb": 0.483,
       "out": null,
-      "tot": 2553037,
-      "act": 762066
+      "tot": 2567357,
+      "act": 777064
     }
   ]
 };

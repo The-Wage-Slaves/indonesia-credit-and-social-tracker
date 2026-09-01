@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "asOf": "2026-08-25",
+  "asOf": "2026-09-01",
   "reviewRequired": true,
   "methodology": {
     "cadence": "monthly",
@@ -29,12 +29,12 @@
       "value": 3.34
     },
     "bi_rate": {
-      "period": "26.07",
+      "period": "26.08",
       "value": 5.75
     },
     "usd_idr": {
-      "period": "26.07",
-      "value": 18128.0
+      "period": "26.08",
+      "value": 17703.0
     },
     "unemployment": {
       "period": "2026.02",
@@ -57,12 +57,12 @@
       "indicator": "usd_idr",
       "label": "USD/IDR（JISDOR）",
       "period": "2026.08",
-      "value": 17703.0,
+      "value": 17746.0,
       "unit": "IDR/USD",
       "source": "Bank Indonesia JISDOR",
       "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
-      "released": "2026-08-24",
-      "note": "2026-08-24 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+      "released": "2026-08-31",
+      "note": "2026-08-31 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
     }
   },
   "changes": [
@@ -70,7 +70,7 @@
       "indicator": "bi_rate",
       "label": "BI 基准利率",
       "confirmed": {
-        "period": "26.07",
+        "period": "26.08",
         "value": 5.75
       },
       "candidate": {
@@ -90,19 +90,19 @@
       "indicator": "usd_idr",
       "label": "USD/IDR（JISDOR）",
       "confirmed": {
-        "period": "26.07",
-        "value": 18128.0
+        "period": "26.08",
+        "value": 17703.0
       },
       "candidate": {
         "indicator": "usd_idr",
         "label": "USD/IDR（JISDOR）",
         "period": "2026.08",
-        "value": 17703.0,
+        "value": 17746.0,
         "unit": "IDR/USD",
         "source": "Bank Indonesia JISDOR",
         "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
-        "released": "2026-08-24",
-        "note": "2026-08-24 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+        "released": "2026-08-31",
+        "note": "2026-08-31 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
       },
       "reason": "new_period"
     }
