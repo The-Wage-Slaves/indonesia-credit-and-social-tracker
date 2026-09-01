@@ -19,17 +19,26 @@ from decimal import Decimal, ROUND_HALF_UP
 HERE = pathlib.Path(__file__).resolve().parent
 DATA_JS = HERE.parent / "dashboard" / "data.js"
 
-# 2026-08-20 三项变更落地后确认的历史。最后一期之外任何一格变动都必须是
-# 有意为之，并附逐期对照表。
+# 确认过的历史。最后一期之外任何一格变动都必须是有意为之，并附逐期对照表。
+#
+# 2026-09-01 基线更新（唯一一次有意的历史重调，逐期对照表见 PR #38）：
+# 汇率 driver 的年内基数一直用错（约 16,25x，官方为 2025 年末 16,777），把 6.8% 的真实
+# 贬值虚增进 7–12% 档。07-22/07-28/07-30/08-11/08-20 五期货币柱 40→44（08-20 为 42→46）。
+# 08-04 不动：18,025 真实 7.4% 且破 18,000，原值本就正确。
+# 07-07/07-16 不动：无 driver 级记录、不可重算，保留旧基数并在图上标 fxBasis="legacy"。
 CONFIRMED_HISTORY = [
     ("2026-07-07", dict(fiscal=49, currency=42, institutions=45, social=59, coercive=43)),
     ("2026-07-16", dict(fiscal=49, currency=39, institutions=40, social=59, coercive=37)),
-    ("2026-07-22", dict(fiscal=48, currency=40, institutions=37, social=59, coercive=36)),
-    ("2026-07-28", dict(fiscal=48, currency=40, institutions=35, social=59, coercive=36)),
-    ("2026-07-30", dict(fiscal=48, currency=40, institutions=35, social=59, coercive=36)),
+    ("2026-07-22", dict(fiscal=48, currency=44, institutions=37, social=59, coercive=36)),
+    ("2026-07-28", dict(fiscal=48, currency=44, institutions=35, social=59, coercive=36)),
+    ("2026-07-30", dict(fiscal=48, currency=44, institutions=35, social=59, coercive=36)),
     ("2026-08-04", dict(fiscal=48, currency=39, institutions=35, social=56, coercive=36)),
-    ("2026-08-11", dict(fiscal=48, currency=40, institutions=35, social=58, coercive=36)),
+    ("2026-08-11", dict(fiscal=48, currency=44, institutions=35, social=58, coercive=36)),
+    ("2026-08-20", dict(fiscal=48, currency=46, institutions=35, social=57, coercive=35)),
 ]
+
+# 无 driver 级记录、汇率基数不可重算的期次。**这两期不是「已核对正确」，是「查不了」。**
+LEGACY_FX_BASIS = ("2026-07-07", "2026-07-16")
 
 PILLARS = ("fiscal", "currency", "institutions", "social", "coercive")
 
@@ -65,6 +74,42 @@ class HistoryIsNotRewrittenTests(unittest.TestCase):
                         f"{want_date} 的 {pillar} 由 {want[pillar]} 变成 {got.get(pillar)}——"
                         "重调历史必须是有意为之并附逐期对照表，不能顺带发生",
                     )
+
+
+class LegacyFxBasisTests(unittest.TestCase):
+    """不可重算的期次必须在数据里自报家门，而不是只写在 PR 描述里。
+
+    2026-09-01 回溯重调了五期汇率基数，但 07-07 与 07-16 没有 driver 级记录、无法重算，
+    只能保留旧基数。于是序列里同时存在两套口径。**这道缝必须显式**——否则半年后
+    看图的人会把 07-16 的 44.8 和 07-22 的 44.8 当成同一把尺子量出来的。
+    """
+
+    def setUp(self):
+        self.text = DATA_JS.read_text(encoding="utf-8")
+
+    def test_unrecomputable_periods_are_marked_in_the_data(self):
+        for date in LEGACY_FX_BASIS:
+            with self.subTest(date=date):
+                start = self.text.index(f'date: "{date}"')
+                entry = self.text[start:self.text.index(chr(10), start)]
+                self.assertIn('fxBasis: "legacy"', entry,
+                              f"{date} 沿用旧汇率基数，必须标出来")
+
+    def test_recomputed_periods_are_not_marked_legacy(self):
+        """反向：重调过的期次不能还挂着 legacy，否则标记失去意义。"""
+        for date, _ in CONFIRMED_HISTORY:
+            if date in LEGACY_FX_BASIS:
+                continue
+            with self.subTest(date=date):
+                start = self.text.index(f'date: "{date}"')
+                entry = self.text[start:self.text.index(chr(10), start)]
+                self.assertNotIn("legacy", entry, f"{date} 已按新基数重算，不该标 legacy")
+
+    def test_the_chart_actually_renders_the_seam(self):
+        """标记只写进 data.js 不够——engine.js 必须真的把它画出来。"""
+        engine = (HERE.parent / "dashboard" / "engine.js").read_text(encoding="utf-8")
+        self.assertIn("legacyBasis", engine, "趋势图没有读 fxBasis，缝在图上看不见")
+        self.assertIn("fxBasis", engine)
 
 
 class PmiSmoothingTests(unittest.TestCase):
