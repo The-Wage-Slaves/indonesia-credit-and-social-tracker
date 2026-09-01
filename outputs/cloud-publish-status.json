@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-08-25T02:50:08.510103+00:00",
+  "generatedAt": "2026-09-01T03:55:01.767258+00:00",
   "summary": {
     "kind": "weekly",
-    "title": "【每周二例行】线上信贷风险监测｜NORMAL待确认｜2026-08-23",
-    "risk": false,
+    "title": "【每周二例行】线上信贷风险监测｜NORMAL待确认｜2026-08-30",
+    "risk": true,
     "level": "orange",
     "lines": [
       "**为什么收到**\n这是每周二例行监测；只有新风险、指数异常或街头热度异常才推送。已经确认留痕的旧事件不会重复催办。",
-      "**指数与上周比较**\n信贷恐慌指数 **63.6 / 100**（0=平静，100=急性冲击）\n较上周 73.2：-9.6点（压力缓和）\n新闻压力 63.7（较上周 70.3：-6.6点（压力缓和））；社媒压力 55.1（较上周 71.7：-16.6点（压力缓和））\n当前只有周环比；积累满8周后增加滚动中位数/MAD异常幅度。",
-      "**稳定性街头热度**\n数据日期 2026-08-25；热度 41.3；建议稳定性分数 60（尚未写入正式评分）。"
+      "**指数与上周比较**\n信贷恐慌指数 **61.7 / 100**（0=平静，100=急性冲击）\n较上周 72.7：-11.0点（压力缓和）\n新闻压力 56.3（较上周 69.5：-13.2点（压力缓和））；社媒压力 56.3（较上周 71.4：-15.1点（压力缓和））\n当前只有周环比；积累满8周后增加滚动中位数/MAD异常幅度。",
+      "**稳定性街头热度**\n数据日期 2026-09-01；热度 69.7；建议稳定性分数 39（尚未写入正式评分）。",
+      "**需要你决定什么**\n本次仅由稳定性街头热度门触发；请核对采集覆盖与是否纳入本周稳定性评分。"
     ],
-    "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/issues/6",
-    "decisionId": "weekly:2026-08-23:normal"
+    "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/blob/bot/weekly-monitoring/credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json",
+    "decisionId": "weekly:2026-08-30:normal"
   },
-  "feishu": "suppressed_normal"
+  "feishu": "sent"
 }
