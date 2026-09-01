@@ -164,5 +164,85 @@ class MainSuccessPathTests(unittest.TestCase):
         self.assertEqual(SH.TABLE_WIDTH, 78)
 
 
+class GdeltThrottleTests(unittest.TestCase):
+    """GDELT 两个采集器打同一个端点，第二次必然撞限流。
+
+    实测（2026-08-11 ~ 08-25 三次云端运行）：
+        08-25  报道量 ok / tone 429
+        08-20  报道量 ok / tone 429
+        08-11  报道量 ok / tone ok
+    报道量几乎从不失败、tone 几乎总失败——不是 GDELT 整体拒绝我们，而是**第二次
+    调用**撞墙。原来两次调用之间只隔主循环的 sleep(6)，而代码注释自己写着
+    「限流约 1 次/5 秒」，等于贴着线走；第一次调用一旦内部重试过，配额已被烧掉。
+
+    这也是为什么先修节流而不是换 BigQuery：换数据源要 GCP 计费与服务账号，
+    而问题很可能是我们自己打太快。
+    """
+
+    def setUp(self):
+        SH._gdelt_last_call = None
+
+    def test_throttle_waits_when_calls_are_too_close(self):
+        slept = []
+        with mock.patch.object(SH.time, "sleep", slept.append),              mock.patch.object(SH.time, "monotonic", side_effect=[100.0, 101.0, 101.0]):
+            SH._gdelt_throttle()      # 第一次：只记录时间戳，不等
+            SH._gdelt_throttle()      # 1 秒后再来：必须等
+        self.assertTrue(slept, "两次请求相隔 1 秒却没有节流")
+        self.assertGreater(slept[-1], 5, f"只等了 {slept[-1]:.1f}s，仍在限流线附近")
+
+    def test_throttle_does_not_wait_when_enough_time_passed(self):
+        slept = []
+        with mock.patch.object(SH.time, "sleep", slept.append),              mock.patch.object(SH.time, "monotonic", side_effect=[0.0, 999.0, 999.0]):
+            SH._gdelt_throttle()
+            SH._gdelt_throttle()
+        self.assertFalse(slept, "间隔足够却仍在空等，会拖慢整体采集")
+
+    def test_first_call_never_waits(self):
+        """初值若用 0.0，进程刚启动时 monotonic 也接近 0，第一次会白等一整个间隔。"""
+        slept = []
+        with mock.patch.object(SH.time, "sleep", slept.append),              mock.patch.object(SH.time, "monotonic", return_value=0.5):
+            SH._gdelt_throttle()
+        self.assertFalse(slept, "本进程第一次 GDELT 请求不该等待")
+
+    def test_minimum_interval_is_above_the_documented_limit(self):
+        """注释里的「1 次/5 秒」是乐观估计，实测 6 秒不够。"""
+        self.assertGreaterEqual(SH.GDELT_MIN_INTERVAL, 10)
+
+    def test_backoff_grows_and_is_jittered(self):
+        first = [SH._gdelt_backoff(0) for _ in range(12)]
+        later = [SH._gdelt_backoff(2) for _ in range(12)]
+        self.assertGreater(sum(later) / len(later), sum(first) / len(first),
+                           "退避没有随重试次数增长")
+        self.assertGreater(len(set(round(v, 3) for v in first)), 1,
+                           "退避没有抖动，两个采集器会同步重试、同时撞墙")
+
+    def test_backoff_is_capped(self):
+        self.assertLessEqual(SH._gdelt_backoff(20), SH.GDELT_MAX_BACKOFF)
+
+    def test_retry_after_header_wins_over_our_own_guess(self):
+        response = mock.Mock(headers={"Retry-After": "37"})
+        self.assertEqual(SH._gdelt_backoff(0, response), 37.0)
+
+    def test_malformed_retry_after_falls_back_to_our_backoff(self):
+        response = mock.Mock(headers={"Retry-After": "soon"})
+        self.assertGreater(SH._gdelt_backoff(0, response), 0)
+
+    def test_repeated_429_eventually_raises_with_the_status(self):
+        response = mock.Mock(status_code=429, headers={})
+        with mock.patch.object(SH.time, "sleep"),              mock.patch.object(SH.requests, "get", return_value=response):
+            with self.assertRaises(RuntimeError) as ctx:
+                SH._gdelt("timelinetone", retries=3)
+        self.assertIn("429", str(ctx.exception))
+
+    def test_a_successful_call_still_goes_through_the_throttle(self):
+        """节流必须在请求层，否则重试路径会绕过它。"""
+        response = mock.Mock(status_code=200, headers={})
+        response.json.return_value = {"timeline": []}
+        response.raise_for_status.return_value = None
+        with mock.patch.object(SH, "_gdelt_throttle") as throttle,              mock.patch.object(SH.requests, "get", return_value=response):
+            SH._gdelt("timelinevol")
+        throttle.assert_called_once()
+
+
 if __name__ == "__main__":
     unittest.main()
