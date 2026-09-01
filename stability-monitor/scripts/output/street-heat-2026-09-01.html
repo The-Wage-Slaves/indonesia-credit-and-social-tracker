@@ -23,41 +23,41 @@
 <h1>街头动员热度 · 周度确认单</h1>
 <div class="sub">采集日 2026-09-01 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
 <div class="card hero">
-  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">69.7</div></div>
-  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">39</div></div>
-  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">38%</div></div>
+  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">63.9</div></div>
+  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">42</div></div>
+  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">34%</div></div>
   <div style="flex:1;min-width:220px"><div class="lbl">换算刻度</div><span class='band'>≤25→70分</span> <span class='band'>≤45→58分</span> <span class='band'>≤60→45分</span> <span class='band'>≤75→35分</span> <span class='band'>≤100→22分</span></div>
 </div>
-<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 250条中政治条目201条(浓度80%)，反对77/中性96/支持28 → 总反对率 38.3%（分侧: 民间YouTube 39% · 论坛Kaskus 0% · 媒体RSS 40%）</div>
-<div class="card"><h3>六源明细</h3><p class='warn'>⚠ 1 个源未参与（失败/待配置），热度按剩余源权重归一化。</p>
+<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 250条中政治条目213条(浓度85%)，反对73/中性120/支持20 → 总反对率 34.3%（分侧: 民间YouTube 38% · 论坛Kaskus 33% · 媒体RSS 26%）</div>
+<div class="card"><h3>六源明细</h3>
 <table><tr><th>状态</th><th>数据源</th><th class="num">热度</th><th class="num">权重</th><th>本期读数</th></tr>
 <tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>A. Google Trends 双篮搜索热度</b><span class="grp">领先指标</span></td>
-          <td class="num">64.4</td><td class="num">25%</td>
-          <td class="detail">街头篮 1.05x + 愤怒篮 1.53x（vs 各自3个月基线），均值 1.29x</td></tr><tr>
+          <td class="num">60.2</td><td class="num">25%</td>
+          <td class="detail">街头篮 1.04x + 愤怒篮 1.37x（vs 各自3个月基线），均值 1.20x</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>E. Kaskus 全站热帖</b><span class="grp">领先指标</span></td>
           <td class="num">100.0</td><td class="num">20%</td>
-          <td class="detail">全站热帖25条中政治/愤怒帖 4 条，互动占比 55.5%</td></tr><tr>
+          <td class="detail">全站热帖25条中政治/愤怒帖 4 条，互动占比 54.5%</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>F. YouTube 高播放政治视频</b><span class="grp">领先指标</span></td>
           <td class="num">100.0</td><td class="num">10%</td>
-          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 56 条（检索138条）</td></tr><tr>
-          <td><span class="badge" style="color:#D85A30;border-color:#D85A30">✗ 失败</span></td>
+          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 58 条（检索140条）</td></tr><tr>
+          <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>B. GDELT 报道量</b><span class="grp">滞后指标</span></td>
-          <td class="num">—</td><td class="num">重分配</td>
-          <td class="detail">采集失败: HTTPSConnectionPool(host=&#x27;api.gdeltproject.org&#x27;, port=443): Read timed out. (read timeout=</td></tr><tr>
+          <td class="num">49.0</td><td class="num">15%</td>
+          <td class="detail">近7天报道量占比均值 0.015% / 前49天基线 0.015% = 0.98x</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>C. GDELT 媒体tone</b><span class="grp">滞后指标</span></td>
-          <td class="num">50.8</td><td class="num">10%</td>
-          <td class="detail">近7天媒体平均tone -3.08（越负越紧张）</td></tr><tr>
+          <td class="num">48.2</td><td class="num">10%</td>
+          <td class="detail">近7天媒体平均tone -2.82（越负越紧张）</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>D. 大众媒体RSS 街头标题占比</b><span class="grp">滞后指标</span></td>
-          <td class="num">40.3</td><td class="num">20%</td>
-          <td class="detail">近7天 149 条标题中 6 条街头相关（4.0%）；失效源: 3</td></tr></table></div>
-<div class="card"><h3>近7天相关标题/热帖样例</h3><ul><li>[ANTARA Top News] Bertambah, Polisi tetapkan 49 tersangka kerusuhan unjuk rasa di DPR</li><li>[BBC Indonesia] Teka-teki gerombolan misterius usai demo 27 Agustus dan pertaruhan kredibilitas </li><li>[BBC Indonesia] Pos polisi dan dua sepeda motor dibakar massa saat demonstrasi 27 Agustus di dep</li><li>[BBC Indonesia] &#x27;Penundaan transaksi&#x27; rekening Koordinator Pati Bersatu sebelum demo 27 Agustus </li><li>[Liputan6 News] 49 Orang jadi Tersangka Kerusuhan Demo DPR</li></ul><h3>历史（共2期）</h3>
-<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-09-01</td><td class='num'>69.7</td><td class='num'><b>39</b></td></tr></table></div>
+          <td class="num">33.6</td><td class="num">20%</td>
+          <td class="detail">近7天 149 条标题中 5 条街头相关（3.4%）；失效源: 3</td></tr></table></div>
+<div class="card"><h3>近7天相关标题/热帖样例</h3><ul><li>[ANTARA Top News] Bertambah, Polisi tetapkan 49 tersangka kerusuhan unjuk rasa di DPR</li><li>[BBC Indonesia] Lima temuan TAUD di demo 27 Agustus: Dari dugaan penghilangan secara paksa hingg</li><li>[BBC Indonesia] Teka-teki gerombolan misterius usai demo 27 Agustus dan pertaruhan kredibilitas </li><li>[BBC Indonesia] Pos polisi dan dua sepeda motor dibakar massa saat demonstrasi 27 Agustus di dep</li><li>[Liputan6 News] 49 Orang jadi Tersangka Kerusuhan Demo DPR</li></ul><h3>历史（共2期）</h3>
+<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-09-01</td><td class='num'>63.9</td><td class='num'><b>42</b></td></tr></table></div>
 <div class="next"><b>下一步：</b>把这个建议分数发给 Claude Code 确认（说"确认本期街头热度"即可写入看板），
 或者说"这期不对，因为……"来挑战校准。</div>
 </div></body></html>

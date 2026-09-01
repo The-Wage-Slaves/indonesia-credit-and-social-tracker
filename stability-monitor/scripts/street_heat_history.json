@@ -242,31 +242,31 @@
   {
     "date": "2026-09-01",
     "version": 3,
-    "heat": 69.7,
-    "suggested_score": 39,
+    "heat": 63.9,
+    "suggested_score": 42,
     "opposition": {
       "status": "ok",
-      "rate": 38.3,
-      "detail": "250条中政治条目201条(浓度80%)，反对77/中性96/支持28 → 总反对率 38.3%（分侧: 民间YouTube 39% · 论坛Kaskus 0% · 媒体RSS 40%）"
+      "rate": 34.3,
+      "detail": "250条中政治条目213条(浓度85%)，反对73/中性120/支持20 → 总反对率 34.3%（分侧: 民间YouTube 38% · 论坛Kaskus 33% · 媒体RSS 26%）"
     },
     "sources": {
       "trends": {
         "status": "ok",
-        "heat": 64.4,
+        "heat": 60.2,
         "raw": {
-          "ratio_street": 1.050761421319797,
-          "ratio_anger": 1.525305410122164,
+          "ratio_street": 1.0350000000000001,
+          "ratio_anger": 1.3710879284649777,
           "per_kw": {
             "demo hari ini": 3,
             "demonstrasi": 1,
             "unjuk rasa": 1,
             "BBM naik": 3,
             "aksi massa": 1,
-            "korupsi": 37,
-            "kejaksaan": 28,
+            "korupsi": 33,
+            "kejaksaan": 27,
             "Indonesia gelap": 1,
             "turunkan presiden": 0,
-            "krisis": 10
+            "krisis": 9
           }
         }
       },
@@ -276,7 +276,7 @@
         "raw": {
           "n_threads": 25,
           "n_hits": 4,
-          "share": 55.48450565666503,
+          "share": 54.50371209636542,
           "examples": [
             "Sejumlah WNI Gelar Acara Maulid di Arab Saudi Diringkus Polisi",
             "Luar Biasa! Keuntungan Danantara Jauh Lebih Besar daripada Temasek",
@@ -289,34 +289,38 @@
         "status": "ok",
         "heat": 100.0,
         "raw": {
-          "n_searched": 138,
-          "n_big": 56
+          "n_searched": 140,
+          "n_big": 58
         }
       },
       "gdelt_vol": {
-        "status": "fail",
-        "heat": null,
-        "raw": {}
+        "status": "ok",
+        "heat": 49.0,
+        "raw": {
+          "avg7": 0.014571428571428572,
+          "baseline": 0.014863265306122447,
+          "ratio": 0.9803652341068243
+        }
       },
       "gdelt_tone": {
         "status": "ok",
-        "heat": 50.8,
+        "heat": 48.2,
         "raw": {
-          "avg_tone7": -3.0828571428571427
+          "avg_tone7": -2.8175714285714286
         }
       },
       "rss": {
         "status": "ok",
-        "heat": 40.3,
+        "heat": 33.6,
         "raw": {
           "total": 149,
-          "matched": 6,
-          "share": 4.026845637583892,
+          "matched": 5,
+          "share": 3.3557046979865772,
           "examples": [
             "[ANTARA Top News] Bertambah, Polisi tetapkan 49 tersangka kerusuhan unjuk rasa di DPR",
+            "[BBC Indonesia] Lima temuan TAUD di demo 27 Agustus: Dari dugaan penghilangan secara paksa hingg",
             "[BBC Indonesia] Teka-teki gerombolan misterius usai demo 27 Agustus dan pertaruhan kredibilitas ",
             "[BBC Indonesia] Pos polisi dan dua sepeda motor dibakar massa saat demonstrasi 27 Agustus di dep",
-            "[BBC Indonesia] 'Penundaan transaksi' rekening Koordinator Pati Bersatu sebelum demo 27 Agustus ",
             "[Liputan6 News] 49 Orang jadi Tersangka Kerusuhan Demo DPR"
           ],
           "dead_feeds": [
