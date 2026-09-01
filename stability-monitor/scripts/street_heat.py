@@ -182,6 +182,11 @@ def collect_trends():
 #   2. 指数退避 + 随机抖动：避免固定节奏反复撞在同一个窗口上
 #   3. 尊重服务端的 Retry-After
 GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
+# 2026-09-01 实测响应耗时（本地直连，各请求单独计时）：
+#     timelinevol  200 / 42.3s      timelinetone 200 / 74.5s
+# **GDELT 成功响应本身就要 42~75 秒**，原来的 timeout=30 属于把正常响应当成故障。
+# 60s 也不够（那条 74.5s 会挂），所以给 120s——慢一点的成功远好过快一点的失败。
+GDELT_TIMEOUT = 120
 GDELT_MIN_INTERVAL = 12.0      # 秒。实测 6 秒不够，注释里的「1次/5秒」是乐观估计
 GDELT_MAX_BACKOFF = 90.0
 # None = 本进程还没请求过。**不要用 0.0 当初值**：time.monotonic() 在进程刚启动时
@@ -224,7 +229,7 @@ def _gdelt(mode, retries=4):
         r = requests.get(GDELT_ENDPOINT,
                          params={"query": GDELT_QUERY, "mode": mode,
                                  "timespan": "56d", "format": "json"},
-                         headers=UA, timeout=30)
+                         headers=UA, timeout=GDELT_TIMEOUT)
         last_status = r.status_code
         if r.status_code in (429, 503):
             if attempt < retries - 1:

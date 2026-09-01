@@ -204,6 +204,15 @@ class GdeltThrottleTests(unittest.TestCase):
             SH._gdelt_throttle()
         self.assertFalse(slept, "本进程第一次 GDELT 请求不该等待")
 
+    def test_timeout_covers_observed_response_times(self):
+        """2026-09-01 实测：timelinevol 42.3s、timelinetone 74.5s 才返回 200。
+
+        原来的 timeout=30 把**正常但慢**的响应当成了故障；60s 也不够。
+        这里钉住 >=90，改小会立刻红。
+        """
+        self.assertGreaterEqual(SH.GDELT_TIMEOUT, 90,
+                                "超时低于实测的 74.5s 响应耗时，慢响应会被误判为失败")
+
     def test_minimum_interval_is_above_the_documented_limit(self):
         """注释里的「1 次/5 秒」是乐观估计，实测 6 秒不够。"""
         self.assertGreaterEqual(SH.GDELT_MIN_INTERVAL, 10)
