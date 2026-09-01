@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "date": "2026-08-20",
+  "date": "2026-09-01",
   "note": "Driver-level snapshot of the production V3 scorecard, archived so a later methodology change can be replayed period by period instead of relying on prose. Periods before 2026-08-20 have no such record and never will.",
   "pillars": {
     "fiscal": {
@@ -46,7 +46,7 @@
       ]
     },
     "currency": {
-      "score": 46,
+      "score": 47,
       "pillarAdj": 0,
       "drivers": [
         {
@@ -71,7 +71,7 @@
           "name": "股市与外资流向",
           "type": "quant",
           "weight": 0.14,
-          "score": 30
+          "score": 35
         },
         {
           "name": "国际市场准入",
@@ -124,7 +124,7 @@
       ]
     },
     "social": {
-      "score": 57,
+      "score": 52,
       "pillarAdj": 0,
       "drivers": [
         {
@@ -143,7 +143,7 @@
           "name": "网络政治情绪",
           "type": "quant",
           "weight": 0.25,
-          "score": 57
+          "score": 45
         },
         {
           "name": "必需品实际购买力",
@@ -161,12 +161,12 @@
           "name": "动员性质",
           "type": "ordinal",
           "weight": 0.1,
-          "score": 58
+          "score": 40
         }
       ]
     },
     "coercive": {
-      "score": 35,
+      "score": 33,
       "pillarAdj": 0,
       "drivers": [
         {
@@ -179,7 +179,7 @@
           "name": "对平民镇压强度(计数)",
           "type": "quant",
           "weight": 0.15,
-          "score": 30
+          "score": 18
         },
         {
           "name": "军队文职渗透度",
@@ -207,14 +207,5 @@
         }
       ]
     }
-  },
-  "revision": {
-    "date": "2026-09-01",
-    "field": "currency.汇率水平与贬速",
-    "from": 38,
-    "to": 55,
-    "pillarFrom": 42,
-    "pillarTo": 46,
-    "why": "年内基数用错（约 16,25x，官方为 2025 年末 16,777），把 6.8% 的真实贬值虚增进 7–12% 档。本期按逐期对照表回溯重调 07-22/07-28/07-30/08-11/08-20 五期。归档快照随之改写，以便日后重放得到的是修正后的口径；原值与改动理由记录在此字段，不靠 git 历史记忆。"
   }
 }

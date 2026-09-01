@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "asOf": "2026-08-20",
+  "asOf": "2026-09-01",
   "purpose": "Canonical V4 evidence ledger rolled forward after explicit human confirmation; unchanged observations remain carry-forwards with their original timestamps.",
   "triggerSignals": [],
   "rapidDropReview": {
@@ -196,23 +196,23 @@
       "carryForwardReason": "No newer reviewed release was confirmed by 2026-08-04; carried forward with its original date and freshness penalty rather than replaced by an estimate."
     },
     {
-      "id": "fx_idr_2026_08_18",
-      "date": "2026-08-18",
+      "id": "fx_idr_2026_08_31",
+      "date": "2026-08-31",
       "primaryOwner": "currency.fx_stress",
       "label": "Rupiah spot stress",
-      "summary": "JISDOR 17,856 on 2026-08-18 (17,824 on 08-11): broadly flat on the week and still below 18,000.",
+      "summary": "JISDOR 17,703 on 2026-08-31 (17,856 on 08-18): the rupiah strengthened through the protest week. Year-to-date depreciation against the 2025 close (16,777, Kemenkeu official rate for 31 Dec 2025) is 5.5% - the 3-7% band, not the 7-12% band the production driver had been using since 2026-08-11.",
       "confidence": "high",
       "sourceText": "Reviewed weekly market snapshot; primary quote URL not archived, so this remains an internal-review input.",
-      "observedAt": "2026-08-18",
+      "observedAt": "2026-08-31",
       "maxAgeDays": 14,
       "sourceType": "internal_review",
       "sourceFamily": "weekly_market_pack",
-      "underlyingEventId": "fx_idr_2026_08_18",
-      "retrievedAt": "2026-08-20",
+      "underlyingEventId": "fx_idr_2026_08_31",
+      "retrievedAt": "2026-09-01",
       "scoreInputs": [
         {
           "metric": "USD_IDR_ytd_depreciation",
-          "value": "JISDOR 17,856 on 2026-08-18; about -6.4 percent year to date against the 16,777 official 2025 close",
+          "value": "JISDOR 17,703 on 2026-08-31; about -5.5 percent year to date against the 16,777 official 2025 close",
           "unit": "percent",
           "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
           "score": 55,
@@ -254,18 +254,18 @@
       "carryForwardReason": "No newer reviewed release was confirmed by 2026-08-04; carried forward with its original date and freshness penalty rather than replaced by an estimate."
     },
     {
-      "id": "inflation_2026_07",
-      "date": "2026-07-31",
+      "id": "inflation_2026_08",
+      "date": "2026-08-31",
       "primaryOwner": "currency.inflation_expectations",
       "label": "Inflation relative to target",
-      "summary": "BPS official release: July 2026 headline CPI 2.88% y/y (CPI index 111.73), inside the 1.5-3.5% target band. Jan-Jul mean 3.36%. BI held the policy rate at 5.75% on 18-19 August, giving a real policy rate of +2.87%.",
+      "summary": "BPS official release 2026-09-01: August headline CPI 3.19% y/y (2.31% a year earlier), monthly +0.21%, YTD 1.86%; chicken, chilli and rice led. Jan-Aug mean 3.34% stays inside the 1.5-3.5% band. BI Rate held at 5.75%, real policy rate +2.56%.",
       "confidence": "high",
-      "observedAt": "2026-07-31",
+      "observedAt": "2026-08-31",
       "maxAgeDays": 60,
       "sourceType": "primary",
       "sourceFamily": "BPS",
-      "underlyingEventId": "inflation_2026_07",
-      "retrievedAt": "2026-08-20",
+      "underlyingEventId": "inflation_2026_08",
+      "retrievedAt": "2026-09-01",
       "scoreInputs": [
         {
           "metric": "inflation_real_policy_rate_composite",
@@ -276,7 +276,7 @@
           "weight": 1
         }
       ],
-      "sourceUrl": "https://www.bps.go.id/id/pressrelease/2026/08/03/2601/inflasi-year-on-year--y-on-y--pada-juli-2026-sebesar-2-88-persen-.html"
+      "sourceUrl": "https://www.bps.go.id/id/pressrelease"
     },
     {
       "id": "institutional_checks_2026_07",
@@ -337,19 +337,19 @@
       "carryForwardReason": "No newer reviewed release was confirmed by 2026-08-04; carried forward with its original date and freshness penalty rather than replaced by an estimate."
     },
     {
-      "id": "market_access_2026_08",
-      "date": "2026-08-18",
+      "id": "market_access_2026_09",
+      "date": "2026-08-31",
       "primaryOwner": "currency.market_access",
       "label": "Market access bridge",
-      "summary": "JCI 6,401 vs 8,646.93 at 2025-12-30 close is -25.97% in rupiah and -30.7% in USD after the 16,720->17,856 currency move; the prior -35% was an estimate, so the difference is a change of method, not a market recovery. Year-to-date foreign net selling is about IDR 97.1tn. Two access signals this week are recorded but do not move the score: FTSE Russell again deferred Indonesian additions and tier changes to the December 2026 review, and MSCI removed GOTO and CPIN from the Global Standard index. The band is defined on USD return alone and cannot absorb index-provider decisions. From 2026-08-20 the production V3 also carries a separate 国际市场准入 driver (weight 0.06, carved out of 股市与外资流向) so index-provider access decisions score somewhere instead of being recorded as evidence only.",
+      "summary": "JCI closed 6,525.48 on 2026-08-31 (+0.11%) against 8,646.93 at the 2025-12-30 close: -24.5% in rupiah, -28.7% in USD, up from -30.7%. Equities and the currency both firmed during a week of nationwide protests, a parliament-building riot, 322 arrests and one death - priced as a sentiment shock, not a structural risk. No new index-provider decision; FTSE's deferral and the MSCI deletions still stand.",
       "confidence": "medium",
       "sourceText": "Production V3 driver evidence as of 2026-07-22",
-      "observedAt": "2026-08-18",
+      "observedAt": "2026-08-31",
       "maxAgeDays": 14,
       "sourceType": "internal_review",
       "sourceFamily": "weekly_market_pack",
-      "underlyingEventId": "market_access_2026_08",
-      "retrievedAt": "2026-08-20",
+      "underlyingEventId": "market_access_2026_09",
+      "retrievedAt": "2026-09-01",
       "scoreInputs": [
         {
           "metric": "local_assets_and_market_access_composite",
@@ -378,34 +378,34 @@
       "carryForwardReason": "No newer reviewed release was confirmed by 2026-08-04; carried forward with its original date and freshness penalty rather than replaced by an estimate."
     },
     {
-      "id": "offline_mobilization_2026_08_18",
-      "date": "2026-08-18",
+      "id": "offline_mobilization_2026_09_01",
+      "date": "2026-08-31",
       "primaryOwner": "social.offline_mobilization",
       "label": "Offline mobilisation event pool",
-      "summary": "BEM UI held a demonstration at Bundaran HI in Jakarta on 2026-08-18 with an eight-point platform, and riots with security-force clashes occurred around the Aceh peace commemoration on 08-16 and 08-18. Organised, capital-centre and legitimacy-framed, but still student-only, so the ordinal band is unchanged.",
+      "summary": "Five consecutive days of protest 2026-08-27 to 08-31: nationwide demonstrations over the delayed asset-forfeiture bill, 322 arrests and one death in Jakarta on 08-28, a riot outside the parliament building on 08-29 with hundreds detained. The person killed belonged to the civil group GRIB Jaya, so this is no longer student-only. Still short of a regime-change demand and materially smaller than the August 2025 wave (10 dead, 3,000+ arrested); 08-27 was that wave's first anniversary.",
       "confidence": "low",
       "sourceText": "Reviewed PR #2 protest evidence",
-      "observedAt": "2026-08-18",
+      "observedAt": "2026-08-31",
       "maxAgeDays": 35,
       "sourceType": "secondary",
       "sourceFamily": "protest_event_ledger",
-      "underlyingEventId": "offline_mobilization_2026_08_18",
-      "retrievedAt": "2026-08-20"
+      "underlyingEventId": "offline_mobilization_2026_09_01",
+      "retrievedAt": "2026-09-01"
     },
     {
-      "id": "online_grievance_2026_08_20",
-      "date": "2026-08-20",
+      "id": "online_grievance_2026_09_01",
+      "date": "2026-09-01",
       "primaryOwner": "social.online_grievance",
       "label": "Online grievance proxy",
-      "summary": "The 2026-08-18 scheduled run refused to score at 60% effective source weight against a 65% floor. A manual re-run on 08-20 reached 90% coverage (only GDELT tone missing on a 429) and produced composite heat 43.2 (up from 32.6) and an opposition rate of 34.8% (from 37.2%). The headline rate barely moved but its composition reversed: grassroots YouTube 39%->51% while mainstream RSS fell 34%->9%, widening the grassroots-media gap from 5pp to 42pp. Driver score 60%x59 + 40%x55 = 57.",
+      "summary": "Cloud street-heat run 2026-09-01: composite heat 69.7 (43.2 on 08-20), opposition rate 38.3% (34.8%). Google Trends anger basket 1.53x its three-month baseline; Kaskus and YouTube both maxed. Mainstream-media opposition share jumped 9% -> 40%, closing the civil-media gap from 42pp to 1pp: the press is now following the story rather than the street leading alone. Source coverage 90%.",
       "confidence": "medium",
       "sourceText": "bot/weekly-monitoring stability-monitor/scripts/street_heat_history.json, 2026-08-11 cloud output",
-      "observedAt": "2026-08-20",
+      "observedAt": "2026-09-01",
       "maxAgeDays": 14,
       "sourceType": "crawler",
       "sourceFamily": "street_heat_multi_source",
-      "underlyingEventId": "online_grievance_2026_08_20",
-      "retrievedAt": "2026-08-20",
+      "underlyingEventId": "online_grievance_2026_09_01",
+      "retrievedAt": "2026-09-01",
       "scoreInputs": [
         {
           "metric": "street_heat_and_opposition_proxy",

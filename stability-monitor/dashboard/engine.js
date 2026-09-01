@@ -148,7 +148,7 @@ function render(){
         <div style="font-size:11px;color:var(--tx3);">每周一更 · 现有 ${DATA.weekly.length} 期</div>
       </div>
       <div class="chartWrap" style="height:220px;"><canvas id="wk"></canvas></div>
-      <p class="note">读图: 看斜率不看水位——周变化的方向与速度比绝对分更有信息量。注: 两期均按 v3 量化口径(2026-07-15重构,硬数据占比~73%)回溯重算，与 v2 原值不可直接比较。切换顶部权重预设，综合线会随之重算。</p>
+      <p class="note">${legacyBasisNote()}读图: 看斜率不看水位——周变化的方向与速度比绝对分更有信息量。注: 两期均按 v3 量化口径(2026-07-15重构,硬数据占比~73%)回溯重算，与 v2 原值不可直接比较。切换顶部权重预设，综合线会随之重算。</p>
     </div>
     <div class="grid">${DATA.pillars.map(pillarCard).join('')}</div>
     <div class="section">
@@ -165,6 +165,17 @@ function render(){
   drawWeekly();
 }
 
+// 趋势图的口径缝说明。抽成函数是为了能被渲染工装直接断言——
+// 内联在模板串里就只能靠「engine.js 里 grep 得到这段文字」来验，那种验法在
+// prev:45 那次已经证明过是无效的。
+function legacyBasisNote(){
+  const marked = DATA.weekly.filter(w => w.fxBasis === 'legacy').map(w => w.date);
+  if(!marked.length) return "";
+  return `<b>空心点</b>(${marked.join("、")}): 沿用已知有误的旧汇率基数——该基数把年内贬值虚增约 3.4pp。`
+    + `其后各期已于 2026-09-01 按逐期对照表回溯重调，但这两期没有 driver 级记录、无法重算，故原样保留。`
+    + `序列在此处有一道口径缝，跨缝比较需谨慎。<br>`;
+}
+
 let wkChart;
 const PILLAR_COLORS = { fiscal:"#185fa5", currency:"#D85A30", institutions:"#8A63C9", social:"#639922", coercive:"#888780" };
 function drawWeekly(){
@@ -173,10 +184,16 @@ function drawWeekly(){
   const txColor = (getComputedStyle(document.documentElement).getPropertyValue('--tx')||'#1a1a17').trim();
   const wkComposite = w => { let s=0,t=0; DATA.pillars.forEach(p=>{ s+=w.scores[p.id]*weights[p.id]; t+=weights[p.id]; }); return Math.round(s/t); };
   const labels = DATA.weekly.map(w=>w.date);
+  const legacyBasis = DATA.weekly.map(w => w.fxBasis === 'legacy');
   const mk = (id,label) => ({ label, data: DATA.weekly.map(w=>w.scores[id]), borderColor: PILLAR_COLORS[id], backgroundColor: PILLAR_COLORS[id], borderWidth: 1.5, pointRadius: 3, tension: 0 });
   wkChart = new Chart(ctx,{ type:'line',
     data:{ labels, datasets:[
-      { label:'综合', data: DATA.weekly.map(wkComposite), borderColor: txColor, backgroundColor: txColor, borderWidth: 3, pointRadius: 4, tension: 0 },
+      { label:'综合', data: DATA.weekly.map(wkComposite), borderColor: txColor, backgroundColor: txColor, borderWidth: 3,
+        // 空心点 = 该期沿用已知有误的旧汇率基数、且无 driver 级记录可重算（见图注）。
+        // 不画成实心是为了让这道口径缝在图上看得见，而不是只写在文字里。
+        pointRadius: legacyBasis.map(f => f ? 5 : 4),
+        pointBackgroundColor: legacyBasis.map(f => f ? 'rgba(0,0,0,0)' : txColor),
+        pointBorderColor: txColor, pointBorderWidth: 2, tension: 0 },
       mk('fiscal','财政'), mk('currency','货币'), mk('institutions','制度'), mk('social','社会'), mk('coercive','强制机构')
     ]},
     options:{ responsive:true, maintainAspectRatio:false,
