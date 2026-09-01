@@ -220,13 +220,30 @@ def parse_jisdor(source: str) -> Observation:
     )
 
 
-def bps_items(payload: dict[str, Any]) -> list[dict[str, Any]]:
-    if str(payload.get("status", "")).upper() != "OK":
-        return []
+def bps_reject_reason(payload: dict[str, Any]) -> str | None:
+    """返回本次响应被判定为「没有可用条目」的原因，可用则返回 None。
+
+    分开这一步是因为 collect_bps 原先无法区分**两种完全不同的故障**：
+    「一条都没取回来」和「取回来了但一条都没解析出来」。两者的报错文字一模一样
+    （no recognized CPI/GDP/unemployment releases），而修法南辕北辙——前者要改
+    查询参数，后者要改正则。2026-08-25 起月频采集连续报这一句，正因为分不清
+    是哪一种，谁也没法往下查。
+    """
+    status = str(payload.get("status", "")).upper()
+    if status != "OK":
+        # message 里是 BPS 的人类可读说明（如 Data Tidak Ditemukan）。
+        # **不含 key**（key 在 URL 路径里，不在响应体里），可以安全打印。
+        return f"status={status or '(缺失)'} message={str(payload.get('message', ''))[:120]}"
     data = payload.get("data")
     if not isinstance(data, list) or len(data) < 2 or not isinstance(data[1], list):
+        return f"data 结构非预期: {type(data).__name__}"
+    return None
+
+
+def bps_items(payload: dict[str, Any]) -> list[dict[str, Any]]:
+    if bps_reject_reason(payload) is not None:
         return []
-    return [item for item in data[1] if isinstance(item, dict)]
+    return [item for item in payload["data"][1] if isinstance(item, dict)]
 
 
 def text_of_release(item: dict[str, Any]) -> str:
@@ -330,6 +347,7 @@ def collect_bps(api_key: str, today: dt.date) -> list[Observation]:
     if not api_key:
         raise RuntimeError("BPS_API_KEY is not configured")
     items: list[dict[str, Any]] = []
+    probe: list[str] = []
     for year in {today.year, today.year - 1}:
         for keyword in ("inflasi", "ekonomi indonesia triwulan", "pengangguran"):
             url = (
@@ -346,10 +364,21 @@ def collect_bps(api_key: str, today: dt.date) -> list[Observation]:
                 raise RuntimeError(
                     f"BPS WebAPI request failed for {keyword}/{year}: {type(exc).__name__}"
                 ) from None
-            items.extend(bps_items(payload))
+            reason = bps_reject_reason(payload)
+            batch = bps_items(payload)
+            items.extend(batch)
+            probe.append(f"{keyword}/{year}: " + (reason or f"{len(batch)} 条"))
     observations = parse_bps_releases(items)
     if not observations:
-        raise ValueError("BPS API returned no recognized CPI/GDP/unemployment releases")
+        # 把「查到了什么」一并抛出：没有它，这个报错只能告诉你失败了，
+        # 不能告诉你该改查询还是该改正则。标题里没有 key，可以安全打印。
+        titles = [text_of_release(item)[:90] for item in items[:5]]
+        detail = "; ".join(probe)
+        sample = " | ".join(titles) if titles else "(一条都没取回来)"
+        raise ValueError(
+            "BPS API returned no recognized CPI/GDP/unemployment releases"
+            f"（共取回 {len(items)} 条；各查询: {detail}；样本标题: {sample}）"
+        )
     return observations
 
 
