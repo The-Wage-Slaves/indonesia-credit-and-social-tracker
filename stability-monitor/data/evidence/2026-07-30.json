@@ -189,13 +189,20 @@
       "scoreInputs": [
         {
           "metric": "USD_IDR_ytd_depreciation",
-          "value": -10.2,
+          "value": "17,921 IDR/USD; about -6.8 percent year to date against the 16,777 official 2025 close",
           "unit": "percent",
           "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
-          "score": 38,
+          "score": 55,
           "weight": 1
         }
-      ]
+      ],
+      "revision": {
+        "date": "2026-09-01",
+        "fromScore": 38,
+        "toScore": 55,
+        "fromValue": -10.2,
+        "why": "2026-09-01 回溯修正：年内贬值基数原用约 16,25x，官方基数是 2025 年末 16,777（Kemenkeu 税务汇率），旧读数把贬值虚增约 3.4pp。本条 scoreInput 的 value 与 score 已按真实基数重算。"
+      }
     },
     {
       "id": "market_access_2026_07",

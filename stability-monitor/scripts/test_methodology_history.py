@@ -112,6 +112,58 @@ class LegacyFxBasisTests(unittest.TestCase):
         self.assertIn("fxBasis", engine)
 
 
+class V4ShadowRetroTests(unittest.TestCase):
+    """V4 影子历史的回溯必须留痕，且不可重算的那期要自报家门。
+
+    2026-09-01 修 V3 的汇率基数时，V4 证据档里的 fx_stress 被漏掉了——同一天、
+    同一个汇率，V3 记 55、V4 记 38，影子指数照常出了个 46.1，全绿。这条缝在
+    validate_repo 里已经钉成不变量；这里钉的是回溯本身的完整性。
+    """
+
+    HISTORY = HERE.parent / "data" / "v4-shadow-history.json"
+    NOT_RECOMPUTABLE = ("2026-07-22",)
+
+    def setUp(self):
+        import json
+        self.hist = json.loads(self.HISTORY.read_text(encoding="utf-8"))
+        self.byDate = {s["date"]: s for s in self.hist["snapshots"]}
+
+    def test_the_unreplayable_period_says_so(self):
+        for date in self.NOT_RECOMPUTABLE:
+            with self.subTest(date=date):
+                snap = self.byDate[date]
+                self.assertEqual(snap.get("fxBasis"), "legacy",
+                                 f"{date} 无法重放，必须标 fxBasis=legacy")
+                self.assertIn("revision", snap, f"{date} 缺少留痕")
+
+    def test_no_period_is_both_legacy_and_recomputed(self):
+        for date, snap in self.byDate.items():
+            if snap.get("fxBasis") != "legacy":
+                continue
+            with self.subTest(date=date):
+                self.assertNotIn("fromComposite", snap.get("revision", {}),
+                                 f"{date} 既标不可重算又记录了重算前后值，自相矛盾")
+
+    def test_every_revised_period_records_what_it_was_before(self):
+        revised = [d for d, s in self.byDate.items()
+                   if "fromComposite" in s.get("revision", {})]
+        self.assertTrue(revised, "一期都没重调，回溯没落地")
+        for date in revised:
+            with self.subTest(date=date):
+                snap = self.byDate[date]
+                self.assertNotEqual(snap["revision"]["fromComposite"], snap["composite"],
+                                    f"{date} 记了 revision 但分数没变")
+                self.assertIn("基数", snap["revision"]["why"], f"{date} 没说明改动理由")
+
+    def test_the_revision_log_names_what_could_not_be_recomputed(self):
+        """日志必须点名不可重算的期次——否则半年后没人知道那道缝在哪。"""
+        entries = self.hist.get("revisionLog") or []
+        self.assertTrue(entries, "缺少 revisionLog")
+        latest = entries[-1]
+        self.assertEqual(tuple(latest.get("notRecomputable", ())), self.NOT_RECOMPUTABLE)
+        self.assertIn("verification", latest, "没写怎么验证的，等于没法复核")
+
+
 class PmiSmoothingTests(unittest.TestCase):
     """平滑的全部意义在于：去掉断崖，同时不动历史。"""
 

@@ -293,7 +293,7 @@
           "scoreInputs": [
             {
               "metric": "USD_IDR_ytd_depreciation",
-              "value": "18,025 IDR/USD; about -11.2 percent year to date",
+              "value": "18,025 IDR/USD; about -7.4 percent year to date against the 16,777 official 2025 close (still breaches 18,000)",
               "unit": "percent",
               "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
               "score": 35,

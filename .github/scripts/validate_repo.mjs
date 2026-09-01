@@ -144,6 +144,30 @@ assert(v4Input.asOf === evidence.asOf, 'V4 input and evidence cutoff dates diffe
 const latestWeekly = [...stabilityContext.__DATA.weekly].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
 assert(latestWeekly && latestWeekly.date === v4Input.asOf, 'V3 production and V4 shadow cutoff dates differ');
 assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and V4 shadow cutoff dates differ');
+
+// V3 与 V4 必须对同一个汇率读数出同一个分。
+//
+// 2026-09-01 周更把 V3 的汇率 driver 由 38 改成 55（基数口径纠错），但 V4 证据档里的
+// currency.fx_stress 仍写着 38 / "-10.2 percent"。两边同一天、同一个汇率、两个分数，
+// CI 全绿、单测全绿、影子指数照常出 46.1 —— 没有任何东西发现。这是本项目第 N 次
+// 「一边修了、另一边忘了」，所以把它钉成不变量。
+{
+  const fxDriver = stabilityContext.__DATA.pillars
+    .find((pillar) => pillar.id === 'currency')?.drivers
+    .find((driver) => driver.name.startsWith('汇率'));
+  assert(fxDriver, 'currency pillar has no 汇率 driver');
+  const observations = Array.isArray(evidence.observations)
+    ? evidence.observations : Object.values(evidence.observations ?? {});
+  const fxObservation = observations.find((o) => o.primaryOwner === 'currency.fx_stress');
+  assert(fxObservation, 'V4 evidence has no currency.fx_stress observation');
+  const inputs = fxObservation.scoreInputs ?? [];
+  assert(inputs.length > 0, 'currency.fx_stress observation has no scoreInputs');
+  for (const input of inputs) {
+    assert(input.score === fxDriver.score,
+      `V3 汇率 driver = ${fxDriver.score} but V4 fx_stress scoreInput = ${input.score} ` +
+      '— 同一天同一个汇率不能有两个分。改了一边就要改另一边。');
+  }
+}
 assert(Math.abs(Object.values(v4Input.officialPillarWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9, 'V4 official baseline weights do not sum to 1');
 assert(Object.values(v4Input.officialPillarWeights).every((value) => value === 0.2), 'V3 official baseline must remain equal weighted');
 assert(JSON.stringify(v4Input.pillarWeights) === JSON.stringify({
