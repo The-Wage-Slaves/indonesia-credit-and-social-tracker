@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-09-01",
+  "note": "Driver-level snapshot of the production V3 scorecard, archived so a later methodology change can be replayed period by period instead of relying on prose. Periods before 2026-08-20 have no such record and never will.",
+  "pillars": {
+    "fiscal": {
+      "score": 48,
+      "pillarAdj": 0,
+      "drivers": [
+        {
+          "name": "外部流动性缓冲",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 60
+        },
+        {
+          "name": "赤字与债务轨迹",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 55
+        },
+        {
+          "name": "融资结构脆弱性",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 40
+        },
+        {
+          "name": "主权风险定价",
+          "type": "quant",
+          "weight": 0.15,
+          "score": 45
+        },
+        {
+          "name": "主权评级展望",
+          "type": "ordinal",
+          "weight": 0.15,
+          "score": 45
+        },
+        {
+          "name": "或有负债敞口",
+          "type": "ordinal",
+          "weight": 0.1,
+          "score": 38
+        }
+      ]
+    },
+    "currency": {
+      "score": 47,
+      "pillarAdj": 0,
+      "drivers": [
+        {
+          "name": "汇率水平与贬速",
+          "type": "quant",
+          "weight": 0.25,
+          "score": 55
+        },
+        {
+          "name": "防守消耗效率",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 35
+        },
+        {
+          "name": "通胀锚定与实际利率",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 60
+        },
+        {
+          "name": "股市与外资流向",
+          "type": "quant",
+          "weight": 0.14,
+          "score": 35
+        },
+        {
+          "name": "国际市场准入",
+          "type": "ordinal",
+          "weight": 0.06,
+          "score": 20
+        },
+        {
+          "name": "制造业动能(PMI)",
+          "type": "quant",
+          "weight": 0.15,
+          "score": 51
+        }
+      ]
+    },
+    "institutions": {
+      "score": 35,
+      "pillarAdj": 0,
+      "drivers": [
+        {
+          "name": "货币政策可信度",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 30
+        },
+        {
+          "name": "政策方差(翻转计数)",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 30
+        },
+        {
+          "name": "国际治理评估",
+          "type": "quant",
+          "weight": 0.25,
+          "score": 42
+        },
+        {
+          "name": "法治与执法工具化",
+          "type": "ordinal",
+          "weight": 0.15,
+          "score": 42
+        },
+        {
+          "name": "关键机构俘获度",
+          "type": "ordinal",
+          "weight": 0.2,
+          "score": 30
+        }
+      ]
+    },
+    "social": {
+      "score": 52,
+      "pillarAdj": 0,
+      "drivers": [
+        {
+          "name": "消费者信心",
+          "type": "quant",
+          "weight": 0.15,
+          "score": 50
+        },
+        {
+          "name": "劳动力市场压力",
+          "type": "quant",
+          "weight": 0.15,
+          "score": 40
+        },
+        {
+          "name": "网络政治情绪",
+          "type": "quant",
+          "weight": 0.25,
+          "score": 45
+        },
+        {
+          "name": "必需品实际购买力",
+          "type": "quant",
+          "weight": 0.15,
+          "score": 58
+        },
+        {
+          "name": "执政支持率",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 75
+        },
+        {
+          "name": "动员性质",
+          "type": "ordinal",
+          "weight": 0.1,
+          "score": 40
+        }
+      ]
+    },
+    "coercive": {
+      "score": 33,
+      "pillarAdj": 0,
+      "drivers": [
+        {
+          "name": "军警冲突烈度(机构间)",
+          "type": "quant",
+          "weight": 0.2,
+          "score": 32
+        },
+        {
+          "name": "对平民镇压强度(计数)",
+          "type": "quant",
+          "weight": 0.15,
+          "score": 18
+        },
+        {
+          "name": "军队文职渗透度",
+          "type": "quant",
+          "weight": 0.18,
+          "score": 40
+        },
+        {
+          "name": "精英清洗烈度(计数)",
+          "type": "quant",
+          "weight": 0.12,
+          "score": 32
+        },
+        {
+          "name": "军警权力平衡",
+          "type": "ordinal",
+          "weight": 0.18,
+          "score": 38
+        },
+        {
+          "name": "精英联盟裂痕",
+          "type": "ordinal",
+          "weight": 0.17,
+          "score": 38
+        }
+      ]
+    }
+  }
+}

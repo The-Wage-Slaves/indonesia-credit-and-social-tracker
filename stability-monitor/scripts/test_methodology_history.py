@@ -106,28 +106,46 @@ class NewDriverContractTests(unittest.TestCase):
 
     def test_repression_driver_exists_and_is_calibrated_below_the_pillar_mean(self):
         self.assertIn('name: "对平民镇压强度(计数)", weight: 0.15', self.text)
-        # 激活档(1起及以下更差)必须低于强制机构支柱当前均值 35，否则新增项反而抬分
-        self.assertIn('{ cond: "2–3 起 (当前)", score: 30 }', self.text)
+        # 各激活档都必须低于强制机构支柱的量级(约 33-36)，否则新增项反而把支柱抬上去。
+        # 不再断言「当前」标记落在哪一档——那会随每周实际计数移动。
+        for cond, score in (("0 起", 65), ("1 起", 45), ("2–3 起", 30),
+                            ("≥4 起 或出现死亡", 18)):
+            with self.subTest(band=cond):
+                self.assertRegex(self.text,
+                                 r'\{ cond: "' + cond + r'[^"]*", score: ' + str(score) + r' \}',
+                                 f"{cond} 档的分值被改动")
 
     def test_interagency_driver_is_renamed_to_say_what_it_actually_counts(self):
         self.assertIn('name: "军警冲突烈度(机构间)"', self.text)
         self.assertNotIn('name: "军警冲突烈度(计数)"', self.text)
 
-    def test_new_drivers_declare_no_previous_measurement(self):
-        """新设 driver 的 prev 必须是 null，不能编一个上期值。
+    # 2026-08-20 新设的两个 driver。**只在它们仍是「本期新设」时要求 prev: null**——
+    # 一旦某个 driver 有了真实的上期测量值，prev 就该填那个值，否则看板显示不出变化。
+    # 「对平民镇压强度」在 2026-09-01 首次改分(30→18)，从此退出本清单。
+    STILL_UNMEASURED_BEFORE = ("国际市场准入",)
+
+    def test_drivers_never_measured_before_declare_no_previous_value(self):
+        """从未测量过的 driver，prev 必须是 null，不能编一个上期值。
 
         engine.js 会把 prev 原样渲染成「相对上期(45)」。给「国际市场准入」填
         prev=45（FTSE 六月那次推迟的追认分）看着合理，实际是在看板上宣称上期
         测过、本周从45暴跌到20——而那 25 分的跌幅从未发生。validate_repo、
         单测、CI 当时全绿，只有把 HTML 真渲染出来才看得见。
         """
-        for marker in ("国际市场准入", "对平民镇压强度(计数)"):
+        for marker in self.STILL_UNMEASURED_BEFORE:
             with self.subTest(driver=marker):
                 start = self.text.index(f'name: "{marker}"')
                 head = self.text[start:self.text.index(chr(10), start)]
                 self.assertIn("prev: null", head,
-                              f"{marker} 是本期新设，prev 必须为 null；"
+                              f"{marker} 至今未有过测量值，prev 必须为 null；"
                               "填任何数字都会在看板上渲染成一次没发生过的变动")
+
+    def test_a_driver_that_has_been_measured_carries_a_real_previous_value(self):
+        """反过来：已经改过分的 driver 不能还挂着 prev: null，否则变化显示不出来。"""
+        start = self.text.index('name: "对平民镇压强度(计数)"')
+        head = self.text[start:self.text.index(chr(10), start)]
+        self.assertNotIn("prev: null", head,
+                         "该 driver 已于 2026-09-01 首次改分(30→18)，prev 应为 30")
 
     def test_both_new_drivers_document_the_unmeasured_history_rule(self):
         for marker in ("国际市场准入", "对平民镇压强度(计数)"):

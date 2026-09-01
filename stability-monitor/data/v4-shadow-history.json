@@ -102,6 +102,23 @@
       "status": "provisional-shadow",
       "confirmed": true,
       "humanConfirmed": true
+    },
+    {
+      "date": "2026-09-01",
+      "scores": {
+        "fiscal": 52.2,
+        "currency": 45.6,
+        "institutions": 36.9,
+        "social": 49.5,
+        "coercive": 37.3
+      },
+      "composite": 46.1,
+      "measurementConfidence": 0.66,
+      "triggerLevel": "normal",
+      "activeTriggerIds": [],
+      "status": "provisional-shadow",
+      "confirmed": true,
+      "humanConfirmed": true
     }
   ]
 }
