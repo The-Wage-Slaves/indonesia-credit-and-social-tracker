@@ -1,100 +1,67 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-03",
+  "date": "2026-09-04",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 26.4,
-    "socialDailyVolumeRisk": 24.0,
-    "negativeSocialShare": 46.2,
+    "newsDailyVolumeRisk": 14.6,
+    "socialDailyVolumeRisk": 3.5,
+    "negativeSocialShare": 16.3,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=18.0; robust z=-1.57",
-    "socialVolume": "today=1; prior-7d median=19.0; robust z=-1.73"
+    "newsVolume": "today=4; prior-7d median=18.0; robust z=-2.36",
+    "socialVolume": "today=7; prior-7d median=30.0; robust z=-3.10"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-ad899bc98587",
-      "eventType": "regulatory_action",
+      "id": "llm-c5c6942acab4",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK Jabar",
-        "Satgas PASTI"
+        "Tebet",
+        "Kompasiana"
       ],
-      "headline": "OJK Jabar Edukasi 4,2 Juta Orang, 3.880 Aduan Pinjol Ilegal Disikat - RRI.co.id",
-      "headlineZh": "OJK西爪哇处理3880起非法网贷投诉",
-      "summaryZh": "OJK西爪哇办公室已教育420万人，并处理3880起非法网贷投诉，显示监管行动成效。",
-      "rationale": "监管机构处理投诉，具体行动",
+      "headline": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
+      "headlineZh": "居民遭冒名网贷催收",
+      "summaryZh": "雅加达Tebet区居民因身份信息泄露被冒名借贷，遭催收员上门，警方已介入调查。",
+      "rationale": "身份盗用致催收，警方跟进",
       "independentSourceCount": 1,
       "domains": [
-        "rri.co.id"
+        "kompasiana.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "0ab0538d2ff3827b"
+        "b5f9460d76d8eec3",
+        "f8500fe26b4f10ab",
+        "e2ab13e4540a03ca"
       ],
       "articles": [
         {
-          "title": "OJK Jabar Edukasi 4,2 Juta Orang, 3.880 Aduan Pinjol Ilegal Disikat - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcGcxYll0RFNfNTByZ3c5c3BsdVJ5QWJnbjFuYlFza3VCZFA4QW1SbTRXQ2R6V2F4LVJoYU1RdDctSEE1WDhQdkFvR2k3ajFLcjlTOVRxdnJxS1pmS01pNUx1MVZlWGQ2QU9EbVN4bjRMQjNiSnVaWEdJVVByMnRlODI2MEU0bXJRYUVRS2pJb1ZlV0M1aUxLVE8xVXVHZmJLY0dibWYtRkNBaHBGYkluNVRDVll3UQ?oc=5"
+          "title": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMGxrVXJnZF9RU2NybUdKaVdDUi1HN3k1YmdpN180SEhwZ0pxdnFoZjhqRDEtd2FwM1AzenNpV3NEODBSREROblZEcmtmaVA0bUtkMGdpcnMxRzJ1THBVVUY5MElIN1JuNmRBOXNidHJZRGhnRDJHanVyVmU4QVdLbGlOUWRzT2JRZEkyYTNJTmVSX3BFbXFZeml6QTdvVzczYW5PMjZuS1ptMWhYNTk2YjNtczlMV1ktMnFTd1J0M1VHbDBSZUpjNFNxQkZiVkRnT0hOaQ?oc=5"
+        },
+        {
+          "title": "Polisi Usut Kasus Warga Tebet yang Ditagih Pinjol Akibat Data Bocor - kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRHh5M0R2d1Y0ck5kcG5mOVc1cDNsblVtd0t6NVhmeHZiTUgxdTd6QmlhRmFHaktqbnJ3TFVva3dTdkhoZ000eUptMkNLVjdZOEhrZjdzTjhvT2NabWMxOUpTMmU4UDg1YXBSV09wSS00SS1BMkI2QlE2aFZKeEUyd2JuZ2dpWXhncmFKb0FKYnJaUVJuQkdCU21zNE83NE9Ic2cyVUowTWJlamktcUg1Nk5TRjZ5UmtQX0o1NXUtSnJ1bHdBanZpbURlUzc?oc=5"
+        },
+        {
+          "title": "Polisi Tindaklanjuti Laporan Warga Didatangi Debt Collector Soal Pinjol - kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeFZpemVkQnVjbkNOWEFvLWRQeDY4MV9LeEZPM0ZxOWFjTk84YUY0WnExYXk0VnVFY3ZpaEZkMmxzV3RoOFR0ZGs2cGc5WVlxT3A0U0FvMGZtNFZQQmYxbWlienFWaUVwUi0wRUtSNWNrakxJOGtqT3VEUm1HVHVpVkFrV01NeWpidmdZWWtLMlBfemwtandVNjBHTU9lN1ZQWURqX0dxVFhjekR5ejg5Zlh3V3lreFN3UmJfMzl0MEZCTU9ZS1ppeTdLajVBTU1rNkZVdQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 0,
         "negativeShare": 0.0,
         "platforms": []
-      }
-    },
-    {
-      "id": "llm-128cdd8cbda7",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Satgas PASTI",
-        "OJK"
-      ],
-      "headline": "Pinjol Ilegal Dominasi Pengaduan Satgas PASTI, Capai 22.529 Kasus - RRI.co.id",
-      "headlineZh": "非法网贷投诉达2.2万至2.5万起",
-      "summaryZh": "Satgas PASTI报告显示非法网贷投诉高企，7个月内收到超过2.2万至2.5万起投诉，反映消费者受害规模。",
-      "rationale": "官方投诉数据，反映消费者受害",
-      "independentSourceCount": 2,
-      "domains": [
-        "rri.co.id",
-        "sumutpos.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3193d829f3b020bc",
-        "41eedd824bc27022"
-      ],
-      "articles": [
-        {
-          "title": "Pinjol Ilegal Dominasi Pengaduan Satgas PASTI, Capai 22.529 Kasus - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxObHVKdXdQbUlqclFQWmpVN1RIWHdEV2lfMUx1LWdEb2I0ZWFZWDk0UUZEajMxSVNmZkRpVFBDc2EwbVB6TzN1bU85Y1dGbDR5XzNUQVg2UDhvWUFTT0VzcHNtNUlLQTV2dWVkNDVWNDUtb1gwbkllNVpRaW5meDBSa1M5S1pRLWNYMGkzM005R1ZaaWY0Z2k3UDlUUUE3YWtJYkxFTW9uakNPVkVzZXdCVnE4MjZYdw?oc=5"
-        },
-        {
-          "title": "Pinjol Ilegal Mengganas, Satgas PASTI Terima 25.875 Laporan dalam 7 Bulan - Sumut Pos",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNelJrM09IanYzODJFR0ptRFBWc0VabjRFVzcxN09TVjNEMzY0NUJuTFR4Um9pUExNM0pWTFh1akZjbDBOYWpicE5udUF2VWhnSDZHdExTZm5ySFk5dV9tSjZCQndTdHNraHVyVkR0aDYtZTlIbF8tazFBbWN1TWxTOF9nYWRpLWZKUkZUMm41WFBVRk9jRGtNOEpTOWI5R2tvV3BlY0stVmJSTm1aRk93a25jbHRoZlFFM2xfbdIBwgFBVV95cUxNOFlDdnVYRkFKcDE2UjhaOGlOMXJBanhEdlBBWlBPa2t0ZDRsd0RGT09aNEszbFNZRlNodmlqRUtzbkJmbExmdWcyYk5TMldQMkNMSTBfbXg5cjF2aGxyZlFUQjRwUjNKSy16V282YmxXU0ZET2szcUQ3SEFVYk9ZZFZ4QUNFeDFFUHJvZXBmQktUa0xVSWNBRjdNNFg1aXNHb2pNdHUzbE16cWN1TG04NGZUUGlqTTJ1dEIwcTZiaWwzUQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
       }
     }
   ],
@@ -102,92 +69,59 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 25,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 14,
+    "candidateCount": 19,
+    "eventGroupCount": 1,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 25
+      "ok": 19
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-ad899bc98587",
-      "eventType": "regulatory_action",
+      "id": "llm-c5c6942acab4",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK Jabar",
-        "Satgas PASTI"
+        "Tebet",
+        "Kompasiana"
       ],
-      "headline": "OJK Jabar Edukasi 4,2 Juta Orang, 3.880 Aduan Pinjol Ilegal Disikat - RRI.co.id",
-      "headlineZh": "OJK西爪哇处理3880起非法网贷投诉",
-      "summaryZh": "OJK西爪哇办公室已教育420万人，并处理3880起非法网贷投诉，显示监管行动成效。",
-      "rationale": "监管机构处理投诉，具体行动",
+      "headline": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
+      "headlineZh": "居民遭冒名网贷催收",
+      "summaryZh": "雅加达Tebet区居民因身份信息泄露被冒名借贷，遭催收员上门，警方已介入调查。",
+      "rationale": "身份盗用致催收，警方跟进",
       "independentSourceCount": 1,
       "domains": [
-        "rri.co.id"
+        "kompasiana.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "0ab0538d2ff3827b"
+        "b5f9460d76d8eec3",
+        "f8500fe26b4f10ab",
+        "e2ab13e4540a03ca"
       ],
       "articles": [
         {
-          "title": "OJK Jabar Edukasi 4,2 Juta Orang, 3.880 Aduan Pinjol Ilegal Disikat - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcGcxYll0RFNfNTByZ3c5c3BsdVJ5QWJnbjFuYlFza3VCZFA4QW1SbTRXQ2R6V2F4LVJoYU1RdDctSEE1WDhQdkFvR2k3ajFLcjlTOVRxdnJxS1pmS01pNUx1MVZlWGQ2QU9EbVN4bjRMQjNiSnVaWEdJVVByMnRlODI2MEU0bXJRYUVRS2pJb1ZlV0M1aUxLVE8xVXVHZmJLY0dibWYtRkNBaHBGYkluNVRDVll3UQ?oc=5"
+          "title": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMGxrVXJnZF9RU2NybUdKaVdDUi1HN3k1YmdpN180SEhwZ0pxdnFoZjhqRDEtd2FwM1AzenNpV3NEODBSREROblZEcmtmaVA0bUtkMGdpcnMxRzJ1THBVVUY5MElIN1JuNmRBOXNidHJZRGhnRDJHanVyVmU4QVdLbGlOUWRzT2JRZEkyYTNJTmVSX3BFbXFZeml6QTdvVzczYW5PMjZuS1ptMWhYNTk2YjNtczlMV1ktMnFTd1J0M1VHbDBSZUpjNFNxQkZiVkRnT0hOaQ?oc=5"
+        },
+        {
+          "title": "Polisi Usut Kasus Warga Tebet yang Ditagih Pinjol Akibat Data Bocor - kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRHh5M0R2d1Y0ck5kcG5mOVc1cDNsblVtd0t6NVhmeHZiTUgxdTd6QmlhRmFHaktqbnJ3TFVva3dTdkhoZ000eUptMkNLVjdZOEhrZjdzTjhvT2NabWMxOUpTMmU4UDg1YXBSV09wSS00SS1BMkI2QlE2aFZKeEUyd2JuZ2dpWXhncmFKb0FKYnJaUVJuQkdCU21zNE83NE9Ic2cyVUowTWJlamktcUg1Nk5TRjZ5UmtQX0o1NXUtSnJ1bHdBanZpbURlUzc?oc=5"
+        },
+        {
+          "title": "Polisi Tindaklanjuti Laporan Warga Didatangi Debt Collector Soal Pinjol - kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeFZpemVkQnVjbkNOWEFvLWRQeDY4MV9LeEZPM0ZxOWFjTk84YUY0WnExYXk0VnVFY3ZpaEZkMmxzV3RoOFR0ZGs2cGc5WVlxT3A0U0FvMGZtNFZQQmYxbWlienFWaUVwUi0wRUtSNWNrakxJOGtqT3VEUm1HVHVpVkFrV01NeWpidmdZWWtLMlBfemwtandVNjBHTU9lN1ZQWURqX0dxVFhjekR5ejg5Zlh3V3lreFN3UmJfMzl0MEZCTU9ZS1ppeTdLajVBTU1rNkZVdQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 0,
         "negativeShare": 0.0,
         "platforms": []
-      }
-    },
-    {
-      "id": "llm-128cdd8cbda7",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Satgas PASTI",
-        "OJK"
-      ],
-      "headline": "Pinjol Ilegal Dominasi Pengaduan Satgas PASTI, Capai 22.529 Kasus - RRI.co.id",
-      "headlineZh": "非法网贷投诉达2.2万至2.5万起",
-      "summaryZh": "Satgas PASTI报告显示非法网贷投诉高企，7个月内收到超过2.2万至2.5万起投诉，反映消费者受害规模。",
-      "rationale": "官方投诉数据，反映消费者受害",
-      "independentSourceCount": 2,
-      "domains": [
-        "rri.co.id",
-        "sumutpos.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3193d829f3b020bc",
-        "41eedd824bc27022"
-      ],
-      "articles": [
-        {
-          "title": "Pinjol Ilegal Dominasi Pengaduan Satgas PASTI, Capai 22.529 Kasus - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxObHVKdXdQbUlqclFQWmpVN1RIWHdEV2lfMUx1LWdEb2I0ZWFZWDk0UUZEajMxSVNmZkRpVFBDc2EwbVB6TzN1bU85Y1dGbDR5XzNUQVg2UDhvWUFTT0VzcHNtNUlLQTV2dWVkNDVWNDUtb1gwbkllNVpRaW5meDBSa1M5S1pRLWNYMGkzM005R1ZaaWY0Z2k3UDlUUUE3YWtJYkxFTW9uakNPVkVzZXdCVnE4MjZYdw?oc=5"
-        },
-        {
-          "title": "Pinjol Ilegal Mengganas, Satgas PASTI Terima 25.875 Laporan dalam 7 Bulan - Sumut Pos",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNelJrM09IanYzODJFR0ptRFBWc0VabjRFVzcxN09TVjNEMzY0NUJuTFR4Um9pUExNM0pWTFh1akZjbDBOYWpicE5udUF2VWhnSDZHdExTZm5ySFk5dV9tSjZCQndTdHNraHVyVkR0aDYtZTlIbF8tazFBbWN1TWxTOF9nYWRpLWZKUkZUMm41WFBVRk9jRGtNOEpTOWI5R2tvV3BlY0stVmJSTm1aRk93a25jbHRoZlFFM2xfbdIBwgFBVV95cUxNOFlDdnVYRkFKcDE2UjhaOGlOMXJBanhEdlBBWlBPa2t0ZDRsd0RGT09aNEszbFNZRlNodmlqRUtzbkJmbExmdWcyYk5TMldQMkNMSTBfbXg5cjF2aGxyZlFUQjRwUjNKSy16V282YmxXU0ZET2szcUQ3SEFVYk9ZZFZ4QUNFeDFFUHJvZXBmQktUa0xVSWNBRjdNNFg1aXNHb2pNdHUzbE16cWN1TG04NGZUUGlqTTJ1dEIwcTZiaWwzUQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
       }
     }
   ],
@@ -199,26 +133,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "<urlopen error timed out>",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 26,
-    "socialItemCount48h": 9
+    "articleCount48h": 22,
+    "socialItemCount48h": 42
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 524,
-    "classifiedCount": 103,
-    "irrelevantDropped": 137,
+    "inputCount": 575,
+    "classifiedCount": 109,
+    "irrelevantDropped": 131,
     "model": "deepseek-chat",
-    "fallbackCount": 284,
+    "fallbackCount": 335,
     "labelCounts": {
-      "NEG": 60,
-      "MIX": 8,
-      "POS": 35
+      "NEG": 53,
+      "MIX": 10,
+      "POS": 46
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
