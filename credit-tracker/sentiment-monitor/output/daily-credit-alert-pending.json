@@ -1,36 +1,69 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-04",
+  "date": "2026-09-05",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 14.6,
-    "socialDailyVolumeRisk": 3.5,
-    "negativeSocialShare": 16.3,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 24.7,
+    "socialDailyVolumeRisk": 2.3,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=18.0; robust z=-2.36",
-    "socialVolume": "today=7; prior-7d median=30.0; robust z=-3.10"
+    "newsVolume": "today=3; prior-7d median=18.0; robust z=-1.69",
+    "socialVolume": "today=4; prior-7d median=37.0; robust z=-3.18"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
+      "id": "llm-a33eb6704ddb",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "DIY"
+      ],
+      "headline": "30 Ribu Lebih Penerima Bansos DIY Terindikasi Judol, OJK Bongkar Potensi Mata Rantai dengan Pinjol - Suarajogja.id",
+      "headlineZh": "3万社保受益人涉网赌",
+      "summaryZh": "OJK披露DIY省超3万名社保受益人涉网赌，并指出其与非法网贷的潜在关联，涉及大规模违规行为。",
+      "rationale": "OJK披露具体数据，涉及违规行为",
+      "independentSourceCount": 1,
+      "domains": [
+        "jogja.suara.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "9a90cffb592da537"
+      ],
+      "articles": [
+        {
+          "title": "30 Ribu Lebih Penerima Bansos DIY Terindikasi Judol, OJK Bongkar Potensi Mata Rantai dengan Pinjol - Suarajogja.id",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdEJYYkZ4MTA3VmN1WlV1dTlreG1kbGkyZ05uM0ZNMTliR0dGQ1JWSU91WDF2WW1Wd1lxSEVraE82Z050QWJNQXZxRnk5UFlIZ1NmeGNjQUhfaTFHclpGbW91OWk0SlFnSmJLLUhDQS05QXc1MGVocVdYcE5JNUhJZXB5UFgtN3JvVEl5bEYwZnhjeHNXbk9uN0FQUjFwVUxhdlFsUnhvcm85ejhRWktCRzZFNWh4bUlRNU94Q1NDZDNlaFNBNHFRX29faG44aDdQX1g4QmV6dy1aakh50gHiAUFVX3lxTE4tVEFXMmQ4QlJ1elBNVmh0YWRFWXdQX1hXZFdlZk1aaUFSYzhXU2Z6RUZueHY4RVRRTFBkTU9RWE5YNWNBeVhCODl5T0hCektoWjEzbENzQjBQWEFSUmdFLTlDdUF4SGo2VU0xdWNfWmEySU45NzZ4djVFSEZvV3cyQnN1ZTg5Y1A2d1gySGJEVzAxWW1fQTBRQlVVUzFNd0RnU3RmYmJOYVFzTm9PcHBDdGNROUtxeC1JVUlwNmFiNlNTYkZWMVA4cE9rdnVDS1ZILVdfWElOUDllX3NSR2NuU2c?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
       "id": "llm-c5c6942acab4",
-      "eventType": "consumer_harm",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
         "Tebet",
         "Kompasiana"
       ],
-      "headline": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
-      "headlineZh": "居民遭冒名网贷催收",
-      "summaryZh": "雅加达Tebet区居民因身份信息泄露被冒名借贷，遭催收员上门，警方已介入调查。",
-      "rationale": "身份盗用致催收，警方跟进",
+      "headline": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - Kompasiana.com",
+      "headlineZh": "警方调查Tebet虚假网贷案",
+      "summaryZh": "Tebet居民因数据泄露被虚假网贷催收，警方已介入调查并保护受害者，涉及欺诈和数据泄露。",
+      "rationale": "警方介入调查具体案件",
       "independentSourceCount": 1,
       "domains": [
         "kompasiana.com"
@@ -38,21 +71,21 @@
       "hasPrimarySource": false,
       "articleIds": [
         "b5f9460d76d8eec3",
-        "f8500fe26b4f10ab",
-        "e2ab13e4540a03ca"
+        "26bcce0c63674e4c",
+        "f8500fe26b4f10ab"
       ],
       "articles": [
         {
-          "title": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
+          "title": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - Kompasiana.com",
           "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMGxrVXJnZF9RU2NybUdKaVdDUi1HN3k1YmdpN180SEhwZ0pxdnFoZjhqRDEtd2FwM1AzenNpV3NEODBSREROblZEcmtmaVA0bUtkMGdpcnMxRzJ1THBVVUY5MElIN1JuNmRBOXNidHJZRGhnRDJHanVyVmU4QVdLbGlOUWRzT2JRZEkyYTNJTmVSX3BFbXFZeml6QTdvVzczYW5PMjZuS1ptMWhYNTk2YjNtczlMV1ktMnFTd1J0M1VHbDBSZUpjNFNxQkZiVkRnT0hOaQ?oc=5"
         },
         {
-          "title": "Polisi Usut Kasus Warga Tebet yang Ditagih Pinjol Akibat Data Bocor - kompasiana.com",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRHh5M0R2d1Y0ck5kcG5mOVc1cDNsblVtd0t6NVhmeHZiTUgxdTd6QmlhRmFHaktqbnJ3TFVva3dTdkhoZ000eUptMkNLVjdZOEhrZjdzTjhvT2NabWMxOUpTMmU4UDg1YXBSV09wSS00SS1BMkI2QlE2aFZKeEUyd2JuZ2dpWXhncmFKb0FKYnJaUVJuQkdCU21zNE83NE9Ic2cyVUowTWJlamktcUg1Nk5TRjZ5UmtQX0o1NXUtSnJ1bHdBanZpbURlUzc?oc=5"
+          "title": "Polisi Amankan Korban Pinjol Fiktif di Tebet - Kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNelcwUjlFV0djUDJSZmR1MmJmR3E4SkpvNUdDTFZRTzRKUTYzVDBqUjExczhyTXU2SGk1aEJmY0JZZUxzMnViSU1teXZrcWI0X0hwMzdLWnRMX2tvYTVlbXdTZlh1bm9YVjB1ejRzWUVNQUNpYUI0QXRnbmhpWkxadHMtenRYOXNhUG5vSTE4UllYVDFsU3A0Q1FVNlFyWW1vZmo3SXdTMVlxY2hJVWc?oc=5"
         },
         {
-          "title": "Polisi Tindaklanjuti Laporan Warga Didatangi Debt Collector Soal Pinjol - kompasiana.com",
-          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeFZpemVkQnVjbkNOWEFvLWRQeDY4MV9LeEZPM0ZxOWFjTk84YUY0WnExYXk0VnVFY3ZpaEZkMmxzV3RoOFR0ZGs2cGc5WVlxT3A0U0FvMGZtNFZQQmYxbWlienFWaUVwUi0wRUtSNWNrakxJOGtqT3VEUm1HVHVpVkFrV01NeWpidmdZWWtLMlBfemwtandVNjBHTU9lN1ZQWURqX0dxVFhjekR5ejg5Zlh3V3lreFN3UmJfMzl0MEZCTU9ZS1ppeTdLajVBTU1rNkZVdQ?oc=5"
+          "title": "Polisi Usut Kasus Warga Tebet yang Ditagih Pinjol Akibat Data Bocor - Kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRHh5M0R2d1Y0ck5kcG5mOVc1cDNsblVtd0t6NVhmeHZiTUgxdTd6QmlhRmFHaktqbnJ3TFVva3dTdkhoZ000eUptMkNLVjdZOEhrZjdzTjhvT2NabWMxOUpTMmU4UDg1YXBSV09wSS00SS1BMkI2QlE2aFZKeEUyd2JuZ2dpWXhncmFKb0FKYnJaUVJuQkdCU21zNE83NE9Ic2cyVUowTWJlamktcUg1Nk5TRjZ5UmtQX0o1NXUtSnJ1bHdBanZpbURlUzc?oc=5"
         }
       ],
       "bodyBackedSourceCount": 3,
@@ -69,28 +102,63 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 19,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 11,
+    "candidateCount": 28,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 8,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 19
+      "ok": 28
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
+      "id": "llm-a33eb6704ddb",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "DIY"
+      ],
+      "headline": "30 Ribu Lebih Penerima Bansos DIY Terindikasi Judol, OJK Bongkar Potensi Mata Rantai dengan Pinjol - Suarajogja.id",
+      "headlineZh": "3万社保受益人涉网赌",
+      "summaryZh": "OJK披露DIY省超3万名社保受益人涉网赌，并指出其与非法网贷的潜在关联，涉及大规模违规行为。",
+      "rationale": "OJK披露具体数据，涉及违规行为",
+      "independentSourceCount": 1,
+      "domains": [
+        "jogja.suara.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "9a90cffb592da537"
+      ],
+      "articles": [
+        {
+          "title": "30 Ribu Lebih Penerima Bansos DIY Terindikasi Judol, OJK Bongkar Potensi Mata Rantai dengan Pinjol - Suarajogja.id",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPdEJYYkZ4MTA3VmN1WlV1dTlreG1kbGkyZ05uM0ZNMTliR0dGQ1JWSU91WDF2WW1Wd1lxSEVraE82Z050QWJNQXZxRnk5UFlIZ1NmeGNjQUhfaTFHclpGbW91OWk0SlFnSmJLLUhDQS05QXc1MGVocVdYcE5JNUhJZXB5UFgtN3JvVEl5bEYwZnhjeHNXbk9uN0FQUjFwVUxhdlFsUnhvcm85ejhRWktCRzZFNWh4bUlRNU94Q1NDZDNlaFNBNHFRX29faG44aDdQX1g4QmV6dy1aakh50gHiAUFVX3lxTE4tVEFXMmQ4QlJ1elBNVmh0YWRFWXdQX1hXZFdlZk1aaUFSYzhXU2Z6RUZueHY4RVRRTFBkTU9RWE5YNWNBeVhCODl5T0hCektoWjEzbENzQjBQWEFSUmdFLTlDdUF4SGo2VU0xdWNfWmEySU45NzZ4djVFSEZvV3cyQnN1ZTg5Y1A2d1gySGJEVzAxWW1fQTBRQlVVUzFNd0RnU3RmYmJOYVFzTm9PcHBDdGNROUtxeC1JVUlwNmFiNlNTYkZWMVA4cE9rdnVDS1ZILVdfWElOUDllX3NSR2NuU2c?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
       "id": "llm-c5c6942acab4",
-      "eventType": "consumer_harm",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
         "Tebet",
         "Kompasiana"
       ],
-      "headline": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
-      "headlineZh": "居民遭冒名网贷催收",
-      "summaryZh": "雅加达Tebet区居民因身份信息泄露被冒名借贷，遭催收员上门，警方已介入调查。",
-      "rationale": "身份盗用致催收，警方跟进",
+      "headline": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - Kompasiana.com",
+      "headlineZh": "警方调查Tebet虚假网贷案",
+      "summaryZh": "Tebet居民因数据泄露被虚假网贷催收，警方已介入调查并保护受害者，涉及欺诈和数据泄露。",
+      "rationale": "警方介入调查具体案件",
       "independentSourceCount": 1,
       "domains": [
         "kompasiana.com"
@@ -98,21 +166,21 @@
       "hasPrimarySource": false,
       "articleIds": [
         "b5f9460d76d8eec3",
-        "f8500fe26b4f10ab",
-        "e2ab13e4540a03ca"
+        "26bcce0c63674e4c",
+        "f8500fe26b4f10ab"
       ],
       "articles": [
         {
-          "title": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - kompasiana.com",
+          "title": "Awas Data KTP Disalahgunakan! Warga Tebet Tiba-tiba Ditagih Debt Collector - Kompasiana.com",
           "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMGxrVXJnZF9RU2NybUdKaVdDUi1HN3k1YmdpN180SEhwZ0pxdnFoZjhqRDEtd2FwM1AzenNpV3NEODBSREROblZEcmtmaVA0bUtkMGdpcnMxRzJ1THBVVUY5MElIN1JuNmRBOXNidHJZRGhnRDJHanVyVmU4QVdLbGlOUWRzT2JRZEkyYTNJTmVSX3BFbXFZeml6QTdvVzczYW5PMjZuS1ptMWhYNTk2YjNtczlMV1ktMnFTd1J0M1VHbDBSZUpjNFNxQkZiVkRnT0hOaQ?oc=5"
         },
         {
-          "title": "Polisi Usut Kasus Warga Tebet yang Ditagih Pinjol Akibat Data Bocor - kompasiana.com",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRHh5M0R2d1Y0ck5kcG5mOVc1cDNsblVtd0t6NVhmeHZiTUgxdTd6QmlhRmFHaktqbnJ3TFVva3dTdkhoZ000eUptMkNLVjdZOEhrZjdzTjhvT2NabWMxOUpTMmU4UDg1YXBSV09wSS00SS1BMkI2QlE2aFZKeEUyd2JuZ2dpWXhncmFKb0FKYnJaUVJuQkdCU21zNE83NE9Ic2cyVUowTWJlamktcUg1Nk5TRjZ5UmtQX0o1NXUtSnJ1bHdBanZpbURlUzc?oc=5"
+          "title": "Polisi Amankan Korban Pinjol Fiktif di Tebet - Kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNelcwUjlFV0djUDJSZmR1MmJmR3E4SkpvNUdDTFZRTzRKUTYzVDBqUjExczhyTXU2SGk1aEJmY0JZZUxzMnViSU1teXZrcWI0X0hwMzdLWnRMX2tvYTVlbXdTZlh1bm9YVjB1ejRzWUVNQUNpYUI0QXRnbmhpWkxadHMtenRYOXNhUG5vSTE4UllYVDFsU3A0Q1FVNlFyWW1vZmo3SXdTMVlxY2hJVWc?oc=5"
         },
         {
-          "title": "Polisi Tindaklanjuti Laporan Warga Didatangi Debt Collector Soal Pinjol - kompasiana.com",
-          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeFZpemVkQnVjbkNOWEFvLWRQeDY4MV9LeEZPM0ZxOWFjTk84YUY0WnExYXk0VnVFY3ZpaEZkMmxzV3RoOFR0ZGs2cGc5WVlxT3A0U0FvMGZtNFZQQmYxbWlienFWaUVwUi0wRUtSNWNrakxJOGtqT3VEUm1HVHVpVkFrV01NeWpidmdZWWtLMlBfemwtandVNjBHTU9lN1ZQWURqX0dxVFhjekR5ejg5Zlh3V3lreFN3UmJfMzl0MEZCTU9ZS1ppeTdLajVBTU1rNkZVdQ?oc=5"
+          "title": "Polisi Usut Kasus Warga Tebet yang Ditagih Pinjol Akibat Data Bocor - Kompasiana.com",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQRHh5M0R2d1Y0ck5kcG5mOVc1cDNsblVtd0t6NVhmeHZiTUgxdTd6QmlhRmFHaktqbnJ3TFVva3dTdkhoZ000eUptMkNLVjdZOEhrZjdzTjhvT2NabWMxOUpTMmU4UDg1YXBSV09wSS00SS1BMkI2QlE2aFZKeEUyd2JuZ2dpWXhncmFKb0FKYnJaUVJuQkdCU21zNE83NE9Ic2cyVUowTWJlamktcUg1Nk5TRjZ5UmtQX0o1NXUtSnJ1bHdBanZpbURlUzc?oc=5"
         }
       ],
       "bodyBackedSourceCount": 3,
@@ -133,26 +201,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
+      "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 22,
-    "socialItemCount48h": 42
+    "articleCount48h": 29,
+    "socialItemCount48h": 17
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 575,
-    "classifiedCount": 109,
-    "irrelevantDropped": 131,
+    "inputCount": 602,
+    "classifiedCount": 94,
+    "irrelevantDropped": 146,
     "model": "deepseek-chat",
-    "fallbackCount": 335,
+    "fallbackCount": 362,
     "labelCounts": {
       "NEG": 53,
-      "MIX": 10,
-      "POS": 46
+      "MIX": 6,
+      "POS": 35
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
