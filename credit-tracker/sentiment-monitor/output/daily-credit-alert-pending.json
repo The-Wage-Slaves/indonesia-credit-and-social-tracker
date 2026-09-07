@@ -1,66 +1,308 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-06",
+  "date": "2026-09-07",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 31.2,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 13.7,
+    "newsDailyVolumeRisk": 32.3,
+    "socialDailyVolumeRisk": 31.6,
+    "negativeSocialShare": 17.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=17.0; robust z=-1.25",
-    "socialVolume": "today=2; prior-7d median=32.0; robust z=-4.69"
+    "newsVolume": "today=9; prior-7d median=16.0; robust z=-1.18",
+    "socialVolume": "today=0; prior-7d median=31.0; robust z=-1.23"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [],
+  "lowEvidenceLeads": [
+    {
+      "id": "llm-448304827dac",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Polres Tanah Laut"
+      ],
+      "headline": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
+      "headlineZh": "警察检查手机防网贷",
+      "summaryZh": "南塔纳县警察局长提醒并检查警员手机，防止警员陷入网赌和非法网贷，属内部纪律行动。",
+      "rationale": "警方内部管理行动，非消费者事件",
+      "independentSourceCount": 2,
+      "domains": [
+        "kalsel.antaranews.com",
+        "lenterakalimantan.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "699c23c9158b7e67",
+        "498b50d46c4960e4"
+      ],
+      "articles": [
+        {
+          "title": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQYVFIb3AzbWUzYXZNOGFXLVFnLUdqSlU2UkpqSndoaW56cVVxbVNDY2NuV01WQVBFR0tvcTdzOTUwNUZ5RDVuSVVmM1lENnZmNlRMVUpFa2FCcGFsbVN3clNjbG1qVENFd3YwNktsRzAwRjFmdzlBQmN1cGZ4RDQ0RWVRakY1QldLa1JibGs1Y0lhV2R3RjY1enQ0bUd1MTMtYm9Ib08tUdIBrAFBVV95cUxNNFdYQy1SOTVfeWhSWWJ0OGFSdmpadEdTaWxIc1BhNTRJeHlPRDBpZDlUV2ltTkltZU5kcy1YOTV0VVZxM0tiSFpBdE5wQ0MyNV9BaVgzUi1IRWtBa0R0NS1aSzNrcUVxbS0zdnFmY2xsYmtEODdLaW05d2lGMjVhalB6VmtYRHpyMDJ3UDNGakZzY1NZNExzZ3hvVGF4bnpVZFhPOTR5ZWdEOU01?oc=5"
+        },
+        {
+          "title": "Tak Mau Anggota Terjerat Judol dan Pinjol, Polres Tanah Laut Periksa Ponsel Personel - lenteraKalimantan.com",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNb3RPaG1wbWNXcjA5eDl2aEJMOWQwN2xYbldWa1FJZFJkVW9KcmFaTnR2MUM5LXpZTXY4eEZ2Q1pqSzM0TncyLVdmYjI1SXJSVjhqajF1VW9TVy04M0VtSGgzaHpXRHY1aFNDMV9lUE15WVg0NEtOZ2xRdHNRaE05TGxDME5VWHV4TjBxVFFFMjItemZUUlBLNi1ZUEF4bkFEWTJRU2cwNlRScEFXWndwdnM2TzROYXJQcENzbWRTTQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-67dffc6b07c6",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Pindar",
+        "OJK"
+      ],
+      "headline": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
+      "headlineZh": "Pindar被要求弃用Tadpole模式",
+      "summaryZh": "监管方要求Pindar停止使用Tadpole放贷模式，该模式被指损害借款人利益，引发行业关注。",
+      "rationale": "监管对特定业务模式提出要求",
+      "independentSourceCount": 2,
+      "domains": [
+        "investortrust.id",
+        "metrotvnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5c5f077cbc3855fa",
+        "840b85c68171ccf7"
+      ],
+      "articles": [
+        {
+          "title": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOc2NDQlo5Y0ZpcFJ3clNSYTJsa0hQVEh0OGpJbU5DRXhHak1kZFVaUWc5Sm5MbHhuT3l6ZGlnU19tU3ViVkxnb3pzTHdmU041SUZ3N1p5NmhRQjhqM3h5ckpHcFMzTTdjRG5XSGNGTlJBMUd2c3FZRk1PcWthTHJNb1MwWDdqa1k?oc=5"
+        },
+        {
+          "title": "Skema Tadpole Pindar Dinilai Rugikan Peminjam - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcDR2SFJteFcyUG9ZZEQ4R2lPb3hSamFKRG9ReXUySEFpcUN3NmJCVmFuclVybmhLWEc3dGdnR0hPT1dPTkxfU3lZeldQdDFPemdSYWlsX01MLTlPUUh1Y2liNDlEVWdCYzU2YXNNMkdDZm13QWlFVVk3Y3U2SUEwLTRhUXFlRWdJYnl5a082Slg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-7c215900f36c",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Pindar KrediOne"
+      ],
+      "headline": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
+      "headlineZh": "Pindar KrediOne放贷7.3万亿",
+      "summaryZh": "Pindar KrediOne宣布已发放贷款7.3万亿印尼盾，并强调可持续增长，属常规业务进展披露。",
+      "rationale": "常规业务数据披露，非风险事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "money.kompas.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3cf130a72991b575",
+        "2c97c4727fb6611b"
+      ],
+      "articles": [
+        {
+          "title": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSV84WmtwZlpmYU5PanVieTZPeVNxTE13T0toQTdYNjU1LVNDdC1CS3dnTmRNcnFnbllQb1gwLWtIQm5QU08yNkhVOG45SEhZekZuZzFQVWtZX1RWZFY3N3hsUzhzVHRFaW5jbjJwakRlRU1XUHdyZTNiVXRoS3V1TXlTa1gxTUNnelIwdTRKRzFEa0hidlBwZF9HNjg0MWpXLUItUzVtUkl1b1pyTV8tUDRLc21aMmRlOU41YmYwal9DZlBhejNLdVZKTFhNZw?oc=5"
+        },
+        {
+          "title": "Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPV3lfQmVmLWpOendCTko0QWk2aG05TnY2R01lTXRmaDlzWW4taWtSS2szTnNDR3h1Yl93bGptZkxxYXFMZmk1MHU0VEZXdjd6d0JhZnRjWnYwb2lpa3JObWtWSUNUZDd6TGIzZWdFbURaS193bWEydVlWallZdkJNeHQzSXNlRElyems5QWs1WDRSZnpwbVI1bWRGX05tOUJKY2NBWTlVdlFVbm1MWUNwLWhtZFlrcGVNRmxPbngyYmJ5NUk?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 11,
-    "eventGroupCount": 0,
-    "rejectedNonEvents": 10,
+    "candidateCount": 13,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 7,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 11
+      "ok": 13
     },
     "socialCrossCheck": "applied"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "llm-448304827dac",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Polres Tanah Laut"
+      ],
+      "headline": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
+      "headlineZh": "警察检查手机防网贷",
+      "summaryZh": "南塔纳县警察局长提醒并检查警员手机，防止警员陷入网赌和非法网贷，属内部纪律行动。",
+      "rationale": "警方内部管理行动，非消费者事件",
+      "independentSourceCount": 2,
+      "domains": [
+        "kalsel.antaranews.com",
+        "lenterakalimantan.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "699c23c9158b7e67",
+        "498b50d46c4960e4"
+      ],
+      "articles": [
+        {
+          "title": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQYVFIb3AzbWUzYXZNOGFXLVFnLUdqSlU2UkpqSndoaW56cVVxbVNDY2NuV01WQVBFR0tvcTdzOTUwNUZ5RDVuSVVmM1lENnZmNlRMVUpFa2FCcGFsbVN3clNjbG1qVENFd3YwNktsRzAwRjFmdzlBQmN1cGZ4RDQ0RWVRakY1QldLa1JibGs1Y0lhV2R3RjY1enQ0bUd1MTMtYm9Ib08tUdIBrAFBVV95cUxNNFdYQy1SOTVfeWhSWWJ0OGFSdmpadEdTaWxIc1BhNTRJeHlPRDBpZDlUV2ltTkltZU5kcy1YOTV0VVZxM0tiSFpBdE5wQ0MyNV9BaVgzUi1IRWtBa0R0NS1aSzNrcUVxbS0zdnFmY2xsYmtEODdLaW05d2lGMjVhalB6VmtYRHpyMDJ3UDNGakZzY1NZNExzZ3hvVGF4bnpVZFhPOTR5ZWdEOU01?oc=5"
+        },
+        {
+          "title": "Tak Mau Anggota Terjerat Judol dan Pinjol, Polres Tanah Laut Periksa Ponsel Personel - lenteraKalimantan.com",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNb3RPaG1wbWNXcjA5eDl2aEJMOWQwN2xYbldWa1FJZFJkVW9KcmFaTnR2MUM5LXpZTXY4eEZ2Q1pqSzM0TncyLVdmYjI1SXJSVjhqajF1VW9TVy04M0VtSGgzaHpXRHY1aFNDMV9lUE15WVg0NEtOZ2xRdHNRaE05TGxDME5VWHV4TjBxVFFFMjItemZUUlBLNi1ZUEF4bkFEWTJRU2cwNlRScEFXWndwdnM2TzROYXJQcENzbWRTTQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-67dffc6b07c6",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Pindar",
+        "OJK"
+      ],
+      "headline": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
+      "headlineZh": "Pindar被要求弃用Tadpole模式",
+      "summaryZh": "监管方要求Pindar停止使用Tadpole放贷模式，该模式被指损害借款人利益，引发行业关注。",
+      "rationale": "监管对特定业务模式提出要求",
+      "independentSourceCount": 2,
+      "domains": [
+        "investortrust.id",
+        "metrotvnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5c5f077cbc3855fa",
+        "840b85c68171ccf7"
+      ],
+      "articles": [
+        {
+          "title": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOc2NDQlo5Y0ZpcFJ3clNSYTJsa0hQVEh0OGpJbU5DRXhHak1kZFVaUWc5Sm5MbHhuT3l6ZGlnU19tU3ViVkxnb3pzTHdmU041SUZ3N1p5NmhRQjhqM3h5ckpHcFMzTTdjRG5XSGNGTlJBMUd2c3FZRk1PcWthTHJNb1MwWDdqa1k?oc=5"
+        },
+        {
+          "title": "Skema Tadpole Pindar Dinilai Rugikan Peminjam - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcDR2SFJteFcyUG9ZZEQ4R2lPb3hSamFKRG9ReXUySEFpcUN3NmJCVmFuclVybmhLWEc3dGdnR0hPT1dPTkxfU3lZeldQdDFPemdSYWlsX01MLTlPUUh1Y2liNDlEVWdCYzU2YXNNMkdDZm13QWlFVVk3Y3U2SUEwLTRhUXFlRWdJYnl5a082Slg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-7c215900f36c",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Pindar KrediOne"
+      ],
+      "headline": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
+      "headlineZh": "Pindar KrediOne放贷7.3万亿",
+      "summaryZh": "Pindar KrediOne宣布已发放贷款7.3万亿印尼盾，并强调可持续增长，属常规业务进展披露。",
+      "rationale": "常规业务数据披露，非风险事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "money.kompas.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3cf130a72991b575",
+        "2c97c4727fb6611b"
+      ],
+      "articles": [
+        {
+          "title": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSV84WmtwZlpmYU5PanVieTZPeVNxTE13T0toQTdYNjU1LVNDdC1CS3dnTmRNcnFnbllQb1gwLWtIQm5QU08yNkhVOG45SEhZekZuZzFQVWtZX1RWZFY3N3hsUzhzVHRFaW5jbjJwakRlRU1XUHdyZTNiVXRoS3V1TXlTa1gxTUNnelIwdTRKRzFEa0hidlBwZF9HNjg0MWpXLUItUzVtUkl1b1pyTV8tUDRLc21aMmRlOU41YmYwal9DZlBhejNLdVZKTFhNZw?oc=5"
+        },
+        {
+          "title": "Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPV3lfQmVmLWpOendCTko0QWk2aG05TnY2R01lTXRmaDlzWW4taWtSS2szTnNDR3h1Yl93bGptZkxxYXFMZmk1MHU0VEZXdjd6d0JhZnRjWnYwb2lpa3JObWtWSUNUZDd6TGIzZWdFbURaS193bWEydVlWallZdkJNeHQzSXNlRElyems5QWs1WDRSZnpwbVI1bWRGX05tOUJKY2NBWTlVdlFVbm1MWUNwLWhtZFlrcGVNRmxPbngyYmJ5NUk?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 11,
-    "socialItemCount48h": 15
+    "articleCount48h": 17,
+    "socialItemCount48h": 5
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 597,
-    "classifiedCount": 139,
-    "irrelevantDropped": 101,
+    "inputCount": 550,
+    "classifiedCount": 112,
+    "irrelevantDropped": 128,
     "model": "deepseek-chat",
-    "fallbackCount": 357,
+    "fallbackCount": 310,
     "labelCounts": {
-      "NEG": 67,
-      "MIX": 11,
-      "POS": 61
+      "NEG": 62,
+      "MIX": 4,
+      "POS": 46
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
