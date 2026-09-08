@@ -331,5 +331,95 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-09-08",
+    "version": 3,
+    "heat": 46.3,
+    "suggested_score": 57,
+    "opposition": {
+      "status": "ok",
+      "rate": 36.8,
+      "detail": "250条中政治条目231条(浓度92%)，反对85/中性122/支持24 → 总反对率 36.8%（分侧: 民间YouTube 42% · 论坛Kaskus 22% · 媒体RSS 30%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 41.1,
+        "raw": {
+          "ratio_street": 0.3524904214559386,
+          "ratio_anger": 1.2924140912038038,
+          "per_kw": {
+            "demo hari ini": 1,
+            "demonstrasi": 1,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 33,
+            "kejaksaan": 19,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 12
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 7,
+          "share": 60.29783002269424,
+          "examples": [
+            "Presidene Wong Cilik! Tak Ingin Rakyat Terjerat Rentenir, Prabowo mau Pinjaman L",
+            "Heboh Poster Kabinet Tangguh KDM-Ahok Indonesia 2029! Lho itu kan Kolega Prabowo",
+            "Brilian! Tak Punya Uang dan Bensin Habis, Warga pun Minta Bantuan Polisi Via 110",
+            "Berita tentang Putin Nggak Salami Prabowo itu Hoax, Justru Sebaliknya...",
+            "Kejelian Polisi! Korban Pemerasan di Tangerang ini jadi Tersangka Penjual Obat K"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 50.0,
+        "raw": {
+          "n_searched": 144,
+          "n_big": 20
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 16.0,
+        "raw": {
+          "avg7": 0.0046,
+          "baseline": 0.014412244897959184,
+          "ratio": 0.319173038799207
+        }
+      },
+      "gdelt_tone": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 19.9,
+        "raw": {
+          "total": 151,
+          "matched": 3,
+          "share": 1.9867549668874174,
+          "examples": [
+            "[BBC Indonesia] Aktivis Malaysia gelar demonstrasi di depan KBRI di Kuala Lumpur, protes kabut a",
+            "[BBC Indonesia] Demonstrasi mahasiswa di Yogyakarta diminta bubar oleh ormas hingga informasi 's",
+            "[BBC Indonesia] Negara-negara anggota ASEAN protes kabut asap, pengamat sebut 'Indonesia diangga"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
