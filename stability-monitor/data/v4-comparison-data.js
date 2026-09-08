@@ -4,7 +4,7 @@ const V4_COMPARISON = {
   "asOf": "2026-09-01",
   "official": {
     "methodology": "V3",
-    "composite": 43.0,
+    "composite": 43.2,
     "displayScore": 43,
     "pillarWeights": {
       "fiscal": 0.2,
@@ -17,13 +17,13 @@ const V4_COMPARISON = {
       "fiscal": 48.0,
       "currency": 47.0,
       "institutions": 35.0,
-      "social": 52.0,
+      "social": 53.0,
       "coercive": 33.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 45.3,
+    "composite": 45.6,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -34,8 +34,8 @@ const V4_COMPARISON = {
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 47.6,
-    "delta": 2.3,
+    "composite": 47.0,
+    "delta": 1.4,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -477,9 +477,9 @@ const V4_COMPARISON = {
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 52.0,
-      "v4ShadowScore": 49.5,
-      "delta": -2.5,
+      "v3Score": 53.0,
+      "v4ShadowScore": 47.0,
+      "delta": -6.0,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.4,
@@ -549,15 +549,15 @@ const V4_COMPARISON = {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
           "weight": 0.25,
-          "score": 57.0,
+          "score": 47.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "street_heat_and_opposition_proxy",
-              "value": "heat 32.6; opposition 37.2 percent",
+              "value": "heat 63.9; opposition 34.3 percent (public 38 / forum 33 / media 26)",
               "unit": "crawler composite",
               "transform": "60pct_heat_score_plus_40pct_opposition_score",
-              "score": 57,
+              "score": 47,
               "weight": 1
             }
           ],

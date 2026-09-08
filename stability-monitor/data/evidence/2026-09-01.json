@@ -409,14 +409,20 @@
       "scoreInputs": [
         {
           "metric": "street_heat_and_opposition_proxy",
-          "value": "heat 32.6; opposition 37.2 percent",
+          "value": "heat 63.9; opposition 34.3 percent (public 38 / forum 33 / media 26)",
           "unit": "crawler composite",
           "transform": "60pct_heat_score_plus_40pct_opposition_score",
-          "score": 57,
+          "score": 47,
           "weight": 1
         }
       ],
-      "sourceUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/blob/bot/weekly-monitoring/stability-monitor/scripts/street_heat_history.json"
+      "sourceUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/blob/bot/weekly-monitoring/stability-monitor/scripts/street_heat_history.json",
+      "revision": {
+        "date": "2026-09-08",
+        "fromScore": 57,
+        "fromValue": "heat 32.6; opposition 37.2 percent",
+        "why": "2026-09-01 周更时这条没跟着更新——记的还是 08-11 的读数（heat 32.6 / 37.2%），比当期落后两期，而 V3 的网络政治情绪 driver 已经改分。同一天、同一个采集结果、两个分数。已按 bot/weekly-monitoring 归档的 06:52 全覆盖运行重设，并在 validate_repo 中钉成不变量。"
+      }
     },
     {
       "id": "rating_fitch_2026_03_04",

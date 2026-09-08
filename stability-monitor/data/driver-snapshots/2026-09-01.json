@@ -124,7 +124,7 @@
       ]
     },
     "social": {
-      "score": 52,
+      "score": 53,
       "pillarAdj": 0,
       "drivers": [
         {
@@ -143,7 +143,7 @@
           "name": "网络政治情绪",
           "type": "quant",
           "weight": 0.25,
-          "score": 45
+          "score": 47
         },
         {
           "name": "必需品实际购买力",

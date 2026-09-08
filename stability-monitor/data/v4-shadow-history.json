@@ -163,10 +163,10 @@
         "fiscal": 52.2,
         "currency": 51.6,
         "institutions": 36.9,
-        "social": 49.5,
+        "social": 47.0,
         "coercive": 37.3
       },
-      "composite": 47.6,
+      "composite": 47.0,
       "measurementConfidence": 0.66,
       "triggerLevel": "normal",
       "activeTriggerIds": [],
@@ -174,16 +174,28 @@
       "confirmed": true,
       "humanConfirmed": true,
       "revision": {
-        "date": "2026-09-01",
-        "fromComposite": 46.1,
+        "date": "2026-09-08",
+        "fromComposite": 47.6,
         "fromScores": {
           "fiscal": 52.2,
-          "currency": 45.6,
+          "currency": 51.6,
           "institutions": 36.9,
           "social": 49.5,
           "coercive": 37.3
         },
-        "why": "2026-09-01 回溯修正 fx_stress：年内贬值基数原用约 16,25x，官方基数为 2025 年末 16,777（Kemenkeu 税务汇率），旧读数把贬值虚增约 3.4pp、把 fx_stress 错压在 38。用当期原始 v4-shadow-input（git）+ 修正后 evidence 重新算分；修正前的值记录在本字段。"
+        "why": "social.online_grievance 记的还是 08-11 的读数（heat 32.6 / 37.2% / 57 分），比当期落后两期；同时 V3 的网络政治情绪按归档的 06:52 全覆盖运行由 45 改为 47（社会支柱 52→53）。两侧已对齐。　【本期先前还有一次修订】2026-09-01 回溯修正 fx_stress：年内贬值基数原用约 16,25x，官方基数为 2025 年末 16,777（Kemenkeu 税务汇率），旧读数把贬值虚增约 3.4pp、把 fx_stress 错压在 38。用当期原始 v4-shadow-input（git）+ 修正后 evidence 重新算分；修正前的值记录在本字段。",
+        "supersedes": {
+          "date": "2026-09-01",
+          "fromComposite": 46.1,
+          "fromScores": {
+            "fiscal": 52.2,
+            "currency": 45.6,
+            "institutions": 36.9,
+            "social": 49.5,
+            "coercive": 37.3
+          },
+          "why": "2026-09-01 回溯修正 fx_stress：年内贬值基数原用约 16,25x，官方基数为 2025 年末 16,777（Kemenkeu 税务汇率），旧读数把贬值虚增约 3.4pp、把 fx_stress 错压在 38。用当期原始 v4-shadow-input（git）+ 修正后 evidence 重新算分；修正前的值记录在本字段。"
+        }
       }
     }
   ],

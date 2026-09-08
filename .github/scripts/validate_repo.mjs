@@ -152,20 +152,28 @@ assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and 
 // CI 全绿、单测全绿、影子指数照常出 46.1 —— 没有任何东西发现。这是本项目第 N 次
 // 「一边修了、另一边忘了」，所以把它钉成不变量。
 {
-  const fxDriver = stabilityContext.__DATA.pillars
-    .find((pillar) => pillar.id === 'currency')?.drivers
-    .find((driver) => driver.name.startsWith('汇率'));
-  assert(fxDriver, 'currency pillar has no 汇率 driver');
+  // 每一对都是「同一份原始读数，两边各记一个分」的地方。
+  // 2026-09-08 又抓到一个：social.online_grievance 记的还是 08-11 的 heat 32.6 / 57 分，
+  // 比当期落后两期，而 V3 的网络政治情绪早已改分。所以这里按对儿枚举，不是只钉汇率。
+  const BRIDGED = [
+    { pillar: 'currency', driver: (d) => d.name.startsWith('汇率'), owner: 'currency.fx_stress' },
+    { pillar: 'social', driver: (d) => d.name === '网络政治情绪', owner: 'social.online_grievance' },
+  ];
   const observations = Array.isArray(evidence.observations)
     ? evidence.observations : Object.values(evidence.observations ?? {});
-  const fxObservation = observations.find((o) => o.primaryOwner === 'currency.fx_stress');
-  assert(fxObservation, 'V4 evidence has no currency.fx_stress observation');
-  const inputs = fxObservation.scoreInputs ?? [];
-  assert(inputs.length > 0, 'currency.fx_stress observation has no scoreInputs');
-  for (const input of inputs) {
-    assert(input.score === fxDriver.score,
-      `V3 汇率 driver = ${fxDriver.score} but V4 fx_stress scoreInput = ${input.score} ` +
-      '— 同一天同一个汇率不能有两个分。改了一边就要改另一边。');
+  for (const pair of BRIDGED) {
+    const driver = stabilityContext.__DATA.pillars
+      .find((pillar) => pillar.id === pair.pillar)?.drivers.find(pair.driver);
+    assert(driver, `${pair.pillar} pillar has no driver bridged to ${pair.owner}`);
+    const observation = observations.find((o) => o.primaryOwner === pair.owner);
+    assert(observation, `V4 evidence has no ${pair.owner} observation`);
+    const inputs = observation.scoreInputs ?? [];
+    assert(inputs.length > 0, `${pair.owner} observation has no scoreInputs`);
+    for (const input of inputs) {
+      assert(input.score === driver.score,
+        `V3 ${driver.name} = ${driver.score} but V4 ${pair.owner} scoreInput = ${input.score} ` +
+        '— 同一天同一份读数不能有两个分。改了一边就要改另一边。');
+    }
   }
 }
 assert(Math.abs(Object.values(v4Input.officialPillarWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9, 'V4 official baseline weights do not sum to 1');
