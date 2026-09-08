@@ -1,18 +1,20 @@
 {
-  "generatedAt": "2026-09-07T06:39:12.813257+00:00",
+  "generatedAt": "2026-09-08T06:34:01.016895+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-09-07",
-    "risk": false,
+    "title": "【日频异常触发】风险警报｜待确认｜2026-09-08",
+    "risk": true,
     "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：NORMAL。",
+      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：AMBER。",
+      "**制度/政治骤变**\n\n🟠 **仓促立法/政策骤变｜印尼国会批准土地改革法案为动议，将设立新机构**\n严重度 0.55｜2个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜印尼总统考虑合并地质局与气象局，国会要求评估**\n严重度 0.55｜2个独立来源（katadata.co.id、liputan6.com）｜影响支柱：institutions",
+      "**Pinjol/Pindar 舆情事件**\n\n**OJK叫停951家非法网贷平台**\nOJK下属Satgas PASTI在2026年1-8月叫停951家非法网贷和242家非法投资，涉及金额巨大。\n证据：13个独立来源。",
       "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-09-07:normal:normal:success"
+    "decisionId": "daily:2026-09-08:high_pending:amber:success"
   },
-  "feishu": "suppressed_normal"
+  "feishu": "sent"
 }

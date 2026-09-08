@@ -1,56 +1,81 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-07",
-  "level": "normal",
+  "date": "2026-09-08",
+  "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 32.3,
-    "socialDailyVolumeRisk": 31.6,
-    "negativeSocialShare": 17.6,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 51.4,
+    "socialDailyVolumeRisk": 37.0,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=9; prior-7d median=16.0; robust z=-1.18",
-    "socialVolume": "today=0; prior-7d median=31.0; robust z=-1.23"
+    "newsVolume": "today=15; prior-7d median=14.0; robust z=0.10",
+    "socialVolume": "today=2; prior-7d median=29.0; robust z=-0.87"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
+  "highRiskPendingEvents": [
     {
-      "id": "llm-448304827dac",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-2ad01e4ffa7f",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
       "entities": [
-        "Polres Tanah Laut"
+        "OJK",
+        "Satgas PASTI"
       ],
-      "headline": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
-      "headlineZh": "警察检查手机防网贷",
-      "summaryZh": "南塔纳县警察局长提醒并检查警员手机，防止警员陷入网赌和非法网贷，属内部纪律行动。",
-      "rationale": "警方内部管理行动，非消费者事件",
-      "independentSourceCount": 2,
+      "headline": "OJK Hentikan 1.222 Entitas Keuangan Ilegal Periode Januari-Agustus 2026, Pinjol Mendominasi - Data Indonesia.id",
+      "headlineZh": "OJK叫停951家非法网贷平台",
+      "summaryZh": "OJK下属Satgas PASTI在2026年1-8月叫停951家非法网贷和242家非法投资，涉及金额巨大。",
+      "rationale": "监管机构大规模取缔非法平台，属重大监管行动。",
+      "independentSourceCount": 13,
       "domains": [
-        "kalsel.antaranews.com",
-        "lenterakalimantan.com"
+        "cnnindonesia.com",
+        "dataindonesia.id",
+        "finance.detik.com",
+        "gadget.qoo10.co.id",
+        "gebrak.id",
+        "jakarta.akurat.co"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "699c23c9158b7e67",
-        "498b50d46c4960e4"
+        "33ccfea6b064adab",
+        "f36322a0ba3f8264",
+        "1d2fc2b7ae03d4de",
+        "5021546f4d3445bc",
+        "6894185c84894d78",
+        "a74ba89898b7ecc2",
+        "7a0c53701a951492",
+        "eeb2b667d7c2141e",
+        "e138cffdbd689bfc",
+        "a3f250686df02331",
+        "95cfb55ae97cae13",
+        "ca4e1bbfaad7d126",
+        "d36ec6fb148211fa"
       ],
       "articles": [
         {
-          "title": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQYVFIb3AzbWUzYXZNOGFXLVFnLUdqSlU2UkpqSndoaW56cVVxbVNDY2NuV01WQVBFR0tvcTdzOTUwNUZ5RDVuSVVmM1lENnZmNlRMVUpFa2FCcGFsbVN3clNjbG1qVENFd3YwNktsRzAwRjFmdzlBQmN1cGZ4RDQ0RWVRakY1QldLa1JibGs1Y0lhV2R3RjY1enQ0bUd1MTMtYm9Ib08tUdIBrAFBVV95cUxNNFdYQy1SOTVfeWhSWWJ0OGFSdmpadEdTaWxIc1BhNTRJeHlPRDBpZDlUV2ltTkltZU5kcy1YOTV0VVZxM0tiSFpBdE5wQ0MyNV9BaVgzUi1IRWtBa0R0NS1aSzNrcUVxbS0zdnFmY2xsYmtEODdLaW05d2lGMjVhalB6VmtYRHpyMDJ3UDNGakZzY1NZNExzZ3hvVGF4bnpVZFhPOTR5ZWdEOU01?oc=5"
+          "title": "OJK Hentikan 1.222 Entitas Keuangan Ilegal Periode Januari-Agustus 2026, Pinjol Mendominasi - Data Indonesia.id",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWHduUzZqb212dTZTejZ0Qml0MzNjVlBsQkdzNjhfU0VRTC1QSEMwMWFjWGNualhZMFZZRW1CTllWWTY2TXUySHdsWlpRd1VROThNUUZHeGpUOG9raHY0d1F3SWlGMVZKeVNlU1FGSlU5d2xudmluU01zVHdoX1hOTHN5NUU0UXdNajloRWNrcXBBSG1UTWNJQ1ZIWklhRXJwaTg3MGMwdGtVRU9USVQ5VkxsckNsWk9FcjNzWWJWNkpJUjlKSDJpQg?oc=5"
         },
         {
-          "title": "Tak Mau Anggota Terjerat Judol dan Pinjol, Polres Tanah Laut Periksa Ponsel Personel - lenteraKalimantan.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNb3RPaG1wbWNXcjA5eDl2aEJMOWQwN2xYbldWa1FJZFJkVW9KcmFaTnR2MUM5LXpZTXY4eEZ2Q1pqSzM0TncyLVdmYjI1SXJSVjhqajF1VW9TVy04M0VtSGgzaHpXRHY1aFNDMV9lUE15WVg0NEtOZ2xRdHNRaE05TGxDME5VWHV4TjBxVFFFMjItemZUUlBLNi1ZUEF4bkFEWTJRU2cwNlRScEFXWndwdnM2TzROYXJQcENzbWRTTQ?oc=5"
+          "title": "OJK Hentikan 951 Pinjol Ilegal hingga Agustus 2026, Total 1.222 Entitas Keuangan Ilegal Ditindak - gebrak.id",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQXo3VGF1NGRxWGxEeGkwdXZBNDhZbW5NVm1jV3l5cm9fR1ZVTkdmN1A1MGxjenJBbTZZNjVmaHgwbmdZRnFnMUl0ZFhvNzhRZTZpMTRISnhEXzNFNGhsVmdORUt3LUNuQ3ljdFhqZlNJY2t1X2ducmNBZ0F5Y2UzdmNnWEhKbGtvandIRHJfOHhLVXJrM2p5OWMxYWQxNjFHeVJPOC1QTkdYcnN4dmktbHMzRGprNG5QVEtiWXpxOERUUXhwZDVHZUpn?oc=5"
+        },
+        {
+          "title": "OJK Sikat 951 Pinjol Ilegal, Selamatkan Rp 206 Miliar Uang Korban - Akurat Jakarta",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLVFXaVFnY1lJV2xYZVNGTTI2ZXJiRXpNUmt4OGRQYnFJT0VVSExYUXZDWDZWQzhBLV9KbU9uZ0VUcElsQ1NuNEpndlI5Z3FETHJpc3NWR3FnV2hYem9pVXdOdVdlUmFZTU5HdEZyOHBxeTlCdlZRZUc4aFNMcjNFNkt0cUxFVFVxUE1oeE0tM2JOaEdXaGFSYldFX2c3WGJiRDJscA?oc=5"
+        },
+        {
+          "title": "Satgas PASTI Stop 951 Entitas Pinjol Ilegal dan 242 Investasi Ilegal per Agustus 2026 - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWjN6TUZkV0hLNWE1cVh2RkNPN3JPdGFGS3Q5UzJfY1hQNS1BM2VVMm1WMWEyZTRxcGNVN1RGYmdNUjZqeEVQNjF0eHJIb3IwWmZEZTcyUW15VzNUY1VEa1pKMUo4X0c3WU9WOHZKZm01NG5hU0lNWi1WXzhsaWNBTl9ZRDZXUzNBeW1jRGtBYmVNaGJpSG8ybGxJUGVtTld3Mk5tYTFBR0d6R3M0Q0VRVFdCZEtHMERNTWYxNdIBtgFBVV95cUxOY0pKSlowcC1rVTlwUnBtaG5fdU5ZeGN6WkZ3MUxrMnZZTTBLczIwbkJseHJvVm1NQXhqUE1fVFJ0ek0zTmJoY2czNldJcm8tem9wZnNndWNGaG9yYm9ibW5WZHk2am5zbFZ3LXVSM3FHNG0yNDF0TTY0Y3hnb1VKQ1lsSU9NeTRscG52aENSQ0FqODJKeDIxcGhXTkctcy1xOFFJaVFXbHVDSmt3MjhUMkZwbDhtdw?oc=5"
+        },
+        {
+          "title": "Hingga Agustus 2026, OJK Hentikan 951 Pinjol Ilegal - Tutur.co.id",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBOcXdGYzVaWDUzT1hialBmVDBsblpUZ1NYV3pzbVhzRW9zeEVUNjVDelJHQXd5Wmw4OVZkZWZVZ1Z3RTdLQmlNUjE1aVItSGt0UkFfM01Gd1FhRjZEVUh0Vll3SGhpVzAyY0F1dmdoZEwtcFJGTWJRQjR6RQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 13,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -58,40 +83,54 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
+    }
+  ],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-67dffc6b07c6",
+      "id": "llm-8819848a4f1f",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
+        "OJK",
         "Pindar",
-        "OJK"
+        "Perusahaan Pembiayaan"
       ],
-      "headline": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
-      "headlineZh": "Pindar被要求弃用Tadpole模式",
-      "summaryZh": "监管方要求Pindar停止使用Tadpole放贷模式，该模式被指损害借款人利益，引发行业关注。",
-      "rationale": "监管对特定业务模式提出要求",
-      "independentSourceCount": 2,
+      "headline": "7 Perusahaan Pindar Belum Penuhi Modal Minimum, OJK: Sudah Menyampaikan Action Plan - Akurat.co",
+      "headlineZh": "OJK披露7家金融公司未达最低资本",
+      "summaryZh": "OJK披露7家Pindar公司未满足最低股本要求，公司已提交整改计划，属监管披露。",
+      "rationale": "监管机构披露具体公司未达标，属监管行动。",
+      "independentSourceCount": 3,
       "domains": [
-        "investortrust.id",
-        "metrotvnews.com"
+        "akurat.co",
+        "bloombergtechnoz.com",
+        "cnbcindonesia.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5c5f077cbc3855fa",
-        "840b85c68171ccf7"
+        "fca2ab62227b96b5",
+        "ecf97a53693eef70",
+        "7c0db5e3b96ed83e",
+        "a447dc57ca2d059c"
       ],
       "articles": [
         {
-          "title": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOc2NDQlo5Y0ZpcFJ3clNSYTJsa0hQVEh0OGpJbU5DRXhHak1kZFVaUWc5Sm5MbHhuT3l6ZGlnU19tU3ViVkxnb3pzTHdmU041SUZ3N1p5NmhRQjhqM3h5ckpHcFMzTTdjRG5XSGNGTlJBMUd2c3FZRk1PcWthTHJNb1MwWDdqa1k?oc=5"
+          "title": "7 Perusahaan Pindar Belum Penuhi Modal Minimum, OJK: Sudah Menyampaikan Action Plan - Akurat.co",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQUw4UGVlSGc3c1piZlBXVENVblYxektKZi03RWZ6emdkYUczTHRFZ0U1VE9EekJjTnllV0RGeUNiX3FTc0pIeW9BWWFMQlEtSTdNNlgwSVlHY1Nvd245eUtXNTQtV0s4cmRIcG1JQU5lWTNmZFM1MkVJRFVxUFEyRng3c040MkZ2bFkxZ1hxT2poV1JTYzhuS3JXX3JpUjItd3JwYWczc25IeXM3dUE5RkVQNXNWZw?oc=5"
         },
         {
-          "title": "Skema Tadpole Pindar Dinilai Rugikan Peminjam - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcDR2SFJteFcyUG9ZZEQ4R2lPb3hSamFKRG9ReXUySEFpcUN3NmJCVmFuclVybmhLWEc3dGdnR0hPT1dPTkxfU3lZeldQdDFPemdSYWlsX01MLTlPUUh1Y2liNDlEVWdCYzU2YXNNMkdDZm13QWlFVVk3Y3U2SUEwLTRhUXFlRWdJYnl5a082Slg?oc=5"
+          "title": "OJK Buka-bukaan: 16 Perusahaan Pembiayaan Belum Cukup Modal - cnbcindonesia.com",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUXhBaEVTSmV3OWlreU91ZEVYaWUyMTZucWZIY0taVFRvaWUzdlJBc01fMHBTQV91NjJnNGRQYlZVbDN4VXdNYmlKUHZPX1g3cnZ2MTRFbkFCdFpKc2Vxcnd2T0MtaVVobXRaSWluVVp1TXU1T3RqdEdRVFcwMU9xN0NnT2kxRjQ1VWdVNk5oaXMyR2x4VElfdXV6YU5ta194aEZuanZVdjRHa1BqSU4zbVhEZXhBOUJfTVdaVFpfZ25jQdIBwgFBVV95cUxOUXhBaEVTSmV3OWlreU91ZEVYaWUyMTZucWZIY0taVFRvaWUzdlJBc01fMHBTQV91NjJnNGRQYlZVbDN4VXdNYmlKUHZPX1g3cnZ2MTRFbkFCdFpKc2Vxcnd2T0MtaVVobXRaSWluVVp1TXU1T3RqdEdRVFcwMU9xN0NnT2kxRjQ1VWdVNk5oaXMyR2x4VElfdXV6YU5ta194aEZuanZVdjRHa1BqSU4zbVhEZXhBOUJfTVdaVFpfZ25jQQ?oc=5"
+        },
+        {
+          "title": "OJK Sebut 7 Pinjol Belum Penuhi Kewajiban Ekuitas Minimum - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONmVzVWlaTnRmZzg3RDZsaTQwb1I4UW1DWWRCSEdwa0JTRUtlRVNBcUFNT3lyZWhGQVNzWUo3TGF5NHVpdlZueWpuLTB4d1RpcnpEZm1sNzk3R1NuNGpER1JuY04yczJETE0ydXB5c085SGlFQTEyZUlEYkJFc1Q5OF9peUlaVF9IV19TV0ZJT1Y2MjE5SUl0ZURMOUVoME1BV0V6TmE1VWVyTnhjRkE?oc=5"
+        },
+        {
+          "title": "OJK Sebut 7 Pinjol Belum Penuhi Kewajiban Ekuitas Minimum - Finansial - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMm42VGxfZmVrNFZ2VnVQbGVzdEg4UXJwOUpPdV9LS2xqWElvTkM4R0JYY0RlRVZ2NlZGMnJPU05kQk0wTjFpdzRlOW5uWGl4WlNNX1VKMDM5bXcwTGlxOElFSzZ6elNIQnUxN1kyV1dsQVg2eVFhRHVScG1FTjIyOGN0UkUwbTF6M1QxYmlDdXVyT3pRU0lkQ3NvV2lzeUs0S2piQk43dWZURjEtYjZPdg?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 4,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -101,36 +140,72 @@
       }
     },
     {
-      "id": "llm-7c215900f36c",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-2e2cc6d1f3fd",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
       "entities": [
-        "Pindar KrediOne"
+        "Pindar"
       ],
-      "headline": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
-      "headlineZh": "Pindar KrediOne放贷7.3万亿",
-      "summaryZh": "Pindar KrediOne宣布已发放贷款7.3万亿印尼盾，并强调可持续增长，属常规业务进展披露。",
-      "rationale": "常规业务数据披露，非风险事件",
-      "independentSourceCount": 1,
+      "headline": "Skema Tadpole Pindar Rugikan Peminjam - investor.id",
+      "headlineZh": "Pindar Tadpole模式被指损害借款人",
+      "summaryZh": "媒体报道Pindar的Tadpole模式可能损害借款人利益，专家呼吁关注消费者保护。",
+      "rationale": "报道具体商业模式对消费者造成潜在损害。",
+      "independentSourceCount": 2,
       "domains": [
+        "investor.id",
         "money.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "3cf130a72991b575",
-        "2c97c4727fb6611b"
+        "e9b75ca3f02d73ed",
+        "31584fe90a9c7131"
       ],
       "articles": [
         {
-          "title": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSV84WmtwZlpmYU5PanVieTZPeVNxTE13T0toQTdYNjU1LVNDdC1CS3dnTmRNcnFnbllQb1gwLWtIQm5QU08yNkhVOG45SEhZekZuZzFQVWtZX1RWZFY3N3hsUzhzVHRFaW5jbjJwakRlRU1XUHdyZTNiVXRoS3V1TXlTa1gxTUNnelIwdTRKRzFEa0hidlBwZF9HNjg0MWpXLUItUzVtUkl1b1pyTV8tUDRLc21aMmRlOU41YmYwal9DZlBhejNLdVZKTFhNZw?oc=5"
+          "title": "Skema Tadpole Pindar Rugikan Peminjam - investor.id",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBxZ2s1eTRBaGkxTXpseEs3LXpRMzMzS2R1SmloVkJ0c3ZBbTJ4aXF2NzNpU3RYQXlUS0k0Q3FjV3hZOVlOaDJqZG9PQmFxbTFpY1dNYldqbkgzTE43c0N3UlhYS3p6Zi00bWctYmExb3RwMFRMUXpYYzAydFQ?oc=5"
         },
         {
-          "title": "Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPV3lfQmVmLWpOendCTko0QWk2aG05TnY2R01lTXRmaDlzWW4taWtSS2szTnNDR3h1Yl93bGptZkxxYXFMZmk1MHU0VEZXdjd6d0JhZnRjWnYwb2lpa3JObWtWSUNUZDd6TGIzZWdFbURaS193bWEydVlWallZdkJNeHQzSXNlRElyems5QWs1WDRSZnpwbVI1bWRGX05tOUJKY2NBWTlVdlFVbm1MWUNwLWhtZFlrcGVNRmxPbngyYmJ5NUk?oc=5"
+          "title": "Foto : Skema Tadpole Pindar Dinilai Perlu Perhatikan Perlindungan Konsumen - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORXduNGwtSTQ0WjVUdkoyaWQ2RUk5U3Q3WktaZS10WVdXV1I4WHFqS25aZDlNbEMzUnBrWE4xRXFPQnJqbHliMGdmRE1YZkZCa29nWG9OV3A2dmZkMlR2VmZYTDM1UjRNbndIV3czVHFONmVWUnJneGFiTFVzd2ZmUGxCcUh2NTVQWGtMLVd2dzN2dGp6MnhDdHlmQjV3REkwajVuRzVxOW1yQ2FGWkpTTG9wMjBMaWthNE1N?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-7728c49be536",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Buleleng",
+        "KPM"
+      ],
+      "headline": "Terdeteksi Pinjol dan Judol, Bansos 32 KPM di Buleleng Tersedat - Koran Buleleng",
+      "headlineZh": "32户家庭因涉网贷赌博致补助金受阻",
+      "summaryZh": "Buleleng地区32户受助家庭因被检测到涉及在线贷款和赌博，导致社会援助发放受阻。",
+      "rationale": "具体消费者因网贷受影响的案例。",
+      "independentSourceCount": 1,
+      "domains": [
+        "koranbuleleng.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "4419fa0d7fd3a0e5"
+      ],
+      "articles": [
+        {
+          "title": "Terdeteksi Pinjol dan Judol, Bansos 32 KPM di Buleleng Tersedat - Koran Buleleng",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSlFCaU5jNkpGOS1vN251cXFCRnVrWllzRFZnWVV0eUVjUU96NWNCc2JQTnQzeGFCSW85QTVpTVJuOTB3LVk0dEQ3VnZKallVYW5TaFRRNG43b0JmOHM0dllyNjJEck5PLWlTdkU1S1dvNmdpREQ1NFhqZHF6X293UUlQY25ueG0yUTcyVHNuLTl6akROZ1hGN1ZCQlVDMHYxckE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -144,89 +219,61 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 13,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 7,
+    "candidateCount": 40,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 9,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 13
+      "ok": 40
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-448304827dac",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "Polres Tanah Laut"
-      ],
-      "headline": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
-      "headlineZh": "警察检查手机防网贷",
-      "summaryZh": "南塔纳县警察局长提醒并检查警员手机，防止警员陷入网赌和非法网贷，属内部纪律行动。",
-      "rationale": "警方内部管理行动，非消费者事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "kalsel.antaranews.com",
-        "lenterakalimantan.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "699c23c9158b7e67",
-        "498b50d46c4960e4"
-      ],
-      "articles": [
-        {
-          "title": "Kapolres Tanah Laut ingatkan personil jauhi pinjol dan judol - ANTARA News",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQYVFIb3AzbWUzYXZNOGFXLVFnLUdqSlU2UkpqSndoaW56cVVxbVNDY2NuV01WQVBFR0tvcTdzOTUwNUZ5RDVuSVVmM1lENnZmNlRMVUpFa2FCcGFsbVN3clNjbG1qVENFd3YwNktsRzAwRjFmdzlBQmN1cGZ4RDQ0RWVRakY1QldLa1JibGs1Y0lhV2R3RjY1enQ0bUd1MTMtYm9Ib08tUdIBrAFBVV95cUxNNFdYQy1SOTVfeWhSWWJ0OGFSdmpadEdTaWxIc1BhNTRJeHlPRDBpZDlUV2ltTkltZU5kcy1YOTV0VVZxM0tiSFpBdE5wQ0MyNV9BaVgzUi1IRWtBa0R0NS1aSzNrcUVxbS0zdnFmY2xsYmtEODdLaW05d2lGMjVhalB6VmtYRHpyMDJ3UDNGakZzY1NZNExzZ3hvVGF4bnpVZFhPOTR5ZWdEOU01?oc=5"
-        },
-        {
-          "title": "Tak Mau Anggota Terjerat Judol dan Pinjol, Polres Tanah Laut Periksa Ponsel Personel - lenteraKalimantan.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNb3RPaG1wbWNXcjA5eDl2aEJMOWQwN2xYbldWa1FJZFJkVW9KcmFaTnR2MUM5LXpZTXY4eEZ2Q1pqSzM0TncyLVdmYjI1SXJSVjhqajF1VW9TVy04M0VtSGgzaHpXRHY1aFNDMV9lUE15WVg0NEtOZ2xRdHNRaE05TGxDME5VWHV4TjBxVFFFMjItemZUUlBLNi1ZUEF4bkFEWTJRU2cwNlRScEFXWndwdnM2TzROYXJQcENzbWRTTQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-67dffc6b07c6",
+      "id": "llm-8819848a4f1f",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
+        "OJK",
         "Pindar",
-        "OJK"
+        "Perusahaan Pembiayaan"
       ],
-      "headline": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
-      "headlineZh": "Pindar被要求弃用Tadpole模式",
-      "summaryZh": "监管方要求Pindar停止使用Tadpole放贷模式，该模式被指损害借款人利益，引发行业关注。",
-      "rationale": "监管对特定业务模式提出要求",
-      "independentSourceCount": 2,
+      "headline": "7 Perusahaan Pindar Belum Penuhi Modal Minimum, OJK: Sudah Menyampaikan Action Plan - Akurat.co",
+      "headlineZh": "OJK披露7家金融公司未达最低资本",
+      "summaryZh": "OJK披露7家Pindar公司未满足最低股本要求，公司已提交整改计划，属监管披露。",
+      "rationale": "监管机构披露具体公司未达标，属监管行动。",
+      "independentSourceCount": 3,
       "domains": [
-        "investortrust.id",
-        "metrotvnews.com"
+        "akurat.co",
+        "bloombergtechnoz.com",
+        "cnbcindonesia.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5c5f077cbc3855fa",
-        "840b85c68171ccf7"
+        "fca2ab62227b96b5",
+        "ecf97a53693eef70",
+        "7c0db5e3b96ed83e",
+        "a447dc57ca2d059c"
       ],
       "articles": [
         {
-          "title": "Pindar Diminta tak Pakai Skema Tadpole - MetroTVNews.com",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOc2NDQlo5Y0ZpcFJ3clNSYTJsa0hQVEh0OGpJbU5DRXhHak1kZFVaUWc5Sm5MbHhuT3l6ZGlnU19tU3ViVkxnb3pzTHdmU041SUZ3N1p5NmhRQjhqM3h5ckpHcFMzTTdjRG5XSGNGTlJBMUd2c3FZRk1PcWthTHJNb1MwWDdqa1k?oc=5"
+          "title": "7 Perusahaan Pindar Belum Penuhi Modal Minimum, OJK: Sudah Menyampaikan Action Plan - Akurat.co",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOQUw4UGVlSGc3c1piZlBXVENVblYxektKZi03RWZ6emdkYUczTHRFZ0U1VE9EekJjTnllV0RGeUNiX3FTc0pIeW9BWWFMQlEtSTdNNlgwSVlHY1Nvd245eUtXNTQtV0s4cmRIcG1JQU5lWTNmZFM1MkVJRFVxUFEyRng3c040MkZ2bFkxZ1hxT2poV1JTYzhuS3JXX3JpUjItd3JwYWczc25IeXM3dUE5RkVQNXNWZw?oc=5"
         },
         {
-          "title": "Skema Tadpole Pindar Dinilai Rugikan Peminjam - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPcDR2SFJteFcyUG9ZZEQ4R2lPb3hSamFKRG9ReXUySEFpcUN3NmJCVmFuclVybmhLWEc3dGdnR0hPT1dPTkxfU3lZeldQdDFPemdSYWlsX01MLTlPUUh1Y2liNDlEVWdCYzU2YXNNMkdDZm13QWlFVVk3Y3U2SUEwLTRhUXFlRWdJYnl5a082Slg?oc=5"
+          "title": "OJK Buka-bukaan: 16 Perusahaan Pembiayaan Belum Cukup Modal - cnbcindonesia.com",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOUXhBaEVTSmV3OWlreU91ZEVYaWUyMTZucWZIY0taVFRvaWUzdlJBc01fMHBTQV91NjJnNGRQYlZVbDN4VXdNYmlKUHZPX1g3cnZ2MTRFbkFCdFpKc2Vxcnd2T0MtaVVobXRaSWluVVp1TXU1T3RqdEdRVFcwMU9xN0NnT2kxRjQ1VWdVNk5oaXMyR2x4VElfdXV6YU5ta194aEZuanZVdjRHa1BqSU4zbVhEZXhBOUJfTVdaVFpfZ25jQdIBwgFBVV95cUxOUXhBaEVTSmV3OWlreU91ZEVYaWUyMTZucWZIY0taVFRvaWUzdlJBc01fMHBTQV91NjJnNGRQYlZVbDN4VXdNYmlKUHZPX1g3cnZ2MTRFbkFCdFpKc2Vxcnd2T0MtaVVobXRaSWluVVp1TXU1T3RqdEdRVFcwMU9xN0NnT2kxRjQ1VWdVNk5oaXMyR2x4VElfdXV6YU5ta194aEZuanZVdjRHa1BqSU4zbVhEZXhBOUJfTVdaVFpfZ25jQQ?oc=5"
+        },
+        {
+          "title": "OJK Sebut 7 Pinjol Belum Penuhi Kewajiban Ekuitas Minimum - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxONmVzVWlaTnRmZzg3RDZsaTQwb1I4UW1DWWRCSEdwa0JTRUtlRVNBcUFNT3lyZWhGQVNzWUo3TGF5NHVpdlZueWpuLTB4d1RpcnpEZm1sNzk3R1NuNGpER1JuY04yczJETE0ydXB5c085SGlFQTEyZUlEYkJFc1Q5OF9peUlaVF9IV19TV0ZJT1Y2MjE5SUl0ZURMOUVoME1BV0V6TmE1VWVyTnhjRkE?oc=5"
+        },
+        {
+          "title": "OJK Sebut 7 Pinjol Belum Penuhi Kewajiban Ekuitas Minimum - Finansial - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMm42VGxfZmVrNFZ2VnVQbGVzdEg4UXJwOUpPdV9LS2xqWElvTkM4R0JYY0RlRVZ2NlZGMnJPU05kQk0wTjFpdzRlOW5uWGl4WlNNX1VKMDM5bXcwTGlxOElFSzZ6elNIQnUxN1kyV1dsQVg2eVFhRHVScG1FTjIyOGN0UkUwbTF6M1QxYmlDdXVyT3pRU0lkQ3NvV2lzeUs0S2piQk43dWZURjEtYjZPdg?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 4,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -236,36 +283,140 @@
       }
     },
     {
-      "id": "llm-7c215900f36c",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-2ad01e4ffa7f",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
       "entities": [
-        "Pindar KrediOne"
+        "OJK",
+        "Satgas PASTI"
       ],
-      "headline": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
-      "headlineZh": "Pindar KrediOne放贷7.3万亿",
-      "summaryZh": "Pindar KrediOne宣布已发放贷款7.3万亿印尼盾，并强调可持续增长，属常规业务进展披露。",
-      "rationale": "常规业务数据披露，非风险事件",
-      "independentSourceCount": 1,
+      "headline": "OJK Hentikan 1.222 Entitas Keuangan Ilegal Periode Januari-Agustus 2026, Pinjol Mendominasi - Data Indonesia.id",
+      "headlineZh": "OJK叫停951家非法网贷平台",
+      "summaryZh": "OJK下属Satgas PASTI在2026年1-8月叫停951家非法网贷和242家非法投资，涉及金额巨大。",
+      "rationale": "监管机构大规模取缔非法平台，属重大监管行动。",
+      "independentSourceCount": 13,
       "domains": [
+        "cnnindonesia.com",
+        "dataindonesia.id",
+        "finance.detik.com",
+        "gadget.qoo10.co.id",
+        "gebrak.id",
+        "jakarta.akurat.co"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "33ccfea6b064adab",
+        "f36322a0ba3f8264",
+        "1d2fc2b7ae03d4de",
+        "5021546f4d3445bc",
+        "6894185c84894d78",
+        "a74ba89898b7ecc2",
+        "7a0c53701a951492",
+        "eeb2b667d7c2141e",
+        "e138cffdbd689bfc",
+        "a3f250686df02331",
+        "95cfb55ae97cae13",
+        "ca4e1bbfaad7d126",
+        "d36ec6fb148211fa"
+      ],
+      "articles": [
+        {
+          "title": "OJK Hentikan 1.222 Entitas Keuangan Ilegal Periode Januari-Agustus 2026, Pinjol Mendominasi - Data Indonesia.id",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOWHduUzZqb212dTZTejZ0Qml0MzNjVlBsQkdzNjhfU0VRTC1QSEMwMWFjWGNualhZMFZZRW1CTllWWTY2TXUySHdsWlpRd1VROThNUUZHeGpUOG9raHY0d1F3SWlGMVZKeVNlU1FGSlU5d2xudmluU01zVHdoX1hOTHN5NUU0UXdNajloRWNrcXBBSG1UTWNJQ1ZIWklhRXJwaTg3MGMwdGtVRU9USVQ5VkxsckNsWk9FcjNzWWJWNkpJUjlKSDJpQg?oc=5"
+        },
+        {
+          "title": "OJK Hentikan 951 Pinjol Ilegal hingga Agustus 2026, Total 1.222 Entitas Keuangan Ilegal Ditindak - gebrak.id",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQXo3VGF1NGRxWGxEeGkwdXZBNDhZbW5NVm1jV3l5cm9fR1ZVTkdmN1A1MGxjenJBbTZZNjVmaHgwbmdZRnFnMUl0ZFhvNzhRZTZpMTRISnhEXzNFNGhsVmdORUt3LUNuQ3ljdFhqZlNJY2t1X2ducmNBZ0F5Y2UzdmNnWEhKbGtvandIRHJfOHhLVXJrM2p5OWMxYWQxNjFHeVJPOC1QTkdYcnN4dmktbHMzRGprNG5QVEtiWXpxOERUUXhwZDVHZUpn?oc=5"
+        },
+        {
+          "title": "OJK Sikat 951 Pinjol Ilegal, Selamatkan Rp 206 Miliar Uang Korban - Akurat Jakarta",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLVFXaVFnY1lJV2xYZVNGTTI2ZXJiRXpNUmt4OGRQYnFJT0VVSExYUXZDWDZWQzhBLV9KbU9uZ0VUcElsQ1NuNEpndlI5Z3FETHJpc3NWR3FnV2hYem9pVXdOdVdlUmFZTU5HdEZyOHBxeTlCdlZRZUc4aFNMcjNFNkt0cUxFVFVxUE1oeE0tM2JOaEdXaGFSYldFX2c3WGJiRDJscA?oc=5"
+        },
+        {
+          "title": "Satgas PASTI Stop 951 Entitas Pinjol Ilegal dan 242 Investasi Ilegal per Agustus 2026 - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPWjN6TUZkV0hLNWE1cVh2RkNPN3JPdGFGS3Q5UzJfY1hQNS1BM2VVMm1WMWEyZTRxcGNVN1RGYmdNUjZqeEVQNjF0eHJIb3IwWmZEZTcyUW15VzNUY1VEa1pKMUo4X0c3WU9WOHZKZm01NG5hU0lNWi1WXzhsaWNBTl9ZRDZXUzNBeW1jRGtBYmVNaGJpSG8ybGxJUGVtTld3Mk5tYTFBR0d6R3M0Q0VRVFdCZEtHMERNTWYxNdIBtgFBVV95cUxOY0pKSlowcC1rVTlwUnBtaG5fdU5ZeGN6WkZ3MUxrMnZZTTBLczIwbkJseHJvVm1NQXhqUE1fVFJ0ek0zTmJoY2czNldJcm8tem9wZnNndWNGaG9yYm9ibW5WZHk2am5zbFZ3LXVSM3FHNG0yNDF0TTY0Y3hnb1VKQ1lsSU9NeTRscG52aENSQ0FqODJKeDIxcGhXTkctcy1xOFFJaVFXbHVDSmt3MjhUMkZwbDhtdw?oc=5"
+        },
+        {
+          "title": "Hingga Agustus 2026, OJK Hentikan 951 Pinjol Ilegal - Tutur.co.id",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBOcXdGYzVaWDUzT1hialBmVDBsblpUZ1NYV3pzbVhzRW9zeEVUNjVDelJHQXd5Wmw4OVZkZWZVZ1Z3RTdLQmlNUjE1aVItSGt0UkFfM01Gd1FhRjZEVUh0Vll3SGhpVzAyY0F1dmdoZEwtcFJGTWJRQjR6RQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 13,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-2e2cc6d1f3fd",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Pindar"
+      ],
+      "headline": "Skema Tadpole Pindar Rugikan Peminjam - investor.id",
+      "headlineZh": "Pindar Tadpole模式被指损害借款人",
+      "summaryZh": "媒体报道Pindar的Tadpole模式可能损害借款人利益，专家呼吁关注消费者保护。",
+      "rationale": "报道具体商业模式对消费者造成潜在损害。",
+      "independentSourceCount": 2,
+      "domains": [
+        "investor.id",
         "money.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "3cf130a72991b575",
-        "2c97c4727fb6611b"
+        "e9b75ca3f02d73ed",
+        "31584fe90a9c7131"
       ],
       "articles": [
         {
-          "title": "Foto : Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQSV84WmtwZlpmYU5PanVieTZPeVNxTE13T0toQTdYNjU1LVNDdC1CS3dnTmRNcnFnbllQb1gwLWtIQm5QU08yNkhVOG45SEhZekZuZzFQVWtZX1RWZFY3N3hsUzhzVHRFaW5jbjJwakRlRU1XUHdyZTNiVXRoS3V1TXlTa1gxTUNnelIwdTRKRzFEa0hidlBwZF9HNjg0MWpXLUItUzVtUkl1b1pyTV8tUDRLc21aMmRlOU41YmYwal9DZlBhejNLdVZKTFhNZw?oc=5"
+          "title": "Skema Tadpole Pindar Rugikan Peminjam - investor.id",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBxZ2s1eTRBaGkxTXpseEs3LXpRMzMzS2R1SmloVkJ0c3ZBbTJ4aXF2NzNpU3RYQXlUS0k0Q3FjV3hZOVlOaDJqZG9PQmFxbTFpY1dNYldqbkgzTE43c0N3UlhYS3p6Zi00bWctYmExb3RwMFRMUXpYYzAydFQ?oc=5"
         },
         {
-          "title": "Pindar KrediOne Salurkan Rp 7,3 Triliun, Tekankan Pertumbuhan Berkelanjutan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPV3lfQmVmLWpOendCTko0QWk2aG05TnY2R01lTXRmaDlzWW4taWtSS2szTnNDR3h1Yl93bGptZkxxYXFMZmk1MHU0VEZXdjd6d0JhZnRjWnYwb2lpa3JObWtWSUNUZDd6TGIzZWdFbURaS193bWEydVlWallZdkJNeHQzSXNlRElyems5QWs1WDRSZnpwbVI1bWRGX05tOUJKY2NBWTlVdlFVbm1MWUNwLWhtZFlrcGVNRmxPbngyYmJ5NUk?oc=5"
+          "title": "Foto : Skema Tadpole Pindar Dinilai Perlu Perhatikan Perlindungan Konsumen - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxORXduNGwtSTQ0WjVUdkoyaWQ2RUk5U3Q3WktaZS10WVdXV1I4WHFqS25aZDlNbEMzUnBrWE4xRXFPQnJqbHliMGdmRE1YZkZCa29nWG9OV3A2dmZkMlR2VmZYTDM1UjRNbndIV3czVHFONmVWUnJneGFiTFVzd2ZmUGxCcUh2NTVQWGtMLVd2dzN2dGp6MnhDdHlmQjV3REkwajVuRzVxOW1yQ2FGWkpTTG9wMjBMaWthNE1N?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-7728c49be536",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Buleleng",
+        "KPM"
+      ],
+      "headline": "Terdeteksi Pinjol dan Judol, Bansos 32 KPM di Buleleng Tersedat - Koran Buleleng",
+      "headlineZh": "32户家庭因涉网贷赌博致补助金受阻",
+      "summaryZh": "Buleleng地区32户受助家庭因被检测到涉及在线贷款和赌博，导致社会援助发放受阻。",
+      "rationale": "具体消费者因网贷受影响的案例。",
+      "independentSourceCount": 1,
+      "domains": [
+        "koranbuleleng.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "4419fa0d7fd3a0e5"
+      ],
+      "articles": [
+        {
+          "title": "Terdeteksi Pinjol dan Judol, Bansos 32 KPM di Buleleng Tersedat - Koran Buleleng",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOSlFCaU5jNkpGOS1vN251cXFCRnVrWllzRFZnWVV0eUVjUU96NWNCc2JQTnQzeGFCSW85QTVpTVJuOTB3LVk0dEQ3VnZKallVYW5TaFRRNG43b0JmOHM0dllyNjJEck5PLWlTdkU1S1dvNmdpREQ1NFhqZHF6X293UUlQY25ueG0yUTcyVHNuLTl6akROZ1hGN1ZCQlVDMHYxckE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -283,26 +434,26 @@
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 17,
-    "socialItemCount48h": 5
+    "articleCount48h": 78,
+    "socialItemCount48h": 8
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 550,
-    "classifiedCount": 112,
-    "irrelevantDropped": 128,
+    "inputCount": 509,
+    "classifiedCount": 77,
+    "irrelevantDropped": 163,
     "model": "deepseek-chat",
-    "fallbackCount": 310,
+    "fallbackCount": 269,
     "labelCounts": {
-      "NEG": 62,
-      "MIX": 4,
-      "POS": 46
+      "NEG": 47,
+      "MIX": 0,
+      "POS": 30
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
