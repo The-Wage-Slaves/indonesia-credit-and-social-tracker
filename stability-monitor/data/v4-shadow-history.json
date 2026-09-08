@@ -197,6 +197,23 @@
           "why": "2026-09-01 回溯修正 fx_stress：年内贬值基数原用约 16,25x，官方基数为 2025 年末 16,777（Kemenkeu 税务汇率），旧读数把贬值虚增约 3.4pp、把 fx_stress 错压在 38。用当期原始 v4-shadow-input（git）+ 修正后 evidence 重新算分；修正前的值记录在本字段。"
         }
       }
+    },
+    {
+      "date": "2026-09-08",
+      "scores": {
+        "fiscal": 52.2,
+        "currency": 52.4,
+        "institutions": 36.9,
+        "social": 49.2,
+        "coercive": 37.3
+      },
+      "composite": 47.7,
+      "measurementConfidence": 0.647,
+      "triggerLevel": "normal",
+      "activeTriggerIds": [],
+      "status": "provisional-shadow",
+      "confirmed": true,
+      "humanConfirmed": true
     }
   ],
   "revisionLog": [
