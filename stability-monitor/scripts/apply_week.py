@@ -22,7 +22,7 @@ data.js 的 weekly 只存支柱分，不存每期的 driver 组合与权重。�
 
 说明：评分本身仍是"人在环"——本脚本只做机械写入，分数由分析确认后给出。
 """
-import json, re, shutil, subprocess, sys, datetime, pathlib
+import json, math, re, shutil, subprocess, sys, datetime, pathlib
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -71,6 +71,17 @@ def append_week(date, scores):
     write_driver_snapshot(date)
 
 
+def half_up(value: float) -> int:
+    """半数进位取整，与看板/CI 保持一致。
+
+    **不能用内建 round()**：Python 用银行家舍入（round(46.5)==46 取偶数），而
+    dashboard 的 engine.js 与 validate_repo.mjs 用的是 JS Math.round（46.5→47）。
+    支柱分正好落在 .5 上时两者会给出不同答案，于是 CI 通过、归档却拒绝——
+    2026-09-01 货币支柱算出 46.50，就撞上了这个分歧。
+    """
+    return math.floor(value + 0.5)
+
+
 def eval_data_js():
     """data.js 是JS对象字面量（含注释、键不带引号），用 Node 求值最稳。"""
     script = ("const fs=require('fs');"
@@ -109,8 +120,8 @@ def write_driver_snapshot(date=None):
                     "weight": d["weight"], "score": d["score"]}
                    for d in pillar["drivers"]]
         weight_sum = round(sum(d["weight"] for d in drivers), 10)
-        computed = round(sum(d["weight"] * d["score"] for d in drivers)
-                         + (pillar.get("pillarAdj") or 0))
+        computed = half_up(sum(d["weight"] * d["score"] for d in drivers)
+                           + (pillar.get("pillarAdj") or 0))
         if weight_sum != 1:
             sys.exit(f"× {pillar['id']} 权重和为 {weight_sum}，拒绝归档自相矛盾的快照")
         if computed != pillar["score"]:

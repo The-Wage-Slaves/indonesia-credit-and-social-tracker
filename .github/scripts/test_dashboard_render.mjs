@@ -74,5 +74,50 @@ const expected = Math.round(
 assert.equal(composite(), expected,
   `引擎算出 ${composite()}，五支柱等权平均是 ${expected}`);
 
+// ── 趋势图上的口径缝必须真的画出来 ──────────────────────────────
+// 2026-09-01 回溯重调了五期汇率基数，07-07/07-16 因无 driver 级记录无法重算，
+// 只能保留旧基数。图上用空心点标出这道缝。**只在 engine.js 里 grep 到
+// "legacyBasis" 不算数**——那正是上一轮 prev:45 事件的教训：字符串在、
+// 渲染出来的东西却是错的。所以这里把 Chart 桩起来真跑 drawWeekly。
+{
+  const { drawWeekly } = vm.runInContext('({ drawWeekly })', context);
+  let captured = null;
+  context.getComputedStyle = () => ({ getPropertyValue: () => '#1a1a17' });
+  context.document.getElementById = (id) => (id === 'wk' ? {} : null);
+  // engine.js 判空用 window.Chart、构造却用裸 Chart——浏览器里是同一个全局，VM 里不是。
+  const ChartStub = function (ctx, cfg) { captured = cfg; this.destroy = () => {}; };
+  context.window.Chart = ChartStub;
+  context.Chart = ChartStub;
+
+  assert.doesNotThrow(() => drawWeekly(), '周度趋势图渲染抛错');
+  assert.ok(captured, 'drawWeekly 没有构造出图表');
+
+  const composite = captured.data.datasets[0];
+  const legacy = DATA.weekly.map((w) => w.fxBasis === 'legacy');
+  assert.ok(legacy.some(Boolean), '没有任何期次标为 legacy —— 标记丢了');
+
+  assert.ok(Array.isArray(composite.pointBackgroundColor),
+    '综合线的点色不是数组 —— 空心点没生效，缝在图上看不见');
+  DATA.weekly.forEach((w, i) => {
+    const hollow = composite.pointBackgroundColor[i] === 'rgba(0,0,0,0)';
+    assert.equal(hollow, legacy[i],
+      `${w.date} 的点应${legacy[i] ? '为空心' : '为实心'}，实际相反`);
+  });
+
+  // 光有空心点没人看得懂，图注必须点名是哪两期、为什么。
+  const { legacyBasisNote } = vm.runInContext('({ legacyBasisNote })', context);
+  const note = legacyBasisNote();
+  // 只校验括号里的点名清单——正文里还会出现回溯重调的日期(2026-09-01)，
+  // 那是说明文字不是点名，拿整段做 includes 会误判。
+  const listed = (note.match(/\(([^)]*)\)/) || [, ''])[1].split('、').filter(Boolean);
+  // 比字符串而不是比数组：DATA 来自 vm context，它的 filter/map 造出的数组带的是
+  // **VM 那个 realm 的 Array.prototype**，而 deepStrictEqual 连原型一起比——
+  // 于是两边内容一模一样却判不等，报错还把两个看着相同的数组并排打出来。
+  assert.equal(listed.join('、'),
+    DATA.weekly.filter((x) => x.fxBasis === 'legacy').map((x) => x.date).join('、'),
+    `图注点名的期次与标记不一致: ${listed.join('、')}`);
+  assert.ok(/基数|口径/.test(note), '图注没说清为什么这两期不一样');
+}
+
 assert.ok(driverCount >= 25, `driver 数量异常: ${driverCount}`);
 console.log(`Dashboard render: OK (${driverCount} drivers, ${newDriverCount} newly introduced)`);

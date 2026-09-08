@@ -90,7 +90,13 @@
       "label": "Rupiah spot stress",
       "summary": "Rupiah returned below 18,000; V3 reproducible driver score is 38. Official project FX conversion remains fixed at 15,000 for historical comparability and is not this stress input.",
       "confidence": "high",
-      "sourceText": "Reviewed weekly market snapshot for PR #2"
+      "sourceText": "Reviewed weekly market snapshot for PR #2",
+      "fxBasis": "legacy",
+      "revision": {
+        "date": "2026-09-01",
+        "toScore": null,
+        "why": "同样受错基数影响（原文写 V3 driver = 38），但该期用的是 V4 输入 schemaVersion 2、本条观测没有 scoreInputs，当前算分器无法重放，故**不可重算**。保留原值并标 fxBasis=legacy——这不代表它正确，只代表算不了。"
+      }
     },
     {
       "id": "market_access_2026_07",
