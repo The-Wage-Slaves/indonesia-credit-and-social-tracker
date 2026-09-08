@@ -22,7 +22,7 @@
 
 用法:  python street_heat.py
 """
-import datetime, hashlib, html, json, os, pathlib, re, sys, time
+import datetime, hashlib, html, json, os, pathlib, random, re, sys, time
 import requests
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -167,16 +167,85 @@ def collect_trends():
 
 
 # ============ B/C. GDELT（滞后）============
-def _gdelt(mode, retries=3):
-    for i in range(retries):
-        r = requests.get("https://api.gdeltproject.org/api/v2/doc/doc",
+# GDELT 的两个采集器打的是**同一个端点**，只是 mode 不同。实测限流特征（2026-08-11
+# ~ 08-25 三次云端运行）：
+#     08-25  报道量 ok / tone 429      08-20  报道量 ok / tone 429
+#     08-11  报道量 ok / tone ok
+# 报道量几乎从不失败、tone 几乎总失败——这不是 GDELT 整体拒绝我们，而是**第二次
+# 调用**撞墙：原来两次调用之间只隔主循环的 time.sleep(6)，而注释自己写着「限流约
+# 1 次/5 秒」，等于贴着线走；一旦第一次调用内部重试过（旧退避 12s/24s），配额已被
+# 烧掉，第二次一上来就 429。退避还是固定值、无抖动。
+#
+# 所以先修节流而不是换数据源（换 BigQuery 需要 GCP 计费与服务账号，代价与收益
+# 不成比例）。三处改动：
+#   1. 进程级最小间隔：不管谁先调、重试了几次，两次请求之间强制隔开
+#   2. 指数退避 + 随机抖动：避免固定节奏反复撞在同一个窗口上
+#   3. 尊重服务端的 Retry-After
+GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
+# 2026-09-01 实测响应耗时（本地直连，各请求单独计时）：
+#     timelinevol  200 / 42.3s      timelinetone 200 / 74.5s
+# **GDELT 成功响应本身就要 42~75 秒**，原来的 timeout=30 属于把正常响应当成故障。
+# 60s 也不够（那条 74.5s 会挂），所以给 120s——慢一点的成功远好过快一点的失败。
+GDELT_TIMEOUT = 120
+GDELT_MIN_INTERVAL = 12.0      # 秒。实测 6 秒不够，注释里的「1次/5秒」是乐观估计
+GDELT_MAX_BACKOFF = 90.0
+# None = 本进程还没请求过。**不要用 0.0 当初值**：time.monotonic() 在进程刚启动时
+# 也可能接近 0，那样第一次调用会白等一个完整间隔。
+_gdelt_last_call = None
+
+
+def _gdelt_throttle():
+    """进程级节流：距上次 GDELT 请求不足 GDELT_MIN_INTERVAL 就先等。
+
+    比「在调用点之间 sleep」可靠——它对重试同样生效，也不依赖两个采集器的相对顺序。
+    """
+    global _gdelt_last_call
+    if _gdelt_last_call is not None:
+        wait = GDELT_MIN_INTERVAL - (time.monotonic() - _gdelt_last_call)
+        if wait > 0:
+            time.sleep(wait)
+    _gdelt_last_call = time.monotonic()
+
+
+def _gdelt_backoff(attempt, response=None):
+    """指数退避 + 抖动；服务端给了 Retry-After 就听它的。"""
+    if response is not None:
+        header = response.headers.get("Retry-After", "")
+        try:
+            if header.strip():
+                return min(GDELT_MAX_BACKOFF, float(header.strip()))
+        except ValueError:
+            pass
+    base = GDELT_MIN_INTERVAL * (2 ** attempt)
+    jittered = base * random.uniform(0.7, 1.3)  # 抖动，避免两个采集器同步重试
+    # 封顶必须在抖动**之后**：先 min 再乘 1.3 会突破上限（测试抓到过 102s > 90s）
+    return min(GDELT_MAX_BACKOFF, jittered)
+
+
+def _gdelt(mode, retries=4):
+    last_status = None
+    for attempt in range(retries):
+        _gdelt_throttle()
+        r = requests.get(GDELT_ENDPOINT,
                          params={"query": GDELT_QUERY, "mode": mode,
                                  "timespan": "56d", "format": "json"},
-                         headers=UA, timeout=30)
-        if r.status_code == 429 and i < retries - 1:
-            time.sleep(12 * (i + 1)); continue
+                         headers=UA, timeout=GDELT_TIMEOUT)
+        last_status = r.status_code
+        if r.status_code in (429, 503):
+            if attempt < retries - 1:
+                delay = _gdelt_backoff(attempt, r)
+                print(f"    GDELT {mode} 限流({r.status_code})，{delay:.0f}s 后重试"
+                      f" ({attempt + 1}/{retries - 1})")
+                time.sleep(delay)
+                continue
+            # 最后一次仍被限流：抛信息完整的错误，而不是让 raise_for_status 抛裸
+            # HTTPError——采集器把异常文本截断成 90 字写进「采集失败:」，裸 HTTPError
+            # 只剩一个 URL，看不出重试过几次。
+            raise RuntimeError(
+                f"GDELT {mode} 限流，重试{retries}次仍失败（最后状态 {r.status_code}）")
         r.raise_for_status()
         return r.json()
+    raise RuntimeError(f"GDELT {mode} 未取得结果（最后状态 {last_status}）")
 
 def collect_gdelt_volume():
     series = _gdelt("timelinevol")["timeline"][0]["data"]
@@ -548,7 +617,9 @@ def main():
         except Exception as ex:
             results[key] = {"status": "fail", "heat": None,
                             "detail": f"采集失败: {str(ex)[:90]}", "raw": {}}
-        time.sleep(6)   # GDELT 限流约1次/5秒
+        # GDELT 的节流已由 _gdelt_throttle() 在请求层做（对重试同样生效），
+        # 这里只给其余源之间留一点间隔，避免同时打多个站点。
+        time.sleep(2)
 
     ok = {k: v for k, v in results.items() if v["status"] == "ok"}
     wsum, missing_groups = validate_coverage(ok)
