@@ -1,169 +1,84 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-10",
+  "date": "2026-09-11",
   "level": "normal",
   "signals": {
     "newsDailyVolumeRisk": 34.8,
-    "socialDailyVolumeRisk": 9.5,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "socialDailyVolumeRisk": 10.5,
+    "negativeSocialShare": 2.8,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=2; prior-7d median=14.0; robust z=-1.01",
-    "socialVolume": "today=1; prior-7d median=25.0; robust z=-2.70"
+    "newsVolume": "today=4; prior-7d median=25.0; robust z=-1.01",
+    "socialVolume": "today=9; prior-7d median=19.0; robust z=-2.63"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-507f5cfa3517",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Buleleng县政府",
-        "社会事务部"
-      ],
-      "headline": "Data Terdeteksi Judol-Pinjol, Bansos 32 KPM di Buleleng Terhenti - BALIPOST.com",
-      "headlineZh": "布勒冷32户因涉网贷被停发救助",
-      "summaryZh": "巴厘岛布勒冷县32户家庭因被检测涉及网络赌博与网贷，被取消社会救助资格。",
-      "rationale": "政府具体取消救助资格，属监管行动",
-      "independentSourceCount": 3,
-      "domains": [
-        "balipost.com",
-        "radarbadung.jawapos.com",
-        "radarbuleleng.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "33fe2ae0e7565ff0",
-        "98d005da1b366e63",
-        "bfe8c44d8c73a682"
-      ],
-      "articles": [
-        {
-          "title": "Data Terdeteksi Judol-Pinjol, Bansos 32 KPM di Buleleng Terhenti - BALIPOST.com",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTzlVUU5aMFBGb2puczdHMEw3Y2xKWmdQdE9ZNEpFWGY5eFd6cklTRWhhckpGT0k1UnJsYzFBMDZISm10UG1oRzUtTlRUS2lzekg4blB3bXZfNDRCTWJJM3RkaDE3QWZITExCd2c1X1Fodm9QT3ltQW9oZzcwRFRnMl9nMEhPMXBTeW8tTEtWQU9tZE5BWUN5Zg?oc=5"
-        },
-        {
-          "title": "Kedapatan Terlibat Judol dan Pinjol, 32 Keluarga di Buleleng Dicoret dari Penerima Bansos - Radar Buleleng",
-          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTk1YbXotazlBWlYtMF93dnViWUQ5d2lCVm1tdkRudVk0bk9BTUZFOFN3bzN0YTFhY19ocmxVZlN5M3EzNFlSRlFQZWZQSEgybnJVWmxLSzFZZjJ5dmZzZElMY2xRMnREcnZISlQ1VE9kdnFmTWpBUHVhejc1SnpqRzRPNjFnSnpmejF6Wk9yel9JaVY4czk3eHJVN3R2NE9tUG5CdHhMYVFoUnNUaTkyOGF0MncwQlpxcGNqbXptQWlmVmFtRGNVMk1PTDBwTHI4TXRzR0ItMmpHNzI4MEEwbzJRbXA2QdIB5gFBVV95cUxOTk1YbXotazlBWlYtMF93dnViWUQ5d2lCVm1tdkRudVk0bk9BTUZFOFN3bzN0YTFhY19ocmxVZlN5M3EzNFlSRlFQZWZQSEgybnJVWmxLSzFZZjJ5dmZzZElMY2xRMnREcnZISlQ1VE9kdnFmTWpBUHVhejc1SnpqRzRPNjFnSnpmejF6Wk9yel9JaVY4czk3eHJVN3R2NE9tUG5CdHhMYVFoUnNUaTkyOGF0MncwQlpxcGNqbXptQWlmVmFtRGNVMk1PTDBwTHI4TXRzR0ItMmpHNzI4MEEwbzJRbXA2QQ?oc=5"
-        },
-        {
-          "title": "Terdeteksi Judol dan Pinjol, 32 Keluarga di Buleleng Dicabut Bansos - Radar Badung",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObDZKMnM3R1VteWdQdmZMUlRTSXI3YzFrV3E4V2lZaTBSbFJfQnM2SllPMmlHWjRfZWE4SUpRM054YkNBSkJDcWItY3o5V1ZPdEJGa1I4Rk1DTENvNnR6V0RJSDlWNENuZjV1ZFllR1lkMkFxZGZWOVVwZVFpakgwZjNnQU9TRTN3UnpuVXN3Q2J3VFppaUxQY0JIOEEyYThENm1Od0puODlOVGNfR1FBdlpwdVl0QjUxX0xhV1U3ci1YUdIBxwFBVV95cUxPeWFJQUt6Y2g2dUFKQTFJRXAxbm5sVnduN1VPNG9TZnhoVG93OHk2UW5NT29Wb1IwYjNGOGVIa2pYdHBFWm1HaFNtbXZFS3JGcDFvRVRiYnloSElnNEdSM01Wdm5aSlhUQmdXalI1NGZZX1JlaDlHekdQSVA4LXA5X0JnVVdhM2hKOHZPX2l4YVIwdmUwVVZ3NnQxVWJYOGhXQXduWTZJSldFMFBRN2dNVXdTeFRRTE1QcUFkRnp0SEFhYVpQUlIw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-65cd252c7e6f",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK \"Sikat\" 951 Pinjol Ilegal, Ratusan Investasi Bodong Ikut Diburu - Kompas.com",
-      "headlineZh": "OJK取缔951家非法网贷",
-      "summaryZh": "OJK宣布取缔951家非法网贷平台并追查数百个非法投资，属监管执法行动。",
-      "rationale": "监管取缔行动，属具体事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "video.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3fa36bef70302507"
-      ],
-      "articles": [
-        {
-          "title": "OJK \"Sikat\" 951 Pinjol Ilegal, Ratusan Investasi Bodong Ikut Diburu - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdXN3M1BmckVzTFdoV1kzOU5pSTFhSkdqR29YVlJOSDdvTHRmTmFtNlhhcHBpVDRGaXl4SlpZQ05jMGpKdFIxcWFRNXhQWldjU05rWm5CNWhkXzZ6QnMyanlPQUZqRVRxOF91NjJHMkdiektaMVhUNmt2Y1RTSXNDdG5NZTZwVkNTMElLeF95X0VuT0lQb0FMQmF6bzVZaEtpcWc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-549db2a6631d",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Terima 30 Ribu Pengaduan Keuangan Ilegal, Didominasi Pinjol Abal-Abal - beritajatim.com",
-      "headlineZh": "OJK收到3万起非法金融投诉",
-      "summaryZh": "OJK披露收到约3万起非法金融投诉，其中以非法网贷为主，反映消费者受害规模。",
-      "rationale": "监管机构披露具体投诉数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "beritajatim.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "aaeffc2e1a81c36b"
-      ],
-      "articles": [
-        {
-          "title": "OJK Terima 30 Ribu Pengaduan Keuangan Ilegal, Didominasi Pinjol Abal-Abal - beritajatim.com",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNXYxbDRhMG45dUg4MnpFS0p1S0Y5bEtHSllCZkFZalk1MHR3VXVDREJJVHJPX1AwaU9TRWx5b2xRTDFhdHJPRUlYSlJ5WEJQVXFCc3BXZ044SGV5ZVozdzhYeUZtVlNHam9xeVhFcXU0azJydTFXVFpYcEh5R1ROOE1HWkY3LVhtX1ZmaHlYcEJqeXVLUzR0VjJIU2M?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-f83866f8c1b0",
+      "id": "llm-405a8526e9f4",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "Pindar"
       ],
-      "headline": "OJK Ungkap Utang Pinjol Tembus Rp105,63 Triliun - terkenal.co.id",
-      "headlineZh": "网贷未偿余额突破105万亿",
-      "summaryZh": "OJK数据显示网贷未偿余额达105.63万亿印尼盾，月增1.66万亿，资产质量承压。",
-      "rationale": "具体数据反映行业资产质量压力",
-      "independentSourceCount": 2,
+      "headline": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
+      "headlineZh": "网贷不良率升至4.32%",
+      "summaryZh": "线上信贷不良贷款率升至4.32%，报道将其与居民购买力减弱相关联，反映资产质量承压。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 1,
       "domains": [
-        "portalpantura.com",
-        "terkenal.co.id"
+        "money.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "ae19a6a63f7640f3",
-        "1c2b56fe7e28f9e8"
+        "637ee7875c8fb447"
       ],
       "articles": [
         {
-          "title": "OJK Ungkap Utang Pinjol Tembus Rp105,63 Triliun - terkenal.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5OX3ZIU3NmWUwyc0hROTAzYlY0dWRIbGhqXzRtQkNndjNxSHlDSVhuaHVRV1FJbHdLd0pCT2YtV01rUFF2UWNqMTNUaDlid2ZNQkNyTlhxdGJhYjdQOGozZlhET25tanZOVlJtbkNsenBkbGhSd0pjTE5n?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Warga RI Tembus Rp103,73 Triliun, Naik Rp1,66 Triliun Sebulan - Portal Pantura",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQmx4dl9yTjRqa0VqNHNQdkVObVgyOGwxZGVwZmx2R3Zkclhsb2o2NFFRdGdmQTlmUlJTR2RxcXJ3NVJrclktalIzc0RITk9TQ0RGYzRwdWVXUHRFbFhNYlNpZ3NpTEpYZEN3c29UcllDMHJKMnVVZnVLMWh4U19LTEMwNGxGell2Y2lPSnoyZ3VhU1lmZHhRMk10NGxQM3R6OURKUXVwVDhCLUM4d0U2UWhB?oc=5"
+          "title": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMWlCcktOOFFYZkIyNFY3ZlZqNVl0NVFKNTNNS3BseXZ0d0R0ZVd0MUpGNHpIdDFFRW9XQUJfamdydnMwalRaSGxWTXNwc29UeHNPUUludGtHTlJ1LW1mOU9nMjY0eFV2RkFFc256b1VJUS1VWmdjeFF2bzliaWY0NUl1a2F6RU5TR0MzaXYzdkR5Y3JnTjdnWmhtNXY0VjdRM0VKQlFJU1FrQzRZV0JPaVBaSkdkSUVOQ1lqaUEzbUluaUU?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-1d6f743bb3a7",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
+      "headlineZh": "网贷融资破105万亿 AFPI警示违约风险",
+      "summaryZh": "网贷行业融资规模达105.63万亿印尼盾，AFPI警告违约风险上升，反映行业资产质量压力。",
+      "rationale": "行业协会警示违约风险上升，值得留痕",
+      "independentSourceCount": 1,
+      "domains": [
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "132d1b042f0edfc4"
+      ],
+      "articles": [
+        {
+          "title": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQmtqYklNN0poLUxSb1RKNzdId3NwRmkzdUVEN0EtdURSdFBab3dQeHBHVEw1eXlPTjJTOUMyY0lKNER4MUVXMTZwaDNfUWZfQWRla0lkLV9zTi1iMWNUZC1ka0haRVpZRHJmdmlvSW00LWRralRIazFPOWZ0elYtQzVEUGFvRnpmQVIySUxUUlh6UGZxTHQwQWRhSFU0a3Ffa1ZfazVaVkNGbjFqb0pqNnJXazVtN1JiVktSeU1CaWZzYTZteHlVcC1n0gHKAUFVX3lxTE1Ca2piSU03SmgtTFJvVEo3N0h3c3BGaTN1RUQ3QS11RFJ0UFpvd1B4cEdUTDV5eU9OMlM5QzJjSUo0RHgxRVcxNnBoM19RZl9BZGVrSWQtX3NOLWIxY1RkLWRrSFpFWllEcmZ2aW9JbTQtZGtqVEhrMU85ZnR6Vi1DNURQYW9GemZBUjJJTFRSWHpQZnFMdDBBZGFIVTRrcV9rVl9rNVpWQ0ZuMWpvSmo2cldrNW03UmJWS1J5TUJpZnNhNm14eVVwLWc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -177,163 +92,76 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 24,
-    "eventGroupCount": 4,
-    "rejectedNonEvents": 9,
+    "candidateCount": 22,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 24
+      "ok": 22
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-507f5cfa3517",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Buleleng县政府",
-        "社会事务部"
-      ],
-      "headline": "Data Terdeteksi Judol-Pinjol, Bansos 32 KPM di Buleleng Terhenti - BALIPOST.com",
-      "headlineZh": "布勒冷32户因涉网贷被停发救助",
-      "summaryZh": "巴厘岛布勒冷县32户家庭因被检测涉及网络赌博与网贷，被取消社会救助资格。",
-      "rationale": "政府具体取消救助资格，属监管行动",
-      "independentSourceCount": 3,
-      "domains": [
-        "balipost.com",
-        "radarbadung.jawapos.com",
-        "radarbuleleng.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "33fe2ae0e7565ff0",
-        "98d005da1b366e63",
-        "bfe8c44d8c73a682"
-      ],
-      "articles": [
-        {
-          "title": "Data Terdeteksi Judol-Pinjol, Bansos 32 KPM di Buleleng Terhenti - BALIPOST.com",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPTzlVUU5aMFBGb2puczdHMEw3Y2xKWmdQdE9ZNEpFWGY5eFd6cklTRWhhckpGT0k1UnJsYzFBMDZISm10UG1oRzUtTlRUS2lzekg4blB3bXZfNDRCTWJJM3RkaDE3QWZITExCd2c1X1Fodm9QT3ltQW9oZzcwRFRnMl9nMEhPMXBTeW8tTEtWQU9tZE5BWUN5Zg?oc=5"
-        },
-        {
-          "title": "Kedapatan Terlibat Judol dan Pinjol, 32 Keluarga di Buleleng Dicoret dari Penerima Bansos - Radar Buleleng",
-          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOTk1YbXotazlBWlYtMF93dnViWUQ5d2lCVm1tdkRudVk0bk9BTUZFOFN3bzN0YTFhY19ocmxVZlN5M3EzNFlSRlFQZWZQSEgybnJVWmxLSzFZZjJ5dmZzZElMY2xRMnREcnZISlQ1VE9kdnFmTWpBUHVhejc1SnpqRzRPNjFnSnpmejF6Wk9yel9JaVY4czk3eHJVN3R2NE9tUG5CdHhMYVFoUnNUaTkyOGF0MncwQlpxcGNqbXptQWlmVmFtRGNVMk1PTDBwTHI4TXRzR0ItMmpHNzI4MEEwbzJRbXA2QdIB5gFBVV95cUxOTk1YbXotazlBWlYtMF93dnViWUQ5d2lCVm1tdkRudVk0bk9BTUZFOFN3bzN0YTFhY19ocmxVZlN5M3EzNFlSRlFQZWZQSEgybnJVWmxLSzFZZjJ5dmZzZElMY2xRMnREcnZISlQ1VE9kdnFmTWpBUHVhejc1SnpqRzRPNjFnSnpmejF6Wk9yel9JaVY4czk3eHJVN3R2NE9tUG5CdHhMYVFoUnNUaTkyOGF0MncwQlpxcGNqbXptQWlmVmFtRGNVMk1PTDBwTHI4TXRzR0ItMmpHNzI4MEEwbzJRbXA2QQ?oc=5"
-        },
-        {
-          "title": "Terdeteksi Judol dan Pinjol, 32 Keluarga di Buleleng Dicabut Bansos - Radar Badung",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObDZKMnM3R1VteWdQdmZMUlRTSXI3YzFrV3E4V2lZaTBSbFJfQnM2SllPMmlHWjRfZWE4SUpRM054YkNBSkJDcWItY3o5V1ZPdEJGa1I4Rk1DTENvNnR6V0RJSDlWNENuZjV1ZFllR1lkMkFxZGZWOVVwZVFpakgwZjNnQU9TRTN3UnpuVXN3Q2J3VFppaUxQY0JIOEEyYThENm1Od0puODlOVGNfR1FBdlpwdVl0QjUxX0xhV1U3ci1YUdIBxwFBVV95cUxPeWFJQUt6Y2g2dUFKQTFJRXAxbm5sVnduN1VPNG9TZnhoVG93OHk2UW5NT29Wb1IwYjNGOGVIa2pYdHBFWm1HaFNtbXZFS3JGcDFvRVRiYnloSElnNEdSM01Wdm5aSlhUQmdXalI1NGZZX1JlaDlHekdQSVA4LXA5X0JnVVdhM2hKOHZPX2l4YVIwdmUwVVZ3NnQxVWJYOGhXQXduWTZJSldFMFBRN2dNVXdTeFRRTE1QcUFkRnp0SEFhYVpQUlIw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-65cd252c7e6f",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK \"Sikat\" 951 Pinjol Ilegal, Ratusan Investasi Bodong Ikut Diburu - Kompas.com",
-      "headlineZh": "OJK取缔951家非法网贷",
-      "summaryZh": "OJK宣布取缔951家非法网贷平台并追查数百个非法投资，属监管执法行动。",
-      "rationale": "监管取缔行动，属具体事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "video.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3fa36bef70302507"
-      ],
-      "articles": [
-        {
-          "title": "OJK \"Sikat\" 951 Pinjol Ilegal, Ratusan Investasi Bodong Ikut Diburu - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdXN3M1BmckVzTFdoV1kzOU5pSTFhSkdqR29YVlJOSDdvTHRmTmFtNlhhcHBpVDRGaXl4SlpZQ05jMGpKdFIxcWFRNXhQWldjU05rWm5CNWhkXzZ6QnMyanlPQUZqRVRxOF91NjJHMkdiektaMVhUNmt2Y1RTSXNDdG5NZTZwVkNTMElLeF95X0VuT0lQb0FMQmF6bzVZaEtpcWc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-549db2a6631d",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Terima 30 Ribu Pengaduan Keuangan Ilegal, Didominasi Pinjol Abal-Abal - beritajatim.com",
-      "headlineZh": "OJK收到3万起非法金融投诉",
-      "summaryZh": "OJK披露收到约3万起非法金融投诉，其中以非法网贷为主，反映消费者受害规模。",
-      "rationale": "监管机构披露具体投诉数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "beritajatim.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "aaeffc2e1a81c36b"
-      ],
-      "articles": [
-        {
-          "title": "OJK Terima 30 Ribu Pengaduan Keuangan Ilegal, Didominasi Pinjol Abal-Abal - beritajatim.com",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNXYxbDRhMG45dUg4MnpFS0p1S0Y5bEtHSllCZkFZalk1MHR3VXVDREJJVHJPX1AwaU9TRWx5b2xRTDFhdHJPRUlYSlJ5WEJQVXFCc3BXZ044SGV5ZVozdzhYeUZtVlNHam9xeVhFcXU0azJydTFXVFpYcEh5R1ROOE1HWkY3LVhtX1ZmaHlYcEJqeXVLUzR0VjJIU2M?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-f83866f8c1b0",
+      "id": "llm-405a8526e9f4",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "Pindar"
       ],
-      "headline": "OJK Ungkap Utang Pinjol Tembus Rp105,63 Triliun - terkenal.co.id",
-      "headlineZh": "网贷未偿余额突破105万亿",
-      "summaryZh": "OJK数据显示网贷未偿余额达105.63万亿印尼盾，月增1.66万亿，资产质量承压。",
-      "rationale": "具体数据反映行业资产质量压力",
-      "independentSourceCount": 2,
+      "headline": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
+      "headlineZh": "网贷不良率升至4.32%",
+      "summaryZh": "线上信贷不良贷款率升至4.32%，报道将其与居民购买力减弱相关联，反映资产质量承压。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 1,
       "domains": [
-        "portalpantura.com",
-        "terkenal.co.id"
+        "money.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "ae19a6a63f7640f3",
-        "1c2b56fe7e28f9e8"
+        "637ee7875c8fb447"
       ],
       "articles": [
         {
-          "title": "OJK Ungkap Utang Pinjol Tembus Rp105,63 Triliun - terkenal.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5OX3ZIU3NmWUwyc0hROTAzYlY0dWRIbGhqXzRtQkNndjNxSHlDSVhuaHVRV1FJbHdLd0pCT2YtV01rUFF2UWNqMTNUaDlid2ZNQkNyTlhxdGJhYjdQOGozZlhET25tanZOVlJtbkNsenBkbGhSd0pjTE5n?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Warga RI Tembus Rp103,73 Triliun, Naik Rp1,66 Triliun Sebulan - Portal Pantura",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPQmx4dl9yTjRqa0VqNHNQdkVObVgyOGwxZGVwZmx2R3Zkclhsb2o2NFFRdGdmQTlmUlJTR2RxcXJ3NVJrclktalIzc0RITk9TQ0RGYzRwdWVXUHRFbFhNYlNpZ3NpTEpYZEN3c29UcllDMHJKMnVVZnVLMWh4U19LTEMwNGxGell2Y2lPSnoyZ3VhU1lmZHhRMk10NGxQM3R6OURKUXVwVDhCLUM4d0U2UWhB?oc=5"
+          "title": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMWlCcktOOFFYZkIyNFY3ZlZqNVl0NVFKNTNNS3BseXZ0d0R0ZVd0MUpGNHpIdDFFRW9XQUJfamdydnMwalRaSGxWTXNwc29UeHNPUUludGtHTlJ1LW1mOU9nMjY0eFV2RkFFc256b1VJUS1VWmdjeFF2bzliaWY0NUl1a2F6RU5TR0MzaXYzdkR5Y3JnTjdnWmhtNXY0VjdRM0VKQlFJU1FrQzRZV0JPaVBaSkdkSUVOQ1lqaUEzbUluaUU?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-1d6f743bb3a7",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
+      "headlineZh": "网贷融资破105万亿 AFPI警示违约风险",
+      "summaryZh": "网贷行业融资规模达105.63万亿印尼盾，AFPI警告违约风险上升，反映行业资产质量压力。",
+      "rationale": "行业协会警示违约风险上升，值得留痕",
+      "independentSourceCount": 1,
+      "domains": [
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "132d1b042f0edfc4"
+      ],
+      "articles": [
+        {
+          "title": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQmtqYklNN0poLUxSb1RKNzdId3NwRmkzdUVEN0EtdURSdFBab3dQeHBHVEw1eXlPTjJTOUMyY0lKNER4MUVXMTZwaDNfUWZfQWRla0lkLV9zTi1iMWNUZC1ka0haRVpZRHJmdmlvSW00LWRralRIazFPOWZ0elYtQzVEUGFvRnpmQVIySUxUUlh6UGZxTHQwQWRhSFU0a3Ffa1ZfazVaVkNGbjFqb0pqNnJXazVtN1JiVktSeU1CaWZzYTZteHlVcC1n0gHKAUFVX3lxTE1Ca2piSU03SmgtTFJvVEo3N0h3c3BGaTN1RUQ3QS11RFJ0UFpvd1B4cEdUTDV5eU9OMlM5QzJjSUo0RHgxRVcxNnBoM19RZl9BZGVrSWQtX3NOLWIxY1RkLWRrSFpFWllEcmZ2aW9JbTQtZGtqVEhrMU85ZnR6Vi1DNURQYW9GemZBUjJJTFRSWHpQZnFMdDBBZGFIVTRrcV9rVl9rNVpWQ0ZuMWpvSmo2cldrNW03UmJWS1J5TUJpZnNhNm14eVVwLWc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -352,25 +180,25 @@
     ],
     "failedOrUnavailableChannels": {
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
+      "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 29,
-    "socialItemCount48h": 5
+    "articleCount48h": 42,
+    "socialItemCount48h": 30
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 523,
-    "classifiedCount": 132,
-    "irrelevantDropped": 108,
+    "inputCount": 412,
+    "classifiedCount": 114,
+    "irrelevantDropped": 126,
     "model": "deepseek-chat",
-    "fallbackCount": 283,
+    "fallbackCount": 172,
     "labelCounts": {
-      "NEG": 70,
-      "MIX": 28,
-      "POS": 34
+      "NEG": 75,
+      "MIX": 24,
+      "POS": 15
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

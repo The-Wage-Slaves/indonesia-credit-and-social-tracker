@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-10T06:40:52.330085+00:00",
+  "generatedAt": "2026-09-11T06:39:30.921525+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-09-10",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-09-11",
     "risk": true,
     "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：AMBER。",
-      "**制度/政治骤变**\n\n🟠 **军警冲突/安全事件｜巴布亚Jayawijaya三名政府雇员在Muliama遭枪击，立法者称OPM所为属严重侵犯人权**\n严重度 0.55｜2个独立来源（antaranews.com、news.republika.co.id）｜影响支柱：coercive\n\n🟠 **表外/或有负债扩张｜政府拟接管Whoosh高铁债务，测算还款周期或长达80年**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：fiscal\n\n🟠 **市场失序(汇股债)｜IHSG跌至6668点，外资大举抛售BBCA、BBRI、ISAT等蓝筹股**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency",
-      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：HIGH_PENDING。",
+      "**制度/政治骤变**\n\n🔺 **表外/或有负债扩张｜印尼高铁Whoosh债务转由国家承担，引发公共财政风险担忧**\n严重度 0.75｜1个独立来源（bbc.com）｜影响支柱：fiscal\n\n🔺 **军警冲突/安全事件｜巴布亚武装犯罪集团枪杀三名公务员，引发地方官员谴责与彻查呼声**\n严重度 0.75｜1个独立来源（liputan6.com）｜影响支柱：coercive\n\n🟠 **市场失序(汇股债)｜印尼综合指数IHSG盘中跌破6500点，多只权重股走弱**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency\n\n🟠 **市场失序(汇股债)｜印尼盾因国际油价上涨而走弱**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency",
+      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-09-10:normal:amber:success"
+    "decisionId": "daily:2026-09-11:normal:high_pending:success"
   },
   "feishu": "sent"
 }
