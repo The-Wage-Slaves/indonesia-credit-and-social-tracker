@@ -1,47 +1,88 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-11",
+  "date": "2026-09-12",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 34.8,
-    "socialDailyVolumeRisk": 10.5,
-    "negativeSocialShare": 2.8,
+    "newsDailyVolumeRisk": 25.3,
+    "socialDailyVolumeRisk": 0.0,
+    "negativeSocialShare": 32.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=25.0; robust z=-1.01",
-    "socialVolume": "today=9; prior-7d median=19.0; robust z=-2.63"
+    "newsVolume": "today=3; prior-7d median=25.0; robust z=-1.65",
+    "socialVolume": "today=4; prior-7d median=29.0; robust z=-4.22"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-405a8526e9f4",
+      "id": "llm-2291ccbbd1a2",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
+        "AFPI",
         "Pindar"
       ],
-      "headline": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
-      "headlineZh": "网贷不良率升至4.32%",
-      "summaryZh": "线上信贷不良贷款率升至4.32%，报道将其与居民购买力减弱相关联，反映资产质量承压。",
-      "rationale": "行业资产质量指标恶化，值得留痕",
-      "independentSourceCount": 1,
+      "headline": "AFPI Ungkap Biang Kerok Kredit Macet Industri Pindar Naik Jadi 4,32% - Validnews.id",
+      "headlineZh": "Pindar不良率升至4.32%",
+      "summaryZh": "AFPI披露Pindar行业TWP90不良率升至4.32%，并指出成因，反映资产质量承压。",
+      "rationale": "行业不良率上升，资产质量承压",
+      "independentSourceCount": 2,
       "domains": [
-        "money.kompas.com"
+        "infobanknews.com",
+        "validnews.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "637ee7875c8fb447"
+        "8cb25e9627d9bf58",
+        "7ca73129b15bdc2a"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMWlCcktOOFFYZkIyNFY3ZlZqNVl0NVFKNTNNS3BseXZ0d0R0ZVd0MUpGNHpIdDFFRW9XQUJfamdydnMwalRaSGxWTXNwc29UeHNPUUludGtHTlJ1LW1mOU9nMjY0eFV2RkFFc256b1VJUS1VWmdjeFF2bzliaWY0NUl1a2F6RU5TR0MzaXYzdkR5Y3JnTjdnWmhtNXY0VjdRM0VKQlFJU1FrQzRZV0JPaVBaSkdkSUVOQ1lqaUEzbUluaUU?oc=5"
+          "title": "AFPI Ungkap Biang Kerok Kredit Macet Industri Pindar Naik Jadi 4,32% - Validnews.id",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZkJhYmpjeUJTZmJsT2tsdUhZMHNCU0ZHVnUwUmhjZ3FsQXEtc28wOTNfZmlFTXNOY251NXh2c2tVc2czQ3g4eDRyVGRjc2tydFNBZlNGWkVRQ2J1Mnp6bHBLZVd1UW9aNFplOHFldExacFVzT3JQQmx1MlFzRWgwQXI0d0VHc0ZUVkhTZ1NuRjNkUlpqZVhHYzlsdDZvRy1SZV83cE5vSzE1Zw?oc=5"
+        },
+        {
+          "title": "TWP 90 Pindar Naik Jadi 4,32 Persen, AFPI Ungkap Biang Keroknya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQYXlrWUhoRjd6MFZLRlhTUkNpSGlLUE9mcDhzd3UwWklqY09meTlZVWMwMDVLajM4ZXh2bjhIMW03b25XX3BRTEwwbDJseWQwajRwMGE1ZjlnbDdjU1A1T0FPdjZlRUEzOFptUGhxQ29VUGZCYU9Yc2VpTXV5dUYwcnpaRHEzUFJwMGVYLXJ0Yw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-407285bf6b35",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Sidoarjo警方"
+      ],
+      "headline": "HP Anggota Polisi Diperiksa, Cegah Judi Online dan Pinjol di Sidoarjo - Radar Sidoarjo",
+      "headlineZh": "警方检查警员手机防网赌网贷",
+      "summaryZh": "Sidoarjo警方检查警员手机以防范网赌和网贷，属内部监管行动，值得留痕。",
+      "rationale": "警方内部监管行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "radarsidoarjo.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "805e7e7940d7dd42"
+      ],
+      "articles": [
+        {
+          "title": "HP Anggota Polisi Diperiksa, Cegah Judi Online dan Pinjol di Sidoarjo - Radar Sidoarjo",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNN1NPZlhiRjZIUS1ObXNVd1NXWW5wN1FLbmdUYVRHZFBueU40Rk9XSUdiUXRHMjFldW14a3hSejBLTEg4TUY3Y2I3SmVJLWptUnpvaWx5TDg4cDFUcXdITEtGN3c4RlhNLVBfTE1EVElrZzE4MUtodkZXSUZJd2huQ2NvOHhQOXcxZ3FFY19QMi1fbTZmMVFSRkE1eUQ3T0VIUmpSa2hWT2hKaU55SzM2SmdRQmtoMVVaa1FUMTZBMXdOUdIBxwFBVV95cUxNeFU2ek5qSTJ1Smxzam5NZFVHNEFxMlBibUh5OUYxblJRZmJCMjJFdVhIX1hteF9aWVBNRVoxU1d5anlIb1VzQzNCVnlhRFFnSEFFX3BtbktkWnBfbktLRUlDUk1BNExzU0FmaWRRWWJ5Rkl4ME5samgtUlluX3BuVG9PVE1fU2JndWM0a3NaMDhHQVo2bldVandYOE5WZGk1SHdNanYzcmk4S1Z6UTB4aS16eHRzeS1Wd0VpU2ZVVFFLN0pKZldj?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -54,28 +95,28 @@
       }
     },
     {
-      "id": "llm-1d6f743bb3a7",
+      "id": "llm-a914e232ecf8",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "AFPI"
+        "APPI"
       ],
-      "headline": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
-      "headlineZh": "网贷融资破105万亿 AFPI警示违约风险",
-      "summaryZh": "网贷行业融资规模达105.63万亿印尼盾，AFPI警告违约风险上升，反映行业资产质量压力。",
-      "rationale": "行业协会警示违约风险上升，值得留痕",
+      "headline": "Kredit Makin Selektif, APPI Sebut Approval Rate Anjlok Jadi 50% - Validnews.id",
+      "headlineZh": "APPI称审批通过率降至50%",
+      "summaryZh": "APPI披露信贷审批通过率降至50%，反映机构收紧放贷、资产质量承压。",
+      "rationale": "审批收紧，资产质量承压",
       "independentSourceCount": 1,
       "domains": [
-        "wartaekonomi.co.id"
+        "validnews.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "132d1b042f0edfc4"
+        "5ee1cc7de40e576a"
       ],
       "articles": [
         {
-          "title": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQmtqYklNN0poLUxSb1RKNzdId3NwRmkzdUVEN0EtdURSdFBab3dQeHBHVEw1eXlPTjJTOUMyY0lKNER4MUVXMTZwaDNfUWZfQWRla0lkLV9zTi1iMWNUZC1ka0haRVpZRHJmdmlvSW00LWRralRIazFPOWZ0elYtQzVEUGFvRnpmQVIySUxUUlh6UGZxTHQwQWRhSFU0a3Ffa1ZfazVaVkNGbjFqb0pqNnJXazVtN1JiVktSeU1CaWZzYTZteHlVcC1n0gHKAUFVX3lxTE1Ca2piSU03SmgtTFJvVEo3N0h3c3BGaTN1RUQ3QS11RFJ0UFpvd1B4cEdUTDV5eU9OMlM5QzJjSUo0RHgxRVcxNnBoM19RZl9BZGVrSWQtX3NOLWIxY1RkLWRrSFpFWllEcmZ2aW9JbTQtZGtqVEhrMU85ZnR6Vi1DNURQYW9GemZBUjJJTFRSWHpQZnFMdDBBZGFIVTRrcV9rVl9rNVpWQ0ZuMWpvSmo2cldrNW03UmJWS1J5TUJpZnNhNm14eVVwLWc?oc=5"
+          "title": "Kredit Makin Selektif, APPI Sebut Approval Rate Anjlok Jadi 50% - Validnews.id",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObHpla1dnc0RkV1Fla1ZNTlM1bzZEV3c3ODFzZWlnZHVoWHBacFJ4Y1FmZFRQYnFLdXdYTHZXQk1NaXNhSUtUUzFMeUpvZEpNLWc1bDB2NWJGdG9xcjdqTmt0dTNJbm5HbHlhTHBVZFBLZ2ZheGFMRzVwaVVvcURkWTdKSnlwdDVkZEw5RzQ1T21BVWp5anpINFYwOUpRLVk3TGZNdGVxc3ZPZkFna1R3?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -92,39 +133,80 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 22,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 11,
+    "candidateCount": 13,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 5,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 22
+      "ok": 13
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-405a8526e9f4",
+      "id": "llm-2291ccbbd1a2",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
+        "AFPI",
         "Pindar"
       ],
-      "headline": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
-      "headlineZh": "网贷不良率升至4.32%",
-      "summaryZh": "线上信贷不良贷款率升至4.32%，报道将其与居民购买力减弱相关联，反映资产质量承压。",
-      "rationale": "行业资产质量指标恶化，值得留痕",
-      "independentSourceCount": 1,
+      "headline": "AFPI Ungkap Biang Kerok Kredit Macet Industri Pindar Naik Jadi 4,32% - Validnews.id",
+      "headlineZh": "Pindar不良率升至4.32%",
+      "summaryZh": "AFPI披露Pindar行业TWP90不良率升至4.32%，并指出成因，反映资产质量承压。",
+      "rationale": "行业不良率上升，资产质量承压",
+      "independentSourceCount": 2,
       "domains": [
-        "money.kompas.com"
+        "infobanknews.com",
+        "validnews.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "637ee7875c8fb447"
+        "8cb25e9627d9bf58",
+        "7ca73129b15bdc2a"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pindar Naik Jadi 4,32 Persen, Daya Beli Masyarakat Ikut Melemah? - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMWlCcktOOFFYZkIyNFY3ZlZqNVl0NVFKNTNNS3BseXZ0d0R0ZVd0MUpGNHpIdDFFRW9XQUJfamdydnMwalRaSGxWTXNwc29UeHNPUUludGtHTlJ1LW1mOU9nMjY0eFV2RkFFc256b1VJUS1VWmdjeFF2bzliaWY0NUl1a2F6RU5TR0MzaXYzdkR5Y3JnTjdnWmhtNXY0VjdRM0VKQlFJU1FrQzRZV0JPaVBaSkdkSUVOQ1lqaUEzbUluaUU?oc=5"
+          "title": "AFPI Ungkap Biang Kerok Kredit Macet Industri Pindar Naik Jadi 4,32% - Validnews.id",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZkJhYmpjeUJTZmJsT2tsdUhZMHNCU0ZHVnUwUmhjZ3FsQXEtc28wOTNfZmlFTXNOY251NXh2c2tVc2czQ3g4eDRyVGRjc2tydFNBZlNGWkVRQ2J1Mnp6bHBLZVd1UW9aNFplOHFldExacFVzT3JQQmx1MlFzRWgwQXI0d0VHc0ZUVkhTZ1NuRjNkUlpqZVhHYzlsdDZvRy1SZV83cE5vSzE1Zw?oc=5"
+        },
+        {
+          "title": "TWP 90 Pindar Naik Jadi 4,32 Persen, AFPI Ungkap Biang Keroknya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQYXlrWUhoRjd6MFZLRlhTUkNpSGlLUE9mcDhzd3UwWklqY09meTlZVWMwMDVLajM4ZXh2bjhIMW03b25XX3BRTEwwbDJseWQwajRwMGE1ZjlnbDdjU1A1T0FPdjZlRUEzOFptUGhxQ29VUGZCYU9Yc2VpTXV5dUYwcnpaRHEzUFJwMGVYLXJ0Yw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-407285bf6b35",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "Sidoarjo警方"
+      ],
+      "headline": "HP Anggota Polisi Diperiksa, Cegah Judi Online dan Pinjol di Sidoarjo - Radar Sidoarjo",
+      "headlineZh": "警方检查警员手机防网赌网贷",
+      "summaryZh": "Sidoarjo警方检查警员手机以防范网赌和网贷，属内部监管行动，值得留痕。",
+      "rationale": "警方内部监管行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "radarsidoarjo.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "805e7e7940d7dd42"
+      ],
+      "articles": [
+        {
+          "title": "HP Anggota Polisi Diperiksa, Cegah Judi Online dan Pinjol di Sidoarjo - Radar Sidoarjo",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNN1NPZlhiRjZIUS1ObXNVd1NXWW5wN1FLbmdUYVRHZFBueU40Rk9XSUdiUXRHMjFldW14a3hSejBLTEg4TUY3Y2I3SmVJLWptUnpvaWx5TDg4cDFUcXdITEtGN3c4RlhNLVBfTE1EVElrZzE4MUtodkZXSUZJd2huQ2NvOHhQOXcxZ3FFY19QMi1fbTZmMVFSRkE1eUQ3T0VIUmpSa2hWT2hKaU55SzM2SmdRQmtoMVVaa1FUMTZBMXdOUdIBxwFBVV95cUxNeFU2ek5qSTJ1Smxzam5NZFVHNEFxMlBibUh5OUYxblJRZmJCMjJFdVhIX1hteF9aWVBNRVoxU1d5anlIb1VzQzNCVnlhRFFnSEFFX3BtbktkWnBfbktLRUlDUk1BNExzU0FmaWRRWWJ5Rkl4ME5samgtUlluX3BuVG9PVE1fU2JndWM0a3NaMDhHQVo2bldVandYOE5WZGk1SHdNanYzcmk4S1Z6UTB4aS16eHRzeS1Wd0VpU2ZVVFFLN0pKZldj?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -137,28 +219,28 @@
       }
     },
     {
-      "id": "llm-1d6f743bb3a7",
+      "id": "llm-a914e232ecf8",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "AFPI"
+        "APPI"
       ],
-      "headline": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
-      "headlineZh": "网贷融资破105万亿 AFPI警示违约风险",
-      "summaryZh": "网贷行业融资规模达105.63万亿印尼盾，AFPI警告违约风险上升，反映行业资产质量压力。",
-      "rationale": "行业协会警示违约风险上升，值得留痕",
+      "headline": "Kredit Makin Selektif, APPI Sebut Approval Rate Anjlok Jadi 50% - Validnews.id",
+      "headlineZh": "APPI称审批通过率降至50%",
+      "summaryZh": "APPI披露信贷审批通过率降至50%，反映机构收紧放贷、资产质量承压。",
+      "rationale": "审批收紧，资产质量承压",
       "independentSourceCount": 1,
       "domains": [
-        "wartaekonomi.co.id"
+        "validnews.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "132d1b042f0edfc4"
+        "5ee1cc7de40e576a"
       ],
       "articles": [
         {
-          "title": "Pembiayaan Pinjol Tembus Rp105,63 Triliun, AFPI Peringatkan Risiko Gagal Bayar Makin Besar - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNQmtqYklNN0poLUxSb1RKNzdId3NwRmkzdUVEN0EtdURSdFBab3dQeHBHVEw1eXlPTjJTOUMyY0lKNER4MUVXMTZwaDNfUWZfQWRla0lkLV9zTi1iMWNUZC1ka0haRVpZRHJmdmlvSW00LWRralRIazFPOWZ0elYtQzVEUGFvRnpmQVIySUxUUlh6UGZxTHQwQWRhSFU0a3Ffa1ZfazVaVkNGbjFqb0pqNnJXazVtN1JiVktSeU1CaWZzYTZteHlVcC1n0gHKAUFVX3lxTE1Ca2piSU03SmgtTFJvVEo3N0h3c3BGaTN1RUQ3QS11RFJ0UFpvd1B4cEdUTDV5eU9OMlM5QzJjSUo0RHgxRVcxNnBoM19RZl9BZGVrSWQtX3NOLWIxY1RkLWRrSFpFWllEcmZ2aW9JbTQtZGtqVEhrMU85ZnR6Vi1DNURQYW9GemZBUjJJTFRSWHpQZnFMdDBBZGFIVTRrcV9rVl9rNVpWQ0ZuMWpvSmo2cldrNW03UmJWS1J5TUJpZnNhNm14eVVwLWc?oc=5"
+          "title": "Kredit Makin Selektif, APPI Sebut Approval Rate Anjlok Jadi 50% - Validnews.id",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObHpla1dnc0RkV1Fla1ZNTlM1bzZEV3c3ODFzZWlnZHVoWHBacFJ4Y1FmZFRQYnFLdXdYTHZXQk1NaXNhSUtUUzFMeUpvZEpNLWc1bDB2NWJGdG9xcjdqTmt0dTNJbm5HbHlhTHBVZFBLZ2ZheGFMRzVwaVVvcURkWTdKSnlwdDVkZEw5RzQ1T21BVWp5anpINFYwOUpRLVk3TGZNdGVxc3ZPZkFna1R3?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -179,25 +261,25 @@
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 42,
-    "socialItemCount48h": 30
+    "articleCount48h": 19,
+    "socialItemCount48h": 26
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 412,
-    "classifiedCount": 114,
-    "irrelevantDropped": 126,
+    "inputCount": 518,
+    "classifiedCount": 133,
+    "irrelevantDropped": 107,
     "model": "deepseek-chat",
-    "fallbackCount": 172,
+    "fallbackCount": 278,
     "labelCounts": {
-      "NEG": 75,
-      "MIX": 24,
+      "NEG": 91,
+      "MIX": 27,
       "POS": 15
     }
   },
