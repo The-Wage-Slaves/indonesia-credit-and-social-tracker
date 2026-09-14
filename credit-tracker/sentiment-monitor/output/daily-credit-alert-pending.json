@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-13",
+  "date": "2026-09-14",
   "level": "normal",
   "signals": {
     "newsDailyVolumeRisk": 26.4,
-    "socialDailyVolumeRisk": 5.5,
-    "negativeSocialShare": 9.6,
+    "socialDailyVolumeRisk": 11.2,
+    "negativeSocialShare": 33.3,
     "negativeSocialPlatforms": [
       "youtube"
     ],
@@ -14,263 +14,53 @@
   },
   "notes": {
     "newsVolume": "today=2; prior-7d median=23.0; robust z=-1.57",
-    "socialVolume": "today=8; prior-7d median=30.0; robust z=-2.97"
+    "socialVolume": "today=1; prior-7d median=24.0; robust z=-2.59"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-f9654c91dc20",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Pinjol"
-      ],
-      "headline": "4 Fakta Utang Pinjol Warga Indonesia Rp105,6 Triliun - economy.okezone.com",
-      "headlineZh": "印尼网贷未偿债务达105.6万亿盾",
-      "summaryZh": "印尼民众网贷未偿债务达105.6万亿盾，经济学家批评OJK监管不力，反映行业资产质量与监管压力。",
-      "rationale": "涉及具体债务数据与监管批评，属行业风险事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "economy.okezone.com",
-        "law-justice.co"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "9f0e0fd8a7fd442e",
-        "c60fb2c6e141b3e9"
-      ],
-      "articles": [
-        {
-          "title": "4 Fakta Utang Pinjol Warga Indonesia Rp105,6 Triliun - economy.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdkJzYUlMZkl0enlWSFphYzNkWGhPcENFelMyRlJxSXVmeWE4QnBJOHRfXzd3VllCbTZZVkJfNE9FeTNvOUVRX09hTXJDMzFZQjdTWW9vT1Jla1BxOEhka2M4LXpQWkRlaVp0cXg1UHFvaDB3eWNlaC1sbnhJLS1vdDF2eHFOZndVY3lYc1A4NzRIMTd1OGp3TnVYLTI1REhXTWVvb2xBNDV5YXo10gGrAUFVX3lxTFBTNUpodndZMGFTZXRWemh6WWx5bXNORHpEMGR1b3dsMHBYbTk3QmxTRS03bFNWWUd5UGR4YkNXSE9qd3pISlVscmkzcW5WWnVrRmUxQ0kycHNlRE9nUnFzTnpXY3VQTmxmMHZuekN3ZGRab3dOdERmNWRTMkhyNExCRTJSZWxLclh1QVUwM2VCUDRubE9mc0VXZUhNdW1aN25aY3VhUEFVeWZYVQ?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Rp105,63 Triliun, Ekonom Berikan Kritik Keras pada OJK - law-justice.co",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWURhMUM1b1NLLUtzMTFfYWRrSjRjMy00WmwtaHNhLUxUVW1HaWRwSjVZZWpqVG5pd1FMVVhOM2VELVlVMTFtMTEyVkhBSndwR3BTYmx2T0lJcFJPREV6X1lyRTlMNU5YMVNuNkFCQmtnS2syUHAtZGdaY3hJbVZjaEVyT21WakQ0elZBb3dkakZfME1RQ00wdTFxX3JndmdRenJ4a3RibGJHdVFh?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 2,
-        "negativeShare": 50.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-c03591c6bb4a",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK Cirebon",
-        "PPPK Kota Cirebon"
-      ],
-      "headline": "Gaji Masuk Jangan Langsung Habis, OJK Cirebon Ingatkan 700 PPPK Jauhi Pinjol Ilegal dan Judi Online - Kabar Cirebon - kabarcirebon.pikiran-rakyat.com",
-      "headlineZh": "OJK井里汶教育700名PPP",
-      "summaryZh": "OJK井里汶办事处对700名PPP合同工开展教育，提醒防范非法网贷、网赌和虚假投资。",
-      "rationale": "监管机构开展具体教育活动，属监管介入",
-      "independentSourceCount": 6,
-      "domains": [
-        "aboutcirebon.id",
-        "cirebon.inews.id",
-        "dialogindonesia.com",
-        "kabarcirebon.pikiran-rakyat.com",
-        "mediacirebon.id",
-        "rri.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "137cba3128f95e5f",
-        "5d0786a4e91987cf",
-        "48d4adbcc809a5fc",
-        "fc671e02d0489264",
-        "32b320b454884ed0",
-        "123301d0d2f5354e"
-      ],
-      "articles": [
-        {
-          "title": "Gaji Masuk Jangan Langsung Habis, OJK Cirebon Ingatkan 700 PPPK Jauhi Pinjol Ilegal dan Judi Online - Kabar Cirebon - kabarcirebon.pikiran-rakyat.com",
-          "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPMHIwSE9pMFlabTVTTmEtMXI4UkFoNU5zU09rVTZVdGg2UktMOEp5cmNsamZ3a0l3V25lS3BmUVBwdDloUi0zVm1feUJNRjZPU3hUUkJqeHl3RUdoR1YxSkNKUW1DenpQcXJjd3BEaENGWUNoNks2MGNsMnFsOWxYNVdRTkVBZGE3NDg0VTVNdkZLMjJwazBVbzdUb3lFQTNla2Vnd3Q0Uk9BMDhUbkNMVjk2NEdGdnpDOUF0NkRqV1lpc1pvZkJiTUItTU5FVDhPaUpoX2lJaXJwVHcySDdyYl9KNFZ6OTVZV244NndWQ3HSAfYBQVVfeXFMUGMxanB0TnNURnJmNlM1TTV6cDdla254ZEM1MWVISVJsczRWdzFIOXNiQjducEV4U3Foa2RrWXNTZWNXRXUtYXZaQW5HZzg1QjctXzU4U3FGakUySjRNaWZKd1J3N0xRRU5kM1JsbVVhV1E4NTllQlhlRVhuVHFWRTJCVlBXYUtndnZSNThKaEZHMl9jbFp1VjRoRXlMZUd5LTNKMF9oNVctX3JGZW16U08tcy1XdnYwVW9OeWxFYno1dHZyR25feGUyR2VEQ0l5a01nNERqM3VubzRFejlzZ1JRZ0tVcnRPYllBNV8wc0RqUVpDRlJR?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Edukasi 700 PPPK Kota Cirebon Cegah Pinjol Ilegal dan Judi Online - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQc1l5bTZESnBZVmUxWWtiUjdKdURRdG80V3ZRNVlwb3BwVHNuTnJmSVdJSEl3dlFhQkRQNXdVbU91aTZIZ1BTX3FDS25JX09fTWRaMXJRRHY0Z01ERzhBOWp3YmZoTExFTWdVWkdCcmQ2X1ZOZEstN0NzeTJ6UDN2SVctcmc5R1lVVTRNZFlpUmpvVk53UW1HYlBTS1owWTNuLWZmRHFOVW9BQUYtRHp2Y253MC1jVEZCcWpSbFo3cXprVGt5bnRr?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Edukasi 700 PPPK Kota Cirebon, Waspada Pinjol Ilegal dan Judol - Dialog Indonesia Media",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWZJck9GTFZDeEl6NW9FeTF0MEVJekIycUNpMUI4MGdEVFJrOUtxcEotOWJkZ18tZmxzN0xBNlQ5MVNVcE9PSGcxek9OX01qWHdLWDVxWUJYSmNCRkxLLVlOQjdDdnMwdUY4bzVnYklUVkR5U3pvd0tzbUpGQ09OQU9iSHZxS1BwcVpjWGZvUXNEUkNxUXBLTWtQdWg2eDZ1eU54WA?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Ingatkan 700 PPPK Waspada Pinjol Ilegal, Judi Online dan Investasi Bodong - About Cirebon",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTlVDbUdBa1RBTjJobkUteUFMT3hDeUlGN2VjZzhZVlVwS29wb3FGeDNSUXFSNVFwZG14eHd2dTk4amVQVFVFekJKT011bXBjbDkybWE3Z3JjdTZHWXNWUTkycUhmTk9WM1VTTmE4ZVdSLXg2UzZNbzRsVmFfYWpUa3BQRTFHalgwYlAwWGFXNlR5cUxZWGhDeU5vVWsyWnZ6Uk5ZY003NUNVSFNucWc?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Ingatkan 700 PPPK: Jangan Terjebak Pinjol Ilegal dan Judi Online - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUHNrbXdlR3VMeW9oYjFGQm4tME9jT1pMZFU0WER6V0FWbW1HZkJiZHhPX0tCbGN0a0s5dkN2LW4wWXN6eXZMc3VwUEFRSGpDT2w2U1hhb2NSVWpXLXhadm1LVWk5SzBuaUFTcm4zWV90RGZUeWlmWVBkVEtpWGY3QndCWG1MemRnZEJ0NXg2QlhSWFMxRTBUc3lFSlVhQUJRbVZ2WmtfMG52QWgzMDlmMWx3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 6,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "lowEvidenceLeads": [],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 14,
-    "eventGroupCount": 2,
+    "candidateCount": 7,
+    "eventGroupCount": 0,
     "rejectedNonEvents": 6,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 14
+      "ok": 7
     },
     "socialCrossCheck": "applied"
   },
-  "events": [
-    {
-      "id": "llm-f9654c91dc20",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Pinjol"
-      ],
-      "headline": "4 Fakta Utang Pinjol Warga Indonesia Rp105,6 Triliun - economy.okezone.com",
-      "headlineZh": "印尼网贷未偿债务达105.6万亿盾",
-      "summaryZh": "印尼民众网贷未偿债务达105.6万亿盾，经济学家批评OJK监管不力，反映行业资产质量与监管压力。",
-      "rationale": "涉及具体债务数据与监管批评，属行业风险事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "economy.okezone.com",
-        "law-justice.co"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "9f0e0fd8a7fd442e",
-        "c60fb2c6e141b3e9"
-      ],
-      "articles": [
-        {
-          "title": "4 Fakta Utang Pinjol Warga Indonesia Rp105,6 Triliun - economy.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQdkJzYUlMZkl0enlWSFphYzNkWGhPcENFelMyRlJxSXVmeWE4QnBJOHRfXzd3VllCbTZZVkJfNE9FeTNvOUVRX09hTXJDMzFZQjdTWW9vT1Jla1BxOEhka2M4LXpQWkRlaVp0cXg1UHFvaDB3eWNlaC1sbnhJLS1vdDF2eHFOZndVY3lYc1A4NzRIMTd1OGp3TnVYLTI1REhXTWVvb2xBNDV5YXo10gGrAUFVX3lxTFBTNUpodndZMGFTZXRWemh6WWx5bXNORHpEMGR1b3dsMHBYbTk3QmxTRS03bFNWWUd5UGR4YkNXSE9qd3pISlVscmkzcW5WWnVrRmUxQ0kycHNlRE9nUnFzTnpXY3VQTmxmMHZuekN3ZGRab3dOdERmNWRTMkhyNExCRTJSZWxLclh1QVUwM2VCUDRubE9mc0VXZUhNdW1aN25aY3VhUEFVeWZYVQ?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Rp105,63 Triliun, Ekonom Berikan Kritik Keras pada OJK - law-justice.co",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWURhMUM1b1NLLUtzMTFfYWRrSjRjMy00WmwtaHNhLUxUVW1HaWRwSjVZZWpqVG5pd1FMVVhOM2VELVlVMTFtMTEyVkhBSndwR3BTYmx2T0lJcFJPREV6X1lyRTlMNU5YMVNuNkFCQmtnS2syUHAtZGdaY3hJbVZjaEVyT21WakQ0elZBb3dkakZfME1RQ00wdTFxX3JndmdRenJ4a3RibGJHdVFh?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 2,
-        "negativeShare": 50.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-c03591c6bb4a",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK Cirebon",
-        "PPPK Kota Cirebon"
-      ],
-      "headline": "Gaji Masuk Jangan Langsung Habis, OJK Cirebon Ingatkan 700 PPPK Jauhi Pinjol Ilegal dan Judi Online - Kabar Cirebon - kabarcirebon.pikiran-rakyat.com",
-      "headlineZh": "OJK井里汶教育700名PPP",
-      "summaryZh": "OJK井里汶办事处对700名PPP合同工开展教育，提醒防范非法网贷、网赌和虚假投资。",
-      "rationale": "监管机构开展具体教育活动，属监管介入",
-      "independentSourceCount": 6,
-      "domains": [
-        "aboutcirebon.id",
-        "cirebon.inews.id",
-        "dialogindonesia.com",
-        "kabarcirebon.pikiran-rakyat.com",
-        "mediacirebon.id",
-        "rri.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "137cba3128f95e5f",
-        "5d0786a4e91987cf",
-        "48d4adbcc809a5fc",
-        "fc671e02d0489264",
-        "32b320b454884ed0",
-        "123301d0d2f5354e"
-      ],
-      "articles": [
-        {
-          "title": "Gaji Masuk Jangan Langsung Habis, OJK Cirebon Ingatkan 700 PPPK Jauhi Pinjol Ilegal dan Judi Online - Kabar Cirebon - kabarcirebon.pikiran-rakyat.com",
-          "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPMHIwSE9pMFlabTVTTmEtMXI4UkFoNU5zU09rVTZVdGg2UktMOEp5cmNsamZ3a0l3V25lS3BmUVBwdDloUi0zVm1feUJNRjZPU3hUUkJqeHl3RUdoR1YxSkNKUW1DenpQcXJjd3BEaENGWUNoNks2MGNsMnFsOWxYNVdRTkVBZGE3NDg0VTVNdkZLMjJwazBVbzdUb3lFQTNla2Vnd3Q0Uk9BMDhUbkNMVjk2NEdGdnpDOUF0NkRqV1lpc1pvZkJiTUItTU5FVDhPaUpoX2lJaXJwVHcySDdyYl9KNFZ6OTVZV244NndWQ3HSAfYBQVVfeXFMUGMxanB0TnNURnJmNlM1TTV6cDdla254ZEM1MWVISVJsczRWdzFIOXNiQjducEV4U3Foa2RrWXNTZWNXRXUtYXZaQW5HZzg1QjctXzU4U3FGakUySjRNaWZKd1J3N0xRRU5kM1JsbVVhV1E4NTllQlhlRVhuVHFWRTJCVlBXYUtndnZSNThKaEZHMl9jbFp1VjRoRXlMZUd5LTNKMF9oNVctX3JGZW16U08tcy1XdnYwVW9OeWxFYno1dHZyR25feGUyR2VEQ0l5a01nNERqM3VubzRFejlzZ1JRZ0tVcnRPYllBNV8wc0RqUVpDRlJR?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Edukasi 700 PPPK Kota Cirebon Cegah Pinjol Ilegal dan Judi Online - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQc1l5bTZESnBZVmUxWWtiUjdKdURRdG80V3ZRNVlwb3BwVHNuTnJmSVdJSEl3dlFhQkRQNXdVbU91aTZIZ1BTX3FDS25JX09fTWRaMXJRRHY0Z01ERzhBOWp3YmZoTExFTWdVWkdCcmQ2X1ZOZEstN0NzeTJ6UDN2SVctcmc5R1lVVTRNZFlpUmpvVk53UW1HYlBTS1owWTNuLWZmRHFOVW9BQUYtRHp2Y253MC1jVEZCcWpSbFo3cXprVGt5bnRr?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Edukasi 700 PPPK Kota Cirebon, Waspada Pinjol Ilegal dan Judol - Dialog Indonesia Media",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNWZJck9GTFZDeEl6NW9FeTF0MEVJekIycUNpMUI4MGdEVFJrOUtxcEotOWJkZ18tZmxzN0xBNlQ5MVNVcE9PSGcxek9OX01qWHdLWDVxWUJYSmNCRkxLLVlOQjdDdnMwdUY4bzVnYklUVkR5U3pvd0tzbUpGQ09OQU9iSHZxS1BwcVpjWGZvUXNEUkNxUXBLTWtQdWg2eDZ1eU54WA?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Ingatkan 700 PPPK Waspada Pinjol Ilegal, Judi Online dan Investasi Bodong - About Cirebon",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNTlVDbUdBa1RBTjJobkUteUFMT3hDeUlGN2VjZzhZVlVwS29wb3FGeDNSUXFSNVFwZG14eHd2dTk4amVQVFVFekJKT011bXBjbDkybWE3Z3JjdTZHWXNWUTkycUhmTk9WM1VTTmE4ZVdSLXg2UzZNbzRsVmFfYWpUa3BQRTFHalgwYlAwWGFXNlR5cUxZWGhDeU5vVWsyWnZ6Uk5ZY003NUNVSFNucWc?oc=5"
-        },
-        {
-          "title": "OJK Cirebon Ingatkan 700 PPPK: Jangan Terjebak Pinjol Ilegal dan Judi Online - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNUHNrbXdlR3VMeW9oYjFGQm4tME9jT1pMZFU0WER6V0FWbW1HZkJiZHhPX0tCbGN0a0s5dkN2LW4wWXN6eXZMc3VwUEFRSGpDT2w2U1hhb2NSVWpXLXhadm1LVWk5SzBuaUFTcm4zWV90RGZUeWlmWVBkVEtpWGY3QndCWG1MemRnZEJ0NXg2QlhSWFMxRTBUc3lFSlVhQUJRbVZ2WmtfMG52QWgzMDlmMWx3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 6,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "events": [],
   "coverage": {
     "successfulChannels": [
       "google_news",
       "media_rss",
-      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "gdelt": "HTTP Error 429: Too Many Requests",
+      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 16,
-    "socialItemCount48h": 33
+    "articleCount48h": 8,
+    "socialItemCount48h": 9
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 521,
-    "classifiedCount": 145,
-    "irrelevantDropped": 95,
+    "inputCount": 526,
+    "classifiedCount": 147,
+    "irrelevantDropped": 93,
     "model": "deepseek-chat",
-    "fallbackCount": 281,
+    "fallbackCount": 286,
     "labelCounts": {
-      "NEG": 84,
-      "MIX": 38,
-      "POS": 23
+      "NEG": 81,
+      "MIX": 42,
+      "POS": 24
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
