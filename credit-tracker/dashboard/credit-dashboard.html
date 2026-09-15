@@ -183,7 +183,10 @@ const samePlayer = (a,b) => firstWord(a)===firstWord(b) || (/lentera|shopee/i.te
 const buildP2PData = (extras, fx) => {
   const d = JSON.parse(JSON.stringify(p2pRaw));
   const FIELD = { disbursement:"disb", outstanding:"out", totalBorrowers:"tot", activeBorrowers:"act" };
-  extras.forEach(ex => {
+  // p2p-confirmed.js 里批次是新在前；这里按 srcDate 升序再追加，否则 x 轴会是
+  // 6.18 → 9.15 → 9.1 → 8.25 → 7.17，折线在末端来回折（2026-09-15 真渲染时发现，
+  // 两批时就已经是 6.18 → 8.25 → 7.17）。
+  [...extras].sort((a, b) => String(a.srcDate).localeCompare(String(b.srcDate))).forEach(ex => {
     for (const [metric, f] of Object.entries(FIELD)) {
       const sec = d[metric];
       if (sec.dates.includes(ex.date)) continue;
