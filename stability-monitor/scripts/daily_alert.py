@@ -291,8 +291,12 @@ def load_resumed_ledger(today: str, acknowledged_ids: set[str]) -> dict[str, dic
                 if eid in acknowledged_ids and ev.get("resumedFromAcknowledged"):
                     prev = ledger.get(eid)
                     if not prev or day > prev["date"]:
+                        # headline 是模型写的中文概括；引据却抄自当天的印尼语标题，两者永远
+                        # 对不上——「引的是不是上次那一步」必须拿上次的**原文标题**来比。
                         ledger[eid] = {"date": day,
-                                       "headline": str(ev.get("headline") or "")[:200]}
+                                       "headline": str(ev.get("headline") or "")[:200],
+                                       "titles": [str(a.get("title") or "")[:200]
+                                                  for a in (ev.get("articles") or [])][:5]}
     return ledger
 
 
@@ -438,7 +442,8 @@ def classify_events(items: list[dict], cfg: dict, today: str | None = None) -> l
                 # 冷却期内再报进展，必须能从今天的标题里引出证据，且不是上次那一步。
                 quote = str(ev.get("materialChangeEvidence") or "")
                 titles = [r["title"] for r in refs] + [str(ev.get("headline", ""))]
-                if not evidence_supported(quote, *titles) or evidence_supported(quote, last["headline"]):
+                if (not evidence_supported(quote, *titles)
+                        or evidence_supported(quote, last["headline"], *last.get("titles", []))):
                     material = False
                     ev["_resumeSuppressed"] = (f"{last['date']} 已告警『{last['headline'][:40]}』，"
                                                f"本次引据{'无效' if quote else '缺失'}")

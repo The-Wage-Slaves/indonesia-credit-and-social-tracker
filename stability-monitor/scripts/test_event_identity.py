@@ -252,14 +252,17 @@ class ResumeLedgerTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             d = self.write_events(tmp, [
                 ("2026-09-01", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "国会批准"}]),
-                ("2026-09-02", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "宣誓就任"}]),
+                ("2026-09-02", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "宣誓就任",
+                                 "articles": [{"title": "Destry dilantik sebagai Gubernur BI", "link": "x"}]}]),
                 ("2026-09-03", [{"id": self.ACK_ID, "resumedFromAcknowledged": False, "headline": "重复报道"}]),
                 ("2026-09-05", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "今天的，不该算"}]),
             ])
             with mock.patch.object(MODULE, "EVENTS_DIR", d):
                 ledger = MODULE.load_resumed_ledger("2026-09-05", {self.ACK_ID})
-        self.assertEqual(ledger[self.ACK_ID], {"date": "2026-09-02", "headline": "宣誓就任"},
-                         "应取今天之前最近一次 resumed 的记录；未 resumed 的与今天的都不算")
+        self.assertEqual(ledger[self.ACK_ID],
+                         {"date": "2026-09-02", "headline": "宣誓就任",
+                          "titles": ["Destry dilantik sebagai Gubernur BI"]},
+                         "应取今天之前最近一次 resumed 的记录（含原文标题）；未 resumed 的与今天的都不算")
 
     def test_ledger_is_empty_when_evidence_pool_is_absent(self):
         """主分支上没有 daily-events/——不能因此崩，只是退回没有基线的旧行为。"""
@@ -310,9 +313,18 @@ class ResumeCooldownGuardTests(unittest.TestCase):
 
     def test_repeat_of_the_last_alerted_step_is_suppressed_even_with_a_quote(self):
         """引据是真的，但引的正是上次已经告警过的那一步——仍不算新进展。"""
-        ledger = {self.ACK_ID: {"date": "2026-09-02", "headline": "Destry dilantik sebagai Gubernur"}}
+        # 真实情形：账本 headline 是模型写的中文，原文标题是印尼语。只比 headline 永远匹配不上，
+        # 这道守卫就形同虚设——第一版就是这样，蓝方复查时才发现。
+        ledger = {self.ACK_ID: {"date": "2026-09-02", "headline": "Destry 宣誓就任央行行长",
+                                "titles": ["Destry Damayanti resmi dilantik sebagai Gubernur Bank Indonesia"]}}
         (ev,) = self.run_classify(self.base_event(materialChangeEvidence="dilantik sebagai Gubernur"), ledger)
         self.assertTrue(ev["acknowledged"], "重复上一步不得重开")
+
+    def test_headline_only_ledger_would_not_have_caught_the_repeat(self):
+        """反向证明：没有原文标题时，同样的引据会被放行——这就是修之前的行为。"""
+        ledger = {self.ACK_ID: {"date": "2026-09-02", "headline": "Destry 宣誓就任央行行长"}}
+        (ev,) = self.run_classify(self.base_event(materialChangeEvidence="dilantik sebagai Gubernur"), ledger)
+        self.assertTrue(ev["resumedFromAcknowledged"], "这条测试记录的是缺陷形态，不是期望行为")
 
     def test_genuine_new_step_with_real_quote_still_resumes(self):
         """守卫不能把真正的新进展也压掉：引据在今天标题里、且不是上次那一步。"""
