@@ -145,5 +145,47 @@ class RefusalTests(unittest.TestCase):
         self.assertEqual(data["asOf"], "2026-09-01")
 
 
+class PendingCardTests(unittest.TestCase):
+    """确认进库之后，首页那张「P2P竞对批量待确认」卡片必须一起消失；别人的卡片不能被误删。"""
+
+    def make(self, tmp, items):
+        pj = pathlib.Path(tmp) / "pending.json"; js = pathlib.Path(tmp) / "pending.js"
+        pj.write_text(json.dumps({"boards": {"credit": items, "stability": [{"id": "x"}]}}), encoding="utf-8")
+        js.write_text("const PENDING = {};", encoding="utf-8")
+        return pj, js
+
+    def test_only_the_confirmed_p2p_card_is_removed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pj, js = self.make(tmp, [
+                {"id": "p2p-scraper:2026-09-15:0", "source": "p2p-scraper", "title": "P2P竞对批量抓取 2026-09-15"},
+                {"id": "p2p-scraper:2026-10-01:0", "source": "p2p-scraper", "title": "下一批，还没确认"},
+                {"id": "credit-sentiment:2026-09-14", "source": "credit-sentiment", "title": "别人的卡片"},
+            ])
+            removed = M.retire_pending_cards({"2026-09-15"}, pj, js)
+            data = json.loads(pj.read_text(encoding="utf-8"))
+        self.assertEqual(removed, 1)
+        self.assertEqual([it["id"] for it in data["boards"]["credit"]],
+                         ["p2p-scraper:2026-10-01:0", "credit-sentiment:2026-09-14"])
+        self.assertEqual(data["boards"]["stability"], [{"id": "x"}], "其他板块不能动")
+
+    def test_js_mirror_is_rewritten_together(self):
+        """pending.js 与 pending.json 必须同步，validate_repo 会校验二者一致。"""
+        with tempfile.TemporaryDirectory() as tmp:
+            pj, js = self.make(tmp, [{"id": "p2p-scraper:2026-09-15:0", "source": "p2p-scraper"}])
+            M.retire_pending_cards({"2026-09-15"}, pj, js)
+            body = js.read_text(encoding="utf-8")
+            mirror = json.loads(pj.read_text(encoding="utf-8"))
+        self.assertTrue(body.startswith("const PENDING = "))
+        self.assertEqual(json.loads(body[len("const PENDING = "):].rstrip().rstrip(";")), mirror)
+
+    def test_nothing_to_retire_leaves_files_untouched(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            pj, js = self.make(tmp, [{"id": "credit-sentiment:1", "source": "credit-sentiment"}])
+            before = pj.read_text(encoding="utf-8")
+            self.assertEqual(M.retire_pending_cards({"2026-09-15"}, pj, js), 0)
+            self.assertEqual(pj.read_text(encoding="utf-8"), before)
+            self.assertEqual(js.read_text(encoding="utf-8"), "const PENDING = {};", "没东西可摘就别重写")
+
+
 if __name__ == "__main__":
     unittest.main()

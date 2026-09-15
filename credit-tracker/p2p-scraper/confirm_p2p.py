@@ -7,7 +7,10 @@
 做什么、不做什么（人在环）:
   - 读 results/scrape_<date>.json，按 scraper.mjs 写 p2p-pending.js 的同一映射生成批次行，
     追加进 dashboard/p2p-confirmed.js 的 batches；看板合并层已把该文件当正式底层。
-  - **不改 p2pRaw**，不改 pending.json；本机运行只写文件，确认动作由所有者审 PR 完成。
+  - **不改 p2pRaw**。pending.json / pending.js 只做一件事：摘掉已确认批次的首页待确认卡片
+    （只动 source=p2p-scraper 且 id 含该日期的条目，其他 producer 的条目原样保留）——
+    否则批次已入库、首页还挂着「待确认」，2026-09-15 蓝方复查时就是这个状态。
+  - 本机运行只写文件，确认动作由所有者审 PR 完成。
   - 先打印逐家对照表（本批 vs 上一确认批），再落盘；--dry-run 只打印。
 
 为什么要有这个脚本:
@@ -34,6 +37,10 @@ import sys
 HERE = pathlib.Path(__file__).resolve().parent
 RESULTS = HERE / "results"
 CONFIRMED_JS = HERE.parent / "dashboard" / "p2p-confirmed.js"
+ROOT = HERE.parent.parent
+PENDING_JSON = ROOT / "pending.json"
+PENDING_JS = ROOT / "pending.js"
+PENDING_SOURCE = "p2p-scraper"
 MIN_PLAYERS_WITH_DATA = 7
 FIELDS = ("disb", "out", "tot", "act")
 # 余额相对上一确认批的变动超过这个比例就拒绝，除非 --accept 显式放行。
@@ -217,6 +224,32 @@ def confirm(data: dict, src_date: str, decided_at: str, results_dir: pathlib.Pat
     return []
 
 
+def retire_pending_cards(src_dates: set[str], pending_json: pathlib.Path = PENDING_JSON,
+                         pending_js: pathlib.Path = PENDING_JS) -> int:
+    """从首页待确认卡片里摘掉已确认批次。返回摘掉的条数；文件不存在则 0。
+
+    条目 id 形如 `p2p-scraper:2026-09-15:0`（见 scraper.mjs updatePending）。
+    只按 source + 日期匹配，别人的卡片一律不碰。两个文件一起写，validate_repo 校验二者一致。
+    """
+    if not pending_json.exists():
+        return 0
+    data = json.loads(pending_json.read_text(encoding="utf-8"))
+    boards = data.get("boards") or {}
+    credit = boards.get("credit") or []
+    def is_retired(item: dict) -> bool:
+        return item.get("source") == PENDING_SOURCE and any(d in str(item.get("id", "")) for d in src_dates)
+    kept = [it for it in credit if not is_retired(it)]
+    removed = len(credit) - len(kept)
+    if removed == 0:
+        return 0
+    boards["credit"] = kept
+    data["boards"] = boards
+    serialized = json.dumps(data, ensure_ascii=False, indent=2)
+    pending_json.write_text(serialized + "\n", encoding="utf-8")
+    pending_js.write_text("const PENDING = " + serialized + ";\n", encoding="utf-8")
+    return removed
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--batch", action="append", required=True, help="results/scrape_<date>.json 的日期，可多次")
@@ -254,6 +287,9 @@ def main() -> int:
         return 0
     CONFIRMED_JS.write_text(render_file(data), encoding="utf-8")
     print(f"✓ 已写入 {CONFIRMED_JS.name}，现有 {len(data['batches'])} 批，asOf {data['asOf']}")
+    retired = retire_pending_cards(set(args.batch))
+    if retired:
+        print(f"✓ 已从首页待确认卡片摘掉 {retired} 条已确认批次")
     return 0
 
 

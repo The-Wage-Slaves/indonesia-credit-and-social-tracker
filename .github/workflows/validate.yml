@@ -46,6 +46,13 @@ jobs:
         run: python -m unittest discover -s credit-tracker/sentiment-monitor -p "test_*.py"
       - name: Validate national macro monitor
         run: python -m unittest discover -s credit-tracker/macro-monitor -p "test_*.py"
+      - name: Validate P2P confirmation tool and SEKI collector
+        # 2026-09-15 蓝方复查发现这两个目录的测试从未进过 CI：
+        # p2p-scraper/test_confirm_p2p.py（12 条）与 credit-tracker/test_seki_bank_credit.py（11 条）
+        # 本地全绿、云端一次没跑过——正是「建好了、测过了、真跑就是坏的」的温床。
+        run: |
+          python -m unittest discover -s credit-tracker/p2p-scraper -p "test_*.py"
+          python -m unittest discover -s credit-tracker -p "test_*.py"
       - name: Verify Node dependency lock and vulnerabilities
         working-directory: credit-tracker/p2p-scraper
         run: |
