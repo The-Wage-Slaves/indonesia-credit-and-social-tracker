@@ -255,7 +255,63 @@ def model_bool(value: Any, default: bool = True) -> bool:
     return default
 
 
-def classify_events(items: list[dict], cfg: dict) -> list[dict]:
+RESUME_COOLDOWN_DAYS = 7
+
+
+def load_resumed_ledger(today: str, acknowledged_ids: set[str]) -> dict[str, dict]:
+    """从证据池里找出每个已确认事项最近一次「重新告警」的记录。
+
+    登记表是人写的、脚本只读，所以它的 acknowledgedState 不会自己往前走。
+    2026-09-01 国会批准、09-02 宣誓就任都作为进展推过一次——这本身没错；
+    但 09-05、09-06 又拿当天的「已就任」去和登记表里 08-12 的「提名待批准」比，
+    再次判成新进展、再推。同一个进展推了四遍，抑制看着像没生效。
+
+    账本就从证据池里读：它已经记着每天推了什么、是不是 resumed。取每个 id
+    最近一次 resumed 的标题与日期，作为「已推送到哪一步」的基线交给模型，
+    并在代码侧做冷却与证据核验。证据池在 bot 分支上，运行前由工作流预拉取。
+    """
+    ledger: dict[str, dict] = {}
+    if not EVENTS_DIR.exists() or not acknowledged_ids:
+        return ledger
+    for path in sorted(EVENTS_DIR.glob("*.jsonl")):
+        try:
+            lines = path.read_text(encoding="utf-8").splitlines()
+        except OSError:
+            continue
+        for line in lines:
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            day = str(record.get("date", ""))
+            if not day or day >= today:
+                continue
+            for ev in record.get("events") or []:
+                eid = str(ev.get("id") or "")
+                if eid in acknowledged_ids and ev.get("resumedFromAcknowledged"):
+                    prev = ledger.get(eid)
+                    if not prev or day > prev["date"]:
+                        ledger[eid] = {"date": day,
+                                       "headline": str(ev.get("headline") or "")[:200]}
+    return ledger
+
+
+def days_between(a: str, b: str) -> int:
+    try:
+        return abs((dt.date.fromisoformat(b) - dt.date.fromisoformat(a)).days)
+    except ValueError:
+        return 10**6
+
+
+def evidence_supported(quote: str, *haystacks: str) -> bool:
+    """模型引的『新进展依据』必须真的出现在当天的标题里，不能凭空说。"""
+    q = re.sub(r"\s+", "", str(quote or ""))
+    if len(q) < 4:
+        return False
+    return any(q in re.sub(r"\s+", "", h or "") for h in haystacks)
+
+
+def classify_events(items: list[dict], cfg: dict, today: str | None = None) -> list[dict]:
     """让 DeepSeek 从当日标题里挑出制度/政治骤变事件并给严重度。失败则返回空(不阻断)。"""
     llm = (cfg or {}).get("llm") or {}
     key = llm.get("api_key", "")
@@ -269,6 +325,8 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
     numbered = "\n".join(f"[{lab}] {it['title'][:150]} [{it['domain']}]" for lab, it in labels.items())
     type_list = "\n".join(f"- {k}: {v[0]}" for k, v in EVENT_TYPES.items())
     acknowledged = load_acknowledged()
+    today = today or dt.date.today().isoformat()
+    ledger = load_resumed_ledger(today, {str(e.get("id")) for e in acknowledged.values() if e.get("id")})
     ack_block = ""
     if acknowledged:
         # load_acknowledged() exposes several lookup aliases for each event. Keep only
@@ -276,20 +334,26 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
         unique_acknowledged = {
             str(entry.get("id")): entry for entry in acknowledged.values() if entry.get("id")
         }
-        lines = [
-            f"- {entry.get('id')}：已确认状态＝{entry.get('acknowledgedState', '')} "
-            f"｜重新告警条件＝{entry.get('resumeIf', '')}"
-            for entry in unique_acknowledged.values()
-        ]
+        lines = []
+        for entry in unique_acknowledged.values():
+            line = (f"- {entry.get('id')}：已确认状态＝{entry.get('acknowledgedState', '')} "
+                    f"｜重新告警条件＝{entry.get('resumeIf', '')}")
+            last = ledger.get(str(entry.get("id")))
+            if last:
+                line += f"｜**最近一次已重新告警**＝{last['date']}『{last['headline']}』"
+            lines.append(line)
         ack_block = (
             "\n\n**已人工处置的事件**（下列事项所有者已看过并作出判断）：\n"
             + "\n".join(lines)
             + "\n对每个事件另外输出两个字段：\n"
               "· \"matchesAcknowledgedId\"：若该事件就是上述某一已确认事项的延续，填那个 id；"
               "否则填 null。**按事实判断是不是同一件事，不要比对措辞。**\n"
-              "· \"materialChange\"：若今天的报道相对该事项的『已确认状态』出现实质新进展"
-              "（如表决结果、改提名他人、新的独立性事实），填 true；若只是同一件事的重复报道"
-              "或换个说法，填 false。与上述事项无关的新事件一律填 true。"
+              "· \"materialChange\"：若今天的报道相对该事项的『已确认状态』**以及『最近一次已重新告警』"
+              "（两者取更新的那个）**出现实质新进展（如表决结果、改提名他人、新的独立性事实），填 true；"
+              "若只是同一件事的重复报道、换个说法、或重复已经告警过的那一步，填 false。"
+              "与上述事项无关的新事件一律填 true。\n"
+              "· \"materialChangeEvidence\"：materialChange 为 true 时必填——从今天的标题里**原样抄一段**"
+              "能证明这是新一步的文字（如「宣誓就任」「国会否决」）。不是原文就算无效。"
         )
     prompt = (
         "以下是当日新闻标题。请挑出属于【印尼国家制度/政治/市场重大骤变】的事件，忽略常规报道、体育娱乐、"
@@ -364,7 +428,20 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
             ack = candidate_entry
             event_id = str(ack["id"])   # 统一回归表里的正式 id，保持跨日稳定
             break
-        material = model_bool(ev.get("materialChange", True), default=True)
+        # 已确认事项：缺字段就当没进展。原来 default=True 是 fail-open——模型一漏字段，
+        # 已确认事件就重新催办，09-01~09-06 一条央行行长任命推了四遍。
+        # 对*未确认*的新事件 material 无意义（ack 为 None），保持 True 不影响。
+        material = model_bool(ev.get("materialChange"), default=(ack is None))  # 不能给 .get 兜底值，否则 default 永远轮不到
+        if ack is not None and material:
+            last = ledger.get(event_id)
+            if last and days_between(last["date"], today) <= RESUME_COOLDOWN_DAYS:
+                # 冷却期内再报进展，必须能从今天的标题里引出证据，且不是上次那一步。
+                quote = str(ev.get("materialChangeEvidence") or "")
+                titles = [r["title"] for r in refs] + [str(ev.get("headline", ""))]
+                if not evidence_supported(quote, *titles) or evidence_supported(quote, last["headline"]):
+                    material = False
+                    ev["_resumeSuppressed"] = (f"{last['date']} 已告警『{last['headline'][:40]}』，"
+                                               f"本次引据{'无效' if quote else '缺失'}")
         events.append({
             "id": event_id,
             "idBasis": id_basis,
@@ -381,6 +458,7 @@ def classify_events(items: list[dict], cfg: dict) -> list[dict]:
             "domains": domains[:6],
             "articles": [{"title": r["title"][:160], "link": r["link"]} for r in refs[:5]],
             "machineClassified": True,   # 机器判断，人工复核后方可作为评分依据
+            **({"resumeSuppressed": ev["_resumeSuppressed"]} if ev.get("_resumeSuppressed") else {}),
         })
     if dropped_foreign:
         print(f"  · 已剔除 {len(dropped_foreign)} 条非印尼事件: {'; '.join(dropped_foreign[:3])}")
@@ -485,7 +563,7 @@ def main() -> None:
     print(f"=== 印尼稳定性日频警报 {day} ===")
     items = fetch_today_news(args.days)
     print(f"  抓到 {len(items)} 条当日标题")
-    events = classify_events(items, load_yaml_config())
+    events = classify_events(items, load_yaml_config(), today=day)
     graded = grade(events)
     print(f"  识别事件 {len(events)} 个 → 级别: {graded['level'].upper()}"
           f" (红 {len(graded['red'])} / 高危待核 {len(graded['highPending'])} / 橙 {len(graded['amber'])})")

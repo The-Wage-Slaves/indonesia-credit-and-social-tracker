@@ -228,3 +228,104 @@ class RegistryAnchorAgainstRealDriftTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ResumeLedgerTests(unittest.TestCase):
+    """重新告警之后必须记得「已经推到哪一步」，否则同一个进展会天天重推。
+
+    2026-09-01 国会批准、09-02 宣誓就任各推一次是对的；09-05、09-06 又拿当天的
+    「已就任」去和登记表里 08-12 的「提名待批准」比、再判成新进展、再推——
+    同一步推了四遍。登记表由人写、脚本只读，所以基线得从证据池里自己读。
+    """
+
+    ACK_ID = "key_official_change:11c49b57a7"
+
+    def write_events(self, tmp, rows):
+        d = pathlib.Path(tmp) / "daily-events"; d.mkdir()
+        with (d / "2026-09.jsonl").open("w", encoding="utf-8") as f:
+            for day, events in rows:
+                f.write(json.dumps({"date": day, "events": events}, ensure_ascii=False) + "\n")
+        return d
+
+    def test_ledger_keeps_the_latest_resumed_alert_per_id(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            d = self.write_events(tmp, [
+                ("2026-09-01", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "国会批准"}]),
+                ("2026-09-02", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "宣誓就任"}]),
+                ("2026-09-03", [{"id": self.ACK_ID, "resumedFromAcknowledged": False, "headline": "重复报道"}]),
+                ("2026-09-05", [{"id": self.ACK_ID, "resumedFromAcknowledged": True, "headline": "今天的，不该算"}]),
+            ])
+            with mock.patch.object(MODULE, "EVENTS_DIR", d):
+                ledger = MODULE.load_resumed_ledger("2026-09-05", {self.ACK_ID})
+        self.assertEqual(ledger[self.ACK_ID], {"date": "2026-09-02", "headline": "宣誓就任"},
+                         "应取今天之前最近一次 resumed 的记录；未 resumed 的与今天的都不算")
+
+    def test_ledger_is_empty_when_evidence_pool_is_absent(self):
+        """主分支上没有 daily-events/——不能因此崩，只是退回没有基线的旧行为。"""
+        with mock.patch.object(MODULE, "EVENTS_DIR", pathlib.Path("/nonexistent/x")):
+            self.assertEqual(MODULE.load_resumed_ledger("2026-09-05", {self.ACK_ID}), {})
+
+    def test_evidence_quote_must_come_from_todays_titles(self):
+        self.assertTrue(MODULE.evidence_supported("宣誓就任", "Destry 今日宣誓就任央行行长"))
+        self.assertFalse(MODULE.evidence_supported("宣誓就任", "国会批准 Destry 出任行长"),
+                         "引据不在标题里就是编的")
+        self.assertFalse(MODULE.evidence_supported("", "任何标题"), "空引据无效")
+        self.assertFalse(MODULE.evidence_supported("就任", "就任"), "太短的引据不算证据")
+
+    def test_missing_material_flag_no_longer_reopens_an_acknowledged_event(self):
+        """原来 default=True 是 fail-open：模型漏掉字段，已确认事件就重新催办。"""
+        self.assertFalse(MODULE.model_bool(None, default=False))
+        self.assertTrue(MODULE.model_bool(None, default=True),
+                        "未确认的新事件仍默认 True，不受影响")
+
+
+class ResumeCooldownGuardTests(unittest.TestCase):
+    """冷却期内再报「进展」，必须能从今天的标题里引出证据，且不是上次那一步。"""
+
+    ACK_ID = "key_official_change:11c49b57a7"
+    ENTRY = {"id": ACK_ID, "entities": ["Bank Indonesia", "Destry Damayanti", "DPR"],
+             "acknowledgedState": "提名待批准", "resumeIf": "国会否决"}
+
+    def run_classify(self, model_event, ledger):
+        items = [{"title": "Destry Damayanti resmi dilantik sebagai Gubernur Bank Indonesia",
+                  "domain": "antaranews.com", "link": "https://x/a", "source": "s"}]
+        resp = mock.Mock(); resp.raise_for_status = lambda: None
+        resp.json.return_value = {"choices": [{"message": {"content": json.dumps([model_event], ensure_ascii=False)}}]}
+        with mock.patch.object(MODULE, "load_acknowledged", return_value={self.ACK_ID: self.ENTRY}),              mock.patch.object(MODULE, "load_resumed_ledger", return_value=ledger),              mock.patch.object(MODULE.requests, "post", return_value=resp):
+            return MODULE.classify_events(items, {"llm": {"api_key": "k"}}, today="2026-09-05")
+
+    def base_event(self, **kw):
+        ev = {"type": "key_official_change", "headline": "Destry 正式就任央行行长", "country": "印尼",
+              "entities": ["Bank Indonesia", "Destry Damayanti", "DPR"], "severity": 0.9,
+              "memberIds": ["N1"], "matchesAcknowledgedId": self.ACK_ID, "materialChange": True}
+        ev.update(kw); return ev
+
+    def test_repeat_within_cooldown_without_evidence_is_suppressed(self):
+        """09-05 的情形：模型说有进展、却引不出任何原文——压下，留痕。"""
+        ledger = {self.ACK_ID: {"date": "2026-09-02", "headline": "Destry 宣誓就任"}}
+        (ev,) = self.run_classify(self.base_event(materialChangeEvidence=""), ledger)
+        self.assertTrue(ev["acknowledged"]); self.assertFalse(ev["resumedFromAcknowledged"])
+        self.assertIn("resumeSuppressed", ev)
+
+    def test_repeat_of_the_last_alerted_step_is_suppressed_even_with_a_quote(self):
+        """引据是真的，但引的正是上次已经告警过的那一步——仍不算新进展。"""
+        ledger = {self.ACK_ID: {"date": "2026-09-02", "headline": "Destry dilantik sebagai Gubernur"}}
+        (ev,) = self.run_classify(self.base_event(materialChangeEvidence="dilantik sebagai Gubernur"), ledger)
+        self.assertTrue(ev["acknowledged"], "重复上一步不得重开")
+
+    def test_genuine_new_step_with_real_quote_still_resumes(self):
+        """守卫不能把真正的新进展也压掉：引据在今天标题里、且不是上次那一步。"""
+        ledger = {self.ACK_ID: {"date": "2026-09-02", "headline": "国会批准提名"}}
+        (ev,) = self.run_classify(self.base_event(materialChangeEvidence="resmi dilantik"), ledger)
+        self.assertTrue(ev["resumedFromAcknowledged"]); self.assertFalse(ev["acknowledged"])
+
+    def test_outside_cooldown_the_model_judgment_stands(self):
+        ledger = {self.ACK_ID: {"date": "2026-08-20", "headline": "旧"}}
+        (ev,) = self.run_classify(self.base_event(materialChangeEvidence=""), ledger)
+        self.assertTrue(ev["resumedFromAcknowledged"], "冷却期外不加引据门，沿用模型判断")
+
+    def test_missing_material_flag_on_acknowledged_event_stays_quiet(self):
+        ev0 = self.base_event(); ev0.pop("materialChange")
+        (ev,) = self.run_classify(ev0, {})
+        self.assertTrue(ev["acknowledged"], "缺字段 = 没进展，不得 fail-open")

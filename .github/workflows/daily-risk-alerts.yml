@@ -55,6 +55,17 @@ jobs:
               yaml.safe_dump(cfg, allow_unicode=True), encoding="utf-8"
           )
           PY
+      - name: Preload prior daily evidence from the bot branch (read-only)
+        # daily-events/ 只存在于 bot 分支，主分支上没有。脚本要靠它知道
+        # 「已确认事项最近一次重新告警推到了哪一步」，否则每天都拿登记表里
+        # 08-12 的旧状态做基线，同一个进展会推四遍（2026-09-01~09-06 实测）。
+        # 只取目录内容，不切分支；后面的合并步骤按 date 取并集，重复无害。
+        shell: bash
+        run: |
+          git fetch origin bot/daily-risk-alerts || exit 0
+          git checkout origin/bot/daily-risk-alerts -- stability-monitor/data/daily-events || true
+          git reset -q -- stability-monitor/data/daily-events || true
+          ls stability-monitor/data/daily-events 2>/dev/null | tail -3 || true
       - name: Detect stability institutional shocks
         id: stability
         continue-on-error: true
