@@ -3,14 +3,14 @@
     "credit": [],
     "stability": [
       {
-        "title": "街头热度周报 2026-09-08: 建议分数 57/100",
-        "detail": "合成热度 46.3 · 反对率 36.8%（5/6 源成功）",
+        "title": "街头热度周报 2026-09-15: 建议分数 62/100",
+        "detail": "合成热度 38.2 · 反对率 51.1%（5/6 源成功）",
         "link": "stability-monitor/scripts/output/street-heat-latest.html",
         "action": "看确认单后对Claude Code说\"确认本期街头热度\"或提出质疑",
         "source": "street-heat",
-        "id": "street-heat:bf1dc873d7f8"
+        "id": "street-heat:131e1a73bfb9"
       }
     ]
   },
-  "updated": "2026-09-08 06:37"
+  "updated": "2026-09-15 06:52"
 }

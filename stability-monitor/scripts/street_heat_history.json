@@ -421,5 +421,89 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-09-15",
+    "version": 3,
+    "heat": 38.2,
+    "suggested_score": 62,
+    "opposition": {
+      "status": "ok",
+      "rate": 51.1,
+      "detail": "250条中政治条目190条(浓度76%)，反对97/中性68/支持25 → 总反对率 51.1%（分侧: 民间YouTube 55% · 论坛Kaskus 44% · 媒体RSS 46%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 56.1,
+        "raw": {
+          "ratio_street": 0.696969696969697,
+          "ratio_anger": 1.5463872516917705,
+          "per_kw": {
+            "demo hari ini": 1,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 1,
+            "aksi massa": 0,
+            "korupsi": 44,
+            "kejaksaan": 18,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 14
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 55.9,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 5,
+          "share": 27.927595123753235,
+          "examples": [
+            "Tegas! Prabowo di KTT BRICS: Indonesia Tidak Suka Didikte oleh Kekuatan Manapun!",
+            "Oh, Menteri dengan Ekspetasi Publik Tertinggi ini Akhirnya Diganti!",
+            "Suahasil Nazara, Menteri Keuangan Indonesia Terbaru! Ini Komitmennya",
+            "Bangga! Prabowo di BRICS: Bertahun-tahun RI Impor Beras dan Jagung, Sekarang Eks",
+            "WNI asal Tangerang ini Ditangkap Polisi Kamboja: Diduga jadi Leader Penipuan!"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 20.0,
+        "raw": {
+          "n_searched": 114,
+          "n_big": 8
+        }
+      },
+      "gdelt_vol": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 52.9,
+        "raw": {
+          "avg_tone7": -3.287542857142857
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 0.0,
+        "raw": {
+          "total": 152,
+          "matched": 0,
+          "share": 0.0,
+          "examples": [],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
