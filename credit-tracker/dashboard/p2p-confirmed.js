@@ -1,15 +1,47 @@
 window.P2P_CONFIRMED = {
   schemaVersion: 1,
-  asOf: "2026-08-31",
+  asOf: "2026-09-15",
   batches: [
   {
+    date: "2026.9.15",
+    srcDate: "2026-09-15",
+    status: "confirmed",
+    decidedAt: "2026-09-15",
+    rows: [
+      {name:"AdaKami",dataDate:null,note:null,disb:0.932,out:0.264,tot:7580000,act:2210000},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"14 September 2026",note:null,disb:5.068,out:0.298,tot:18577736,act:8137132},
+      {name:"Kredifazz",dataDate:null,note:null,disb:0.946,out:0.609,tot:8920000,act:2430000},
+      {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径(无YTD/outstanding)",disb:null,out:null,tot:25540919,act:null},
+      {name:"Kredit Pintar",dataDate:"10/9/2026",note:null,disb:0.48,out:0.22,tot:9500000,act:638000},
+      {name:"Easycash",dataDate:null,note:null,disb:0.911,out:0.377,tot:10567551,act:2050308},
+      {name:"Julo",dataDate:null,note:"官网未披露outstanding",disb:0.073,out:null,tot:3365994,act:179128},
+      {name:"ADA Pundi",dataDate:null,note:null,disb:0.461,out:0.237,tot:5720000,act:1910000},
+      {name:"KrediOne",dataDate:"2026-09-06",note:"官网JSON接口；无outstanding披露；LoanNumber按借款人口径对齐(与Excel序列连续,判断)",disb:0.5,out:null,tot:2587640,act:798351}
+    ]
+  },  {
+    date: "2026.9.1",
+    srcDate: "2026-09-01",
+    status: "confirmed",
+    decidedAt: "2026-09-15",
+    rows: [
+      {name:"AdaKami",dataDate:null,note:null,disb:0.877,out:0.267,tot:7520000,act:2130000},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"31 Agustus 2026",note:"该格云端抓取值与前后本机值及官网原文不符，作废（out 原值 0.66）",disb:4.743,out:null,tot:18379142,act:7871638},
+      {name:"Kredifazz",dataDate:null,note:null,disb:0.824,out:0.601,tot:8820000,act:2210000},
+      {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径(无YTD/outstanding)",disb:null,out:null,tot:25412202,act:null},
+      {name:"Kredit Pintar",dataDate:"10/8/2026",note:null,disb:0.413,out:0.22,tot:9400000,act:658000},
+      {name:"Easycash",dataDate:null,note:null,disb:0.906,out:0.449,tot:10563572,act:2045765},
+      {name:"Julo",dataDate:null,note:"官网未披露outstanding",disb:0.067,out:null,tot:3357767,act:169441},
+      {name:"ADA Pundi",dataDate:null,note:null,disb:0.461,out:0.237,tot:5720000,act:1910000},
+      {name:"KrediOne",dataDate:"2026-08-23",note:"官网JSON接口；无outstanding披露；LoanNumber按借款人口径对齐(与Excel序列连续,判断)",disb:0.483,out:null,tot:2567357,act:777064}
+    ]
+  },  {
     date: "2026.8.25",
     srcDate: "2026-08-25",
     status: "confirmed",
     decidedAt: "2026-08-31",
     rows: [
       {name:"AdaKami",dataDate:null,note:null,disb:0.851,out:0.266,tot:7470000,act:2080000},
-      {name:"Lentera Dana (Shopee Loan)",dataDate:"24 Agustus 2026",note:null,disb:4.597,out:0.514,tot:18283811,act:7739602},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"24 Agustus 2026",note:"该格云端抓取值与前后本机值及官网原文不符，作废（out 原值 0.514）",disb:4.597,out:null,tot:18283811,act:7739602},
       {name:"Kredifazz",dataDate:null,note:null,disb:0.824,out:0.601,tot:8820000,act:2210000},
       {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径(无YTD/outstanding)",disb:null,out:null,tot:25363510,act:null},
       {name:"Kredit Pintar",dataDate:"10/8/2026",note:null,disb:0.413,out:0.22,tot:9400000,act:658000},
@@ -18,13 +50,13 @@ window.P2P_CONFIRMED = {
       {name:"ADA Pundi",dataDate:null,note:null,disb:0.461,out:0.237,tot:5720000,act:1910000},
       {name:"KrediOne",dataDate:"2026-08-16",note:"官网JSON接口；无outstanding披露；LoanNumber按借款人口径对齐(与Excel序列连续,判断)",disb:0.473,out:null,tot:2553037,act:762066}
     ]
-  },{
+  },  {
     date: "2026.7.17",
     srcDate: "2026-07-17",
     status: "confirmed",
     decidedAt: "2026-07-30",
     rows: [
-      {name:"AdaKami",dataDate:null,note:null,disb:0.660,out:0.253,tot:7150000,act:1680000},
+      {name:"AdaKami",dataDate:null,note:null,disb:0.66,out:0.253,tot:7150000,act:1680000},
       {name:"Lentera Dana (Shopee Loan)",dataDate:"13 Juli 2026",note:null,disb:3.695,out:0.285,tot:17655546,act:6838280},
       {name:"Kredifazz",dataDate:null,note:null,disb:0.697,out:0.589,tot:8720000,act:1970000},
       {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径（无YTD/outstanding）",disb:null,out:null,tot:25168640,act:null},
