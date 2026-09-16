@@ -205,6 +205,25 @@ class CandidateAndFetchTests(unittest.TestCase):
         text, status = intel.fetch_article_text("not-a-url")
         self.assertEqual((text, status), ("", "no_url"))
 
+    def test_truncated_chunked_response_degrades_instead_of_killing_the_run(self):
+        """2026-09-02 实测：服务器截断分块响应，http.client 抛 IncompleteRead。
+
+        它继承 HTTPException 而不是 OSError，穿透了原来的 except 元组，把当天整轮
+        日频采集杀掉、飞书一条没发。本函数的契约是「抓不到不是错误」。
+        """
+        import http.client
+
+        class Truncated:
+            status = 200
+            def __enter__(self): return self
+            def __exit__(self, *a): return False
+            def read(self, n=None): raise http.client.IncompleteRead(b"partial")
+
+        with mock.patch.object(intel.urllib.request, "urlopen", return_value=Truncated()):
+            text, status = intel.fetch_article_text("https://example.com/a")
+        self.assertEqual(text, "")
+        self.assertEqual(status, "fetch_failed:IncompleteRead")
+
     def test_adjudicate_without_key_reports_unconfigured(self):
         with mock.patch.dict(intel.os.environ, {"DEEPSEEK_API_KEY": ""}, clear=False):
             events, diag = intel.adjudicate([article("a1", "x", "y.com")], {})
