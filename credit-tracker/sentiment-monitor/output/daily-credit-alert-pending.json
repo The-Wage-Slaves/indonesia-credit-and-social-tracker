@@ -1,36 +1,164 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-15",
-  "level": "normal",
+  "date": "2026-09-16",
+  "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 50.0,
-    "socialDailyVolumeRisk": 16.8,
-    "negativeSocialShare": 32.5,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 7.8,
+    "socialDailyVolumeRisk": 16.3,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=15; prior-7d median=15.0; robust z=0.00",
-    "socialVolume": "today=1; prior-7d median=24.0; robust z=-2.22"
+    "newsVolume": "today=7; prior-7d median=16.0; robust z=-2.81",
+    "socialVolume": "today=0; prior-7d median=20.0; robust z=-2.25"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [],
+  "highRiskPendingEvents": [
+    {
+      "id": "llm-0454b4914929",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
+      "entities": [
+        "KrediFazz",
+        "OJK"
+      ],
+      "headline": "OJK Pantau Ketat Langkah Perbaikan KrediFazz terhadap Permasalahan Tenaga Penagih - kontan.co.id",
+      "headlineZh": "OJK紧盯KrediFazz催收整改",
+      "summaryZh": "KrediFazz催收员违规事件后，OJK持续监督其SOP与催收整改，属监管介入。",
+      "rationale": "监管介入具体机构整改",
+      "independentSourceCount": 4,
+      "domains": [
+        "bloombergtechnoz.com",
+        "centralbatam.co.id",
+        "katadata.co.id",
+        "keuangan.kontan.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "22db5a48d506ef43",
+        "026527c3093b7712",
+        "8d9f1c1d4de1a59d",
+        "0ea718d72a91c609"
+      ],
+      "articles": [
+        {
+          "title": "OJK Pantau Ketat Langkah Perbaikan KrediFazz terhadap Permasalahan Tenaga Penagih - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeDc1NzQ0OEhBUUdQemZFNFQ1SnpfN2VvbmM0MjFUaUVuWGtuazQ2SHlBSVducjBacEROYk1oMElFRmJURHJwMlAxSHJCZ1dyb19RSm1xUHNqWmxXak91OTd2MjE5eVRRZzVVR0pDMU5KVzFoR0ZPOElUNHZ1UFlLWVo0bVNiaDltMGc0N29Xd3FrNUt4eHRyckxad1FwSUQwbmdKdXdLQzVQb2pMV1lqTUJDeF9KYlnSAbABQVVfeXFMTlVFQ1FiRU80NjRpckZzd0g5Rno1bXBHSkNULVVWcFNKVGR1LUdvV0R4dk10RkUtZ0RVdEFibUJYN0ZENUVRR0hVRU5wZ045Y1BPb1dUdmVRRzhsTGIxMkk4bXlrcEVRV3JuSXI3X0Fpd0FzSm5Jd2dXcXF0X1B2cVZoNjhfOTJ0ZlZ2cXZpc2NvX01pS01qZ25WY29GTmgzYlh6YzlWOGJuVDhDa0VVRUI?oc=5"
+        },
+        {
+          "title": "Kasus Debt Collector KrediFazz, OJK Masih Pantau Perbaikan SOP dan Penagihan - Katadata.co.id",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORC1BMmViMUM5MXJFWVFZbzNFcEo1MXBNMlZmaGc3X08zWDVKbGJNRUM1RVkxaDd0VTItT1QtNGo4Vlh5b1h6TXJtLVdyX0VXYVIyOGNndFZhNGIzR3J4US1IUTIyRFVLSlEwVF9qVWxacFBiSFdlLUdTWGdjdktjQ2t2V1ZPV2xYdjJCT2FUYUpxbzhOTk41c3p3bm9wOGJqY1BrZ2QzZU9RMXNYQUc4bHBHNUxHSm1MQy1NYWVzYzZUQVBmZGV30gHMAUFVX3lxTE0xeE13WFVORmNhQ2M4aHpiOXBPZUNmN0RqZnVMS3hOTjJIZ0NUQ213djR2WW5UallOWTI1UDRhN1dKNVJGd0RnYjJZWlo5ZlkwazREcDJvUlRHTklQQjUwSTExVmxnX1ZpQ2FtamdhV0lUdkZQWnU2R3FuNGN0d2dTS3FweFNYLWlNalJsQlJQdnFybjJ1dmR2azJ1cnFIcE1relF0NHhkZVZ5WmVIb29pcWJMNkZuMUVsOXdDd0RfNFdjZjdKSE5OV2F1eA?oc=5"
+        },
+        {
+          "title": "OJK Pantau Investigasi Internal KrediFazz di Kasus Debt Collector - Finansial - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUzJiNFRkLUQ2QkJZTERlUnVXN2ZXSkRqelQyQjNOdjc1Z2ZKQWxRQ29feml4YVd4OGxOTFJSdy1nWXMtS2YzaVhTZ01vdklDM2sxS3lqRDU5RUpJV3FiWFdrUjlmOUNma25KT0xMR0tvcXg5U2NlX1NWMENaWFNQTlpEQ0g2R3J2NExpUFM4THAzVFZYZzR3VWhHNHQ3Qm1oVU1BRWxPY3NQUTBjNjZ5RDJoOTNhM3lD?oc=5"
+        },
+        {
+          "title": "OJK Pantau Investigasi KrediFazz Terkait Pelanggaran Penagih Utang - CentralBatam",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB4X1otRUhrSkJ1WENhelVRczJqSlkyTHd3aUlIVzh4T0ZlZXV4Q0xYdWduUnlXbWN2MzB3b2E5b29nM0NJdUlBeEtVRlgwQWJzSkp6ZnZUV3BJZHhBUGZERFhzOTFKQWQzeTVubVp0Zm5zMzZ3WmVNTWV4R1dOQQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 4,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-1a596b5edc2d",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
+      "entities": [
+        "OJK",
+        "Satgas PASTI"
+      ],
+      "headline": "Waspada! Satgas PASTI OJK Basmi 951 Pinjol Ilegal di Semester I/2026 - Bisnis.com",
+      "headlineZh": "OJK取缔951家非法网贷",
+      "summaryZh": "OJK的PASTI工作组在2026上半年取缔951家非法网贷，并加强网红与催收监管。",
+      "rationale": "监管执法行动",
+      "independentSourceCount": 2,
+      "domains": [
+        "akurat.co",
+        "finansial.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "8b8dbae5b6b7b303",
+        "c6bbed380f28673c"
+      ],
+      "articles": [
+        {
+          "title": "Waspada! Satgas PASTI OJK Basmi 951 Pinjol Ilegal di Semester I/2026 - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPLUxpcTVTTXF6TEJna21wV1drS1JPb1Q1c3VpTVdyYlNCbmVqZG01RFJ2TExtQWQ3SThCc1E3cHNmVi1RMnA1TTUwcWVER1BFNWg0SUtzbDZwUWlkdGxDM3BVTk5VSGlPanpndTZrYjdFNVNvOUNEY1ZVSjFaNHUycTlTaFl5OTJqYXFxZi1VRUh1X1hwV1hPNEJkWXVZTVJidEFpUzBzbXZKUjFRNmtobkZodXRXVTh0cTRRYXFR?oc=5"
+        },
+        {
+          "title": "OJK Perketat Pengawasan Finfluencer hingga Penagihan, 951 Pinjol Ilegal Dihentikan - Akurat.co",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcllpWkc4SGNvYjlfMTR6akVCcmxoOHA2YmltT2JVZWhxSzFxOW5KdS1XRGVRa2NPSW1qZFBQSkNubmRHX1lOcUIzbmtzY19CZ2lRcDZTTENxUkQ5V2tNdjBnMjNRN3JWc0ZWQUwwSzlhU3ltdW05bGpySG5KTzA3dDQ1SmhUVkJPZWRFdWkwYmd0LTNneElJTWI0S3NtbV9qdzAwdE9NYWtNNnN0Z2drWmVQMWZBQQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    }
+  ],
   "lowEvidenceLeads": [
     {
-      "id": "llm-2f6b78ba4542",
+      "id": "llm-93dd968e231a",
+      "eventType": "consumer_harm",
+      "severity": 0.9,
+      "entities": [],
+      "headline": "Terlilit Pinjol, Karyawan SPPG di Tulungagung Nekat Gantung Diri - jatimnow.com",
+      "headlineZh": "图隆阿贡员工因网贷自杀",
+      "summaryZh": "图隆阿贡一名SPPG员工因深陷网贷上吊自杀，属致死消费者受害案件。",
+      "rationale": "致死案件，消费者受害",
+      "independentSourceCount": 1,
+      "domains": [
+        "jatimnow.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "052905b31d4b2b49"
+      ],
+      "articles": [
+        {
+          "title": "Terlilit Pinjol, Karyawan SPPG di Tulungagung Nekat Gantung Diri - jatimnow.com",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWjlQNU9aQ2N1X3JwbmxRMF85ZHVsMEhFRFJGN25NbkpuUGhlelhxSFdLeE9OMTFtMFRXREtVVUNvZDFJaG96NFpGaG9NV2NGRHo3ak1rRU5kTGpGMUJxRDA5dVFEX29CR3pSWWxJNW5QRURxYWQ2dEhCNFVwaG9jT0Z3UUlYUUZyOWlocHhYdXB6a0p6cnhrVzhESdIBoAFBVV95cUxQYS1RNlY1TVJXcngwRUtvUlZSTEphM214aW9ST0ZjTXpzVDJlMkd0MEQ4UEZFYkw0UUxKMXdINkoyZ3ZrakZEZ1FwNVFnc3pPMVR2R3BvZXpMX29hdE5MQTQwMzE0dVlhY3YwOWoyRWQzSGRkNlA4YXlXMU9fZkplazQwZnR1R2VNM2dEX2RLcjBDU2h5RkV4RFV6eVdkV2ct?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-ed066ac283ae",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "16 pinjol/pindar"
+        "OJK"
       ],
       "headline": "Ada 16 Pinjol dengan Kredit Macet (TWP90) Tinggi, di Atas 5% per Juli 2026 - Bisnis.com",
-      "headlineZh": "OJK披露16家网贷平台不良率超5%",
-      "summaryZh": "OJK公布截至2026年7月有16家线上借贷平台TWP90不良率超过5%，反映行业资产质量局部承压，值得留痕。",
-      "rationale": "监管披露具体平台风险指标，属资产质量事件",
+      "headlineZh": "16家网贷TWP90超5%",
+      "summaryZh": "OJK数据显示16家网贷平台TWP90不良率超5%，资产质量承压。",
+      "rationale": "资产质量数据披露",
       "independentSourceCount": 3,
       "domains": [
         "bloombergtechnoz.com",
@@ -61,44 +189,50 @@
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-37c25cc6fffa",
+      "id": "llm-86f6e852c7df",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
         "OJK"
       ],
       "headline": "Batal Batasi Akses Pinjol Masyarakat, OJK: Kebutuhan Masih Tinggi - jabarekspres.com",
-      "headlineZh": "OJK取消个人最多借3家网贷平台限制",
-      "summaryZh": "OJK宣布不再实施个人最多在3家线上借贷平台借款的融资上限规定，理由为民众需求仍高，属监管政策调整。",
-      "rationale": "监管机构正式取消具体限制措施，属监管行动",
-      "independentSourceCount": 10,
+      "headlineZh": "OJK取消三平台借款上限",
+      "summaryZh": "OJK取消对三个Pindar平台借款上限的限制，改为以还款能力为审批依据。",
+      "rationale": "监管政策调整，具体事件",
+      "independentSourceCount": 15,
       "domains": [
         "amp.suara.com",
-        "antaranews.com",
-        "bloombergtechnoz.com",
-        "cnbcindonesia.com",
+        "finance.detik.com",
         "id.headtopics.com",
-        "infobanknews.com"
+        "infobanknews.com",
+        "infomase.id",
+        "jabarekspres.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
         "a3b2f6d0e690ccea",
         "a7ee374adccbe979",
+        "c0f474f209e3f71a",
+        "8352b3b201419a0f",
+        "4af0a8b1828f7eee",
+        "025be09c432df6f0",
+        "9d11b9d09c436daa",
+        "41d24afdd823219b",
+        "3eee24bedb4f253b",
         "ab02a8e084b2b0e3",
-        "8e555016bc6f16be",
         "bf3e91193ae8a169",
+        "b5e3310839672b5f",
         "b0d45445f58d607e",
-        "9a5092d3b2e7085d",
-        "ac7434d5e84b4c76",
-        "be8d5fbec90531b8",
-        "2becb6169ba54971",
-        "e1afa7529dbc2b25"
+        "197b0d26713af98d",
+        "861a6e94d3161486"
       ],
       "articles": [
         {
@@ -110,181 +244,111 @@
           "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNi16dVBNaThoV0JfYU9tSGZfSVFsNlFaek14TzlxaWFJTVRIQWJlRnBfaG9yeGVDZVFxREtmQlZFSE9pZG9wLUI0bldPSzJtc0xfRDdnaXIzT2lFb3NqX2Z5RHFrWDRPZGh6ZmJfS2V2eGp6dmNiNFlwcWVfQ2JobnlyWFJ4elRFWXFrc3Q2MFZXeXc?oc=5"
         },
         {
-          "title": "OJK Hapus Batas Pinjaman Pindar, Masyarakat Tak Lagi Dibatasi di 3 Platform - Suara.com",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQU3hha2kybTF3OVptVEFLODh6QTJzYksyd1F4bE5hUE10Z3JwcFRFUDdSa0xGOW5vOFZrTkI4czFtRzNnV3o2cHJOUE5Rcm9qSjl1bW9UdUNNa3dPQ0p6ZlRKcTZLaFZqQ3dBRWd2QnpoUmNlQTNENlA2RVBMUDJ1NHpqc3RiMWdTTF81UmwxaXVhbFgxQU9uaVJuUFI3cXpOQTBkcWNNN3FkWjdIZmsyU29QaGpGR1EyZWZOdFJ30gG-AUFVX3lxTFBTeGFraTJtMXc5Wm1UQUs4OHpBMnNiSzJ3UXhsTmFQTXRncnBwVEVQN1JrTEY5bm84VmtOQjhzMW1HM2dXejZwck5QTlFyb2pKOXVtb1R1Q01rd09DSnpmVEpxNktoVmpDd0FFZ3ZCemhSY2VBM0Q2UDZFUExQMnU0empzdGIxZ1NMXzVSbDFpdWFsWDFBT25pUm5QUjdxek5BMGRxY003cWRaN0hmazJTb1BoakZHUTJlZk50Unc?oc=5"
+          "title": "OJK Batalkan Rencana Pembatasan Pinjaman Maksimal di 3 Pinjol, Masyarakat Kini Bebas Ngutang - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZHdfOVk2V3dkWmZWV09GSkVrTnBvbGd4cHB4OEQ0SUtXY0tfU3Z5bTlFRmg2VDkxTHNQSGZpYnhrTWVwUlE4M1dPcG0wWkxDZk5iM0lzTWRtQnktOTFkY201bFVWcldtMnNIYk5wc1kyRHo0NDZhTkhqcmlSNXdVWHZwazVzdmRZal9nTl84b3g0dGFMMmRzN0xmVGtfZWNHWnFzblpFTHJYTlgtVVFMWWNOcVM0VGltUnZRUGJHX2NPUDFGNHlseVFocHZjQdIBzgFBVV95cUxNZHdfOVk2V3dkWmZWV09GSkVrTnBvbGd4cHB4OEQ0SUtXY0tfU3Z5bTlFRmg2VDkxTHNQSGZpYnhrTWVwUlE4M1dPcG0wWkxDZk5iM0lzTWRtQnktOTFkY201bFVWcldtMnNIYk5wc1kyRHo0NDZhTkhqcmlSNXdVWHZwazVzdmRZal9nTl84b3g0dGFMMmRzN0xmVGtfZWNHWnFzblpFTHJYTlgtVVFMWWNOcVM0VGltUnZRUGJHX2NPUDFGNHlseVFocHZjQQ?oc=5"
         },
         {
-          "title": "OJK Hapus Batas Pinjaman di 3 Pindar, Ini Ketentutan Barunya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm9zeHhqcVlzWmJ5V0xsLVRpenEzaG5HU3BTd3phZ0ZoVWNHSWZWWjlQVmYwTG9heHFJWEVOMlpaVjBqTU9odERqQkV1dnd0bmtpTGtJWWdVM0R4WlI4RVJSU215UTdMQzY5WE1UUk52cnpZUmtacTI0RUl2LWpZWnpJSW9pdGQ3OGw0dw?oc=5"
+          "title": "OJK Batalkan Rencana Pembatasan Pinjaman di 3 Pindar - MetroTVNews.com",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNU0lyS0ljZFVUOTQ1WjRUMEVSQ2hNc2xCNEZEWkl4cXlvU2VPMW05aGZBOU9PZTVWOS1vTC1vSVZMb01XVXoyd0JHd1VxSC1lM1ZTZW1veUdIdU9IbDZCWW05SDVGMlRzU0xHY1BsQlNqX2tvRXVlT3hwZk5CZnVLU0pBVWk5ME9hRmU3QkNUSWdNQVZMUkVyQVV3?oc=5"
         },
         {
-          "title": "OJK Hapus Batas Pinjaman di 3 Pindar, Ini Ketentutan Barunya - infobanknews.com",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm9zeHhqcVlzWmJ5V0xsLVRpenEzaG5HU3BTd3phZ0ZoVWNHSWZWWjlQVmYwTG9heHFJWEVOMlpaVjBqTU9odERqQkV1dnd0bmtpTGtJWWdVM0R4WlI4RVJSU215UTdMQzY5WE1UUk52cnpZUmtacTI0RUl2LWpZWnpJSW9pdGQ3OGw0dw?oc=5"
+          "title": "OJK Cabut Batas Tiga Platform Pindar, Akses Pendanaan Masyarakat Kini Lebih Fleksibel - Info Mase - infomase.id",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPZGJYRlM5cG1vX1JpbXd6QUJ2UkgzQjN4NjRnUEd4b1FfQVcyV1Y2X2oxVDd2aFVaY3lSYW5MUmZTZ3ljVUJLNkpjNjFXS3U4dWJXTG0zNWlza1BvejVqaEV0czNacXN4Rms0ZG92NGxlTnNFaGZuZHJTR1FKNmpxazRReDJydUt0X1BhVXhieWNpc2kzZENBa1B2REVPSzV3aWxwSXFUT0NkbGdtSmwxZTlxUXA2M1dUM1pXekJqcDhlQ3NZ0gHKAUFVX3lxTFBCazBvaklHT3huMnE2OFFDWlJvb1lERnE0bWFzZXdDcFBDX3dPUk81c2xhV2RXaFZpd2lPaDBrR2w1bnRTUy1oU19tSkJjXzBQbWRmZmVHTXp0RGNxS0lEOGZfSUxUQmJUdnYxeGJVSFBvc2lvVndZRmZESkQxOGR3bmQtVndhcVRHQnFRQ0VZYzZ1dGxmR25QVzlyQ3hiZ2IyckVCQmxWM2wwcTU4WWxNWmVQbU5ubnVIcGxHRXJ5MzZPQTVIaWVIZ0E?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 11,
+      "bodyBackedSourceCount": 15,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-030d703816c2",
+      "id": "llm-e395f98e21b6",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
         "OJK"
       ],
-      "headline": "Kredit Macet Pindar Didominasi Pria Gen Z, Bos OJK Buka Suara - CNBC Indonesia",
-      "headlineZh": "OJK称网贷不良以年轻男性为主",
-      "summaryZh": "OJK披露线上借贷不良贷款主要由19-34岁年轻男性群体主导，反映特定客群信用风险集中，值得留痕。",
-      "rationale": "监管披露具体客群信用风险数据，属资产质量事件",
+      "headline": "Kredit Bermasalah Pinjaman Daring Dominasi Gen Z, OJK Dorong Peningkatan Credit Scoring - Head Topics",
+      "headlineZh": "网贷不良率4.32%",
+      "summaryZh": "OJK数据显示网贷不良率4.32%，Z世代男性为主，推动信用评分提升。",
+      "rationale": "资产质量数据披露",
       "independentSourceCount": 3,
       "domains": [
-        "aktual.com",
-        "bloombergtechnoz.com",
-        "cnbcindonesia.com"
+        "cnbcindonesia.com",
+        "id.headtopics.com",
+        "keuangan.kontan.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "ba281f36d1ede4bc",
         "23552c7eff88784c",
-        "fd06a4e6a4958eff",
-        "5f52be620848494b"
+        "61f278518b0adf40"
       ],
       "articles": [
+        {
+          "title": "Kredit Bermasalah Pinjaman Daring Dominasi Gen Z, OJK Dorong Peningkatan Credit Scoring - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRF8zMFdLQUJTZzc1WmFNY0ptVjdBYlR5RmZENlJubHlzQ2dvN1FxUzdlWnRkNXN6bjRHSjdPOTRObXJQY2RXWDZZcTlkS3ZGZ3cxQmcyOGxIV0hJbC1WREYwR0RQRjBuLTZCQ3FvT3NEcEpNMkRyeWg4Sks0cVMtYmFRZDF2eF9ETFpYTDZrY0xJNHhnajhz?oc=5"
+        },
         {
           "title": "Kredit Macet Pindar Didominasi Pria Gen Z, Bos OJK Buka Suara - CNBC Indonesia",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZTdzUFI2dV8zTHhOMVFYZXFkWU5kOGUyN29LS2E1MDAzVmNhbFRqZ2VicXZQTVctZTBkR0pHNkozWnhLUlZiT0lBSGlCdV9WdGE4bTJjZHJTSF9HUDU5RjlORzdKUnhwbC1mSWNaSFowa0I4U3JKMWsxS1M0Z1JfRVNSWkk4bnZKdGZUakREQXlDVnYwNUVHckFMQ29hM0FzQWRrYkI2MUI5OFFidUV0aXZDVEJaZkVGTXRYd2tUTdIBxAFBVV95cUxPWGtJb1RaMG1adVNWSEFjc3lSZU1Ya1o3TVl4OEJPVjhGSjJPMTRDbm14bm5sYXR6LWxsR250VjBLRjRDRkFSRDhILWdNY3lKb0xJb3VyazVnbXYxRW1VTzRmcW03a0ZHYUo2NzJiOUZYbkw0LUg3VFlRbXhjZHNRcUkyZjJPTng0em1BQ2RYcEptR1QxRzE1cGdYN1ZQWktaRlVIOUNEMTJnTEhxRzJVX2NXNC04VDVOaENRa2lqazR2aTZ1?oc=5"
         },
         {
-          "title": "Muda-mudi 19-34 Tahun Dominasi Kredit Macet Pinjaman Online - Finansial - Bloomberg Technoz",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOR2piM1FvdTVldFk0RFF3bHJFeHRmTlllbmI2UkZwUzlKdm5ZQWYzU3RuWlpucDVWbFNEb284eUE0cHV1WUZybDZjUzQ0N3FNNXI1LWtieERlTzNUb3BmRjZMNDE0N0dnUkJGbWs5MFRXRGdsOHRZSGJLeFRldGYxYldha0I5WVJTR2FGeUZ0YXVSVlBod0d2V1ZqVnJ0V21oZHUyRWdBdGpaTTNSOXI4MA?oc=5"
-        },
-        {
-          "title": "OJK Ungkap Kredit Macet Pinjol Didominasi Anak Muda dan Laki-laki - Aktual.com",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVTJUaWpSTGNfbE13SGs3MnJKMDYxQ2VIQVNyRW1VSFhPazljdjhpemh1S1haeWlSc0wzaHU5VGpEOHY4ejFIX1hrRW1RUnlDUzlmdmpxcmN1RGFUXzNuTmd2VHJrMVBVN2hRelJjN2ZuMUdBdldmY29SdmljQW11cHUwMzRvYjBkNmhsbmpB?oc=5"
+          "title": "Risiko Kredit Macet Pinjol 4,32% per Juli 2026, Usia 19-34 Tahun Mendominasi - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeXFteW4yRjI4SE5hemtLR0FiZi13bjVRYmxFa0lNNWJPY0ppd1MzOXB0S2V2NXdubld5bGYtNmJfLTBTZnlUOUxFRGU1aUQ1SHoyeW1UNVJ3RDJhWXV2dE9la1lUUDU2SGluU2twZkZCWi1IR3p5elEtc0d6a0dNczY2dFAxcHN0cFgtbVlqZzBGaW9ULTVyMzRBc05vbjVCd0ZlRHFLU2l0RzRk0gGmAUFVX3lxTE55eURPc2RZMlppRi1JMjM5Q01qQjFPQ2tGQXJLa3N6TWx6eFBwZWR2WURQa0dpdnZRdVEyWFo4VnVuSnFnYkF5Z0tOV0s2ZS15TmM0Yi0xOWVEWXM2d0J6UklONHhDU3ppbGNLUTZveWNRRkJKa0EtbHljamNnOTE3aE5JeVg0NlR4RlpDVWxjXzB1LTVyZkRoOHVjaEh0d0RiX3Z4UHc?oc=5"
         }
       ],
       "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-45446410b650",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-be1374524cb9",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
       "entities": [
-        "OJK",
-        "pindar行业"
+        "OJK"
       ],
-      "headline": "Masyarakat Makin Doyan Ngutang, Pembiayaan Pindar Tembus Rp105,63 Triliun hingga Juli 2026 - Media Asuransi News",
-      "headlineZh": "网贷行业融资规模达105.63万亿印尼盾",
-      "summaryZh": "截至2026年7月线上借贷行业累计融资105.63万亿印尼盾，在信用风险上升背景下仍保持增长，属行业常规数据。",
-      "rationale": "行业规模常规统计数据披露",
-      "independentSourceCount": 2,
+      "headline": "OJK Jatuhkan Sanksi kepada 81 Pelaku Industri Pindar dan Pembiayaan - Media Asuransi News",
+      "headlineZh": "OJK处罚81家Pindar机构",
+      "summaryZh": "OJK对81家Pindar及融资行业机构实施处罚，属监管执法行动。",
+      "rationale": "监管处罚行动",
+      "independentSourceCount": 1,
       "domains": [
-        "fortuneidn.com",
         "mediaasuransinews.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "6927f0d80dc5a4b8",
-        "c97147c824d058bc"
+        "aa8da0a9b1d67f06"
       ],
       "articles": [
         {
-          "title": "Masyarakat Makin Doyan Ngutang, Pembiayaan Pindar Tembus Rp105,63 Triliun hingga Juli 2026 - Media Asuransi News",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORjRnaWJ0blJqT1B4aEp6NVRZNjB4Y2U5djU5Z1l3S19raFc0Z0x4Yk1Qc0FueDBpcnFxdDE3UURHbW5sb21OcXVzaVIxSzFucF9BM1M5YWZZcmtpTkN6d2RDbG9qM3hWa0E0TENkSWRQRDN5dU5WZ25mS3NaVlR5c1R6WUltWGY1em5PS3Q3azJjNGFqMFVMVXR4NzgxZUhqSGo5TS1mLVZwemRzbG1DN2taR3BGNi1lS0REZVlFQl9EVkVUbEhVSktuUlo?oc=5"
-        },
-        {
-          "title": "Pembiayaan Pinjol Capai Rp105,63 Triliun di Tengah Kenaikan Risiko Kredit Macet - FORTUNE Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQd2dGSzJPZWJ2cGFBSVNOU2lwZDYzX19OWkVyWl9kNzZnZGpUVTdZVU9VR01HNFVPd2NkdjBIQWVFWHY1LVNjR3FTdXh6dWduTzJCbUZWTjl6bnczRTVZRkZ0di1Za3VBb0RoUEl0NENoZ1RZMWJ0U2hFUzdzQkpENkRGTGxpTS1NM3NEM3N6NjI2VXdtaWlsckVaeTVnSm5hRDJGTlR4UzZtUDNDYkZDUFQwOUg5ekFBd2FLNWsyWFpuZzktdWVCMnp30gHPAUFVX3lxTE92VU8xajdmTTF6RC02OGxCMFhEQTZJS0hBLS1Ka3dLN3BvdHhwbEdnblR1Ykc2Sll1YUNFVHZYb1ZGeF8yZ2VWNkc5cTE4V3EwR2YwTUVIYzZ5UGlLbHh6RmlYX0ZEbkFlbzUzT3FLbTVldXRmRlRxMGZnZnF1R1VuSU14OTBUQlZNOTNxTk9PSTB6b1hoWnhlNmNVVVNHOTFnTXZFUDU5VFk4SFh6TkxMdzBKdG5faVZySlFVcHVkbXhwM09DWERQOHdZSGVzUQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-5bd70b95e54c",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "KrediFazz"
-      ],
-      "headline": "OJK Pantau Investigasi Internal KrediFazz di Kasus Debt Collector - Finansial - Bloomberg Technoz",
-      "headlineZh": "OJK关注KrediFazz催收事件内部调查",
-      "summaryZh": "OJK表示正在监控KrediFazz针对其催收人员（debt collector）相关案件的内部调查，属监管介入消费者投诉事件。",
-      "rationale": "监管机构介入具体平台催收事件调查",
-      "independentSourceCount": 1,
-      "domains": [
-        "bloombergtechnoz.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8d9f1c1d4de1a59d"
-      ],
-      "articles": [
-        {
-          "title": "OJK Pantau Investigasi Internal KrediFazz di Kasus Debt Collector - Finansial - Bloomberg Technoz",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUzJiNFRkLUQ2QkJZTERlUnVXN2ZXSkRqelQyQjNOdjc1Z2ZKQWxRQ29feml4YVd4OGxOTFJSdy1nWXMtS2YzaVhTZ01vdklDM2sxS3lqRDU5RUpJV3FiWFdrUjlmOUNma25KT0xMR0tvcXg5U2NlX1NWMENaWFNQTlpEQ0g2R3J2NExpUFM4THAzVFZYZzR3VWhHNHQ3Qm1oVU1BRWxPY3NQUTBjNjZ5RDJoOTNhM3lD?oc=5"
+          "title": "OJK Jatuhkan Sanksi kepada 81 Pelaku Industri Pindar dan Pembiayaan - Media Asuransi News",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSEVRd0JDVjVWSzlXellDVHBmbGQteE94U3FnRFJTTTlrQ0hULW5rRlZuWmxuZHphV01WVXlEOUNMMEFjVDlWVWtHZ1NUR3VfZngzTTNMSFNVa3had3ZONjNQdGg3VDg2WjNfZVZVdnl2THVqZ1RBRkpfY1BRbEk3QmtER2s5YVNBekVYWDlYWEN6RkhsdUNEekxuVmUtLUs2TlBrTFJXWEFpeXo3a0J6dg?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-97304196c8cd",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Bengkulu省政府"
-      ],
-      "headline": "15 ASN Pemprov Bengkulu Ajukan Cerai Diduga Perkara Ekonomi hingga Pinjol - detikcom",
-      "headlineZh": "15名公务员因经济及网贷问题申请离婚",
-      "summaryZh": "Bengkulu省15名公务员申请离婚，疑与经济和线上借贷问题相关，反映网贷对家庭稳定的局部社会影响。",
-      "rationale": "具体社会事件，涉及网贷引发的家庭问题",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "06ff783e4fe47d2e"
-      ],
-      "articles": [
-        {
-          "title": "15 ASN Pemprov Bengkulu Ajukan Cerai Diduga Perkara Ekonomi hingga Pinjol - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcW5XMnlzbFZ3a3RmbWJNTWJBYjlhd3BCblNQWlZMX2w2dUgwdnI5RUljSkRwNmhKYzZoRUJSYVA2cUNHVGtqcjhhOWprOW5GdF82ZTd3U0UtVThOa0NPRDItbk5PQTE5dExqRF8wdjFzR3Zhdjd1WU1yOEFsMTBpV1RQQ3hvdUF2TlY3LTl2UmFWNDlldlBHUGFHTTd4cW9NVnIxNWFodW9xSmNaX3VybVI5QldvZ2pSVS0yT1paVdIBxAFBVV95cUxNNldqMVhMT1NfdWk1akpFbHZCMjc0NWY3X1JSRndIa1pqcElGN0F6ZGlhTjNBRWFzdDhCR0s0Z0hVTVlkQXBKT0pnTjQwM3VkVVV1WW51RnlXZGNkYnZZOWdFdGN4dFRuUWxtS1VKOFhza056TnY0NmstamlwR1ZKZ0tXNlFOUFVudS1tWVF4aGlSYmRsSTlOLWdyQ0MyN1JkSGMtbGtHaWdGZ21OdU9Tck8wY3Zqcl9LVjBFbTRsME40UVJG?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -292,28 +356,157 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 29,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 7,
+    "candidateCount": 40,
+    "eventGroupCount": 7,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 29
+      "ok": 40
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-2f6b78ba4542",
+      "id": "llm-0454b4914929",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
+      "entities": [
+        "KrediFazz",
+        "OJK"
+      ],
+      "headline": "OJK Pantau Ketat Langkah Perbaikan KrediFazz terhadap Permasalahan Tenaga Penagih - kontan.co.id",
+      "headlineZh": "OJK紧盯KrediFazz催收整改",
+      "summaryZh": "KrediFazz催收员违规事件后，OJK持续监督其SOP与催收整改，属监管介入。",
+      "rationale": "监管介入具体机构整改",
+      "independentSourceCount": 4,
+      "domains": [
+        "bloombergtechnoz.com",
+        "centralbatam.co.id",
+        "katadata.co.id",
+        "keuangan.kontan.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "22db5a48d506ef43",
+        "026527c3093b7712",
+        "8d9f1c1d4de1a59d",
+        "0ea718d72a91c609"
+      ],
+      "articles": [
+        {
+          "title": "OJK Pantau Ketat Langkah Perbaikan KrediFazz terhadap Permasalahan Tenaga Penagih - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeDc1NzQ0OEhBUUdQemZFNFQ1SnpfN2VvbmM0MjFUaUVuWGtuazQ2SHlBSVducjBacEROYk1oMElFRmJURHJwMlAxSHJCZ1dyb19RSm1xUHNqWmxXak91OTd2MjE5eVRRZzVVR0pDMU5KVzFoR0ZPOElUNHZ1UFlLWVo0bVNiaDltMGc0N29Xd3FrNUt4eHRyckxad1FwSUQwbmdKdXdLQzVQb2pMV1lqTUJDeF9KYlnSAbABQVVfeXFMTlVFQ1FiRU80NjRpckZzd0g5Rno1bXBHSkNULVVWcFNKVGR1LUdvV0R4dk10RkUtZ0RVdEFibUJYN0ZENUVRR0hVRU5wZ045Y1BPb1dUdmVRRzhsTGIxMkk4bXlrcEVRV3JuSXI3X0Fpd0FzSm5Jd2dXcXF0X1B2cVZoNjhfOTJ0ZlZ2cXZpc2NvX01pS01qZ25WY29GTmgzYlh6YzlWOGJuVDhDa0VVRUI?oc=5"
+        },
+        {
+          "title": "Kasus Debt Collector KrediFazz, OJK Masih Pantau Perbaikan SOP dan Penagihan - Katadata.co.id",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORC1BMmViMUM5MXJFWVFZbzNFcEo1MXBNMlZmaGc3X08zWDVKbGJNRUM1RVkxaDd0VTItT1QtNGo4Vlh5b1h6TXJtLVdyX0VXYVIyOGNndFZhNGIzR3J4US1IUTIyRFVLSlEwVF9qVWxacFBiSFdlLUdTWGdjdktjQ2t2V1ZPV2xYdjJCT2FUYUpxbzhOTk41c3p3bm9wOGJqY1BrZ2QzZU9RMXNYQUc4bHBHNUxHSm1MQy1NYWVzYzZUQVBmZGV30gHMAUFVX3lxTE0xeE13WFVORmNhQ2M4aHpiOXBPZUNmN0RqZnVMS3hOTjJIZ0NUQ213djR2WW5UallOWTI1UDRhN1dKNVJGd0RnYjJZWlo5ZlkwazREcDJvUlRHTklQQjUwSTExVmxnX1ZpQ2FtamdhV0lUdkZQWnU2R3FuNGN0d2dTS3FweFNYLWlNalJsQlJQdnFybjJ1dmR2azJ1cnFIcE1relF0NHhkZVZ5WmVIb29pcWJMNkZuMUVsOXdDd0RfNFdjZjdKSE5OV2F1eA?oc=5"
+        },
+        {
+          "title": "OJK Pantau Investigasi Internal KrediFazz di Kasus Debt Collector - Finansial - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUzJiNFRkLUQ2QkJZTERlUnVXN2ZXSkRqelQyQjNOdjc1Z2ZKQWxRQ29feml4YVd4OGxOTFJSdy1nWXMtS2YzaVhTZ01vdklDM2sxS3lqRDU5RUpJV3FiWFdrUjlmOUNma25KT0xMR0tvcXg5U2NlX1NWMENaWFNQTlpEQ0g2R3J2NExpUFM4THAzVFZYZzR3VWhHNHQ3Qm1oVU1BRWxPY3NQUTBjNjZ5RDJoOTNhM3lD?oc=5"
+        },
+        {
+          "title": "OJK Pantau Investigasi KrediFazz Terkait Pelanggaran Penagih Utang - CentralBatam",
+          "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFB4X1otRUhrSkJ1WENhelVRczJqSlkyTHd3aUlIVzh4T0ZlZXV4Q0xYdWduUnlXbWN2MzB3b2E5b29nM0NJdUlBeEtVRlgwQWJzSkp6ZnZUV3BJZHhBUGZERFhzOTFKQWQzeTVubVp0Zm5zMzZ3WmVNTWV4R1dOQQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 4,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-93dd968e231a",
+      "eventType": "consumer_harm",
+      "severity": 0.9,
+      "entities": [],
+      "headline": "Terlilit Pinjol, Karyawan SPPG di Tulungagung Nekat Gantung Diri - jatimnow.com",
+      "headlineZh": "图隆阿贡员工因网贷自杀",
+      "summaryZh": "图隆阿贡一名SPPG员工因深陷网贷上吊自杀，属致死消费者受害案件。",
+      "rationale": "致死案件，消费者受害",
+      "independentSourceCount": 1,
+      "domains": [
+        "jatimnow.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "052905b31d4b2b49"
+      ],
+      "articles": [
+        {
+          "title": "Terlilit Pinjol, Karyawan SPPG di Tulungagung Nekat Gantung Diri - jatimnow.com",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQWjlQNU9aQ2N1X3JwbmxRMF85ZHVsMEhFRFJGN25NbkpuUGhlelhxSFdLeE9OMTFtMFRXREtVVUNvZDFJaG96NFpGaG9NV2NGRHo3ak1rRU5kTGpGMUJxRDA5dVFEX29CR3pSWWxJNW5QRURxYWQ2dEhCNFVwaG9jT0Z3UUlYUUZyOWlocHhYdXB6a0p6cnhrVzhESdIBoAFBVV95cUxQYS1RNlY1TVJXcngwRUtvUlZSTEphM214aW9ST0ZjTXpzVDJlMkd0MEQ4UEZFYkw0UUxKMXdINkoyZ3ZrakZEZ1FwNVFnc3pPMVR2R3BvZXpMX29hdE5MQTQwMzE0dVlhY3YwOWoyRWQzSGRkNlA4YXlXMU9fZkplazQwZnR1R2VNM2dEX2RLcjBDU2h5RkV4RFV6eVdkV2ct?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-1a596b5edc2d",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
+      "entities": [
+        "OJK",
+        "Satgas PASTI"
+      ],
+      "headline": "Waspada! Satgas PASTI OJK Basmi 951 Pinjol Ilegal di Semester I/2026 - Bisnis.com",
+      "headlineZh": "OJK取缔951家非法网贷",
+      "summaryZh": "OJK的PASTI工作组在2026上半年取缔951家非法网贷，并加强网红与催收监管。",
+      "rationale": "监管执法行动",
+      "independentSourceCount": 2,
+      "domains": [
+        "akurat.co",
+        "finansial.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "8b8dbae5b6b7b303",
+        "c6bbed380f28673c"
+      ],
+      "articles": [
+        {
+          "title": "Waspada! Satgas PASTI OJK Basmi 951 Pinjol Ilegal di Semester I/2026 - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPLUxpcTVTTXF6TEJna21wV1drS1JPb1Q1c3VpTVdyYlNCbmVqZG01RFJ2TExtQWQ3SThCc1E3cHNmVi1RMnA1TTUwcWVER1BFNWg0SUtzbDZwUWlkdGxDM3BVTk5VSGlPanpndTZrYjdFNVNvOUNEY1ZVSjFaNHUycTlTaFl5OTJqYXFxZi1VRUh1X1hwV1hPNEJkWXVZTVJidEFpUzBzbXZKUjFRNmtobkZodXRXVTh0cTRRYXFR?oc=5"
+        },
+        {
+          "title": "OJK Perketat Pengawasan Finfluencer hingga Penagihan, 951 Pinjol Ilegal Dihentikan - Akurat.co",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcllpWkc4SGNvYjlfMTR6akVCcmxoOHA2YmltT2JVZWhxSzFxOW5KdS1XRGVRa2NPSW1qZFBQSkNubmRHX1lOcUIzbmtzY19CZ2lRcDZTTENxUkQ5V2tNdjBnMjNRN3JWc0ZWQUwwSzlhU3ltdW05bGpySG5KTzA3dDQ1SmhUVkJPZWRFdWkwYmd0LTNneElJTWI0S3NtbV9qdzAwdE9NYWtNNnN0Z2drWmVQMWZBQQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-ed066ac283ae",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "16 pinjol/pindar"
+        "OJK"
       ],
       "headline": "Ada 16 Pinjol dengan Kredit Macet (TWP90) Tinggi, di Atas 5% per Juli 2026 - Bisnis.com",
-      "headlineZh": "OJK披露16家网贷平台不良率超5%",
-      "summaryZh": "OJK公布截至2026年7月有16家线上借贷平台TWP90不良率超过5%，反映行业资产质量局部承压，值得留痕。",
-      "rationale": "监管披露具体平台风险指标，属资产质量事件",
+      "headlineZh": "16家网贷TWP90超5%",
+      "summaryZh": "OJK数据显示16家网贷平台TWP90不良率超5%，资产质量承压。",
+      "rationale": "资产质量数据披露",
       "independentSourceCount": 3,
       "domains": [
         "bloombergtechnoz.com",
@@ -344,44 +537,50 @@
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-37c25cc6fffa",
+      "id": "llm-86f6e852c7df",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
         "OJK"
       ],
       "headline": "Batal Batasi Akses Pinjol Masyarakat, OJK: Kebutuhan Masih Tinggi - jabarekspres.com",
-      "headlineZh": "OJK取消个人最多借3家网贷平台限制",
-      "summaryZh": "OJK宣布不再实施个人最多在3家线上借贷平台借款的融资上限规定，理由为民众需求仍高，属监管政策调整。",
-      "rationale": "监管机构正式取消具体限制措施，属监管行动",
-      "independentSourceCount": 10,
+      "headlineZh": "OJK取消三平台借款上限",
+      "summaryZh": "OJK取消对三个Pindar平台借款上限的限制，改为以还款能力为审批依据。",
+      "rationale": "监管政策调整，具体事件",
+      "independentSourceCount": 15,
       "domains": [
         "amp.suara.com",
-        "antaranews.com",
-        "bloombergtechnoz.com",
-        "cnbcindonesia.com",
+        "finance.detik.com",
         "id.headtopics.com",
-        "infobanknews.com"
+        "infobanknews.com",
+        "infomase.id",
+        "jabarekspres.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
         "a3b2f6d0e690ccea",
         "a7ee374adccbe979",
+        "c0f474f209e3f71a",
+        "8352b3b201419a0f",
+        "4af0a8b1828f7eee",
+        "025be09c432df6f0",
+        "9d11b9d09c436daa",
+        "41d24afdd823219b",
+        "3eee24bedb4f253b",
         "ab02a8e084b2b0e3",
-        "8e555016bc6f16be",
         "bf3e91193ae8a169",
+        "b5e3310839672b5f",
         "b0d45445f58d607e",
-        "9a5092d3b2e7085d",
-        "ac7434d5e84b4c76",
-        "be8d5fbec90531b8",
-        "2becb6169ba54971",
-        "e1afa7529dbc2b25"
+        "197b0d26713af98d",
+        "861a6e94d3161486"
       ],
       "articles": [
         {
@@ -393,181 +592,111 @@
           "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNi16dVBNaThoV0JfYU9tSGZfSVFsNlFaek14TzlxaWFJTVRIQWJlRnBfaG9yeGVDZVFxREtmQlZFSE9pZG9wLUI0bldPSzJtc0xfRDdnaXIzT2lFb3NqX2Z5RHFrWDRPZGh6ZmJfS2V2eGp6dmNiNFlwcWVfQ2JobnlyWFJ4elRFWXFrc3Q2MFZXeXc?oc=5"
         },
         {
-          "title": "OJK Hapus Batas Pinjaman Pindar, Masyarakat Tak Lagi Dibatasi di 3 Platform - Suara.com",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQU3hha2kybTF3OVptVEFLODh6QTJzYksyd1F4bE5hUE10Z3JwcFRFUDdSa0xGOW5vOFZrTkI4czFtRzNnV3o2cHJOUE5Rcm9qSjl1bW9UdUNNa3dPQ0p6ZlRKcTZLaFZqQ3dBRWd2QnpoUmNlQTNENlA2RVBMUDJ1NHpqc3RiMWdTTF81UmwxaXVhbFgxQU9uaVJuUFI3cXpOQTBkcWNNN3FkWjdIZmsyU29QaGpGR1EyZWZOdFJ30gG-AUFVX3lxTFBTeGFraTJtMXc5Wm1UQUs4OHpBMnNiSzJ3UXhsTmFQTXRncnBwVEVQN1JrTEY5bm84VmtOQjhzMW1HM2dXejZwck5QTlFyb2pKOXVtb1R1Q01rd09DSnpmVEpxNktoVmpDd0FFZ3ZCemhSY2VBM0Q2UDZFUExQMnU0empzdGIxZ1NMXzVSbDFpdWFsWDFBT25pUm5QUjdxek5BMGRxY003cWRaN0hmazJTb1BoakZHUTJlZk50Unc?oc=5"
+          "title": "OJK Batalkan Rencana Pembatasan Pinjaman Maksimal di 3 Pinjol, Masyarakat Kini Bebas Ngutang - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZHdfOVk2V3dkWmZWV09GSkVrTnBvbGd4cHB4OEQ0SUtXY0tfU3Z5bTlFRmg2VDkxTHNQSGZpYnhrTWVwUlE4M1dPcG0wWkxDZk5iM0lzTWRtQnktOTFkY201bFVWcldtMnNIYk5wc1kyRHo0NDZhTkhqcmlSNXdVWHZwazVzdmRZal9nTl84b3g0dGFMMmRzN0xmVGtfZWNHWnFzblpFTHJYTlgtVVFMWWNOcVM0VGltUnZRUGJHX2NPUDFGNHlseVFocHZjQdIBzgFBVV95cUxNZHdfOVk2V3dkWmZWV09GSkVrTnBvbGd4cHB4OEQ0SUtXY0tfU3Z5bTlFRmg2VDkxTHNQSGZpYnhrTWVwUlE4M1dPcG0wWkxDZk5iM0lzTWRtQnktOTFkY201bFVWcldtMnNIYk5wc1kyRHo0NDZhTkhqcmlSNXdVWHZwazVzdmRZal9nTl84b3g0dGFMMmRzN0xmVGtfZWNHWnFzblpFTHJYTlgtVVFMWWNOcVM0VGltUnZRUGJHX2NPUDFGNHlseVFocHZjQQ?oc=5"
         },
         {
-          "title": "OJK Hapus Batas Pinjaman di 3 Pindar, Ini Ketentutan Barunya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm9zeHhqcVlzWmJ5V0xsLVRpenEzaG5HU3BTd3phZ0ZoVWNHSWZWWjlQVmYwTG9heHFJWEVOMlpaVjBqTU9odERqQkV1dnd0bmtpTGtJWWdVM0R4WlI4RVJSU215UTdMQzY5WE1UUk52cnpZUmtacTI0RUl2LWpZWnpJSW9pdGQ3OGw0dw?oc=5"
+          "title": "OJK Batalkan Rencana Pembatasan Pinjaman di 3 Pindar - MetroTVNews.com",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNU0lyS0ljZFVUOTQ1WjRUMEVSQ2hNc2xCNEZEWkl4cXlvU2VPMW05aGZBOU9PZTVWOS1vTC1vSVZMb01XVXoyd0JHd1VxSC1lM1ZTZW1veUdIdU9IbDZCWW05SDVGMlRzU0xHY1BsQlNqX2tvRXVlT3hwZk5CZnVLU0pBVWk5ME9hRmU3QkNUSWdNQVZMUkVyQVV3?oc=5"
         },
         {
-          "title": "OJK Hapus Batas Pinjaman di 3 Pindar, Ini Ketentutan Barunya - infobanknews.com",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQMm9zeHhqcVlzWmJ5V0xsLVRpenEzaG5HU3BTd3phZ0ZoVWNHSWZWWjlQVmYwTG9heHFJWEVOMlpaVjBqTU9odERqQkV1dnd0bmtpTGtJWWdVM0R4WlI4RVJSU215UTdMQzY5WE1UUk52cnpZUmtacTI0RUl2LWpZWnpJSW9pdGQ3OGw0dw?oc=5"
+          "title": "OJK Cabut Batas Tiga Platform Pindar, Akses Pendanaan Masyarakat Kini Lebih Fleksibel - Info Mase - infomase.id",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPZGJYRlM5cG1vX1JpbXd6QUJ2UkgzQjN4NjRnUEd4b1FfQVcyV1Y2X2oxVDd2aFVaY3lSYW5MUmZTZ3ljVUJLNkpjNjFXS3U4dWJXTG0zNWlza1BvejVqaEV0czNacXN4Rms0ZG92NGxlTnNFaGZuZHJTR1FKNmpxazRReDJydUt0X1BhVXhieWNpc2kzZENBa1B2REVPSzV3aWxwSXFUT0NkbGdtSmwxZTlxUXA2M1dUM1pXekJqcDhlQ3NZ0gHKAUFVX3lxTFBCazBvaklHT3huMnE2OFFDWlJvb1lERnE0bWFzZXdDcFBDX3dPUk81c2xhV2RXaFZpd2lPaDBrR2w1bnRTUy1oU19tSkJjXzBQbWRmZmVHTXp0RGNxS0lEOGZfSUxUQmJUdnYxeGJVSFBvc2lvVndZRmZESkQxOGR3bmQtVndhcVRHQnFRQ0VZYzZ1dGxmR25QVzlyQ3hiZ2IyckVCQmxWM2wwcTU4WWxNWmVQbU5ubnVIcGxHRXJ5MzZPQTVIaWVIZ0E?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 11,
+      "bodyBackedSourceCount": 15,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-030d703816c2",
+      "id": "llm-e395f98e21b6",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
         "OJK"
       ],
-      "headline": "Kredit Macet Pindar Didominasi Pria Gen Z, Bos OJK Buka Suara - CNBC Indonesia",
-      "headlineZh": "OJK称网贷不良以年轻男性为主",
-      "summaryZh": "OJK披露线上借贷不良贷款主要由19-34岁年轻男性群体主导，反映特定客群信用风险集中，值得留痕。",
-      "rationale": "监管披露具体客群信用风险数据，属资产质量事件",
+      "headline": "Kredit Bermasalah Pinjaman Daring Dominasi Gen Z, OJK Dorong Peningkatan Credit Scoring - Head Topics",
+      "headlineZh": "网贷不良率4.32%",
+      "summaryZh": "OJK数据显示网贷不良率4.32%，Z世代男性为主，推动信用评分提升。",
+      "rationale": "资产质量数据披露",
       "independentSourceCount": 3,
       "domains": [
-        "aktual.com",
-        "bloombergtechnoz.com",
-        "cnbcindonesia.com"
+        "cnbcindonesia.com",
+        "id.headtopics.com",
+        "keuangan.kontan.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "ba281f36d1ede4bc",
         "23552c7eff88784c",
-        "fd06a4e6a4958eff",
-        "5f52be620848494b"
+        "61f278518b0adf40"
       ],
       "articles": [
+        {
+          "title": "Kredit Bermasalah Pinjaman Daring Dominasi Gen Z, OJK Dorong Peningkatan Credit Scoring - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPRF8zMFdLQUJTZzc1WmFNY0ptVjdBYlR5RmZENlJubHlzQ2dvN1FxUzdlWnRkNXN6bjRHSjdPOTRObXJQY2RXWDZZcTlkS3ZGZ3cxQmcyOGxIV0hJbC1WREYwR0RQRjBuLTZCQ3FvT3NEcEpNMkRyeWg4Sks0cVMtYmFRZDF2eF9ETFpYTDZrY0xJNHhnajhz?oc=5"
+        },
         {
           "title": "Kredit Macet Pindar Didominasi Pria Gen Z, Bos OJK Buka Suara - CNBC Indonesia",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNZTdzUFI2dV8zTHhOMVFYZXFkWU5kOGUyN29LS2E1MDAzVmNhbFRqZ2VicXZQTVctZTBkR0pHNkozWnhLUlZiT0lBSGlCdV9WdGE4bTJjZHJTSF9HUDU5RjlORzdKUnhwbC1mSWNaSFowa0I4U3JKMWsxS1M0Z1JfRVNSWkk4bnZKdGZUakREQXlDVnYwNUVHckFMQ29hM0FzQWRrYkI2MUI5OFFidUV0aXZDVEJaZkVGTXRYd2tUTdIBxAFBVV95cUxPWGtJb1RaMG1adVNWSEFjc3lSZU1Ya1o3TVl4OEJPVjhGSjJPMTRDbm14bm5sYXR6LWxsR250VjBLRjRDRkFSRDhILWdNY3lKb0xJb3VyazVnbXYxRW1VTzRmcW03a0ZHYUo2NzJiOUZYbkw0LUg3VFlRbXhjZHNRcUkyZjJPTng0em1BQ2RYcEptR1QxRzE1cGdYN1ZQWktaRlVIOUNEMTJnTEhxRzJVX2NXNC04VDVOaENRa2lqazR2aTZ1?oc=5"
         },
         {
-          "title": "Muda-mudi 19-34 Tahun Dominasi Kredit Macet Pinjaman Online - Finansial - Bloomberg Technoz",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOR2piM1FvdTVldFk0RFF3bHJFeHRmTlllbmI2UkZwUzlKdm5ZQWYzU3RuWlpucDVWbFNEb284eUE0cHV1WUZybDZjUzQ0N3FNNXI1LWtieERlTzNUb3BmRjZMNDE0N0dnUkJGbWs5MFRXRGdsOHRZSGJLeFRldGYxYldha0I5WVJTR2FGeUZ0YXVSVlBod0d2V1ZqVnJ0V21oZHUyRWdBdGpaTTNSOXI4MA?oc=5"
-        },
-        {
-          "title": "OJK Ungkap Kredit Macet Pinjol Didominasi Anak Muda dan Laki-laki - Aktual.com",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOVTJUaWpSTGNfbE13SGs3MnJKMDYxQ2VIQVNyRW1VSFhPazljdjhpemh1S1haeWlSc0wzaHU5VGpEOHY4ejFIX1hrRW1RUnlDUzlmdmpxcmN1RGFUXzNuTmd2VHJrMVBVN2hRelJjN2ZuMUdBdldmY29SdmljQW11cHUwMzRvYjBkNmhsbmpB?oc=5"
+          "title": "Risiko Kredit Macet Pinjol 4,32% per Juli 2026, Usia 19-34 Tahun Mendominasi - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeXFteW4yRjI4SE5hemtLR0FiZi13bjVRYmxFa0lNNWJPY0ppd1MzOXB0S2V2NXdubld5bGYtNmJfLTBTZnlUOUxFRGU1aUQ1SHoyeW1UNVJ3RDJhWXV2dE9la1lUUDU2SGluU2twZkZCWi1IR3p5elEtc0d6a0dNczY2dFAxcHN0cFgtbVlqZzBGaW9ULTVyMzRBc05vbjVCd0ZlRHFLU2l0RzRk0gGmAUFVX3lxTE55eURPc2RZMlppRi1JMjM5Q01qQjFPQ2tGQXJLa3N6TWx6eFBwZWR2WURQa0dpdnZRdVEyWFo4VnVuSnFnYkF5Z0tOV0s2ZS15TmM0Yi0xOWVEWXM2d0J6UklONHhDU3ppbGNLUTZveWNRRkJKa0EtbHljamNnOTE3aE5JeVg0NlR4RlpDVWxjXzB1LTVyZkRoOHVjaEh0d0RiX3Z4UHc?oc=5"
         }
       ],
       "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-45446410b650",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-be1374524cb9",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
       "entities": [
-        "OJK",
-        "pindar行业"
+        "OJK"
       ],
-      "headline": "Masyarakat Makin Doyan Ngutang, Pembiayaan Pindar Tembus Rp105,63 Triliun hingga Juli 2026 - Media Asuransi News",
-      "headlineZh": "网贷行业融资规模达105.63万亿印尼盾",
-      "summaryZh": "截至2026年7月线上借贷行业累计融资105.63万亿印尼盾，在信用风险上升背景下仍保持增长，属行业常规数据。",
-      "rationale": "行业规模常规统计数据披露",
-      "independentSourceCount": 2,
+      "headline": "OJK Jatuhkan Sanksi kepada 81 Pelaku Industri Pindar dan Pembiayaan - Media Asuransi News",
+      "headlineZh": "OJK处罚81家Pindar机构",
+      "summaryZh": "OJK对81家Pindar及融资行业机构实施处罚，属监管执法行动。",
+      "rationale": "监管处罚行动",
+      "independentSourceCount": 1,
       "domains": [
-        "fortuneidn.com",
         "mediaasuransinews.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "6927f0d80dc5a4b8",
-        "c97147c824d058bc"
+        "aa8da0a9b1d67f06"
       ],
       "articles": [
         {
-          "title": "Masyarakat Makin Doyan Ngutang, Pembiayaan Pindar Tembus Rp105,63 Triliun hingga Juli 2026 - Media Asuransi News",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxORjRnaWJ0blJqT1B4aEp6NVRZNjB4Y2U5djU5Z1l3S19raFc0Z0x4Yk1Qc0FueDBpcnFxdDE3UURHbW5sb21OcXVzaVIxSzFucF9BM1M5YWZZcmtpTkN6d2RDbG9qM3hWa0E0TENkSWRQRDN5dU5WZ25mS3NaVlR5c1R6WUltWGY1em5PS3Q3azJjNGFqMFVMVXR4NzgxZUhqSGo5TS1mLVZwemRzbG1DN2taR3BGNi1lS0REZVlFQl9EVkVUbEhVSktuUlo?oc=5"
-        },
-        {
-          "title": "Pembiayaan Pinjol Capai Rp105,63 Triliun di Tengah Kenaikan Risiko Kredit Macet - FORTUNE Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQd2dGSzJPZWJ2cGFBSVNOU2lwZDYzX19OWkVyWl9kNzZnZGpUVTdZVU9VR01HNFVPd2NkdjBIQWVFWHY1LVNjR3FTdXh6dWduTzJCbUZWTjl6bnczRTVZRkZ0di1Za3VBb0RoUEl0NENoZ1RZMWJ0U2hFUzdzQkpENkRGTGxpTS1NM3NEM3N6NjI2VXdtaWlsckVaeTVnSm5hRDJGTlR4UzZtUDNDYkZDUFQwOUg5ekFBd2FLNWsyWFpuZzktdWVCMnp30gHPAUFVX3lxTE92VU8xajdmTTF6RC02OGxCMFhEQTZJS0hBLS1Ka3dLN3BvdHhwbEdnblR1Ykc2Sll1YUNFVHZYb1ZGeF8yZ2VWNkc5cTE4V3EwR2YwTUVIYzZ5UGlLbHh6RmlYX0ZEbkFlbzUzT3FLbTVldXRmRlRxMGZnZnF1R1VuSU14OTBUQlZNOTNxTk9PSTB6b1hoWnhlNmNVVVNHOTFnTXZFUDU5VFk4SFh6TkxMdzBKdG5faVZySlFVcHVkbXhwM09DWERQOHdZSGVzUQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-5bd70b95e54c",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "KrediFazz"
-      ],
-      "headline": "OJK Pantau Investigasi Internal KrediFazz di Kasus Debt Collector - Finansial - Bloomberg Technoz",
-      "headlineZh": "OJK关注KrediFazz催收事件内部调查",
-      "summaryZh": "OJK表示正在监控KrediFazz针对其催收人员（debt collector）相关案件的内部调查，属监管介入消费者投诉事件。",
-      "rationale": "监管机构介入具体平台催收事件调查",
-      "independentSourceCount": 1,
-      "domains": [
-        "bloombergtechnoz.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8d9f1c1d4de1a59d"
-      ],
-      "articles": [
-        {
-          "title": "OJK Pantau Investigasi Internal KrediFazz di Kasus Debt Collector - Finansial - Bloomberg Technoz",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUzJiNFRkLUQ2QkJZTERlUnVXN2ZXSkRqelQyQjNOdjc1Z2ZKQWxRQ29feml4YVd4OGxOTFJSdy1nWXMtS2YzaVhTZ01vdklDM2sxS3lqRDU5RUpJV3FiWFdrUjlmOUNma25KT0xMR0tvcXg5U2NlX1NWMENaWFNQTlpEQ0g2R3J2NExpUFM4THAzVFZYZzR3VWhHNHQ3Qm1oVU1BRWxPY3NQUTBjNjZ5RDJoOTNhM3lD?oc=5"
+          "title": "OJK Jatuhkan Sanksi kepada 81 Pelaku Industri Pindar dan Pembiayaan - Media Asuransi News",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPSEVRd0JDVjVWSzlXellDVHBmbGQteE94U3FnRFJTTTlrQ0hULW5rRlZuWmxuZHphV01WVXlEOUNMMEFjVDlWVWtHZ1NUR3VfZngzTTNMSFNVa3had3ZONjNQdGg3VDg2WjNfZVZVdnl2THVqZ1RBRkpfY1BRbEk3QmtER2s5YVNBekVYWDlYWEN6RkhsdUNEekxuVmUtLUs2TlBrTFJXWEFpeXo3a0J6dg?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-97304196c8cd",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Bengkulu省政府"
-      ],
-      "headline": "15 ASN Pemprov Bengkulu Ajukan Cerai Diduga Perkara Ekonomi hingga Pinjol - detikcom",
-      "headlineZh": "15名公务员因经济及网贷问题申请离婚",
-      "summaryZh": "Bengkulu省15名公务员申请离婚，疑与经济和线上借贷问题相关，反映网贷对家庭稳定的局部社会影响。",
-      "rationale": "具体社会事件，涉及网贷引发的家庭问题",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "06ff783e4fe47d2e"
-      ],
-      "articles": [
-        {
-          "title": "15 ASN Pemprov Bengkulu Ajukan Cerai Diduga Perkara Ekonomi hingga Pinjol - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNcW5XMnlzbFZ3a3RmbWJNTWJBYjlhd3BCblNQWlZMX2w2dUgwdnI5RUljSkRwNmhKYzZoRUJSYVA2cUNHVGtqcjhhOWprOW5GdF82ZTd3U0UtVThOa0NPRDItbk5PQTE5dExqRF8wdjFzR3Zhdjd1WU1yOEFsMTBpV1RQQ3hvdUF2TlY3LTl2UmFWNDlldlBHUGFHTTd4cW9NVnIxNWFodW9xSmNaX3VybVI5QldvZ2pSVS0yT1paVdIBxAFBVV95cUxNNldqMVhMT1NfdWk1akpFbHZCMjc0NWY3X1JSRndIa1pqcElGN0F6ZGlhTjNBRWFzdDhCR0s0Z0hVTVlkQXBKT0pnTjQwM3VkVVV1WW51RnlXZGNkYnZZOWdFdGN4dFRuUWxtS1VKOFhza056TnY0NmstamlwR1ZKZ0tXNlFOUFVudS1tWVF4aGlSYmRsSTlOLWdyQ0MyN1JkSGMtbGtHaWdGZ21OdU9Tck8wY3Zqcl9LVjBFbTRsME40UVJG?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -584,21 +713,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 30,
-    "socialItemCount48h": 10
+    "articleCount48h": 44,
+    "socialItemCount48h": 8
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 465,
-    "classifiedCount": 142,
-    "irrelevantDropped": 98,
+    "inputCount": 479,
+    "classifiedCount": 129,
+    "irrelevantDropped": 111,
     "model": "deepseek-chat",
-    "fallbackCount": 225,
+    "fallbackCount": 239,
     "labelCounts": {
-      "NEG": 78,
-      "MIX": 30,
-      "POS": 34
+      "NEG": 56,
+      "MIX": 31,
+      "POS": 42
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

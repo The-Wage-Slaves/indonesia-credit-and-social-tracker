@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-09-15T06:43:08.433751+00:00",
+  "generatedAt": "2026-09-16T06:47:08.582730+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-09-15",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-09-16",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼总统普拉博沃撤换财政部长普尔巴亚，改任苏哈西尔·纳扎拉为财长**\n严重度 0.75｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜印尼反腐败委员会（KPK）在土地与空间规划部展开抓捕行动，逮捕总司长及多名官员、企业高管**\n严重度 0.75｜4个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜Summarecon Agung股价因总裁被KPK逮捕而暴跌6.02%**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency\n\n🟠 **市场失序(汇股债)｜印尼股市IHSG走弱，外资净卖出3836.5亿印尼盾，抛售BMRI、BBRI、BBNI**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency",
-      "**已折叠的低证据线索**\n另有 6 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜苏阿哈西尔·纳扎拉出任印尼财政部长**\n严重度 0.75｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜KPK逮捕Golkar党高层Fahd Arafiq并调查ATR/BPN部HGB贪腐案**\n严重度 0.75｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜各党魁就选举法草案5%议会门槛达成一致**\n严重度 0.55｜2个独立来源（liputan6.com、news.republika.co.id）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜印尼证交所实施最低股价1印尼盾新规**\n严重度 0.55｜2个独立来源（ekonomi.republika.co.id、katadata.co.id）｜影响支柱：currency",
+      "**Pinjol/Pindar 舆情事件**\n\n**OJK紧盯KrediFazz催收整改**\nKrediFazz催收员违规事件后，OJK持续监督其SOP与催收整改，属监管介入。\n证据：4个独立来源。\n\n**OJK取缔951家非法网贷**\nOJK的PASTI工作组在2026上半年取缔951家非法网贷，并加强网红与催收监管。\n证据：2个独立来源。",
+      "**已折叠的低证据线索**\n另有 5 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-09-15:normal:red:success"
+    "decisionId": "daily:2026-09-16:high_pending:red:success"
   },
   "feishu": "sent"
 }
