@@ -156,15 +156,23 @@ assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and 
   // 2026-09-08 又抓到一个：social.online_grievance 记的还是 08-11 的 heat 32.6 / 57 分，
   // 比当期落后两期，而 V3 的网络政治情绪早已改分。所以这里按对儿枚举，不是只钉汇率。
   const BRIDGED = [
-    { pillar: 'currency', driver: (d) => d.name.startsWith('汇率'), owner: 'currency.fx_stress' },
-    { pillar: 'social', driver: (d) => d.name === '网络政治情绪', owner: 'social.online_grievance' },
+    { name: '汇率水平与贬速', owner: 'currency.fx_stress' },
+    { name: '网络政治情绪', owner: 'social.online_grievance' },
+    { name: '通胀锚定与实际利率', owner: 'currency.inflation_expectations' },
+    { name: '消费者信心', owner: 'social.subjective_confidence' },
+    { name: '外部流动性缓冲', owner: 'fiscal.external_liquidity' },
+    { name: '赤字与债务轨迹', owner: 'fiscal.public_finance' },
+    { name: '融资结构脆弱性', owner: 'fiscal.funding_mismatch' },
+    { name: '劳动力市场压力', owner: 'social.livelihood_stress' },
+    { name: '国际治理评估', owner: 'institutions.implementation_capacity' },
   ];
+  const allDrivers = new Map(stabilityContext.__DATA.pillars
+    .flatMap((pillar) => pillar.drivers).map((driver) => [driver.name, driver]));
   const observations = Array.isArray(evidence.observations)
     ? evidence.observations : Object.values(evidence.observations ?? {});
   for (const pair of BRIDGED) {
-    const driver = stabilityContext.__DATA.pillars
-      .find((pillar) => pillar.id === pair.pillar)?.drivers.find(pair.driver);
-    assert(driver, `${pair.pillar} pillar has no driver bridged to ${pair.owner}`);
+    const driver = allDrivers.get(pair.name);
+    assert(driver, `data.js has no driver named ${pair.name} (bridged to ${pair.owner})`);
     const observation = observations.find((o) => o.primaryOwner === pair.owner);
     assert(observation, `V4 evidence has no ${pair.owner} observation`);
     const inputs = observation.scoreInputs ?? [];
@@ -173,6 +181,23 @@ assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and 
       assert(input.score === driver.score,
         `V3 ${driver.name} = ${driver.score} but V4 ${pair.owner} scoreInput = ${input.score} ` +
         '— 同一天同一份读数不能有两个分。改了一边就要改另一边。');
+    }
+  }
+
+  // market_access 不是 1:1，它的桥接规则写在 v4-shadow-input 里：
+  // 「V3股市/外资流向与主权风险定价的迁移均值」。2026-09-08 发现它还停在 37.5——
+  // 那是股市 driver 还读 30 时的均值，股市 30→35 之后没人更新它。规则可算，就该由机器算。
+  {
+    const equity = allDrivers.get('股市与外资流向');
+    const sovereign = allDrivers.get('主权风险定价');
+    assert(equity && sovereign, 'market_access bridge needs 股市与外资流向 and 主权风险定价');
+    const expected = (equity.score + sovereign.score) / 2;
+    const observation = observations.find((o) => o.primaryOwner === 'currency.market_access');
+    assert(observation, 'V4 evidence has no currency.market_access observation');
+    for (const input of observation.scoreInputs ?? []) {
+      assert(input.score === expected,
+        `currency.market_access should be mean(股市 ${equity.score}, 主权风险定价 ${sovereign.score}) ` +
+        `= ${expected} but reads ${input.score}`);
     }
   }
 }
