@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-09-18T06:40:45.361115+00:00",
+  "generatedAt": "2026-09-19T06:38:15.289326+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-09-18",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-09-19",
     "risk": true,
-    "level": "red",
+    "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **司法/执法工具化｜印尼反腐败委员会（KPK）搜查ATR/BPN部及Summarecon办公室，调查土地权案件**\n严重度 0.75｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜印尼总检察院以洗钱罪起诉前Jampidsus Febrie Adriansyah，其声称遭打击报复**\n严重度 0.75｜2个独立来源（liputan6.com、news.republika.co.id）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜印尼央行行长候选人Suahasil暗示IHSG上涨，市场关注其接替Purbaya传闻**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜印尼劳工团体要求国会于9月22日前修订《就业创造法》草案，否则将发起行动**\n严重度 0.55｜2个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 9 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：AMBER。",
+      "**制度/政治骤变**\n\n🟠 **关键官员更替/清洗｜Purbaya 被传可能出任印尼央行行长，其亲信称若获总统邀请有七成意愿**\n严重度 0.55｜2个独立来源（fajar、jakartasatu.com）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜印尼盾连续七日承压，市场等待央行理事会会议决定**\n严重度 0.55｜2个独立来源（kompas.com、kontan.co.id）｜影响支柱：currency\n\n🟠 **司法/执法工具化｜KPK 就 ATR/BPN 土地权属贿赂案搜查 Summarecon 办公室及总司长住宅**\n严重度 0.55｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **表外/或有负债扩张｜财长拒绝国会修改赤字上限的提议，坚持 3% 上限**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：fiscal",
+      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-09-18:normal:red:success"
+    "decisionId": "daily:2026-09-19:normal:amber:success"
   },
   "feishu": "sent"
 }

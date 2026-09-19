@@ -1,57 +1,82 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-18",
+  "date": "2026-09-19",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 39.9,
-    "socialDailyVolumeRisk": 27.5,
-    "negativeSocialShare": 36.1,
+    "newsDailyVolumeRisk": 29.8,
+    "socialDailyVolumeRisk": 7.8,
+    "negativeSocialShare": 17.0,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=9; prior-7d median=15.0; robust z=-0.67",
-    "socialVolume": "today=0; prior-7d median=20.0; robust z=-1.50"
+    "newsVolume": "today=5; prior-7d median=19.0; robust z=-1.35",
+    "socialVolume": "today=2; prior-7d median=27.0; robust z=-2.81"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-ecd80310d0d9",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
+      "id": "llm-1c6fbb2c226a",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "OJK",
-        "KrediOne"
+        "OJK"
       ],
-      "headline": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
-      "headlineZh": "OJK撤销三平台借贷限制",
-      "summaryZh": "OJK撤销对三家Pindar平台每户最多借三家的限制，允许用户跨更多平台借贷，KrediOne等回应。",
-      "rationale": "监管政策调整，值得留痕",
-      "independentSourceCount": 10,
+      "headline": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
+      "headlineZh": "Pindar数量缩减至94家",
+      "summaryZh": "OJK披露Pindar机构数量缩减至94家并说明原因，属行业常规动态。",
+      "rationale": "行业数量变化，常规动态",
+      "independentSourceCount": 1,
       "domains": [
-        "berandasulsel.com",
-        "beritamanado.com",
-        "bernas.id",
-        "economy.okezone.com",
-        "inews.id",
         "infobanknews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "198b249d8e76e1c6"
+      ],
+      "articles": [
+        {
+          "title": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQLTN2eEVVQU9GTFktRV9PWDNYZ3J5UU9OV2Q0c1E5WG1oclFsM0dvd1ZBODNPbTI3eHpsb0dxc2xJekVyb0J1emNXRkhMNjB5dy1jOU9HZENSc2xybmViYVI3d1VMUjNYaWRuS1NsdHhlOTZOTGdacy1XYzhaQkdhTg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-4ced44d26820",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
+      "headlineZh": "OJK取消三平台借贷限制",
+      "summaryZh": "OJK取消原计划限制民众最多在3家Pindar借款的规定并说明原因与风险，属监管政策调整。",
+      "rationale": "监管政策调整，值得留痕",
+      "independentSourceCount": 3,
+      "domains": [
+        "berandasulsel.com",
+        "bernas.id",
+        "idxchannel.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
         "41e271f50f92557e",
-        "92e5401019f1133a",
-        "bc2d9e057a404c4f",
-        "23fdfee0c5e91c90",
-        "340c5d40589304c4",
-        "6c493498e493cefc",
-        "12338dcc57d89dad",
-        "dbd8941d1cbb136a",
-        "9456f5eb6dc481ce",
-        "ddcb92e0c20cd6fc"
+        "c3d4b0befb81b248",
+        "340c5d40589304c4"
       ],
       "articles": [
         {
@@ -59,324 +84,97 @@
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaS03cFExMmRKUm5nWk9yb3g2S2h5V1JOUGl4WXlBZk44QnVIMzRfOE1MQnFkblhMaDlxOTVMU3lhU2hmQ3dzTFVyZ0FGRm9uLW1qcFhtWWpWREViWWwwbXI5bjZjMHJieS1XWDRKTkQ2dHNCbWxIV3lfcHNTbFFvZVJPN2hCaVZjQmtPUGtuQVZuUGVlbk4zOWNLemJCSGpFMDVyNUlZOGJ2bGVvcHBuTkd3a1MtaFJ1a0VUbk13MDNwbTg?oc=5"
         },
         {
-          "title": "OJK Batal Batasi Masyarakat Pinjam Uang Maksimal di 3 Pindar, Ini Alasannya - RCTI+",
-          "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQaWNJWHNyMFZkTTg3TmJkbWtLR0FEVUlpNGJMeVctaHctbVFfV3VuVl9ndzN1RWFlVlFJRHJwM3NXaU9tdE9Eenl6bktUbGVLcXBqNVFfNUdMUUVNLVgzLTdvWGVpNlkxS09CVTB6UHJoOWNYUXhkNzlBaXRnWURKc2xwSkVnd1ZaRW5UWWpBaHFLSjVUOVh2QVpqUHhZSDd3ZVVNakpIaXN0ZUxwUEpWRmo2MGV0NFN4MWh4Sml5NmhzbmVVX3g3YmFVZTBNckJRcXVfWVd4bW9QV2NDRS11ODMwWTN1VGhyOWh5NGx4TG1qTkQzV1h0X2dEU0E2MHBva19iYWpiNzZQc01jbmVBT0xJYkNQQUJrX2h3LXM3RjBjSWljTk81X2Q5WQ?oc=5"
-        },
-        {
-          "title": "OJK Batalkan Batas 3 Platform Pinjol, Masyarakat Kini Bisa Pinjam di Banyak Aplikasi - economy.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOT2ROQkt2U3VtYWpERXdfdW1uUmZtcjNBRjAxVF8tVG9iVlF0MVp4VXFsUHQ2NnYyS1kzd2l0V0tjVHZzc1pWVk5iNVlHdHFXVlhpeW9MMU5veUpxUERTVlBfWW05MEcwamtSNkJ6dFljYm1TWVdnMEt0R0Q3Y0lnSFk2RjQyaFJtbk5EU0V4cE9zYmNpdXlBellORG05MWRadGpWc3hHUFotbUxXVkhlTWVoTVRFSDhiTGJna1RubTRpLXZ5UEdtUS1PN2dEY2lEczFJYkFn0gHUAUFVX3lxTE1HWktEV0ZjSDlFWHNtTG5mM19fa3hBaE92NFdYYzVvT0pLWGtIWGUzaTNwdTA3WjBUNXYyYTZIMDBwT29OXzZQbUdjdnJjRGFfMzFua0tSX2VQMEFBMjNiTlpidzNmT2x0Vnp6WjdGbGZoMGJoM2h6QVV2c3RrcUpfb0J1S3hsZ191WFlIVEYycU92RnhTdXcwOHIwek9ncHVjV2FIYkVuWVE4TTZpb09BUGxVdG1GOEpjQVNXcTVOV2U1d0dVcHFJamp1LVlyZWZCUUF3?oc=5"
-        },
-        {
-          "title": "OJK Batalkan Pembatasan Pinjam Uang Hanya di 3 Pinjol, Masyarakat Kini Bisa Akses Banyak Platform - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS19hREJ1dGd0Nzl4X2NQbmtvRU5YRmRVZGZKb2JkWlJzTktLWXNjbHFqRnhwZHNsaERxR1hkSXBzMUcwYXNTQzZpYS1pdUxjcDlvYk8yb1B1cW1Ebk5ld1Q3WWtBT3lnVVkyYzNkVXFlV0xjaFg0dkxzMUhHUktMUUhWM0ZOY1hSdFF5ZDU5QUFxUndiUlROLXU4SXZxWnp0MlZOZzltR0VyRXVGSlNDU24xT0tkTWNsSE50Z0FPRFVhQk9MY1VtdzJWQdIB0AFBVV95cUxONzFIUkc5UlB2MGszQlBub0pMUC1nZHFYd1NkdmdmRW1XRERodUpHaldhSVIzRDZQTnhWNWlSY0xuR1NJVVlDb0lBV0RBZ0hRdWpZN2ljZ2psU083RVVlU0h0RHF0c0tFN3FIWGdPaHB3Mk1LRFk0Q1RkTlpUOUpuR2JMSjd5WHJNeWJ3d0RYZUJQd1d5YWJUR183dmRfQkhzRW1pSTFEMlZoajR3dEQtTEdSN1JVMG5NUF9yVWFaMTlibkU4MFZOc0ItcGE1YW5M?oc=5"
+          "title": "OJK Batal Batasi Masyarakat Pinjam Uang Maksimal di 3 Pindar, Ini Alasannya - IDX Channel",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTEpwSFptWW9CdDhUTEpKV0hDS0hlNVBNSlN4bzFoQVFkcDhnRW9NRHZjaURKNnVkaWRMMEV3NDk4VUwyaTZRN1F6NmVLeVJQMHpGb1MxanpfQzV6a1ZVSFUyeUFHajdmcDZiMnFhb3ZiTlNkcXNnd2FsNkpyeVB2bEdxOGpselE4VlUzeEEwTXBzbnBFWFNJZnAzVHJwdnpyaDJtRUpHdHg0cnItWlJaSw?oc=5"
         },
         {
           "title": "OJK Batalkan Batas Pendanaan 3 Pindar, Ini Alasan dan Risikonya - BERNAS.id",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUWdQemM4ck9CMFNGekNmaVNTZl9IRll1WnRyajNYcHF0ckNOMjB2TFVEckVJc2trVm1jcDR1NmhacUVqZmJpNkRoeExheFl3dkU4SF9lRjRqREdIbGVNem9WZERhbW84VVNVRFBpaHFjUmYxdTlpdHgxVjhWZlpsYllSYURwU1hHUHVyVHBYRGM1WFhCVjdpdkd0eG44RHdERzFLY0VpWlc?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 10,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-531f632c3471",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Pria Muda Paling Banyak Terjerat Kredit Macet Pinjol - BantenNews.co.id",
-      "headlineZh": "年轻人成网贷坏账主力",
-      "summaryZh": "OJK数据显示网贷坏账以年轻男性为主，反映特定群体资产质量承压。",
-      "rationale": "监管披露资产质量数据",
-      "independentSourceCount": 3,
-      "domains": [
-        "bantennews.co.id",
-        "fortuneidn.com",
-        "suara.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "c1a0f1abfbdf933c",
-        "c69206459251fd2b",
-        "969644d05348905b"
-      ],
-      "articles": [
-        {
-          "title": "Pria Muda Paling Banyak Terjerat Kredit Macet Pinjol - BantenNews.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONTFvb0RsMFNZdk4yQzRKYlMxdU95VVpnVTNxU19kR0k0LU9CX0RuQUlGQ2t2VTZYU0Q3YmtRbkVIcl9jaF9jVml0VWJfdDZUSEIweTFtQlZISmJPTUc2MTYxXzVUZXBmTjBSV3NFTHY3LTZtSGdEek1sSFdvQzBXOGtRV3Z1VHctSUE?oc=5"
-        },
-        {
-          "title": "Pria Muda Paling Banyak Terjerat Kredit Macet Pinjol - Suara.com",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQXzkzamJtdmRXZHhvRkdvM2ctMnJvcTB3TlJRcWw0dmloeEUyOXA2LWY5ZV9jWlFKNTRPU1IzeENiQ3FrbFZiVXJIalNjTEtBNm1Idmhxb2syNVhIZTVoRWNsaEpwNGpaVmhsbUYxcEdmeVFRcGpGTG4zV0cwQ2VTX0tCak5WTFNrR1RYXzBMNVp5MGNPaG1mTDdDcHhoMnZj0gGgAUFVX3lxTE12YmJoTXNxV3FQb3cwRm5JMmJTTU56eWQ2QUJHS3YtR19reVZMRmhUVzRBQWhXRTk1NFAwWjFXYU9JU1FNMnNQazRGTEtmZ0pjZXVsMDR6SUQxaUJzVUljNGVUenJRRTU1UG1UY1pBZVI3eU1PelE5WFhUVC1MZ3p1SXdhM3JLaDJQLVprcExnRzA2RE44OHFGSXNydGRTUnY?oc=5"
-        },
-        {
-          "title": "OJK Ungkap Kredit Macet Pinjol Didominasi Anak Muda dan Laki-laki - FORTUNE Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPT2JtZzhaV1lGeVZ0WDB1S0l5M0p1REZLV0pBc2VKcEtOQmp5Rk5lT3Y4TnBEQ191SG8yUnYtbWRiOFE5OGZZb1VGT0liU3RPUW4wdkxsOVQyZUdNcWw1Zi12WVhYOF9Ocm5aeEJZdC0xM1dVbTVPSXByOW9xeV9rbmhLclVBN0FRd0RNWmtlWEsxczJETTNfdDJxSmZsZHIxYzNZaF8yTnZZU1BERjVzcTdtRGtncjDSAbwBQVVfeXFMUFAzakk3R0ZEdklaZW4xaVNMVHY2ejR6a05sZEM1bkNGRWVaVkZWbF9xUEV6cllnZTluQ3hGOVczeVJleDZFTUZ5ZU5hMmlSWmtTdG5rWXI4NlZnU09KMFJxWk5EbF9SajNIeTkwaFVSQkRUMU1CRkNWSWZZNUZ1ZXRnSDZHSGVXVlBQdjVPV0k1SmR0bFFyUGZGUVFraGZ3TzdIUkVlSHVMYzRMbmZ5SW50aHVKT0pMbVRReHo?oc=5"
-        }
-      ],
       "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-ab2f16165799",
-      "eventType": "consumer_harm",
-      "severity": 0.3,
+      "id": "llm-d28d1b88b871",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
       "entities": [
-        "Dinsos Pekanbaru"
+        "OJK",
+        "RPA Indonesia"
       ],
-      "headline": "Dinsos Pekanbaru Ungkap Faktor Warga Dicoret dari Bansos, Ada Pinjol dan Judol - Betuah.com",
-      "headlineZh": " Pekanbaru居民因网贷被剔出低保",
-      "summaryZh": "Pekanbaru社会局披露有居民因涉网贷和网赌被剔除社会救助名单，属局部消费者影响。",
-      "rationale": "地方机构披露具体影响",
+      "headline": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
+      "headlineZh": "RPA与OJK二次会面跟进51起投诉",
+      "summaryZh": "RPA Indonesia与OJK举行第二次听证，跟进51起与网贷相关的民众投诉，属监管介入。",
+      "rationale": "监管介入跟进投诉，值得留痕",
       "independentSourceCount": 1,
       "domains": [
-        "betuah.com"
+        "metropolitanpost.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "dd24d57548d18df1"
+        "84e32c4bde8dd817"
       ],
       "articles": [
         {
-          "title": "Dinsos Pekanbaru Ungkap Faktor Warga Dicoret dari Bansos, Ada Pinjol dan Judol - Betuah.com",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMmVEVGM0VTJPUEx4aS1KWURiMER5Y2p4RkVSRHk1dzlFMzFGLVVTUDVMRXF0cElTM1ZCNUJnc25ESjJmTC03eFhTd1JpdDEtYWlCZGFCdGtfQ3FCeWJEVjlGelNsWEo2WWgzUlJTZGkxOEsteHVlZ2tjeFBuaVJST05ma2xLbnowamh0LUVjbTdqNDJ5QTRXeklpbkNwcThsdGlQaUZzUG9KQlpYd0E4eUZfVFY?oc=5"
+          "title": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY25RSWI3Nk9kRHRnSjNzV2dpTjNxeWxnbGlYaVdBWU12Mzl3NU5kUUJXQWg1MzZNRGRWYmJqcEx6UjcxaHdGRG5UQVFyb1N0RHJjdDlyaUNSNlBoc0d4Sk1URFNaeHBweWt0N2hiZ0Nmc2tlWnlnVXFWaWdXUU1sb2FHUHZVYWhhS0ttRXZvYWtCRlJzRFd3eWc0d2ZhanZvUkduMmdxUV9DeEIwRGF1UA?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-f1e3a518a14c",
-      "eventType": "systemic_platform_stress",
+      "id": "llm-935e44e5b047",
+      "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
-        "KSP Mekarsari"
-      ],
-      "headline": "KSP Mekarsari Gagal Bayar Rp697 M, 1.645 Nasabah Kena Imbas - Monitor Indonesia",
-      "headlineZh": "KSP Mekarsari违约6.97亿",
-      "summaryZh": "KSP Mekarsari未能兑付6.97亿印尼盾，1645名储户受影响，属平台违约事件。",
-      "rationale": "平台违约，储户受损",
-      "independentSourceCount": 1,
-      "domains": [
-        "monitorindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "4a9065e6548f0cd2"
-      ],
-      "articles": [
-        {
-          "title": "KSP Mekarsari Gagal Bayar Rp697 M, 1.645 Nasabah Kena Imbas - Monitor Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbDVFQzNDc2s1MTVfQlNOYzdXa2MyYVJsclRlVVhtTzA4UGlKYXVzZlhSVDh1U3Uxa0ppYUZGcHB5SnpFM0hLMlB4b0ZHM2IwUnB3Q1VQTGhhUFRIZ1BFZ1F6bFkwVFVHakRSelJWVE8wcE9nTTNHMUEzZ2k3TGdUcDk3cFJkNmRiRHRla3BOeWlkVDdUSEpmaU01YW1yQml0Z2FFSjhXRGR0NWJtSGZFajRGRDY?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-62613a45aac6",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
+        "Satgas Pasti",
         "OJK"
       ],
-      "headline": "OJK Telah Hentikan 951 Pinjol Ilegal, Pinjol Ilegal Masih Bermunculan Ini Penyebabnya - kontan.co.id",
-      "headlineZh": "OJK已关停951家非法网贷",
-      "summaryZh": "OJK披露已关停951家非法网贷实体，但非法平台仍不断涌现，属监管执法动态。",
-      "rationale": "监管执法数据披露",
-      "independentSourceCount": 2,
-      "domains": [
-        "keuangan.kontan.co.id",
-        "tradersunion.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "cca67d6e98a3f9a9",
-        "1d156466c58c1f02",
-        "3523b447a584bf3a"
-      ],
-      "articles": [
-        {
-          "title": "OJK Telah Hentikan 951 Pinjol Ilegal, Pinjol Ilegal Masih Bermunculan Ini Penyebabnya - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWTdoNElwaUVsSm5sVXB6WWlFVGVoWTYyYjJIeC1wTnNlLUdfTFI5SF9DMXQ5bjc2OHNpMHd6ZUhuY2R2RDBpd3Q2RnBhUk5pYmRuYVBHdzN4YzZkNWNrYmpUZTZJRElxcjVWT2dNOFZTMGlxVFNOSmRTeHZJUTlrY1JrakJUd3lVZEhVdGYzdWVnM1dvMDdHenhRRXN4UW45cUhIbVI1VVRKWkQxYUV4TXoxRnN6Ry1vRWRN0gG0AUFVX3lxTE15UklvVy1RQmVnM1ZDT0lVa19vb0xLN0c4NzUxa01SeWVxMHVsR18yRHJLQy1OYmk3Y0E4QUFzNVF6SjJzTllVeU0tVjNveTlLMzlVMlVDNjdsZE1NOWdYeDlvSUpXTjV1OHp1YUpRM3FnZWtaYmM4Sno1R1UtNHUtN016ZFYyVjhpY0R0UEY4R1BCWUJqYzd0RWNXVTZRc3dkc3RnTUp3dnhqY0NoUG9fclh6UA?oc=5"
-        },
-        {
-          "title": "OJK ungkap faktor pinjol ilegal tetap bermunculan di tengah penghentian 951 entitas - Traders Union",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQOTNFZGdac1R3MnZZZWlLMzNDZ2d1dTNSTWVvQURXTW1pbVdWRVR6bC14UnRRU1RkOERrUzc5NERBYTJfVmpEWjhWNWtRWE1oYW1PSGJrM2hZMTFpREFEU0NOb0FzeUJCdTQ2RVhVM0ZCWHRTdVF4bm1rTk91NTQxSmRSc3RxQ2tVV2VDN0ZJdzN6dE02S0J5TU1R?oc=5"
-        },
-        {
-          "title": "Pinjol Ilegal Masih Bermunculan, OJK Ungkap 951 Entitas Dihentikan - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcE9nRjc3S1k2dS1GQ3dXdUhDdW02UDhlaXU5bUx2Q3FHZ1VuTnhMVWs4Ni1Zc0x0OUtQVWM4R3F1UjRUOFB1amF0a3FBTjR4aU9xcFd6bjh0dVdwNVg2UE1hWXMzcmM0VzMyTGs2MFl5YUpHdDB5SHVFMHpVNm4yeWF2aVlybVdJbVdIcVpaZzY5ekdYN0tjSllsVkpVdE4wYmfSAZsBQVVfeXFMUFhYVnllYXU3OW9TNEJOYmZtYWpuenZhazdaR0FYS0pBbG85UHFJN1BLVXlWaDFqVGhwQjVLeE5meU5hZEZnQ2V0cEtGelF0dkVUSElnZWJPclc2YzUzc3hFRFVudHBKVmRCWEhJSGV3elA0a3YxbGs5REJGYThVSkRueTIxNEVaZGxLTEpfalRrdzR4NWtOMVYyam8?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-62471d84fb88",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Ungkap 30 Persen Pengajuan KPR Ditolak Gara-gara Pinjol - wartaekonomi.co.id",
-      "headlineZh": "三成房贷申请因网贷被拒",
-      "summaryZh": "OJK披露30%的房贷申请因申请人有网贷记录被拒，反映网贷对信贷质量的溢出影响。",
-      "rationale": "监管披露信贷质量影响",
+      "headline": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
+      "headlineZh": "Satgas Pasti关停951家非法网贷",
+      "summaryZh": "Satgas Pasti在2026年1至6月关停951家非法网贷平台，属大规模监管执法行动。",
+      "rationale": "大规模监管执法，影响广泛",
       "independentSourceCount": 1,
       "domains": [
-        "wartaekonomi.co.id"
+        "idxchannel.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5d0d1ed0ce908983"
+        "a9f626cdced0baca"
       ],
       "articles": [
         {
-          "title": "OJK Ungkap 30 Persen Pengajuan KPR Ditolak Gara-gara Pinjol - wartaekonomi.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdFRwcnRwMWxUN2hBVzJraVdLbEtBU0l3LTZwZG5PUUhSb0pucDlZQWkycnhOR0tkLWhaYkd4VHBmVTUzZV9Zc0pmM2p3TlQ1cXJTYmxkczM3emY4SW1HQTJmdHhoaUtPb0FnbUhsMlJCaHdMZE1ra1Y1S28xaDFmS3BMNmdhSmpodUlrQjdwQnZoU3lWLU0yUE9CcHJjaTJDZ1VJ0gGjAUFVX3lxTFB0VHBydHAxbFQ3aEFXMmtpV0tsS0FTSXctNnBkbk9RSFJvSm5wOVlBaTJyeE5HS2QtaFpiR3hUcGZVNTNlX1lzSmYzandOVDVxclNibGRzMzd6ZjhJbUdBMmZ0eGhpS09vQWdtSGwyUkJod0xkTWtrVjVLbzFoMWZLcEw2Z2FKamh1SWtCN3BCdmhTeVYtTTJQT0JwcmNpMkNnVUk?oc=5"
+          "title": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTmNCOTZIczV3QzU2R0EyLXlLcV80Nnh6YVVTa2xCU0VwbEJPWWlxbzRkM3BkVm96Wkpra09IbDdpQUxkWjNMV28wRC0wcDlzaG1pVzUyNTFLT0N0dzlDMGdSR1g0dGhoTjdLT1A5RnBlWE1iQUtzLU1sQ3Jkc2ZkeGIybUEtNXRyQV83UEd6enVjSDRFR0FFM0VxOE9wQkRMM2c2ajA3RWx4UXpXNEZINVBIUdIBuAFBVV95cUxOTWs0RVN2MTVPZ0lmYmdMb1hKV3Q2ZkdQSlhHdm80ZkJFMEJUbmFkekEyYnJYZVhDaHlQS3dpOXlkdVptNWRkNEhPZi1PZHdPYTRLWG5CcDd1MlNnR2F4UFB4TnJTM0czd21DeURwWXljTkFiUHd3M05LbF9xWmRmV2pneVAybzJwbERzeDdwcE83QVRjSS1QNXpaNk8xTU5iMGV4MWRSLWpkS0FmUlV0emlnNDZ2bnIx?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-72962a3118c5",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "Pindar Bali"
-      ],
-      "headline": "Pindar Bali Rp2,31 Triliun, Macet 3,22% - NUSABALI.com",
-      "headlineZh": "巴厘Pindar贷款2.31万亿不良3.22%",
-      "summaryZh": "巴厘岛Pindar贷款规模达2.31万亿印尼盾，不良率3.22%，反映区域资产质量承压。",
-      "rationale": "区域资产质量数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "nusabali.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "08c2d4e7e703cbd4"
-      ],
-      "articles": [
-        {
-          "title": "Pindar Bali Rp2,31 Triliun, Macet 3,22% - NUSABALI.com",
-          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1BRmppTllJZ0wtY2VNakpRTmhsZFNta0NJZVlQelpMQ0RFMWMtcDdDWl9iR04wTjMxcVNKSFdGWTZRT0IwYzVDMFlsbXBueHA1SndFT3VtS3d1WGxwWHM4cWhSWDhSdzYwV05LUlhRb0N5QjhvaEpDcGxzWnJ0TWc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-4494b7ad110e",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "Polda Sulut"
-      ],
-      "headline": "Polda Sulut tegakkan disiplin cegah personel terindikasi judol-pinjol ilegal - ANTARA News Manado",
-      "headlineZh": "北苏警方整顿警员涉网贷网赌",
-      "summaryZh": "北苏拉威西警方开展纪律整顿，防止警员涉网赌和非法网贷，属内部监管行动。",
-      "rationale": "警方内部纪律行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "manado.antaranews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e81f9a322356dd92"
-      ],
-      "articles": [
-        {
-          "title": "Polda Sulut tegakkan disiplin cegah personel terindikasi judol-pinjol ilegal - ANTARA News Manado",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSnF1LWdkdEg2OVh3MV8tTExwQmN6RWlBZWN5QlljTDYzZkhwaGVfREN2QXA4WUZaWU15T1EyZkRLVmtxUUl6Rnl4Q1p0RjNYXzQtTmdwcy1TNkZPaWZtQnpGbld6ZG5tZ1VpalRNcXphZ0UtdTI0ODl6Y2xCVmlVRE1FZllvOEtHNk01UHRKZTVBTHZIZENlaGJYSFpESDI3SGVrcWpYaDBZNHcwT3pnendiMWE4VlFIU0wtTw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-bb3fcb730545",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Tegal"
-      ],
-      "headline": "Teror Pinjol Ilegal dan \"Scam\" Makin Masif, Tiap Hari OJK Tegal Kebanjiran Aduan - Kompas.com",
-      "headlineZh": "OJK Tegal每日收到大量网贷投诉",
-      "summaryZh": "OJK Tegal披露每日收到大量非法网贷和诈骗投诉，反映当地消费者受害情况严重。",
-      "rationale": "监管披露消费者投诉激增",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7b918328536a8157"
-      ],
-      "articles": [
-        {
-          "title": "Teror Pinjol Ilegal dan \"Scam\" Makin Masif, Tiap Hari OJK Tegal Kebanjiran Aduan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQM2tPNXFrY3RtODBvcFJSTU9jaERmTGdZTGFKbTZmaFZ1dDhHLVBfY1N0Ym9kWWotcXFxbUs5aHBHNEw2RW1xV2ZKLTVCcDNLQk5rUDRPdTJmakJHcnU3dXFudks2cll1T3pmWWNVNUd4WE5SU3hyTHVzbm4zRVVjN0M4WVZra2VuUWZKZ2VNNmRwZ1VoT1R2OGctNmFqdmZiNjBIN1VSblh0aDd3LWpNemZXbENXZWQwVkJCYlBhUWxEU3FzeHlSdndTaFY5S1NJblFWWDRCekZET1I3Z1owRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -384,49 +182,74 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 39,
-    "eventGroupCount": 9,
-    "rejectedNonEvents": 12,
+    "candidateCount": 20,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 14,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 39
+      "ok": 20
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-ecd80310d0d9",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
+      "id": "llm-1c6fbb2c226a",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "OJK",
-        "KrediOne"
+        "OJK"
       ],
-      "headline": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
-      "headlineZh": "OJK撤销三平台借贷限制",
-      "summaryZh": "OJK撤销对三家Pindar平台每户最多借三家的限制，允许用户跨更多平台借贷，KrediOne等回应。",
-      "rationale": "监管政策调整，值得留痕",
-      "independentSourceCount": 10,
+      "headline": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
+      "headlineZh": "Pindar数量缩减至94家",
+      "summaryZh": "OJK披露Pindar机构数量缩减至94家并说明原因，属行业常规动态。",
+      "rationale": "行业数量变化，常规动态",
+      "independentSourceCount": 1,
       "domains": [
-        "berandasulsel.com",
-        "beritamanado.com",
-        "bernas.id",
-        "economy.okezone.com",
-        "inews.id",
         "infobanknews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "198b249d8e76e1c6"
+      ],
+      "articles": [
+        {
+          "title": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQLTN2eEVVQU9GTFktRV9PWDNYZ3J5UU9OV2Q0c1E5WG1oclFsM0dvd1ZBODNPbTI3eHpsb0dxc2xJekVyb0J1emNXRkhMNjB5dy1jOU9HZENSc2xybmViYVI3d1VMUjNYaWRuS1NsdHhlOTZOTGdacy1XYzhaQkdhTg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-4ced44d26820",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
+      "headlineZh": "OJK取消三平台借贷限制",
+      "summaryZh": "OJK取消原计划限制民众最多在3家Pindar借款的规定并说明原因与风险，属监管政策调整。",
+      "rationale": "监管政策调整，值得留痕",
+      "independentSourceCount": 3,
+      "domains": [
+        "berandasulsel.com",
+        "bernas.id",
+        "idxchannel.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
         "41e271f50f92557e",
-        "92e5401019f1133a",
-        "bc2d9e057a404c4f",
-        "23fdfee0c5e91c90",
-        "340c5d40589304c4",
-        "6c493498e493cefc",
-        "12338dcc57d89dad",
-        "dbd8941d1cbb136a",
-        "9456f5eb6dc481ce",
-        "ddcb92e0c20cd6fc"
+        "c3d4b0befb81b248",
+        "340c5d40589304c4"
       ],
       "articles": [
         {
@@ -434,324 +257,97 @@
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaS03cFExMmRKUm5nWk9yb3g2S2h5V1JOUGl4WXlBZk44QnVIMzRfOE1MQnFkblhMaDlxOTVMU3lhU2hmQ3dzTFVyZ0FGRm9uLW1qcFhtWWpWREViWWwwbXI5bjZjMHJieS1XWDRKTkQ2dHNCbWxIV3lfcHNTbFFvZVJPN2hCaVZjQmtPUGtuQVZuUGVlbk4zOWNLemJCSGpFMDVyNUlZOGJ2bGVvcHBuTkd3a1MtaFJ1a0VUbk13MDNwbTg?oc=5"
         },
         {
-          "title": "OJK Batal Batasi Masyarakat Pinjam Uang Maksimal di 3 Pindar, Ini Alasannya - RCTI+",
-          "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxQaWNJWHNyMFZkTTg3TmJkbWtLR0FEVUlpNGJMeVctaHctbVFfV3VuVl9ndzN1RWFlVlFJRHJwM3NXaU9tdE9Eenl6bktUbGVLcXBqNVFfNUdMUUVNLVgzLTdvWGVpNlkxS09CVTB6UHJoOWNYUXhkNzlBaXRnWURKc2xwSkVnd1ZaRW5UWWpBaHFLSjVUOVh2QVpqUHhZSDd3ZVVNakpIaXN0ZUxwUEpWRmo2MGV0NFN4MWh4Sml5NmhzbmVVX3g3YmFVZTBNckJRcXVfWVd4bW9QV2NDRS11ODMwWTN1VGhyOWh5NGx4TG1qTkQzV1h0X2dEU0E2MHBva19iYWpiNzZQc01jbmVBT0xJYkNQQUJrX2h3LXM3RjBjSWljTk81X2Q5WQ?oc=5"
-        },
-        {
-          "title": "OJK Batalkan Batas 3 Platform Pinjol, Masyarakat Kini Bisa Pinjam di Banyak Aplikasi - economy.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOT2ROQkt2U3VtYWpERXdfdW1uUmZtcjNBRjAxVF8tVG9iVlF0MVp4VXFsUHQ2NnYyS1kzd2l0V0tjVHZzc1pWVk5iNVlHdHFXVlhpeW9MMU5veUpxUERTVlBfWW05MEcwamtSNkJ6dFljYm1TWVdnMEt0R0Q3Y0lnSFk2RjQyaFJtbk5EU0V4cE9zYmNpdXlBellORG05MWRadGpWc3hHUFotbUxXVkhlTWVoTVRFSDhiTGJna1RubTRpLXZ5UEdtUS1PN2dEY2lEczFJYkFn0gHUAUFVX3lxTE1HWktEV0ZjSDlFWHNtTG5mM19fa3hBaE92NFdYYzVvT0pLWGtIWGUzaTNwdTA3WjBUNXYyYTZIMDBwT29OXzZQbUdjdnJjRGFfMzFua0tSX2VQMEFBMjNiTlpidzNmT2x0Vnp6WjdGbGZoMGJoM2h6QVV2c3RrcUpfb0J1S3hsZ191WFlIVEYycU92RnhTdXcwOHIwek9ncHVjV2FIYkVuWVE4TTZpb09BUGxVdG1GOEpjQVNXcTVOV2U1d0dVcHFJamp1LVlyZWZCUUF3?oc=5"
-        },
-        {
-          "title": "OJK Batalkan Pembatasan Pinjam Uang Hanya di 3 Pinjol, Masyarakat Kini Bisa Akses Banyak Platform - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS19hREJ1dGd0Nzl4X2NQbmtvRU5YRmRVZGZKb2JkWlJzTktLWXNjbHFqRnhwZHNsaERxR1hkSXBzMUcwYXNTQzZpYS1pdUxjcDlvYk8yb1B1cW1Ebk5ld1Q3WWtBT3lnVVkyYzNkVXFlV0xjaFg0dkxzMUhHUktMUUhWM0ZOY1hSdFF5ZDU5QUFxUndiUlROLXU4SXZxWnp0MlZOZzltR0VyRXVGSlNDU24xT0tkTWNsSE50Z0FPRFVhQk9MY1VtdzJWQdIB0AFBVV95cUxONzFIUkc5UlB2MGszQlBub0pMUC1nZHFYd1NkdmdmRW1XRERodUpHaldhSVIzRDZQTnhWNWlSY0xuR1NJVVlDb0lBV0RBZ0hRdWpZN2ljZ2psU083RVVlU0h0RHF0c0tFN3FIWGdPaHB3Mk1LRFk0Q1RkTlpUOUpuR2JMSjd5WHJNeWJ3d0RYZUJQd1d5YWJUR183dmRfQkhzRW1pSTFEMlZoajR3dEQtTEdSN1JVMG5NUF9yVWFaMTlibkU4MFZOc0ItcGE1YW5M?oc=5"
+          "title": "OJK Batal Batasi Masyarakat Pinjam Uang Maksimal di 3 Pindar, Ini Alasannya - IDX Channel",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTEpwSFptWW9CdDhUTEpKV0hDS0hlNVBNSlN4bzFoQVFkcDhnRW9NRHZjaURKNnVkaWRMMEV3NDk4VUwyaTZRN1F6NmVLeVJQMHpGb1MxanpfQzV6a1ZVSFUyeUFHajdmcDZiMnFhb3ZiTlNkcXNnd2FsNkpyeVB2bEdxOGpselE4VlUzeEEwTXBzbnBFWFNJZnAzVHJwdnpyaDJtRUpHdHg0cnItWlJaSw?oc=5"
         },
         {
           "title": "OJK Batalkan Batas Pendanaan 3 Pindar, Ini Alasan dan Risikonya - BERNAS.id",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUWdQemM4ck9CMFNGekNmaVNTZl9IRll1WnRyajNYcHF0ckNOMjB2TFVEckVJc2trVm1jcDR1NmhacUVqZmJpNkRoeExheFl3dkU4SF9lRjRqREdIbGVNem9WZERhbW84VVNVRFBpaHFjUmYxdTlpdHgxVjhWZlpsYllSYURwU1hHUHVyVHBYRGM1WFhCVjdpdkd0eG44RHdERzFLY0VpWlc?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 10,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-531f632c3471",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Pria Muda Paling Banyak Terjerat Kredit Macet Pinjol - BantenNews.co.id",
-      "headlineZh": "年轻人成网贷坏账主力",
-      "summaryZh": "OJK数据显示网贷坏账以年轻男性为主，反映特定群体资产质量承压。",
-      "rationale": "监管披露资产质量数据",
-      "independentSourceCount": 3,
-      "domains": [
-        "bantennews.co.id",
-        "fortuneidn.com",
-        "suara.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "c1a0f1abfbdf933c",
-        "c69206459251fd2b",
-        "969644d05348905b"
-      ],
-      "articles": [
-        {
-          "title": "Pria Muda Paling Banyak Terjerat Kredit Macet Pinjol - BantenNews.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxONTFvb0RsMFNZdk4yQzRKYlMxdU95VVpnVTNxU19kR0k0LU9CX0RuQUlGQ2t2VTZYU0Q3YmtRbkVIcl9jaF9jVml0VWJfdDZUSEIweTFtQlZISmJPTUc2MTYxXzVUZXBmTjBSV3NFTHY3LTZtSGdEek1sSFdvQzBXOGtRV3Z1VHctSUE?oc=5"
-        },
-        {
-          "title": "Pria Muda Paling Banyak Terjerat Kredit Macet Pinjol - Suara.com",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQXzkzamJtdmRXZHhvRkdvM2ctMnJvcTB3TlJRcWw0dmloeEUyOXA2LWY5ZV9jWlFKNTRPU1IzeENiQ3FrbFZiVXJIalNjTEtBNm1Idmhxb2syNVhIZTVoRWNsaEpwNGpaVmhsbUYxcEdmeVFRcGpGTG4zV0cwQ2VTX0tCak5WTFNrR1RYXzBMNVp5MGNPaG1mTDdDcHhoMnZj0gGgAUFVX3lxTE12YmJoTXNxV3FQb3cwRm5JMmJTTU56eWQ2QUJHS3YtR19reVZMRmhUVzRBQWhXRTk1NFAwWjFXYU9JU1FNMnNQazRGTEtmZ0pjZXVsMDR6SUQxaUJzVUljNGVUenJRRTU1UG1UY1pBZVI3eU1PelE5WFhUVC1MZ3p1SXdhM3JLaDJQLVprcExnRzA2RE44OHFGSXNydGRTUnY?oc=5"
-        },
-        {
-          "title": "OJK Ungkap Kredit Macet Pinjol Didominasi Anak Muda dan Laki-laki - FORTUNE Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPT2JtZzhaV1lGeVZ0WDB1S0l5M0p1REZLV0pBc2VKcEtOQmp5Rk5lT3Y4TnBEQ191SG8yUnYtbWRiOFE5OGZZb1VGT0liU3RPUW4wdkxsOVQyZUdNcWw1Zi12WVhYOF9Ocm5aeEJZdC0xM1dVbTVPSXByOW9xeV9rbmhLclVBN0FRd0RNWmtlWEsxczJETTNfdDJxSmZsZHIxYzNZaF8yTnZZU1BERjVzcTdtRGtncjDSAbwBQVVfeXFMUFAzakk3R0ZEdklaZW4xaVNMVHY2ejR6a05sZEM1bkNGRWVaVkZWbF9xUEV6cllnZTluQ3hGOVczeVJleDZFTUZ5ZU5hMmlSWmtTdG5rWXI4NlZnU09KMFJxWk5EbF9SajNIeTkwaFVSQkRUMU1CRkNWSWZZNUZ1ZXRnSDZHSGVXVlBQdjVPV0k1SmR0bFFyUGZGUVFraGZ3TzdIUkVlSHVMYzRMbmZ5SW50aHVKT0pMbVRReHo?oc=5"
-        }
-      ],
       "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-ab2f16165799",
-      "eventType": "consumer_harm",
-      "severity": 0.3,
+      "id": "llm-d28d1b88b871",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
       "entities": [
-        "Dinsos Pekanbaru"
+        "OJK",
+        "RPA Indonesia"
       ],
-      "headline": "Dinsos Pekanbaru Ungkap Faktor Warga Dicoret dari Bansos, Ada Pinjol dan Judol - Betuah.com",
-      "headlineZh": " Pekanbaru居民因网贷被剔出低保",
-      "summaryZh": "Pekanbaru社会局披露有居民因涉网贷和网赌被剔除社会救助名单，属局部消费者影响。",
-      "rationale": "地方机构披露具体影响",
+      "headline": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
+      "headlineZh": "RPA与OJK二次会面跟进51起投诉",
+      "summaryZh": "RPA Indonesia与OJK举行第二次听证，跟进51起与网贷相关的民众投诉，属监管介入。",
+      "rationale": "监管介入跟进投诉，值得留痕",
       "independentSourceCount": 1,
       "domains": [
-        "betuah.com"
+        "metropolitanpost.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "dd24d57548d18df1"
+        "84e32c4bde8dd817"
       ],
       "articles": [
         {
-          "title": "Dinsos Pekanbaru Ungkap Faktor Warga Dicoret dari Bansos, Ada Pinjol dan Judol - Betuah.com",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPMmVEVGM0VTJPUEx4aS1KWURiMER5Y2p4RkVSRHk1dzlFMzFGLVVTUDVMRXF0cElTM1ZCNUJnc25ESjJmTC03eFhTd1JpdDEtYWlCZGFCdGtfQ3FCeWJEVjlGelNsWEo2WWgzUlJTZGkxOEsteHVlZ2tjeFBuaVJST05ma2xLbnowamh0LUVjbTdqNDJ5QTRXeklpbkNwcThsdGlQaUZzUG9KQlpYd0E4eUZfVFY?oc=5"
+          "title": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY25RSWI3Nk9kRHRnSjNzV2dpTjNxeWxnbGlYaVdBWU12Mzl3NU5kUUJXQWg1MzZNRGRWYmJqcEx6UjcxaHdGRG5UQVFyb1N0RHJjdDlyaUNSNlBoc0d4Sk1URFNaeHBweWt0N2hiZ0Nmc2tlWnlnVXFWaWdXUU1sb2FHUHZVYWhhS0ttRXZvYWtCRlJzRFd3eWc0d2ZhanZvUkduMmdxUV9DeEIwRGF1UA?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-f1e3a518a14c",
-      "eventType": "systemic_platform_stress",
+      "id": "llm-935e44e5b047",
+      "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
-        "KSP Mekarsari"
-      ],
-      "headline": "KSP Mekarsari Gagal Bayar Rp697 M, 1.645 Nasabah Kena Imbas - Monitor Indonesia",
-      "headlineZh": "KSP Mekarsari违约6.97亿",
-      "summaryZh": "KSP Mekarsari未能兑付6.97亿印尼盾，1645名储户受影响，属平台违约事件。",
-      "rationale": "平台违约，储户受损",
-      "independentSourceCount": 1,
-      "domains": [
-        "monitorindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "4a9065e6548f0cd2"
-      ],
-      "articles": [
-        {
-          "title": "KSP Mekarsari Gagal Bayar Rp697 M, 1.645 Nasabah Kena Imbas - Monitor Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbDVFQzNDc2s1MTVfQlNOYzdXa2MyYVJsclRlVVhtTzA4UGlKYXVzZlhSVDh1U3Uxa0ppYUZGcHB5SnpFM0hLMlB4b0ZHM2IwUnB3Q1VQTGhhUFRIZ1BFZ1F6bFkwVFVHakRSelJWVE8wcE9nTTNHMUEzZ2k3TGdUcDk3cFJkNmRiRHRla3BOeWlkVDdUSEpmaU01YW1yQml0Z2FFSjhXRGR0NWJtSGZFajRGRDY?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-62613a45aac6",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
+        "Satgas Pasti",
         "OJK"
       ],
-      "headline": "OJK Telah Hentikan 951 Pinjol Ilegal, Pinjol Ilegal Masih Bermunculan Ini Penyebabnya - kontan.co.id",
-      "headlineZh": "OJK已关停951家非法网贷",
-      "summaryZh": "OJK披露已关停951家非法网贷实体，但非法平台仍不断涌现，属监管执法动态。",
-      "rationale": "监管执法数据披露",
-      "independentSourceCount": 2,
-      "domains": [
-        "keuangan.kontan.co.id",
-        "tradersunion.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "cca67d6e98a3f9a9",
-        "1d156466c58c1f02",
-        "3523b447a584bf3a"
-      ],
-      "articles": [
-        {
-          "title": "OJK Telah Hentikan 951 Pinjol Ilegal, Pinjol Ilegal Masih Bermunculan Ini Penyebabnya - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWTdoNElwaUVsSm5sVXB6WWlFVGVoWTYyYjJIeC1wTnNlLUdfTFI5SF9DMXQ5bjc2OHNpMHd6ZUhuY2R2RDBpd3Q2RnBhUk5pYmRuYVBHdzN4YzZkNWNrYmpUZTZJRElxcjVWT2dNOFZTMGlxVFNOSmRTeHZJUTlrY1JrakJUd3lVZEhVdGYzdWVnM1dvMDdHenhRRXN4UW45cUhIbVI1VVRKWkQxYUV4TXoxRnN6Ry1vRWRN0gG0AUFVX3lxTE15UklvVy1RQmVnM1ZDT0lVa19vb0xLN0c4NzUxa01SeWVxMHVsR18yRHJLQy1OYmk3Y0E4QUFzNVF6SjJzTllVeU0tVjNveTlLMzlVMlVDNjdsZE1NOWdYeDlvSUpXTjV1OHp1YUpRM3FnZWtaYmM4Sno1R1UtNHUtN016ZFYyVjhpY0R0UEY4R1BCWUJqYzd0RWNXVTZRc3dkc3RnTUp3dnhqY0NoUG9fclh6UA?oc=5"
-        },
-        {
-          "title": "OJK ungkap faktor pinjol ilegal tetap bermunculan di tengah penghentian 951 entitas - Traders Union",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQOTNFZGdac1R3MnZZZWlLMzNDZ2d1dTNSTWVvQURXTW1pbVdWRVR6bC14UnRRU1RkOERrUzc5NERBYTJfVmpEWjhWNWtRWE1oYW1PSGJrM2hZMTFpREFEU0NOb0FzeUJCdTQ2RVhVM0ZCWHRTdVF4bm1rTk91NTQxSmRSc3RxQ2tVV2VDN0ZJdzN6dE02S0J5TU1R?oc=5"
-        },
-        {
-          "title": "Pinjol Ilegal Masih Bermunculan, OJK Ungkap 951 Entitas Dihentikan - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcE9nRjc3S1k2dS1GQ3dXdUhDdW02UDhlaXU5bUx2Q3FHZ1VuTnhMVWs4Ni1Zc0x0OUtQVWM4R3F1UjRUOFB1amF0a3FBTjR4aU9xcFd6bjh0dVdwNVg2UE1hWXMzcmM0VzMyTGs2MFl5YUpHdDB5SHVFMHpVNm4yeWF2aVlybVdJbVdIcVpaZzY5ekdYN0tjSllsVkpVdE4wYmfSAZsBQVVfeXFMUFhYVnllYXU3OW9TNEJOYmZtYWpuenZhazdaR0FYS0pBbG85UHFJN1BLVXlWaDFqVGhwQjVLeE5meU5hZEZnQ2V0cEtGelF0dkVUSElnZWJPclc2YzUzc3hFRFVudHBKVmRCWEhJSGV3elA0a3YxbGs5REJGYThVSkRueTIxNEVaZGxLTEpfalRrdzR4NWtOMVYyam8?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-62471d84fb88",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Ungkap 30 Persen Pengajuan KPR Ditolak Gara-gara Pinjol - wartaekonomi.co.id",
-      "headlineZh": "三成房贷申请因网贷被拒",
-      "summaryZh": "OJK披露30%的房贷申请因申请人有网贷记录被拒，反映网贷对信贷质量的溢出影响。",
-      "rationale": "监管披露信贷质量影响",
+      "headline": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
+      "headlineZh": "Satgas Pasti关停951家非法网贷",
+      "summaryZh": "Satgas Pasti在2026年1至6月关停951家非法网贷平台，属大规模监管执法行动。",
+      "rationale": "大规模监管执法，影响广泛",
       "independentSourceCount": 1,
       "domains": [
-        "wartaekonomi.co.id"
+        "idxchannel.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5d0d1ed0ce908983"
+        "a9f626cdced0baca"
       ],
       "articles": [
         {
-          "title": "OJK Ungkap 30 Persen Pengajuan KPR Ditolak Gara-gara Pinjol - wartaekonomi.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQdFRwcnRwMWxUN2hBVzJraVdLbEtBU0l3LTZwZG5PUUhSb0pucDlZQWkycnhOR0tkLWhaYkd4VHBmVTUzZV9Zc0pmM2p3TlQ1cXJTYmxkczM3emY4SW1HQTJmdHhoaUtPb0FnbUhsMlJCaHdMZE1ra1Y1S28xaDFmS3BMNmdhSmpodUlrQjdwQnZoU3lWLU0yUE9CcHJjaTJDZ1VJ0gGjAUFVX3lxTFB0VHBydHAxbFQ3aEFXMmtpV0tsS0FTSXctNnBkbk9RSFJvSm5wOVlBaTJyeE5HS2QtaFpiR3hUcGZVNTNlX1lzSmYzandOVDVxclNibGRzMzd6ZjhJbUdBMmZ0eGhpS09vQWdtSGwyUkJod0xkTWtrVjVLbzFoMWZLcEw2Z2FKamh1SWtCN3BCdmhTeVYtTTJQT0JwcmNpMkNnVUk?oc=5"
+          "title": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTmNCOTZIczV3QzU2R0EyLXlLcV80Nnh6YVVTa2xCU0VwbEJPWWlxbzRkM3BkVm96Wkpra09IbDdpQUxkWjNMV28wRC0wcDlzaG1pVzUyNTFLT0N0dzlDMGdSR1g0dGhoTjdLT1A5RnBlWE1iQUtzLU1sQ3Jkc2ZkeGIybUEtNXRyQV83UEd6enVjSDRFR0FFM0VxOE9wQkRMM2c2ajA3RWx4UXpXNEZINVBIUdIBuAFBVV95cUxOTWs0RVN2MTVPZ0lmYmdMb1hKV3Q2ZkdQSlhHdm80ZkJFMEJUbmFkekEyYnJYZVhDaHlQS3dpOXlkdVptNWRkNEhPZi1PZHdPYTRLWG5CcDd1MlNnR2F4UFB4TnJTM0czd21DeURwWXljTkFiUHd3M05LbF9xWmRmV2pneVAybzJwbERzeDdwcE83QVRjSS1QNXpaNk8xTU5iMGV4MWRSLWpkS0FmUlV0emlnNDZ2bnIx?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-72962a3118c5",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "Pindar Bali"
-      ],
-      "headline": "Pindar Bali Rp2,31 Triliun, Macet 3,22% - NUSABALI.com",
-      "headlineZh": "巴厘Pindar贷款2.31万亿不良3.22%",
-      "summaryZh": "巴厘岛Pindar贷款规模达2.31万亿印尼盾，不良率3.22%，反映区域资产质量承压。",
-      "rationale": "区域资产质量数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "nusabali.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "08c2d4e7e703cbd4"
-      ],
-      "articles": [
-        {
-          "title": "Pindar Bali Rp2,31 Triliun, Macet 3,22% - NUSABALI.com",
-          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1BRmppTllJZ0wtY2VNakpRTmhsZFNta0NJZVlQelpMQ0RFMWMtcDdDWl9iR04wTjMxcVNKSFdGWTZRT0IwYzVDMFlsbXBueHA1SndFT3VtS3d1WGxwWHM4cWhSWDhSdzYwV05LUlhRb0N5QjhvaEpDcGxzWnJ0TWc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-4494b7ad110e",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "Polda Sulut"
-      ],
-      "headline": "Polda Sulut tegakkan disiplin cegah personel terindikasi judol-pinjol ilegal - ANTARA News Manado",
-      "headlineZh": "北苏警方整顿警员涉网贷网赌",
-      "summaryZh": "北苏拉威西警方开展纪律整顿，防止警员涉网赌和非法网贷，属内部监管行动。",
-      "rationale": "警方内部纪律行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "manado.antaranews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e81f9a322356dd92"
-      ],
-      "articles": [
-        {
-          "title": "Polda Sulut tegakkan disiplin cegah personel terindikasi judol-pinjol ilegal - ANTARA News Manado",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSnF1LWdkdEg2OVh3MV8tTExwQmN6RWlBZWN5QlljTDYzZkhwaGVfREN2QXA4WUZaWU15T1EyZkRLVmtxUUl6Rnl4Q1p0RjNYXzQtTmdwcy1TNkZPaWZtQnpGbld6ZG5tZ1VpalRNcXphZ0UtdTI0ODl6Y2xCVmlVRE1FZllvOEtHNk01UHRKZTVBTHZIZENlaGJYSFpESDI3SGVrcWpYaDBZNHcwT3pnendiMWE4VlFIU0wtTw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-bb3fcb730545",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Tegal"
-      ],
-      "headline": "Teror Pinjol Ilegal dan \"Scam\" Makin Masif, Tiap Hari OJK Tegal Kebanjiran Aduan - Kompas.com",
-      "headlineZh": "OJK Tegal每日收到大量网贷投诉",
-      "summaryZh": "OJK Tegal披露每日收到大量非法网贷和诈骗投诉，反映当地消费者受害情况严重。",
-      "rationale": "监管披露消费者投诉激增",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7b918328536a8157"
-      ],
-      "articles": [
-        {
-          "title": "Teror Pinjol Ilegal dan \"Scam\" Makin Masif, Tiap Hari OJK Tegal Kebanjiran Aduan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxQM2tPNXFrY3RtODBvcFJSTU9jaERmTGdZTGFKbTZmaFZ1dDhHLVBfY1N0Ym9kWWotcXFxbUs5aHBHNEw2RW1xV2ZKLTVCcDNLQk5rUDRPdTJmakJHcnU3dXFudks2cll1T3pmWWNVNUd4WE5SU3hyTHVzbm4zRVVjN0M4WVZra2VuUWZKZ2VNNmRwZ1VoT1R2OGctNmFqdmZiNjBIN1VSblh0aDd3LWpNemZXbENXZWQwVkJCYlBhUWxEU3FzeHlSdndTaFY5S1NJblFWWDRCekZET1I3Z1owRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -768,21 +364,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 40,
-    "socialItemCount48h": 4
+    "articleCount48h": 24,
+    "socialItemCount48h": 23
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 458,
-    "classifiedCount": 105,
-    "irrelevantDropped": 135,
+    "inputCount": 462,
+    "classifiedCount": 140,
+    "irrelevantDropped": 100,
     "model": "deepseek-chat",
-    "fallbackCount": 218,
+    "fallbackCount": 222,
     "labelCounts": {
-      "NEG": 46,
-      "MIX": 35,
-      "POS": 24
+      "NEG": 91,
+      "MIX": 29,
+      "POS": 20
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
