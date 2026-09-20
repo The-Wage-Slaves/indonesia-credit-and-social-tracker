@@ -1,356 +1,38 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-19",
+  "date": "2026-09-20",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 29.8,
+    "newsDailyVolumeRisk": 26.9,
     "socialDailyVolumeRisk": 7.8,
-    "negativeSocialShare": 17.0,
+    "negativeSocialShare": 19.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=5; prior-7d median=19.0; robust z=-1.35",
-    "socialVolume": "today=2; prior-7d median=27.0; robust z=-2.81"
+    "newsVolume": "today=4; prior-7d median=20.0; robust z=-1.54",
+    "socialVolume": "today=10; prior-7d median=35.0; robust z=-2.81"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-1c6fbb2c226a",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
-      "headlineZh": "Pindar数量缩减至94家",
-      "summaryZh": "OJK披露Pindar机构数量缩减至94家并说明原因，属行业常规动态。",
-      "rationale": "行业数量变化，常规动态",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "198b249d8e76e1c6"
-      ],
-      "articles": [
-        {
-          "title": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQLTN2eEVVQU9GTFktRV9PWDNYZ3J5UU9OV2Q0c1E5WG1oclFsM0dvd1ZBODNPbTI3eHpsb0dxc2xJekVyb0J1emNXRkhMNjB5dy1jOU9HZENSc2xybmViYVI3d1VMUjNYaWRuS1NsdHhlOTZOTGdacy1XYzhaQkdhTg?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-4ced44d26820",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
-      "headlineZh": "OJK取消三平台借贷限制",
-      "summaryZh": "OJK取消原计划限制民众最多在3家Pindar借款的规定并说明原因与风险，属监管政策调整。",
-      "rationale": "监管政策调整，值得留痕",
-      "independentSourceCount": 3,
-      "domains": [
-        "berandasulsel.com",
-        "bernas.id",
-        "idxchannel.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "41e271f50f92557e",
-        "c3d4b0befb81b248",
-        "340c5d40589304c4"
-      ],
-      "articles": [
-        {
-          "title": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaS03cFExMmRKUm5nWk9yb3g2S2h5V1JOUGl4WXlBZk44QnVIMzRfOE1MQnFkblhMaDlxOTVMU3lhU2hmQ3dzTFVyZ0FGRm9uLW1qcFhtWWpWREViWWwwbXI5bjZjMHJieS1XWDRKTkQ2dHNCbWxIV3lfcHNTbFFvZVJPN2hCaVZjQmtPUGtuQVZuUGVlbk4zOWNLemJCSGpFMDVyNUlZOGJ2bGVvcHBuTkd3a1MtaFJ1a0VUbk13MDNwbTg?oc=5"
-        },
-        {
-          "title": "OJK Batal Batasi Masyarakat Pinjam Uang Maksimal di 3 Pindar, Ini Alasannya - IDX Channel",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTEpwSFptWW9CdDhUTEpKV0hDS0hlNVBNSlN4bzFoQVFkcDhnRW9NRHZjaURKNnVkaWRMMEV3NDk4VUwyaTZRN1F6NmVLeVJQMHpGb1MxanpfQzV6a1ZVSFUyeUFHajdmcDZiMnFhb3ZiTlNkcXNnd2FsNkpyeVB2bEdxOGpselE4VlUzeEEwTXBzbnBFWFNJZnAzVHJwdnpyaDJtRUpHdHg0cnItWlJaSw?oc=5"
-        },
-        {
-          "title": "OJK Batalkan Batas Pendanaan 3 Pindar, Ini Alasan dan Risikonya - BERNAS.id",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUWdQemM4ck9CMFNGekNmaVNTZl9IRll1WnRyajNYcHF0ckNOMjB2TFVEckVJc2trVm1jcDR1NmhacUVqZmJpNkRoeExheFl3dkU4SF9lRjRqREdIbGVNem9WZERhbW84VVNVRFBpaHFjUmYxdTlpdHgxVjhWZlpsYllSYURwU1hHUHVyVHBYRGM1WFhCVjdpdkd0eG44RHdERzFLY0VpWlc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-d28d1b88b871",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "RPA Indonesia"
-      ],
-      "headline": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
-      "headlineZh": "RPA与OJK二次会面跟进51起投诉",
-      "summaryZh": "RPA Indonesia与OJK举行第二次听证，跟进51起与网贷相关的民众投诉，属监管介入。",
-      "rationale": "监管介入跟进投诉，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "metropolitanpost.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "84e32c4bde8dd817"
-      ],
-      "articles": [
-        {
-          "title": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY25RSWI3Nk9kRHRnSjNzV2dpTjNxeWxnbGlYaVdBWU12Mzl3NU5kUUJXQWg1MzZNRGRWYmJqcEx6UjcxaHdGRG5UQVFyb1N0RHJjdDlyaUNSNlBoc0d4Sk1URFNaeHBweWt0N2hiZ0Nmc2tlWnlnVXFWaWdXUU1sb2FHUHZVYWhhS0ttRXZvYWtCRlJzRFd3eWc0d2ZhanZvUkduMmdxUV9DeEIwRGF1UA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-935e44e5b047",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "Satgas Pasti",
-        "OJK"
-      ],
-      "headline": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
-      "headlineZh": "Satgas Pasti关停951家非法网贷",
-      "summaryZh": "Satgas Pasti在2026年1至6月关停951家非法网贷平台，属大规模监管执法行动。",
-      "rationale": "大规模监管执法，影响广泛",
-      "independentSourceCount": 1,
-      "domains": [
-        "idxchannel.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a9f626cdced0baca"
-      ],
-      "articles": [
-        {
-          "title": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTmNCOTZIczV3QzU2R0EyLXlLcV80Nnh6YVVTa2xCU0VwbEJPWWlxbzRkM3BkVm96Wkpra09IbDdpQUxkWjNMV28wRC0wcDlzaG1pVzUyNTFLT0N0dzlDMGdSR1g0dGhoTjdLT1A5RnBlWE1iQUtzLU1sQ3Jkc2ZkeGIybUEtNXRyQV83UEd6enVjSDRFR0FFM0VxOE9wQkRMM2c2ajA3RWx4UXpXNEZINVBIUdIBuAFBVV95cUxOTWs0RVN2MTVPZ0lmYmdMb1hKV3Q2ZkdQSlhHdm80ZkJFMEJUbmFkekEyYnJYZVhDaHlQS3dpOXlkdVptNWRkNEhPZi1PZHdPYTRLWG5CcDd1MlNnR2F4UFB4TnJTM0czd21DeURwWXljTkFiUHd3M05LbF9xWmRmV2pneVAybzJwbERzeDdwcE83QVRjSS1QNXpaNk8xTU5iMGV4MWRSLWpkS0FmUlV0emlnNDZ2bnIx?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    }
-  ],
+  "lowEvidenceLeads": [],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 20,
-    "eventGroupCount": 4,
-    "rejectedNonEvents": 14,
+    "candidateCount": 9,
+    "eventGroupCount": 0,
+    "rejectedNonEvents": 7,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 20
+      "ok": 9
     },
     "socialCrossCheck": "applied"
   },
-  "events": [
-    {
-      "id": "llm-1c6fbb2c226a",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
-      "headlineZh": "Pindar数量缩减至94家",
-      "summaryZh": "OJK披露Pindar机构数量缩减至94家并说明原因，属行业常规动态。",
-      "rationale": "行业数量变化，常规动态",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "198b249d8e76e1c6"
-      ],
-      "articles": [
-        {
-          "title": "Jumlah Pindar Susut Jadi 94, OJK Ungkap Penyebabnya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQLTN2eEVVQU9GTFktRV9PWDNYZ3J5UU9OV2Q0c1E5WG1oclFsM0dvd1ZBODNPbTI3eHpsb0dxc2xJekVyb0J1emNXRkhMNjB5dy1jOU9HZENSc2xybmViYVI3d1VMUjNYaWRuS1NsdHhlOTZOTGdacy1XYzhaQkdhTg?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-4ced44d26820",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
-      "headlineZh": "OJK取消三平台借贷限制",
-      "summaryZh": "OJK取消原计划限制民众最多在3家Pindar借款的规定并说明原因与风险，属监管政策调整。",
-      "rationale": "监管政策调整，值得留痕",
-      "independentSourceCount": 3,
-      "domains": [
-        "berandasulsel.com",
-        "bernas.id",
-        "idxchannel.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "41e271f50f92557e",
-        "c3d4b0befb81b248",
-        "340c5d40589304c4"
-      ],
-      "articles": [
-        {
-          "title": "Kabar Gembira atau Ancaman Gali Lubang Tutup Lubang? OJK Batal Batasi Pinjaman di 3 Platform Pinjol - berandasulsel.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQaS03cFExMmRKUm5nWk9yb3g2S2h5V1JOUGl4WXlBZk44QnVIMzRfOE1MQnFkblhMaDlxOTVMU3lhU2hmQ3dzTFVyZ0FGRm9uLW1qcFhtWWpWREViWWwwbXI5bjZjMHJieS1XWDRKTkQ2dHNCbWxIV3lfcHNTbFFvZVJPN2hCaVZjQmtPUGtuQVZuUGVlbk4zOWNLemJCSGpFMDVyNUlZOGJ2bGVvcHBuTkd3a1MtaFJ1a0VUbk13MDNwbTg?oc=5"
-        },
-        {
-          "title": "OJK Batal Batasi Masyarakat Pinjam Uang Maksimal di 3 Pindar, Ini Alasannya - IDX Channel",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOTEpwSFptWW9CdDhUTEpKV0hDS0hlNVBNSlN4bzFoQVFkcDhnRW9NRHZjaURKNnVkaWRMMEV3NDk4VUwyaTZRN1F6NmVLeVJQMHpGb1MxanpfQzV6a1ZVSFUyeUFHajdmcDZiMnFhb3ZiTlNkcXNnd2FsNkpyeVB2bEdxOGpselE4VlUzeEEwTXBzbnBFWFNJZnAzVHJwdnpyaDJtRUpHdHg0cnItWlJaSw?oc=5"
-        },
-        {
-          "title": "OJK Batalkan Batas Pendanaan 3 Pindar, Ini Alasan dan Risikonya - BERNAS.id",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUWdQemM4ck9CMFNGekNmaVNTZl9IRll1WnRyajNYcHF0ckNOMjB2TFVEckVJc2trVm1jcDR1NmhacUVqZmJpNkRoeExheFl3dkU4SF9lRjRqREdIbGVNem9WZERhbW84VVNVRFBpaHFjUmYxdTlpdHgxVjhWZlpsYllSYURwU1hHUHVyVHBYRGM1WFhCVjdpdkd0eG44RHdERzFLY0VpWlc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-d28d1b88b871",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "RPA Indonesia"
-      ],
-      "headline": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
-      "headlineZh": "RPA与OJK二次会面跟进51起投诉",
-      "summaryZh": "RPA Indonesia与OJK举行第二次听证，跟进51起与网贷相关的民众投诉，属监管介入。",
-      "rationale": "监管介入跟进投诉，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "metropolitanpost.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "84e32c4bde8dd817"
-      ],
-      "articles": [
-        {
-          "title": "RPA INDONESIA AUDIENSI KEDUA DENGAN OJK, KAWAL 51 LAPORAN MASYARAKAT TERKAIT PINJOL - Metropolitan Post -",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNY25RSWI3Nk9kRHRnSjNzV2dpTjNxeWxnbGlYaVdBWU12Mzl3NU5kUUJXQWg1MzZNRGRWYmJqcEx6UjcxaHdGRG5UQVFyb1N0RHJjdDlyaUNSNlBoc0d4Sk1URFNaeHBweWt0N2hiZ0Nmc2tlWnlnVXFWaWdXUU1sb2FHUHZVYWhhS0ttRXZvYWtCRlJzRFd3eWc0d2ZhanZvUkduMmdxUV9DeEIwRGF1UA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-935e44e5b047",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "Satgas Pasti",
-        "OJK"
-      ],
-      "headline": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
-      "headlineZh": "Satgas Pasti关停951家非法网贷",
-      "summaryZh": "Satgas Pasti在2026年1至6月关停951家非法网贷平台，属大规模监管执法行动。",
-      "rationale": "大规模监管执法，影响广泛",
-      "independentSourceCount": 1,
-      "domains": [
-        "idxchannel.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a9f626cdced0baca"
-      ],
-      "articles": [
-        {
-          "title": "Satgas Pasti Hentikan Kegiatan 951 Pinjol Ilegal Sepanjang Januari-Juni 2026 - IDX Channel",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNTmNCOTZIczV3QzU2R0EyLXlLcV80Nnh6YVVTa2xCU0VwbEJPWWlxbzRkM3BkVm96Wkpra09IbDdpQUxkWjNMV28wRC0wcDlzaG1pVzUyNTFLT0N0dzlDMGdSR1g0dGhoTjdLT1A5RnBlWE1iQUtzLU1sQ3Jkc2ZkeGIybUEtNXRyQV83UEd6enVjSDRFR0FFM0VxOE9wQkRMM2c2ajA3RWx4UXpXNEZINVBIUdIBuAFBVV95cUxOTWs0RVN2MTVPZ0lmYmdMb1hKV3Q2ZkdQSlhHdm80ZkJFMEJUbmFkekEyYnJYZVhDaHlQS3dpOXlkdVptNWRkNEhPZi1PZHdPYTRLWG5CcDd1MlNnR2F4UFB4TnJTM0czd21DeURwWXljTkFiUHd3M05LbF9xWmRmV2pneVAybzJwbERzeDdwcE83QVRjSS1QNXpaNk8xTU5iMGV4MWRSLWpkS0FmUlV0emlnNDZ2bnIx?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    }
-  ],
+  "events": [],
   "coverage": {
     "successfulChannels": [
       "google_news",
@@ -364,21 +46,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 24,
-    "socialItemCount48h": 23
+    "articleCount48h": 13,
+    "socialItemCount48h": 36
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 462,
+    "inputCount": 502,
     "classifiedCount": 140,
     "irrelevantDropped": 100,
     "model": "deepseek-chat",
-    "fallbackCount": 222,
+    "fallbackCount": 262,
     "labelCounts": {
-      "NEG": 91,
-      "MIX": 29,
-      "POS": 20
+      "NEG": 60,
+      "MIX": 48,
+      "POS": 32
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
