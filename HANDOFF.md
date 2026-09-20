@@ -13,6 +13,11 @@ Last updated: 2026-08-20
   2026-08-04 and must not be recreated; all cadences are GitHub Actions.
 - 全景等权版 (V3) is still the only production methodology. 数据置信版 (V4) stays a
   read-only shadow.
+- 2026-09-20: `data.js` gained a `watchlist` (dated external events to watch — deadlines,
+  rate decisions, index/rating reviews). Rendered on the dashboard as「后续观察时点」,
+  appended to the Tuesday Feishu card, printed by `apply_week.py watch`/`append`, and
+  policed by `validate_repo` (open items >14 days past due fail CI). Clearing this table
+  is now step ⓪ of the weekly update. Seeded with 9 items 2026-09-22 → 2027-02-28.
 
 ### What #18–#26 changed (the alerting rework)
 

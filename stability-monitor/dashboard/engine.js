@@ -150,6 +150,7 @@ function render(){
       <div class="chartWrap" style="height:220px;"><canvas id="wk"></canvas></div>
       <p class="note">${legacyBasisNote()}读图: 看斜率不看水位——周变化的方向与速度比绝对分更有信息量。注: 两期均按 v3 量化口径(2026-07-15重构,硬数据占比~73%)回溯重算，与 v2 原值不可直接比较。切换顶部权重预设，综合线会随之重算。</p>
     </div>
+    ${watchlistBlock()}
     <div class="grid">${DATA.pillars.map(pillarCard).join('')}</div>
     <div class="section">
       <div style="font-size:13px;color:var(--tx2);margin-bottom:10px;">各支柱评分 vs 临界值 vs 1998 类比位置</div>
@@ -174,6 +175,52 @@ function legacyBasisNote(){
   return `<b>空心点</b>(${marked.join("、")}): 沿用已知有误的旧汇率基数——该基数把年内贬值虚增约 3.4pp。`
     + `其后各期已于 2026-09-01 按逐期对照表回溯重调，但这两期没有 driver 级记录、无法重算，故原样保留。`
     + `序列在此处有一道口径缝，跨缝比较需谨慎。<br>`;
+}
+
+
+// ---- 后续观察时点 ---------------------------------------------------------
+// 表本身在 data.js 的 watchlist（人维护）。这里只做三件事：按日期排、算距 asOf 的天数、
+// 把 open 且已过期的项标红——"过期未复核"是这张表最常见的失效方式，必须在看板上看得见。
+// 日期一律相对 DATA.asOf 而不是浏览器时钟：看板是离线 ZIP，读者可能在任何一天打开它，
+// 相对 asOf 才说得清"评分时距该事件还有几天"。
+const PILLAR_ZH = { fiscal:"财政", currency:"货币", institutions:"制度", social:"社会", coercive:"强制机构", cross:"跨支柱" };
+function daysBetween(a, b){ return Math.round((Date.parse(b) - Date.parse(a)) / 86400000); }
+function watchlistRows(){
+  return (DATA.watchlist || []).slice().sort((x, y) => x.date.localeCompare(y.date)).map(w => {
+    const d = daysBetween(DATA.asOf, w.date);
+    let state, cls;
+    if(w.status === 'resolved'){ state = '已核对'; cls = 'wResolved'; }
+    else if(w.status === 'lapsed'){ state = '已失效'; cls = 'wResolved'; }
+    else if(d < 0){ state = `已过 ${-d} 天·待复核`; cls = 'wOverdue'; }
+    else if(d <= 7){ state = d === 0 ? '今天' : `${d} 天内`; cls = 'wSoon'; }
+    else { state = `${d} 天后`; cls = ''; }
+    return { ...w, days: d, state, cls };
+  });
+}
+function watchlistBlock(){
+  const rows = watchlistRows();
+  if(!rows.length) return '';
+  const open = rows.filter(r => r.status === 'open');
+  const overdue = open.filter(r => r.days < 0).length;
+  const body = rows.map(r => `
+      <div class="wRow ${r.cls}">
+        <div class="wDate">${r.approx ? '约 ' : ''}${r.date}<br><span class="wState">${r.state}</span></div>
+        <div class="wMain">
+          <div class="wTitle"><span class="wPillar">${PILLAR_ZH[r.pillar] || r.pillar}</span>${r.title}</div>
+          <div class="wWhy">${r.why}</div>
+          <div class="wWatch"><b>到时看什么:</b> ${r.watch}</div>
+          ${r.outcome ? `<div class="wOutcome"><b>核对结论:</b> ${r.outcome}</div>` : ''}
+        </div>
+      </div>`).join('');
+  return `
+    <div class="section" style="margin-top:18px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;">
+        <div style="font-size:13px;color:var(--tx2);">后续观察时点 · 距评分日 ${DATA.asOf}</div>
+        <div style="font-size:11px;color:var(--tx3);">待看 ${open.length} 项${overdue ? `，<span style="color:#E24B4A;">${overdue} 项已过期未复核</span>` : ''}</div>
+      </div>
+      <div class="wList">${body}</div>
+      <p class="note">只登记<b>有日期</b>的外部事件（法定期限、议息/复审/发布日、政府自己承诺的时间点）；每周更时先核对已到期项并写入结论，再决定是否改 driver。「约」= 只知道月份或窗口。</p>
+    </div>`;
 }
 
 let wkChart;

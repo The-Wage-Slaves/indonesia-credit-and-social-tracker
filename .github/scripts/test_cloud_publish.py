@@ -239,6 +239,97 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("不会安装开机任务", "\n".join(summary["lines"]))
 
 
+class WatchlistReminderTests(unittest.TestCase):
+    """周二卡里的「观察时点」段：它只提醒日期，不判断事件；但 7 天内到期或已过期
+    未复核时，本身就是一次推送资格——否则整张表只会活在没人打开的看板里。"""
+
+    QUIET_WEEK = {
+        "weeks": [{
+            "weekEnd": "2026-09-20",
+            "fearIndex": 40,
+            "engines": {"news": {"score": 40}, "social": {"score": 40}},
+            "alert": {"level": "normal", "notificationLevel": "normal",
+                      "active": [], "reviewCandidates": []},
+        }],
+    }
+    WATCHLIST = [
+        {"date": "2026-09-10", "approx": False, "title": "已过期的时点", "pillar": "social",
+         "why": "w", "watch": "看结果", "added": "2026-09-01", "status": "open", "outcome": ""},
+        {"date": "2026-09-24", "approx": False, "title": "BI 议息", "pillar": "currency",
+         "why": "w", "watch": "维持还是加息", "added": "2026-09-20", "status": "open", "outcome": ""},
+        {"date": "2026-10-15", "approx": True, "title": "工会示威窗口", "pillar": "social",
+         "why": "w", "watch": "规模", "added": "2026-09-20", "status": "open", "outcome": ""},
+        {"date": "2026-12-15", "approx": False, "title": "资产没收法期限", "pillar": "institutions",
+         "why": "w", "watch": "是否三读", "added": "2026-09-20", "status": "open", "outcome": ""},
+        {"date": "2026-09-18", "approx": False, "title": "已核对的时点", "pillar": "fiscal",
+         "why": "w", "watch": "x", "added": "2026-09-01", "status": "resolved", "outcome": "已入 driver"},
+    ]
+
+    def _summary(self, data, watchlist, today):
+        def fake_read(path, default=None):
+            if path.endswith("credit-sentiment-pending.json"):
+                return data
+            if path.endswith("dashboard-data.json"):
+                return {"asOf": "2026-09-15", "watchlist": watchlist}
+            if path.endswith("street_heat_history.json"):
+                return []
+            return default
+
+        real_window = MODULE.watchlist_window
+        with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
+            with mock.patch.object(
+                MODULE, "watchlist_window",
+                side_effect=lambda t=None: real_window(today),
+            ):
+                with mock.patch.dict(MODULE.os.environ, {"STREET_STATUS": "success"}):
+                    return MODULE.weekly_summary()
+
+    def test_due_or_overdue_watch_item_makes_quiet_week_pushable(self):
+        summary = self._summary(self.QUIET_WEEK, self.WATCHLIST, MODULE.dt.date(2026, 9, 20))
+        self.assertTrue(summary["risk"])
+        self.assertTrue(summary["watchDue"])
+        self.assertIn("观察时点提醒", summary["title"])
+        self.assertNotIn("待确认", summary["title"])
+        card = "\n".join(summary["lines"])
+        self.assertIn("已过期未复核", card)
+        self.assertIn("已过期的时点", card)
+        self.assertIn("已过 10 天", card)
+        self.assertIn("BI 议息", card)
+        self.assertIn("4 天后", card)
+        self.assertIn("约 2026-10-15", card)
+        # 30 天窗口之外的不列；已核对的不列
+        self.assertNotIn("资产没收法期限", card)
+        self.assertNotIn("已核对的时点", card)
+        self.assertIn("不代表指数或事件异常", card)
+
+    def test_far_future_items_do_not_trigger_push(self):
+        far = [w for w in self.WATCHLIST if w["date"] >= "2026-12-01"]
+        summary = self._summary(self.QUIET_WEEK, far, MODULE.dt.date(2026, 9, 20))
+        self.assertFalse(summary["risk"])
+        self.assertFalse(summary["watchDue"])
+        self.assertNotIn("观察时点", "\n".join(summary["lines"]))
+
+    def test_real_risk_title_is_not_relabelled_by_watch_reminder(self):
+        risky = {
+            "weeks": [{
+                "weekEnd": "2026-09-20",
+                "fearIndex": 80,
+                "engines": {"news": {"score": 80}, "social": {"score": 80}},
+                "alert": {"level": "red", "notificationLevel": "red",
+                          "triggerReasons": ["verified_severe_event"],
+                          "active": [{"id": "x", "hasPrimarySource": True,
+                                      "independentSourceCount": 2,
+                                      "headline": "Evt", "eventType": "regulatory_action"}]},
+            }],
+        }
+        summary = self._summary(risky, self.WATCHLIST, MODULE.dt.date(2026, 9, 20))
+        self.assertIn("RED待确认", summary["title"])
+        self.assertNotIn("观察时点提醒", summary["title"])
+        card = "\n".join(summary["lines"])
+        self.assertIn("①确认留痕", card)
+        self.assertIn("BI 议息", card)   # 提醒段仍在，只是不抢标题
+
+
 class ReviewLinkTests(unittest.TestCase):
     """卡片上的「待确认」链接必须指向当期产物。
 

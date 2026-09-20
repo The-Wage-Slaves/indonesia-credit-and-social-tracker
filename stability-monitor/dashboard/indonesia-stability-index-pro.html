@@ -74,6 +74,21 @@
   .scaleRow.hit{ background:var(--judgebg); font-weight:500; }
   .scaleLv{ flex:0 0 34px; font-weight:600; color:var(--tx3); }
   .scaleRow.hit .scaleLv{ color:var(--judge); }
+  .wList{ display:flex; flex-direction:column; gap:8px; }
+  .wRow{ display:flex; gap:12px; padding:10px 12px; border-radius:8px; background:var(--card2); font-size:12px; line-height:1.55; }
+  .wRow.wSoon{ box-shadow: inset 3px 0 0 #EF9F27; }
+  .wRow.wOverdue{ box-shadow: inset 3px 0 0 #E24B4A; }
+  .wRow.wResolved{ opacity:.6; }
+  .wDate{ flex:0 0 96px; font-weight:600; color:var(--tx2); }
+  .wState{ font-weight:400; font-size:11px; color:var(--tx3); }
+  .wOverdue .wState{ color:#E24B4A; font-weight:600; }
+  .wSoon .wState{ color:#854F0B; font-weight:600; }
+  .wMain{ flex:1; min-width:0; }
+  .wTitle{ font-weight:500; color:var(--tx); }
+  .wPillar{ display:inline-block; font-size:10px; padding:1px 6px; border-radius:4px; background:var(--judgebg); color:var(--judge); margin-right:6px; vertical-align:middle; }
+  .wWhy{ color:var(--tx2); margin-top:2px; }
+  .wWatch{ color:var(--tx2); margin-top:2px; }
+  .wOutcome{ color:var(--fact); margin-top:2px; }
   .formula{ font-size:12px; color:var(--tx2); background:var(--card2); border-radius:6px; padding:8px 10px; margin:6px 0; font-family:ui-monospace,"SF Mono",Consolas,monospace; line-height:1.5; }
   .placement{ font-size:12px; color:var(--tx2); margin:6px 0; line-height:1.6; }
   .srcList{ list-style:none; padding:0; margin:6px 0 0; }
