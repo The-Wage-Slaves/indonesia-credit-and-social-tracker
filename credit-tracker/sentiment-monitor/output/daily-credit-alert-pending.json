@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-20",
+  "date": "2026-09-21",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 26.9,
-    "socialDailyVolumeRisk": 7.8,
-    "negativeSocialShare": 19.6,
+    "newsDailyVolumeRisk": 32.3,
+    "socialDailyVolumeRisk": 35.7,
+    "negativeSocialShare": 13.0,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=20.0; robust z=-1.54",
-    "socialVolume": "today=10; prior-7d median=35.0; robust z=-2.81"
+    "newsVolume": "today=5; prior-7d median=19.0; robust z=-1.18",
+    "socialVolume": "today=9; prior-7d median=26.0; robust z=-0.96"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
@@ -23,12 +23,12 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 9,
+    "candidateCount": 12,
     "eventGroupCount": 0,
-    "rejectedNonEvents": 7,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 9
+      "ok": 12
     },
     "socialCrossCheck": "applied"
   },
@@ -46,21 +46,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 13,
-    "socialItemCount48h": 36
+    "articleCount48h": 15,
+    "socialItemCount48h": 50
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 502,
-    "classifiedCount": 140,
-    "irrelevantDropped": 100,
+    "inputCount": 475,
+    "classifiedCount": 123,
+    "irrelevantDropped": 117,
     "model": "deepseek-chat",
-    "fallbackCount": 262,
+    "fallbackCount": 235,
     "labelCounts": {
-      "NEG": 60,
-      "MIX": 48,
-      "POS": 32
+      "NEG": 40,
+      "MIX": 39,
+      "POS": 44
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
