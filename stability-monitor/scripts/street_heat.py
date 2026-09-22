@@ -188,7 +188,13 @@ GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
 # 60s 也不够（那条 74.5s 会挂），所以给 120s——慢一点的成功远好过快一点的失败。
 GDELT_TIMEOUT = 120
 GDELT_MIN_INTERVAL = 12.0      # 秒。实测 6 秒不够，注释里的「1次/5秒」是乐观估计
-GDELT_MAX_BACKOFF = 90.0
+GDELT_MAX_BACKOFF = 120.0
+# 重试预算（2026-09-22）：从全新 runner 发出的**第一发**就 429——限流是按出口 IP 的，
+# 而 GitHub 托管 runner 的 IP 是公共池，别人的 Actions 会把额度打满。云端探测：每 90s
+# 试一次，前 4 次 429、第 5 次（约 7 分钟）200——拥堵是脉冲式的，耐心等就能挤进去。
+# 旧预算 4 次 / 合计 ~74s 永远等不到窗口；7 次运行里只有 1 次两线都拿到数。
+# 现在 8 次、退避 12→24→48→96→120×3，合计约 9 分钟；两条线最坏 ~18 分钟，周频任务承受得起。
+GDELT_RETRIES = 8
 # None = 本进程还没请求过。**不要用 0.0 当初值**：time.monotonic() 在进程刚启动时
 # 也可能接近 0，那样第一次调用会白等一个完整间隔。
 _gdelt_last_call = None
@@ -222,7 +228,7 @@ def _gdelt_backoff(attempt, response=None):
     return min(GDELT_MAX_BACKOFF, jittered)
 
 
-def _gdelt(mode, retries=4):
+def _gdelt(mode, retries=GDELT_RETRIES):
     last_status = None
     for attempt in range(retries):
         _gdelt_throttle()

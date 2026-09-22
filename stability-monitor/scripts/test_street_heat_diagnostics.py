@@ -228,6 +228,16 @@ class GdeltThrottleTests(unittest.TestCase):
     def test_backoff_is_capped(self):
         self.assertLessEqual(SH._gdelt_backoff(20), SH.GDELT_MAX_BACKOFF)
 
+    def test_retry_budget_outlasts_a_shared_ip_pulse(self):
+        """2026-09-22 云端探测：前 4 次 429、第 5 次约 7 分钟后 200。总预算必须覆盖这个量级。
+
+        旧预算 4 次 / ~74s 在 7 次周频运行里只拿到 1 次两线齐全。把预算钉在 ≥8 分钟，
+        别人再把 GDELT_RETRIES 或 GDELT_MAX_BACKOFF 调小就会在这里失败。
+        """
+        worst = sum(min(SH.GDELT_MAX_BACKOFF, SH.GDELT_MIN_INTERVAL * 2 ** a) for a in range(SH.GDELT_RETRIES - 1))
+        self.assertGreaterEqual(worst, 8 * 60, f"重试总预算只有 {worst:.0f}s，等不到共享 IP 的窗口")
+        self.assertLessEqual(worst, 15 * 60, "单条线预算别超过 15 分钟，两条线要跑两遍")
+
     def test_retry_after_header_wins_over_our_own_guess(self):
         response = mock.Mock(headers={"Retry-After": "37"})
         self.assertEqual(SH._gdelt_backoff(0, response), 37.0)
