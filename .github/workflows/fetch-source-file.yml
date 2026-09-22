@@ -4,7 +4,8 @@ name: Fetch a source file as an artifact
 # 用途：本机网络到 BI（www.bi.go.id）被直接断连，而 GitHub runner 通；
 # OJK 新门户则相反（屏蔽境外 IP）。这里不写任何分支，只产 artifact，
 # 本机用 `gh run download` 取回后离线解析。
-# 也用于排查限流：非 2xx 同样把响应头与正文带回（GDELT 429 的 Retry-After 比状态码有用）。
+# 也用于排查限流：非 2xx 同样把响应头与正文带回；attempts/interval 可拉长间隔多次探测，
+# 用来区分「我们打太快」与「共享出口 IP 已被别人打满」（GDELT 2026-09-22 是后者）。
 on:
   workflow_dispatch:
     inputs:
@@ -16,6 +17,14 @@ on:
         description: "artifact 名称"
         required: true
         default: "seki-tabel1_4"
+      attempts:
+        description: "非 2xx 时的重试次数（1 = 不重试）"
+        required: false
+        default: "1"
+      interval:
+        description: "重试间隔秒"
+        required: false
+        default: "90"
 
 permissions:
   contents: read
@@ -26,16 +35,21 @@ jobs:
     steps:
       - name: Download
         shell: bash
+        env:
+          URL: ${{ inputs.url }}
+          ATTEMPTS: ${{ inputs.attempts }}
+          INTERVAL: ${{ inputs.interval }}
         run: |
           mkdir -p out
           # UA 必须是完整浏览器串：只写 Mozilla/5.0 时 BI 直接 Connection reset（2026-09-22 实测）。
-          # 不带 --fail：非 2xx 也保存正文；-D 保存响应头；|| true 让 artifact 一定能上传。
-          curl -sSL --retry 3 --retry-delay 5 \
-            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36" \
-            -e "https://www.bi.go.id/" \
-            -D out/headers.txt \
-            -w "HTTP %{http_code} in %{time_total}s from %{remote_ip}\n" \
-            -o "out/body.bin" "${{ inputs.url }}" || true
+          # 不带 --fail：非 2xx 也保存正文；-D 保存响应头。
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          for i in $(seq 1 "$ATTEMPTS"); do
+            code=$(curl -sSL -A "$UA" -e "https://www.bi.go.id/" -D out/headers.txt -w "%{http_code}" -o out/body.bin "$URL" || echo 000)
+            echo "$(date -u +%H:%M:%S) attempt $i/$ATTEMPTS -> HTTP $code" | tee -a out/attempts.log
+            case "$code" in 2*) break;; esac
+            if [ "$i" -lt "$ATTEMPTS" ]; then sleep "$INTERVAL"; fi
+          done
           echo "--- headers ---"; cat out/headers.txt || true
           echo "--- body head ---"; head -c 600 out/body.bin || true; echo
           ls -la out
