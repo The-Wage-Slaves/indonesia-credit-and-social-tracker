@@ -101,39 +101,51 @@ const unempData = [
 
 // ===== ② 信贷行业数据 (BI SSKI / OJK PP9 / OJK LPBBTI / RDKB) =====
 const rawData = [
-  { period: "2023.03", bankVeh: 119561, bankMP: 688525, bankBNPL: null, bankOth: 81621, mf2W: 95019, mf4W: 197675, mfMP: 14087, mfBNPL: null, p2p: 51019.82 },
-  { period: "2023.06", bankVeh: 125262, bankMP: 687114, bankBNPL: null, bankOth: 88974, mf2W: 93917, mf4W: 208642, mfMP: 13417, mfBNPL: null, p2p: 52701.15 },
-  { period: "2023.09", bankVeh: 126430, bankMP: 686197, bankBNPL: null, bankOth: 96673, mf2W: 96483, mf4W: 217085, mfMP: 12611, mfBNPL: null, p2p: 55697.25 },
-  { period: "2023.12", bankVeh: 131420, bankMP: 699078, bankBNPL: null, bankOth: 107533, mf2W: 99701, mf4W: 224901, mfMP: 11945, mfBNPL: null, p2p: 59644.48 },
-  { period: "2024.03", bankVeh: 134794, bankMP: 706044, bankBNPL: null, bankOth: 111728, mf2W: 103124, mf4W: 234138, mfMP: 13060, mfBNPL: 6130, p2p: 62166.43 },
-  { period: "2024.06", bankVeh: 133191, bankMP: 717446, bankBNPL: 17720, bankOth: 117101, mf2W: 106008, mf4W: 237796, mfMP: 14407, mfBNPL: 7240, p2p: 66789 },
-  { period: "2024.09", bankVeh: 137813, bankMP: 737386, bankBNPL: 19810, bankOth: 126244, mf2W: 109456, mf4W: 241048, mfMP: 15496, mfBNPL: 8240, p2p: 74480 },
-  { period: "2024.12", bankVeh: 142092, bankMP: 753956, bankBNPL: null, bankOth: 134695, mf2W: 112579, mf4W: 237557, mfMP: 16356, mfBNPL: 7855, p2p: 77024 },
-  { period: "2025.01", bankVeh: 141536, bankMP: 753251, bankBNPL: 22570, bankOth: 136001, mf2W: 111050, mf4W: 244305, mfMP: 16673, mfBNPL: 7120, p2p: 78505 },
-  { period: "2025.02", bankVeh: 141709, bankMP: 757446, bankBNPL: 21980, bankOth: 136813, mf2W: 111147, mf4W: 244173, mfMP: 17068, mfBNPL: 8200, p2p: 80074 },
-  { period: "2025.03", bankVeh: 142922, bankMP: 761145, bankBNPL: 22780, bankOth: 137579, mf2W: 111158, mf4W: 245275, mfMP: 17498, mfBNPL: 8220, p2p: 79966 },
-  { period: "2025.04", bankVeh: 141760, bankMP: 763243, bankBNPL: 21350, bankOth: 137335, mf2W: 110059, mf4W: 243058, mfMP: 17484, mfBNPL: 8240, p2p: 80882 },
-  { period: "2025.05", bankVeh: 142724, bankMP: 769186, bankBNPL: 21890, bankOth: 138517, mf2W: 110262, mf4W: 241465, mfMP: 17884, mfBNPL: 8580, p2p: 82530 },
-  { period: "2025.06", bankVeh: 143026, bankMP: 774704, bankBNPL: 22990, bankOth: 139881, mf2W: 110233, mf4W: 238212, mfMP: 18102, mfBNPL: 8560, p2p: 83468 },
-  { period: "2025.07", bankVeh: 141763, bankMP: 781705, bankBNPL: 24050, bankOth: 141777, mf2W: 111457, mf4W: 236670, mfMP: 19541, mfBNPL: 8810, p2p: 84542 },
-  { period: "2025.08", bankVeh: 140405, bankMP: 788020, bankBNPL: 24330, bankOth: 143153, mf2W: 112462, mf4W: 236274, mfMP: 19352, mfBNPL: 9970, p2p: 87485 },
-  { period: "2025.09", bankVeh: 138806, bankMP: 793890, bankBNPL: 24860, bankOth: 143638, mf2W: 112814, mf4W: 236266, mfMP: 19755, mfBNPL: 10310, p2p: 90908, isNew: true },
-  { period: "2025.10", bankVeh: 136733, bankMP: 802700, bankBNPL: 25720, bankOth: 144877, mf2W: 109399, mf4W: 235474, mfMP: 20407, mfBNPL: 10850, p2p: 92832, isNew: true },
-  { period: "2025.11", bankVeh: 135172, bankMP: 807201, bankBNPL: 26200, bankOth: 145484, mf2W: 109549, mf4W: 230053, mfMP: 22621, mfBNPL: 11240, p2p: 94818, isNew: true },
-  { period: "2025.12", bankVeh: 132564, bankMP: 813922, bankBNPL: 26400, bankOth: 146812, mf2W: 109491, mf4W: 228418, mfMP: 23274, mfBNPL: 11940, p2p: 96617, isNew: true },
+  { period: "2023.03", bankVeh: 119559, bankMP: null, bankBNPL: null, bankOth: 1096148, mf2W: 95019, mf4W: 197675, mfMP: 14087, mfBNPL: null, p2p: 51019.82 },
+  { period: "2023.06", bankVeh: 125261, bankMP: null, bankBNPL: null, bankOth: 1110341, mf2W: 93917, mf4W: 208642, mfMP: 13417, mfBNPL: null, p2p: 52701.15 },
+  { period: "2023.09", bankVeh: 126429, bankMP: null, bankBNPL: null, bankOth: 1123098, mf2W: 96483, mf4W: 217085, mfMP: 12611, mfBNPL: null, p2p: 55697.25 },
+  { period: "2023.12", bankVeh: 131419, bankMP: null, bankBNPL: null, bankOth: 1156616, mf2W: 99701, mf4W: 224901, mfMP: 11945, mfBNPL: null, p2p: 59644.48 },
+  { period: "2024.03", bankVeh: 134792, bankMP: null, bankBNPL: null, bankOth: 1176598, mf2W: 103124, mf4W: 234138, mfMP: 13060, mfBNPL: 6130, p2p: 62166.43 },
+  { period: "2024.06", bankVeh: 133189, bankMP: null, bankBNPL: 17720, bankOth: 1200796, mf2W: 106008, mf4W: 237796, mfMP: 14407, mfBNPL: 7240, p2p: 66789 },
+  { period: "2024.09", bankVeh: 137809, bankMP: null, bankBNPL: 19810, bankOth: 1245621, mf2W: 109456, mf4W: 241048, mfMP: 15496, mfBNPL: 8240, p2p: 74480 },
+  { period: "2024.12", bankVeh: 142088, bankMP: null, bankBNPL: null, bankOth: 1284545, mf2W: 112579, mf4W: 237557, mfMP: 16356, mfBNPL: 7855, p2p: 77024 },
+  { period: "2025.01", bankVeh: 141531, bankMP: null, bankBNPL: 22570, bankOth: 1263554, mf2W: 111050, mf4W: 244305, mfMP: 16673, mfBNPL: 7120, p2p: 78505 },
+  { period: "2025.02", bankVeh: 141704, bankMP: null, bankBNPL: 21980, bankOth: 1284842, mf2W: 111147, mf4W: 244173, mfMP: 17068, mfBNPL: 8200, p2p: 80074 },
+  { period: "2025.03", bankVeh: 142917, bankMP: null, bankBNPL: 22780, bankOth: 1290948, mf2W: 111158, mf4W: 245275, mfMP: 17498, mfBNPL: 8220, p2p: 79966 },
+  { period: "2025.04", bankVeh: 141755, bankMP: null, bankBNPL: 21350, bankOth: 1292634, mf2W: 110059, mf4W: 243058, mfMP: 17484, mfBNPL: 8240, p2p: 80882 },
+  { period: "2025.05", bankVeh: 142718, bankMP: null, bankBNPL: 21890, bankOth: 1303585, mf2W: 110262, mf4W: 241465, mfMP: 17884, mfBNPL: 8580, p2p: 82530 },
+  { period: "2025.06", bankVeh: 143020, bankMP: null, bankBNPL: 22990, bankOth: 1311480, mf2W: 110233, mf4W: 238212, mfMP: 18102, mfBNPL: 8560, p2p: 83468 },
+  { period: "2025.07", bankVeh: 141757, bankMP: null, bankBNPL: 24050, bankOth: 1324205, mf2W: 111457, mf4W: 236670, mfMP: 19541, mfBNPL: 8810, p2p: 84542 },
+  { period: "2025.08", bankVeh: 140398, bankMP: null, bankBNPL: 24330, bankOth: 1333937, mf2W: 112462, mf4W: 236274, mfMP: 19352, mfBNPL: 9970, p2p: 87485 },
+  { period: "2025.09", bankVeh: 138800, bankMP: null, bankBNPL: 24860, bankOth: 1346306, mf2W: 112814, mf4W: 236266, mfMP: 19755, mfBNPL: 10310, p2p: 90908, isNew: true },
+  { period: "2025.10", bankVeh: 136727, bankMP: null, bankBNPL: 25720, bankOth: 1360757, mf2W: 109399, mf4W: 235474, mfMP: 20407, mfBNPL: 10850, p2p: 92832, isNew: true },
+  { period: "2025.11", bankVeh: 135166, bankMP: null, bankBNPL: 26200, bankOth: 1370211, mf2W: 109549, mf4W: 230053, mfMP: 22621, mfBNPL: 11240, p2p: 94818, isNew: true },
+  { period: "2025.12", bankVeh: 132557, bankMP: null, bankBNPL: 26400, bankOth: 1383545, mf2W: 109491, mf4W: 228418, mfMP: 23274, mfBNPL: 11940, p2p: 96617, isNew: true },
+  { period: "2026.01", bankVeh: 131150, bankMP: null, bankBNPL: 27100, bankOth: 1391114, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 12180, p2p: 98540, isNew: true },
+  { period: "2026.02", bankVeh: 130059, bankMP: null, bankBNPL: 27800, bankOth: 1396730, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 12590, p2p: 100690, isNew: true },
+  { period: "2026.03", bankVeh: 129681, bankMP: null, bankBNPL: 28300, bankOth: 1398311, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 12810, p2p: 101030, isNew: true },
+  { period: "2026.04", bankVeh: 128554, bankMP: null, bankBNPL: 29300, bankOth: 1404344, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 12930, p2p: 102070, isNew: true },
+  { period: "2026.05", bankVeh: 128846, bankMP: null, bankBNPL: 30100, bankOth: 1411357, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 13180, p2p: 103730, isNew: true },
+  { period: "2026.06", bankVeh: 128338, bankMP: null, bankBNPL: 30700, bankOth: 1421522, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 13400, p2p: 105140, isNew: true },
+  { period: "2026.07", bankVeh: 127122, bankMP: null, bankBNPL: 31560, bankOth: 1424937, mf2W: null, mf4W: null, mfMP: null, mfBNPL: 13620, p2p: 105630, isNew: true },
 ];
 
 const toUSD = (v, fx) => v != null ? +(v / fx).toFixed(3) : null;
 const rowToUSD = (d, fx) => {
   const bv=toUSD(d.bankVeh,fx),bm=toUSD(d.bankMP,fx),bb=toUSD(d.bankBNPL,fx),bo=toUSD(d.bankOth,fx);
   const m2=toUSD(d.mf2W,fx),m4=toUSD(d.mf4W,fx),mm=toUSD(d.mfMP,fx),mb=toUSD(d.mfBNPL,fx),p=toUSD(d.p2p,fx);
-  const all=[bv,bm,bb,bo,m2,m4,mm,mb,p].filter(v=>v!=null);
-  const exV=[bm,bb,bo,mm,mb,p].filter(v=>v!=null);
-  const nar=[mm,mb,p].filter(v=>v!=null);
+  // 合计只在核心分量齐全时才给数，否则 null。原来的规则是「≥5 项非空就加」，
+  // 2026.07 那行 MF 三项整块缺失也能凑够 5 项，含车总额就少了约 $20B 还照常显示
+  // （2026-09-22 真渲染时发现）。BNPL 两项与银行多用途允许缺：前者早期未披露，
+  // 后者自 SEKI 口径起并入「其他」、结构性为 null。
+  const sum=(xs)=>+xs.reduce((a,b)=>a+(b||0),0).toFixed(2);
+  const okIncl=[bv,bo,m2,m4,mm,p].every(v=>v!=null);
+  const okExcl=[bo,mm,p].every(v=>v!=null);
+  const okNar=[mm,p].every(v=>v!=null);
   return { period:d.period, isNew:d.isNew||false, isManual:d.isManual||false, bankVeh:bv,bankMP:bm,bankBNPL:bb,bankOth:bo,mf2W:m2,mf4W:m4,mfMP:mm,mfBNPL:mb,p2p:p,
-    totalInclVeh:all.length>=5?+all.reduce((a,b)=>a+b,0).toFixed(2):null,
-    totalExclVeh:exV.length>=3?+exV.reduce((a,b)=>a+b,0).toFixed(2):null,
-    narrowNonBank:nar.length>=1?+nar.reduce((a,b)=>a+b,0).toFixed(2):null };
+    totalInclVeh:okIncl?sum([bv,bm,bb,bo,m2,m4,mm,mb,p]):null,
+    totalExclVeh:okExcl?sum([bm,bb,bo,mm,mb,p]):null,
+    narrowNonBank:okNar?sum([mm,mb,p]):null };
 };
 
 // 手工录入的月度数据存浏览器 localStorage（暗门：页脚"✎ 数据管理"）
@@ -311,21 +323,26 @@ const tabs = [
 
 function IndustrySection({chartData,fx}) {
   const [activeTab, setActiveTab] = useState("overview");
+  // 每个 KPI 各取自己最近一个非空期：各序列更新节奏不同（OJK RDKB 月更、MF 明细冻结），
+  // 一律取最后一行会把「缺一块」显示成「变少了」。
+  const latestOf = (key) => [...chartData].reverse().find(r=>r[key]!=null) || chartData[chartData.length-1];
   const latest = chartData[chartData.length - 1];
   const recent = chartData.slice(-13);
+  const kpis = [
+    {label:"消费信贷(含车)",key:"totalInclVeh",color:"#2563eb"},
+    {label:"消费信贷(不含车)",key:"totalExclVeh",color:"#7c3aed"},
+    {label:"P2P Outstanding",key:"p2p",color:"#dc2626"},
+    {label:"狭义消金(非银)",key:"narrowNonBank",color:"#db2777"},
+  ].map(k=>{ const r=latestOf(k.key); return {...k, value:r[k.key], period:r.period, stale:r.period!==latest.period}; });
   return (<section id="sec2" style={{scrollMarginTop:64}}>
-    <SectionHead no="②" title="信贷行业数据" en="Consumer Credit Industry" note={`BI SSKI Sheet17 · OJK Multi-finance PP9 · OJK LPBBTI Sheet9 · RDKB新闻稿 | FX=${fx.toLocaleString()}${fx!==DEFAULT_FX?"（自定义,默认15,000）":""} | 更新至 2025.12`} />
+    <SectionHead no="②" title="信贷行业数据" en="Consumer Credit Industry" note={`BI SEKI I.4 · OJK Multi-finance PP9 · OJK RDKB新闻稿(LPBBTI/BNPL) | FX=${fx.toLocaleString()}${fx!==DEFAULT_FX?"（自定义,默认15,000）":""} | 更新至 ${latest.period}（MF 明细至 ${latestOf("mf2W").period}）`} />
 
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(155px,1fr))",gap:10,marginBottom:14}}>
-      {[{label:"消费信贷(含车)",value:latest.totalInclVeh,color:"#2563eb"},
-        {label:"消费信贷(不含车)",value:latest.totalExclVeh,color:"#7c3aed"},
-        {label:"P2P Outstanding",value:latest.p2p,color:"#dc2626"},
-        {label:"狭义消金(非银)",value:latest.narrowNonBank,color:"#db2777"}
-      ].map((k,i)=>(<div key={i} style={{...cardS,position:"relative",overflow:"hidden",padding:"12px 14px"}}>
+      {kpis.map((k,i)=>(<div key={i} style={{...cardS,position:"relative",overflow:"hidden",padding:"12px 14px"}}>
         <div style={{position:"absolute",top:0,left:0,right:0,height:3,background:k.color,opacity:.85}} />
         <div style={{fontSize:10,color:"#6b7280",marginBottom:4}}>{k.label}</div>
         <div style={{fontSize:22,fontWeight:700,color:"#111827",fontVariantNumeric:"tabular-nums"}}>${k.value?.toFixed(1)}B</div>
-        <div style={{fontSize:9,color:"#9aa1ab"}}>{latest.period}</div>
+        <div style={{fontSize:9,color:k.stale?"#b45309":"#9aa1ab"}}>{k.period}{k.stale?" · 最近完整期":""}</div>
       </div>))}
     </div>
 
