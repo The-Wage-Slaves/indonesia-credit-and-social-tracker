@@ -134,13 +134,14 @@ def table(before: list[dict], after: list[dict], since: str) -> str:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--from", dest="since", default="2024.01", help="银行侧整体替换的起点期（含）")
+    ap.add_argument("--pending", type=pathlib.Path, default=PENDING, help="待确认包路径（月度自动包用 industry-pending-auto.json）")
     ap.add_argument("--write", action="store_true")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
     if args.write == args.dry_run:
         sys.exit("二选一：--dry-run 或 --write")
 
-    pending = json.loads(PENDING.read_text(encoding="utf-8"))
+    pending = json.loads(args.pending.read_text(encoding="utf-8"))
     text = DASHBOARD.read_text(encoding="utf-8")
     start, end, rows = parse_rows(text)
     merged, log = merge(rows, pending, args.since)

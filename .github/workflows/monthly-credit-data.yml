@@ -44,6 +44,18 @@ jobs:
         id: industry
         continue-on-error: true
         run: python credit-tracker/update_credit.py
+      - name: Collect OJK RDKB press release (LPBBTI / bank BNPL / MF BNPL)
+        id: rdkb
+        continue-on-error: true
+        # OJK 统计 Excel 冻结于 2025.12、新门户屏蔽境外 IP；主站的月度 RDKB 新闻稿 runner 可读，
+        # 三项数字都在正文里且与看板序列同口径（2026-09-22 用同比反推核过）。
+        run: python credit-tracker/ojk_rdkb.py --json > credit-tracker/data/ojk-rdkb-latest.json
+      - name: Build industry pending package (SEKI + RDKB → owner review)
+        id: industry_pending
+        if: always()
+        continue-on-error: true
+        # 只组包、挂待确认卡，不写 rawData。确认由所有者本机跑 apply_industry_pending.py 后开 PR。
+        run: python credit-tracker/build_industry_pending.py
       - name: Collect national macro indicators
         id: macro
         continue-on-error: true
@@ -59,6 +71,7 @@ jobs:
           FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
           FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
           SEKI_STATUS: ${{ steps.seki.outcome }}
+          RDKB_STATUS: ${{ steps.rdkb.outcome }}
           INDUSTRY_STATUS: ${{ steps.industry.outcome }}
           MACRO_STATUS: ${{ steps.macro.outcome }}
           COMPETITOR_STATUS: ${{ steps.competitors.outcome }}
@@ -66,6 +79,7 @@ jobs:
       - name: Add collection summary
         env:
           SEKI_STATUS: ${{ steps.seki.outcome }}
+          RDKB_STATUS: ${{ steps.rdkb.outcome }}
           INDUSTRY_STATUS: ${{ steps.industry.outcome }}
           MACRO_STATUS: ${{ steps.macro.outcome }}
           COMPETITOR_STATUS: ${{ steps.competitors.outcome }}
@@ -75,6 +89,7 @@ jobs:
             echo "## Monthly credit data · pending human review"
             echo
             echo "- BI SEKI I.4 bank credit: **${SEKI_STATUS}**"
+            echo "- OJK RDKB press release: **${RDKB_STATUS}**"
             echo "- BI/OJK collector: **${INDUSTRY_STATUS}**"
             echo "- BPS/BI macro collector: **${MACRO_STATUS}**"
             echo "- P2P competitor collector: **${COMPETITOR_STATUS}**"
@@ -97,6 +112,8 @@ jobs:
             credit-tracker/dashboard/macro-pending.js
             credit-tracker/macro-monitor/output
             credit-tracker/data/seki-bank-credit.json
+            credit-tracker/data/ojk-rdkb-latest.json
+            credit-tracker/data/industry-pending-auto.json
             credit-tracker/p2p-scraper/results
             outputs"
           tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts

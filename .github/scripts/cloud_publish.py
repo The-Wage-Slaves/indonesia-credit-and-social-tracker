@@ -495,15 +495,18 @@ def monthly_summary() -> dict[str, Any]:
     pending = read_json("pending.json", {"boards": {}})
     items = [
         item for item in (pending.get("boards") or {}).get("credit", [])
-        if item.get("source") in {"credit-update", "p2p-scraper", "macro-monitor"}
+        if item.get("source") in {"credit-update", "p2p-scraper", "macro-monitor", "industry-auto"}
     ]
     source_zh = {
         "credit-update": "BI/OJK 行业数据",
         "p2p-scraper": "P2P 竞对官网",
         "macro-monitor": "国家宏观指标",
+        "industry-auto": "行业数据自动包(SEKI+RDKB)",
     }
     collector_statuses = {
         "BI/OJK 行业数据": os.getenv("INDUSTRY_STATUS", "").strip().lower(),
+        # RDKB 步骤 2026-09-22 才加入；旧工作流/测试没有这个变量，缺省时不算「未完成」。
+        **({"OJK RDKB 新闻稿": os.getenv("RDKB_STATUS", "").strip().lower()} if os.getenv("RDKB_STATUS") else {}),
         "国家宏观指标": os.getenv("MACRO_STATUS", "").strip().lower(),
         "P2P 竞对官网": os.getenv("COMPETITOR_STATUS", "").strip().lower(),
     }
