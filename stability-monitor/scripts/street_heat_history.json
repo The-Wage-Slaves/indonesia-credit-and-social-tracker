@@ -505,5 +505,87 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-09-22",
+    "version": 3,
+    "heat": 24.2,
+    "suggested_score": 70,
+    "opposition": {
+      "status": "ok",
+      "rate": 35.6,
+      "detail": "250条中政治条目163条(浓度65%)，反对58/中性57/支持48 → 总反对率 35.6%（分侧: 民间YouTube 36% · 论坛Kaskus 12% · 媒体RSS 39%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 25.1,
+        "raw": {
+          "ratio_street": 0.16370106761565834,
+          "ratio_anger": 0.840807651434644,
+          "per_kw": {
+            "demo hari ini": 1,
+            "demonstrasi": 0,
+            "unjuk rasa": 0,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 22,
+            "kejaksaan": 13,
+            "Indonesia gelap": 0,
+            "turunkan presiden": 0,
+            "krisis": 8
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 50.7,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 5,
+          "share": 25.356726444950304,
+          "examples": [
+            "Waduh! Bertrand Peto Dilaporkan ke Polisi atas Dugaan Tindak Pidana Kekerasan Se",
+            "Lagi Asyik-asyik! Dinar Candy Cerita Ngumpet Dibalik Meja DJ ketika Ada Razia Po",
+            "Prabowo: Saya Siap Mati untuk Melihat Indonesia Sejahtera!",
+            "Berdasarkan Bukti! Prabowo: Ada Pihak Asing yang ingin Indonesia Lemah dan Terpe",
+            "Transboundary Haze! Sarawak Desak Pemerintah Malaysia Gugat Indonesia soal Kabut"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 17.5,
+        "raw": {
+          "n_searched": 130,
+          "n_big": 7
+        }
+      },
+      "gdelt_vol": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "gdelt_tone": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 0.0,
+        "raw": {
+          "total": 152,
+          "matched": 0,
+          "share": 0.0,
+          "examples": [],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
