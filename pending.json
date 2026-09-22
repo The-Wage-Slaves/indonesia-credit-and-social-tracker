@@ -1,7 +1,17 @@
 {
   "boards": {
-    "credit": [],
+    "credit": [
+      {
+        "id": "industry-refill:2026-09-22",
+        "source": "industry-refill",
+        "level": "review",
+        "title": "行业数据补齐待确认：SEKI 银行侧 2024.01–2026.07 整体替换 + OJK RDKB 2026.01–07（LPBBTI / 银行BNPL / MF BNPL）",
+        "detail": "看板 rawData 三项 OJK 序列停在 2025.12；银行侧 SSKI 已冻结、SEKI 采集器在跑但从未写入看板。本包含逐字段口径说明与一手来源。车贷与 SSKI 逐位一致无跳变；「其他」为 SEKI Lainnya（吸收多用途），须从同一起点整体替换，缝在 --from 处。审后运行 python credit-tracker/apply_industry_pending.py --from 2024.01 --write。",
+        "link": "credit-tracker/data/industry-pending-2026.json",
+        "date": "2026-09-22"
+      }
+    ],
     "stability": []
   },
-  "updated": "2026-09-15 08:02"
+  "updated": "2026-09-22 15:00"
 }

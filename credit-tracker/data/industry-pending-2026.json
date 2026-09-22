@@ -1,0 +1,316 @@
+{
+ "schemaVersion": 1,
+ "preparedAt": "2026-09-22",
+ "status": "pending-owner-review",
+ "unit": "Rp Miliar（与 rawData 一致；RDKB 原文为 Rp triliun，×1000）",
+ "fieldProvenance": {
+  "bankVeh": {
+   "source": "BI SEKI I.4 · Kendaraan Bermotor（合计块）",
+   "replaces": "BI SSKI Tabel_17 车贷",
+   "continuity": "与 SSKI 12 个重叠月及 2023–2024 季末逐位一致（差 ≤7，四舍五入），无口径跳变",
+   "coverage": "2023.01–2026.07 月度"
+  },
+  "bankOth": {
+   "source": "BI SEKI I.4 · Lainnya（合计块）",
+   "replaces": "SSKI 多用途(Multiguna)+家庭其他 两项之和",
+   "continuity": "**口径不同**：SEKI Lainnya 比 SSKI 两项之和大约 40%（2025.01: 1,263,554 vs 889,252）。必须从同一起点整体替换，不能接续",
+   "coverage": "2023.01–2026.07 月度"
+  },
+  "bankMP": {
+   "source": "—",
+   "replaces": "SSKI 多用途(Multiguna)",
+   "continuity": "SEKI 无此项，已并入 Lainnya。替换起点之后一律置 null；起点之前保留 SSKI 值",
+   "coverage": "停更"
+  },
+  "bankBNPL": {
+   "source": "OJK RDKB 月度新闻稿 · 『baki debet kredit BNPL sebagaimana dilaporkan dalam SLIK』",
+   "replaces": "同源接续",
+   "continuity": "同比反推核对：2026.01 27.1T ÷ 1.2015 = 22.56T ≈ 序列 2025.01 的 22,570 ✓",
+   "precision": "原文精确到 0.1 万亿（±50 Miliar），2026.07 起精确到 0.01",
+   "coverage": "2026.01–07"
+  },
+  "mfBNPL": {
+   "source": "OJK RDKB · 『pembiayaan BNPL oleh Perusahaan Pembiayaan』(SLIK)",
+   "replaces": "同源接续",
+   "continuity": "2026.01 12.18T ÷ 1.7113 = 7.12T ≈ 2025.01 的 7,120 ✓",
+   "coverage": "2026.01–07；附 NPF gross"
+  },
+  "p2p": {
+   "source": "OJK RDKB · 『industri Pinjaman Daring (Pindar) outstanding pembiayaan』= LPBBTI 行业余额",
+   "replaces": "OJK LPBBTI 统计 Excel（冻结于 2025.12）",
+   "continuity": "2026.01 98.54T ÷ 1.2552 = 78.51T ≈ 2025.01 的 78,505 ✓",
+   "coverage": "2026.01–07；附 TWP90"
+  },
+  "mf2W/mf4W/mfMP": {
+   "source": "OJK SLP/PP9 统计 Excel（冻结于 2025.12）",
+   "replaces": "—",
+   "continuity": "RDKB 只给多元金融总额，不拆 2W/4W/多用途；2026 各月置 null 待补。候选替代源：data.ojk.go.id dataset 71（境外 IP 被屏蔽）",
+   "coverage": "待补"
+  }
+ },
+ "seki": {
+  "source": "BI SEKI I.4 (sheet Th 2016-2024 for 2023–2024; I.4_3 for 2025.01+)",
+  "sourceUrl": "https://www.bi.go.id/SEKI/tabel/TABEL1_4.xls",
+  "retrievedAt": "2026-09-22",
+  "block": "合计(总额最大的消费块)，行 Kendaraan Bermotor / Lainnya"
+ },
+ "rows": {
+  "2023.01": {
+   "bankVeh": 117297,
+   "bankOth": 1080160,
+   "bankMP": null
+  },
+  "2023.02": {
+   "bankVeh": 118039,
+   "bankOth": 1087924,
+   "bankMP": null
+  },
+  "2023.03": {
+   "bankVeh": 119559,
+   "bankOth": 1096148,
+   "bankMP": null
+  },
+  "2023.04": {
+   "bankVeh": 122667,
+   "bankOth": 1099846,
+   "bankMP": null
+  },
+  "2023.05": {
+   "bankVeh": 123893,
+   "bankOth": 1104931,
+   "bankMP": null
+  },
+  "2023.06": {
+   "bankVeh": 125261,
+   "bankOth": 1110341,
+   "bankMP": null
+  },
+  "2023.07": {
+   "bankVeh": 125330,
+   "bankOth": 1114070,
+   "bankMP": null
+  },
+  "2023.08": {
+   "bankVeh": 125194,
+   "bankOth": 1112163,
+   "bankMP": null
+  },
+  "2023.09": {
+   "bankVeh": 126429,
+   "bankOth": 1123098,
+   "bankMP": null
+  },
+  "2023.10": {
+   "bankVeh": 127113,
+   "bankOth": 1133843,
+   "bankMP": null
+  },
+  "2023.11": {
+   "bankVeh": 128824,
+   "bankOth": 1143572,
+   "bankMP": null
+  },
+  "2023.12": {
+   "bankVeh": 131419,
+   "bankOth": 1156616,
+   "bankMP": null
+  },
+  "2024.01": {
+   "bankVeh": 132256,
+   "bankOth": 1159225,
+   "bankMP": null
+  },
+  "2024.02": {
+   "bankVeh": 133418,
+   "bankOth": 1165143,
+   "bankMP": null
+  },
+  "2024.03": {
+   "bankVeh": 134792,
+   "bankOth": 1176598,
+   "bankMP": null
+  },
+  "2024.04": {
+   "bankVeh": 135873,
+   "bankOth": 1180383,
+   "bankMP": null
+  },
+  "2024.05": {
+   "bankVeh": 135735,
+   "bankOth": 1189932,
+   "bankMP": null
+  },
+  "2024.06": {
+   "bankVeh": 133189,
+   "bankOth": 1200796,
+   "bankMP": null
+  },
+  "2024.07": {
+   "bankVeh": 135548,
+   "bankOth": 1215003,
+   "bankMP": null
+  },
+  "2024.08": {
+   "bankVeh": 135744,
+   "bankOth": 1229147,
+   "bankMP": null
+  },
+  "2024.09": {
+   "bankVeh": 137809,
+   "bankOth": 1245621,
+   "bankMP": null
+  },
+  "2024.10": {
+   "bankVeh": 139796,
+   "bankOth": 1259098,
+   "bankMP": null
+  },
+  "2024.11": {
+   "bankVeh": 142438,
+   "bankOth": 1257573,
+   "bankMP": null
+  },
+  "2024.12": {
+   "bankVeh": 142088,
+   "bankOth": 1284545,
+   "bankMP": null
+  },
+  "2025.01": {
+   "bankVeh": 141531,
+   "bankOth": 1263554,
+   "bankMP": null
+  },
+  "2025.02": {
+   "bankVeh": 141704,
+   "bankOth": 1284842,
+   "bankMP": null
+  },
+  "2025.03": {
+   "bankVeh": 142917,
+   "bankOth": 1290948,
+   "bankMP": null
+  },
+  "2025.04": {
+   "bankVeh": 141755,
+   "bankOth": 1292634,
+   "bankMP": null
+  },
+  "2025.05": {
+   "bankVeh": 142718,
+   "bankOth": 1303585,
+   "bankMP": null
+  },
+  "2025.06": {
+   "bankVeh": 143020,
+   "bankOth": 1311480,
+   "bankMP": null
+  },
+  "2025.07": {
+   "bankVeh": 141757,
+   "bankOth": 1324205,
+   "bankMP": null
+  },
+  "2025.08": {
+   "bankVeh": 140398,
+   "bankOth": 1333937,
+   "bankMP": null
+  },
+  "2025.09": {
+   "bankVeh": 138800,
+   "bankOth": 1346306,
+   "bankMP": null
+  },
+  "2025.10": {
+   "bankVeh": 136727,
+   "bankOth": 1360757,
+   "bankMP": null
+  },
+  "2025.11": {
+   "bankVeh": 135166,
+   "bankOth": 1370211,
+   "bankMP": null
+  },
+  "2025.12": {
+   "bankVeh": 132557,
+   "bankOth": 1383545,
+   "bankMP": null
+  },
+  "2026.01": {
+   "bankVeh": 131150,
+   "bankOth": 1391114,
+   "bankMP": null,
+   "p2p": 98540,
+   "bankBNPL": 27100,
+   "mfBNPL": 12180,
+   "_lpbbtiTWP90": 4.38,
+   "_mfBnplNPF": 2.77,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Feb-2026.aspx"
+  },
+  "2026.02": {
+   "bankVeh": 130059,
+   "bankOth": 1396730,
+   "bankMP": null,
+   "p2p": 100690,
+   "bankBNPL": 27800,
+   "mfBNPL": 12590,
+   "_lpbbtiTWP90": 4.54,
+   "_mfBnplNPF": 2.79,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Maret-2026.aspx"
+  },
+  "2026.03": {
+   "bankVeh": 129681,
+   "bankOth": 1398311,
+   "bankMP": null,
+   "p2p": 101030,
+   "bankBNPL": 28300,
+   "mfBNPL": 12810,
+   "_lpbbtiTWP90": 4.52,
+   "_mfBnplNPF": 2.51,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-April-2026.aspx"
+  },
+  "2026.04": {
+   "bankVeh": 128554,
+   "bankOth": 1404344,
+   "bankMP": null,
+   "p2p": 102070,
+   "bankBNPL": 29300,
+   "mfBNPL": 12930,
+   "_lpbbtiTWP90": 4.62,
+   "_mfBnplNPF": 2.99,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Mei-2026.aspx"
+  },
+  "2026.05": {
+   "bankVeh": 128846,
+   "bankOth": 1411357,
+   "bankMP": null,
+   "p2p": 103730,
+   "bankBNPL": 30100,
+   "mfBNPL": 13180,
+   "_lpbbtiTWP90": 4.42,
+   "_mfBnplNPF": 3.44,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Juni-2026.aspx"
+  },
+  "2026.06": {
+   "bankVeh": 128338,
+   "bankOth": 1421522,
+   "bankMP": null,
+   "p2p": 105140,
+   "bankBNPL": 30700,
+   "mfBNPL": 13400,
+   "_lpbbtiTWP90": 4.26,
+   "_mfBnplNPF": 3.09,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Juli-2026.aspx"
+  },
+  "2026.07": {
+   "bankVeh": 127122,
+   "bankOth": 1424937,
+   "bankMP": null,
+   "p2p": 105630,
+   "bankBNPL": 31560,
+   "mfBNPL": 13620,
+   "_lpbbtiTWP90": 4.32,
+   "_mfBnplNPF": 3.03,
+   "_ojkSource": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Agustus-2026.aspx"
+  }
+ }
+}
