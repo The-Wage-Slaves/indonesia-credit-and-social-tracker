@@ -1,0 +1,39 @@
+name: Fetch a source file as an artifact
+
+# 手动工具：让云端 runner 代为下载一个原始数据文件并作为 artifact 传回。
+# 用途：本机网络到 BI（www.bi.go.id）被直接断连，而 GitHub runner 通；
+# OJK 新门户则相反（屏蔽境外 IP）。这里不写任何分支，只产 artifact，
+# 本机用 `gh run download` 取回后离线解析。
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: "要下载的文件 URL"
+        required: true
+        default: "https://www.bi.go.id/SEKI/tabel/TABEL1_4.xls"
+      name:
+        description: "artifact 名称"
+        required: true
+        default: "seki-tabel1_4"
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download
+        shell: bash
+        run: |
+          mkdir -p out
+          curl -sSL --retry 3 --retry-delay 5 \
+            -A "Mozilla/5.0" -e "https://www.bi.go.id/" \
+            -o "out/$(basename "${{ inputs.url }}")" "${{ inputs.url }}"
+          ls -la out
+          file out/* || true
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.name }}
+          path: out/
+          retention-days: 7
