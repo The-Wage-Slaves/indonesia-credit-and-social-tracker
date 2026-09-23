@@ -238,6 +238,70 @@ def trigger_explanation(alert: dict[str, Any], has_active_event: bool) -> str:
     return "；".join(explanations) or "指数或证据达到待核标准"
 
 
+# ---- 前瞻观察时点 -----------------------------------------------------------
+# 表在 stability-monitor/dashboard/data.js 的 watchlist，由周更人维护；这里读的是
+# apply_week.py export 出来的 dashboard-data.json（validate_repo 保证两者同步）。
+# 周二卡只做"提醒"：列出最近窗口内的时点与已过期未复核的项。它不改分、不判断事件本身。
+WATCH_AHEAD_DAYS = 30      # 卡片列出未来多少天内的时点
+WATCH_NUDGE_DAYS = 7       # 7 天内到期 → 本周卡片有推送资格（见 AUTOMATIONS.md「三种推送」）
+PILLAR_ZH = {
+    "fiscal": "财政", "currency": "货币", "institutions": "制度",
+    "social": "社会", "coercive": "强制机构", "cross": "跨支柱",
+}
+
+
+def watchlist_window(today: dt.date | None = None) -> dict[str, list[dict[str, Any]]]:
+    """把 open 的观察时点分成 overdue / due_soon / upcoming 三组。"""
+    today = today or dt.date.today()
+    data = read_json("stability-monitor/data/dashboard-data.json", {}) or {}
+    rows = [w for w in (data.get("watchlist") or []) if w.get("status", "open") == "open"]
+    rows.sort(key=lambda w: w.get("date", ""))
+    groups: dict[str, list[dict[str, Any]]] = {"overdue": [], "due_soon": [], "upcoming": []}
+    for w in rows:
+        try:
+            when = dt.date.fromisoformat(str(w.get("date")))
+        except ValueError:
+            continue
+        days = (when - today).days
+        w = {**w, "days": days}
+        if days < 0:
+            groups["overdue"].append(w)
+        elif days <= WATCH_NUDGE_DAYS:
+            groups["due_soon"].append(w)
+        elif days <= WATCH_AHEAD_DAYS:
+            groups["upcoming"].append(w)
+    return groups
+
+
+def watchlist_lines(groups: dict[str, list[dict[str, Any]]]) -> list[str]:
+    def fmt(w: dict[str, Any]) -> str:
+        approx = "约 " if w.get("approx") else ""
+        pillar = PILLAR_ZH.get(str(w.get("pillar")), str(w.get("pillar", "")))
+        days = w["days"]
+        when = (
+            f"已过 {-days} 天" if days < 0 else ("今天" if days == 0 else f"{days} 天后")
+        )
+        return (
+            f"- {approx}{w.get('date')}（{when}）【{pillar}】{w.get('title')}\n"
+            f"　到时看：{w.get('watch', '—')}"
+        )
+
+    lines: list[str] = []
+    if groups["overdue"]:
+        lines.append(
+            "**观察时点｜已过期未复核**\n"
+            "下列时点已过，但 data.js 里仍是 open：本周周更请先核对结果并写入 outcome，"
+            "再决定是否改 driver。\n" + "\n".join(fmt(w) for w in groups["overdue"])
+        )
+    soon = groups["due_soon"] + groups["upcoming"]
+    if soon:
+        lines.append(
+            f"**观察时点｜未来 {WATCH_AHEAD_DAYS} 天**\n"
+            + "\n".join(fmt(w) for w in soon)
+        )
+    return lines
+
+
 def weekly_summary() -> dict[str, Any]:
     data = read_json(
         "credit-tracker/sentiment-monitor/output/credit-sentiment-pending.json",
@@ -330,6 +394,9 @@ def weekly_summary() -> dict[str, Any]:
             f"数据日期 {street.get('date', '—')}；热度 {street.get('heat', '—')}；建议稳定性分数 "
             f"{street.get('suggested_score', '—')}（尚未写入正式评分）。"
         )
+    watch_groups = watchlist_window()
+    watch_due = bool(watch_groups["overdue"] or watch_groups["due_soon"])
+    lines.extend(watchlist_lines(watch_groups))
     if weekly_events:
         lines.append(
             "**需要你决定什么**\n"
@@ -341,14 +408,26 @@ def weekly_summary() -> dict[str, Any]:
             "**需要你决定什么**\n"
             "本次仅由稳定性街头热度门触发；请核对采集覆盖与是否纳入本周稳定性评分。"
         )
+    elif watch_due:
+        lines.append(
+            "**需要你决定什么**\n"
+            "本次仅由观察时点提醒触发（7 天内到期或已过期未复核），不代表指数或事件异常；"
+            "请在周更时核对这些时点的结果并更新 data.js 的 watchlist。"
+        )
     level = notification_level.upper()
+    # 只有观察时点触发时，标题不能写"待确认"——那会让人以为有新事件要裁定。
+    title_tag = (
+        "观察时点提醒" if (watch_due and not (credit_risk or street_risk))
+        else f"{level}待确认"
+    )
     return {
         "kind": "weekly",
         "title": (
-            f"【每周二例行】线上信贷风险监测｜{level}待确认"
+            f"【每周二例行】线上信贷风险监测｜{title_tag}"
             f"｜{latest.get('weekEnd', dt.date.today().isoformat())}"
         ),
-        "risk": bool(credit_risk or street_risk),
+        "risk": bool(credit_risk or street_risk or watch_due),
+        "watchDue": watch_due,
         "level": "red" if notification_level == "red" else "orange",
         "lines": lines,
         "reviewUrl": WEEKLY_REVIEW_URL,

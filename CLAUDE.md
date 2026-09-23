@@ -105,7 +105,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 - **成本旋钮**：`MAX_CANDIDATES`（40）与 `MAX_BODY_CHARS`（1200）在模块顶部。满负荷 prompt 约 5.5 万字符 ≈ 2.2 万 token，**每天只调 1 次**（全部候选合并进同一 prompt）。
 - **待校准**：红色要求的「社媒 ≥3 条提及」是拍的。若真事件长期卡在 `high_pending` 上不去红，先怀疑这个阈值或社媒覆盖率。
 
-**周更流程**：⓪ **先取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
+**周更流程**：⓪ **先清观察时点表**——`python scripts/apply_week.py watch` 列出 `data.js` 的 `watchlist` 里已过期未复核与 30 天内到期的项；已到期的先核对结果写进 `outcome`、改 `status`（resolved/lapsed），再决定是否改 driver；新出现的**有日期**的期限/议息/复审日补进表（open 项过期 14 天仍未复核 → `validate_repo` 报错）。看板「后续观察时点」区块与周二飞书卡都读这张表。⓪′ **再取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
 `git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照（**会自动归档一份 driver 级快照到 `data/driver-snapshots/YYYY-MM-DD.json`**；手改评分后若没跑 append，补跑 `python scripts/apply_week.py snapshot`）→ `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
 
 ---
@@ -141,7 +141,7 @@ credit-tracker/
   PROJECT_BRIEF.md                           数据源行列映射+技术决策
 stability-monitor/
   dashboard/indonesia-stability-index-pro.html  ★全景等权版看板(外链下面两js)
-  dashboard/data.js                          ★五支柱评分(周更主改文件) · weekly数组+各driver
+  dashboard/data.js                          ★五支柱评分(周更主改文件) · weekly数组+各driver+watchlist(观察时点)
   dashboard/engine.js                        渲染引擎(含周度趋势图+解读注释)
   dashboard/v3-v4-comparison.html            数据置信版同日对比页(只读)
   scripts/street_heat.py                     街头热度6源+DeepSeek反对率
