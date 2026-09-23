@@ -1,61 +1,56 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-22",
+  "date": "2026-09-23",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 18.0,
-    "socialDailyVolumeRisk": 22.7,
-    "negativeSocialShare": 24.7,
+    "newsDailyVolumeRisk": 13.6,
+    "socialDailyVolumeRisk": 34.3,
+    "negativeSocialShare": 37.4,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=23.0; robust z=-2.14",
-    "socialVolume": "today=1; prior-7d median=28.0; robust z=-1.82"
+    "newsVolume": "today=1; prior-7d median=19.0; robust z=-2.43",
+    "socialVolume": "today=7; prior-7d median=21.0; robust z=-1.05"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-390385a8d685",
-      "eventType": "regulatory_action",
+      "id": "llm-3e962a618a04",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "RPA Indonesia",
-        "Yusuf Pradika",
-        "Zidan"
+        "Mandiri Tunas Finance"
       ],
-      "headline": "KETUM RPA INDONESIA APRESIASI YUSUF PRADIKA DAN ZIDAN KAWAL LAPORAN PINJOL KE OJK - Metropolitan Post -",
-      "headlineZh": "印尼网贷协会赞赏向OJK举报网贷",
-      "summaryZh": "印尼网贷协会主席赞赏Yusuf Pradika和Zidan将网贷问题举报至OJK，属监管介入相关动态。",
-      "rationale": "涉及向监管机构举报网贷问题",
+      "headline": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
+      "headlineZh": "催收砸车事件",
+      "summaryZh": "Mandiri Tunas Finance催收人员砸毁车辆，司机被指挪用车辆。",
+      "rationale": "具体催收暴力事件",
       "independentSourceCount": 1,
       "domains": [
-        "metropolitanpost.id"
+        "kilat.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "ef842c12926de16f"
+        "bdb7992e54fa4d13"
       ],
       "articles": [
         {
-          "title": "KETUM RPA INDONESIA APRESIASI YUSUF PRADIKA DAN ZIDAN KAWAL LAPORAN PINJOL KE OJK - Metropolitan Post -",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQamtfV0ZoU3dIRjlobkRCR2NrOXRadWJrbDlkTTRwVDkyUUN6SWd2bUVaQzZlU1lXdmk2S3BlTk5FTi1VdE9VYk5sTFAyakpyd3BoNEhSWkl2MUZDM3RMdTRMZHB6UXY0TnE2U0FnUHd6X1djZ2Jpb2JidlFWV2Vfak9IeXhER0RSbTJwUUE0dzQ5aDRCcS1uUzQ2LU5vU0dUbXdKdHQyUkF4R3dMQU1J?oc=5"
+          "title": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNampoa1I5Uy1xNzUtWGp6QXlKYkFXZU1oVlIwdWV1U21VaTNYRUppM1RjSThoWkprOFp2V0lCTWQxc1RtbGYxUUJqbTR2YW1xVW1MYjg3Wm4wNkU0VFl5amZhamxweVBpMGF6Qlk4WC1zc2VqeVJ0ZDNsNDY2dm82Sks5M1pwSTZfVWdnazlhWjZ4TE55dFVjbW9ZVDhqMDlpQXBZaEJlb3JaWTY0M0ktRjVYa25OeEozdEkxYzFvZ1dNenM4MnZLU0xBa9IB0AFBVV95cUxNMEtsT0pRcE9tMU1QODZCa3RsRW5XcXczQktnUWJfOUlIRnN5LV9nSUltcXl5VVNXRnU4RlJERE5ZN2htSjFUcmhwY0hnYlBNQWxWdzN0dkJYdGhyQ2UxNDZXUE9CRFk2YlExSDFjYTNPSXZ3NWpYQ3dJbGJkUmJ2ZXRSUVBxTmtmRTk3bHhTSE1jZzVFaVJoS2I3RlA5TFdqM29BT2ZUa0lDa3dNY1hHYV9kNWVySVdKVTdmY19jSDNkTVM3VWVlLS1WOGM2czI4?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 3,
+        "mentionCount": 0,
         "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
+        "platforms": []
       }
     }
   ],
@@ -63,53 +58,48 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 15,
+    "candidateCount": 17,
     "eventGroupCount": 1,
-    "rejectedNonEvents": 13,
+    "rejectedNonEvents": 12,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 15
+      "ok": 17
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-390385a8d685",
-      "eventType": "regulatory_action",
+      "id": "llm-3e962a618a04",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "RPA Indonesia",
-        "Yusuf Pradika",
-        "Zidan"
+        "Mandiri Tunas Finance"
       ],
-      "headline": "KETUM RPA INDONESIA APRESIASI YUSUF PRADIKA DAN ZIDAN KAWAL LAPORAN PINJOL KE OJK - Metropolitan Post -",
-      "headlineZh": "印尼网贷协会赞赏向OJK举报网贷",
-      "summaryZh": "印尼网贷协会主席赞赏Yusuf Pradika和Zidan将网贷问题举报至OJK，属监管介入相关动态。",
-      "rationale": "涉及向监管机构举报网贷问题",
+      "headline": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
+      "headlineZh": "催收砸车事件",
+      "summaryZh": "Mandiri Tunas Finance催收人员砸毁车辆，司机被指挪用车辆。",
+      "rationale": "具体催收暴力事件",
       "independentSourceCount": 1,
       "domains": [
-        "metropolitanpost.id"
+        "kilat.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "ef842c12926de16f"
+        "bdb7992e54fa4d13"
       ],
       "articles": [
         {
-          "title": "KETUM RPA INDONESIA APRESIASI YUSUF PRADIKA DAN ZIDAN KAWAL LAPORAN PINJOL KE OJK - Metropolitan Post -",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQamtfV0ZoU3dIRjlobkRCR2NrOXRadWJrbDlkTTRwVDkyUUN6SWd2bUVaQzZlU1lXdmk2S3BlTk5FTi1VdE9VYk5sTFAyakpyd3BoNEhSWkl2MUZDM3RMdTRMZHB6UXY0TnE2U0FnUHd6X1djZ2Jpb2JidlFWV2Vfak9IeXhER0RSbTJwUUE0dzQ5aDRCcS1uUzQ2LU5vU0dUbXdKdHQyUkF4R3dMQU1J?oc=5"
+          "title": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNampoa1I5Uy1xNzUtWGp6QXlKYkFXZU1oVlIwdWV1U21VaTNYRUppM1RjSThoWkprOFp2V0lCTWQxc1RtbGYxUUJqbTR2YW1xVW1MYjg3Wm4wNkU0VFl5amZhamxweVBpMGF6Qlk4WC1zc2VqeVJ0ZDNsNDY2dm82Sks5M1pwSTZfVWdnazlhWjZ4TE55dFVjbW9ZVDhqMDlpQXBZaEJlb3JaWTY0M0ktRjVYa25OeEozdEkxYzFvZ1dNenM4MnZLU0xBa9IB0AFBVV95cUxNMEtsT0pRcE9tMU1QODZCa3RsRW5XcXczQktnUWJfOUlIRnN5LV9nSUltcXl5VVNXRnU4RlJERE5ZN2htSjFUcmhwY0hnYlBNQWxWdzN0dkJYdGhyQ2UxNDZXUE9CRFk2YlExSDFjYTNPSXZ3NWpYQ3dJbGJkUmJ2ZXRSUVBxTmtmRTk3bHhTSE1jZzVFaVJoS2I3RlA5TFdqM29BT2ZUa0lDa3dNY1hHYV9kNWVySVdKVTdmY19jSDNkTVM3VWVlLS1WOGM2czI4?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 3,
+        "mentionCount": 0,
         "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
+        "platforms": []
       }
     }
   ],
@@ -126,21 +116,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 18,
-    "socialItemCount48h": 14
+    "articleCount48h": 19,
+    "socialItemCount48h": 19
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 463,
-    "classifiedCount": 119,
-    "irrelevantDropped": 121,
+    "inputCount": 424,
+    "classifiedCount": 104,
+    "irrelevantDropped": 136,
     "model": "deepseek-chat",
-    "fallbackCount": 223,
+    "fallbackCount": 184,
     "labelCounts": {
-      "NEG": 49,
-      "MIX": 42,
-      "POS": 28
+      "NEG": 56,
+      "MIX": 39,
+      "POS": 9
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
