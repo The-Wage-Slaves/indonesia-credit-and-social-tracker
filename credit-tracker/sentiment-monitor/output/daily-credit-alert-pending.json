@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "level": "normal",
   "signals": {
     "newsDailyVolumeRisk": 13.6,
-    "socialDailyVolumeRisk": 34.3,
-    "negativeSocialShare": 37.4,
+    "socialDailyVolumeRisk": 15.2,
+    "negativeSocialShare": 13.1,
     "negativeSocialPlatforms": [
       "youtube"
     ],
@@ -14,34 +14,35 @@
   },
   "notes": {
     "newsVolume": "today=1; prior-7d median=19.0; robust z=-2.43",
-    "socialVolume": "today=7; prior-7d median=21.0; robust z=-1.05"
+    "socialVolume": "today=1; prior-7d median=32.0; robust z=-2.32"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-3e962a618a04",
+      "id": "llm-e072f2dc5473",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Mandiri Tunas Finance"
+        "Sleman",
+        "DIY"
       ],
-      "headline": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
-      "headlineZh": "催收砸车事件",
-      "summaryZh": "Mandiri Tunas Finance催收人员砸毁车辆，司机被指挪用车辆。",
-      "rationale": "具体催收暴力事件",
+      "headline": "Gegara Judol dan Pinjol Ilegal di Sleman Penerima Bansos Terjerat, Utang Pinjol DIY Tembus Rp 1,4 T - Radar Jogja",
+      "headlineZh": "Sleman救助对象陷网贷网赌",
+      "summaryZh": "Sleman社会救助受益者因网赌和非法网贷陷入债务，DIY地区网贷债务达1.4万亿盾。",
+      "rationale": "具体地区消费者受害事件",
       "independentSourceCount": 1,
       "domains": [
-        "kilat.com"
+        "radarjogja.jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "bdb7992e54fa4d13"
+        "f7ce210d7887c77b"
       ],
       "articles": [
         {
-          "title": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNampoa1I5Uy1xNzUtWGp6QXlKYkFXZU1oVlIwdWV1U21VaTNYRUppM1RjSThoWkprOFp2V0lCTWQxc1RtbGYxUUJqbTR2YW1xVW1MYjg3Wm4wNkU0VFl5amZhamxweVBpMGF6Qlk4WC1zc2VqeVJ0ZDNsNDY2dm82Sks5M1pwSTZfVWdnazlhWjZ4TE55dFVjbW9ZVDhqMDlpQXBZaEJlb3JaWTY0M0ktRjVYa25OeEozdEkxYzFvZ1dNenM4MnZLU0xBa9IB0AFBVV95cUxNMEtsT0pRcE9tMU1QODZCa3RsRW5XcXczQktnUWJfOUlIRnN5LV9nSUltcXl5VVNXRnU4RlJERE5ZN2htSjFUcmhwY0hnYlBNQWxWdzN0dkJYdGhyQ2UxNDZXUE9CRFk2YlExSDFjYTNPSXZ3NWpYQ3dJbGJkUmJ2ZXRSUVBxTmtmRTk3bHhTSE1jZzVFaVJoS2I3RlA5TFdqM29BT2ZUa0lDa3dNY1hHYV9kNWVySVdKVTdmY19jSDNkTVM3VWVlLS1WOGM2czI4?oc=5"
+          "title": "Gegara Judol dan Pinjol Ilegal di Sleman Penerima Bansos Terjerat, Utang Pinjol DIY Tembus Rp 1,4 T - Radar Jogja",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNX0ZIMnNMZmh0dF9UT0VZZTR6Ykk5NFE5MS15M3c5RUJEU3p3cGtXazEtTXloUlFnV05iR1JvNFpTZENEVTZZb3p4UVdiaGVLS0ZRWnBxWDdyUWVMUFdSWUUyVThuMmFlT0JlRW12eXRiWUhheWpVbFcyTzEtaVp0cFRUdm5NUmRta2lhcHhYQURLN3pOckJYb29ad3E0ZHptZmNFMUJ2Zmp0dTZsSHFNNlNIdFFKZFM1VEtRSUNOelFRSzJWaU5xT2lMU2hQZnVDLURRWmE3VnpidUhqRmZz0gHkAUFVX3lxTE1jb0JGMHlvQ2VRZFdKTW9fWDZvNzhEYjVBRlpkRTlXQWoxQmtObHRNS25veWZfaGlhTU5DVC1keHJ4NkNma0pZbW1FajZSNy1EU21KTzhMbmZGZDZSbUhCbHpPMFI3b3R0RHBGZUVMQzM1Qy1sU3Nwd09QZ3dKbllHRWNsQWEzLUttNWVyOU5rQ2hsWXZjNDJTU25MelVLZFVsVjZ2R0xsREZ4WF8yMklhazVsUjllekNFQ24zYWpKWmFuQUNCcUVBSE9hX29yRzI3RzdOOE9KQTEzMFVKSllKelhabw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -58,39 +59,40 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 17,
+    "candidateCount": 14,
     "eventGroupCount": 1,
-    "rejectedNonEvents": 12,
+    "rejectedNonEvents": 13,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 17
+      "ok": 14
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-3e962a618a04",
+      "id": "llm-e072f2dc5473",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Mandiri Tunas Finance"
+        "Sleman",
+        "DIY"
       ],
-      "headline": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
-      "headlineZh": "催收砸车事件",
-      "summaryZh": "Mandiri Tunas Finance催收人员砸毁车辆，司机被指挪用车辆。",
-      "rationale": "具体催收暴力事件",
+      "headline": "Gegara Judol dan Pinjol Ilegal di Sleman Penerima Bansos Terjerat, Utang Pinjol DIY Tembus Rp 1,4 T - Radar Jogja",
+      "headlineZh": "Sleman救助对象陷网贷网赌",
+      "summaryZh": "Sleman社会救助受益者因网赌和非法网贷陷入债务，DIY地区网贷债务达1.4万亿盾。",
+      "rationale": "具体地区消费者受害事件",
       "independentSourceCount": 1,
       "domains": [
-        "kilat.com"
+        "radarjogja.jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "bdb7992e54fa4d13"
+        "f7ce210d7887c77b"
       ],
       "articles": [
         {
-          "title": "Mobil Dirusak Debt Collector Mandiri Tunas Finance, Pengemudi Dituding Gelapkan Kendaraan - Kilat - Kilat",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNampoa1I5Uy1xNzUtWGp6QXlKYkFXZU1oVlIwdWV1U21VaTNYRUppM1RjSThoWkprOFp2V0lCTWQxc1RtbGYxUUJqbTR2YW1xVW1MYjg3Wm4wNkU0VFl5amZhamxweVBpMGF6Qlk4WC1zc2VqeVJ0ZDNsNDY2dm82Sks5M1pwSTZfVWdnazlhWjZ4TE55dFVjbW9ZVDhqMDlpQXBZaEJlb3JaWTY0M0ktRjVYa25OeEozdEkxYzFvZ1dNenM4MnZLU0xBa9IB0AFBVV95cUxNMEtsT0pRcE9tMU1QODZCa3RsRW5XcXczQktnUWJfOUlIRnN5LV9nSUltcXl5VVNXRnU4RlJERE5ZN2htSjFUcmhwY0hnYlBNQWxWdzN0dkJYdGhyQ2UxNDZXUE9CRFk2YlExSDFjYTNPSXZ3NWpYQ3dJbGJkUmJ2ZXRSUVBxTmtmRTk3bHhTSE1jZzVFaVJoS2I3RlA5TFdqM29BT2ZUa0lDa3dNY1hHYV9kNWVySVdKVTdmY19jSDNkTVM3VWVlLS1WOGM2czI4?oc=5"
+          "title": "Gegara Judol dan Pinjol Ilegal di Sleman Penerima Bansos Terjerat, Utang Pinjol DIY Tembus Rp 1,4 T - Radar Jogja",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNX0ZIMnNMZmh0dF9UT0VZZTR6Ykk5NFE5MS15M3c5RUJEU3p3cGtXazEtTXloUlFnV05iR1JvNFpTZENEVTZZb3p4UVdiaGVLS0ZRWnBxWDdyUWVMUFdSWUUyVThuMmFlT0JlRW12eXRiWUhheWpVbFcyTzEtaVp0cFRUdm5NUmRta2lhcHhYQURLN3pOckJYb29ad3E0ZHptZmNFMUJ2Zmp0dTZsSHFNNlNIdFFKZFM1VEtRSUNOelFRSzJWaU5xT2lMU2hQZnVDLURRWmE3VnpidUhqRmZz0gHkAUFVX3lxTE1jb0JGMHlvQ2VRZFdKTW9fWDZvNzhEYjVBRlpkRTlXQWoxQmtObHRNS25veWZfaGlhTU5DVC1keHJ4NkNma0pZbW1FajZSNy1EU21KTzhMbmZGZDZSbUhCbHpPMFI3b3R0RHBGZUVMQzM1Qy1sU3Nwd09QZ3dKbllHRWNsQWEzLUttNWVyOU5rQ2hsWXZjNDJTU25MelVLZFVsVjZ2R0xsREZ4WF8yMklhazVsUjllekNFQ24zYWpKWmFuQUNCcUVBSE9hX29yRzI3RzdOOE9KQTEzMFVKSllKelhabw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -116,21 +118,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 19,
-    "socialItemCount48h": 19
+    "articleCount48h": 15,
+    "socialItemCount48h": 13
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 424,
-    "classifiedCount": 104,
-    "irrelevantDropped": 136,
+    "inputCount": 453,
+    "classifiedCount": 109,
+    "irrelevantDropped": 131,
     "model": "deepseek-chat",
-    "fallbackCount": 184,
+    "fallbackCount": 213,
     "labelCounts": {
-      "NEG": 56,
-      "MIX": 39,
-      "POS": 9
+      "NEG": 49,
+      "MIX": 47,
+      "POS": 13
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
