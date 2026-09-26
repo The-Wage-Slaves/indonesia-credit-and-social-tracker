@@ -1,200 +1,83 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-25",
+  "date": "2026-09-26",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 9.5,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 10.7,
+    "newsDailyVolumeRisk": 19.6,
+    "socialDailyVolumeRisk": 28.8,
+    "negativeSocialShare": 14.0,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=5; prior-7d median=17.0; robust z=-2.70",
-    "socialVolume": "today=0; prior-7d median=30.0; robust z=-3.37"
+    "newsVolume": "today=4; prior-7d median=16.0; robust z=-2.02",
+    "socialVolume": "today=3; prior-7d median=26.0; robust z=-1.41"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-0d94174df377",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "DPRD Jawa Timur",
-        "Pemprov Jawa Timur"
-      ],
-      "headline": "Darurat Identitas Dicatut Pinjol, DPRD Jatim Desak Pemprov Perketat Keamanan Data Warga - TIMES Indonesia",
-      "headlineZh": "东爪哇身份被盗用网贷",
-      "summaryZh": "东爪哇居民身份被非法网贷盗用，DPRD两派系要求省政府加强数据安全。",
-      "rationale": "地方立法机构介入，属具体事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "sabdanews.com",
-        "timesindonesia.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "5bce3b315397bba3",
-        "ddea7b5f19f4389e"
-      ],
-      "articles": [
-        {
-          "title": "Darurat Identitas Dicatut Pinjol, DPRD Jatim Desak Pemprov Perketat Keamanan Data Warga - TIMES Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTGh4S0RrM0ViZkM3OW9YMVBwRHRrN2tSeGhQc1hrSDRjY3VPQWZnR19RQS1oVzNER3VJajUwQjFLLU9DTHdPNUJfTjVKSWM1M3V2Ukpyd09iWXZnUU9NcE9sa05tMFFXcDhrbnR3YWw3Vk5TSFQ3eGp1dzROMjlldUxMOVZFM3ZoRmkyYVFGVUxycFl5LVJuTm9ZSmVWY0szZ2pRMUV1LTlma1hfeHNkMUlpUzZ3N2YzaVA5UG9GSXpyU1lDYldyTXpnbkY?oc=5"
-        },
-        {
-          "title": "Data Warga Jadi Celah Pinjol Ilegal, Fraksi PDIP DPRD jatim Desak Pemprov Bertindak - Sabdanews",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVWxFdG95YXJtZVB3dzVSek5UTWRqSVN4Yk4wTU83d3Bmdmk1a1UwdVFBZl93Zk54ajdvTjFzcHgzXzgwVl9wbk5DSjdYanVvUC1aTlJLZnFYTEROSFdxNVZySnNBZFJQY3htVjBORXJ6QXpHZUg2SnBtWjg4ODk2YUtMb1ZseUNDdjhZdVk0eWlJRGZmWnJkTkRSR29DVDJsZUtsMmVPNGU?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-ad368c2dbc3e",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Temukan Ribuan Kejahatan Keuangan Ilegal di Pasuruan-Probolinggo, Pinjol Paling Banyak - Radar Bromo",
-      "headlineZh": "OJK发现数千非法金融活动",
-      "summaryZh": "OJK在Pasuruan-Probolinggo发现数千起非法金融活动，网贷占多数。",
-      "rationale": "监管发现具体非法活动，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarbromo.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d1ceddf0621259c0"
-      ],
-      "articles": [
-        {
-          "title": "OJK Temukan Ribuan Kejahatan Keuangan Ilegal di Pasuruan-Probolinggo, Pinjol Paling Banyak - Radar Bromo",
-          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOZ1hfZW5tTnN0SURabFVONWhxcW5VRGlfUERCZng3dXJOemg1QXN4RG5uVzRRdjA0U00zeEZDNmtwSHFlME90U3BvdGJuUEx6UzR0azBQdFNLaC16R3VrRTFPa0tTeFBEam5kWE1rYVB4WkdON0k0d0l3M1dkV1lubTFRUFFlMWQ0OGhRVmVETmFPY2xZeDdoQmJCVmVOMTlDYlRaSnlYQXRlNFNXbkNuZDBhdnZyNEh3ZUdrcjJudEdIc0luOHdaUFZpaHhFTktMb2gyX1NMY1NUaFdQV094UWROSFPSAeQBQVVfeXFMTmdYX2VubU5zdElEWmxVTjVocXFuVURpX1BEQmZ4N3VyTnpoNUFzeERublc0UXYwNFNNM3hGQzZrcEhxZTBPdFNwb3RiblBMelM0dGswUHRTS2gtekd1a0UxT2tLU3hQRGpuZFhNa2FQeFpHTjdJNHdJdzNXZFdZbm0xUVBRZTFkNDhoUVZlRE5hT2NsWXg3aEJiQlZlTjE5Q2JUWkp5WEF0ZTRTV25DbmQwYXZ2cjRId2VHa3IybnRHSHNJbjh3WlBWaWh4RU5LTG9oMl9TTGNTVGhXUFdPeFFkTkhT?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-d2c918e16525",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Ubah Aturan Pindar, Akses Pinjaman Tak Lagi Terbatas 3 Platform - InvestorTrust",
-      "headlineZh": "OJK修改Pindar规则",
-      "summaryZh": "OJK修改Pindar规则，取消借贷仅限3个平台限制，属监管调整。",
-      "rationale": "监管规则变更，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "investortrust.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "642035cf3106a98e"
-      ],
-      "articles": [
-        {
-          "title": "OJK Ubah Aturan Pindar, Akses Pinjaman Tak Lagi Terbatas 3 Platform - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRmhtSXQtNEJJUDFpYndhMEJodVZ4dlc2RWdoM1dnenFIRVZvemxRX2k1V3M2RlIza0xJVTRRNHJuRFpobWNNWUhuNDNGS3BjNUVXYjRKeGpGeGFqeXJneTI1SmJGVnFlajZOMElnMnJsVkg3WWV2a2RIblB5Z3M5eEdmWUlGOVVrUkRaWmdkU3FyX043X1owUWRrTnFWYzN3ZmpaS3Z3eFFma25u?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-41c3fbe84eb1",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "Pindar"
-      ],
-      "headline": "Outstanding Pindar Tumbuh 7x Lipat Capai Rp105,63 Triliun Sejak 2020 - Bisnis.com",
-      "headlineZh": "Pindar余额增7倍至105万亿",
-      "summaryZh": "Pindar未偿余额自2020年增7倍达105.63万亿盾，观察人士关注unbankable客户风险。",
-      "rationale": "行业资产质量数据，值得留痕",
-      "independentSourceCount": 2,
-      "domains": [
-        "finansial.bisnis.com",
-        "wartaekonomi.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "da21799579c6f9c3",
-        "eb3fc8d461b600f1"
-      ],
-      "articles": [
-        {
-          "title": "Outstanding Pindar Tumbuh 7x Lipat Capai Rp105,63 Triliun Sejak 2020 - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNUQtcTczb3N2WjZxS1pkNU9DclNJUTRBZWpuMklfaEd4Q1lMLVprUVd5c0toaDdaVzZPblpHem9mM1dqUUljRHNJTGxWd3UxSmxYR1JWRUZ0R3BVdF96aFpUaFZTR3NYSlBXcEl1WUwwM2pRbDJwbVBZLURWbGFYNUJlODU3OFM5Yy1wRUdYYWRhZXhHZlE4NUFmZzkzNjNIa0hnOS0wb0pxa1BGenp4YldRQVAyVnN1VHIxVS1rOA?oc=5"
-        },
-        {
-          "title": "Pindar Tumbuh 25,88% Jadi Rp105 Triliun, Pengamat Soroti Nasabah Unbankable - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYlk0elBTVGxxOUQtbWVnZWtUc0U4T1JEZ2tMcVgwcU5RVjZ4QXpNNzllM3RmMUYtUEdTXzdXcm82UzNmclItWmdfWHU0a2k1T003LW9qRm04OU84cTh2YzJLTkk3cTdNMHlMZ2FMeTdHSk1sdmpOeU5CTVZUMGFINFAwVjd2Y05sS1dQeTlLQ1JkeUdEOGZJa1FiZHQ2M0E4bllMelJUQWFleUhKS21N0gG0AUFVX3lxTE1Bc3V2MU85NTRWcVVqQ0VMaWxUaHFJV1B4SGhaRGxvSXhIMFdJa2RJcTFlRVVPc3AyaXBOamdoTy04SzVIcTBPZHhQancyWkM3TVZjWFpyMkFwREQ3cXR5M3Q5WlB3ak1UY0RuSHA1UUU5Y3piMmdFVXo3bC1oc1NnUmNYdGRuNjNibzBPYlZHV1VYWEVHUGJmMUVLak9WOVdUUVhjRUhJTGlCUk83cTVqb05ubA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-5a6fd7941449",
+      "id": "llm-deca661f2d95",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Winda Puspita"
+        "OJK",
+        "Jatim"
       ],
-      "headline": "Winda Puspita Kehilangan Pekerjaan Usai 4 Bulan Diteror DC Pinjol - Tabloidbintang.com",
-      "headlineZh": "女子遭催收恐吓失业",
-      "summaryZh": "Winda Puspita遭网贷催收恐吓4个月后失去工作，属消费者受害个案。",
-      "rationale": "具体消费者受害事件",
+      "headline": "2.356 aduan pinjol ilegal jadi alarm pelindungan data di Jatim - Antara News jatim",
+      "headlineZh": "东爪哇2356起非法网贷投诉",
+      "summaryZh": "东爪哇记录2356起非法网贷投诉，引发数据保护警报，反映消费者受害规模。",
+      "rationale": "有具体投诉数据，属消费者受害事件",
       "independentSourceCount": 1,
       "domains": [
-        "tabloidbintang.com"
+        "jatim.antaranews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "8120110679e8e634"
+        "723c3210ce5a30ee"
       ],
       "articles": [
         {
-          "title": "Winda Puspita Kehilangan Pekerjaan Usai 4 Bulan Diteror DC Pinjol - Tabloidbintang.com",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONkJqdGlQUjFmc1lWb0s5WThfT0ZGd1dQT3FzNTVLWnBSODk4RnU1VFVGb0FmdlRWS3lZaDRxSG5LbFU1TFBsTWxyTWs1ZHhjSWxJazZvZ01YMzVRMjhBLUxpbDBxWVlWQUVMSmFPZkljTGFjLU9RWTdUa1dmaExZaXl0YWhIdzl3RFpuZ2NlR2l0Uk9zMV9GcHplMmNSR2x3N0NWTG9JcFBmX1U2YVVJ0gG0AUFVX3lxTFBLOGdGODdBM1VJR2p6UzVGNEl6R3BzRjhLcjZTX3VJc3ctYXlEUWQzOTR6Y21SUmNqMmtiQ1J4VjdKLVVlTmlnQ01SX01CdzFnWUE2MHNTcTFiOGN1MmNYWHpjUmkzOTVCTml1SjhzMkpEWmNlMUkzX1BpanFka214bVFZcGczZy1McHdfcnFkVVhSTTk0QWpkZ2JES25EQXBQdEZSNXctaEtrdWVaY3J5NGVPeQ?oc=5"
+          "title": "2.356 aduan pinjol ilegal jadi alarm pelindungan data di Jatim - Antara News jatim",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOVGFIamZRX1hKNlZjLThPWmhUS3UzWEZrNjl1U1ZPclhzendpeDktQ0VxbVJ4X3VFZGlPQzIyT015RDhIaFlPOXZxNlNvc3dwNllXRkJwNjN3QWRGTDZsNGdwTzdoMDQxUVlPZmZRUkNac1VLVUpTYld3ajV0ZVZmN1NfUkVKU0w4anBkZTZURnR4QkFuTmlXbGxiSnJPYndkRzluMzRRX0LSAa4BQVVfeXFMT3NkSkw0VURjX1M5QkxZNEVNdnhfc3JmanczNC1KRDZYOGhWMVl0ZWpiUE9tSm1EbTVpcXhnVHd1NE10MnNaMWFDcGNtS0JfbWhGVWFDWXJDLUZ1a2FsRFBTQzFnVERlRE1QWmh6UjhVVmJ1eFc5Q3lsVjRPdm5BczFVOXBqYy1XN3FISmZtbkdDMml5MnhaT25RX0RLSnMxTjdlTnktRHlicWt3d2FR?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-372746c727ab",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "GADPI",
+        "OJK"
+      ],
+      "headline": "GADPI Audiensi dengan OJK, Soroti Praktik Penagihan PINDAR dan Perlindungan Konsumen - integritasnews.com",
+      "headlineZh": "GADPI与OJK讨论PINDAR催收",
+      "summaryZh": "GADPI协会与OJK会面，关注PINDAR催收实践和消费者保护问题，属监管沟通事件。",
+      "rationale": "协会与监管机构正式会面，属事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "integritasnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "66284359b9617e19"
+      ],
+      "articles": [
+        {
+          "title": "GADPI Audiensi dengan OJK, Soroti Praktik Penagihan PINDAR dan Perlindungan Konsumen - integritasnews.com",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeGxBc3dPQ0RuUGJOUjlIbk1neGo1Ync3MWViMkFjQ0paSU9YQnBHelBSb1p0VVUyZWg5ZkNiMC0xTG95d1pJN1FhN3dzcU1fandOUjBPTkowMEk2RVZVM3BhTTE1TG1TRzU3TVVUak1aNkVqX2RtblFJUkZjTnNGQ3duelJBeVZWY293eFk2UHI0c1BHM05zNTRVZVBGWEVnQ29iSmZ6bGNHX0dwZTFlTg?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -212,8 +95,8 @@
     "method": "deepseek_credit_event_v1",
     "status": "ok",
     "candidateCount": 18,
-    "eventGroupCount": 5,
-    "rejectedNonEvents": 8,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 12,
     "unassignedCount": 0,
     "articleBodyStatus": {
       "ok": 18
@@ -222,181 +105,64 @@
   },
   "events": [
     {
-      "id": "llm-0d94174df377",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "DPRD Jawa Timur",
-        "Pemprov Jawa Timur"
-      ],
-      "headline": "Darurat Identitas Dicatut Pinjol, DPRD Jatim Desak Pemprov Perketat Keamanan Data Warga - TIMES Indonesia",
-      "headlineZh": "东爪哇身份被盗用网贷",
-      "summaryZh": "东爪哇居民身份被非法网贷盗用，DPRD两派系要求省政府加强数据安全。",
-      "rationale": "地方立法机构介入，属具体事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "sabdanews.com",
-        "timesindonesia.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "5bce3b315397bba3",
-        "ddea7b5f19f4389e"
-      ],
-      "articles": [
-        {
-          "title": "Darurat Identitas Dicatut Pinjol, DPRD Jatim Desak Pemprov Perketat Keamanan Data Warga - TIMES Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTGh4S0RrM0ViZkM3OW9YMVBwRHRrN2tSeGhQc1hrSDRjY3VPQWZnR19RQS1oVzNER3VJajUwQjFLLU9DTHdPNUJfTjVKSWM1M3V2Ukpyd09iWXZnUU9NcE9sa05tMFFXcDhrbnR3YWw3Vk5TSFQ3eGp1dzROMjlldUxMOVZFM3ZoRmkyYVFGVUxycFl5LVJuTm9ZSmVWY0szZ2pRMUV1LTlma1hfeHNkMUlpUzZ3N2YzaVA5UG9GSXpyU1lDYldyTXpnbkY?oc=5"
-        },
-        {
-          "title": "Data Warga Jadi Celah Pinjol Ilegal, Fraksi PDIP DPRD jatim Desak Pemprov Bertindak - Sabdanews",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVWxFdG95YXJtZVB3dzVSek5UTWRqSVN4Yk4wTU83d3Bmdmk1a1UwdVFBZl93Zk54ajdvTjFzcHgzXzgwVl9wbk5DSjdYanVvUC1aTlJLZnFYTEROSFdxNVZySnNBZFJQY3htVjBORXJ6QXpHZUg2SnBtWjg4ODk2YUtMb1ZseUNDdjhZdVk0eWlJRGZmWnJkTkRSR29DVDJsZUtsMmVPNGU?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-ad368c2dbc3e",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Temukan Ribuan Kejahatan Keuangan Ilegal di Pasuruan-Probolinggo, Pinjol Paling Banyak - Radar Bromo",
-      "headlineZh": "OJK发现数千非法金融活动",
-      "summaryZh": "OJK在Pasuruan-Probolinggo发现数千起非法金融活动，网贷占多数。",
-      "rationale": "监管发现具体非法活动，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarbromo.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d1ceddf0621259c0"
-      ],
-      "articles": [
-        {
-          "title": "OJK Temukan Ribuan Kejahatan Keuangan Ilegal di Pasuruan-Probolinggo, Pinjol Paling Banyak - Radar Bromo",
-          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOZ1hfZW5tTnN0SURabFVONWhxcW5VRGlfUERCZng3dXJOemg1QXN4RG5uVzRRdjA0U00zeEZDNmtwSHFlME90U3BvdGJuUEx6UzR0azBQdFNLaC16R3VrRTFPa0tTeFBEam5kWE1rYVB4WkdON0k0d0l3M1dkV1lubTFRUFFlMWQ0OGhRVmVETmFPY2xZeDdoQmJCVmVOMTlDYlRaSnlYQXRlNFNXbkNuZDBhdnZyNEh3ZUdrcjJudEdIc0luOHdaUFZpaHhFTktMb2gyX1NMY1NUaFdQV094UWROSFPSAeQBQVVfeXFMTmdYX2VubU5zdElEWmxVTjVocXFuVURpX1BEQmZ4N3VyTnpoNUFzeERublc0UXYwNFNNM3hGQzZrcEhxZTBPdFNwb3RiblBMelM0dGswUHRTS2gtekd1a0UxT2tLU3hQRGpuZFhNa2FQeFpHTjdJNHdJdzNXZFdZbm0xUVBRZTFkNDhoUVZlRE5hT2NsWXg3aEJiQlZlTjE5Q2JUWkp5WEF0ZTRTV25DbmQwYXZ2cjRId2VHa3IybnRHSHNJbjh3WlBWaWh4RU5LTG9oMl9TTGNTVGhXUFdPeFFkTkhT?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-d2c918e16525",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Ubah Aturan Pindar, Akses Pinjaman Tak Lagi Terbatas 3 Platform - InvestorTrust",
-      "headlineZh": "OJK修改Pindar规则",
-      "summaryZh": "OJK修改Pindar规则，取消借贷仅限3个平台限制，属监管调整。",
-      "rationale": "监管规则变更，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "investortrust.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "642035cf3106a98e"
-      ],
-      "articles": [
-        {
-          "title": "OJK Ubah Aturan Pindar, Akses Pinjaman Tak Lagi Terbatas 3 Platform - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRmhtSXQtNEJJUDFpYndhMEJodVZ4dlc2RWdoM1dnenFIRVZvemxRX2k1V3M2RlIza0xJVTRRNHJuRFpobWNNWUhuNDNGS3BjNUVXYjRKeGpGeGFqeXJneTI1SmJGVnFlajZOMElnMnJsVkg3WWV2a2RIblB5Z3M5eEdmWUlGOVVrUkRaWmdkU3FyX043X1owUWRrTnFWYzN3ZmpaS3Z3eFFma25u?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-41c3fbe84eb1",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "Pindar"
-      ],
-      "headline": "Outstanding Pindar Tumbuh 7x Lipat Capai Rp105,63 Triliun Sejak 2020 - Bisnis.com",
-      "headlineZh": "Pindar余额增7倍至105万亿",
-      "summaryZh": "Pindar未偿余额自2020年增7倍达105.63万亿盾，观察人士关注unbankable客户风险。",
-      "rationale": "行业资产质量数据，值得留痕",
-      "independentSourceCount": 2,
-      "domains": [
-        "finansial.bisnis.com",
-        "wartaekonomi.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "da21799579c6f9c3",
-        "eb3fc8d461b600f1"
-      ],
-      "articles": [
-        {
-          "title": "Outstanding Pindar Tumbuh 7x Lipat Capai Rp105,63 Triliun Sejak 2020 - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQNUQtcTczb3N2WjZxS1pkNU9DclNJUTRBZWpuMklfaEd4Q1lMLVprUVd5c0toaDdaVzZPblpHem9mM1dqUUljRHNJTGxWd3UxSmxYR1JWRUZ0R3BVdF96aFpUaFZTR3NYSlBXcEl1WUwwM2pRbDJwbVBZLURWbGFYNUJlODU3OFM5Yy1wRUdYYWRhZXhHZlE4NUFmZzkzNjNIa0hnOS0wb0pxa1BGenp4YldRQVAyVnN1VHIxVS1rOA?oc=5"
-        },
-        {
-          "title": "Pindar Tumbuh 25,88% Jadi Rp105 Triliun, Pengamat Soroti Nasabah Unbankable - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYlk0elBTVGxxOUQtbWVnZWtUc0U4T1JEZ2tMcVgwcU5RVjZ4QXpNNzllM3RmMUYtUEdTXzdXcm82UzNmclItWmdfWHU0a2k1T003LW9qRm04OU84cTh2YzJLTkk3cTdNMHlMZ2FMeTdHSk1sdmpOeU5CTVZUMGFINFAwVjd2Y05sS1dQeTlLQ1JkeUdEOGZJa1FiZHQ2M0E4bllMelJUQWFleUhKS21N0gG0AUFVX3lxTE1Bc3V2MU85NTRWcVVqQ0VMaWxUaHFJV1B4SGhaRGxvSXhIMFdJa2RJcTFlRVVPc3AyaXBOamdoTy04SzVIcTBPZHhQancyWkM3TVZjWFpyMkFwREQ3cXR5M3Q5WlB3ak1UY0RuSHA1UUU5Y3piMmdFVXo3bC1oc1NnUmNYdGRuNjNibzBPYlZHV1VYWEVHUGJmMUVLak9WOVdUUVhjRUhJTGlCUk83cTVqb05ubA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-5a6fd7941449",
+      "id": "llm-deca661f2d95",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Winda Puspita"
+        "OJK",
+        "Jatim"
       ],
-      "headline": "Winda Puspita Kehilangan Pekerjaan Usai 4 Bulan Diteror DC Pinjol - Tabloidbintang.com",
-      "headlineZh": "女子遭催收恐吓失业",
-      "summaryZh": "Winda Puspita遭网贷催收恐吓4个月后失去工作，属消费者受害个案。",
-      "rationale": "具体消费者受害事件",
+      "headline": "2.356 aduan pinjol ilegal jadi alarm pelindungan data di Jatim - Antara News jatim",
+      "headlineZh": "东爪哇2356起非法网贷投诉",
+      "summaryZh": "东爪哇记录2356起非法网贷投诉，引发数据保护警报，反映消费者受害规模。",
+      "rationale": "有具体投诉数据，属消费者受害事件",
       "independentSourceCount": 1,
       "domains": [
-        "tabloidbintang.com"
+        "jatim.antaranews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "8120110679e8e634"
+        "723c3210ce5a30ee"
       ],
       "articles": [
         {
-          "title": "Winda Puspita Kehilangan Pekerjaan Usai 4 Bulan Diteror DC Pinjol - Tabloidbintang.com",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONkJqdGlQUjFmc1lWb0s5WThfT0ZGd1dQT3FzNTVLWnBSODk4RnU1VFVGb0FmdlRWS3lZaDRxSG5LbFU1TFBsTWxyTWs1ZHhjSWxJazZvZ01YMzVRMjhBLUxpbDBxWVlWQUVMSmFPZkljTGFjLU9RWTdUa1dmaExZaXl0YWhIdzl3RFpuZ2NlR2l0Uk9zMV9GcHplMmNSR2x3N0NWTG9JcFBmX1U2YVVJ0gG0AUFVX3lxTFBLOGdGODdBM1VJR2p6UzVGNEl6R3BzRjhLcjZTX3VJc3ctYXlEUWQzOTR6Y21SUmNqMmtiQ1J4VjdKLVVlTmlnQ01SX01CdzFnWUE2MHNTcTFiOGN1MmNYWHpjUmkzOTVCTml1SjhzMkpEWmNlMUkzX1BpanFka214bVFZcGczZy1McHdfcnFkVVhSTTk0QWpkZ2JES25EQXBQdEZSNXctaEtrdWVaY3J5NGVPeQ?oc=5"
+          "title": "2.356 aduan pinjol ilegal jadi alarm pelindungan data di Jatim - Antara News jatim",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOVGFIamZRX1hKNlZjLThPWmhUS3UzWEZrNjl1U1ZPclhzendpeDktQ0VxbVJ4X3VFZGlPQzIyT015RDhIaFlPOXZxNlNvc3dwNllXRkJwNjN3QWRGTDZsNGdwTzdoMDQxUVlPZmZRUkNac1VLVUpTYld3ajV0ZVZmN1NfUkVKU0w4anBkZTZURnR4QkFuTmlXbGxiSnJPYndkRzluMzRRX0LSAa4BQVVfeXFMT3NkSkw0VURjX1M5QkxZNEVNdnhfc3JmanczNC1KRDZYOGhWMVl0ZWpiUE9tSm1EbTVpcXhnVHd1NE10MnNaMWFDcGNtS0JfbWhGVWFDWXJDLUZ1a2FsRFBTQzFnVERlRE1QWmh6UjhVVmJ1eFc5Q3lsVjRPdm5BczFVOXBqYy1XN3FISmZtbkdDMml5MnhaT25RX0RLSnMxTjdlTnktRHlicWt3d2FR?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-372746c727ab",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "GADPI",
+        "OJK"
+      ],
+      "headline": "GADPI Audiensi dengan OJK, Soroti Praktik Penagihan PINDAR dan Perlindungan Konsumen - integritasnews.com",
+      "headlineZh": "GADPI与OJK讨论PINDAR催收",
+      "summaryZh": "GADPI协会与OJK会面，关注PINDAR催收实践和消费者保护问题，属监管沟通事件。",
+      "rationale": "协会与监管机构正式会面，属事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "integritasnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "66284359b9617e19"
+      ],
+      "articles": [
+        {
+          "title": "GADPI Audiensi dengan OJK, Soroti Praktik Penagihan PINDAR dan Perlindungan Konsumen - integritasnews.com",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOeGxBc3dPQ0RuUGJOUjlIbk1neGo1Ync3MWViMkFjQ0paSU9YQnBHelBSb1p0VVUyZWg5ZkNiMC0xTG95d1pJN1FhN3dzcU1fandOUjBPTkowMEk2RVZVM3BhTTE1TG1TRzU3TVVUak1aNkVqX2RtblFJUkZjTnNGQ3duelJBeVZWY293eFk2UHI0c1BHM05zNTRVZVBGWEVnQ29iSmZ6bGNHX0dwZTFlTg?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -412,31 +178,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
+      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 21,
-    "socialItemCount48h": 8
+    "articleCount48h": 25,
+    "socialItemCount48h": 10
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 451,
-    "classifiedCount": 76,
-    "irrelevantDropped": 164,
+    "inputCount": 469,
+    "classifiedCount": 126,
+    "irrelevantDropped": 114,
     "model": "deepseek-chat",
-    "fallbackCount": 211,
+    "fallbackCount": 229,
     "labelCounts": {
-      "NEG": 45,
-      "MIX": 14,
-      "POS": 17
+      "NEG": 42,
+      "MIX": 41,
+      "POS": 43
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

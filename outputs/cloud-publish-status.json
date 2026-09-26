@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-09-25T06:37:31.491583+00:00",
+  "generatedAt": "2026-09-26T06:37:25.566204+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-09-25",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-09-26",
     "risk": true,
     "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：AMBER。",
-      "**制度/政治骤变**\n\n🟠 **市场失序(汇股债)｜印尼盾兑美元贬至17,933，IHSG早盘跌至6,263点，外资抛售蓝筹股**\n严重度 0.55｜2个独立来源（ekonomi.republika.co.id、katadata.co.id）｜影响支柱：currency\n\n🟠 **仓促立法/政策骤变｜印尼总统令生效，红白村合作社正式获准分销补贴物资**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜OJK发布资本市场偶发事件报告新规，10月1日生效**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 5 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🟠 **司法/执法工具化｜印尼总检察署就镍矿腐败案认定企业及多名嫌疑人，并搜查北加里曼丹多处地点**\n严重度 0.55｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜印尼望加锡县县长 Sitti Husniah 因敲诈勒索及洗钱被列为嫌疑人，资产被查封**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜印尼总统 Prabowo 称8项地方条例允许焚烧2公顷森林，相关法规将修订**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions",
+      "**已确认、本次不再催办**\n另有 1 条已人工处置且无实质新进展的事件（关键官员更替/清洗），未逐条列出；它们仍写入证据池留痕。若后续出现实质进展会重新推送并标为「进展升级」。",
+      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-09-25:normal:amber:success"
+    "decisionId": "daily:2026-09-26:normal:amber:success"
   },
   "feishu": "sent"
 }
