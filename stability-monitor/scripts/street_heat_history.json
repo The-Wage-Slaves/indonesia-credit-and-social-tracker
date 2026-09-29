@@ -587,5 +587,94 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-09-29",
+    "version": 3,
+    "heat": 51.4,
+    "suggested_score": 52,
+    "opposition": {
+      "status": "ok",
+      "rate": 51.7,
+      "detail": "250条中政治条目205条(浓度82%)，反对106/中性57/支持42 → 总反对率 51.7%（分侧: 民间YouTube 62% · 论坛Kaskus 33% · 媒体RSS 39%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 91.9,
+        "raw": {
+          "ratio_street": 2.4451827242524917,
+          "ratio_anger": 1.2320569156727352,
+          "per_kw": {
+            "demo hari ini": 12,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 1,
+            "aksi massa": 0,
+            "korupsi": 34,
+            "kejaksaan": 17,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 12
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 49.7,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 3,
+          "share": 24.874086846045646,
+          "examples": [
+            "Habis Jokowi, Sekarang Gibran, Keluarga Ini Spesialis Kasus Ijazah",
+            "Teddy Indra Wijaya Bakal Maju Jadi Cawapres Bareng Prabowo",
+            "Seharusnya Mengayomi! Oknum Perwira Polisi Diduga Peluk Siswi Magang dari Belaka"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 20.0,
+        "raw": {
+          "n_searched": 125,
+          "n_big": 8
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 40.3,
+        "raw": {
+          "avg7": 0.008871428571428572,
+          "baseline": 0.011011904761904763,
+          "ratio": 0.8056216216216215
+        }
+      },
+      "gdelt_tone": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 26.7,
+        "raw": {
+          "total": 150,
+          "matched": 4,
+          "share": 2.666666666666667,
+          "examples": [
+            "[Liputan6 News] Transjakarta Ubah Sejumlah Rute Imbas Demo, Ini Daftarnya",
+            "[Liputan6 News] 20 Demo di Jakarta, Ribuan Personel Disiagakan",
+            "[Liputan6 News] Saat 5 Tahanan Disebut Salah Tangkap Demo 27 Agustus Menanti Keadilan",
+            "[Republika] Ada Demo di DPR, Sejumlah Layanan Transjakarta Dialihkan"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
