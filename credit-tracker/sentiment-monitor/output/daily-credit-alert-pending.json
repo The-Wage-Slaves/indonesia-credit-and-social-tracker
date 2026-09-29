@@ -1,66 +1,342 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-28",
+  "date": "2026-09-29",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 10.0,
-    "socialDailyVolumeRisk": 23.0,
-    "negativeSocialShare": 76.6,
+    "newsDailyVolumeRisk": 9.5,
+    "socialDailyVolumeRisk": 16.8,
+    "negativeSocialShare": 76.0,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=7; prior-7d median=15.0; robust z=-2.67",
-    "socialVolume": "today=14; prior-7d median=22.0; robust z=-1.80"
+    "newsVolume": "today=4; prior-7d median=16.0; robust z=-2.70",
+    "socialVolume": "today=5; prior-7d median=28.0; robust z=-2.22"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [],
+  "lowEvidenceLeads": [
+    {
+      "id": "llm-c77cba93e571",
+      "eventType": "industry_update",
+      "severity": 0.55,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "AFPI Bentuk Satuan Kerja untuk Kelola Portofolio Pindar Bermasalah - MetroTVNews.com",
+      "headlineZh": "AFPI成立工作组处理不良Pindar资产",
+      "summaryZh": "印尼联合融资协会AFPI设立专门工作组，管理Pindar（线上借贷）不良资产组合，反映行业资产质量压力上升。",
+      "rationale": "行业协会设立专门机构处理不良资产，属具体行业动态",
+      "independentSourceCount": 1,
+      "domains": [
+        "metrotvnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "af44bc3324f658d8"
+      ],
+      "articles": [
+        {
+          "title": "AFPI Bentuk Satuan Kerja untuk Kelola Portofolio Pindar Bermasalah - MetroTVNews.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMTlWejB0d2xCLU5hWjRVQTcyZnRoYTRkV2Z2WWZxNWs2ZGh1c3JHdW1CR2RObUdmZjFMZWFwaE4wOHdmZzZEcGNEaTBBd1ZMaHp5b1MyTHFZd1h3UUlVZlpOa2xXREJ2cWhxUE1oVk1IOVF2WWozZmxwVUVBdHFxSDREVWFUcHlxa1dNSFRkWHVuWGNHODFKVFVIZlp5ZEtlREMwQmdpOUQtb1kt?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-16b560b644b1",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "Kemenkeu",
+        "Waskita"
+      ],
+      "headline": "Kemenkeu Telah Lunasi Utang Gagal Bayar Waskita Senilai Rp722 Miliar - Suara.com",
+      "headlineZh": "财政部清偿Waskita违约债务7220亿盾",
+      "summaryZh": "印尼财政部已清偿Waskita公司7220亿盾违约债务。虽非网贷直接相关，但反映信用风险事件。",
+      "rationale": "具体债务违约清偿事件，涉及信用风险",
+      "independentSourceCount": 1,
+      "domains": [
+        "amp.suara.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "2314463f1514c2b3"
+      ],
+      "articles": [
+        {
+          "title": "Kemenkeu Telah Lunasi Utang Gagal Bayar Waskita Senilai Rp722 Miliar - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSWhlczR2bG5ma3ZQbmhQMEpPZjFrclRCMXlSNWVTejRDR0RUTEVra2dTWmZ0OGVJeE56aEloM015TWtqRE1ULWFXVi1JMmZwNkg5N3hPTzIwejhQVi1EY0ZOU0JjQmR0empORFV0N1JCNmRTYTZDR3k0NndkeGxRb1UxUkdVbHViZFZMUmlSTENUcHdjRVVMd2JRTVB6eTBLbG9fajlGRE5aY3hTMk1SVF9XdV9LZ9IBtgFBVV95cUxQSWhlczR2bG5ma3ZQbmhQMEpPZjFrclRCMXlSNWVTejRDR0RUTEVra2dTWmZ0OGVJeE56aEloM015TWtqRE1ULWFXVi1JMmZwNkg5N3hPTzIwejhQVi1EY0ZOU0JjQmR0empORFV0N1JCNmRTYTZDR3k0NndkeGxRb1UxUkdVbHViZFZMUmlSTENUcHdjRVVMd2JRTVB6eTBLbG9fajlGRE5aY3hTMk1SVF9XdV9LZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-861024199bbc",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat Kelompok Muda Dominasi Kredit Macet Pinjaman Daring - Readers.id",
+      "headlineZh": "OJK记录年轻人主导网贷坏账",
+      "summaryZh": "OJK数据显示年轻人群体在线上借贷坏账中占主导地位，反映特定人群信用质量承压。",
+      "rationale": "监管机构发布具体数据，反映资产质量压力",
+      "independentSourceCount": 1,
+      "domains": [
+        "readers.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "07a588a2db76f2bc"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat Kelompok Muda Dominasi Kredit Macet Pinjaman Daring - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QVzJhVENacEhsWUxDTWhwMXhYVng5cUZKVW1UYzZfblppQm9Dc1FoSE1hSnp3Y0JSUlowcENnU1Y3c3VrQkRaS1E5cy01aG5BTEhiVFhWNEdvQzluV0ltMm4waWI5Z3RDRHJrVTBHRDAwcUxkZ2dZ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 2,
+        "negativeShare": 50.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-852bbe6efee9",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [],
+      "headline": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - suaralandak.co.id",
+      "headlineZh": "网贷余额达105.63万亿盾利率下调",
+      "summaryZh": "线上借贷未偿余额达105.63万亿盾，官方利率下调。属行业常规数据更新。",
+      "rationale": "行业常规数据披露，非重大事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaralandak.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "0a1bc67052c383fe"
+      ],
+      "articles": [
+        {
+          "title": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - suaralandak.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wSkN4N01jeVl5cXhxbFBDNF9QdVFQMEdsend2VnpxRzNZOUtWZUZPSGVsUzZqZ25vQ2NKaVBOWW05NVE3LUN2WjRLclRnQW5xUDJuOFpLS2pMa0NZcUh2emZSOEVodzd3eGc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    }
+  ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 18,
-    "eventGroupCount": 0,
-    "rejectedNonEvents": 14,
+    "candidateCount": 17,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 18
+      "ok": 17
     },
     "socialCrossCheck": "applied"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "llm-c77cba93e571",
+      "eventType": "industry_update",
+      "severity": 0.55,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "AFPI Bentuk Satuan Kerja untuk Kelola Portofolio Pindar Bermasalah - MetroTVNews.com",
+      "headlineZh": "AFPI成立工作组处理不良Pindar资产",
+      "summaryZh": "印尼联合融资协会AFPI设立专门工作组，管理Pindar（线上借贷）不良资产组合，反映行业资产质量压力上升。",
+      "rationale": "行业协会设立专门机构处理不良资产，属具体行业动态",
+      "independentSourceCount": 1,
+      "domains": [
+        "metrotvnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "af44bc3324f658d8"
+      ],
+      "articles": [
+        {
+          "title": "AFPI Bentuk Satuan Kerja untuk Kelola Portofolio Pindar Bermasalah - MetroTVNews.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMTlWejB0d2xCLU5hWjRVQTcyZnRoYTRkV2Z2WWZxNWs2ZGh1c3JHdW1CR2RObUdmZjFMZWFwaE4wOHdmZzZEcGNEaTBBd1ZMaHp5b1MyTHFZd1h3UUlVZlpOa2xXREJ2cWhxUE1oVk1IOVF2WWozZmxwVUVBdHFxSDREVWFUcHlxa1dNSFRkWHVuWGNHODFKVFVIZlp5ZEtlREMwQmdpOUQtb1kt?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-16b560b644b1",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "Kemenkeu",
+        "Waskita"
+      ],
+      "headline": "Kemenkeu Telah Lunasi Utang Gagal Bayar Waskita Senilai Rp722 Miliar - Suara.com",
+      "headlineZh": "财政部清偿Waskita违约债务7220亿盾",
+      "summaryZh": "印尼财政部已清偿Waskita公司7220亿盾违约债务。虽非网贷直接相关，但反映信用风险事件。",
+      "rationale": "具体债务违约清偿事件，涉及信用风险",
+      "independentSourceCount": 1,
+      "domains": [
+        "amp.suara.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "2314463f1514c2b3"
+      ],
+      "articles": [
+        {
+          "title": "Kemenkeu Telah Lunasi Utang Gagal Bayar Waskita Senilai Rp722 Miliar - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSWhlczR2bG5ma3ZQbmhQMEpPZjFrclRCMXlSNWVTejRDR0RUTEVra2dTWmZ0OGVJeE56aEloM015TWtqRE1ULWFXVi1JMmZwNkg5N3hPTzIwejhQVi1EY0ZOU0JjQmR0empORFV0N1JCNmRTYTZDR3k0NndkeGxRb1UxUkdVbHViZFZMUmlSTENUcHdjRVVMd2JRTVB6eTBLbG9fajlGRE5aY3hTMk1SVF9XdV9LZ9IBtgFBVV95cUxQSWhlczR2bG5ma3ZQbmhQMEpPZjFrclRCMXlSNWVTejRDR0RUTEVra2dTWmZ0OGVJeE56aEloM015TWtqRE1ULWFXVi1JMmZwNkg5N3hPTzIwejhQVi1EY0ZOU0JjQmR0empORFV0N1JCNmRTYTZDR3k0NndkeGxRb1UxUkdVbHViZFZMUmlSTENUcHdjRVVMd2JRTVB6eTBLbG9fajlGRE5aY3hTMk1SVF9XdV9LZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-861024199bbc",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat Kelompok Muda Dominasi Kredit Macet Pinjaman Daring - Readers.id",
+      "headlineZh": "OJK记录年轻人主导网贷坏账",
+      "summaryZh": "OJK数据显示年轻人群体在线上借贷坏账中占主导地位，反映特定人群信用质量承压。",
+      "rationale": "监管机构发布具体数据，反映资产质量压力",
+      "independentSourceCount": 1,
+      "domains": [
+        "readers.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "07a588a2db76f2bc"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat Kelompok Muda Dominasi Kredit Macet Pinjaman Daring - Readers.id",
+          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE5QVzJhVENacEhsWUxDTWhwMXhYVng5cUZKVW1UYzZfblppQm9Dc1FoSE1hSnp3Y0JSUlowcENnU1Y3c3VrQkRaS1E5cy01aG5BTEhiVFhWNEdvQzluV0ltMm4waWI5Z3RDRHJrVTBHRDAwcUxkZ2dZ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 2,
+        "negativeShare": 50.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-852bbe6efee9",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [],
+      "headline": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - suaralandak.co.id",
+      "headlineZh": "网贷余额达105.63万亿盾利率下调",
+      "summaryZh": "线上借贷未偿余额达105.63万亿盾，官方利率下调。属行业常规数据更新。",
+      "rationale": "行业常规数据披露，非重大事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaralandak.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "0a1bc67052c383fe"
+      ],
+      "articles": [
+        {
+          "title": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - suaralandak.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wSkN4N01jeVl5cXhxbFBDNF9QdVFQMEdsend2VnpxRzNZOUtWZUZPSGVsUzZqZ25vQ2NKaVBOWW05NVE3LUN2WjRLclRnQW5xUDJuOFpLS2pMa0NZcUh2emZSOEVodzd3eGc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    }
+  ],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
+      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 22,
-    "socialItemCount48h": 36
+    "articleCount48h": 23,
+    "socialItemCount48h": 42
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 486,
-    "classifiedCount": 80,
-    "irrelevantDropped": 160,
+    "inputCount": 496,
+    "classifiedCount": 116,
+    "irrelevantDropped": 124,
     "model": "deepseek-chat",
-    "fallbackCount": 246,
+    "fallbackCount": 256,
     "labelCounts": {
-      "NEG": 42,
-      "MIX": 26,
-      "POS": 12
+      "NEG": 72,
+      "MIX": 34,
+      "POS": 10
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
