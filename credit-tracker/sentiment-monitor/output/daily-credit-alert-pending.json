@@ -1,74 +1,125 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-09-30",
+  "date": "2026-10-01",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 15.0,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 27.1,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 42.4,
+    "socialDailyVolumeRisk": 32.5,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=8; prior-7d median=15.0; robust z=-2.33",
-    "socialVolume": "today=0; prior-7d median=31.0; robust z=-4.18"
+    "newsVolume": "today=14; prior-7d median=17.0; robust z=-0.51",
+    "socialVolume": "today=0; prior-7d median=26.0; robust z=-1.17"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-0a6af0e17477",
-      "eventType": "industry_update",
+      "id": "llm-adb1c0ed6f2f",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "AFPI",
-        "Pindar"
+        "Pindar",
+        "KPPU",
+        "OJK",
+        "PN Jakpus"
       ],
-      "headline": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
-      "headlineZh": "AFPI成立工作组处理Pindar坏账",
-      "summaryZh": "印尼联合融资协会AFPI设立专门工作组，接管已停运P2P平台Pindar的存量问题贷款组合，涉及出借人权益处置，值得留痕。",
-      "rationale": "行业协会就特定平台坏账设立处置机制，属具体行业事件",
-      "independentSourceCount": 6,
+      "headline": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
+      "headlineZh": "Pindar利率卡特尔案待法院判决",
+      "summaryZh": "97家Pindar平台涉利率卡特尔案进入法院判决阶段，学者呼吁优先保护消费者利益，涉及OJK规则影响。",
+      "rationale": "具体司法程序与监管规则争议，属监管介入事件",
+      "independentSourceCount": 4,
       "domains": [
-        "demokratis.co.id",
+        "finansial.bisnis.com",
         "infobanknews.com",
-        "investor.id",
-        "investortrust.id",
-        "metrotvnews.com",
-        "swa.co.id"
+        "money.kompas.com",
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "20cdf55435b320f3",
-        "af44bc3324f658d8",
-        "7d62095b65979072",
-        "cde5ff6f84d2fcb8",
-        "ead330802730d3f5",
-        "33cae21382f58987"
+        "c0077402144fd375",
+        "ec048e42b970fe8a",
+        "f1a73b26358816a5",
+        "d24050172fdd2ac9"
       ],
       "articles": [
         {
-          "title": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLUw0anZrQkxYeVFsdDdmaG12T3JacnJsU0VRN2ZXNm1fY0k2ZG9wNlkxNVZKVEJZeEpuWUtBVDFrVVYzQjhOc2JZem1mRDFpRTN4V3BvUXFCM0h0ajBmZU9zc0N3cUhJYnhzZjVsLURFc0d6VzBJNG1qRWFrMVFybU85RHFKWHJhWjB5Q1BRekl1dWhHb0VrckdkbHhuUW9MTC1OWg?oc=5"
+          "title": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWU1ka1VBVnNIa0tYVzVRbTRIUmJNREM2ZDVnWEdUUjhYa2JOUUJlTVZUZ055VkgyTjBZcVhjLThFMk9BSTVKTkg2blU0TGdmTWNfWU13YW9kZUVRMWw5dHBVWG9mMGtwazRjUlVjUDBYcDdDZlNxNWxCc0prcVVHd1g4dFhKRHZZUXgxMEVyOW9OV3NicXZNUkl2MA?oc=5"
         },
         {
-          "title": "AFPI Bentuk Satuan Kerja untuk Kelola Portofolio Pindar Bermasalah - MetroTVNews.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMTlWejB0d2xCLU5hWjRVQTcyZnRoYTRkV2Z2WWZxNWs2ZGh1c3JHdW1CR2RObUdmZjFMZWFwaE4wOHdmZzZEcGNEaTBBd1ZMaHp5b1MyTHFZd1h3UUlVZlpOa2xXREJ2cWhxUE1oVk1IOVF2WWozZmxwVUVBdHFxSDREVWFUcHlxa1dNSFRkWHVuWGNHODFKVFVIZlp5ZEtlREMwQmdpOUQtb1kt?oc=5"
+          "title": "Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan - money.kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEloaTY1SElrNVVzclctc1RDRmdXb1VKV09jalFOYlNJb3AwdHlLQXBwclM2Qk5hdGFCNWZHNnE4d0NRTGRwMWd6UHFaV1pmNnBoQWgzX0xvY1VObXRFUzlhNmUtMUROYms3ODZsYll5Q2JJU2pGQkQ0MXQ5TEVQTE5jVTVLSTNBblRJX1owc1ppSjFOUmctajlxS1ZtSzdNd3Nnb3RnZmZSYXBJZHdUYmR3Z2JMQko0SGI2Ti1kSEJNT2FSWGk0d0F5Z20xUEtWbUJZTlFvbG56Y1E?oc=5"
         },
         {
-          "title": "AFPI Bentuk Tim Khusus Tangani Portofolio Pindar Bermasalah - Demokratis.co.id",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOEZxNUlSNk1NMVk3TUpUNjFOU00yaG5FRWFWUWhaX3RBRUxPUGNSWUw0NDBOcE9UaW5uQWEwS2tkRURHTC1BM3p5bWtXLWpBSzZRMGJWb0dsRTZ4ZWUzd3ZQdE5DbEZoSnp0SzFWQnZndkFRbnVkU3dNbW5Za2E3dnRRVngyOWJRekFhdg?oc=5"
+          "title": "Gugatan Bunga Pindar Masuk Putusan, Dampak Aturan OJK Jadi Sorotan - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaldCSFkwNzN5Ym9mdG9kWEl5dE9WNVRoSkkxS1QwVmVfSS1mdWtneGVqMXNTSU9LVVFZcERnQVJBSFNwYTNmeWF3S1VxUkxjZkt3bUczdGxaanE2M2FrSEZoYkk0WUxnUUVnQU1LR1Z4YkdHQ1BqVWh6QzRRem9kU0NjVDhxcmJpWTBqejcyLU9uSHhOdWg2T0Z2bWp3cThxUUpUZEpIeTFXWXp1c3Vxb1g0c3ZIZzNqM3oxeA?oc=5"
         },
         {
-          "title": "AFPI Bentuk Tim untuk Kelola Portofolio Pindar yang Berhenti Beroperasi - SWA.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcjRnT0dKWElJcWR4d3BCczdmRkxxMGgyeEFadGs4MTFvWGREdkRPaXd2QnRhYjdBSXJoZUhzc2hfV2Etcl85QWNFM1F4T1VSaUZwaUdDT0xLa1N3NFNTQ0NGQlctZXhQbzZwMFB0VGVYWFBBdmJBNXNuZjR0X0lVV1QzRlFxZ0IybTltWThRZnhyQXRON1hNQ250dEpZcFpVQzk4?oc=5"
+          "title": "Perkara Pindar-KPPU Segera Diputus, Akademisi Minta Kepentingan Konsumen Jangan Lupakan - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONGZCUVdTR0EwUjFtdm54ME1UYTUwUjRNVzJmV0MyT3RGT3FVMnBWUjBncmgtZ1FOTzA1eUdHSzc4dGNjMTNJUjJidVZRVE0tRDJBWmpULUh4THZUOVI2a2doTlBmMHRvc0p5LWpNa2ZVU2hIMTgzNkZhOFBpb2hPbTl1aUxGMFF3c3dsV1d2cldxS24yemo2YTIxbEpPMFl4eGZ5M3V1NXdQOGdWR21BSXRmNGJiVVpxbnJEVWhSUmYwd9IBxwFBVV95cUxPTFpwbVRyRkR6cHV4azJJQ0x0RS1ieVByVjJqQ3pCR3dZcVRwTm5uRlZSMGt3UTA2SFNfc3ZuczBQbXFDazlQYS1Ed21CakIwVERYNGRySzc2SUkyQnEwVldEdGRZLVFyZzFqQlNTWkxCQ2NtazVFVEpHU0pFeTZZai10bnpPWjRUaGhROWxFV1ZDVmZRbV9CVWtWZXJJS3FobnhwWXVTMmFxU1ZLWlpqd1RDU2NMb1hrWWVDNTFSaE5JMFNteVU4?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 4,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-c1ce545c1095",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK Papua"
+      ],
+      "headline": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
+      "headlineZh": "OJK巴布亚接208起非法网贷投诉",
+      "summaryZh": "OJK巴布亚2026年1-9月收到208起非法网贷投诉，ASN成主要受害群体，投诉量上升。",
+      "rationale": "具体投诉数据与受害群体，属消费者受害事件",
+      "independentSourceCount": 5,
+      "domains": [
+        "kilaspapua.com",
+        "papua.antaranews.com",
+        "papua.tribunnews.com",
+        "reportasepapua.co.id",
+        "semuwaberita.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "7483823ce39c8807",
+        "7b6b30a7aa5552ed",
+        "6a19f3cd8520b4da",
+        "9c7ac1c10ceba13b",
+        "a01ebb49d39ed427",
+        "4772103897de0e9f"
+      ],
+      "articles": [
+        {
+          "title": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEJLRFVfaUs3SDFKUGNzQVBDMVR0eElCcThyZ3QwLUVyZWl4UTA1UkVIV0Z0UU0yeFFOQ09EQ2Yzb3lUOFR2blM1NEZMN1ZUUTZVNHZtOWhQbWlwUWhUWHRoU01JbUthVTl1TGk2MzBtR3ItRkdsRkJqclQyNGpfSGl2UlNZRFoxS3Ixd1h5N2VCdWxyQ3oxUm1zblpqeUdCT2c5WnpVcnJLUlpLc3lMUlRWQ2NKaTRRdHdGVU5LV3VNb0pQOGc?oc=5"
         },
         {
-          "title": "AFPI Bentuk Timsus Baru Urus Portofolio Pindar Bermasalah, Ini Tugasnya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOEY0REdua2JSamZfcDYyWndnSGhuZWkwbjBQeEw4cGx3N3BfNlBpckg2Q1Z3ZVNmZURVcmY1dXUtLVdhc1ptNmM3Y3BPbGoteVYwc0Y4UkM0YS1ua20wc3Zta2thMm1Sem95M3MyUklOem5UN1laU0pweVRlUnZYM2lqNFFuZElSd0ppa2JMOW14M1k4Nm9xc0lCYw?oc=5"
+          "title": "Kasus Pinjol Ilegal di Papua Melonjak: 208 Pengaduan, OJK Sebut ASN Jadi Kelompok Dominan - Tribun-papua.com",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUEl1U0RFRjFqSl9aU0ZXZXhVX1lUa3J1MktKbW81blI2QWlZM3k0RlpoU0FTcHkzOW1aaFpydUQ3a1Q1eHZFY3pmczhVMTRrbEgwY3Etc0g3VjQyYllVcDFoVkk5VDQyeEd3aHpQVUdQUjY1M0hOaGtibFlYU2R6TDFBSko5VEtzWEpRMkdCaXVFOVBaOTlVc1ZrdXQtUDRsRVNQMEo1ZHl4ZFF2aDR3LV91Sk1YalZ2RjZsdHZvcjBNTXpWeU1r?oc=5"
+        },
+        {
+          "title": "OJK Papua Tangani 208 Pengaduan Pinjol iIegal Dari Bulan Januari Hingga September 2026 - Kilas Papua",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPa244SXFjYVFkMW1pcFk3LTZZRGlfekRLQlV0Q2pUeno1bkxXVGJpd2lGU3h6NS1BNWFDRnRERGVzNWlsUlcxRTJWZm01allROWtTeFlkYldMQU9ZUHIwcGZEcUpWU3g5ZzZ5cTdoNEQzcmYtUldKYVdZaXJzUDZ5UG41M25jSHRuZy1oVER0R1Y3a2JUZ1VSQTg4a2I4RnFLZmU1V201NzRELWEzUlBNMm5taURtbnZhblE?oc=5"
+        },
+        {
+          "title": "OJK Papua catat 208 pengaduan pinjol ilegal hingga September 2026 - ANTARA News Papua",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONGRJQzFBcWNBN19CTUJIcjRISm5kNlJhY2pxTU1SWnhwVkk1dzcwNThQQzZMbkJnVWJJMFpuMU1DNmJfWTIxUXh0dnN4R094WTFqUk0wM3luMzRTcmw4Ty03ZFVVc1h5eWYwUldNYmJOalFWTUVlWjZhM1FNNGJTdjd3SEE3dEVjWUl4anRucUMxazFWN1U5eERwZlRUUGJLUnN5MTRCZUF2Wmxv?oc=5"
+        },
+        {
+          "title": "OJK Papua: 208 aduan pinjol ilegal karena korban tergiur dana instan - ANTARA News Papua",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNaHhZWWUzSVRuY0MxZ1N3ejNCOENwNWRSc2RxNDQ0WDhGazNMTjJaaWtVTDEtMmx1VzdqWHFuYkJVa1ltai16WlpXNzllZnBlcW12VjY0bWc3UGFqQXBCd3ZvZDYxeXpVdlE3UlpLRGNqR3hkWlNmYmozZUx5cS0wSXhBQ1JVZlVLU1lYc2dRQ29QQ2VsSk9MTkNpanZEZDNVTThLU0NPdHNsN3g3VTRZ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 6,
@@ -81,66 +132,38 @@
       }
     },
     {
-      "id": "llm-d40c2d4c9aaf",
-      "eventType": "regulatory_action",
+      "id": "llm-49bf8b487763",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "Pindar",
+        "AFPI",
         "OJK"
       ],
-      "headline": "Putusan Kasus Pindar Dinilai Perlu Pertimbangkan Kepentingan Konsumen - kontan.co.id",
-      "headlineZh": "Pindar案判决需考虑消费者利益",
-      "summaryZh": "Kontan报道称Pindar案件判决应兼顾消费者权益，涉及P2P平台司法处置走向，值得留痕。",
-      "rationale": "涉及具体平台司法判决的消费者权益讨论",
-      "independentSourceCount": 1,
+      "headline": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
+      "headlineZh": "AFPI设工作组处理Pindar坏账",
+      "summaryZh": "AFPI成立专项工作组管理Pindar不良贷款组合，OJK协助推进催收工作，反映资产质量压力。",
+      "rationale": "行业机构应对坏账，属资产质量承压事件",
+      "independentSourceCount": 2,
       "domains": [
-        "keuangan.kontan.co.id"
+        "investortrust.id",
+        "jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "fc72c899671596d7"
+        "20cdf55435b320f3",
+        "9993dd6bbe6f8c98"
       ],
       "articles": [
         {
-          "title": "Putusan Kasus Pindar Dinilai Perlu Pertimbangkan Kepentingan Konsumen - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcTRHOGxJcEt0dDZMUHA4NmRoZFdXX0c0T1llNFVmd3doMVNrbWpYT3h5dUxRT0ExMlYyTEFVQlB2WWl5RmVvZW1jbU5CVDlIdl91a3lDS0NKeW9vQlhUOWNZeTZ6S0dMMmNJOUN0a0lZOWdaNDlHWFdERmZqMmVZMW1DeVVrMHRKQkZGZEVBN1Z2a3pUcFMzR3M3dFRLRlVfMU9NaFUzc9IBoAFBVV95cUxNZldZdFFtNkY3NGx2VnRuNW4zNEhJS25iVkRCQ19tNDFfT1pRZUU3VjBTQTVzRW9BWHZQWnZSWFZlVF92YTFaRWJHQllUWHhrV1BYRHk0NnZwczNQUDZNeVp4aXc3QmkyejZEYTlKVnFUMDJrRWM3RW5HeXFjc19rUG9waVByR3hTQV80Qm1GZTJ5dS1lVXI5UHNKR19oU3VG?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-ade6ffdc5853",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "Bareskrim Polri"
-      ],
-      "headline": "Bareskrim Polri Ungkap Modus Penipuan Online Lintas Negara - suaragarut.id",
-      "headlineZh": "警方披露跨国网络诈骗手法",
-      "summaryZh": "印尼刑侦局Bareskrim披露跨国网络诈骗作案模式，涉及线上金融诈骗，值得留痕。",
-      "rationale": "警方披露具体诈骗手法，属执法事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "suaragarut.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "28d6ecc2255dc786"
-      ],
-      "articles": [
+          "title": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLUw0anZrQkxYeVFsdDdmaG12T3JacnJsU0VRN2ZXNm1fY0k2ZG9wNlkxNVZKVEJZeEpuWUtBVDFrVVYzQjhOc2JZem1mRDFpRTN4V3BvUXFCM0h0ajBmZU9zc0N3cUhJYnhzZjVsLURFc0d6VzBJNG1qRWFrMVFybU85RHFKWHJhWjB5Q1BRekl1dWhHb0VrckdkbHhuUW9MTC1OWg?oc=5"
+        },
         {
-          "title": "Bareskrim Polri Ungkap Modus Penipuan Online Lintas Negara - suaragarut.id",
-          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCWkx5cWhCR2FkUnhLQk44Vms3LW5sNTQ1MWxSUWxkSDZJbVdsMFhid0laNXo1X3BVTzZYTGhqM1ZEMzZEanN0bXU4eVhrT1luNDBrUVNqejQ1V0c5SXVTQ2dRUHo1T0tHVFkydA?oc=5"
+          "title": "Respons Risiko Macet Pindar, AFPI dan OJK Fasilitasi Kelanjutan Penagihan Portofolio - Jawa Pos",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTHFYeEdEdDlnSVRHcHJVTVJGQnpDbkd0bkEtdDRwUUxCeENuWEtaU0dpWGZGaXQ0MlhZWFcxbmZTVks0cE9ZWld5VXFDYlZjcmJUcWk2VGowcVVNamFpTjRXd1piYi10OF9vYjZtZmZlNjBFaVFTd1RMSlJ4cnBZZjNSM096aDZKN2sxcko5bzdzNjdiVmZTaDBUQ2pLVEs0ZkVneHo4cC1WQW1hV1RGVDVtNjdUTE1ZNmt4Y1dGdw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -154,66 +177,119 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 20,
+    "candidateCount": 32,
     "eventGroupCount": 3,
-    "rejectedNonEvents": 11,
+    "rejectedNonEvents": 12,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 20
+      "ok": 32
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-0a6af0e17477",
-      "eventType": "industry_update",
+      "id": "llm-adb1c0ed6f2f",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "AFPI",
-        "Pindar"
+        "Pindar",
+        "KPPU",
+        "OJK",
+        "PN Jakpus"
       ],
-      "headline": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
-      "headlineZh": "AFPI成立工作组处理Pindar坏账",
-      "summaryZh": "印尼联合融资协会AFPI设立专门工作组，接管已停运P2P平台Pindar的存量问题贷款组合，涉及出借人权益处置，值得留痕。",
-      "rationale": "行业协会就特定平台坏账设立处置机制，属具体行业事件",
-      "independentSourceCount": 6,
+      "headline": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
+      "headlineZh": "Pindar利率卡特尔案待法院判决",
+      "summaryZh": "97家Pindar平台涉利率卡特尔案进入法院判决阶段，学者呼吁优先保护消费者利益，涉及OJK规则影响。",
+      "rationale": "具体司法程序与监管规则争议，属监管介入事件",
+      "independentSourceCount": 4,
       "domains": [
-        "demokratis.co.id",
+        "finansial.bisnis.com",
         "infobanknews.com",
-        "investor.id",
-        "investortrust.id",
-        "metrotvnews.com",
-        "swa.co.id"
+        "money.kompas.com",
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "20cdf55435b320f3",
-        "af44bc3324f658d8",
-        "7d62095b65979072",
-        "cde5ff6f84d2fcb8",
-        "ead330802730d3f5",
-        "33cae21382f58987"
+        "c0077402144fd375",
+        "ec048e42b970fe8a",
+        "f1a73b26358816a5",
+        "d24050172fdd2ac9"
       ],
       "articles": [
         {
-          "title": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLUw0anZrQkxYeVFsdDdmaG12T3JacnJsU0VRN2ZXNm1fY0k2ZG9wNlkxNVZKVEJZeEpuWUtBVDFrVVYzQjhOc2JZem1mRDFpRTN4V3BvUXFCM0h0ajBmZU9zc0N3cUhJYnhzZjVsLURFc0d6VzBJNG1qRWFrMVFybU85RHFKWHJhWjB5Q1BRekl1dWhHb0VrckdkbHhuUW9MTC1OWg?oc=5"
+          "title": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWU1ka1VBVnNIa0tYVzVRbTRIUmJNREM2ZDVnWEdUUjhYa2JOUUJlTVZUZ055VkgyTjBZcVhjLThFMk9BSTVKTkg2blU0TGdmTWNfWU13YW9kZUVRMWw5dHBVWG9mMGtwazRjUlVjUDBYcDdDZlNxNWxCc0prcVVHd1g4dFhKRHZZUXgxMEVyOW9OV3NicXZNUkl2MA?oc=5"
         },
         {
-          "title": "AFPI Bentuk Satuan Kerja untuk Kelola Portofolio Pindar Bermasalah - MetroTVNews.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNMTlWejB0d2xCLU5hWjRVQTcyZnRoYTRkV2Z2WWZxNWs2ZGh1c3JHdW1CR2RObUdmZjFMZWFwaE4wOHdmZzZEcGNEaTBBd1ZMaHp5b1MyTHFZd1h3UUlVZlpOa2xXREJ2cWhxUE1oVk1IOVF2WWozZmxwVUVBdHFxSDREVWFUcHlxa1dNSFRkWHVuWGNHODFKVFVIZlp5ZEtlREMwQmdpOUQtb1kt?oc=5"
+          "title": "Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan - money.kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEloaTY1SElrNVVzclctc1RDRmdXb1VKV09jalFOYlNJb3AwdHlLQXBwclM2Qk5hdGFCNWZHNnE4d0NRTGRwMWd6UHFaV1pmNnBoQWgzX0xvY1VObXRFUzlhNmUtMUROYms3ODZsYll5Q2JJU2pGQkQ0MXQ5TEVQTE5jVTVLSTNBblRJX1owc1ppSjFOUmctajlxS1ZtSzdNd3Nnb3RnZmZSYXBJZHdUYmR3Z2JMQko0SGI2Ti1kSEJNT2FSWGk0d0F5Z20xUEtWbUJZTlFvbG56Y1E?oc=5"
         },
         {
-          "title": "AFPI Bentuk Tim Khusus Tangani Portofolio Pindar Bermasalah - Demokratis.co.id",
-          "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOEZxNUlSNk1NMVk3TUpUNjFOU00yaG5FRWFWUWhaX3RBRUxPUGNSWUw0NDBOcE9UaW5uQWEwS2tkRURHTC1BM3p5bWtXLWpBSzZRMGJWb0dsRTZ4ZWUzd3ZQdE5DbEZoSnp0SzFWQnZndkFRbnVkU3dNbW5Za2E3dnRRVngyOWJRekFhdg?oc=5"
+          "title": "Gugatan Bunga Pindar Masuk Putusan, Dampak Aturan OJK Jadi Sorotan - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaldCSFkwNzN5Ym9mdG9kWEl5dE9WNVRoSkkxS1QwVmVfSS1mdWtneGVqMXNTSU9LVVFZcERnQVJBSFNwYTNmeWF3S1VxUkxjZkt3bUczdGxaanE2M2FrSEZoYkk0WUxnUUVnQU1LR1Z4YkdHQ1BqVWh6QzRRem9kU0NjVDhxcmJpWTBqejcyLU9uSHhOdWg2T0Z2bWp3cThxUUpUZEpIeTFXWXp1c3Vxb1g0c3ZIZzNqM3oxeA?oc=5"
         },
         {
-          "title": "AFPI Bentuk Tim untuk Kelola Portofolio Pindar yang Berhenti Beroperasi - SWA.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcjRnT0dKWElJcWR4d3BCczdmRkxxMGgyeEFadGs4MTFvWGREdkRPaXd2QnRhYjdBSXJoZUhzc2hfV2Etcl85QWNFM1F4T1VSaUZwaUdDT0xLa1N3NFNTQ0NGQlctZXhQbzZwMFB0VGVYWFBBdmJBNXNuZjR0X0lVV1QzRlFxZ0IybTltWThRZnhyQXRON1hNQ250dEpZcFpVQzk4?oc=5"
+          "title": "Perkara Pindar-KPPU Segera Diputus, Akademisi Minta Kepentingan Konsumen Jangan Lupakan - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxONGZCUVdTR0EwUjFtdm54ME1UYTUwUjRNVzJmV0MyT3RGT3FVMnBWUjBncmgtZ1FOTzA1eUdHSzc4dGNjMTNJUjJidVZRVE0tRDJBWmpULUh4THZUOVI2a2doTlBmMHRvc0p5LWpNa2ZVU2hIMTgzNkZhOFBpb2hPbTl1aUxGMFF3c3dsV1d2cldxS24yemo2YTIxbEpPMFl4eGZ5M3V1NXdQOGdWR21BSXRmNGJiVVpxbnJEVWhSUmYwd9IBxwFBVV95cUxPTFpwbVRyRkR6cHV4azJJQ0x0RS1ieVByVjJqQ3pCR3dZcVRwTm5uRlZSMGt3UTA2SFNfc3ZuczBQbXFDazlQYS1Ed21CakIwVERYNGRySzc2SUkyQnEwVldEdGRZLVFyZzFqQlNTWkxCQ2NtazVFVEpHU0pFeTZZai10bnpPWjRUaGhROWxFV1ZDVmZRbV9CVWtWZXJJS3FobnhwWXVTMmFxU1ZLWlpqd1RDU2NMb1hrWWVDNTFSaE5JMFNteVU4?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 4,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-c1ce545c1095",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK Papua"
+      ],
+      "headline": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
+      "headlineZh": "OJK巴布亚接208起非法网贷投诉",
+      "summaryZh": "OJK巴布亚2026年1-9月收到208起非法网贷投诉，ASN成主要受害群体，投诉量上升。",
+      "rationale": "具体投诉数据与受害群体，属消费者受害事件",
+      "independentSourceCount": 5,
+      "domains": [
+        "kilaspapua.com",
+        "papua.antaranews.com",
+        "papua.tribunnews.com",
+        "reportasepapua.co.id",
+        "semuwaberita.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "7483823ce39c8807",
+        "7b6b30a7aa5552ed",
+        "6a19f3cd8520b4da",
+        "9c7ac1c10ceba13b",
+        "a01ebb49d39ed427",
+        "4772103897de0e9f"
+      ],
+      "articles": [
+        {
+          "title": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEJLRFVfaUs3SDFKUGNzQVBDMVR0eElCcThyZ3QwLUVyZWl4UTA1UkVIV0Z0UU0yeFFOQ09EQ2Yzb3lUOFR2blM1NEZMN1ZUUTZVNHZtOWhQbWlwUWhUWHRoU01JbUthVTl1TGk2MzBtR3ItRkdsRkJqclQyNGpfSGl2UlNZRFoxS3Ixd1h5N2VCdWxyQ3oxUm1zblpqeUdCT2c5WnpVcnJLUlpLc3lMUlRWQ2NKaTRRdHdGVU5LV3VNb0pQOGc?oc=5"
         },
         {
-          "title": "AFPI Bentuk Timsus Baru Urus Portofolio Pindar Bermasalah, Ini Tugasnya - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOEY0REdua2JSamZfcDYyWndnSGhuZWkwbjBQeEw4cGx3N3BfNlBpckg2Q1Z3ZVNmZURVcmY1dXUtLVdhc1ptNmM3Y3BPbGoteVYwc0Y4UkM0YS1ua20wc3Zta2thMm1Sem95M3MyUklOem5UN1laU0pweVRlUnZYM2lqNFFuZElSd0ppa2JMOW14M1k4Nm9xc0lCYw?oc=5"
+          "title": "Kasus Pinjol Ilegal di Papua Melonjak: 208 Pengaduan, OJK Sebut ASN Jadi Kelompok Dominan - Tribun-papua.com",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUEl1U0RFRjFqSl9aU0ZXZXhVX1lUa3J1MktKbW81blI2QWlZM3k0RlpoU0FTcHkzOW1aaFpydUQ3a1Q1eHZFY3pmczhVMTRrbEgwY3Etc0g3VjQyYllVcDFoVkk5VDQyeEd3aHpQVUdQUjY1M0hOaGtibFlYU2R6TDFBSko5VEtzWEpRMkdCaXVFOVBaOTlVc1ZrdXQtUDRsRVNQMEo1ZHl4ZFF2aDR3LV91Sk1YalZ2RjZsdHZvcjBNTXpWeU1r?oc=5"
+        },
+        {
+          "title": "OJK Papua Tangani 208 Pengaduan Pinjol iIegal Dari Bulan Januari Hingga September 2026 - Kilas Papua",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPa244SXFjYVFkMW1pcFk3LTZZRGlfekRLQlV0Q2pUeno1bkxXVGJpd2lGU3h6NS1BNWFDRnRERGVzNWlsUlcxRTJWZm01allROWtTeFlkYldMQU9ZUHIwcGZEcUpWU3g5ZzZ5cTdoNEQzcmYtUldKYVdZaXJzUDZ5UG41M25jSHRuZy1oVER0R1Y3a2JUZ1VSQTg4a2I4RnFLZmU1V201NzRELWEzUlBNMm5taURtbnZhblE?oc=5"
+        },
+        {
+          "title": "OJK Papua catat 208 pengaduan pinjol ilegal hingga September 2026 - ANTARA News Papua",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONGRJQzFBcWNBN19CTUJIcjRISm5kNlJhY2pxTU1SWnhwVkk1dzcwNThQQzZMbkJnVWJJMFpuMU1DNmJfWTIxUXh0dnN4R094WTFqUk0wM3luMzRTcmw4Ty03ZFVVc1h5eWYwUldNYmJOalFWTUVlWjZhM1FNNGJTdjd3SEE3dEVjWUl4anRucUMxazFWN1U5eERwZlRUUGJLUnN5MTRCZUF2Wmxv?oc=5"
+        },
+        {
+          "title": "OJK Papua: 208 aduan pinjol ilegal karena korban tergiur dana instan - ANTARA News Papua",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNaHhZWWUzSVRuY0MxZ1N3ejNCOENwNWRSc2RxNDQ0WDhGazNMTjJaaWtVTDEtMmx1VzdqWHFuYkJVa1ltai16WlpXNzllZnBlcW12VjY0bWc3UGFqQXBCd3ZvZDYxeXpVdlE3UlpLRGNqR3hkWlNmYmozZUx5cS0wSXhBQ1JVZlVLU1lYc2dRQ29QQ2VsSk9MTkNpanZEZDNVTThLU0NPdHNsN3g3VTRZ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 6,
@@ -226,66 +302,38 @@
       }
     },
     {
-      "id": "llm-d40c2d4c9aaf",
-      "eventType": "regulatory_action",
+      "id": "llm-49bf8b487763",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "Pindar",
+        "AFPI",
         "OJK"
       ],
-      "headline": "Putusan Kasus Pindar Dinilai Perlu Pertimbangkan Kepentingan Konsumen - kontan.co.id",
-      "headlineZh": "Pindar案判决需考虑消费者利益",
-      "summaryZh": "Kontan报道称Pindar案件判决应兼顾消费者权益，涉及P2P平台司法处置走向，值得留痕。",
-      "rationale": "涉及具体平台司法判决的消费者权益讨论",
-      "independentSourceCount": 1,
+      "headline": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
+      "headlineZh": "AFPI设工作组处理Pindar坏账",
+      "summaryZh": "AFPI成立专项工作组管理Pindar不良贷款组合，OJK协助推进催收工作，反映资产质量压力。",
+      "rationale": "行业机构应对坏账，属资产质量承压事件",
+      "independentSourceCount": 2,
       "domains": [
-        "keuangan.kontan.co.id"
+        "investortrust.id",
+        "jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "fc72c899671596d7"
+        "20cdf55435b320f3",
+        "9993dd6bbe6f8c98"
       ],
       "articles": [
         {
-          "title": "Putusan Kasus Pindar Dinilai Perlu Pertimbangkan Kepentingan Konsumen - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOcTRHOGxJcEt0dDZMUHA4NmRoZFdXX0c0T1llNFVmd3doMVNrbWpYT3h5dUxRT0ExMlYyTEFVQlB2WWl5RmVvZW1jbU5CVDlIdl91a3lDS0NKeW9vQlhUOWNZeTZ6S0dMMmNJOUN0a0lZOWdaNDlHWFdERmZqMmVZMW1DeVVrMHRKQkZGZEVBN1Z2a3pUcFMzR3M3dFRLRlVfMU9NaFUzc9IBoAFBVV95cUxNZldZdFFtNkY3NGx2VnRuNW4zNEhJS25iVkRCQ19tNDFfT1pRZUU3VjBTQTVzRW9BWHZQWnZSWFZlVF92YTFaRWJHQllUWHhrV1BYRHk0NnZwczNQUDZNeVp4aXc3QmkyejZEYTlKVnFUMDJrRWM3RW5HeXFjc19rUG9waVByR3hTQV80Qm1GZTJ5dS1lVXI5UHNKR19oU3VG?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-ade6ffdc5853",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "Bareskrim Polri"
-      ],
-      "headline": "Bareskrim Polri Ungkap Modus Penipuan Online Lintas Negara - suaragarut.id",
-      "headlineZh": "警方披露跨国网络诈骗手法",
-      "summaryZh": "印尼刑侦局Bareskrim披露跨国网络诈骗作案模式，涉及线上金融诈骗，值得留痕。",
-      "rationale": "警方披露具体诈骗手法，属执法事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "suaragarut.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "28d6ecc2255dc786"
-      ],
-      "articles": [
+          "title": "AFPI Bentuk Satker untuk Kelola Portofolio Pindar Bermasalah - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQLUw0anZrQkxYeVFsdDdmaG12T3JacnJsU0VRN2ZXNm1fY0k2ZG9wNlkxNVZKVEJZeEpuWUtBVDFrVVYzQjhOc2JZem1mRDFpRTN4V3BvUXFCM0h0ajBmZU9zc0N3cUhJYnhzZjVsLURFc0d6VzBJNG1qRWFrMVFybU85RHFKWHJhWjB5Q1BRekl1dWhHb0VrckdkbHhuUW9MTC1OWg?oc=5"
+        },
         {
-          "title": "Bareskrim Polri Ungkap Modus Penipuan Online Lintas Negara - suaragarut.id",
-          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBCWkx5cWhCR2FkUnhLQk44Vms3LW5sNTQ1MWxSUWxkSDZJbVdsMFhid0laNXo1X3BVTzZYTGhqM1ZEMzZEanN0bXU4eVhrT1luNDBrUVNqejQ1V0c5SXVTQ2dRUHo1T0tHVFkydA?oc=5"
+          "title": "Respons Risiko Macet Pindar, AFPI dan OJK Fasilitasi Kelanjutan Penagihan Portofolio - Jawa Pos",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTHFYeEdEdDlnSVRHcHJVTVJGQnpDbkd0bkEtdDRwUUxCeENuWEtaU0dpWGZGaXQ0MlhZWFcxbmZTVks0cE9ZWld5VXFDYlZjcmJUcWk2VGowcVVNamFpTjRXd1piYi10OF9vYjZtZmZlNjBFaVFTd1RMSlJ4cnBZZjNSM096aDZKN2sxcko5bzdzNjdiVmZTaDBUQ2pLVEs0ZkVneHo4cC1WQW1hV1RGVDVtNjdUTE1ZNmt4Y1dGdw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -303,26 +351,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
+      "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 25,
+    "articleCount48h": 44,
     "socialItemCount48h": 3
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
     "inputCount": 500,
-    "classifiedCount": 123,
-    "irrelevantDropped": 117,
+    "classifiedCount": 105,
+    "irrelevantDropped": 135,
     "model": "deepseek-chat",
     "fallbackCount": 260,
     "labelCounts": {
-      "NEG": 69,
-      "MIX": 40,
-      "POS": 14
+      "NEG": 70,
+      "MIX": 25,
+      "POS": 10
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
