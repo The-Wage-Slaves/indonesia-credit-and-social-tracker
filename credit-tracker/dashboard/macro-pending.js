@@ -1,7 +1,7 @@
 window.MACRO_PENDING = {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "asOf": "2026-09-01",
+  "asOf": "2026-10-01",
   "reviewRequired": true,
   "methodology": {
     "cadence": "monthly",
@@ -45,24 +45,24 @@ window.MACRO_PENDING = {
     "bi_rate": {
       "indicator": "bi_rate",
       "label": "BI 基准利率",
-      "period": "2026.08",
+      "period": "2026.09",
       "value": 5.75,
       "unit": "%",
       "source": "Bank Indonesia",
       "source_url": "https://www.bi.go.id/id/statistik/indikator/bi-rate.aspx",
-      "released": "2026-08-19",
+      "released": "2026-09-23",
       "note": "当月最新一次 BI 决议值；正式序列按月末生效值确认。"
     },
     "usd_idr": {
       "indicator": "usd_idr",
       "label": "USD/IDR（JISDOR）",
-      "period": "2026.08",
-      "value": 17746.0,
+      "period": "2026.10",
+      "value": 17937.0,
       "unit": "IDR/USD",
       "source": "Bank Indonesia JISDOR",
       "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
-      "released": "2026-08-31",
-      "note": "2026-08-31 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+      "released": "2026-10-01",
+      "note": "2026-10-01 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
     }
   },
   "changes": [
@@ -76,12 +76,12 @@ window.MACRO_PENDING = {
       "candidate": {
         "indicator": "bi_rate",
         "label": "BI 基准利率",
-        "period": "2026.08",
+        "period": "2026.09",
         "value": 5.75,
         "unit": "%",
         "source": "Bank Indonesia",
         "source_url": "https://www.bi.go.id/id/statistik/indikator/bi-rate.aspx",
-        "released": "2026-08-19",
+        "released": "2026-09-23",
         "note": "当月最新一次 BI 决议值；正式序列按月末生效值确认。"
       },
       "reason": "new_period"
@@ -96,13 +96,13 @@ window.MACRO_PENDING = {
       "candidate": {
         "indicator": "usd_idr",
         "label": "USD/IDR（JISDOR）",
-        "period": "2026.08",
-        "value": 17746.0,
+        "period": "2026.10",
+        "value": 17937.0,
         "unit": "IDR/USD",
         "source": "Bank Indonesia JISDOR",
         "source_url": "https://www.bi.go.id/en/statistik/informasi-kurs/jisdor/Default.aspx",
-        "released": "2026-08-31",
-        "note": "2026-08-31 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
+        "released": "2026-10-01",
+        "note": "2026-10-01 最近工作日官方 JISDOR；供宏观板块使用，不改变信贷行业固定 FX=15,000 口径。"
       },
       "reason": "new_period"
     }

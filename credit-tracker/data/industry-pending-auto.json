@@ -1,0 +1,31 @@
+{
+ "schemaVersion": 1,
+ "preparedAt": "2026-10-01",
+ "status": "pending-owner-review",
+ "generatedBy": "credit-tracker/build_industry_pending.py（云端月度）",
+ "dashboardLastPeriod": "2026.07",
+ "unit": "Rp Miliar（RDKB 原文 Rp triliun ×1000）",
+ "sources": {
+  "seki": {
+   "source": "BI SEKI I.4",
+   "sourceUrl": "https://www.bi.go.id/SEKI/tabel/TABEL1_4.xls",
+   "latest": "2026.07",
+   "calibratedAgainst": {
+    "period": "2026.05",
+    "bankVeh": 128846,
+    "bankOth": 1411357
+   }
+  },
+  "rdkb": null
+ },
+ "fieldProvenance": {
+  "bankVeh": "BI SEKI I.4 · Kendaraan Bermotor（合计块）；与 SSKI 逐位一致",
+  "bankOth": "BI SEKI I.4 · Lainnya（吸收多用途）；看板自 2023.01 起已为此口径",
+  "bankMP": "SEKI 无此项，null",
+  "p2p": "OJK RDKB · Pindar outstanding pembiayaan = LPBBTI 行业余额",
+  "bankBNPL": "OJK RDKB · baki debet kredit BNPL (SLIK)，原文多精确到 0.1 万亿",
+  "mfBNPL": "OJK RDKB · pembiayaan BNPL oleh Perusahaan Pembiayaan (SLIK)",
+  "mf2W/mf4W/mfMP": "RDKB 不拆，留 null 待补（OJK SLP Excel 冻结于 2025.12）"
+ },
+ "rows": {}
+}
