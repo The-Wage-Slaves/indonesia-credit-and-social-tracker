@@ -1,63 +1,51 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-02",
+  "date": "2026-10-03",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 29.8,
-    "socialDailyVolumeRisk": 31.6,
-    "negativeSocialShare": 30.3,
+    "newsDailyVolumeRisk": 34.1,
+    "socialDailyVolumeRisk": 18.4,
+    "negativeSocialShare": 60.4,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=3; prior-7d median=17.0; robust z=-1.35",
-    "socialVolume": "today=1; prior-7d median=32.0; robust z=-1.23"
+    "newsVolume": "today=6; prior-7d median=17.0; robust z=-1.06",
+    "socialVolume": "today=2; prior-7d median=27.0; robust z=-2.11"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-d7bfe79a5a67",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
+      "id": "llm-3a68358c6aa9",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "PN Jakarta Pusat",
-        "Pindar",
-        "OJK"
+        "AFPI",
+        "Kuseryansyah"
       ],
-      "headline": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
-      "headlineZh": "97家Pindar等待法院裁定利率卡特尔",
-      "summaryZh": "雅加达中区法院就Pindar利率卡特尔案作出裁决，97家平台等待判决，专家呼吁优先保护消费者利益。",
-      "rationale": "法院裁决涉及行业利率争议，值得留痕",
-      "independentSourceCount": 2,
+      "headline": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
+      "headlineZh": "AFPI新任主席上任",
+      "summaryZh": "印尼联合融资金融科技协会(AFPI)选举Kuseryansyah为2026-2029届主席，属行业常规人事变动。",
+      "rationale": "行业协会人事变动，常规动态",
+      "independentSourceCount": 1,
       "domains": [
-        "infobanknews.com",
-        "money.kompas.com"
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "c0077402144fd375",
-        "f10cbbdb9fa5e5a9",
-        "cba44bf195c0b880"
+        "ac2186f7559f53c2"
       ],
       "articles": [
         {
-          "title": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWU1ka1VBVnNIa0tYVzVRbTRIUmJNREM2ZDVnWEdUUjhYa2JOUUJlTVZUZ055VkgyTjBZcVhjLThFMk9BSTVKTkg2blU0TGdmTWNfWU13YW9kZUVRMWw5dHBVWG9mMGtwazRjUlVjUDBYcDdDZlNxNWxCc0prcVVHd1g4dFhKRHZZUXgxMEVyOW9OV3NicXZNUkl2MA?oc=5"
-        },
-        {
-          "title": "Foto : Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcmJNSm9LZE9CSkpTbmhYRFpFQ1NTbzJYc1lMa2lpeXBfZ2NnZVBCSE1sNk1ZMldsQlVzYm1yWHdZTlcxMGlhTU1NakdCVmJmYThnZl9GdFB4X2ZITmNiSjJBaGVacVp4eDNIMTJLckdSX2l3QUpSOVhwc0ZKcFVRbldVTkhNZU92YTI4cGUtTG9NdlJWM1ozVnhRd2k0VURBRG16QW5rS2NMdk82VHpyNzJkeDJUakgtbDlza1NldHJzSGt6Wjc4?oc=5"
-        },
-        {
-          "title": "Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEloaTY1SElrNVVzclctc1RDRmdXb1VKV09jalFOYlNJb3AwdHlLQXBwclM2Qk5hdGFCNWZHNnE4d0NRTGRwMWd6UHFaV1pmNnBoQWgzX0xvY1VObXRFUzlhNmUtMUROYms3ODZsYll5Q2JJU2pGQkQ0MXQ5TEVQTE5jVTVLSTNBblRJX1owc1ppSjFOUmctajlxS1ZtSzdNd3Nnb3RnZmZSYXBJZHdUYmR3Z2JMQko0SGI2Ti1kSEJNT2FSWGk0d0F5Z20xUEtWbUJZTlFvbG56Y1E?oc=5"
+          "title": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOdIBmAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -67,28 +55,62 @@
       }
     },
     {
-      "id": "llm-e43f865479a6",
+      "id": "llm-c48c81575d4c",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
+      "headlineZh": "AFPI第四届全国大会召开",
+      "summaryZh": "印尼联合融资金融科技协会(AFPI)召开第四届全国大会，旨在强化网贷行业基础，属行业常规会议。",
+      "rationale": "行业协会常规会议，非风险事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "ibukotakini.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "4c2a6a131a5795f2"
+      ],
+      "articles": [
+        {
+          "title": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQR2VQYjMwSnZfYXppR1cxcnk4NFJHemFPbl9MZTk1ZzVVb3J5U21KTXNfR21selZacFZuMnJ6ZktKbkEtMlNOcFJnd0FHcHFKdFVudUFoRWJtNFpoWWVGQ0pHQ2gwS2xjXzAwMGNEOXVCeVN2cUlLX2Q2NGFsREhvZkFDdlZOZkh5RWNrVEtfeldRUdIBkAFBVV95cUxOX2tpcDR6b09UTjFsRkRMb0NXdnpDUGRtdEREWEo1LTJheFVndTI2dmVHN3JZVmZXeTNIOG9uXzY3VktlM3RKejl3VmdWZFpnTlpXNmpZdUZtYkRwZEZwRjU1Skt4UVktS1RpTFVKbW1YdWxkTndFOHhZNzh5YXU0MTJhRi05dkZVSEs0T0hUcHE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-e40bd43a7c2e",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK Papua"
+        "Polri"
       ],
-      "headline": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
-      "headlineZh": "OJK巴布亚前9月接208起非法网贷投诉",
-      "summaryZh": "OJK巴布亚分局2026年1至9月共收到208起非法网贷投诉，投诉量上升，反映当地消费者受害情况。",
-      "rationale": "监管机构披露投诉数据，反映消费者受害",
+      "headline": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
+      "headlineZh": "警察因网贷债务抢劫金项链",
+      "summaryZh": "安汶一名警察因网贷债务压力抢劫他人金项链被捕，反映网贷债务引发的社会问题。",
+      "rationale": "具体案件，网贷债务引发犯罪",
       "independentSourceCount": 1,
       "domains": [
-        "semuwaberita.com"
+        "detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "7483823ce39c8807"
+        "311379f01a86167a"
       ],
       "articles": [
         {
-          "title": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEJLRFVfaUs3SDFKUGNzQVBDMVR0eElCcThyZ3QwLUVyZWl4UTA1UkVIV0Z0UU0yeFFOQ09EQ2Yzb3lUOFR2blM1NEZMN1ZUUTZVNHZtOWhQbWlwUWhUWHRoU01JbUthVTl1TGk2MzBtR3ItRkdsRkJqclQyNGpfSGl2UlNZRFoxS3Ixd1h5N2VCdWxyQ3oxUm1zblpqeUdCT2c5WnpVcnJLUlpLc3lMUlRWQ2NKaTRRdHdGVU5LV3VNb0pQOGc?oc=5"
+          "title": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZ19oalFzWTcxYWlsYUtwdmlWYVh0aFp2X3c0amJqYXBTbFNielE0UnZUaVJwN3BxTU5iMXFNWXpfc2lBVjRqOHcza3IxWmtnRktXdzVfVktDTjgyaDhOWHFNeUZXYzNjYnJ5Rzc5bHBiWk1Jb1dwRk1mc3RtekE2NHJQYzJtTTZCSGsyWDl2NkQ5czE5dVFKYXZHVHgtWHFQdEE5SzFnZE1FbVdGZGRYVHk0ZGRuekp6TU1j0gHAAUFVX3lxTE1ZR2djX1ZyMk5HNzZnMWRLTTJSbTJFbEZ5YTVOV1ZvU0wySFBJV2x4VzVVUWxhalk5RjdQR2h0Y3cyTmU2eUlRRjU1YXFyTEx3Sk5pcmdEeXI5UDBFM2pibkhWeHczRzlYSVVLbXJIM29ZRFNNemdyOVpWa1BKVjZTTTV4cEdRTDBlQTY4SXBJLXJHMHBMRGVIdXJNTWczdzFtM21mWkJYSU9qeUhnNkJPc1NLVzJpdlNzcUhPaTF1Mw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -101,37 +123,34 @@
       }
     },
     {
-      "id": "llm-cb91edfe16c4",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Propam",
-        "Polri"
-      ],
-      "headline": "Propam Bidik Polisi Pinjol-Judol - Gorontalopost.co.id",
-      "headlineZh": "警察内部监察局调查涉网贷网赌警员",
-      "summaryZh": "警察职业监察局（Propam）针对涉足网贷和网络赌博的警员展开调查，属监管介入事件。",
-      "rationale": "内部监察机构介入调查，属监管行动",
+      "id": "llm-6d97a563dd64",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.75,
+      "entities": [],
+      "headline": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
+      "headlineZh": "网贷个人数据滥用问题恶化",
+      "summaryZh": "网贷平台个人数据被随意滥用问题日益严重，涉及大规模数据泄露风险，值得监管关注。",
+      "rationale": "数据泄露问题，涉及大规模隐私侵害",
       "independentSourceCount": 1,
       "domains": [
-        "gorontalopost.co.id"
+        "bloombergtechnoz.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f7ca9b7c990c7e07"
+        "b808c3647e9a244f"
       ],
       "articles": [
         {
-          "title": "Propam Bidik Polisi Pinjol-Judol - Gorontalopost.co.id",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAxaHBwOWt5NDJndFVxVXhvcy13MWo0NkFqcVUtdVM4SERkdk1HWXJWeERaQlJnVWpWX1ZOZUF0YTVNWGF2SENKVHhiRkJmd2JNU0tlXzRUOU52eV96eG1kOExWdmRSUmZkN0xmQTVYcDE3QjNvYmZpOGt3aHE?oc=5"
+          "title": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNakxwZFhsTFFoWnAydjVQZEtEbDg1OWppVDRMTW5HdjQwTEFYbjNuZWxxTERiaVI5MWR3QzM0ODAzTEItREMwaXVhMGVxQWdQbFFBYXA1SGhwY05RSWw2a25IQ0wwajF6Mk92aVJ0TUlPQjdMWEMtOW12Zi1ZQkhpckZsNXpRaVFFQU1pczJRanlMeUMzdzB0OVBBUzV1b1NkM0FwajZ4Vk9RS1NLOVBJbHhYcw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
         "platforms": []
       }
     }
@@ -140,55 +159,43 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 22,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 13,
+    "candidateCount": 21,
+    "eventGroupCount": 4,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 22
+      "ok": 21
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-d7bfe79a5a67",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
+      "id": "llm-3a68358c6aa9",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "PN Jakarta Pusat",
-        "Pindar",
-        "OJK"
+        "AFPI",
+        "Kuseryansyah"
       ],
-      "headline": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
-      "headlineZh": "97家Pindar等待法院裁定利率卡特尔",
-      "summaryZh": "雅加达中区法院就Pindar利率卡特尔案作出裁决，97家平台等待判决，专家呼吁优先保护消费者利益。",
-      "rationale": "法院裁决涉及行业利率争议，值得留痕",
-      "independentSourceCount": 2,
+      "headline": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
+      "headlineZh": "AFPI新任主席上任",
+      "summaryZh": "印尼联合融资金融科技协会(AFPI)选举Kuseryansyah为2026-2029届主席，属行业常规人事变动。",
+      "rationale": "行业协会人事变动，常规动态",
+      "independentSourceCount": 1,
       "domains": [
-        "infobanknews.com",
-        "money.kompas.com"
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "c0077402144fd375",
-        "f10cbbdb9fa5e5a9",
-        "cba44bf195c0b880"
+        "ac2186f7559f53c2"
       ],
       "articles": [
         {
-          "title": "97 Pindar Menanti Putusan Pengadilan Niaga Terkait Dugaan Kartel Bunga - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOWU1ka1VBVnNIa0tYVzVRbTRIUmJNREM2ZDVnWEdUUjhYa2JOUUJlTVZUZ055VkgyTjBZcVhjLThFMk9BSTVKTkg2blU0TGdmTWNfWU13YW9kZUVRMWw5dHBVWG9mMGtwazRjUlVjUDBYcDdDZlNxNWxCc0prcVVHd1g4dFhKRHZZUXgxMEVyOW9OV3NicXZNUkl2MA?oc=5"
-        },
-        {
-          "title": "Foto : Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQcmJNSm9LZE9CSkpTbmhYRFpFQ1NTbzJYc1lMa2lpeXBfZ2NnZVBCSE1sNk1ZMldsQlVzYm1yWHdZTlcxMGlhTU1NakdCVmJmYThnZl9GdFB4X2ZITmNiSjJBaGVacVp4eDNIMTJLckdSX2l3QUpSOVhwc0ZKcFVRbldVTkhNZU92YTI4cGUtTG9NdlJWM1ozVnhRd2k0VURBRG16QW5rS2NMdk82VHpyNzJkeDJUakgtbDlza1NldHJzSGt6Wjc4?oc=5"
-        },
-        {
-          "title": "Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOcEloaTY1SElrNVVzclctc1RDRmdXb1VKV09jalFOYlNJb3AwdHlLQXBwclM2Qk5hdGFCNWZHNnE4d0NRTGRwMWd6UHFaV1pmNnBoQWgzX0xvY1VObXRFUzlhNmUtMUROYms3ODZsYll5Q2JJU2pGQkQ0MXQ5TEVQTE5jVTVLSTNBblRJX1owc1ppSjFOUmctajlxS1ZtSzdNd3Nnb3RnZmZSYXBJZHdUYmR3Z2JMQko0SGI2Ti1kSEJNT2FSWGk0d0F5Z20xUEtWbUJZTlFvbG56Y1E?oc=5"
+          "title": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOdIBmAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -198,28 +205,62 @@
       }
     },
     {
-      "id": "llm-e43f865479a6",
+      "id": "llm-c48c81575d4c",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
+      "headlineZh": "AFPI第四届全国大会召开",
+      "summaryZh": "印尼联合融资金融科技协会(AFPI)召开第四届全国大会，旨在强化网贷行业基础，属行业常规会议。",
+      "rationale": "行业协会常规会议，非风险事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "ibukotakini.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "4c2a6a131a5795f2"
+      ],
+      "articles": [
+        {
+          "title": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
+          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQR2VQYjMwSnZfYXppR1cxcnk4NFJHemFPbl9MZTk1ZzVVb3J5U21KTXNfR21selZacFZuMnJ6ZktKbkEtMlNOcFJnd0FHcHFKdFVudUFoRWJtNFpoWWVGQ0pHQ2gwS2xjXzAwMGNEOXVCeVN2cUlLX2Q2NGFsREhvZkFDdlZOZkh5RWNrVEtfeldRUdIBkAFBVV95cUxOX2tpcDR6b09UTjFsRkRMb0NXdnpDUGRtdEREWEo1LTJheFVndTI2dmVHN3JZVmZXeTNIOG9uXzY3VktlM3RKejl3VmdWZFpnTlpXNmpZdUZtYkRwZEZwRjU1Skt4UVktS1RpTFVKbW1YdWxkTndFOHhZNzh5YXU0MTJhRi05dkZVSEs0T0hUcHE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-e40bd43a7c2e",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK Papua"
+        "Polri"
       ],
-      "headline": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
-      "headlineZh": "OJK巴布亚前9月接208起非法网贷投诉",
-      "summaryZh": "OJK巴布亚分局2026年1至9月共收到208起非法网贷投诉，投诉量上升，反映当地消费者受害情况。",
-      "rationale": "监管机构披露投诉数据，反映消费者受害",
+      "headline": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
+      "headlineZh": "警察因网贷债务抢劫金项链",
+      "summaryZh": "安汶一名警察因网贷债务压力抢劫他人金项链被捕，反映网贷债务引发的社会问题。",
+      "rationale": "具体案件，网贷债务引发犯罪",
       "independentSourceCount": 1,
       "domains": [
-        "semuwaberita.com"
+        "detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "7483823ce39c8807"
+        "311379f01a86167a"
       ],
       "articles": [
         {
-          "title": "Meningkat, Periode Januari hingga September 2026, OJK Papua Terima 208 Pengaduan Pinjol Ilegal - semuwaberita",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPaEJLRFVfaUs3SDFKUGNzQVBDMVR0eElCcThyZ3QwLUVyZWl4UTA1UkVIV0Z0UU0yeFFOQ09EQ2Yzb3lUOFR2blM1NEZMN1ZUUTZVNHZtOWhQbWlwUWhUWHRoU01JbUthVTl1TGk2MzBtR3ItRkdsRkJqclQyNGpfSGl2UlNZRFoxS3Ixd1h5N2VCdWxyQ3oxUm1zblpqeUdCT2c5WnpVcnJLUlpLc3lMUlRWQ2NKaTRRdHdGVU5LV3VNb0pQOGc?oc=5"
+          "title": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZ19oalFzWTcxYWlsYUtwdmlWYVh0aFp2X3c0amJqYXBTbFNielE0UnZUaVJwN3BxTU5iMXFNWXpfc2lBVjRqOHcza3IxWmtnRktXdzVfVktDTjgyaDhOWHFNeUZXYzNjYnJ5Rzc5bHBiWk1Jb1dwRk1mc3RtekE2NHJQYzJtTTZCSGsyWDl2NkQ5czE5dVFKYXZHVHgtWHFQdEE5SzFnZE1FbVdGZGRYVHk0ZGRuekp6TU1j0gHAAUFVX3lxTE1ZR2djX1ZyMk5HNzZnMWRLTTJSbTJFbEZ5YTVOV1ZvU0wySFBJV2x4VzVVUWxhalk5RjdQR2h0Y3cyTmU2eUlRRjU1YXFyTEx3Sk5pcmdEeXI5UDBFM2pibkhWeHczRzlYSVVLbXJIM29ZRFNNemdyOVpWa1BKVjZTTTV4cEdRTDBlQTY4SXBJLXJHMHBMRGVIdXJNTWczdzFtM21mWkJYSU9qeUhnNkJPc1NLVzJpdlNzcUhPaTF1Mw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -232,37 +273,34 @@
       }
     },
     {
-      "id": "llm-cb91edfe16c4",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Propam",
-        "Polri"
-      ],
-      "headline": "Propam Bidik Polisi Pinjol-Judol - Gorontalopost.co.id",
-      "headlineZh": "警察内部监察局调查涉网贷网赌警员",
-      "summaryZh": "警察职业监察局（Propam）针对涉足网贷和网络赌博的警员展开调查，属监管介入事件。",
-      "rationale": "内部监察机构介入调查，属监管行动",
+      "id": "llm-6d97a563dd64",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.75,
+      "entities": [],
+      "headline": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
+      "headlineZh": "网贷个人数据滥用问题恶化",
+      "summaryZh": "网贷平台个人数据被随意滥用问题日益严重，涉及大规模数据泄露风险，值得监管关注。",
+      "rationale": "数据泄露问题，涉及大规模隐私侵害",
       "independentSourceCount": 1,
       "domains": [
-        "gorontalopost.co.id"
+        "bloombergtechnoz.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f7ca9b7c990c7e07"
+        "b808c3647e9a244f"
       ],
       "articles": [
         {
-          "title": "Propam Bidik Polisi Pinjol-Judol - Gorontalopost.co.id",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAxaHBwOWt5NDJndFVxVXhvcy13MWo0NkFqcVUtdVM4SERkdk1HWXJWeERaQlJnVWpWX1ZOZUF0YTVNWGF2SENKVHhiRkJmd2JNU0tlXzRUOU52eV96eG1kOExWdmRSUmZkN0xmQTVYcDE3QjNvYmZpOGt3aHE?oc=5"
+          "title": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNakxwZFhsTFFoWnAydjVQZEtEbDg1OWppVDRMTW5HdjQwTEFYbjNuZWxxTERiaVI5MWR3QzM0ODAzTEItREMwaXVhMGVxQWdQbFFBYXA1SGhwY05RSWw2a25IQ0wwajF6Mk92aVJ0TUlPQjdMWEMtOW12Zi1ZQkhpckZsNXpRaVFFQU1pczJRanlMeUMzdzB0OVBBUzV1b1NkM0FwajZ4Vk9RS1NLOVBJbHhYcw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
         "platforms": []
       }
     }
@@ -276,25 +314,25 @@
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
+      "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 29,
-    "socialItemCount48h": 14
+    "articleCount48h": 23,
+    "socialItemCount48h": 9
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 502,
-    "classifiedCount": 158,
-    "irrelevantDropped": 82,
+    "inputCount": 486,
+    "classifiedCount": 131,
+    "irrelevantDropped": 109,
     "model": "deepseek-chat",
-    "fallbackCount": 262,
+    "fallbackCount": 246,
     "labelCounts": {
-      "NEG": 101,
-      "MIX": 44,
-      "POS": 13
+      "NEG": 65,
+      "MIX": 35,
+      "POS": 31
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
