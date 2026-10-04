@@ -1,310 +1,38 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-03",
+  "date": "2026-10-04",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 34.1,
-    "socialDailyVolumeRisk": 18.4,
-    "negativeSocialShare": 60.4,
+    "newsDailyVolumeRisk": 17.1,
+    "socialDailyVolumeRisk": 33.1,
+    "negativeSocialShare": 17.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=6; prior-7d median=17.0; robust z=-1.06",
-    "socialVolume": "today=2; prior-7d median=27.0; robust z=-2.11"
+    "newsVolume": "today=1; prior-7d median=14.0; robust z=-2.19",
+    "socialVolume": "today=1; prior-7d median=16.0; robust z=-1.12"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-3a68358c6aa9",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "AFPI",
-        "Kuseryansyah"
-      ],
-      "headline": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
-      "headlineZh": "AFPI新任主席上任",
-      "summaryZh": "印尼联合融资金融科技协会(AFPI)选举Kuseryansyah为2026-2029届主席，属行业常规人事变动。",
-      "rationale": "行业协会人事变动，常规动态",
-      "independentSourceCount": 1,
-      "domains": [
-        "wartaekonomi.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "ac2186f7559f53c2"
-      ],
-      "articles": [
-        {
-          "title": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOdIBmAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c48c81575d4c",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "AFPI"
-      ],
-      "headline": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
-      "headlineZh": "AFPI第四届全国大会召开",
-      "summaryZh": "印尼联合融资金融科技协会(AFPI)召开第四届全国大会，旨在强化网贷行业基础，属行业常规会议。",
-      "rationale": "行业协会常规会议，非风险事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "ibukotakini.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "4c2a6a131a5795f2"
-      ],
-      "articles": [
-        {
-          "title": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQR2VQYjMwSnZfYXppR1cxcnk4NFJHemFPbl9MZTk1ZzVVb3J5U21KTXNfR21selZacFZuMnJ6ZktKbkEtMlNOcFJnd0FHcHFKdFVudUFoRWJtNFpoWWVGQ0pHQ2gwS2xjXzAwMGNEOXVCeVN2cUlLX2Q2NGFsREhvZkFDdlZOZkh5RWNrVEtfeldRUdIBkAFBVV95cUxOX2tpcDR6b09UTjFsRkRMb0NXdnpDUGRtdEREWEo1LTJheFVndTI2dmVHN3JZVmZXeTNIOG9uXzY3VktlM3RKejl3VmdWZFpnTlpXNmpZdUZtYkRwZEZwRjU1Skt4UVktS1RpTFVKbW1YdWxkTndFOHhZNzh5YXU0MTJhRi05dkZVSEs0T0hUcHE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e40bd43a7c2e",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Polri"
-      ],
-      "headline": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
-      "headlineZh": "警察因网贷债务抢劫金项链",
-      "summaryZh": "安汶一名警察因网贷债务压力抢劫他人金项链被捕，反映网贷债务引发的社会问题。",
-      "rationale": "具体案件，网贷债务引发犯罪",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "311379f01a86167a"
-      ],
-      "articles": [
-        {
-          "title": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZ19oalFzWTcxYWlsYUtwdmlWYVh0aFp2X3c0amJqYXBTbFNielE0UnZUaVJwN3BxTU5iMXFNWXpfc2lBVjRqOHcza3IxWmtnRktXdzVfVktDTjgyaDhOWHFNeUZXYzNjYnJ5Rzc5bHBiWk1Jb1dwRk1mc3RtekE2NHJQYzJtTTZCSGsyWDl2NkQ5czE5dVFKYXZHVHgtWHFQdEE5SzFnZE1FbVdGZGRYVHk0ZGRuekp6TU1j0gHAAUFVX3lxTE1ZR2djX1ZyMk5HNzZnMWRLTTJSbTJFbEZ5YTVOV1ZvU0wySFBJV2x4VzVVUWxhalk5RjdQR2h0Y3cyTmU2eUlRRjU1YXFyTEx3Sk5pcmdEeXI5UDBFM2pibkhWeHczRzlYSVVLbXJIM29ZRFNNemdyOVpWa1BKVjZTTTV4cEdRTDBlQTY4SXBJLXJHMHBMRGVIdXJNTWczdzFtM21mWkJYSU9qeUhnNkJPc1NLVzJpdlNzcUhPaTF1Mw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-6d97a563dd64",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.75,
-      "entities": [],
-      "headline": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
-      "headlineZh": "网贷个人数据滥用问题恶化",
-      "summaryZh": "网贷平台个人数据被随意滥用问题日益严重，涉及大规模数据泄露风险，值得监管关注。",
-      "rationale": "数据泄露问题，涉及大规模隐私侵害",
-      "independentSourceCount": 1,
-      "domains": [
-        "bloombergtechnoz.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b808c3647e9a244f"
-      ],
-      "articles": [
-        {
-          "title": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNakxwZFhsTFFoWnAydjVQZEtEbDg1OWppVDRMTW5HdjQwTEFYbjNuZWxxTERiaVI5MWR3QzM0ODAzTEItREMwaXVhMGVxQWdQbFFBYXA1SGhwY05RSWw2a25IQ0wwajF6Mk92aVJ0TUlPQjdMWEMtOW12Zi1ZQkhpckZsNXpRaVFFQU1pczJRanlMeUMzdzB0OVBBUzV1b1NkM0FwajZ4Vk9RS1NLOVBJbHhYcw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    }
-  ],
+  "lowEvidenceLeads": [],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 21,
-    "eventGroupCount": 4,
-    "rejectedNonEvents": 11,
+    "candidateCount": 12,
+    "eventGroupCount": 0,
+    "rejectedNonEvents": 6,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 21
+      "ok": 12
     },
     "socialCrossCheck": "applied"
   },
-  "events": [
-    {
-      "id": "llm-3a68358c6aa9",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "AFPI",
-        "Kuseryansyah"
-      ],
-      "headline": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
-      "headlineZh": "AFPI新任主席上任",
-      "summaryZh": "印尼联合融资金融科技协会(AFPI)选举Kuseryansyah为2026-2029届主席，属行业常规人事变动。",
-      "rationale": "行业协会人事变动，常规动态",
-      "independentSourceCount": 1,
-      "domains": [
-        "wartaekonomi.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "ac2186f7559f53c2"
-      ],
-      "articles": [
-        {
-          "title": "AFPI Punya Bos Baru, Kuseryansyah Pimpin hingga 2029 - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOdIBmAFBVV95cUxPUkJfU1drSUVXR3daSGRyZUdyMHhhekZWMHM1ZlJGM2JoZkJGaXlDTFYzUDhqYnZZTDV5dXdmVzNZLWpOaHNkMW90NVhDUm5tWnR1QU1BekNPU2pQVG5uQkQ0ckJtWlZ4c0FYOVI5NXZHZDMySm1Za1VjZktPbkJTTVdROUVIOTViNzJUcEsxeWZJakFvYm5yOQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c48c81575d4c",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "AFPI"
-      ],
-      "headline": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
-      "headlineZh": "AFPI第四届全国大会召开",
-      "summaryZh": "印尼联合融资金融科技协会(AFPI)召开第四届全国大会，旨在强化网贷行业基础，属行业常规会议。",
-      "rationale": "行业协会常规会议，非风险事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "ibukotakini.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "4c2a6a131a5795f2"
-      ],
-      "articles": [
-        {
-          "title": "Munas IV AFPI Jadi Momentum Perkuat Fondasi Industri Pindar - Ibukotakini",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQR2VQYjMwSnZfYXppR1cxcnk4NFJHemFPbl9MZTk1ZzVVb3J5U21KTXNfR21selZacFZuMnJ6ZktKbkEtMlNOcFJnd0FHcHFKdFVudUFoRWJtNFpoWWVGQ0pHQ2gwS2xjXzAwMGNEOXVCeVN2cUlLX2Q2NGFsREhvZkFDdlZOZkh5RWNrVEtfeldRUdIBkAFBVV95cUxOX2tpcDR6b09UTjFsRkRMb0NXdnpDUGRtdEREWEo1LTJheFVndTI2dmVHN3JZVmZXeTNIOG9uXzY3VktlM3RKejl3VmdWZFpnTlpXNmpZdUZtYkRwZEZwRjU1Skt4UVktS1RpTFVKbW1YdWxkTndFOHhZNzh5YXU0MTJhRi05dkZVSEs0T0hUcHE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e40bd43a7c2e",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Polri"
-      ],
-      "headline": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
-      "headlineZh": "警察因网贷债务抢劫金项链",
-      "summaryZh": "安汶一名警察因网贷债务压力抢劫他人金项链被捕，反映网贷债务引发的社会问题。",
-      "rationale": "具体案件，网贷债务引发犯罪",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "311379f01a86167a"
-      ],
-      "articles": [
-        {
-          "title": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZ19oalFzWTcxYWlsYUtwdmlWYVh0aFp2X3c0amJqYXBTbFNielE0UnZUaVJwN3BxTU5iMXFNWXpfc2lBVjRqOHcza3IxWmtnRktXdzVfVktDTjgyaDhOWHFNeUZXYzNjYnJ5Rzc5bHBiWk1Jb1dwRk1mc3RtekE2NHJQYzJtTTZCSGsyWDl2NkQ5czE5dVFKYXZHVHgtWHFQdEE5SzFnZE1FbVdGZGRYVHk0ZGRuekp6TU1j0gHAAUFVX3lxTE1ZR2djX1ZyMk5HNzZnMWRLTTJSbTJFbEZ5YTVOV1ZvU0wySFBJV2x4VzVVUWxhalk5RjdQR2h0Y3cyTmU2eUlRRjU1YXFyTEx3Sk5pcmdEeXI5UDBFM2pibkhWeHczRzlYSVVLbXJIM29ZRFNNemdyOVpWa1BKVjZTTTV4cEdRTDBlQTY4SXBJLXJHMHBMRGVIdXJNTWczdzFtM21mWkJYSU9qeUhnNkJPc1NLVzJpdlNzcUhPaTF1Mw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-6d97a563dd64",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.75,
-      "entities": [],
-      "headline": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
-      "headlineZh": "网贷个人数据滥用问题恶化",
-      "summaryZh": "网贷平台个人数据被随意滥用问题日益严重，涉及大规模数据泄露风险，值得监管关注。",
-      "rationale": "数据泄露问题，涉及大规模隐私侵害",
-      "independentSourceCount": 1,
-      "domains": [
-        "bloombergtechnoz.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b808c3647e9a244f"
-      ],
-      "articles": [
-        {
-          "title": "Persoalan Data Pribadi Pindar Dipakai Serampangan Kian Runyam - Bloomberg Technoz",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNakxwZFhsTFFoWnAydjVQZEtEbDg1OWppVDRMTW5HdjQwTEFYbjNuZWxxTERiaVI5MWR3QzM0ODAzTEItREMwaXVhMGVxQWdQbFFBYXA1SGhwY05RSWw2a25IQ0wwajF6Mk92aVJ0TUlPQjdMWEMtOW12Zi1ZQkhpckZsNXpRaVFFQU1pczJRanlMeUMzdzB0OVBBUzV1b1NkM0FwajZ4Vk9RS1NLOVBJbHhYcw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    }
-  ],
+  "events": [],
   "coverage": {
     "successfulChannels": [
       "google_news",
@@ -318,21 +46,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 23,
-    "socialItemCount48h": 9
+    "articleCount48h": 12,
+    "socialItemCount48h": 5
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 486,
-    "classifiedCount": 131,
-    "irrelevantDropped": 109,
+    "inputCount": 437,
+    "classifiedCount": 165,
+    "irrelevantDropped": 75,
     "model": "deepseek-chat",
-    "fallbackCount": 246,
+    "fallbackCount": 197,
     "labelCounts": {
-      "NEG": 65,
-      "MIX": 35,
-      "POS": 31
+      "NEG": 111,
+      "MIX": 44,
+      "POS": 10
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

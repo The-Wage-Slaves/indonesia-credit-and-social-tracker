@@ -1,19 +1,18 @@
 {
-  "generatedAt": "2026-10-03T07:06:35.764445+00:00",
+  "generatedAt": "2026-10-04T07:24:46.238942+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-03",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-04",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼国家警察总长换人，苏尤迪·阿里奥·塞托接替利斯蒂奥·西吉特，并大规模调整高层与19名地方警长**\n严重度 0.75｜4个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜普拉博沃改组总统顾问委员会并新设Bakom，任命Pratikno为Wantimpres主席、Syahganda Nainggolan为Bakom主任**\n严重度 0.55｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜印尼最高法院批准Gowa县长弹劾请求**\n严重度 0.55｜1个独立来源（antaranews.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜印尼总检察署就电动摩托车采购腐败案认定五名嫌疑人，并查封飞机与直升机**\n严重度 0.55｜2个独立来源（bbc.com、liputan6.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼警察总长苏尤迪大规模改组警队，新任命27名高级警官及多名地方警察厅长**\n严重度 0.75｜3个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🔴 **仓促立法/政策骤变｜印尼国会加速推进《单一数据法》草案，拟设新国家数据机构并定于近期表决通过**\n严重度 0.75｜5个独立来源（eranasional.com、hariandisway）｜影响支柱：institutions\n\n🔴 **仓促立法/政策骤变｜印尼国会与政府通过《土地改革法》及2027年国家预算法案，预算支出达4106万亿印尼盾**\n严重度 0.75｜3个独立来源（beritalima.com、mediakalbarnews）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜印尼内阁改组相关条款冲击资本市场，IHSG跌至6036点**\n严重度 0.55｜1个独立来源（ekonomi.republika.co.id）｜影响支柱：currency",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-03:normal:red:success"
+    "decisionId": "daily:2026-10-04:normal:red:success"
   },
   "feishu": "sent"
 }
