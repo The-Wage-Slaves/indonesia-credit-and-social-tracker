@@ -676,5 +676,93 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-10-06",
+    "version": 3,
+    "heat": 39.2,
+    "suggested_score": 61,
+    "opposition": {
+      "status": "fail",
+      "rate": null,
+      "detail": "分类失败: 402 Client Error: Payment Required for url: https://api.deepseek.com/chat/comple"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 88.5,
+        "raw": {
+          "ratio_street": 2.3818770226537214,
+          "ratio_anger": 1.1568748711605854,
+          "per_kw": {
+            "demo hari ini": 13,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 30,
+            "kejaksaan": 19,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 11
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 3.7,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 2,
+          "share": 1.8490429758035392,
+          "examples": [
+            "Peringatan! Prabowo: Indonesia Cinta Damai tetapi Tak Mau Diganggu!",
+            "King Indo! Prabowo: Kita Bangga Timnas Indonesia Juara FIFA ASEAN Cup 2026"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 7.5,
+        "raw": {
+          "n_searched": 142,
+          "n_big": 3
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 46.3,
+        "raw": {
+          "avg7": 0.009557142857142858,
+          "baseline": 0.010323684210526315,
+          "ratio": 0.9257492443829433
+        }
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 60.0,
+        "raw": {
+          "avg_tone7": -3.995957142857143
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 13.2,
+        "raw": {
+          "total": 152,
+          "matched": 2,
+          "share": 1.3157894736842104,
+          "examples": [
+            "[Liputan6 News] Ada Demo Depan DPR Hari Ini, Pengendara Diimbau Cari Rute Lain",
+            "[Katadata] Bupati Siak Protes DBH Migas Turun 70%, Bagaimana Aturan Terbarunya?"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
