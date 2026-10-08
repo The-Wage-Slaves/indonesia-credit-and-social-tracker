@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-07T07:44:19.710930+00:00",
+  "generatedAt": "2026-10-08T07:59:31.249513+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-07",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-08",
     "risk": true,
     "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：DEGRADED；制度/政治骤变：NORMAL。",
       "**信贷事件裁定未完成**\n本次事件裁定状态为 FAILED（候选 40 条）。**今天的「无事件」是「没判出来」，不是「没有风险」**——请检查 DEEPSEEK_API_KEY 与工作流后重跑。",
-      "**已折叠的低证据线索**\n另有 1 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-07:degraded:normal:success"
+    "decisionId": "daily:2026-10-08:degraded:normal:success"
   },
   "feishu": "sent"
 }
