@@ -187,5 +187,56 @@ class PendingCardTests(unittest.TestCase):
             self.assertEqual(js.read_text(encoding="utf-8"), "const PENDING = {};", "没东西可摘就别重写")
 
 
+class LenteraPosisiAkhirTests(unittest.TestCase):
+    """LDN 官网「Posisi akhir」是本月至今成交额，不是在贷余额（2026-10-08 判定）。
+
+    判据（三条独立）：①同月两点的 Posisi 增量与年内放款增量逐卢比相等
+    ②跨月清零重爬 ③2026-01-14 读数 Posisi == 年内放款（一月份 MTD 即 YTD）。
+    后果：LDN 的 out 必须恒为 null，原值只留在 disbMTD（后台），不进余额图与余额合计。
+    """
+
+    def shipped(self):
+        return M.load_confirmed()
+
+    def test_lentera_outstanding_is_null_in_every_batch(self):
+        for b in self.shipped()["batches"]:
+            row = next((r for r in b["rows"] if "Lentera" in r["name"]), None)
+            if not row:
+                continue
+            with self.subTest(batch=b["srcDate"]):
+                self.assertIsNone(row["out"], "LDN 不披露在贷余额，out 必须为 null")
+
+    def test_the_original_reading_is_kept_as_disb_mtd(self):
+        """原值不能无痕删掉——它是有用的月度放款节奏，只是不能叫余额。"""
+        for b in self.shipped()["batches"]:
+            row = next((r for r in b["rows"] if "Lentera" in r["name"]), None)
+            if not row:
+                continue
+            with self.subTest(batch=b["srcDate"]):
+                self.assertIsNotNone(row.get("disbMTD"), "原读数必须迁到 disbMTD 留存")
+                self.assertIn("本月至今成交额", row.get("note") or "")
+
+    def test_optional_fields_survive_a_render_roundtrip(self):
+        """js_row 曾经只序列化固定字段，把 disbMTD 静默吃掉；往返必须保住它。"""
+        data = self.shipped()
+        with tempfile.TemporaryDirectory() as tmp:
+            out = pathlib.Path(tmp) / "r.js"
+            out.write_text(M.render_file(data), encoding="utf-8")
+            self.assertEqual(M.load_confirmed(out), data)
+        self.assertIn("disbMTD", M.OPTIONAL_FIELDS)
+
+    def test_dashboard_carries_no_lentera_outstanding(self):
+        """看板历史序列里 LDN 的余额也必须全空，否则图上还会画出那条错线。"""
+        import json as _json
+        html = (M.CONFIRMED_JS.parent / "credit-dashboard.html").read_text(encoding="utf-8")
+        i = html.index("p2pRaw = {"); j = html.index("};", i)
+        raw = _json.loads(html[i + 9:j + 1])
+        key = next(k for k in raw["outstanding"]["players"] if "LENTERA" in k.upper())
+        self.assertTrue(all(v is None for v in raw["outstanding"]["players"][key]),
+                        "p2pRaw 里 LDN 的 outstanding 必须全为 null")
+        self.assertTrue(any(v is not None for v in raw["disbursement"]["players"][key]),
+                        "放款序列是对的，不该被一起清掉")
+
+
 if __name__ == "__main__":
     unittest.main()
