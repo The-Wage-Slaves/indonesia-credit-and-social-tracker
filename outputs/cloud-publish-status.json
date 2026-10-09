@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-10-08T07:59:31.249513+00:00",
+  "generatedAt": "2026-10-09T08:01:49.949889+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-08",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-09",
     "risk": true,
-    "level": "orange",
+    "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：DEGRADED；制度/政治骤变：NORMAL。",
-      "**信贷事件裁定未完成**\n本次事件裁定状态为 FAILED（候选 40 条）。**今天的「无事件」是「没判出来」，不是「没有风险」**——请检查 DEEPSEEK_API_KEY 与工作流后重跑。",
-      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **仓促立法/政策骤变｜印尼国会闭门加速审议《选举法》修订案，涉及增加11个议席及正副总统选举分离等议题**\n严重度 0.75｜2个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜Purbaya 被传可能重返印尼央行行长职位**\n严重度 0.55｜1个独立来源（https://www.suaralandak.co.id/）｜影响支柱：institutions\n\n🟠 **军警冲突/安全事件｜印尼陆军上校因将官邸用作网络赌博窝点被拘押**\n严重度 0.55｜2个独立来源（katadata.co.id、liputan6.com）｜影响支柱：coercive\n\n🟠 **司法/执法工具化｜印尼总检察院逮捕科纳韦地区检察长，调查滥用职权指控**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions",
+      "**Pinjol/Pindar 舆情事件**\n\n**Gresik女子遭非法Pinjol催收恐吓勒索**\nGresik一名女子未借款却遭非法Pinjol催收人员用编辑色情照威胁勒索，警方已介入调查并追捕嫌犯。\n证据：8个独立来源。",
+      "**已折叠的低证据线索**\n另有 5 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-08:degraded:normal:success"
+    "decisionId": "daily:2026-10-09:high_pending:red:success"
   },
   "feishu": "sent"
 }
