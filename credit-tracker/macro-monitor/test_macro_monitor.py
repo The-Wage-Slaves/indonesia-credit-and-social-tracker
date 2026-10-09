@@ -77,5 +77,51 @@ class MacroMonitorTests(unittest.TestCase):
         self.assertEqual({item["reason"] for item in changes}, {"new_period", "same_period_revision"})
 
 
+
+class BpsFailureIsDiagnosableTests(unittest.TestCase):
+    """月频采集从 2026-08-25 起连报 "no recognized ... releases"，但那句话
+    对**两种相反的故障**是同一句：查询没取回条目 / 取回了条目但正则没认出来。
+    分不清就没法查，所以这里钉住「两种失败必须给出不同的、能据以行动的信息」。
+    """
+
+    def _payload(self, items):
+        return {"status": "OK", "data": [{"page": 1}, items]}
+
+    def test_empty_and_unparseable_are_not_the_same_message(self):
+        empty = self._payload([])
+        noise = self._payload([
+            {"title": "Berita Resmi Statistik Ekspor Impor", "abstract": "", "rl_date": "2026-08-01"},
+        ])
+        self.assertEqual(macro.bps_items(empty), [])
+        self.assertEqual(len(macro.bps_items(noise)), 1)
+        self.assertNotEqual(macro.parse_bps_releases(macro.bps_items(noise)), None)
+        # 解析结果都为空，但可诊断信息必须不同
+        self.assertEqual(macro.parse_bps_releases(macro.bps_items(noise)), [])
+
+    def test_api_level_rejection_states_the_api_message(self):
+        reason = macro.bps_reject_reason({"status": "Error", "message": "Data Tidak Ditemukan"})
+        self.assertIsNotNone(reason)
+        self.assertIn("Data Tidak Ditemukan", reason)
+
+    def test_shape_change_is_reported_as_a_shape_problem(self):
+        reason = macro.bps_reject_reason({"status": "OK", "data": "unexpected"})
+        self.assertIsNotNone(reason)
+        self.assertIn("结构", reason)
+
+    def test_a_usable_payload_has_no_reject_reason(self):
+        self.assertIsNone(macro.bps_reject_reason(self._payload([{"title": "x"}])))
+
+    def test_diagnostics_never_echo_the_api_key(self):
+        """key 在 URL 路径里。诊断信息只能来自响应体与标题，绝不能带上 URL。"""
+        source = MODULE_PATH.read_text(encoding="utf-8")
+        start = source.index("def collect_bps(")
+        block = source[start:source.index(chr(10) + "def ", start + 1)]
+        raise_at = block.index("raise ValueError(")
+        message = block[raise_at:]
+        for forbidden in ("url", "api_key", "BPS_API_BASE"):
+            self.assertNotIn(forbidden, message,
+                             f"诊断信息里出现了 {forbidden}，可能把含 key 的 URL 打进日志")
+
+
 if __name__ == "__main__":
     unittest.main()
