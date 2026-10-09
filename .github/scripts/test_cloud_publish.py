@@ -161,6 +161,26 @@ class CloudPublishCardTests(unittest.TestCase):
         self.assertIn("本次没有复用历史事件", card_text)
         self.assertNotIn("不应重放的旧事件", card_text)
 
+    def test_degraded_classifier_is_never_shown_as_normal(self):
+        """2026-10-07/08：DeepSeek 402，裁定层没跑起来，卡片却连推两天「正常」。"""
+        today = MODULE.dt.date.today().isoformat()
+        credit = {"date": today, "level": "normal"}
+        stability = {"date": today, "level": "degraded", "degraded": True,
+                     "degradedReason": "DeepSeek 分类失败(402 Payment Required)", "events": []}
+
+        def fake_read(path, default=None):
+            return credit if path.endswith("daily-credit-alert-pending.json") else default
+
+        with mock.patch.object(MODULE, "read_json", side_effect=fake_read):
+            with mock.patch.object(MODULE, "latest_stability_daily_event", return_value=stability):
+                with mock.patch.dict(MODULE.os.environ, {"STABILITY_STATUS": "success"}):
+                    summary = MODULE.daily_summary()
+
+        card = "\n".join(summary["lines"])
+        self.assertTrue(summary["risk"], "degraded 必须推送，不能静默")
+        self.assertIn("没判出来，不是没有风险", card)
+        self.assertIn("402", card, "要点名是什么挂了，否则没法修")
+
     def test_monthly_collector_failure_is_not_reported_as_healthy(self):
         with mock.patch.object(MODULE, "read_json", return_value={"boards": {"credit": []}}):
             with mock.patch.dict(MODULE.os.environ, {

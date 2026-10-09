@@ -315,11 +315,17 @@ def evidence_supported(quote: str, *haystacks: str) -> bool:
     return any(q in re.sub(r"\s+", "", h or "") for h in haystacks)
 
 
+class ClassifierUnavailable(RuntimeError):
+    """裁定层跑不起来。**「没判出来」不是「没有风险」**，必须让调用方看见并降级。"""
+
+
 def classify_events(items: list[dict], cfg: dict, today: str | None = None) -> list[dict]:
     """让 DeepSeek 从当日标题里挑出制度/政治骤变事件并给严重度。失败则返回空(不阻断)。"""
     llm = (cfg or {}).get("llm") or {}
     key = llm.get("api_key", "")
-    if not key or not items:
+    if not key:
+        raise ClassifierUnavailable("未配置 DEEPSEEK_API_KEY")
+    if not items:
         return []
     base = llm.get("base_url", "https://api.deepseek.com").rstrip("/")
     model = llm.get("model", "deepseek-chat")
@@ -384,8 +390,11 @@ def classify_events(items: list[dict], cfg: dict, today: str | None = None) -> l
         m = re.search(r"\[[\s\S]*\]", content)
         raw = json.loads(m.group(0)) if m else []
     except Exception as ex:
-        print(f"  ! DeepSeek 分类失败({str(ex)[:60]})，本日按无事件处理")
-        return []
+        # **不得静默退化成「今天没事」**。2026-10-07/08 DeepSeek 返回 402 Payment Required，
+        # 旧代码在这里 return []，于是连续两天报 level=normal、0 事件——而前六天天天 red。
+        # 飞书推的「正常」是假的。信贷侧早有 degraded 契约，稳定性侧一直缺这一条。
+        print(f"  ! DeepSeek 分类失败({str(ex)[:60]})，本日判定为 degraded（不是无事件）")
+        raise ClassifierUnavailable(str(ex)[:200]) from ex
 
     events = []
     dropped_foreign = []
@@ -471,7 +480,13 @@ def classify_events(items: list[dict], cfg: dict, today: str | None = None) -> l
 
 
 # ============ 3. 判级（严格证据门）============
-def grade(events: list[dict]) -> dict:
+def grade(events: list[dict], degraded: str | None = None) -> dict:
+    """degraded 非空表示裁定层没跑起来——级别锁定 degraded，不得报 normal。"""
+    if degraded:
+        return {"level": "degraded", "red": [], "highPending": [], "amber": [],
+                "acknowledgedQuiet": [], "resumedIds": [], "degradedReason": degraded,
+                "rule": "裁定层不可用，今日**没有判定结果**；这不等于没有风险。"
+                        "证据池记 degraded，不写 0 事件结论，需补跑后重判。"}
     red, high_pending, amber = [], [], []
     # 已确认且无实质进展的事件不参与定级——它仍在证据池里留痕，只是不再催办。
     # 语义与信贷侧一致：确认停止重复打扰，不抹掉历史。
@@ -501,6 +516,11 @@ def append_events(day: str, events: list[dict], graded: dict) -> pathlib.Path:
               "eventCount": len(events), "events": events,
               "humanReviewed": False,   # 人在环：未经复核不得直接进评分
               "generatedAt": dt.datetime.now().isoformat(timespec="seconds")}
+    if graded.get("degradedReason"):
+        # 周更读证据池时必须能分辨「这天真没事」与「这天没判出来」
+        record["degraded"] = True
+        record["degradedReason"] = graded["degradedReason"]
+        record["eventCount"] = None
     with path.open("a", encoding="utf-8") as f:
         f.write(json.dumps(record, ensure_ascii=False) + "\n")
     return path
@@ -568,8 +588,12 @@ def main() -> None:
     print(f"=== 印尼稳定性日频警报 {day} ===")
     items = fetch_today_news(args.days)
     print(f"  抓到 {len(items)} 条当日标题")
-    events = classify_events(items, load_yaml_config(), today=day)
-    graded = grade(events)
+    try:
+        events = classify_events(items, load_yaml_config(), today=day)
+        graded = grade(events)
+    except ClassifierUnavailable as ex:
+        events, graded = [], grade([], degraded=str(ex))
+        print(f"  ⚠ 本日降级：{ex}。证据池记 degraded，不产出「无事件」结论。")
     print(f"  识别事件 {len(events)} 个 → 级别: {graded['level'].upper()}"
           f" (红 {len(graded['red'])} / 高危待核 {len(graded['highPending'])} / 橙 {len(graded['amber'])})")
     for e in graded["red"] + graded["highPending"] + graded["amber"]:
