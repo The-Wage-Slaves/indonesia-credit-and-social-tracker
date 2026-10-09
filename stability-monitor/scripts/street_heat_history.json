@@ -764,5 +764,93 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-10-09",
+    "version": 3,
+    "heat": 31.5,
+    "suggested_score": 66,
+    "opposition": {
+      "status": "ok",
+      "rate": 50.3,
+      "detail": "250条中政治条目171条(浓度68%)，反对86/中性54/支持31 → 总反对率 50.3%（分侧: 民间YouTube 63% · 论坛Kaskus 10% · 媒体RSS 32%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 37.5,
+        "raw": {
+          "ratio_street": 0.41754916792738267,
+          "ratio_anger": 1.080763582966226,
+          "per_kw": {
+            "demo hari ini": 1,
+            "demonstrasi": 1,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 30,
+            "kejaksaan": 15,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 10
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 36.4,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 3,
+          "share": 18.218128464297358,
+          "examples": [
+            "MK Tolak Gugatan Deny Indrayana Dkk! Prof. Mahfud: Tidak Ada Bukti Ijazah Gibran",
+            "King Indo! Prabowo: Kita Bangga Timnas Indonesia Juara FIFA ASEAN Cup 2026",
+            "Prabowo Ternyata 2 Tahun ini Berkali-kali mau Disogok, Tapi Beliau Emoh!"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 5.0,
+        "raw": {
+          "n_searched": 146,
+          "n_big": 2
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 50.7,
+        "raw": {
+          "avg7": 0.010157142857142856,
+          "baseline": 0.010019444444444445,
+          "ratio": 1.013743118539348
+        }
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 54.5,
+        "raw": {
+          "avg_tone7": -3.4528428571428575
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 6.6,
+        "raw": {
+          "total": 152,
+          "matched": 1,
+          "share": 0.6578947368421052,
+          "examples": [
+            "[BBC Indonesia] Aktivis Khariq Anhar dijatuhi lima bulan penjara buntut meme 'timpa teks' demons"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]

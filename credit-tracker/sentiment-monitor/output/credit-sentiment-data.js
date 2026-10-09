@@ -1,7 +1,7 @@
 const CREDIT_SENTIMENT = {
   "schemaVersion": 2,
   "status": "pilot-pending-human-review",
-  "asOf": "2026-10-06",
+  "asOf": "2026-10-09",
   "cadence": "weekly-complete-weeks",
   "indexDirection": "0=calm; 100=acute attention/fear/event shock",
   "methodology": {
@@ -71,7 +71,7 @@ const CREDIT_SENTIMENT = {
       "label": "Google News RSS",
       "access": "public",
       "status": "ok",
-      "detail": "Collected 270 relevant records/signals."
+      "detail": "Collected 262 relevant records/signals."
     },
     "media_rss": {
       "family": "news",
@@ -91,8 +91,8 @@ const CREDIT_SENTIMENT = {
       "family": "social",
       "label": "Google Trends attention proxy",
       "access": "public",
-      "status": "failed",
-      "detail": "The request failed: Google returned a response with code 429"
+      "status": "ok",
+      "detail": "Collected 1 relevant records/signals."
     },
     "kaskus": {
       "family": "social",
@@ -106,7 +106,7 @@ const CREDIT_SENTIMENT = {
       "label": "YouTube videos + comments",
       "access": "api_key",
       "status": "ok",
-      "detail": "Collected 491 relevant records/signals."
+      "detail": "Collected 393 relevant records/signals."
     },
     "reddit": {
       "family": "social",
@@ -132,7 +132,7 @@ const CREDIT_SENTIMENT = {
     "actionableActive": [],
     "notificationLevel": "normal",
     "notificationReasons": [],
-    "suppressedCandidateCount": 35,
+    "suppressedCandidateCount": 29,
     "acknowledgedRetained": [],
     "acknowledgedSuppressed": [],
     "pendingHighSeverity": []
@@ -141,45 +141,46 @@ const CREDIT_SENTIMENT = {
     {
       "weekStart": "2026-09-21",
       "weekEnd": "2026-09-27",
-      "fearIndex": 72.9,
+      "fearIndex": 73.0,
       "dataStatus": "provisional-partial-coverage",
       "availableFormulaWeight": 1.0,
       "engines": {
         "news": {
-          "score": 70.7,
-          "volume": 84.4,
-          "negativity": 53.7,
-          "itemCount": 82,
-          "negativeShare": 7.1,
-          "uniqueSources": 57
+          "score": 70.3,
+          "volume": 84.1,
+          "negativity": 53.1,
+          "itemCount": 71,
+          "negativeShare": 8.2,
+          "uniqueSources": 49
         },
         "social": {
-          "score": 68.1,
+          "score": 71.2,
           "volume": 85.0,
-          "negativity": 51.1,
-          "itemCount": 196,
-          "negativeShare": 1.1,
+          "negativity": 57.5,
+          "itemCount": 139,
+          "negativeShare": 31.0,
           "platformCount": 1,
-          "engagementUnits": 270.1
+          "engagementUnits": 194.5
         }
       },
       "components": {
-        "newsVolume": 84.4,
-        "newsTone": 53.7,
+        "newsVolume": 84.1,
+        "newsTone": 53.1,
         "socialVolume": 85.0,
-        "socialNegativity": 51.1,
-        "severeEvent": 92.0
+        "socialNegativity": 57.5,
+        "severeEvent": 86.0
       },
-      "articleCount": 82,
-      "socialPostCount": 196,
-      "uniqueSourceCount": 57,
+      "articleCount": 71,
+      "socialPostCount": 139,
+      "uniqueSourceCount": 49,
       "socialPlatformCount": 1,
-      "negativeArticleShare": 7.1,
-      "negativeSocialShare": 1.1,
-      "confidence": 0.588,
+      "negativeArticleShare": 8.2,
+      "negativeSocialShare": 31.0,
+      "confidence": 0.656,
       "coverage": {
         "successfulChannels": [
           "google_news",
+          "google_trends",
           "youtube"
         ],
         "expectedChannels": [
@@ -193,11 +194,11 @@ const CREDIT_SENTIMENT = {
           "x"
         ],
         "newsChannels": 1,
-        "socialChannels": 1
+        "socialChannels": 2
       },
       "volumeNotes": {
-        "news": "Pilot week-on-week ratio: 10.38x; 2/8 baseline weeks.",
-        "social": "Pilot week-on-week ratio: 271.14x; 2/8 baseline weeks."
+        "news": "Pilot week-on-week ratio: 9.00x; 2/8 baseline weeks.",
+        "social": "Pilot week-on-week ratio: 195.53x; 2/8 baseline weeks."
       },
       "alert": {
         "level": "amber",
@@ -208,27 +209,29 @@ const CREDIT_SENTIMENT = {
         "actionableActive": [],
         "notificationLevel": "amber",
         "notificationReasons": [],
-        "suppressedCandidateCount": 18,
+        "suppressedCandidateCount": 16,
         "acknowledgedRetained": [],
         "acknowledgedSuppressed": [],
         "pendingHighSeverity": []
       },
       "events": [
         {
-          "id": "auto-2932d830918749c5",
-          "eventType": "regulatory_action",
-          "severity": 0.92,
-          "articleIds": [
-            "629b1cbabf6cd575"
+          "id": "auto-1eec10d948d3fc1d",
+          "eventType": "consumer_harm",
+          "severity": 0.86,
+          "articleIds": [],
+          "socialItemIds": [
+            "ef38f8227ffca2f9"
           ],
-          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "bogor.pojoksatu.id"
+            "youtube.social"
           ],
-          "platforms": [],
+          "platforms": [
+            "youtube"
+          ],
           "hasPrimarySource": false,
-          "headline": "Diduga Matel Hentikan Kendaraan di Jalur Tajur Bogor, Aturan OJK Soroti Penarikan Jaminan di Ruang Publik - Pojok Bogor - Pojok Bogor",
+          "headline": "iya bener klo lagi galbay jgn di install ulang lagi, saya ngetes install ulang adakami malah kena teror lagi...",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -281,7 +284,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "consumer_harm",
           "severity": 0.86,
           "articleIds": [
-            "431287ee58fbd430"
+            "e44063db2b7ba4a0"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -290,7 +293,29 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Download Duit Pasti Dana Kilat Pinjol Apk, Legal atau Ilegal OJK? Pengalaman Galbay, Sebar Data Kondar? - Berita DIY - beritadiy.pikiran-rakyat.com",
+          "headline": "Download Duit Pasti Dana Kilat Pinjol Apk, Legal atau Ilegal OJK? Pengalaman Galbay, Sebar Data Kondar? - Berita DIY - Berita DIY",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-e14a55c6283f12f7",
+          "eventType": "consumer_harm",
+          "severity": 0.86,
+          "articleIds": [],
+          "socialItemIds": [
+            "747ee9c0d5ec2e34"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Sekarang makin gila teror2 di pinjaman SAMIR. ADA KAMI. SPAY. KRDWAN. Terutama SAMIR kk sya bkn galbay tapi cuma jatuh t",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -337,26 +362,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-52dbb932f8783279",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [
-            "0f56ee35c823bef6"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "pdiperjuangan-jatim.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "DPRD Jatim Desak Pemprov Perketat Perlindungan Data Warga untuk Cegah Pinjol Ilegal - DPD PDI Perjuangan Jawa Timur",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-6644605ea9ff8e7b",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
@@ -377,40 +382,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-7b7b544b85b87559",
+          "id": "auto-81af9c1a64f10d05",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "b258148c5fc434b8"
+            "d9109d2c1b25d52d"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "radartegal.disway.id"
+            "harianbhirawa.co.id"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Waspada Jebakan Batman! Ini 5 Ciri-ciri Pinjol Ilegal Paling Licik yang Sering Mengincar Gen Z Tegal - radartegal.disway.id - Radartegal.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-86ad9360ba47d0b4",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [
-            "5b526fb1b07c651a"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "memorandum.disway.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "DPRD Jatim Dorong Pemprov Perkuat Pelindungan Data untuk Cegah Pinjol Ilegal - memorandum.disway.id - Memorandum.co.id",
+          "headline": "2.356 Aduan Pinjol Ilegal, Fraksi PDIP DPRD Jatim Desak Data Warga Diperketat - Harian Bhirawa",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -437,26 +422,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-8dde2d73be02913c",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [
-            "451e64e3eb86d176"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "gesuri.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Tingginya Pinjol Ilegal, Fraksi PDI Perjuangan Minta Pemprov Perkuat Perlindungan Data Pribadi - gesuri.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-b84e17b47cedd1cf",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
@@ -477,31 +442,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-beafa2750f12ecaa",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [
-            "0d2025067a86ca52"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "beritajatim.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Dua Ribuan Aduan Pinjol Ilegal, Fraksi PDIP DPRD Jatim Desak Perlindungan Data Warga Diperketat - beritajatim.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-d2e712507717ba7e",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "bac07da4827ac14c"
+            "645abda59e3248d8"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -510,7 +455,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Modus Pinjol Ilegal: Dapat Transfer Nyasar, Jangan Langsung Dikembalikan - jatimtimes.com",
+          "headline": "Modus Pinjol Ilegal: Dapat Transfer Nyasar, Jangan Langsung Dikembalikan - Jatimtimes",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -521,7 +466,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "07a7c54aec907c17"
+            "9ba459c628d41e9d"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -530,7 +475,27 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Pinjol Ilegal Terus Muncul Lagi Usai di Blokir OJK, Ternyata Pelaku Hanya Ganti Nama dan Aplikasi - wartaekonomi.co.id",
+          "headline": "Pinjol Ilegal Terus Muncul Lagi Usai di Blokir OJK, Ternyata Pelaku Hanya Ganti Nama dan Aplikasi - Warta Ekonomi",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-dbf507af22e1dbe8",
+          "eventType": "fraud_or_illegal_practice",
+          "severity": 0.74,
+          "articleIds": [
+            "c17cf33052e7e82b"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "beritadiy.pikiran-rakyat.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Tri Usaha Berkat Pinjol Apa? Apakah Penipuan? Ini Pengalaman Dapat Transferan dan Cara Mengembalikan - Berita DIY - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -541,7 +506,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "7e0af761b0e56b6b"
+            "2537fb16d3562aa1"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -550,7 +515,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Pinjol hingga Scam Mengintai, OJK Minta Literasi Finansial Dimulai dari Sekolah - wartaekonomi.co.id",
+          "headline": "Pinjol hingga Scam Mengintai, OJK Minta Literasi Finansial Dimulai dari Sekolah - Warta Ekonomi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -571,6 +536,28 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Bikin Resah! Kesbangpol Sleman Turun Tangan Cegah Judol dan Pinjol Ilegal dari Desa - Koran Jakarta ®",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-0ea612935604109b",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "9bb022e642b1d1da"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Kak,, saya galbay di shopee tp sy masih sering belanja di shopee,,, dgn cod,,tadinya akun saya dinonaktifkan tp sekarang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -613,6 +600,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Anjay mau coba lagi udah susah di ACC siapa tau ada yang tau gampang ACC kawan....\nMau main galbay lagi tapi data udah b",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-4415a76f61ce9541",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "b587a09563ef2b7b"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Lagi galbay tp mau uninstal aplikasinya bingung no hp nya sdh tdk aktip.\nKawatir saat instal ulang tdk bisa login lagi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -685,6 +694,72 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-8b04eed295844c52",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "44ca595b96a2aaea"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Sama kaya aku, kemaren mau ngajuin KPR eh malah keditek kredit macet pdhal gapernah galbay, bener saya pernah pinjol dan",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-949ea8e9cf18e662",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "cc5a2e999a7b127a"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Semangat GALBAY selamanya...✊️",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-a471204db9c48174",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "3ab40e1e0189ae5d"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Ini pelajaran buat kita semua . \nGalbay jaln 1,1 nya . fokus cari uang untuk makan , badan sehat pikiran sehat . jgn pik",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-a4b62ce70e06626f",
           "eventType": "credit_quality_stress",
           "severity": 0.58,
@@ -733,7 +808,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "credit_quality_stress",
           "severity": 0.58,
           "articleIds": [
-            "f4a6037d3239c92d"
+            "7046e521a06697a6"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -742,7 +817,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Download Pinjaman Plus Apk Sfile, Legal atau Ilegal OJK? Ada DC Lapangan? Ini Pengalaman Galbay Pinjam Plus - Berita DIY - beritadiy.pikiran-rakyat.com",
+          "headline": "Download Pinjaman Plus Apk Sfile, Legal atau Ilegal OJK? Ada DC Lapangan? Ini Pengalaman Galbay Pinjam Plus - Berita DIY - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -859,6 +934,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-f8dda45674f717a0",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "182c8fedb5cbd5d9"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Akulaku 300ribu dtng gak soalnya  baru bgt galbay mau sebulan😅",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-00234c0555cf3195",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -881,12 +978,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-017c1dce13f234cb",
+          "id": "auto-00e9810491908fa1",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "eecfd4fb201a12ad"
+            "7d6da5dac8c5c279"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -896,51 +993,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Bismillah semoga ada rezeki saya, buat oprasi benjolan di paha kaki🤲🤲🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-02ccfdee495da123",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "02a78192f53cdc8d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Alasan gamau pinjol, serem bgt",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-0664a66744f5dfd9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "74981bae86db3d8a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Mudah mudahan ada rejeki nya ,🤲🤲",
+          "headline": "Semoga ada rezeki \nBuat kebutuhan anak sekolah",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -963,6 +1016,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillah semoga dapat lumayan buat token listrik",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-0adfe829a54635e1",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "9aa0eb4484d628a4"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillah,, kalau dapat bisalah sarapan esok pagi😁",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1011,6 +1086,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-0b403afa16472001",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "bfb1da574f47cc39"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillah ...\nSemua ga dpet \nLagi nganggur 6 bulannn",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-0c0501e1f664bb47",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -1033,28 +1130,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0c2e93f3896b5985",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "beb0bbc157d03611"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah , semoga dapat untuk bayar cicilan yang sudah jatuh tempo besok 😥😥",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-0d7e29b1ccd96841",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -1069,6 +1144,26 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Pinjol hingga Fraud Mengintai, OJK Minta Generasi Muda Melek Keuangan - Infobanknews",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-0d8de02186cfbaa5",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "f73cfd194caa9465"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "suara.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Cara Hapus Jejak Data KTP yang Terindikasi Judol dan Pinjol - Suara.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1115,116 +1210,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0e61446ce64f57c6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "9dde917c409a47b6"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Baru pertama ngikutin.. nasip rakyat biasa jdi begini , minta bantu pemerintah yg ada selak mati wkwk otw pinjem",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-0ec4b21306d8354f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "5c149d4628be106d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semangat terus bang makin rame terus  chenel nya",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-12e6164ea9d3483b",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "e1401f36115b63aa"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga dapat buat modal usaha",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-12ec6d4016938812",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "7452d2118d78f6ff"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Tonggone Yo kompor bleduuukkkk",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-13a1154b6654ac90",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "1d02a2c81568b6ef"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "ada jg org mcm ni",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-158bed43f6c710dc",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -1241,50 +1226,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillahirrahmanirrahim, yaa Rabb semoga rezeki hamba ada dsni 🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-165603b108a8557d",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8a342e8b5f956973"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bang klw nor dana ny uda gak AKTIF bang ap ka bisa soalny nor dana aq uda hilang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-16b536fab8c33ce9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "9bcc3081e55027fd"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "minn ide yg lain dung,ini udh pernh nontn di chanel lain",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1335,12 +1276,52 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-1a8eee8678587472",
+          "id": "auto-1856e15a7489b51e",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "45709ab8998a2185"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "pantau.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Komisi XI DPR Dorong Transparansi Wakaf dan Pembuktian Peran Lembaga Penyelesaian Sengketa - pantau.com",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-1942f3e68f9974f9",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "153432a80d3d7405"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "tribratanews.polrespasuruankota.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Ulama Jadi Kompas, Polri Jaga Rasa Aman: Kapolri Teguhkan Kolaborasi untuk Bangun Negeri - https://tribratanews.polrespasuruankota.com/",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-1b0dced50eb34a6f",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "b8f3a09ab0568d72"
+            "b385d97fb7075f91"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -1350,7 +1331,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Buat bayar seragam anak sekolah..mudah mudahan ada rejeki...",
+          "headline": "Semoga beruntung , buat bayar hutang 🙏🙏",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1373,6 +1354,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillah dapet, buat sehari hari",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-1cebea6c3f02cb64",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "daadfd9d0ef7ea88"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Btuh buat beli sepeda adik.. Moga dapat.. Makasih bang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1403,7 +1406,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "34b3ba229ec5c142"
+            "1e1199539b50bf90"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -1412,29 +1415,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Ajukan KUR BRI 2026 Pakai KTP Bisa Cair 500 Juta Cicilan 1 Jutaan, Ini Syarat Tanpa Jaminan dan Tabel Pinjaman - Berita DIY - beritadiy.pikiran-rakyat.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-1e1efe494048c2bf",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8fc709e3c45075bf"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "NEKAT PINJOL AGAR TIDAK KALAH SAING DENGAN TETANGGA | Kartun Drama Animasi",
+          "headline": "Ajukan KUR BRI 2026 Pakai KTP Bisa Cair 500 Juta Cicilan 1 Jutaan, Ini Syarat Tanpa Jaminan dan Tabel Pinjaman - Berita DIY - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1507,32 +1488,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-2323ccfe8b6eb67c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "f64a1613925200b3"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "radarcirebon.disway.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "10 Provinsi dengan Utang Pinjol Terbesar, Jawa Barat Juaranya, Capai Rp 23,9 Triliun - radarcirebon.disway.id - Radar Cirebon",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-28dce0dfb6e358f1",
+          "id": "auto-216596382885e77f",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "394695d721fe49ed"
+            "e8fbe2adcaf9a801"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -1542,7 +1503,29 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Terimakasih yang udah nonton✨kalau kalian punya tetangga modelan kaya gini gimana?😂",
+          "headline": "Saya mau belanja di shope tapi memakai akun baru apakah boleh ?",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-25cf03b0675f0fff",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "05e6ed6592ed3897"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillah bang buat bayar kontrakan dan ngasih orang tua gw udh mau jatuh tempo tgl 30 ini😢",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1571,31 +1554,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-29a669940f66f7d5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "2cd475b0663a8a5f",
-            "bc18340951fbb60a",
-            "3358170cb800f23c",
-            "89194be18e1dafbc"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "amin",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-2a2dae5f5d189059",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -1612,6 +1570,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Wish me luck semoga dapat untuk kebutuhan sehari-hari",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-2b06872a2f1d20a6",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "cc0663db9c097968"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Semoga rejeki aku lewat jalan ini aamiin",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1682,28 +1662,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-30346ecf2624fb5d",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ade754399e3fda39"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Alhamdulillah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-309102368e25002c",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -1726,12 +1684,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-3107af7f08f13417",
+          "id": "auto-34ca896940a10c9b",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "33fb054cc3ec9495"
+            "991cd70f7d8e8fd0"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -1741,49 +1699,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Hadir bang semoga dapat rezeki buat kebutuha. Mendesak😊",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-339d6028cb36ed30",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "9c794698d6df807d"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "mediaaksara.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Cegah Pinjol, Judol, dan Narkoba, SPPG Al-Fathonah Perketat Pengawasan Relawan MBG ‎ - MediaAksara.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-34fb4248dc42f680",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "a902f4800f3eff83"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Tolong bang saya perlu biaya buat berobat ortu😢😢",
+          "headline": "Bismillahirrahmanirrahim Buat Anak Om😊😊",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -1832,178 +1748,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-378f11dc7566c7c7",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d7a2cf843c7483c5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Di up ulang ya mas",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-398c473c2334103c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "83bb6c24910916e4"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "kompasiana.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Melawan Pinjol dan Judol Lewat Filsafat Dakwah - Kompasiana.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-39bdb6d3c1db793b",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "af49ccc95a4ccaa6"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kelas king 😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-3b11d8116be427fc",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "388629b75e77fc7e"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Akhirnya bukan iklan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-3b3006936d777e42",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "7bc3e45de6c6700a"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "sumeks.disway.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Bahaya Pinjol yang Perlu Diwaspadai, Bisa Rugikan Keuangan hingga Data Pribadi - sumeks.disway.id - Sumeks",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-40c15135641e7351",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6c01dad9e569817a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Hadir bang, sehat sll, smoga dapet bismillah 🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-40f658016f82c6ba",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0c52952deeb106c4"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bagaimana cara pinjam uang undodana .sedangkan  spam nawarin berupa barang sedangkan saya butuh dana cash",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-41c4aa284b0e7e67",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "e666b271d928ef93"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "doa subuh bissmillah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-422e8c33bfda1048",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -2026,32 +1770,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-439bcd3f65bc82de",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "5a5f0ea1918353ca"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "radarpati.jawapos.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "7.363 Penerima Bansos di Sleman Terindikasi Judol, Utang Pinjol Tembus Rp1,4 Triliun - Radar Pati",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-457806dace487ba9",
+          "id": "auto-47c7c78664d2b376",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "da91fc03c0e8634a"
+            "848883fdcdbe9214"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -2061,117 +1785,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "bg kalo belum terhubung akun bisa keluar ga itu pinjamannya bg",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-45b89bb502762339",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "9af7380d91633ac2"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga beruntung",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-46bee459c00a63c3",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "09adfa5e6b0c7fdf"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Mantap bang..tetap semangat buat kontenya n banyak rezeki",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-46de789cd66b4a86",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "bca78b74497c472d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah semoga rezeki lancar🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-4837c26b739ba223",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "fc042735bf753b61"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Oke bang saya siap",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-48c29f800ceb7ba5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c270e4ab43ad4df8"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bukan iklan #skit #ngakak #fyp #drama #pinjol",
+          "headline": "info aja mba desi.hp sekarang udah canggih2 hp bisa ko di lock semua supaya g bisa kedetek sama apk.",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2198,12 +1812,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-4e629a27bae165b0",
+          "id": "auto-50e0189b3a8d6b56",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "b7ad394ab0e0d2f1"
+            "0dcd69c8b1375606"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -2213,51 +1827,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Aku sekarang mikir tetangga lagi tambah pusing 😂😂😂😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-4e6a1319dbe75056",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0a30722e95e9a273"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kalo nyadar ada beberapa dialog yg berubah 🗿",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-4f2130b1f540b40c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6a86bfeb5ad6a0d9"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Hadir abangku smoga sehat selalu",
+          "headline": "Kak cb bahas kemaren yg DC uang me menawarkan bayar pokok,tapi pas SDH dibayar malah mlh msh di datengi DC kerumh dng ju",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2330,12 +1900,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-56368ad98b0571ae",
+          "id": "auto-5638e22986d96dda",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "2f97b5894db65617"
+            "0cb95a51c1c0afdd"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -2345,7 +1915,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "ko lazada saya gada menu tagihan bg",
+          "headline": "bismillah bang lagi butuh uang buat bayar cicilan motor",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2378,84 +1948,16 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "63b118956054e3e7",
             "03586406ef308a76"
           ],
           "socialItemIds": [],
-          "independentSourceCount": 2,
+          "independentSourceCount": 1,
           "domains": [
-            "money.kompas.com",
-            "rbtv.disway.id"
+            "money.kompas.com"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Jangan Salah Pilih, Ini Daftar Pinjol Resmi OJK September 2026 - rbtv.disway.id - RBTV Disway",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-57f23178886ba34a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "acab4cef67f7e021"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semangat terus bng😊",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5937ce0c38591422",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "14aafa45b127e490"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "STOP Transfer Balik Kalo Ada yang Salah Transfer",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-596e5ad6d84fcf64",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "7645a71c58e42f85"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Ninggalin jejak sebelum rame",
+          "headline": "Jangan Salah Pilih, Ini Daftar Pinjol Resmi OJK September 2026 Terbaru - Kompas.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2478,6 +1980,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Hadir bang rg, next vidiio tentang pindar berada pada naungan sea bannk bang, selalu nunggu vidionya bang",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-5a21c473f6d0fd20",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "298840635af7041b"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Hadir bang, saya cuma butuh dana hanya untuk bayar uang kuliah sama belanja sja sih 😢🙌",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2548,28 +2072,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-5c6959a875f4a689",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ecde552d69035649"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga saya dapat ya Allah..buat nambah2 buat beli susu anak",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-5ca1b4f96045827c",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -2592,6 +2094,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-5d3e7b4e7a033df9",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "b3466f5b540491f9"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Ya allah buat bayar seragam olahraga dan buku anak sekolah",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-5d43f3e5561f6f80",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -2608,92 +2132,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "DATA BUSUK ACC?! Pinjol Mudah Cair 2026 ke DANA - Pinjol Data Pinjaman Online Langsung Cair",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5e33c574b4f59fd4",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "17368320b7ff99c8"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "rakyatcirebon.disway.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Mengubah Mahkota Budaya Menjadi Tameng Finansial, Saat Jaka Rara Cirebon Blusukan Edukasi Keuangan - https://rakyatcirebon.disway.id/ - Rakyat Cirebon",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5e6aa3e4e2e0784e",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "142d2790c98e3868"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga beruntung...amiinn",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5ea4589758a6125c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "5b2fb1ebd6691bad"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kurang Si pinjam",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5feceb66ffc86f38",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "978bf7b9d19ac743"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "0",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2740,50 +2178,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-62a33d816e83ce32",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b873f88b0f3590cb"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Betul kah itu bang bisa",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-63624a2ad0b1b3cd",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "14a7f5d4948b1081"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah semoga dapat buat bayar angsuran",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-6370d5c2310a00f0",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -2806,34 +2200,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-6451508eedad5288",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "585e24d095e0e131"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismillah semoga dapat bang buat kebutuhan sehari hari 😇",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-66b23b13a97bbc15",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "94564d7445d065d2",
             "58d9e3a5b17d2adf"
           ],
           "independentSourceCount": 1,
@@ -2844,19 +2215,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Bismillah, Alhamdulillah",
+          "headline": "Bismillah Alhamdulillah",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-66f55f451efee6d5",
+          "id": "auto-6773bb23e9ff0283",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "30f973b0f5413d10"
+            "c9238a18141f9d92"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -2866,19 +2237,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Hadir bang siap",
+          "headline": "Pengikut lama semoga dapet🎉",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-67c9f5b58e8cd8ad",
+          "id": "auto-6bc9aab17f03a773",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "a77d09400d711fc2"
+            "0ee8536f8952bcf5"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -2888,73 +2259,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "bismillah semoga dapat buat jajan anak sekolah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-68889ae3e5acfe02",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "788cf39a526c646d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Olah Sri Sri nama nya juga orang kek dia itu udah aplikasi pinjaman online nyari pekara hih Sri kalo aku jumpa orang Dar",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-69a00b8d95bdc94f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c2815a4b36b7bf9a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Haii la marni marniii. Seandainya kamu tidak mengikut rasa iri dan cemburu pada tetangga, tentu kamu hdup bahagia tanpa ",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-6b6668a43bb30bca",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "07aea2246c3486d0"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismilah lagi butuh bgt buat berobat adik🤲",
+          "headline": "Bismillah lagi bu bgt semoga dpt dana kaget bg",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -2987,7 +2292,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "69f0e75149c9fcd8"
+            "b0b3e29398e00885"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -2996,7 +2301,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Literasi Keuangan Bukan Cuma Wacana, Kredit Pintar Hadir di CFD Depok - wartaekonomi.co.id",
+          "headline": "Literasi Keuangan Bukan Cuma Wacana, Kredit Pintar Hadir di CFD Depok - Warta Ekonomi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3025,6 +2330,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-6d86461aac3bb5d3",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "a250ad3d133955f6"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Makin rame terus bang chnel nya di setiap upload nya",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-6db47746bb2ae4f6",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -3041,6 +2368,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismilah dapet bisa tambah untuk SPP anak",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-6f73975faf376572",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "d301bb547b250cc1"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Hoak,ga bisa cari aktifasi fitur pinjaman dana kilat",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3111,56 +2460,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-71d3dba369d79bb3",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "2bb90548306b442a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "hadir,  semangat bikin kontennya bang wicak",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-7434081fd57ced09",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8a5bdab123d04bd7"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Endorsenya ditarik ya bang😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-7770eb8e8f7c4eef",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "c64bdca48934a26b",
             "955f6ac0fdf947d6"
           ],
           "independentSourceCount": 1,
@@ -3178,44 +2482,40 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-77fd9beefc619a98",
+          "id": "auto-7943616228cbc042",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "42add1405e7dd3de"
+          "articleIds": [
+            "9cb32a0f40a9ed27"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "youtube.social"
+            "tempo.co"
           ],
-          "platforms": [
-            "youtube"
-          ],
+          "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Untuk memperbaiki hp.",
+          "headline": "Kenapa Status Pinjaman Penting Saat Ingin Membatalkan Kredivo? - Tempo.co",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-78e216d99675e5d8",
+          "id": "auto-79467eeae8a70926",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "f2291d8f9e432093"
+          "articleIds": [
+            "69f0eb7894293eec"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "youtube.social"
+            "pojoksatu.id"
           ],
-          "platforms": [
-            "youtube"
-          ],
+          "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Dua tetangganya jg tukang kompor2 in😂",
+          "headline": "Cara Kredit Motor Praktis Tanpa Survei Rumah - Pojoksatu.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3284,72 +2584,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-7c6a99c132463a9f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b4d37a44685385ef"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semangat terus bg ngonten nya",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-7df8a875d0598835",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6ca2b49ee7813836"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismilah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-7e15cd63f17a1be0",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "774dded0f42720f4"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga sukses bg.sehat selalu murah rezeky.semoga cepat berkembang youtube nya.amin",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-80a345c8e60fc1ac",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -3392,33 +2626,10 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-8333950cbe413ab6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "506071b386190c58"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Ok baik bang.trmksh",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-841830924440ee8c",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "9b3b1a081ef98976",
             "51ef0c3b4476d604"
           ],
           "socialItemIds": [],
@@ -3428,7 +2639,29 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "3 Cara Blokir Nomor Spam, Agar Terhidar Dari Tawaran Pinjol - Bloomberg Technoz",
+          "headline": "3 Cara Blokir Nomor Spam, Agar Terhidar Dari Tawaran Pinjol - Teknologi - Bloomberg Technoz",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-864161cea06fa97a",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "9435ba3da80ac917"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Saya pusing mau kebutuhan seragam and alat2 sekolah anak saya..",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3479,12 +2712,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-8d144387f88c2c1a",
+          "id": "auto-8cc818192dd13117",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "14cc114bb8a9708c"
+            "d24eeeeefc22020b"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -3494,7 +2727,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Pocong nagih pinjol 😂",
+          "headline": "Bismillah semoga aku yang menang kak buat biaya masuk kerja kak",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3514,19 +2747,39 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Bisalunas Rilis Formula Pelunasan Pinjol Tanpa Utang Baru - suara.com",
+          "headline": "Bisalunas Rilis Formula Pelunasan Pinjol Tanpa Utang Baru - Suara.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-90f226a985fd4e8c",
+          "id": "auto-95ee7c3473d4ef76",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "a43be66b0cf4d48d"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "pikiran-rakyat.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "4 Tips Lolos Verifikasi Pinjaman Uang dalam Sekali Coba - Pikiran-Rakyat.com - Pikiran-Rakyat.com",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-96f6c7d289e0ac19",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "eab294c3b5c2df5b"
+            "d66dc62cb0fbe1d3"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -3536,19 +2789,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Bnyak2 istighfar marni hadeuh😂😂😂capek amt hidup",
+          "headline": "Siyaaap bang, buat kebutuhan keluarga bang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-929016e8fa2324cd",
+          "id": "auto-9850e3cd71c7ed68",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "2d83d0d9c75fe9b7"
+            "9faa6d3eb8535e33"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -3558,19 +2811,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Smg dijauhkan dr hutang piutang....amin",
+          "headline": "Bismillah buat berobat orang tua amiinnn",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-93878a0e23dfae88",
+          "id": "auto-997e0d1fa3aa755d",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "9f61728fee788d4e"
+            "948d152bf8b54c92"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -3580,19 +2833,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "beda versi bukan iklan",
+          "headline": "Mbak klo di aplikasi kita GK ada catatan pinjaman trus tiba2 ada yg datang bilng kita punya hutang diaplikasi tersebut i",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-947a60af5d2faa16",
+          "id": "auto-9a5a5d5481dca03f",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "46e1050e77646c3e"
+            "64e36681714b3773"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -3602,95 +2855,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Assalamualaikum bang semoga dapat untuk perbaikan motor",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-94a04d867c96eb7a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b57e5f68e011bc54"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "mas deni udah kaya ga bikin iklan lagi loh ya 😹🤭",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-956314ca56758fd2",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "fcbc8a56c097be11"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Selalu setia bang nungguin video terbaru",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-976829732d7a0a7f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6822e15f3b53d3fc"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah buat bayar kontrakan yang dah numpuk 3bln😢",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-99d3078174c1651b",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "50bd6cab5e49d345"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "semangat bosku🎉",
+          "headline": "hadir terus walau gk paling awal🙏🏼🙏🏼",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3721,7 +2886,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "e147f6b1a00f97b1"
+            "79ff1c094a48c33b"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -3730,7 +2895,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": true,
-          "headline": "Gelar Patroli Malam Bersama Jaga Warga di Cokrodirjan, Bhabinkamtibmas Polsek Danurejan Sosialisasi Pencegahan Judol dan Pinjol - jogja.polri.go.id",
+          "headline": "Gelar Patroli Malam Bersama Jaga Warga di Cokrodirjan, Bhabinkamtibmas Polsek Danurejan Sosialisasi Pencegahan Judol dan Pinjol - Polda DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3781,22 +2946,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-9fb8da281464bf9b",
+          "id": "auto-9d43916fbcd84631",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "febc32a3e8d70637"
+          "articleIds": [
+            "78055723c3e44092"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "youtube.social"
+            "trenasia.id"
           ],
-          "platforms": [
-            "youtube"
-          ],
+          "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Semoga saya dapat ya allah",
+          "headline": "Tembus Rp23,94 Triliun, Kenapa Orang Jabar Getol Pinjol? - TrenAsia",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3838,21 +3001,19 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Hikayat Negeri Pinjol: Menelusuri Jejak Dana Himbara di Balik Ledakan Utang Pinjaman Digital - afu.id",
+          "headline": "Hikayat Negeri Pinjol: Menelusuri Jejak Dana Himbara di Balik Ledakan Utang Pinjaman Digital - AFU.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a1dd395c19f3a1f7",
+          "id": "auto-a1b0aa3d7d3de73e",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "42522453fa66ac24",
-            "32be0c90f4df5e45",
-            "86791fbdbae2f440"
+            "2ac394b6acb62f2c"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -3862,7 +3023,29 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Bismillah",
+          "headline": "ADAKAMI, AKULAKU, LUMBUNG DANA, EASYCASH, SAMIR, UATAS KREDIVO, SHOPEE DLL",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-a2576a1449240c25",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "79dde7c36328db79"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Hpus aja izin apk'a",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -3935,50 +3118,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a489fb5676368261",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "a1abf5e9543e9acf"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Iya semoga jdi berkah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a778d0de93f8ad37",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "58d4e926ab9aa21d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Saking sibuknya pingin terlihat kaya ,sampek Daster nya bu marni lupa gak ganti sampek berminggu minggu 😂😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-a84e6242b03264da",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -4005,7 +3144,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "7ae63e8cf509972a"
+            "a68bfad22ca099f4"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -4015,28 +3154,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Jangan Terkecoh Tampilan Mewah! Begini Cara Akurat Bedakan Aplikasi Pinjol Berizin OJK dan Sindikat Palsu - radartegal.disway.id - Radartegal.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a8face81b9a061da",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b3e3cb3efe70e2d7"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "PINJOL VISIT KAMPUNG MAK BETI | #makbeti #makbetiterbaru #makbetiterbaru2026 #filmmakbeti #beti",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4065,72 +3182,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a9c3eb2e6be19d62",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d3b8cedab2cce4d2"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah buat bayar BPJS anak saya bang lagi sakit panas muntaber🙏",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a9f4090572e87754",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "2839c0c4699e8783"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga beruntung bagi bagi nya🙏",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-aa6a805bc460ffb0",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "34f841ea8c9e0783"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah bang semoga dpt, sehat selalu dan lancar rejekinya",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-ad36ced35d2af5c1",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -4147,50 +3198,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismilah aja bang buat makan dan kebutuhan sehari hari",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-ad4851a901fbff4f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "dc561a7e74c8d28b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semangat bang, terbaik😊",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-ae3fabec0a739a80",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b04f14c2aae46c10"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "mas bisa bantu aku ga mas aku abis kehilangan dompet,dan ada angsuran motor yang harus aku bayar tapi malah ilang uang n",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4219,33 +3226,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-b2fd50ffc502f9a3",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d7e6fb133ae401d5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismillah ya Allah semoga rezeki hamba.buat bayar anak sekolah bang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-b4473a1453a2ff39",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "25fec30bbe2bfa72"
+            "a7c12118ae754726"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -4254,49 +3239,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Utang Pinjol Masyarakat Menggunung, AFPI Putar Otak Guna Cegah Nasabah Gali Lubang Tutup Lubang - wartaekonomi.co.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-b52321e37d8d8291",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "975fe2515943e899"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Mantap bang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-b5605f12fcfda0e9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "eb7e4e40a3795f5b"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "megapolitan.antaranews.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Rayakan Ulang Tahun ke-9, Kredit Pintar ajak Warga Depok melek finansial - ANTARA News Megapolitan",
+          "headline": "Utang Pinjol Masyarakat Menggunung, AFPI Putar Otak Guna Cegah Nasabah Gali Lubang Tutup Lubang - Warta Ekonomi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4323,12 +3266,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-b953bc5b503ea9e8",
+          "id": "auto-b8a99bfdbe9f2549",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "c2480a8ab02458bd"
+            "69d951e17f61bffe"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4338,7 +3281,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Istri kayak gitu mening buang aja bang nyusahin😢😅😂😅😂😅😂😅",
+          "headline": "bissmillah semoga dapat , udah seminggu ga pegang uang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4453,26 +3396,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-bc776b34d68de59f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "819d6b111463f7eb"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "tribratanews.polri.go.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": true,
-          "headline": "Jumat Curhat Polda Sulteng, Imbau Masyarakat Waspadai Narkob - Tribrata News",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-bcfa5b74ad157896",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -4499,7 +3422,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "16618cab024da8a6"
+            "af5bb49b77864476"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -4508,7 +3431,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Download BitTV v2.1.7 New-Obsidian Sfile Mobi untuk HP, STB dan Android TV atau Google TV - Berita DIY - beritadiy.pikiran-rakyat.com",
+          "headline": "Download BitTV v2.1.7 New-Obsidian Sfile Mobi untuk HP, STB dan Android TV atau Google TV - Berita DIY - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4528,7 +3451,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Cara Bayar Multi Payment di Livin Mandiri - kompak.or.id",
+          "headline": "Cara Bayar Multi Payment di Livin Mandiri - Kompak.or.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4577,26 +3500,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-bf3386d42a068743",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "2eb33efa68b0772f"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "keuangan.kontan.co.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Peminjam Usia Produktif Sumbang Kredit Bermasalah Terbesar, Pinjol Perketat Seleksi - kontan.co.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-bf4336995d2eabc5",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -4611,28 +3514,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Tok! OJK Terbitkan Aturan Baru, Saham Bursa Efek Kini Bisa Dimiliki Publik - Detik 60 - Detik 60",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-c0a91d42ec107dd6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8cb1759536db65fc"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "tetangga ga bnr mlh jd kompor",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4679,12 +3560,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-c1fc18a68b8c7bb7",
+          "id": "auto-c382c387e59a03c7",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "0f4e8e5de01fa0b8"
+            "870012519e4e540d"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4694,51 +3575,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Tetangganya toxic semua njir 😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-c3e09ceb4b78b8bf",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b7d5821337f1ae7b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Susah bang, udah aku coba kemarin sebelum nonton video ini gaada yang cair",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-c5434cffd5f944a4",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "7780aab640948745"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah buat ongkos nyari kerja🙏🙏🙏🙏🙏",
+          "headline": "hadir bang buat bayar ujian sekolah 🙏🏻",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4809,12 +3646,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-c9a931386e8f97eb",
+          "id": "auto-c7f222e6aa37a479",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "90fc0ec57f602984"
+            "8257d794c8167100"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4824,29 +3661,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Akhirnya ada video yg gak ada iklannya",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-ca4e487bb156a036",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "a71c92a56e172e85"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Seru ih nemenin sahur aku🥰",
+          "headline": "Bismilah semoga dapat buat beli sepatu anak 🤲",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4878,7 +3693,7 @@ const CREDIT_SENTIMENT = {
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "7ff1dbca823951db"
+            "f21f91cd9732d35c"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4888,7 +3703,29 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Kak semoga aku yang menang kak buat biaya masuk kerja kak semoga ini beneran nyata",
+          "headline": "Kak semoga aku yang menang kak buat biaya masuk kerja kak",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-ccdb68edfac15e3c",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "2c0caa488dd967c4"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Kemiskinan akibat minjam cpt pinjol😂😂",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -4908,19 +3745,19 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Jangan Salah Pilih, Ini Ciri Pinjaman Online Cepat Cair yang Resmi OJK - suara.com",
+          "headline": "Jangan Salah Pilih, Ini Ciri Pinjaman Online Cepat Cair yang Resmi OJK - Suara.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-d047c29a493e5067",
+          "id": "auto-cf93197dd9b6c7bc",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "7c53e3f61cf32a10"
+            "9b808a0c6f86d329"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4930,19 +3767,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Perdana lihat Chanel ini",
+          "headline": "Bismillah buat ngasih orang tua bang,, 🙏",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-d0f99c00c0d6df5c",
+          "id": "auto-d05b01bc51679ad7",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "31d8ac0eb95feb22"
+            "c96b41f4bfbd054c"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4952,19 +3789,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "first. pertama kali nonton channel ini🎉",
+          "headline": "Saya instal ulang aplikasi, tapi di aplikasi tagihan nol apakah lunas?",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-d1cdf35c7f5e90e3",
+          "id": "auto-d0edeb23faff907f",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "6f75ab159944c135"
+            "944982553f2c9fb2"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4974,19 +3811,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Makasih infonya",
+          "headline": "bismilah semoga dapet buat bayar motor🤲🏻🤲🏻",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-d2e657cdd636f9e3",
+          "id": "auto-d26aed6afea8e70a",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "fc10a52de5536973"
+            "515d6dc6389b6f05"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -4996,7 +3833,51 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Cara Pinjam Uang di Dana | Cara Pinjam Saldo Dana",
+          "headline": "Bismillah buat ngopiiii",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-d64e9748f89ad1c3",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "491fa433a3e6b4eb"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillah buat biaya berobat ibu mertua yg lgi di rumah sakit ❤❤",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-d727415f6cfd6af9",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "a520a3d6e65516a9"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismilah buat sekolah anak dan biaya keluarga",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5025,6 +3906,94 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-d7993c0c07d8cc54",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "fe57704512467b2d"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "kak maaf klo pihak 3 mba consult dari spaylater,apakah akan visit ke rumah daerah bdg?terima kasih yg udah jwb",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-d9c34df740e8c166",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "8cdd2b7e3a0742a8"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Semoga menang ❤❤\nKalo menang bisa beli buku tulis anak",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-dc26eba7b7c715a0",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "c15f37ed9f98f9f7"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Semoga rezeki ku bang lgi nganggur buat bertahan hidup",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-dc544d7b7c54c7a7",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "306d0971e7e3b96d"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Semangat dan lancar trs",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-dc56ec5cfcd3cb2a",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -5039,28 +4008,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Sri Untari Minta Pemda di Jatim Petakan Warga dengan Gangguan Kesehatan Mental - https://dprd.jatimprov.go.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-dc84feb400b63fee",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ddec3cb7a1841adc"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Buat bayar uang kos karena orang tua lagi terkena dampak gempa Flores😢",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5089,28 +4036,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-dcea2206bcbc61db",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0d1194336207a6c3"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga dapat buat modal usaha kecil\"an",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-de30f9b9ed65fc3e",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -5127,28 +4052,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "hadir paduka raja",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-de869e2e71a4e6ba",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "27d44ee7aedb8fa6"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Aminnn",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5239,70 +4142,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-e39d5ddd56506af1",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d01b9d8be9d15780"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Lancar terus YouTubenya bang🎉❤",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-e3b0c44298fc1c14",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ab7646cbc959b0c5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "𝐈𝐭𝐮 𝐛𝐭𝐮𝐥 𝐤𝐚𝐡 𝐛𝐢𝐬𝐚",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-e5c9cd806caac57f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "81b5bdb7bcee1d2b"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "beritamanado.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "25 Merek Beras Fortifikasi Ditarik, Pemerintah Pastikan Stok Beras Premium Aman - BeritaManado.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-e6a894169aaf817f",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -5319,26 +4158,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "❤❤❤ infonya mencerahkan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-e82cb764bcecaa1c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "e49b66907634ae93"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suarapembaharuan.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Biang Kerok Blackout PLN, CERI Tuding Dirjen Minerba ESDM Teledor - Suara Pembaharuan",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5367,12 +4186,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-eccb18787847aabc",
+          "id": "auto-ed21e2b1cd76e796",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "9f72d74c564b74cf"
+            "c0ab876290722174"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -5382,19 +4201,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Bismillah, mama lagi skit dirs bingung cari uang daftar pinjol sana sini gak acc😢",
+          "headline": "Mau buat bayar uang gedung sekolah bang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-ee90e9c3c8ed1d8a",
+          "id": "auto-ed85ba712eb326d8",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "98fa08c2fe6c876b"
+            "7f513daf73b30cc2"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -5404,7 +4223,51 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Speedrun ancurin idup",
+          "headline": "bismillah rezeki hamba tuhan semoga menang",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-eee173c7ab1ce480",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "bb1ee8b65331a1fe"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Hadir bos,untuk kebutuhan sehari-hari",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-eff74c204095220c",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "43c154dcf8c1f278"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillahirrahmanirrahim bang buat biaya lahiran anak ke 2 semoga ada rezekinya buat istri dan anak ku bng min❤",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5455,97 +4318,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-f06b899178955430",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "6a84c9acacff48b7"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "beritabernas.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Pinjol dan Perdagangan Manusia, Dua Isu Krusial Ikut Dibahas dalam Rapat Pleno KPKC KAS - beritabernas.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f155a7abac2b2fc6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "73738112809c2ee7"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismilah buat bayar sekolah anak",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f286c4d5f2c297c6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b8ce6db14041da20"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "sukses cerita abang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f419f4100b6d6752",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "4dd834a6a8f0b770"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Oh. Ada versi ga iklan ya bang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-f4a21cbf7e1ce9c3",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "3b6f572865c68a23"
+            "80708f2834d8b923"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -5554,7 +4331,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "10 Aplikasi Pinjol Terpopuler di Indonesia, Siapa Teratas? | Pusat Data Ekonomi dan Bisnis Indonesia | Databoks - Databoks",
+          "headline": "10 Aplikasi Pinjol Terpopuler di Indonesia, Siapa Teratas? | Pusat Data Ekonomi dan Bisnis Indonesia | Databoks - Databoks Katadata",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5583,26 +4360,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-f5984de186b5367d",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "5beacd54b5a788f6"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "nova.grid.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Sering Telat Bayar SPaylater, Begini Pengaruhnya terhadap SLIK OJK - Grid.ID",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-f6330b09c9e8b208",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -5619,28 +4376,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillah dapat dana kaget buat beli mata mesin cukur😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f70a462ba5898b0a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "791856bcb01ed112"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah menag ❤❤❤🎉🎉🎉",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5669,48 +4404,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-f7bcad0c280d3a31",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "ff0247abe0cbd518"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "tabengan.co.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Diduga Karena Pinjol, Suami Bunuh Isteri Didepan Anak, Dua Tahun Baru Terungkap - Tabengan Online",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f9b1e9bf008f4498",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "cce983245d8e03e5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah... moga dpt rejekinya buat kebutuhan anak sekolah 🤲🏻",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-fa3c04a2545c9dca",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -5733,28 +4426,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-fa61c2257d00b9e5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "06f001ea2e7d5bff"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "versi iklan nya lebih memarik sih, tapi tetap kocak",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-fb9da7771364fa36",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -5768,19 +4439,19 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Cegah Judol dan Pinjol, Satops Patnal Lapas Lhoksukon Razia HP Pegawai - waspada.id",
+          "headline": "Cegah Judol dan Pinjol, Satops Patnal Lapas Lhoksukon Razia HP Pegawai - Waspada.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-fbc5bf4f786dabad",
+          "id": "auto-fe8a26a4698ed390",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "ce3e4a475ff6d585"
+            "981b234ea13f3a21"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -5790,29 +4461,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Aminn",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-fe11ae4021a198ec",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "eb40a1d8bd33a1e3"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Sukses selalu sehat terus bang semoga info yang abang buat menjadi amal aamiin\n\nBismillah untuk bantu anak sekolah tk",
+          "headline": "Bismillah semoga menang buat biaya masuk kerja kak pengen ngerasain menang kak",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5841,11 +4490,33 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-ffa79a427fd42b6f",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "71304bc21885b65f"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Ijin subscribe bang...... moga bermanfaat bagi kita semua",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "pindar-tadpole-practice-2026-07",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "ae1faf93d4b0d2fa",
+            "f3dedeeab06317b5",
             "1a940feb1ef862b7"
           ],
           "socialItemIds": [],
@@ -5855,7 +4526,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Foto : Tadpole Pinjol Harus Berpihak pada Konsumen Halaman 1 - Kompas.com",
+          "headline": "Foto : Tadpole Pinjol Harus Berpihak pada Konsumen - Kompas.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5882,11 +4553,31 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a1091d9d01576b62",
+          "id": "auto-3cd4fed10e213cb3",
           "eventType": "industry_update",
           "severity": 0.18,
           "articleIds": [
-            "8e29e780a5711c67"
+            "6344c87490a1ac6f"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "infobanknews.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "OJK Dorong Pindar Ekspansi ke Luar Jawa, Pembiayaan Tumbuh 29,06 Persen - Infobanknews",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-7f2bae1b4d79038b",
+          "eventType": "industry_update",
+          "severity": 0.18,
+          "articleIds": [
+            "f8261b3b18e3eeec"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -5895,7 +4586,27 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Pindar Tumbuh 25,88% Jadi Rp105 Triliun, Pengamat Soroti Nasabah Unbankable - wartaekonomi.co.id",
+          "headline": "OJK Ungkap Pembiayaan Produktif Tumbuh Setelah Bunga Mekaar Disesuaikan Jadi 8% - Warta Ekonomi",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-a1091d9d01576b62",
+          "eventType": "industry_update",
+          "severity": 0.18,
+          "articleIds": [
+            "eb3fc8d461b600f1"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "wartaekonomi.co.id"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Pindar Tumbuh 25,88% Jadi Rp105 Triliun, Pengamat Soroti Nasabah Unbankable - Warta Ekonomi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5906,7 +4617,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "industry_update",
           "severity": 0.18,
           "articleIds": [
-            "b918d1a4cfed780b"
+            "cfeeeb8c2d8005f5"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -5915,7 +4626,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Juli 2026 : OJK Catat Pembiayaan Pindar ke Luar Jawa Tumbuh 29,06% - duniafintech.com",
+          "headline": "Juli 2026 : OJK Catat Pembiayaan Pindar ke Luar Jawa Tumbuh 29,06% - Dunia Fintech",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -5923,57 +4634,52 @@ const CREDIT_SENTIMENT = {
         }
       ],
       "articleIds": [
-        "f64a1613925200b3",
-        "81b5bdb7bcee1d2b",
-        "9b3b1a081ef98976",
         "51ef0c3b4476d604",
-        "34b3ba229ec5c142",
-        "e49b66907634ae93",
-        "7ae63e8cf509972a",
+        "1e1199539b50bf90",
+        "f73cfd194caa9465",
+        "a68bfad22ca099f4",
         "1f58bf2daa1c1dd5",
-        "07a7c54aec907c17",
-        "eb7e4e40a3795f5b",
+        "9ba459c628d41e9d",
         "4883b4f7f3c05bbb",
-        "b258148c5fc434b8",
         "4e20fcf5939af108",
         "01ea40774267ec39",
         "e8fab4932baa985c",
         "831d5942cba9f006",
         "b0ee585c1a1897b4",
-        "ae1faf93d4b0d2fa",
-        "63b118956054e3e7",
-        "69f0e75149c9fcd8",
+        "f3dedeeab06317b5",
+        "b0b3e29398e00885",
         "f28c9d689c04c42b",
-        "17368320b7ff99c8",
+        "6344c87490a1ac6f",
+        "f8261b3b18e3eeec",
         "04ab79a6749a2e0e",
         "0441f1b9e4405403",
         "1a940feb1ef862b7",
         "00fe9088fc4645d4",
-        "25fec30bbe2bfa72",
+        "a7c12118ae754726",
         "24d55cfe2ede4e86",
         "e86bde4d42d0c8e2",
         "1405ab765b94326d",
-        "250ca438dd9602f3",
-        "ff0247abe0cbd518",
         "fa557c94b976ea17",
-        "b918d1a4cfed780b",
+        "cfeeeb8c2d8005f5",
+        "45709ab8998a2185",
         "e46046bad866f903",
         "0902ae05e880ed4a",
-        "5beacd54b5a788f6",
         "acd8856e13fc4b60",
+        "d9109d2c1b25d52d",
         "5db7e603c517303e",
         "c5f3387bed1d11f2",
+        "250ca438dd9602f3",
         "031c84d7fca428dc",
         "ddea7b5f19f4389e",
-        "0d2025067a86ca52",
         "f7ce210d7887c77b",
         "5a48ad9383f37eb4",
         "3f36def39043fd5b",
         "da21799579c6f9c3",
-        "8e29e780a5711c67",
-        "7e0af761b0e56b6b",
+        "eb3fc8d461b600f1",
+        "2537fb16d3562aa1",
+        "78055723c3e44092",
         "723c3210ce5a30ee",
-        "9c794698d6df807d",
+        "a43be66b0cf4d48d",
         "ed6fb3e33202dcdd",
         "9078506cfc8cd47c",
         "beaab641af9cb358",
@@ -5985,25 +4691,19 @@ const CREDIT_SENTIMENT = {
         "642035cf3106a98e",
         "57e787b1decc3e4f",
         "99e413f68f37fb7b",
-        "3b6f572865c68a23",
-        "5a5f0ea1918353ca",
-        "7bc3e45de6c6700a",
+        "c17cf33052e7e82b",
+        "80708f2834d8b923",
         "8ed2511f8d5cb73c",
-        "5b526fb1b07c651a",
-        "629b1cbabf6cd575",
-        "f4a6037d3239c92d",
-        "83bb6c24910916e4",
+        "69f0eb7894293eec",
+        "7046e521a06697a6",
+        "9cb32a0f40a9ed27",
         "b5ac04e92a7e073f",
-        "0f56ee35c823bef6",
-        "16618cab024da8a6",
-        "431287ee58fbd430",
-        "e147f6b1a00f97b1",
-        "819d6b111463f7eb",
-        "bac07da4827ac14c",
-        "2eb33efa68b0772f",
-        "6a84c9acacff48b7",
+        "af5bb49b77864476",
+        "e44063db2b7ba4a0",
+        "79ff1c094a48c33b",
+        "645abda59e3248d8",
         "c5cb831423f6d6f7",
-        "451e64e3eb86d176",
+        "153432a80d3d7405",
         "99c2dd9f2830eefd"
       ],
       "socialItemIds": [
@@ -6011,9 +4711,8 @@ const CREDIT_SENTIMENT = {
         "2cbaa1b07c406ba2",
         "c03cd144af712f06",
         "2459c3ae3e575f1f",
-        "af49ccc95a4ccaa6",
-        "d01b9d8be9d15780",
         "bf819ba6a8f47825",
+        "c0ab876290722174",
         "b1a9dd732932d3c2",
         "43f13921b7a56478",
         "efc95cfa02e732b3",
@@ -6024,77 +4723,70 @@ const CREDIT_SENTIMENT = {
         "93735d86fbd72bfd",
         "b610f09c9c043578",
         "35065371c871f92b",
-        "c64bdca48934a26b",
-        "42522453fa66ac24",
+        "2ac394b6acb62f2c",
         "6499f2f86c2805d9",
-        "bca78b74497c472d",
+        "05e6ed6592ed3897",
+        "9faa6d3eb8535e33",
         "76ab271e50f8b57a",
+        "43c154dcf8c1f278",
         "d07e9a91601ebe9d",
         "717be819c5b8470f",
-        "09adfa5e6b0c7fdf",
-        "8fc709e3c45075bf",
+        "d301bb547b250cc1",
+        "79dde7c36328db79",
+        "0dcd69c8b1375606",
+        "9bb022e642b1d1da",
+        "b587a09563ef2b7b",
         "a384d26e32d4bac3",
-        "9af7380d91633ac2",
-        "a71c92a56e172e85",
-        "a902f4800f3eff83",
-        "d7e6fb133ae401d5",
-        "31d8ac0eb95feb22",
+        "44ca595b96a2aaea",
+        "c96b41f4bfbd054c",
+        "e8fbe2adcaf9a801",
+        "cc5a2e999a7b127a",
+        "8cdd2b7e3a0742a8",
+        "944982553f2c9fb2",
+        "7f513daf73b30cc2",
+        "fe57704512467b2d",
         "fa269b5262b50407",
-        "50bd6cab5e49d345",
-        "b8ce6db14041da20",
-        "978bf7b9d19ac743",
+        "182c8fedb5cbd5d9",
         "5ccdcf9200e368e5",
+        "515d6dc6389b6f05",
         "9192ab6652c545c0",
         "f8c3bfda82e31db6",
-        "94564d7445d065d2",
+        "991cd70f7d8e8fd0",
         "60df1b95b78754ae",
         "ede87afb19c70e1e",
         "6dc1b33c7091e2c8",
-        "6a86bfeb5ad6a0d9",
-        "c2480a8ab02458bd",
-        "506071b386190c58",
-        "fc042735bf753b61",
-        "7c53e3f61cf32a10",
-        "58d4e926ab9aa21d",
+        "f21f91cd9732d35c",
         "6b4726b04a103d0e",
-        "b4d37a44685385ef",
-        "acab4cef67f7e021",
-        "2839c0c4699e8783",
-        "142d2790c98e3868",
-        "0d1194336207a6c3",
-        "774dded0f42720f4",
-        "b7d5821337f1ae7b",
+        "9435ba3da80ac917",
+        "747ee9c0d5ec2e34",
         "dd7a854e411ca5b9",
-        "1d02a2c81568b6ef",
         "1fe590e69daace23",
-        "da91fc03c0e8634a",
+        "0cb95a51c1c0afdd",
         "60b3236767ed25ad",
+        "64e36681714b3773",
+        "848883fdcdbe9214",
         "990425f9c9e2bc90",
-        "9bcc3081e55027fd",
-        "b7ad394ab0e0d2f1",
         "5118e8e07bfd333e",
         "dbdca98d73890da2",
-        "6ca2b49ee7813836",
+        "bfb1da574f47cc39",
         "f523a874044be60b",
-        "34f841ea8c9e0783",
         "902e1e645b93e40b",
         "82944262b412341d",
         "0ca2ceb4df8231ae",
+        "d24eeeeefc22020b",
         "916f9c63e0bafdbf",
         "3956f04d51521f74",
         "63cbfc135dd245ab",
-        "c2815a4b36b7bf9a",
+        "bb1ee8b65331a1fe",
+        "3ab40e1e0189ae5d",
+        "948d152bf8b54c92",
+        "b385d97fb7075f91",
         "771028051ff28e78",
-        "394695d721fe49ed",
-        "7452d2118d78f6ff",
-        "42add1405e7dd3de",
         "902c679e6fdc0491",
-        "2cd475b0663a8a5f",
-        "07aea2246c3486d0",
         "fa6128be0aa8ad29",
         "abce0f000074a70c",
+        "ef38f8227ffca2f9",
         "c74a1c881e97176b",
-        "8cb1759536db65fc",
         "c17cc167ccfefcff",
         "afc482dd73ccb6ae",
         "0721575a2a432f93",
@@ -6102,153 +4794,105 @@ const CREDIT_SENTIMENT = {
         "740226010c43308c",
         "739698e975f02d31",
         "04347e03a8631d37",
-        "eab294c3b5c2df5b",
-        "f2291d8f9e432093",
-        "975fe2515943e899",
+        "298840635af7041b",
         "3958fdc8c31c7dad",
-        "14cc114bb8a9708c",
-        "0f4e8e5de01fa0b8",
-        "e666b271d928ef93",
-        "b04f14c2aae46c10",
+        "cc0663db9c097968",
         "955f6ac0fdf947d6",
-        "ade754399e3fda39",
-        "bc18340951fbb60a",
-        "3358170cb800f23c",
-        "ce3e4a475ff6d585",
-        "46e1050e77646c3e",
-        "8a342e8b5f956973",
-        "9dde917c409a47b6",
-        "b873f88b0f3590cb",
         "6b5b3d88774fafb8",
-        "32be0c90f4df5e45",
-        "86791fbdbae2f440",
-        "beb0bbc157d03611",
         "58d9e3a5b17d2adf",
         "44df773b9aac18ef",
-        "791856bcb01ed112",
-        "14a7f5d4948b1081",
-        "9f72d74c564b74cf",
+        "0ee8536f8952bcf5",
         "57567cf16e0c66b0",
         "4cd497ac1562144c",
-        "fc10a52de5536973",
         "2090910b9b052c7e",
-        "30f973b0f5413d10",
-        "6c01dad9e569817a",
-        "a1abf5e9543e9acf",
-        "7ff1dbca823951db",
         "35dbee992e5c1f41",
-        "74981bae86db3d8a",
-        "788cf39a526c646d",
-        "b3e3cb3efe70e2d7",
         "24c9820680bf8e8e",
-        "fcbc8a56c097be11",
-        "dc561a7e74c8d28b",
-        "5c149d4628be106d",
-        "e1401f36115b63aa",
         "b17053d369a9803a",
-        "2d83d0d9c75fe9b7",
-        "eb40a1d8bd33a1e3",
-        "73738112809c2ee7",
-        "585e24d095e0e131",
-        "90fc0ec57f602984",
-        "388629b75e77fc7e",
-        "02a78192f53cdc8d",
-        "27d44ee7aedb8fa6",
+        "b3466f5b540491f9",
         "6fbb5546ca61a2d0",
-        "0c52952deeb106c4",
         "d62e9c3fff60e79c",
         "aa77d123589ce2d8",
+        "a520a3d6e65516a9",
+        "8257d794c8167100",
         "0675acd9e2c306b7",
-        "d3b8cedab2cce4d2",
-        "6822e15f3b53d3fc",
         "af86c4efe222665b",
-        "7780aab640948745",
-        "eecfd4fb201a12ad",
-        "cce983245d8e03e5",
+        "491fa433a3e6b4eb",
+        "9b808a0c6f86d329",
+        "981b234ea13f3a21",
+        "9aa0eb4484d628a4",
         "71a8f906ecbe99b6",
-        "b8f3a09ab0568d72",
-        "ddec3cb7a1841adc",
+        "daadfd9d0ef7ea88",
         "457bd7afe3be80db",
-        "d7a2cf843c7483c5",
-        "8a5bdab123d04bd7",
-        "33fb054cc3ec9495",
+        "71304bc21885b65f",
         "c5faef5c3702e95c",
-        "0a30722e95e9a273",
+        "2c0caa488dd967c4",
         "b73faee2ac93c63e",
-        "5b2fb1ebd6691bad",
-        "6f75ab159944c135",
+        "a250ad3d133955f6",
         "e0ae31773131569d",
         "e9a82e1982a469ac",
         "17b6192a197ae117",
         "b1f21eac8ea06fa1",
-        "7645a71c58e42f85",
         "9d9ed8abb48e45ce",
-        "4dd834a6a8f0b770",
+        "c9238a18141f9d92",
         "11636b7a58ed0f36",
         "5a10888f6f26e62e",
         "f69ad64c7150d725",
-        "14aafa45b127e490",
         "97312ac92f93352d",
-        "ecde552d69035649",
-        "febc32a3e8d70637",
+        "306d0971e7e3b96d",
+        "7d6da5dac8c5c279",
+        "c15f37ed9f98f9f7",
         "6c41cca0ae503b00",
-        "98fa08c2fe6c876b",
+        "d66dc62cb0fbe1d3",
         "eb7304d5ccf351db",
-        "89194be18e1dafbc",
-        "9f61728fee788d4e",
-        "a77d09400d711fc2",
-        "c270e4ab43ad4df8",
-        "2bb90548306b442a",
-        "2f97b5894db65617",
-        "b57e5f68e011bc54",
-        "06f001ea2e7d5bff",
-        "ab7646cbc959b0c5"
+        "69d951e17f61bffe",
+        "870012519e4e540d"
       ],
-      "_newsVolumeRaw": 82,
-      "_socialVolumeRaw": 270.1
+      "_newsVolumeRaw": 71,
+      "_socialVolumeRaw": 194.5
     },
     {
       "weekStart": "2026-09-28",
       "weekEnd": "2026-10-04",
-      "fearIndex": 63.0,
+      "fearIndex": 64.2,
       "dataStatus": "provisional-partial-coverage",
       "availableFormulaWeight": 1.0,
       "engines": {
         "news": {
-          "score": 60.3,
+          "score": 60.4,
           "volume": 64.3,
-          "negativity": 55.4,
-          "itemCount": 127,
-          "negativeShare": 13.1,
-          "uniqueSources": 85
+          "negativity": 55.6,
+          "itemCount": 110,
+          "negativeShare": 14.3,
+          "uniqueSources": 71
         },
         "social": {
-          "score": 57.3,
-          "volume": 61.5,
-          "negativity": 53.1,
-          "itemCount": 263,
-          "negativeShare": 9.3,
+          "score": 60.3,
+          "volume": 55.8,
+          "negativity": 64.7,
+          "itemCount": 163,
+          "negativeShare": 48.4,
           "platformCount": 1,
-          "engagementUnits": 380.1
+          "engagementUnits": 255.6
         }
       },
       "components": {
         "newsVolume": 64.3,
-        "newsTone": 55.4,
-        "socialVolume": 61.5,
-        "socialNegativity": 53.1,
+        "newsTone": 55.6,
+        "socialVolume": 55.8,
+        "socialNegativity": 64.7,
         "severeEvent": 86.0
       },
-      "articleCount": 127,
-      "socialPostCount": 263,
-      "uniqueSourceCount": 85,
+      "articleCount": 110,
+      "socialPostCount": 163,
+      "uniqueSourceCount": 71,
       "socialPlatformCount": 1,
-      "negativeArticleShare": 13.1,
-      "negativeSocialShare": 9.3,
-      "confidence": 0.588,
+      "negativeArticleShare": 14.3,
+      "negativeSocialShare": 48.4,
+      "confidence": 0.656,
       "coverage": {
         "successfulChannels": [
           "google_news",
+          "google_trends",
           "youtube"
         ],
         "expectedChannels": [
@@ -6262,11 +4906,11 @@ const CREDIT_SENTIMENT = {
           "x"
         ],
         "newsChannels": 1,
-        "socialChannels": 1
+        "socialChannels": 2
       },
       "volumeNotes": {
         "news": "Pilot week-on-week ratio: 1.54x; 3/8 baseline weeks.",
-        "social": "Pilot week-on-week ratio: 1.41x; 3/8 baseline weeks."
+        "social": "Pilot week-on-week ratio: 1.31x; 3/8 baseline weeks."
       },
       "alert": {
         "level": "normal",
@@ -6277,34 +4921,12 @@ const CREDIT_SENTIMENT = {
         "actionableActive": [],
         "notificationLevel": "normal",
         "notificationReasons": [],
-        "suppressedCandidateCount": 35,
+        "suppressedCandidateCount": 29,
         "acknowledgedRetained": [],
         "acknowledgedSuppressed": [],
         "pendingHighSeverity": []
       },
       "events": [
-        {
-          "id": "auto-219a3c9d636a9a01",
-          "eventType": "consumer_harm",
-          "severity": 0.86,
-          "articleIds": [],
-          "socialItemIds": [
-            "24843a130bcc2008"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Meanwhile yang diteror pinjol illegal 😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
         {
           "id": "auto-6c3d2d96034c9c2a",
           "eventType": "consumer_harm",
@@ -6350,20 +4972,22 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-7cdd096b9f0f6b94",
+          "id": "auto-854650d2c120f97b",
           "eventType": "consumer_harm",
           "severity": 0.86,
-          "articleIds": [
-            "26c78e78b4178e73"
+          "articleIds": [],
+          "socialItemIds": [
+            "58d4f7575756d7b2"
           ],
-          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "indoartnews.com"
+            "youtube.social"
           ],
-          "platforms": [],
+          "platforms": [
+            "youtube"
+          ],
           "hasPrimarySource": false,
-          "headline": "Tak Pernah Pinjam, Fithri Diteror Tagihan Pinjol hingga Namanya Dicatut di Instagram - indoartnews.com",
+          "headline": "FC Dateng ,tapi ketetangga bang nanya² rumah dan bilng punya hutang saya ga tau itu FC apa,punya cicilan di kredivo,yup,",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6396,7 +5020,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "1c9cc6f3a42fdd7f"
+            "30380a3e193336c2"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -6405,49 +5029,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "LDII dan OJK Kalbar Bahas Ancaman Scam hingga Pinjol Ilegal - suaranusantara.co.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-098605ac54ad7027",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [],
-          "socialItemIds": [
-            "6c45642dba3fef90"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Wow modus penipuan yang jenius. Thx atas infonya bang, sangat bermanfaat bagi kita yg masih awam.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-0c71f35bd3f980fa",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [
-            "acffbe4d2ee93abe"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "erafone.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "5 Modus Penipuan Pinjaman Online, Jangan Sampai Jadi Korban - Erafone",
+          "headline": "LDII dan OJK Kalbar Bahas Ancaman Scam hingga Pinjol Ilegal - https://www.suaranusantara.co.id/",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6458,7 +5040,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "a1dff59294b60463"
+            "3e9196634d1208ca"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -6467,7 +5049,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Kas Pintar Legal atau Ilegal OJK, Apakah Aman? atau Aplikasi Kaspintar Penipuan? Ini Pengalaman Pengguna 2026 - Berita DIY - beritadiy.pikiran-rakyat.com",
+          "headline": "Kas Pintar Legal atau Ilegal OJK, Apakah Aman? atau Aplikasi Kaspintar Penipuan? Ini Pengalaman Pengguna 2026 - Berita DIY - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6540,26 +5122,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-32689604fcdde664",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [
-            "ef53f66163051287"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "money.kompas.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Foto : Penipuan Online Kian Canggih, Operasi dari Lapas hingga Libatkan Jaringan Internasional - Kompas.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-36c78ef813797480",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
@@ -6573,29 +5135,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Daftar Aplikasi Pinjol Ilegal 2026, Cek Sebelum Pinjam - topik.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-3eabb3b3cd80dbf6",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [],
-          "socialItemIds": [
-            "5a72df55ab52e48a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kk saya pernah alamin kaya gini, ga pakai duitnya sepeserpun, udah lapor ke bank, ojk, tetep aja dibombardir sama ratusa",
+          "headline": "Daftar Aplikasi Pinjol Ilegal 2026, Cek Sebelum Pinjam - TOPIK.ID",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6606,7 +5146,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "81e5208c1167aebc"
+            "060c3019728c7edf"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -6662,40 +5202,40 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-59b91b8f922fa61f",
+          "id": "auto-5e69afa26dca3b9e",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "9059dc8278a3eb71"
+            "9d810c8716bcad97"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "barometerbali.com"
+            "badungkab.go.id"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Tiba-Tiba Ada Uang Masuk Rekening? OJK Ingatkan Modus “Salah Transfer” Pinjol Ilegal - - Barometer Bali",
+          "headline": "Berita - TPAKD Badung Edukasi Kader Posyandu Kuta soal Keuangan dan Bahaya Pinjol Ilegal - Pemerintah Kabupaten Badung",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-6c4cb38691235648",
+          "id": "auto-6e86c940087d2d41",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "7b6b30a7aa5552ed"
+            "f256d1254a77f3f5"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "papua.tribunnews.com"
+            "koranbernas.id"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Kasus Pinjol Ilegal di Papua Melonjak: 208 Pengaduan, OJK Sebut ASN Jadi Kelompok Dominan - Tribun-papua.com",
+          "headline": "Kapolres Purworejo Ingatkan Pelajar Waspadai Penipuan Online, dari VCS hingga Pinjol Ilegal - Koran Bernas",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6766,7 +5306,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "e0752baa772a7a79"
+            "53e6de279bbe46c6"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -6775,7 +5315,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Marak Scam dan Pinjol Ilegal, LDII Kalbar Gandeng OJK Perkuat Literasi Keuangan - Halaman 2 - Tribunpontianak.co.id",
+          "headline": "Marak Scam dan Pinjol Ilegal, LDII Kalbar Gandeng OJK Perkuat Literasi Keuangan - Tribunpontianak.co.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6835,7 +5375,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Benarkah Utang Pinjol Ilegal Tidak Perlu Dibayar? Ini Penjelasannya - topik.id",
+          "headline": "Benarkah Utang Pinjol Ilegal Tidak Perlu Dibayar? Ini Penjelasannya - TOPIK.ID",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6902,55 +5442,31 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-ccbd15cf2d1b428e",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [],
-          "socialItemIds": [
-            "9cbcd74597f4782b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Njir saya pernah dapat 50k di dana 6 bulan lalu,tp aq balikin 4 jam kemudian karena orgnya ngomong baik\" dan berterimaka",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-d9822fa6c2cf26b5",
-          "eventType": "fraud_or_illegal_practice",
-          "severity": 0.74,
-          "articleIds": [],
-          "socialItemIds": [
-            "29982e7d61928907"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terima kasih informasinya, smg kita terlindungi dr sgl.hal.penipuan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f48186d29bf31acf",
+          "id": "auto-c394ddfe496a5c60",
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "eada9147411fb5d2"
+            "36b83dba8693eb57"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "topik.id"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Waspada Modus Penipuan Salah Transfer, Bisa Berujung Jeratan Utang Pinjol Ilegal - TOPIK.ID",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-d910a11e58d2c898",
+          "eventType": "fraud_or_illegal_practice",
+          "severity": 0.74,
+          "articleIds": [
+            "d8e890c4caf23f7e"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -6959,7 +5475,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Masyarakat Diminta Laporkan Penyalahgunaan KTP untuk Pinjol Ilegal - suaralandak.co.id",
+          "headline": "Masyarakat Diminta Laporkan Penyalahgunaan KTP untuk Pinjol Ilegal - www.suaralandak.co.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -6992,7 +5508,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "fraud_or_illegal_practice",
           "severity": 0.74,
           "articleIds": [
-            "18240c7832d87dca"
+            "4c00162f7c54cbe4"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -7001,7 +5517,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Awas Penipuan CS Kredivo Palsu Menyasar Pengguna Panik di Internet - suaralandak.co.id",
+          "headline": "Awas Penipuan CS Kredivo Palsu Menyasar Pengguna Panik di Internet - www.suaralandak.co.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7056,8 +5572,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "credit_quality_stress",
           "severity": 0.58,
           "articleIds": [
-            "a566aa3917c26d89",
-            "1d2538c26de21a1c"
+            "c956039a5d5c7264"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -7066,7 +5581,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Download Duit Pasti APK 2026, Legal atau Ilegal OJK? Cek Status Pinjol dan Risiko Galbay - Info Temanggung - Halaman 4 - Info Temanggung",
+          "headline": "Download Duit Pasti APK 2026, Legal atau Ilegal OJK? Cek Status Pinjol dan Risiko Galbay - Info Temanggung - Halaman 3 - Info Temanggung",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7159,6 +5674,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-4bbb405e153974ca",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "80951a09f963dda5"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Klo sudah galbay, relakan. Jangan galob tulob, ķo datang dc nya k rumah kawan² hadapi. Tidak ada hukumnya pinjol lewat p",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-54cafeb7853332af",
           "eventType": "credit_quality_stress",
           "severity": 0.58,
@@ -7173,6 +5710,28 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Benarkah Utang Pinjol Hangus Setelah 90 Hari? Ini Aturan OJK soal Gagal Bayar - VIVA.co.id",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-7e5a8810e34c86cf",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "6b20f43ed68a5d1b"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Sy dulunya gali lubang tutup lobang, akhirnya sy galbay drpd klg hancur, Alhamdulillah suami mengerti dan di suruh tdk u",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7261,6 +5820,28 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Alhamdulillah biaf berlimpah rizkinya Mas GalBay",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-a331587f1abb11fc",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
+          "articleIds": [],
+          "socialItemIds": [
+            "ba7a361ef97067d6"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Tq edukasi Kang🙏🏻 DC lapangan tunaiku datang ke rumah gencar 😢 ksh somasi ,berikutnya rutin dtg pas galbay 3 bln ,masuk ",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7439,12 +6020,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-019525507889d3a2",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
+          "id": "auto-fee385707c63eee8",
+          "eventType": "credit_quality_stress",
+          "severity": 0.58,
           "articleIds": [],
           "socialItemIds": [
-            "bd4c2bad63a27675"
+            "46442a703bed3d0e"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -7454,73 +6035,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Semua kerusakan di negeri ini akibat dari ulah pemimpinnya yg tidak mampu mengendalikan aparat hukumnya sendiri.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-01f95ea2c77337b5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "31231be849ad64f0"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Semoga saya dpat rejeki",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-027f9f41114946e9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "f5fa12b7de5bc7e7"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "UNSTABLE personified.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-02f1b4612238c975",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "11b026aa22cbd80a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Ini bisa di buktikan bahwa ini 100% aman bang.?",
+          "headline": "aku Galbay di Oren hampir 5 bulan",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7549,70 +6064,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-04a5bda0ed415d3d",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ca647f73a3de019c"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kondisi spti ini justru harusnya gotong royong dukung pemerintah berantas sgala bentuk kejahatan di negeri ini. Optimis ",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-04bc36365cc3c089",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "b2a467a980df66ff"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suaramerdeka.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "AION UT Urban Meluncur di GIIAS Semarang, Ini Fitur dan Harganya - Suara Merdeka - Suara Merdeka",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-05754f2bb769a5b6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ca8df859c3c16dea"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terimakasih udah diinformasikan 🤘🙏",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-05b3570c4635965a",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -7627,28 +6078,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Pinjaman Online Resmi OJK Jadi Pilihan, Kenali Platform Legalnya - trenmedia.co.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-05f4513e1f2b8451",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "348055666bd0f20b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Buat Yang Versi KK Bang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7697,28 +6126,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-087c097617f0672f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "3316c33624e72a27"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "penyakit hati emg ga ada obat nya😮",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-08acd2f445398ff7",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -7733,6 +6140,28 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Oknum Polisi di Ambon Jambret Kalung Emas Dipicu Utang Pinjol - detikcom",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-08b48155e47d4e62",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "7a95b952c1eec9f3"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillah...semoga ada rejeki 😊🤲. Untuk kebutuhan sehari hari di tanggal tua ini",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7781,28 +6210,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0a3391166666dc9a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "7d4c94208c9ba997"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillaahirrohmaanirrohiim... semoga saya dapat buat bayar biaya sekolah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-0a746faa1fd114a0",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -7819,28 +6226,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Hadir . Semoga channelnya bermanfaat bagi semua orang.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-0a9dc8817ba54773",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "39f3c4eee6c99bef"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Tolong Bang 🙏🥺 kebutuhan buat modal buka Usaha",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7867,28 +6252,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0b5c8009d1549130",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "3bd3e399f18b5232"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "buat mkan sehari-hari...🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-0b87b4bfa75a4a11",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -7909,22 +6272,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0c05c1ff857502ae",
+          "id": "auto-0b8c203bad853766",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "3d61010313d1749f"
+          "articleIds": [
+            "f2ec5b7942efd7f2"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "youtube.social"
+            "subang.pikiran-rakyat.com"
           ],
-          "platforms": [
-            "youtube"
-          ],
+          "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Trimkasih🙏mas infonya😇Tuhan berkati",
+          "headline": "Jadi Pembina Upacara di SMAN 1 Ciasem, Kapolsek Peringatkan Siswa Tak Terjebak Judol dan Pinjol - Pikiran Rakyat Subang - Pikiran Rakyat Subang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -7973,44 +6334,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0cf795d5d03eca56",
+          "id": "auto-0d3a6ffff3d292e0",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c43df07d4781d716"
+          "articleIds": [
+            "f1fb47d08a18d116"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "youtube.social"
+            "idntimes.com"
           ],
-          "platforms": [
-            "youtube"
-          ],
+          "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Makanya gw lebih suka dengan metode PIN BB.\nKita tidak perlu ngasih no hp kita.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-0d1a52e11698beb1",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "564ae1557a17550f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "She's a redhead. Good luck bro 😂",
+          "headline": "5 Cara Hapus Jejak Data KTP yang Terindikasi Judol dan Pinjol - IDN Times",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8039,12 +6376,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-0f660840a78bd98e",
+          "id": "auto-102b341e1fe9a9e6",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "d4ef525214302577"
+            "631b2467b82a2b79"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -8054,49 +6391,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "bismillahirrahmanirrahim ya Allah rezekinya aku disini amin🙏",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-10cd3c45f558ea07",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6151b5aeb3c03e00"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Lah banyak banget lu bikin Aplikasi,woy lah ni channel mau NYARI UNTUNG dengan segala hal 😂😂😂😂",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-116314c071adcabe",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "b7f8e5c56375e6cd"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suaramerdeka.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Prediksi Skor Indonesia vs Bangladesh FIFA ASEAN Cup 2026: Mengulas Rekor Head to Head dan Statistik Kedua Tim - Suara Merdeka - Suara Merdeka",
+          "headline": "Hidupmu di Setiap Level Sebagai Debt Collector",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8107,7 +6402,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "0a1bc67052c383fe"
+            "2515d7d0bee17568"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -8116,7 +6411,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - suaralandak.co.id",
+          "headline": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - https://www.suaralandak.co.id/",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8143,64 +6438,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-13fe85ea36e9ad9d",
+          "id": "auto-14de228dd1705ce4",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "f75daa33716d1ce4"
+            "4c516bf49a5d8ff7"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "pontianakpost.jawapos.com"
+            "beritamanado.com"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Dorong UMK Naik Kelas, Kanwil Kemenkum Kalbar Perkuat Legalitas Perseroan Perorangan Mempawah - Pontianak Post",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-173da855dcef1573",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "21fc375d7a02f201"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Butuh banget demi apapun bg butuh buat ongkos kerjaa",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-1777d113e86ee792",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "13cf8785621dffe8"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terima kasih informasinya bang 🙏",
+          "headline": "RUU APBN 2027 Resmi Disahkan, Pemerintah Apresiasi - BeritaManado.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8221,28 +6472,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Kredit Digital Makin Produktif, Kredivo Perkuat Akses Pembiayaan Masyarakat - Pontianak Post",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-19baedb3ffb3a428",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "9ea6a4902afeb9d0"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah bang😊",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8287,50 +6516,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Buat makan soalnya ayahku Sdh seminggu lbih gak kerja gra² sakit 😢😢",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-1ae3d35454b6ddf2",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6b4b55515a5231fb"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-1c7e7ac89485a72b",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0f194afbee57ca35"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Gini kan asik, ini iklannya juga pinjol 😂",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8421,28 +6606,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-239645ab61a35ed2",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b0b318d917877a20"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terima kasih onfonya",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-23a8210eedc38254",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -8483,28 +6646,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-23d318cd2791ad4a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "f1fe862f2933f913"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Can anyone say STALKER VIBES",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-2477ca494e5ad9da",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -8527,28 +6668,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-250083771a1810e6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "62b1e9a3ae007b33"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "I would love to meet Caleb but…. Not THAT bad sorry lol he’s great but that’s insane",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-25511b28793add4b",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -8562,27 +6681,29 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "5 Aplikasi Pinjol Resmi yang Cepat Cair dan Berizin OJK 2026 - topik.id",
+          "headline": "5 Aplikasi Pinjol Resmi yang Cepat Cair dan Berizin OJK 2026 - TOPIK.ID",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-275ac2a4dff527ac",
+          "id": "auto-283a88f1ee68e333",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [
-            "29b778cf77bcef2f"
+          "articleIds": [],
+          "socialItemIds": [
+            "1552e1c34cb0d891"
           ],
-          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "kabarbisnis.com"
+            "youtube.social"
           ],
-          "platforms": [],
+          "platforms": [
+            "youtube"
+          ],
           "hasPrimarySource": false,
-          "headline": "Peminjam Usia Muda Sumbang Hampir Separuh Kredit Bermasalah Pinjol, Seleksi Borrower Diperketat - kabarbisnis.com",
+          "headline": "Setelah ini rakyat harus bisa serang OJK untuk menyelamatkan rakyat dari status kolekbilitas karena menyusahkan rakyat, ",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8611,64 +6732,40 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-2a4c73e5cd81bf3a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "01d9c06758d9edac"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillahirrahmanirrahim buat bnerin motor . Buat ngidupin keluarga aminn",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-2b9b434d650d1cde",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "567d89f82073626f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "makasih bang, ini biar jadi mudah menjelaskan ke orang tua. \nlangsung subs n like.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-2bf678fe2c7df7c2",
+          "id": "auto-2a9e9fa7b98c6348",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "fb9ffdbd767978ca"
+            "a136dec0809d7378"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "rri.co.id"
+            "kabarbaik.co"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Waspada Pinjaman Online, Ancaman bagi Stabilitas Keuangan dan Keamanan Data - RRI.co.id",
+          "headline": "Viral Video Diduga Pegawai Koperasi Dikeroyok Nasabah di Gresik - kabarbaik.co",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-2b5eda2786f861be",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "ff4805c736006b43"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "temanggung.pikiran-rakyat.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Update Harga BBM 1 Oktober 2026, Pertamax Naik Hari Ini atau Tidak? Cek Daftarnya - Info Temanggung - Info Temanggung",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8719,32 +6816,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-2e05564637b2b229",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "c3984c7d10864182"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suarapembaharuan.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Masyarakat Pesimistis Kasus Korupsi MBG Diusut Tuntas - Suara Pembaharuan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-2f6581c260c491f2",
+          "id": "auto-2e27fd25be6b51e3",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "38ff20c812826a6f"
+            "654090d7735862fe"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -8754,29 +6831,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Just by looking to her eyebrows, I can see that she is C R A Z Y!",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-2fcb701134f04a9b",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "42a9e6a2c63d55cb"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kok punya ku GK bisa bg?",
+          "headline": "Berarti pihak adapundi punya DC lapangan yg kerjasama sama DBS ya kak...itu pasti GK datang kerumah ta kak pihak ketiga ",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -8819,114 +6874,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Jerat Narkoba Remaja dari Pinjol, Judol, hingga Liquid Vape - MetroTVNews.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-31b3877012c32ec3",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "78749977235fbc15"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Pinjem 2M balikinnya 5M \nBeginilah neraka dunia bekerja 😅😅😅",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-31f19e3476695b7d",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0c0ad9b49b14bcd0"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Capek deh sama pinjaman online... intinya saya gak pinjam ya gak pinjam!!!!! Itu urusan penipu dan pinjol onlinenya send",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-3463a85becf468e1",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "143ab9546e4d0f88"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Sumpah ni channel berguna bgt😝",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-34a1705ff1f3220c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ce45287f160ba538"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤em gửi chái tim rồi",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-34dad2aca987221b",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "870498e57ae4d956"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suaramerdeka.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Leapmotor Perluas Kehadiran di Jawa Tengah Melalui GIIAS Semarang 2026 - Suara Merdeka - Suara Merdeka",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9019,28 +6966,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-37ced3b8528dcc48",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "234803684369f6c0"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "She wanted the publicity..",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-38e0445196c3cecc",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -9057,6 +6982,26 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Amit\", semoga hidup ini terhindar dari segala macam pinjaman.. Mau itu pinjol, paylater, bank keliling, dll 😊",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-39d053a1caf80512",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "4a25808ba6ac42d9"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "ulasan.co"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "OJK Kepri Ingatkan Warga Cek Legalitas Pinjol Sebelum Berutang - Ulasan.co",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9083,64 +7028,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-3c42727c9fa3a5e7",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8d54c6a1bc48c40e"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Yang ada malah aplikasi ini yg mau memampaatkan poto coppy ktp kita.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-3d634e2847c22b40",
+          "id": "auto-3af12a893720bd59",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "41713d029b032d5a"
+            "9f77d336d544f786"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "tribratakutim.com"
+            "bali.tribunnews.com"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Cara Membatalkan Pinjaman Kredivo - tribratakutim.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-3da3c1862a91c005",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "1776396f16e813de"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Lapor OJK? ini Indonesia kah?emang bisa? emang bakal direspon?",
+          "headline": "Rasio Utang Pengguna Kredivo 10–19 Persen dari Pendapatan, Sinyal Penggunaan Kredit Digital Sehat - Tribun-bali.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9161,6 +7062,26 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Daftar PayLater Bunga Rendah Oktober 2026, Bandingkan Bunga, Biaya dan Tenornya - Bisnis.com",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-3f2b86908654df46",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "def720a43021c91a"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "suara.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Pengaturan Bunga Pindar Dinilai Pakar Tak Otomatis Bisa Disebut Kartel - Suara.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9189,48 +7110,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-40445c2a3f74fda9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "7547db1151fb75da"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "kompasiana.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Kecanduan Judi Onlene &Pinjol Halaman all - Kompasiana.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-407e900f11941bbd",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "3b0e3137f25348ee"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah buat biaya berobat sepupu yang kena katarak, karna harus di operasi. 😢",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-40a3eb6971b02928",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -9247,6 +7126,48 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillah ya Allah, Semoga dapet buat tambahan modal usaha 🤲🏻",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-41c37079000966a0",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "8cf59cfe2270505d"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "kabarbaik.co"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Keluarga Enggan Lapor Polisi, Kasus Santri Disetrika di Gresik Berakhir Damai - kabarbaik.co",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-426674b860b62d52",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "abd4d9d28175eeab"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Buat ganti peleg mobil bismillah",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9339,40 +7260,22 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-48520456d56b86a5",
+          "id": "auto-47e9d5880e47a828",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [
-            "0caed968f8b623a0"
+          "articleIds": [],
+          "socialItemIds": [
+            "dc33548823a6aaa8"
           ],
-          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "mataram.antaranews.com"
+            "youtube.social"
           ],
-          "platforms": [],
+          "platforms": [
+            "youtube"
+          ],
           "hasPrimarySource": false,
-          "headline": "Mataram atensi kasus narkoba-pinjol saat evaluasi kinerja PPPK PW - ANTARA News Mataram",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-48554e9d828dd203",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "25c252373e844cde"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "koma.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Manang Soebeti Peringatkan Petinggi Pinjol soal Doxing: Masyarakat Sudah Marah - Koma.id",
+          "headline": "Demi Enggak Kalah Sama Tetangga, Sampai Rela Pinjol! — Endingnya Bikin Sadar",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9401,42 +7304,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-48c64d7a567bc5dc",
+          "id": "auto-4ae3a3f7550c8625",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "e892f35122125c31"
+            "21fd51ce38bd4de7"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "kilasjatim.com"
+            "jateng.harianjogja.com"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Hasil Studi : Rasio Utang Pengguna Kredivo Hanya 10–19% dari Pendapatan, - KilasJatim.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-4a8311e28b0b11c5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "fe9dbec62593ca0f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Well yang sering ku lihat tuh nilai sekolah yang kesebar",
+          "headline": "Bupati Magelang Ajak ASN Blonjo Warung Tonggo, Waspadai Pinjol dan Judol - Harianjogja.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9531,33 +7412,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-4cc01f7b31118ec3",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "cd7588935135ce5a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kk bagaimana cara untuk mengajukan pinjaman dana itu kk",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-4e5e817d16d10420",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "c0c11035d2c959ce"
+            "fbf3160d5e4da160"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -9566,27 +7425,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Bagi-bagi Saldo Dana 250 Ribu Gratis Hari Ini Selasa 27 September 2026, Klaim Kode Link Dana Kaget BeritaDIY - Berita DIY - Halaman 2 - beritadiy.pikiran-rakyat.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-4faef190119c982c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "f2eb55bbcd81f027"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "jateng.antaranews.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Subsidi energi tahun 2027 dipangkas Rp11,44 triliun - ANTARA News Jateng",
+          "headline": "Bagi-bagi Saldo Dana 250 Ribu Gratis Hari Ini Selasa 27 September 2026, Klaim Kode Link Dana Kaget BeritaDIY - Berita DIY - Halaman 2 - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9615,12 +7454,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-535dc32b494cea7b",
+          "id": "auto-56a32ba2d2e0c908",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "549dcd1b3de710c6"
+            "520447ca8b4fa99d"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -9630,51 +7469,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Niko minta dividen sendiri serasa pinjol ke temen😭 #nikojunius #sidebrother",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-54c062357144ed6f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0a8473e5731dd980"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Buat beli hp untuk ngojol sih",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-56ada838860e4f85",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0456ff2da6836183"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terima kasih",
+          "headline": "Hadir sllu bang. Pinjmyuk ktp ciamis cmn rantau di bekasi didtngn ke tmpt kerja kah?",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9695,28 +7490,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Jaga Data Pribadi Nasabah Pinjol Tak Seindah Kenyataan - Teknologi - Bloomberg Technoz",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5758032c30253949",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "82c93726f544fae7"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah buat bayar listrik bang... Semoga dapat",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9789,50 +7562,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-59dab31cd6b98380",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "81249a6e9c7a7b7b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kayaknya lu doang bang yg iklan bisa pas sama apa yang lu bahas, gokil🗿",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5abc380a9df1e46a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "65a2a53760885490"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "jgn gk asal ngonten orang ini\n..ya kalau kita bayar dngn paylater ya bisa mslhnya paylater nya ada saldo...jdi y bisa la",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-5bb290eedc9250ff",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -9869,26 +7598,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Putusan PN Jakpus Soal Bunga Pindar, Pakar Dorong Kepentingan Konsumen Diutamakan - Kompas.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-5c631d768337b0d5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "bd4b1bff0aff7196"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "bisnisbanten.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Waspada Modus Salah Transfer, Bisa Berujung Jeratan Utang Pinjol - bisnisbanten.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -9939,28 +7648,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-5f6cdc9498571f22",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "2474b93fc46fecd2"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillahirrahmanirrahim,,, mudah 2@n ,, dapat buat biaya berobat bang,,,",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-61c0c1592eb80cf0",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -9977,28 +7664,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillah semoga aku ga dapet,yg dapet bagi orng²yg kurang mampu aja,,tpi aku ngomong gitu bukan mau sombong ya🙏🙏",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-61c98ca9b39b8814",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "7d8c13e9463e0fe9"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kalimat yg selalu ku tunggu, ga ada bang.. \n\"Gak mungkin lah.. Gak Mungkin!\"\n😂",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10069,28 +7734,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-64931d391b0946e6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "43670f96b96861a5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Klw sudah rezeki ga akan kemana",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-64e5296c0a446c32",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -10113,86 +7756,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-681377e770039e67",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "e091ba21981d1786"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah semoga rejeki...",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-68a36d2c2706df5a",
+          "id": "auto-650e8d3bba67892b",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "f8d24c71735f7fcd"
+            "f0fbc43ff28dc210"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "suaramerdeka.com"
+            "suaragarut.id"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Update Aktivitas Vulkanik Gunung Merapi, Terjadi Semburan Lava Pijar 4 Kali ke Sungai Sat dan Sungai Putih - Suara Merdeka - Suara Merdeka",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-68e1e737300fd2cb",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "619d8045f260b40b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terimakasih bang,,saya jadi faham 🙏🏻",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-6a1522f91837c479",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "008484f9e786c46f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Apapun yg sifatnya meminjam uang lalu kembali dengan tambahan itu adalah riba, dan RIBA adalah jalan pelan pelan menuju ",
+          "headline": "Dampak Pembatasan Suku Bunga Pindar Terhadap Konsumen - SuaraGarut.ID",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10213,28 +7790,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Studi Ungkap Rasio Utang Pengguna Kredivo 10–19 Persen dari Pendapatan - IDN Times Lampung",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-6ab17d89958ae8a0",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "4ce7ae79ad8e8f8d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "lg perlu utk tambahan modal usaha kaa..smoga ada rejeki nya",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10349,28 +7904,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-6d56653f9f8e7162",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "854479315c4589f4"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kunfayakun dapat",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-6dfdddd6426a3f3b",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -10384,7 +7917,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "20 Aplikasi Pinjol Terpercaya yang Berizin OJK 2026, Cek Sebelum Mengajukan Pinjaman - topik.id",
+          "headline": "20 Aplikasi Pinjol Terpercaya yang Berizin OJK 2026, Cek Sebelum Mengajukan Pinjaman - TOPIK.ID",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10405,50 +7938,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Jokowi Punya Kekuatan Besar, KPK Tidak Akan Berani Periksa Bobby Nasution - Suara Pembaharuan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-6f20d6e6525c52bb",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "4bce1b49eff9ea06"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Huh kok beda perasaan kemaren ngak gini",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-6f4b8212b39762d5",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "e4f6e771c2bced3a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah semoga dapat rezekinya melalui video ini, saya benar\"sedang buntu posisi di perantauan, gajian ditunda dan dij",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10495,64 +7984,42 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-70c387fe4710fbdf",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "5c4baa08c8861cd5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah semoga dapat",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-713394dfb90056a2",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d112aea80d35d5fb"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Alhamdulillah buat membantu orang tua membayar hutang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-71b3249a2987a9ef",
+          "id": "auto-70a5769f1d76976a",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "3781a13f9e139fe5"
+            "8f9f4ebc2b0383ce"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "kompasiana.com"
+            "viva.co.id"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Cepat Berganti, Cepat Terbuang: Dampak Fast Fashion - Kompasiana.com",
+          "headline": "Aspek Perlindungan Konsumen Harus Jadi Prioritas dalam Penyelesaian Masalah Pindar-KPPU - VIVA.co.id",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-718177f6a2b8348d",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "64bab3eccdad556a"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Terjerat Pinjol, Suami Habisi Istri",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10581,12 +8048,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-7561f27850985fc6",
+          "id": "auto-74eeb2727e11450f",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "81585c402faf84f7"
+            "5c89fb887208d6fc"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -10596,7 +8063,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Belum tentu dapat antrian. Seringnya quota habis. Saya pernah ngajukan cek SLIK ke OJK, tapi yg dikirim ke emailku malah",
+          "headline": "Nomor hp keluargaku dipakai orang pinjam uang di gopay later, lebih dari UMK sebulan dan kami harus bayar 3angsuranx2jt ",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10617,28 +8084,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Pelunasan Dipercepat: Cek Tagihan sebelum Bayar - KreditPintar",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-75cffe50803fa267",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "93c270339df6f6a6"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Selama penegak hukum bisa dibeli, maka penjahat akan leluasa merajalela dan rakyat menderita",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10667,42 +8112,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-77774574aa30fe4a",
+          "id": "auto-7785e1005d61f6ae",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "a2cb441c4c640e88"
+            "e3f7e6296ec0ccf6"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "suarapembaharuan.com"
+            "energika.id"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Abaikan Danantara, Dirut PLN Diduga Lakukan Abuse Of Power Lewat Praktik Rombak Petinggi AP dan SH - Suara Pembaharuan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-779b3616208ee534",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "73f82ea72f63bb47"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Sangat jelas langkah2 ngatasi masalah.... terimakasih yg banyak kak, di channel ini SDH berbagi info urgent.\nSemoga Alla",
+          "headline": "Xiaomi Jual Redmi Note 17 Pro Series di Indonesia Mulai 25 September - Energika.id",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10773,68 +8196,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-7999da3bd82cbc36",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "a803832113be7d2e"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Follow channel gue biar lo dapet tips life hack yg bermanfaat kayak gini tiap hari 🔥 cek video gue yg lain di Channel",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-79ce9bd349b345ac",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "b5a52f887a22a106"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "prohaba.tribunnews.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Cegah Judol dan Pinjol, Propam Polres Bireuen Periksa Hp Personel - Prohaba.co",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-79efd1c422e98fb1",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "339c2a6b12b392be"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "patrolicyber.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Tidak Pernah Mengajukan Pinjaman, Nama Pegawai PT Bandung Dicemarkan Oknum Pinjol di Instagram - patrolicyber.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-7b32b91f3186c0c2",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -10875,53 +8236,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-7b83881c89677abd",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8993e8b3144bb522"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismillahirrahmanirrahim moga dapet saldo dana buat bayar sekolah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-7c451c91ebfb9334",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "a979a12ba2a5e901"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "lestari.kompas.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Kampung Bebas Rokok dan Pinjol yang Sejuk di Tengah Panas Surabaya - Kompas.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-7d050fe9134776b7",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "3efb15054e95eb56"
+            "765ce7f628d7bf04"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -10930,7 +8249,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Kredit Digital Tak Lagi Sekadar Konsumtif, Modal Usaha UMKM Jadi Salah Satu Pemanfaatannya - jatim.tribunnews.com",
+          "headline": "Kredit Digital Tak Lagi Sekadar Konsumtif, Modal Usaha UMKM Jadi Salah Satu Pemanfaatannya - Halaman 2 - Tribunjatim.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -10953,28 +8272,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Pinjol dan judol adalah jalan terbaik saat ini bagi pelaku korupsi untuk mencuci uang, disaat likuiditas kering di perba",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-7df8a875d0598835",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "e5862753d7d5cdeb"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismilah",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11025,12 +8322,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-80a6fea1c87c80da",
+          "id": "auto-82c014e27db4c42d",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "58ad00ccda4fe4c4"
+            "d969ac8e53f6bf0c"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -11040,73 +8337,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Riport yt nya penipu",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-80ba6dcbc1946318",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "ac3efc86f48697de"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Jjifodi",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-80d773172e2cef57",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b674d23067d98680"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bissmilah bang buat ngelanjutin hidup",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-815e2e62964ac7be",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "434c30f1b17539a0"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "She wants that money 💰",
+          "headline": "Semoga dapett rezeki di sini",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11177,70 +8408,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-86d3c7da28813367",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "7c161163c26250fe"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suaramerdeka.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Jadwal Pemadaman Pasokan Listrik di Semarang Tengah, Simak Penjelasan PLN, Cek Daerah Terdampak - Suara Merdeka - Suara Merdeka",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-86f27e08c093a6b0",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c0149e0e274b67de"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah kang buat bayar kontrakan, udah janji janji terus ke ibu kontrakannya masih belum bisa bayar",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-8716345d1bc0e07c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d24de17797deac18"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "alhamdulillah puji tuhan masih ada orang baik yg suka berbagi..sehat selalu kaka",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-87a61f39facc85b9",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -11257,50 +8424,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Dari kecil sampe sekarang udh bisa menghidupi diri sendiri, mama saya selalu ngajarin lebih baik susah daripada harus ng",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-87dbdbf9e3e1eda7",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0381130bc8a0f9af"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Suami Diam-Diam Pinjam Pinjol, Data Keluarga Ikut Dipakai! Istri Langsung Murka 😱",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-880f52b0205e6dd9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b6afea739513e36e"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "lewat lazada tetap bayar pake payleter",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11395,12 +8518,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-8c427cbe6f399bdb",
+          "id": "auto-8bdf555debc48089",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "0c4d128f9738b3c4"
+            "800b5b5f3acab25a"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -11410,29 +8533,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Mau Saldo Dana Gratis?\nTonton habis, cukup komen saja mau daget divideo ini untuk kebutuhan apa y👇 https://link.dana.id/",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-8cc84c1662429818",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "45262809ced1fdae"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Jam segini upload udah ketebak pasti iklan 😹",
+          "headline": "Bismillah bang dapat buat beli kebutuhan dapur sehari hari bang",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11503,12 +8604,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-8e7012d0ef7452ff",
+          "id": "auto-8f12102edefacca2",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "30fd316a9bc8b63c"
+            "aad9e9dcdf5ea9ac"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -11518,29 +8619,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "She took a payday loan to meet her crush Caleb #calebhammer",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-8f5463c426c09e34",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "1853193e539622d7"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Terlalu baik kalok gua udah gampar tu anak",
+          "headline": "bissmilah rezeki saya kali ini om butuh 200 aja om buat beli beras sama token listrik",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11611,6 +8690,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-948f48d9eea9840a",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "80d8908c639ee467"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Mau legal dan aman kyk apapun, jangan lakukan pinjaman berbunga ya.. riba ges ribaa... dosanya gede banget",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-95bfc19447c26fda",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -11633,70 +8734,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-96c0d127c2b77f6c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "5c4c9e8e9c25d875"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Tapi realita sih😌",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-96f4ec3ac7307043",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "26b474ee42ed02d3"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suarapembaharuan.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Usut Dugaan Keterlibatan Menantu Riza Chalid di Kasus Korupsi Minyak Mentah Pertamina - Suara Pembaharuan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-97af0216d1a806a1",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "1612839219371dbf"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Doesn't Caleb have a partner? He could simply say he's not looking, not available, in a committed relationship, does not",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-990c861ce8dc419f",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -11711,6 +8748,28 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Gugatan Bunga Pindar Masuk Putusan, Dampak Aturan OJK Jadi Sorotan - Bisnis.com",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-99b273523667ff3a",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "f25f23ffab1f1b41"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Pesan moral=jgn pinjol illegal😅😅😅",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11739,50 +8798,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-9b4d6ef486dc6971",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "98e57af1a16dcd6d"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Usahakan hidup sesuai kebutuhan . Jgn masuk ke tingkat keinginan. Sekarang cari sangat susah harga barang semua mahal . ",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-9bbbbde55aec2e56",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "a5e1f09ed6edba12"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Plot twist, saldo negatif ngejek saldo minimum",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-9cd4b1ae787e2b9d",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -11803,12 +8818,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-9d96bfa592496575",
+          "id": "auto-9d83587affbb6e07",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "3c23e7c800850bd3"
+            "0ec6ec863dc5084b"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -11818,7 +8833,49 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Aamiin...semoga sehat selalu",
+          "headline": "Aneh konten gaje",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-9e503be11a6aa092",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "484ec3f6bcfcd5f4"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "suara.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Kemenko PM Ingatkan Santri Jangan Terjebak Pinjol dan Judol: Harta Bukan Tujuan Hidup - Suara.com",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-9ec6b49d8226df60",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "bc07a82c712dae64"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "KARMA INSTAN! BARU 2 MINGGU NIKAH, BOWO BONGKAR UTANG PINJOL AJENG 50 JUTA! 💥😱",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11841,28 +8898,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Saya butuh daget uang saya habis ilang pusing gada jalan lain",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-9f7f0fc437ac1e52",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c68f4595d8378774"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Video nya juga AI",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -11935,96 +8970,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a09b470d42d0f3c0",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "19b3a44df0cb4b68"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "lensahukum.co.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Daftar 94 Pinjol Resmi Berizin OJK Terbaru Oktober 2026 - Lensa Hukum",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a155c88dac65aba8",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "4d3d5c4be5b07165"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Jelaskan juga bang, pinjol apa yang suka mencairkan dana dengan verifikasi segampang itu. Agar mudah ditelusuri asal dan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a1dd395c19f3a1f7",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "cc99861012c8f902",
-            "168ec57c6cbb4363",
-            "343037dd2fbd2be4",
-            "656fa410af513cc1",
-            "9d8feb7f7671148b"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a2bb04daf8fd485f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "1876b9c60519c771"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Wkwkwkw jepit rambut nya pindah ke rambut suaminya,,tapi overall bagus sihh",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-a2c6befd9f888363",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -12089,12 +9034,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a40128772bfc5e6c",
+          "id": "auto-a712e1395fe43187",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "1e05d8de4adfa1cc"
+            "705afca4a8d3013f"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -12104,51 +9049,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "abang tolong dibantu . buat nene lagi sakit buat berobat bang 🥲🙏🙏🙏🙏🙏",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a6fd422282e67f34",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "6c84d274c9ea36f9"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Nipu ini",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-a765cf5b58164a85",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "3d2c1dd45ea4274f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Allahuakbaar...",
+          "headline": "RESMI! PIHAK KE 3 PINJOL-PINJOL INI SIAP KERUMAH ANDA!",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12197,48 +9098,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-a9b0e4964c5fecaa",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "fb3522939256aa3d"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "kompas.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Berita Terkini Harian Pinjol Resmi Ojk Oktober 2026 Terbaru Hari Ini - Kompas.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-ab5f3b8bb19e7770",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "41e9f0d01da3ffae"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Buat keperluan kak",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-ab8ff4e0ce439ba4",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -12255,28 +9114,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Pinjol di playstore sudah saya download ada 20 pinjol tidak ada satupun yang di ACC.padahal data masih bersih..😂parah!!",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-abd9e4891b03f59e",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "9eb6780f62f1fc90"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Realita nya lapor ojk agak ribet 😅",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12305,28 +9142,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-ace8ced905a6719e",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "63b2431a6de48e07"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Mudah mudahan dapet  buat kebutuhan kuliah",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-aeec51b3834141a7",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -12341,26 +9156,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Gap Literasi dan Inklusi Pindar Lebar, OJK Beberkan Penyebabnya - Infobanknews",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-af9b1f488c91e067",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "e13a9c9007186d75"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "koranntt.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Sekda Kupang Ingatkan Pengelolaan Keuangan Rumah Tangga Cegah Pinjol - Koran NTT",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12389,28 +9184,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-b144e91aa7fef649",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "f2ee52c819b53420"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Masih yg pertama bang., Sehat selalu ya bang , buat beli keperluan rumah bang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-b17fcada9345f556",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -12427,6 +9200,26 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Semoga dapet ya allah buat bayar spp sekolah",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-b22fd034714eb93e",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "a2a1bc12c60284c5"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "bloombergtechnoz.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Doxing Balasan Jadi Alarm Krisis Kepercayaan Penegakan Hukum - Teknologi - Bloomberg Technoz",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12477,44 +9270,20 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-b6f1e4fb2d1fb5a9",
+          "id": "auto-b5885431a3aede39",
           "eventType": "general_sentiment",
           "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "59a3d91cf191c4b9"
+          "articleIds": [
+            "f72a02f4cf3b3b0b"
           ],
+          "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "youtube.social"
+            "liputan6.com"
           ],
-          "platforms": [
-            "youtube"
-          ],
+          "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Bro ini ai tapi berguna",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-b7e39e6131df41a2",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0955b8458a48daf9"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismillah buat modal usaha",
+          "headline": "Siasat Lunasi Utang dan Paylater Menumpuk Tanpa Terjerat Pinjol - Liputan6.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12607,6 +9376,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-ba3118ec004794bf",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "2bcd8b340b993861"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "pihak ke 3,4,5,6 sini maju, tak ladeni",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-ba3ce0d29c67118c",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -12645,26 +9436,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Modus begini ga bakal ada kalau penegakan hukum dan undang² perlindungan konsumen jelas.\nBisa minjam uang bermodalkan KT",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-bc2415229f122cc1",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "f95a60a22f8172f3"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "tribratakutim.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Tutorial Cara Membatalkan Pinjaman Kredivo - tribratakutim.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12755,32 +9526,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-c261ca17db3b6e4e",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "21fedce3ed8dc37e"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "sekilasmedia.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Kapolres Kediri Kota dan OJK Perkuat Sinergi, Bahas Pinjol hingga Bahaya Judi Online - Sekilas Media -",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-c289ec785fc99c60",
+          "id": "auto-c175f40564a810b6",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "ff0f11ac34d60231"
+            "9d26fa1f46e9ab7c"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -12790,7 +9541,27 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Bismillah bang, lagi buntu banget buat berobat ortu , sesusah itu cari kerja di Indonesia, buat nyari uang berobat aja s",
+          "headline": "Semoga berkah amin sehat selalu",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-c261ca17db3b6e4e",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "0590c6b52ce7e4f3"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "harnasnews.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Kapolres Kediri Kota dan OJK Perkuat Sinergi, Bahas Pinjol hingga Bahaya Judi Online - Harnasnews.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -12841,26 +9612,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-c39077c2ef8731af",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "1f3c347107d04197"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "elshinta.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Tanpa kartu kredit! Ini cara mudah ambil cicilan iPhone resmi - Elshinta",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-c39742116a62c12e",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -12877,50 +9628,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Hadir bang,  bissmillah dapat, buat bayar hutang diwarung.\nSukses selalu buat abang",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-c56326dcc516effe",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "98ec90a941ff91ea"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Cara Aktifkan Dana Pinjam Supaya Bisa Pinjam Uang Di Dana Langsung Cair",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-c5f882164bd52e8f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "e4b8aee2dc4b5a30"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Setuju😅",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13011,28 +9718,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-c93f6490759a7529",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b7661a2d699907bc"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Manfaat skli, terimakasih orang baik 👍🙏🤗",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-cb0b15d74a282845",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13055,12 +9740,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-cd5f30f35fbce57b",
+          "id": "auto-ccee5356fe59b052",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "430f30efa08b729d"
+            "7ace91f7597aa0d1"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -13070,7 +9755,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Follow channel gue kalo lo suka tips/life hack yang bermanfaat kayak gini. Gue bakal upload tiap hari. Cek video lain di",
+          "headline": "Kang saya dapet wa dari colmitra . Ini kayanya pihak ke 3 dari 2 Oren isi Wanya akan ada penagihan lapangan.  Apa bener ",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13119,28 +9804,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-cf728fedfa09542a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "55cf80406bb98ac4"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Harus nya secara logika aja, gimana bisa dia tau exactly nomor lu pribadi beberapa menit setelah biaya masuk, itu udah s",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-cf98d0fc12bf1faf",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13183,26 +9846,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-cfe6f4bced39519c",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "3a42589a9d2aff86"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "suaramerdeka.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Geely Hadirkan Geely Coolray di GIIAS Semarang 2026, Perluas Pilihan Compact SUV ICE di Jawa Tengah - Suara Merdeka - Suara Merdeka",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-d131bbffdd30cf17",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13225,33 +9868,11 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-d26cc24037bfd032",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "028f9dbb0c9b4ff3"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bagi yg gak ngerti, jadi si penipu ini aslinya uda mengantongi data korban, no wa, rekening, ktp. Dia lalu mengajukan pi",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-d31b0516feb4f0d9",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "82c23d792f53a45c"
+            "7e23f911e3ada8c8"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -13260,29 +9881,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Sering Checkout Pakai Paylater? Cicilan Kecil Diam-Diam Bisa Jadi Gunungan Utang - wartaekonomi.co.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-d333fc51bbb0b0c3",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "8c4becf1a44fdeb1"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "pentingnya jaga privasi. no wa tanpa nama (nomor tidak dikenal) harus diwaspadai. gue salah satu org yg gak pernah mau a",
+          "headline": "Sering Checkout Pakai Paylater? Cicilan Kecil Diam-Diam Bisa Jadi Gunungan Utang - Warta Ekonomi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13293,7 +9892,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "8f6fd82743e8ad38"
+            "38d3b8c49d1fa3a1"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -13302,7 +9901,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Apakah Stokity Legal OJK Halal Haram? Bisa Menghasilkan Uang, Ditarik ke Dana? Pengalaman Pengguna Stockity - Berita DIY - beritadiy.pikiran-rakyat.com",
+          "headline": "Apakah Stokity Legal OJK Halal Haram? Bisa Menghasilkan Uang, Ditarik ke Dana? Pengalaman Pengguna Stockity - Berita DIY - Berita DIY",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13323,50 +9922,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "DPR Sentil OJK Soal Maraknya Pinjol dan Investasi Ilegal - Todaynews.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-d3e3d903c263e988",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "f4ed9a8cddc9ccde"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "She has huge issues….run as you could end up her never person to stick",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-d44d2428a63cf1e6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "2ca943f79d55880f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "gocap yang awalnya buat parkir sekarang jadi lap ingus🗿",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13415,6 +9970,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-d541f5817bf82eb6",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "2dd2ecb1c2212d55"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Dc klo belum pernah masuk penjara 3 kali jgn coba2 temui saya.",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-d55e7426ab656402",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13457,28 +10034,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-d76d3ef651644d38",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "220e52a3eec486c1"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Hadir",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-d7b7c2e446d72eeb",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13505,7 +10060,7 @@ const CREDIT_SENTIMENT = {
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "a22c7a1f3c716b69"
+            "e63473b9d6798cdc"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
@@ -13514,29 +10069,7 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Guru Banyak Terjerat Pinjol, P2G: Pemerintah Sebenarnya Tahu, OJK Juga Tahu - wartaekonomi.co.id",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-d9a9a6dc0de69d0a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "bc0f48cf148fa051"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kayaknya percuma juga komen yg buat content mungkin 99% AI",
+          "headline": "Guru Banyak Terjerat Pinjol, P2G: Pemerintah Sebenarnya Tahu, OJK Juga Tahu - Warta Ekonomi",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13557,66 +10090,6 @@ const CREDIT_SENTIMENT = {
           "platforms": [],
           "hasPrimarySource": false,
           "headline": "Menurut Studi, Rasio Utang Pengguna Kredivo Hanya 10-19 Persen - Riau Pos",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-db7a40d9128f6448",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "8d2bf52909121877"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "parepos.fajar.co.id"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Cegah Personel Terjerat Pinjol dan Judol, Propam Polres Majene Periksa Smartphone Personel - parepos",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-dc13a6523305e05d",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "0781a0bcda4b3ad5"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "kompasiana.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Mewaspadai Pinjol di Kampus: Solusi Instan vs Ancaman Masa Depan Mahasiswa? - Kompasiana.com",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-ddf266975d5776dd",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "0d2afed21e8ffaa8"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "radarmalioboro.jawapos.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Waspada Investasi Bodong, Kulon Progo Bekali Warga dengan Literasi Pasar Modal - Radar Malioboro",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13645,72 +10118,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-dee4c31a6cb0f23f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "b21421c44c7857e9"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismilah bang semoga dapet dana kagetnya buat lunasin hutang ibuk🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-df2fbb5356db6547",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "5523451d677bf8b4"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Bismillahiharmanirahim, smga ada rejeki nya buat bayar tagihan yang Sdh jatuh tempo 🤲🤲🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-e15a8bef08e6943a",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "0c6b1865878c3b70"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Ga pernah pinjol jadi ga paham yg dibahas",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-e3339e4db11fae20",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13727,53 +10134,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Kalau dapat uang gak jelas dan ada yang chat gua, Nanti gua blokir dan pura2 gak lihat.",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-e3b0c44298fc1c14",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c08a02f4e6e9e43c",
-            "0bd209930cab7b51",
-            "6ef4d3050f6b5718",
-            "60a64ac8f6061bfc"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "❤",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-e61dbe0beec1ea65",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "c19173bc498d55bd"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "bismilah . buat berobat nenek bos",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13824,12 +10184,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-eace79259b476296",
+          "id": "auto-e7c9dbbe24fb39cf",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "cf0b65a3781b1958"
+            "6c2c6a30fd84bcc0"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -13839,19 +10199,19 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Banyak Scene extended euy",
+          "headline": "tolong bantu bang dan kagetny a.buat bellian anak hp buat sekolah",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-eae2ee7b52767d26",
+          "id": "auto-ea4e1793e78f8e01",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "baa8f4b94c26e0cb"
+            "e95846b6c32eb34f"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -13861,27 +10221,27 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Ini bisa di buktikan bahwa ini 100% aman ga bang",
+          "headline": "Bank aku mow gabung di wa,sudah request buat joint",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-eb1a66737dbe7b34",
+          "id": "auto-eb8497a561769a9c",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [
-            "d237c05aef11610f"
+            "b89c7a664410fcd0"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "mediakonsumen.com"
+            "idntimes.com"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Kecewa Berat dengan Kredivo: Pertama Kali Telat Bayar, Dihukum Penalti 1 Bulan Penuh Rp1.174.850 dan Pelunasan Awal Malah Dipersulit - Media Konsumen",
+          "headline": "AFPI Bentuk Timsus, Tangani Portofolio Pindar yang Izinnya Dicabut - IDN Times",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13904,6 +10264,26 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Pinjolnya yg di blokir",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-ebc6216dcd8693df",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [
+            "13892aa8757883de"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "bloombergtechnoz.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "3 Cara Membatalkan Pinjaman Kredivo secara Ringkas dan Jelas - Bloomberg Technoz",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -13955,6 +10335,28 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
+          "id": "auto-eccbd190146ccbc4",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
+          "articleIds": [],
+          "socialItemIds": [
+            "14da08db214d4b2f"
+          ],
+          "independentSourceCount": 1,
+          "domains": [
+            "youtube.social"
+          ],
+          "platforms": [
+            "youtube"
+          ],
+          "hasPrimarySource": false,
+          "headline": "Bismillah Bg sya butuh buat byar SPP 😢",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
           "id": "auto-ed5cfe039cf95294",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -13968,19 +10370,19 @@ const CREDIT_SENTIMENT = {
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Mau Batalin Pinjaman Kredivo? Awas Tipu-Tipu dari Sumber Gak Resmi! - suara.com",
+          "headline": "Mau Batalin Pinjaman Kredivo? Awas Tipu-Tipu dari Sumber Gak Resmi! - Suara.com",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-ef545921845e8184",
+          "id": "auto-f135a25093ae994b",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "dee35c708a994611"
+            "f8fc64558631dd97"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -13990,7 +10392,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Hadir bang, semoga dapat untuk berobat, sukses slalu bang",
+          "headline": "bismillah dapat buat biaya persalinan😢",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -14019,12 +10421,12 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-f512e943f8738cbb",
+          "id": "auto-f3f8c5b9119844eb",
           "eventType": "general_sentiment",
           "severity": 0.35,
           "articleIds": [],
           "socialItemIds": [
-            "a9706b97edc18b76"
+            "f80c56cf84d8467b"
           ],
           "independentSourceCount": 1,
           "domains": [
@@ -14034,29 +10436,7 @@ const CREDIT_SENTIMENT = {
             "youtube"
           ],
           "hasPrimarySource": false,
-          "headline": "Lebih seneng di Shopee sih😅, beli barang tapi bayarnya bulan depan behh mantap dahh",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f7506ffae0f254ff",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "bffbaf9e79ee6ee5"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Gimna cara dpt Dana kaget.soal nya sya butuh bngt.buat modal usaha",
+          "headline": "Saya hanya verifikasi tidak pengajuan di kirim 1jt tidak ada info pengiriman tau tau di tagih via telephon bersama bunga",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -14105,94 +10485,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-f8f3ba839678e34f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "26de060a4e8e246f"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kebutuhan ku banyak banget untuk bulan2 ini. Semoga di buat oktober lebih baik lagi. Aminn",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-f99e487dadac582f",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "9264089caaccb606"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Jangan kirim foto KTP sembarangan",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-fa2ff5f4fa895566",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "d6010962eb1db75a"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Dari \"buat bayar parkir\" sekarang jadi \"buat lap ingus\", terus dari \"Lu minjem?\" Jadi \"Lu pinjol?\"🗿",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-fa6632f05b0ca7cc",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "a54fe97d6425bcba"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Penipu. Cari duit sampe gitu gitu amat...",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-fb2ce9dfad4d0629",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -14229,26 +10521,6 @@ const CREDIT_SENTIMENT = {
           ],
           "hasPrimarySource": false,
           "headline": "Bismillah... Semoga rezekinya... Aamiin YRA 🤲🤲",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
-          "id": "auto-fd0ee1f48061b7e9",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [
-            "5ab63c906aaa29bc"
-          ],
-          "socialItemIds": [],
-          "independentSourceCount": 1,
-          "domains": [
-            "yogyapos.com"
-          ],
-          "platforms": [],
-          "hasPrimarySource": false,
-          "headline": "Pinjol dan Judol Disebut Picu Perceraian di Bantul, Didominasi Pasangan Muda - Yogya Pos",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -14295,28 +10567,6 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-fedefb02c7e67ad6",
-          "eventType": "general_sentiment",
-          "severity": 0.35,
-          "articleIds": [],
-          "socialItemIds": [
-            "55b9f78233795400"
-          ],
-          "independentSourceCount": 1,
-          "domains": [
-            "youtube.social"
-          ],
-          "platforms": [
-            "youtube"
-          ],
-          "hasPrimarySource": false,
-          "headline": "Kelamaan bang. Caranya: kirim gambar uang tunai. Kemudian suruh ambil dirumah. Pas dia kerumah siap2 dengan pak RT dan w",
-          "headlineZh": null,
-          "summaryZh": null,
-          "reviewQuestionZh": null,
-          "reviewedSourceCount": null
-        },
-        {
           "id": "auto-feeb516678481e6a",
           "eventType": "general_sentiment",
           "severity": 0.35,
@@ -14339,20 +10589,40 @@ const CREDIT_SENTIMENT = {
           "reviewedSourceCount": null
         },
         {
-          "id": "auto-c20e8db3365f2331",
-          "eventType": "industry_update",
-          "severity": 0.18,
+          "id": "auto-ffaefc4c496f519f",
+          "eventType": "general_sentiment",
+          "severity": 0.35,
           "articleIds": [
-            "26d4b067e5524efc"
+            "50add95f7ad3c99a"
           ],
           "socialItemIds": [],
           "independentSourceCount": 1,
           "domains": [
-            "indopolitika.com"
+            "suara.com"
           ],
           "platforms": [],
           "hasPrimarySource": false,
-          "headline": "Irfan ND Soroti Pinjaman Daring: Pertumbuhan Pindar Jangan Sampai Hanya Pertumbuhan Utang - Indopolitika.com",
+          "headline": "Asosiasi Fintech Bikin Tim Khusus Tangani Pindar Bermasalah - Suara.com",
+          "headlineZh": null,
+          "summaryZh": null,
+          "reviewQuestionZh": null,
+          "reviewedSourceCount": null
+        },
+        {
+          "id": "auto-b8d1302100b4c52c",
+          "eventType": "industry_update",
+          "severity": 0.18,
+          "articleIds": [
+            "6771185bd83cec9e"
+          ],
+          "socialItemIds": [],
+          "independentSourceCount": 1,
+          "domains": [
+            "tradersunion.com"
+          ],
+          "platforms": [],
+          "hasPrimarySource": false,
+          "headline": "Kredit Pintar soroti kemampuan bayar di tengah pertumbuhan akses pembiayaan - Traders Union",
           "headlineZh": null,
           "summaryZh": null,
           "reviewQuestionZh": null,
@@ -14382,107 +10652,94 @@ const CREDIT_SENTIMENT = {
         }
       ],
       "articleIds": [
-        "c0c11035d2c959ce",
-        "ef53f66163051287",
+        "fbf3160d5e4da160",
+        "9d810c8716bcad97",
+        "21fd51ce38bd4de7",
         "1ee9c4d5279a6514",
         "7944caef605d3641",
-        "0caed968f8b623a0",
-        "0781a0bcda4b3ad5",
+        "8cf59cfe2270505d",
         "901fecbe2b22a2f6",
-        "0a1bc67052c383fe",
-        "29b778cf77bcef2f",
+        "2515d7d0bee17568",
         "6db0fd596a9df8c8",
         "f5f5489b2ce8811a",
-        "e13a9c9007186d75",
-        "82c23d792f53a45c",
-        "1f3c347107d04197",
+        "7e23f911e3ada8c8",
+        "e3f7e6296ec0ccf6",
         "af44bc3324f658d8",
+        "7d62095b65979072",
         "cde5ff6f84d2fcb8",
         "ead330802730d3f5",
-        "f75daa33716d1ce4",
-        "a1dff59294b60463",
+        "50add95f7ad3c99a",
+        "a7f3b68d16bcc1dd",
+        "f2ec5b7942efd7f2",
+        "3e9196634d1208ca",
         "66752df8e12427a7",
         "fc49c951b625ee63",
         "33cae21382f58987",
-        "f2eb55bbcd81f027",
-        "26c78e78b4178e73",
-        "9059dc8278a3eb71",
-        "339c2a6b12b392be",
+        "4c516bf49a5d8ff7",
+        "f72a02f4cf3b3b0b",
         "927c8929f1db1f06",
         "20cdf55435b320f3",
-        "7d62095b65979072",
-        "b2a467a980df66ff",
-        "18240c7832d87dca",
-        "b5a52f887a22a106",
+        "b89c7a664410fcd0",
+        "4c00162f7c54cbe4",
         "07d129a0566e4a83",
-        "8d2bf52909121877",
+        "f0fbc43ff28dc210",
         "f1a73b26358816a5",
-        "a22c7a1f3c716b69",
-        "a7f3b68d16bcc1dd",
+        "e63473b9d6798cdc",
         "a377b53258cc7830",
-        "7c161163c26250fe",
-        "a979a12ba2a5e901",
-        "7b6b30a7aa5552ed",
-        "d237c05aef11610f",
+        "f256d1254a77f3f5",
         "5fa6bcd392e9fefb",
-        "3efb15054e95eb56",
-        "e0752baa772a7a79",
-        "eada9147411fb5d2",
+        "765ce7f628d7bf04",
+        "53e6de279bbe46c6",
+        "d8e890c4caf23f7e",
         "2a635d11be7771fe",
         "6a19f3cd8520b4da",
         "9c7ac1c10ceba13b",
         "4772103897de0e9f",
+        "def720a43021c91a",
+        "9f77d336d544f786",
         "9993dd6bbe6f8c98",
         "05623cd1496768d2",
         "8dade58734d2d36b",
-        "f8d24c71735f7fcd",
+        "13892aa8757883de",
         "c0077402144fd375",
-        "8f6fd82743e8ad38",
+        "38d3b8c49d1fa3a1",
         "f1d36be9de388f6e",
         "ddc83adec5eb3be9",
         "f10cbbdb9fa5e5a9",
-        "3a42589a9d2aff86",
         "80b0ca58b8d1d8c7",
-        "21fedce3ed8dc37e",
-        "7547db1151fb75da",
-        "81e5208c1167aebc",
+        "0590c6b52ce7e4f3",
+        "060c3019728c7edf",
         "18a62c2776ad13c0",
-        "1c9cc6f3a42fdd7f",
+        "30380a3e193336c2",
         "42fd28159cef015a",
-        "870498e57ae4d956",
-        "25c252373e844cde",
+        "4a25808ba6ac42d9",
         "8552eb48bf41f46d",
         "f2e6f0942461138d",
         "d8853c14e724a354",
-        "5ab63c906aaa29bc",
-        "b7f8e5c56375e6cd",
         "f7ca9b7c990c7e07",
         "2c38dc15bb014cff",
         "998737cf519ae244",
-        "0d2afed21e8ffaa8",
+        "ff4805c736006b43",
         "cd04843d385696d4",
         "934a74501acff9b3",
+        "8f9f4ebc2b0383ce",
         "55317877ff61511c",
         "7f8130ae23b7da05",
-        "3781a13f9e139fe5",
         "2e2b66bb962ab166",
-        "e892f35122125c31",
-        "26d4b067e5524efc",
+        "a2a1bc12c60284c5",
         "90824feb6bd8d2e3",
+        "484ec3f6bcfcd5f4",
         "058ad5321296b34a",
+        "6771185bd83cec9e",
         "1f6aeadb61fb9747",
         "ff92369f1d977132",
         "cf163fbf08f0eef7",
         "311379f01a86167a",
         "905c5e05973a9171",
         "0c1a775998f2588e",
-        "bd4b1bff0aff7196",
-        "a2cb441c4c640e88",
-        "fb3522939256aa3d",
+        "a136dec0809d7378",
         "0ca5256042939ff6",
-        "19b3a44df0cb4b68",
-        "a566aa3917c26d89",
-        "1d2538c26de21a1c",
+        "c956039a5d5c7264",
         "f458ed596460abaf",
         "f44d9718b8f77a2e",
         "84b8fdc01beb49f7",
@@ -14493,359 +10750,189 @@ const CREDIT_SENTIMENT = {
         "bd73b1d83b034bd8",
         "6c7b25aa299fdf34",
         "35965061b6c775e2",
-        "acffbe4d2ee93abe",
+        "f1fb47d08a18d116",
         "b34dd8b7d6631dec",
         "cfcd35bd0bca05c2",
         "c544a78622acd231",
         "0cfacf054a794212",
         "22cad0f7a7a2e1ca",
-        "41713d029b032d5a",
         "be9f26c754c4b823",
         "fa2eeb19708848ab",
         "83c8af6e950b2c2a",
         "0a8ec261293d200b",
-        "c3984c7d10864182",
         "d49d4843ff11bc4d",
-        "f95a60a22f8172f3",
-        "26b474ee42ed02d3",
-        "fb9ffdbd767978ca"
+        "36b83dba8693eb57"
       ],
       "socialItemIds": [
         "c604fd633b62e729",
-        "3d2c1dd45ea4274f",
-        "028f9dbb0c9b4ff3",
         "67dde13bfc7e3e52",
         "ee292c9d21636a06",
-        "e5862753d7d5cdeb",
-        "7d4c94208c9ba997",
-        "cc99861012c8f902",
         "2c7fb00e8b3007e4",
-        "ff0f11ac34d60231",
-        "3b0e3137f25348ee",
         "1d6d8677f7e6ca8a",
-        "c0149e0e274b67de",
         "9d0e67431569fa3e",
         "fc0693b87f549931",
+        "7a95b952c1eec9f3",
         "c48d1edd073056ea",
         "eb7f67c3979af62f",
         "909bef3d9b54fbd3",
         "e51a46db4a9ced07",
-        "d6010962eb1db75a",
         "4bdc89d801595c6f",
-        "430f30efa08b729d",
-        "0c6b1865878c3b70",
-        "0f194afbee57ca35",
         "bff5c1b0ee148fc8",
         "33cf92ba8b78b1d5",
         "d4065ff78d443708",
         "4b811ab743704665",
         "222de6ba3cb9b49c",
-        "55cf80406bb98ac4",
-        "4d3d5c4be5b07165",
         "d94a3246ab5c589d",
         "a1b499401bd52ee4",
         "9d1b61fc064c1531",
         "d5ab9d9163305ff3",
         "b11e768c8af309be",
-        "55b9f78233795400",
         "728dd5db98b4e72f",
-        "5a72df55ab52e48a",
-        "43670f96b96861a5",
         "aeee1330888c28a6",
-        "854479315c4589f4",
         "932bb6bd4ce05879",
         "dae102d8edce5890",
-        "1776396f16e813de",
         "c446391e16dbf64f",
-        "c43df07d4781d716",
-        "b7661a2d699907bc",
         "8cbe0100be370213",
         "761cbc4dd4690db3",
         "74499f9376ce665f",
         "ad96e44a8765be1b",
-        "9cbcd74597f4782b",
+        "5c89fb887208d6fc",
         "bfe9ea4d1d149d32",
-        "a54fe97d6425bcba",
-        "78749977235fbc15",
         "8d0bc60d21ada60e",
         "e39574dfc72400fb",
         "1203d1c7dd421cb0",
         "e94843f53ef95646",
         "61f0698c3eb8e947",
         "c34e8699b13682ee",
-        "73f82ea72f63bb47",
         "fc3724414ee832a2",
         "7d63139df873cd9f",
-        "93c270339df6f6a6",
         "58c84fe751aa2365",
         "e8d4616452903092",
+        "9d26fa1f46e9ab7c",
         "7a95764dfc221600",
         "826d15d23b2b0138",
-        "bd4c2bad63a27675",
         "3336b22fb7b125b6",
         "4a4485fa16c20364",
-        "13cf8785621dffe8",
-        "b0b318d917877a20",
-        "619d8045f260b40b",
-        "39f3c4eee6c99bef",
+        "6b20f43ed68a5d1b",
+        "64bab3eccdad556a",
         "2eb2bcd1d8f2f365",
-        "3d61010313d1749f",
         "47622e7cf7c28936",
-        "98e57af1a16dcd6d",
-        "6c45642dba3fef90",
         "4834a2910594012a",
         "f7b2c42110c4e1ae",
-        "d24de17797deac18",
-        "3bd3e399f18b5232",
         "20ac2594232e26bb",
-        "65a2a53760885490",
-        "b6afea739513e36e",
-        "4ce7ae79ad8e8f8d",
-        "567d89f82073626f",
         "3e0f60b5dda94109",
-        "8c4becf1a44fdeb1",
         "4c4abb58d564e4fb",
         "1fbe748378e62222",
         "67af425ab56f5c6d",
         "086e06044372084a",
-        "b21421c44c7857e9",
         "552583f1f671246b",
+        "14da08db214d4b2f",
         "da99fadd6f264ee6",
-        "82c93726f544fae7",
-        "5c4baa08c8861cd5",
+        "800b5b5f3acab25a",
         "dfe5f9e968d03f7a",
         "e634d87187e1a7dd",
         "1a1bdc3420ff69c4",
         "c95ca96245315df5",
         "09f38629a2dd6128",
+        "dc33548823a6aaa8",
         "49089a323d55a23b",
-        "4bce1b49eff9ea06",
+        "631b2467b82a2b79",
         "19e305cc481afd61",
-        "45262809ced1fdae",
         "1c249ced86a98b77",
-        "7d8c13e9463e0fe9",
-        "ca647f73a3de019c",
+        "bc07a82c712dae64",
         "275266b03e26a83b",
         "8d21e8f6705656d3",
-        "6c84d274c9ea36f9",
+        "80d8908c639ee467",
+        "f25f23ffab1f1b41",
         "d729956ee768b438",
-        "a5e1f09ed6edba12",
         "f360e23868c10944",
         "8adbf5267eb14b41",
         "fe2f5ef52c400361",
         "1f9065bae603103b",
-        "e4b8aee2dc4b5a30",
+        "d969ac8e53f6bf0c",
         "262887b8aa92160e",
         "b8c5e0040e62f64f",
         "e7f5f1469aa968bf",
         "3426aa2837827be5",
-        "0955b8458a48daf9",
+        "f8fc64558631dd97",
         "1cd639442b96aff2",
         "977841d38ed2027a",
+        "6c2c6a30fd84bcc0",
         "18196160210062d4",
-        "c08a02f4e6e9e43c",
-        "0bd209930cab7b51",
-        "6ef4d3050f6b5718",
-        "3c23e7c800850bd3",
         "7126705f45ed396a",
-        "d112aea80d35d5fb",
+        "0ec6ec863dc5084b",
         "e89ba19808455f9a",
-        "168ec57c6cbb4363",
-        "9ea6a4902afeb9d0",
         "b5f86afd2b0be6e6",
         "042d7e38b8c9e8ee",
         "9ea64f58de59ad1e",
         "0d4e951154cf25fe",
-        "01d9c06758d9edac",
         "ecb64662b23c2d79",
-        "0a8473e5731dd980",
         "8786fa382da7e6f8",
-        "41e9f0d01da3ffae",
+        "abd4d9d28175eeab",
         "9ab3d76fc7d8df53",
-        "98ec90a941ff91ea",
         "f629f104c8a95cb5",
         "28c664378a2877ee",
-        "9264089caaccb606",
-        "26de060a4e8e246f",
-        "cd7588935135ce5a",
-        "0c4d128f9738b3c4",
         "bb9b391597078d9d",
         "2e7e82f655b41d72",
         "95e8fdb13e62ef16",
         "091ad1f412648efd",
-        "31231be849ad64f0",
         "059cce8ad1dd444c",
-        "8993e8b3144bb522",
-        "d4ef525214302577",
         "7826b04dfc780cd6",
-        "6b4b55515a5231fb",
-        "e091ba21981d1786",
         "9996be4f13d31a06",
         "70dc889dedeea110",
-        "21fc375d7a02f201",
-        "bffbaf9e79ee6ee5",
-        "11b026aa22cbd80a",
-        "baa8f4b94c26e0cb",
         "b79794f06119b710",
-        "bc0f48cf148fa051",
         "7ad6a2a88edf441e",
         "be5f4c65aaca5482",
         "3b8f44a3680725f8",
-        "549dcd1b3de710c6",
         "e679faf7830a2a94",
         "0fd8f2c187b4cf20",
-        "0381130bc8a0f9af",
-        "5c4c9e8e9c25d875",
-        "ca8df859c3c16dea",
+        "1552e1c34cb0d891",
         "8d8af555009e1b6e",
-        "1876b9c60519c771",
-        "8d54c6a1bc48c40e",
-        "b674d23067d98680",
-        "3316c33624e72a27",
-        "ce45287f160ba538",
-        "60a64ac8f6061bfc",
         "8dba87c5be5d7fb9",
-        "81585c402faf84f7",
         "b99ce4b0b240a57d",
         "7e65655a6023ab52",
         "2289a564b1f52d25",
-        "343037dd2fbd2be4",
-        "656fa410af513cc1",
-        "59a3d91cf191c4b9",
-        "0c0ad9b49b14bcd0",
-        "a803832113be7d2e",
         "f5a64369baa25394",
         "698f139ee2dbc190",
         "d649ed2d83719d88",
-        "ac3efc86f48697de",
-        "6151b5aeb3c03e00",
         "3bf96d4b347b78fb",
-        "24843a130bcc2008",
-        "58ad00ccda4fe4c4",
         "d305aec6ba68203b",
-        "0456ff2da6836183",
-        "c68f4595d8378774",
-        "fe9dbec62593ca0f",
         "90592231fd20585a",
-        "2ca943f79d55880f",
         "6738d66f7015de38",
+        "e95846b6c32eb34f",
+        "654090d7735862fe",
         "76b412e91bcbd58a",
         "c774fa8571b59ffb",
         "b80372f3b8e2b0c0",
         "b18d12a4e63e5042",
-        "348055666bd0f20b",
         "09abcbd3a243051f",
-        "42a9e6a2c63d55cb",
+        "520447ca8b4fa99d",
+        "7ace91f7597aa0d1",
+        "80951a09f963dda5",
+        "705afca4a8d3013f",
+        "f80c56cf84d8467b",
         "2b62bd0ccf8a61e9",
-        "143ab9546e4d0f88",
-        "29982e7d61928907",
+        "ba7a361ef97067d6",
         "431807ce55bdc744",
+        "aad9e9dcdf5ea9ac",
         "46ab78888f6ff495",
         "794a3664a39dae43",
-        "008484f9e786c46f",
-        "cf0b65a3781b1958",
-        "9d8feb7f7671148b",
         "0194c5d64e260b3f",
         "ebc938f9e036eda7",
-        "e4f6e771c2bced3a",
-        "5523451d677bf8b4",
-        "2474b93fc46fecd2",
-        "f1fe862f2933f913",
-        "1612839219371dbf",
-        "220e52a3eec486c1",
-        "dee35c708a994611",
-        "62b1e9a3ae007b33",
-        "38ff20c812826a6f",
+        "2dd2ecb1c2212d55",
+        "58d4f7575756d7b2",
         "696bec28abb194fd",
-        "81249a6e9c7a7b7b",
-        "a9706b97edc18b76",
-        "f2ee52c819b53420",
         "410b88f88cbb90d1",
-        "63b2431a6de48e07",
         "3affc2c63809c5c7",
-        "9eb6780f62f1fc90",
         "0a958a013164b49c",
-        "f4ed9a8cddc9ccde",
-        "30fd316a9bc8b63c",
-        "234803684369f6c0",
-        "434c30f1b17539a0",
-        "564ae1557a17550f",
-        "1853193e539622d7",
-        "f5fa12b7de5bc7e7",
-        "1e05d8de4adfa1cc",
-        "c19173bc498d55bd"
+        "46442a703bed3d0e",
+        "2bcd8b340b993861"
       ],
-      "_newsVolumeRaw": 127,
-      "_socialVolumeRaw": 380.1
+      "_newsVolumeRaw": 110,
+      "_socialVolumeRaw": 255.6
     }
   ],
   "articles": [
-    {
-      "date": "2026-09-21",
-      "title": "10 Provinsi dengan Utang Pinjol Terbesar, Jawa Barat Juaranya, Capai Rp 23,9 Triliun - radarcirebon.disway.id - Radar Cirebon",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZm5sMGxKUUJWbkIwWW04N09meDRCS19Gd1dXWDZDa1dxdkkyTWpiNUNvNGVLRndqQmItRE8yaUJjM185TWJRNThmaGxqMXdxTkJqQnlBZ3I3bTdwWi1TdVlJa3J3Y19wU1dJQVpkcFZkSm5jRU0zQ3hnUTlWbWdXUDJQdUZ6akNDRVhXeFQwY1VMaE1Fd21qVmZiNVpHeVFzTFZWYWQ1LVlRYmdHS3FubDF4emFsbGZrX25GdjRMQ1R2cnZXU0VmSW9KZkpqWk9p0gHAAUFVX3lxTE03QlBPd1VTakUwaUR5Z1B6S3lRRnpyZEllaUszb1U4QzZTR2pVYVNtRFlCR0xzSm9BZUwxTHRpdFUtVGVpdHM1cUNTQ0tiZUZpdEdIdXdoZlF2QmllSlcxTjZSVEJEeWkteGw3N2NtNEhuWUQ3OUVhMmswYzZnVUV2SmNrTkJTTFktNGg0TXhSQVl3T1J3bjVDYnl2alZEU2YwU0JVRDdlNkhvYTkxRlJpVUpBbnJhNjZoWjhOSmFrYg?oc=5",
-      "publisherUrl": "https://radarcirebon.disway.id",
-      "source": "Radar Cirebon",
-      "summary": "10 provinsi dengan utang pinjol terbesar jawa barat juaranya capai rp 23 9 triliun radarcirebon disway id radar cirebon",
-      "id": "f64a1613925200b3",
-      "domain": "radarcirebon.disway.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 57.0,
-        "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2323ccfe8b6eb67c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-21",
-      "title": "25 Merek Beras Fortifikasi Ditarik, Pemerintah Pastikan Stok Beras Premium Aman - BeritaManado.com",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQbW1OSW5XV3pTckFQSjQ5QWFTWDRBbGE3ZUw3U1JVbGdMVV90S29qZURraWlTcEFuZkVXN0lTVHo2UXlXaWFsV1hUYjFkdUhySXNOaGI5amNtTGNmNEJMNGdRY3U4SnE2SXFScFplZHJZTHFyMUUwMVdIcWQxeFM1ZUJHTThPenByUzRGM21qM0U4a1lVa2NtTzJyMUxvQUtkODVDSkU2RQ?oc=5",
-      "publisherUrl": "https://beritamanado.com",
-      "source": "BeritaManado.com",
-      "summary": "25 merek beras fortifikasi ditarik pemerintah pastikan stok beras premium aman beritamanado com",
-      "id": "81b5bdb7bcee1d2b",
-      "domain": "beritamanado.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e5c9cd806caac57f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-21",
-      "title": "3 Cara Blokir Nomor Spam, Agar Terhidar Dari Tawaran Pinjol - Bloomberg Technoz",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUndsbXF5RWZKSlhobzIxZDAwZDNDamozNzJ0S0h1VnROTmo2b292MlNZMWYybXlDaWdFa2VpSTNxNDBfcnRwNkJQTzNNM3RMWXdLejVPOUJYOFMyNThCX05jWFhXeHdnTkFVcGUzT1pUdXJnVTRzNW01azFYQWpLTjNjbkNZYVdkbkUyTUlINW5OS01fR0gzUldxbHhOcHlOeFAtQ1JtV29FNjNfRndz?oc=5",
-      "publisherUrl": "https://www.bloombergtechnoz.com",
-      "source": "Bloomberg Technoz",
-      "summary": "3 cara blokir nomor spam agar terhidar dari tawaran pinjol bloomberg technoz",
-      "id": "9b3b1a081ef98976",
-      "domain": "bloombergtechnoz.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-841830924440ee8c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
     {
       "date": "2026-09-21",
       "title": "3 Cara Blokir Nomor Spam, Agar Terhidar Dari Tawaran Pinjol - Teknologi - Bloomberg Technoz",
@@ -14870,12 +10957,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-21",
-      "title": "Ajukan KUR BRI 2026 Pakai KTP Bisa Cair 500 Juta Cicilan 1 Jutaan, Ini Syarat Tanpa Jaminan dan Tabel Pinjaman - Berita DIY - beritadiy.pikiran-rakyat.com",
+      "title": "Ajukan KUR BRI 2026 Pakai KTP Bisa Cair 500 Juta Cicilan 1 Jutaan, Ini Syarat Tanpa Jaminan dan Tabel Pinjaman - Berita DIY - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNSlNNZndMd3ZRUmlHRTZLcUk3OXY4RHdGZ2N6WmF6dllmSWMwS29BcElGdWpPdk8yNlNoUlJOU3FBcGV1S1hNOHFkbUo0eERHazRmTmpEUUNJSDlsVFFadE85WGRuN2F5UGtiYW56TXl4VmhiYVExRjlXNjRoSUlmZWlIQms0OVV6XzdkTl9VT184LUQ2TjNjcW9McXkzZ1RwWmNqcW9RVmZMclBhVDg3UTlDQllQbHJYTmV3YXBkYmF2WHdkMDZBUjNXak1HbE5acm1CbVlYM1hGbmxpazBpdWJCWFdNbUNSRzZNeWZUUU9tQ19WSGJxc2JPUEhoOTNMUHR2MXpCOVLSAYICQVVfeXFMT1BmQkd1a0JPeXlPcGJ6RE1KSTNGQ1QxaUFpd1lrQjUzTjl5aGs1bWUyVmJCbzMwNFFEd21xcjJQRjJnalZZUHhRZTR1TkNJaDdDWTY5Um1Bd3cxOWpuM3RPcW1hV3ZUZ3NhRXozNWo1eEo5Sm1mNnE5ajhCY05OZWVWSVoxZ1QtOE5MU1pLYWhaZjZNeG5ldE1fREJQTFNhbEZRSU55cWZnR051UjFrbEJzV2hsSjVSdmt5UDJmU21KcGRDZFJlT1U4SFRVS1RicFd6VVd1Mm55U05CcDVZemVMd2VDR0Z3MzFjYXowbmtmSGowVFNvQV9RcTg0T05HaUdR?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "ajukan kur bri 2026 pakai ktp bisa cair 500 juta cicilan 1 jutaan ini syarat tanpa jaminan dan tabel pinjaman berita diy beritadiy pikiran rakyat com",
-      "id": "34b3ba229ec5c142",
+      "source": "Berita DIY",
+      "summary": "ajukan kur bri 2026 pakai ktp bisa cair 500 juta cicilan 1 jutaan ini syarat tanpa jaminan dan tabel pinjaman berita diy berita diy",
+      "id": "1e1199539b50bf90",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -14892,15 +10979,15 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-21",
-      "title": "Biang Kerok Blackout PLN, CERI Tuding Dirjen Minerba ESDM Teledor - Suara Pembaharuan",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPaXBPVmpmSXdVVWdkeVZyM0pfMno4MFAwNmdKZnpqclRhOW1fUW9yMHVPbE1OZDExVE5leE9pZm1UaVJCaUstOTZOQ0JYVHg4ckVub1NzTC1KQ2JuclVPX2xTenBYeGFONXo0NDRCSlhHUC1QRFFLcnF6TnhpNmtKbnRpN1hZb05ubGc?oc=5",
-      "publisherUrl": "https://www.suarapembaharuan.com",
-      "source": "Suara Pembaharuan",
-      "summary": "biang kerok blackout pln ceri tuding dirjen minerba esdm teledor suara pembaharuan",
-      "id": "e49b66907634ae93",
-      "domain": "suarapembaharuan.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
+      "title": "Cara Hapus Jejak Data KTP yang Terindikasi Judol dan Pinjol - Suara.com",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQdkd0em10TXliZ2xxR2RQaDAySGZZQkwwYy1LQXRxR1RPU25KZWp0OWRGZFRzWUV6amRFOXBBbG9kVzFna1o4ZHNRelBqbmwyUzZnRFRFb3VtVktvWE1WSlFEVEpHWXBIdEV6Wi1UU0ZsY1F2X0VVNEdBQXlhRDR3UUVROHRkbDNUczFnZkRmdjZWTVhhY3I3TzJibTJIcDltV0I2cUtfWWFub0R4cVHSAa4BQVVfeXFMTm84NndBRm9UVEwyRGNGS0Y0YXBXc3NoeTlwdlZncEJxdkh2U01QV20wcXJhVWx6RHFRZUFBbFZ4VEJrb2tVYno0bTNPN3hocFd2cjk0azVEREpiOFlWTmRDVl9hWHd6MnFqWkVBWWh5NVBXRzJYVXFXWkRwbUViUXBHV19GdkQydmhWZFVReGdVT0N0cENsSFl4NHBtZFh0TjZtMlk1czFWczNmNHhB?oc=5",
+      "publisherUrl": "https://www.suara.com",
+      "source": "Suara.com",
+      "summary": "cara hapus jejak data ktp yang terindikasi judol dan pinjol suara com",
+      "id": "f73cfd194caa9465",
+      "domain": "suara.com",
+      "sourceClass": "established_media",
+      "sourceFactor": 0.85,
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -14908,18 +10995,18 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-e82cb764bcecaa1c",
+      "eventId": "auto-0d8de02186cfbaa5",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "date": "2026-09-21",
       "title": "Jangan Terkecoh Tampilan Mewah! Begini Cara Akurat Bedakan Aplikasi Pinjol Berizin OJK dan Sindikat Palsu - radartegal.disway.id - Radartegal.com",
-      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxPR3Rqdk9BbEpIdEJhSlBKcGhEX3N6X0VJb0tGTkFBejRvYXQxeURhdDhQV2dBQWpWMklPZVk5eUxoM2hqQ0RZay1wcG5PYnlReTFDVVlNQ2xyQ3ZzNjAwdFJvNXRxX21FRmFkUW9acTd6Z3psMmxSU0lhV3ViNldCNVpOWWcycnI2X0dBWkhfOE1neW50LXo1eDlMLWlGQldGUHpveVlMRzNFY2MtZi1iWjhuZUNMR2ZBcXhQa00yOW5hOTBjZzlXWlQwaDk5dnQyaUNGMmxpV0ZOV1c3emo3LWtLOGxKU1ZTLU16aUJOQTRmVlJrbEpz0gHcAUFVX3lxTE56UU5pTW1EUWRSNG5teHlWMVd4dDdyNmY1OGpQbmNaY1lET2JaR2REQk1fZGpXTnEwcm9SWGNaWDlveVNqa0VuSmNTTkpSLTFSSEo4V3FyYUJYU0ZMMS1MemlIOWQ5Qk9MbHFCU0xJQVZYQl9vV2pYcHRTeDRwZTZ4VGZxdDFKTDdTNzc3VE53MlZIRlFydVZRSFdCMWxkSmdxY0FzMFI3eWt4M3JMbzFQdjY0WXZ2VDZPcXgzQ2VIeGQ3MFlmUUhJZ1JmaGx6QnV3VldvMGI5TC1CcEo?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPbUxDd003ZlV5Tlo3QndUUVlrSEhaYS1jRjE0NjhvWkk4dWtyekRjUTBPVE16TW9Tb01rSWpHeFZVRGJnYThuYlNueGdjMmNsUlViNTZQNXlWVmVIcUFDUFFfUEszZ2RNOFlETGtJNkV0YXplRmxtR0RzSGdfOFBUeU9BWlkyeDF2UnJHSjR2ZHFOQjd4aFMtOHhiVEpxQWJKQ3hJdkpQZk1iY3o5c1FVWDZ3UW5XYTVmRTdpYW82YUxYTExlQ21wWDlLbFJQOG9HOERXLW43bG9UX29aM0pCZGNZZDNOV3FuZnVBUWV30gHcAUFVX3lxTE56UU5pTW1EUWRSNG5teHlWMVd4dDdyNmY1OGpQbmNaY1lET2JaR2REQk1fZGpXTnEwcm9SWGNaWDlveVNqa0VuSmNTTkpSLTFSSEo4V3FyYUJYU0ZMMS1MemlIOWQ5Qk9MbHFCU0xJQVZYQl9vV2pYcHRTeDRwZTZ4VGZxdDFKTDdTNzc3VE53MlZIRlFydVZRSFdCMWxkSmdxY0FzMFI3eWt4M3JMbzFQdjY0WXZ2VDZPcXgzQ2VIeGQ3MFlmUUhJZ1JmaGx6QnV3VldvMGI5TC1CcEo?oc=5",
       "publisherUrl": "https://radartegal.disway.id",
       "source": "Radartegal.com",
       "summary": "jangan terkecoh tampilan mewah begini cara akurat bedakan aplikasi pinjol berizin ojk dan sindikat palsu radartegal disway id radartegal com",
-      "id": "7ae63e8cf509972a",
+      "id": "a68bfad22ca099f4",
       "domain": "radartegal.disway.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -14958,12 +11045,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-21",
-      "title": "Pinjol Ilegal Terus Muncul Lagi Usai di Blokir OJK, Ternyata Pelaku Hanya Ganti Nama dan Aplikasi - wartaekonomi.co.id",
+      "title": "Pinjol Ilegal Terus Muncul Lagi Usai di Blokir OJK, Ternyata Pelaku Hanya Ganti Nama dan Aplikasi - Warta Ekonomi",
       "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxObTRQbUVDT3o5MEJGUUpfaDFob3Vxd0QyVW9EcmlRa21QLUotMDFDajMzSVE4Ry11WVNEWHVyRTkzeUF4cWhGU1U3bXlqZmNaUkpnYUJoQjU4VHJYaGh1WG5sOHpDMkd6UFljck9FWnNiMFhiQXZwaUk3Y3M5Sjl4SHVuNi1rcnN4Tkl0VlNNRHFjTzdoallWdGxnRkZVeFNxakJJVmdabWczM2FvcWYyUm5OZHF0QmFIODh3ellqSVJGQ0Q4ZzkwMl9YRW1fTU3SAdQBQVVfeXFMTlMwdjBDMGYzMDIwenVfTGhvZG5ydXp3b2lRbVhKbUJhYzBHWjRQSjVLZlZlVGdIZzIxZ1ZudDFJYmVBUDd1MDVKSjFuTzJydDNLTzhRMUNfUFlRSWVKOXh5dzJnZE05LWFkdkJkdTlhUHBMM3NhUk1MMVpjbjdMUEtVcHVMbE9iZXgyRmdkMWROU2tHM3BfM1VPUC1tcVFtSTBhek1DNTVuLUR4RmZMQm1NZFFjNXM0WWFFYVZ2YkxlNV9UVTJmZHlWVXdtWDhlbGVwejU?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "pinjol ilegal terus muncul lagi usai di blokir ojk ternyata pelaku hanya ganti nama dan aplikasi wartaekonomi co id",
-      "id": "07a7c54aec907c17",
+      "source": "Warta Ekonomi",
+      "summary": "pinjol ilegal terus muncul lagi usai di blokir ojk ternyata pelaku hanya ganti nama dan aplikasi warta ekonomi",
+      "id": "9ba459c628d41e9d",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -14977,28 +11064,6 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-d88862004deb6ad5",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-21",
-      "title": "Rayakan Ulang Tahun ke-9, Kredit Pintar ajak Warga Depok melek finansial - ANTARA News Megapolitan",
-      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQUtVNmtHLWFDQzB5T2NUTG9XeHFOZERtVmdRUDdPM3VJOUgybGFWekNXNldqSFlKNHNjZ05ERnVlYTFNT2Y5SF8zTHZZNG55ZnFjZDYzZVJYMjFvWGVBbFZmc2xiRjZ0R2hFQ1dmNmh2cW9OV2wxMnlSa190RjExaW9KeFc4dGlnSVl5dTFDdEYtWHRWbkJvdXktNGdQUGpSVkRrQlp3SjBQMVFBLWFKZEQ1YmNnQk5VTDJqZdIBwgFBVV95cUxPeVhxSUtaNmZfWERpZk1Ud2daaHctZklIODE3S0JaVWJrUi1aekJKQjc5SGNISmtSdnVOUDNHSDd6RW1oVFRwRy14OXhDLUlDcl81T1FWVzRXNFZKV1d1S0VXWWJvbm9kZE9ocG1lOEFGWU9YWWI2TXZFQkRzaVN0YVUwN0h0bjhGbFgzSFIteXBfR0RVcENnS0hDbEtoNjRBRGVWZWtsTkNtbHFuWFBvQTRmaU1LeUp3SUdYY0RjNTBfdw?oc=5",
-      "publisherUrl": "https://megapolitan.antaranews.com",
-      "source": "ANTARA News Megapolitan",
-      "summary": "rayakan ulang tahun ke 9 kredit pintar ajak warga depok melek finansial antara news megapolitan",
-      "id": "eb7e4e40a3795f5b",
-      "domain": "megapolitan.antaranews.com",
-      "sourceClass": "established_media",
-      "sourceFactor": 0.85,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-b5605f12fcfda0e9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-21",
@@ -15021,28 +11086,6 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-0b11a1196e4c077b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-21",
-      "title": "Waspada Jebakan Batman! Ini 5 Ciri-ciri Pinjol Ilegal Paling Licik yang Sering Mengincar Gen Z Tegal - radartegal.disway.id - Radartegal.com",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPOE9rOW9iSk5HVVd5aEF0aUxZdldWWnFIVllvUXFqWG9sUGhXLU5zXy1yclNmVkRyVXJCVlY5Y3h1dFBQTzZzRVFfcjc2VTkzSFhqcTBVRTBTSTBtdVduQnoxQXFfWTJobE5sdXhWZnpRWmx2UnRUVG1PNG0zOGpScEdjUGJrUXFzYzZScDJOSHMyclpVQzRPZlZrSm9jaHc2ZmJzbm0xM3MxYWZBWElWWEw2TFpUWmxCTkRJaDE3eG43SUVteHUwTm9NeXhKUG5oS0RMdXQwVFhGazNzYW9FRzB0a9IB1gFBVV95cUxNTVJwZlBjdm02YlJvNjZabWJtMWFiS1g4TFRCUTNHRmVqQXFvbmNkNllsTE5PNmd5Ym1yTWdSRGdTczczWDRfd3NGcldFUHZ5WUFzZjBsaUF1QlF5SnlTYml2bjhOWnZ6SjcxUzg5UUc4Q3NsMnYwTHB0X0R6QUF6YURpZXU1OWdOQ3pMR0JvaG40ZlBHVVIxdnlVQ2NTS1hlRWdWSHFiTFJZUlN3d1lvM2RWdW9fNHIzUzNNVTYwVVFCMXFyTTN4Z2haZ1VVYnVUUUJYWmR3?oc=5",
-      "publisherUrl": "https://radartegal.disway.id",
-      "source": "Radartegal.com",
-      "summary": "waspada jebakan batman ini 5 ciri ciri pinjol ilegal paling licik yang sering mengincar gen z tegal radartegal disway id radartegal com",
-      "id": "b258148c5fc434b8",
-      "domain": "radartegal.disway.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7b7b544b85b87559",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
     },
     {
       "date": "2026-09-21",
@@ -15156,35 +11199,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-22",
-      "title": "Foto : Tadpole Pinjol Harus Berpihak pada Konsumen Halaman 1 - Kompas.com",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNVkE3VUxiZ2ctY1ZlV3Rwc09hQm1Qc2x4QnB0MGhJSFkyMk1PR1VnUnRyV2Q0WEhsaTVYeUxVMXNQYTJFdTVBak95cEJjanlSTGxOVjVMd25ncDhBblExTjhFSUlGUVA4MHdubWdDSGhGY0pTb1BsRUxGN0ZRVllwTlpBbHE0cE4zOS1HM3ByUjBQdVBydVZ5a01sRV8tT29YX3BvNg?oc=5",
+      "title": "Foto : Tadpole Pinjol Harus Berpihak pada Konsumen - Kompas.com",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPVkZjNTB0NnMxSkZUX2VBMzdIT2dZZ3ptZmVCQWZldVNTaDZ0ekVvUUFRXzAxWWNMMGU0NmVFbzdiM2tYR2VuWmcyZER1QnNTQ19mbzZCUTZqLUNnbURNbk1xdHRKYnV4VFdwYXdIWFFfZmZhclZ2dlNCNElqMkZqc2p1VzJfbWktSElISVo1VUN5bEZBS09xQVZvVQ?oc=5",
       "publisherUrl": "https://money.kompas.com",
       "source": "Kompas.com",
-      "summary": "foto tadpole pinjol harus berpihak pada konsumen halaman 1 kompas com",
-      "id": "ae1faf93d4b0d2fa",
+      "summary": "foto tadpole pinjol harus berpihak pada konsumen kompas com",
+      "id": "f3dedeeab06317b5",
       "domain": "money.kompas.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "pindar-tadpole-practice-2026-07",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-22",
-      "title": "Jangan Salah Pilih, Ini Daftar Pinjol Resmi OJK September 2026 - rbtv.disway.id - RBTV Disway",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPTHJtcGotcE9RTWt3UWliQ3BEbmVrUWRURVJvcElZenBFdDRTd0w0amg1NEh6UVVadUpyZ0EtbEVqNkRKNkYzYW13alVxWjl4d2hCaFBueGFHdUI5TXhXbHhhWTBRc1VCbUphWmxwV0hmRFhfLXlfcUtnWXJzLXYwMjM2cnVtYURDcVN2VFdMeExQNzN4Ym9aOVRXaU52M19ENDhLcEZOSmTSAZsBQVVfeXFMUFNCck5BQnV1YTJta2JSSzF4SmIyaGdwRGdGLVhwbEJITG5mNkpCODcwSzN5bTVzQ0tNdkc0MkFGUTZjTmhJWGkwSjZPems0ejNBbFdRM2dpNXB0eUVmR1lMRlFWTk9qT2lUVThram5QVHdFQnIwS1MyOENNN1pDV0ZHQU1lVVZXeTBnc3BwRjdaUXZQZDg5UEpueTA?oc=5",
-      "publisherUrl": "https://rbtv.disway.id",
-      "source": "RBTV Disway",
-      "summary": "jangan salah pilih ini daftar pinjol resmi ojk september 2026 rbtv disway id rbtv disway",
-      "id": "63b118956054e3e7",
-      "domain": "rbtv.disway.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -15194,18 +11215,18 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-573e836da01aeeee",
+      "eventId": "pindar-tadpole-practice-2026-07",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "date": "2026-09-22",
-      "title": "Literasi Keuangan Bukan Cuma Wacana, Kredit Pintar Hadir di CFD Depok - wartaekonomi.co.id",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOckkzRE5CbDUzZ29waC03SWpOWmNqUkhHNjZnbWpRWGNCZm1UQUI3UjAwQ3d3QmlMWVBpN0VDT3QzTjh3ZmxweXMzdVZBS3VWWldDcHIyeE5OZjVGMGpFN0RZRERmR2VjVHd1V0tjWmlHcl9OYlBXNmh5N2xLUEVCeDhwOTFRTm1qbXJKSEk0ME82RmVyN2pPMS01MjZwUW1tRFJtN3dDbzM5UdIBrwFBVV95cUxNTHV3TFlWeDR6TEhjbUkwdU04UjhTWDRkeTM5cHIyX1JUY19lekVzelhPcHlkOUxMOGhia2xtZHU5aW95N3hzYlNSLVVIeTlIbXRHLU91eHdpdnFoNy1CLWhwc2JkT05PSGd1QjhWVk1Ya2pEdWRYZ0I5dkZJT0poSHd6TDFUNkNhcy1OYTRyV29iWnRVd2JqczlMS2pQRVpQSFA4YWJhblhTS2FyeFRJ?oc=5",
+      "title": "Literasi Keuangan Bukan Cuma Wacana, Kredit Pintar Hadir di CFD Depok - Warta Ekonomi",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOckkzRE5CbDUzZ29waC03SWpOWmNqUkhHNjZnbWpRWGNCZm1UQUI3UjAwQ3d3QmlMWVBpN0VDT3QzTjh3ZmxweXMzdVZBS3VWWldDcHIyeE5OZjVGMGpFN0RZRERmR2VjVHd1V0tjWmlHcl9OYlBXNmh5N2xLUEVCeDhwOTFRTm1qbXJKSEk0ME82RmVyN2pPMS01MjZwUW1tRFJtN3dDbzM5UQ?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "literasi keuangan bukan cuma wacana kredit pintar hadir di cfd depok wartaekonomi co id",
-      "id": "69f0e75149c9fcd8",
+      "source": "Warta Ekonomi",
+      "summary": "literasi keuangan bukan cuma wacana kredit pintar hadir di cfd depok warta ekonomi",
+      "id": "b0b3e29398e00885",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -15244,25 +11265,47 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-22",
-      "title": "Mengubah Mahkota Budaya Menjadi Tameng Finansial, Saat Jaka Rara Cirebon Blusukan Edukasi Keuangan - https://rakyatcirebon.disway.id/ - Rakyat Cirebon",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPS0tHVUVHODJ2WVVGOFViTUd6VjB5OVBsRi1iQ2RKQW5NcHdod2JEYnZ4cndlODlXVEFZQ29zV1NFN2daSUFLb2FqV08zZXRQcEl5TTdQblE3TTNYNGs3WGJocEdaLU9OX0ZXT010ck1seGs4V2h6UWlCRVY0Mlc3MHhfVEFjRmdlcVhHbzRLZjU0MjlMUVVScE9aVWYxbmwyWWVWdjhKcTh2UkZmRXpNLU5RbDZSNEVycmxqLW1BMDhxM0pUdVloaFg3cXFCZWRsczVwd3I1Um01QUZBU3pkaGdLUm4zSk4wM0HSAdcBQVVfeXFMUDBkU3drVnJqSk1xaG00SnU4VDBDY2JmZUVrcWktdWhWb1BrZUlISC1NMmZ3NzJaZWVoaE9aRlNCR3hUZi1DdGpnUnJDOFFLUFdtN2pRU2c3UmF6aWFkMXpYcTNKaWJmTjZtT2VpckZuMUtCVThSUkdpdUtrLTZVRm80bDZNd3BSUE5kYzRGa2g2OWRRMDNVX2lFazgzT3hfX0xfVVllVUN2RklTano3cTJXVkFQOGJkM185SW9OeGdRRmRuRmNYOFQ4WlNYaEFvTFVLbEJwTDQ?oc=5",
-      "publisherUrl": "https://rakyatcirebon.disway.id",
-      "source": "Rakyat Cirebon",
-      "summary": "mengubah mahkota budaya menjadi tameng finansial saat jaka rara cirebon blusukan edukasi keuangan https rakyatcirebon disway id rakyat cirebon",
-      "id": "17368320b7ff99c8",
-      "domain": "rakyatcirebon.disway.id",
+      "title": "OJK Dorong Pindar Ekspansi ke Luar Jawa, Pembiayaan Tumbuh 29,06 Persen - Infobanknews",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQZTFxNnpIMzdrX0Z0dEFKclZ0WlVuNkszOUM4SDhzYThoZWxjNWQ5VjMxZW14SGhUZU4xMTFIV1lwcWNJUk9HTDZ6NHRPY01Oc3ZhcWRFaElBSzYwdUJSRkVzSHYzX1NSREl5YzBETzF5UldXdktaRk9GOFFMMklvT0ZMTnMxNkU1Wk9fMjA3MGhTM2hvZnpnSmJR?oc=5",
+      "publisherUrl": "https://infobanknews.com",
+      "source": "Infobanknews",
+      "summary": "ojk dorong pindar ekspansi ke luar jawa pembiayaan tumbuh 29 06 persen infobanknews",
+      "id": "6344c87490a1ac6f",
+      "domain": "infobanknews.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 40.2,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 1.4,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-5e33c574b4f59fd4",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-3cd4fed10e213cb3",
+      "eventType": "industry_update",
+      "eventSeverity": 0.18
+    },
+    {
+      "date": "2026-09-22",
+      "title": "OJK Ungkap Pembiayaan Produktif Tumbuh Setelah Bunga Mekaar Disesuaikan Jadi 8% - Warta Ekonomi",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNOXZVeTJxR1FfN0xkTmhXdmdZQlM4cTViM29tdkF0SjBTLVFRbzRvLWpQdzA4Y05qXzNacFVrXy13NTJycFhvNDBWUzZxRXIyeGY3ZDlRTThBU3A2Q3RybWQ2NURqSzlad040bWo3TFlzRDZwOWFqU2V2LTV1dlJmeEpTT1lWZDlFN282TG1lMlFPWld3N1I2eVBkR2p1WUFweHZFNHlpTmxOc05zRnRhVzE3XzZmLUHSAbwBQVVfeXFMTjNwbS1KeFU4bUxPbFZyVF85bVd5VmVVR09IV21kQjlMYmdtZW93OGNmMkZqV0VWUGRKUVRha2JzV1E0RkpQa3NJVXVBQ2luSjI3dFZNT3RPT3BhMjctSWJpaFJEOHNqWm1VbVZWTzY1YXJfZ0diU2YyYU5aaGFGZHVYc09SMnNDSFBIUTdqeGVlbjdlSHdvNkNBSGNtT25HX0Z4UFEtUnJzOTlQNl9JYVAwRmtwa3k2Y01lQ3Q?oc=5",
+      "publisherUrl": "https://wartaekonomi.co.id",
+      "source": "Warta Ekonomi",
+      "summary": "ojk ungkap pembiayaan produktif tumbuh setelah bunga mekaar disesuaikan jadi 8 warta ekonomi",
+      "id": "f8261b3b18e3eeec",
+      "domain": "wartaekonomi.co.id",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 40.2,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 1.4,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-7f2bae1b4d79038b",
+      "eventType": "industry_update",
+      "eventSeverity": 0.18
     },
     {
       "date": "2026-09-22",
@@ -15354,12 +11397,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-22",
-      "title": "Utang Pinjol Masyarakat Menggunung, AFPI Putar Otak Guna Cegah Nasabah Gali Lubang Tutup Lubang - wartaekonomi.co.id",
+      "title": "Utang Pinjol Masyarakat Menggunung, AFPI Putar Otak Guna Cegah Nasabah Gali Lubang Tutup Lubang - Warta Ekonomi",
       "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPdFBZQ1FHZERSWWRLQUhBMGV3MWxzQWF2U0dnTjNFZWpmcW1JMkZodTRvZFNZWHFnRHZ1bzY1dkNXb0w2UTFHVm94M0N1emx3aENFYW9SSmFRYTg1YjVPcmlqd0Z0QWRyMWsxTkhtUThQa0NPQ25qYmpFMEtOU0JPSjlkdTFQY2VTU2JfTFNEQU1ZTUlKd19manBoN3lLcHk3V05mNTF2RXlvR0FvS2ZSM19WRS01UjlqS3dHenZEZ3dJaFJkWEQwNTlnU3DSAdIBQVVfeXFMTWMwb1VfamJQNHJqQXR4bFRNTlhiZE95dlFVRU5uQklMUElLNzlmRGhBLVlPemJ0bXgwb0JtaC00ZC1DdXpMTlFYS21aWkZLcDQtM3VZMzhkdXFMMEVHXzloTTI4akpFNlVPV2tfTFhXSFNmOWxIcXludjg4TTllY2FibGNPUVNMbVVGZUdCUWVTNXl6REtBWFEtUVhoVVhNcHJId1Z1b0p3NmtPT1l6cUd5Z2c3RjU4cEN6ZDQzbVFHdjIwb1ViNlkzZTRjVEZJRzdR?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "utang pinjol masyarakat menggunung afpi putar otak guna cegah nasabah gali lubang tutup lubang wartaekonomi co id",
-      "id": "25fec30bbe2bfa72",
+      "source": "Warta Ekonomi",
+      "summary": "utang pinjol masyarakat menggunung afpi putar otak guna cegah nasabah gali lubang tutup lubang warta ekonomi",
+      "id": "a7c12118ae754726",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -15398,10 +11441,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-23",
-      "title": "Cara Bayar Multi Payment di Livin Mandiri - kompak.or.id",
+      "title": "Cara Bayar Multi Payment di Livin Mandiri - Kompak.or.id",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ac0lPa29GcTdKWWxlZGZvLVQ2Q2sxRHhfV2dXMC1uNV9lMmtyREZDUVE2X0RVN2lpMXZEWFpwSURQTi1rRlJRWjd1ZFhiTFpJTk11M1ZRcXI2WlE5VVE2S0QwUWttd2lLZ1pQZDF3VlY?oc=5",
       "publisherUrl": "https://kompak.or.id",
-      "source": "kompak.or.id",
+      "source": "Kompak.or.id",
       "summary": "cara bayar multi payment di livin mandiri kompak or id",
       "id": "e86bde4d42d0c8e2",
       "domain": "kompak.or.id",
@@ -15442,50 +11485,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-23",
-      "title": "Cegah Judol dan Pinjol, Satops Patnal Lapas Lhoksukon Razia HP Pegawai - waspada.id",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcTFiTjI1MmVWalIweUFPNm5rTktrU3IwWDJtUzdpQnVIRWVuenkxZDFudGw1Tmdzb3JWcWlNZnZ1OFJsUkE0Qmd1WVExSllBa2xiT0w3Wmg2WUZNVUVHaU5TaUNPWEF2VkV3bWpKX2VnR2txaGY1TTlQWk51Q2JRM0VBazFYalYySE1RS0FhV1pwWjBqRTVfODF4VXBvTFZi?oc=5",
-      "publisherUrl": "https://www.waspada.id",
-      "source": "waspada.id",
-      "summary": "cegah judol dan pinjol satops patnal lapas lhoksukon razia hp pegawai waspada id",
-      "id": "250ca438dd9602f3",
-      "domain": "waspada.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fb9da7771364fa36",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-23",
-      "title": "Diduga Karena Pinjol, Suami Bunuh Isteri Didepan Anak, Dua Tahun Baru Terungkap - Tabengan Online",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQTFVNRDNxczhSZGh6dzIxaEkzQW4ycGlNdnByWDJSVTdHd1ZBWlQ5dU1wY3AwV0huYmZma0lVQmhORHJuWTNidHl6UlVyYWFRX253alg4eDZJV2xuMDVVbWxFeEVzcjlTSS1lVUM2S3BRRXhhUXdobXZMMEtZS0lZOTJ2ZmtueXFOQXFLT1NSd1FScVBtZlhZN1pwbVY4RFNuY0ZGNDNsLVlhYTlwZWRPWnE0YWZKYjEtb1RpQWdqSmE?oc=5",
-      "publisherUrl": "https://www.tabengan.co.id",
-      "source": "Tabengan Online",
-      "summary": "diduga karena pinjol suami bunuh isteri didepan anak dua tahun baru terungkap tabengan online",
-      "id": "ff0247abe0cbd518",
-      "domain": "tabengan.co.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f7bcad0c280d3a31",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-23",
       "title": "Gagal Bayar Pinjol, Apa yang Boleh Dilakukan Debt Collector? Ini Aturannya - BeritaManado.com",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNTk1UQ0NwWTlxRUx1VXAtVlRHYndaODJqSFFzbFBMVDhNRTlrX2p0REllc1FVYnNUa3d3VGNDLUxjVWQyUm5jTlBfT2MxWjR4Ui1kcjRsMXFwUVphbVdYY194VUlncHQzUnRzLWkzZW1jZ1M4RXRNd2lvdDlpNDlXcV9FT2oya2NjdlpBUw?oc=5",
       "publisherUrl": "https://beritamanado.com",
@@ -15508,12 +11507,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-23",
-      "title": "Juli 2026 : OJK Catat Pembiayaan Pindar ke Luar Jawa Tumbuh 29,06% - duniafintech.com",
+      "title": "Juli 2026 : OJK Catat Pembiayaan Pindar ke Luar Jawa Tumbuh 29,06% - Dunia Fintech",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9maVMxN1g0U25PNVU3UVZXeVMzZDd5NEF2T2R0VmRNeXdQR3h4U3k3VzlKS1kwd0d3UUhiUFFEN0h6TTFUWEJUcGhCOGZLR3oyR3plVWVRYm84akZvVTdrRW5uQzdwN0Y0Z3NzcEJHdW1MRkdGZmfSAXZBVV95cUxPZmlTMTdYNFNuTzVVN1FWV3lTM2Q3eTRBdk9kdFZkTXl3UEd4eFN5N1c5SktZMHdHd1FIYlBRRDdIek0xVFhCVHBoQjhmS0d6Mkd6ZVVlUWJvOGpGb1U3a0VubkM3cDdGNGdzc3BCR3VtTEZHRmZn?oc=5",
       "publisherUrl": "https://duniafintech.com",
-      "source": "duniafintech.com",
-      "summary": "juli 2026 ojk catat pembiayaan pindar ke luar jawa tumbuh 29 06 duniafintech com",
-      "id": "b918d1a4cfed780b",
+      "source": "Dunia Fintech",
+      "summary": "juli 2026 ojk catat pembiayaan pindar ke luar jawa tumbuh 29 06 dunia fintech",
+      "id": "cfeeeb8c2d8005f5",
       "domain": "duniafintech.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -15527,6 +11526,28 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-f216c81021a399a6",
       "eventType": "industry_update",
       "eventSeverity": 0.18
+    },
+    {
+      "date": "2026-09-23",
+      "title": "Komisi XI DPR Dorong Transparansi Wakaf dan Pembuktian Peran Lembaga Penyelesaian Sengketa - pantau.com",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNl9hUVl4d2YwQmI1R3lSZDg1QVJMa1NnXzRka05rX2ZRLXVpRUd6Y0Vqa0N6bEFHNVVqbk5PcE1iOXAyc0MyalZmMFhvMTNFdU11aFVnMEtXMDJZV2FnMy1BWE1lRmlQSzlKeFRvNnVwSDN1Vk5TUUEyWm16cTZUQ013dWRMOTA2UkpHTU4yVWNZWTdzVUFIYjdaMUdFa1RZQVlWTFZuWVhCSW9haDNLX2VUVXVXVzNOejQxZlpsdXY0dTdfSHRDQg?oc=5",
+      "publisherUrl": "https://www.pantau.com",
+      "source": "pantau.com",
+      "summary": "komisi xi dpr dorong transparansi wakaf dan pembuktian peran lembaga penyelesaian sengketa pantau com",
+      "id": "45709ab8998a2185",
+      "domain": "pantau.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-1856e15a7489b51e",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-23",
@@ -15574,28 +11595,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-23",
-      "title": "Sering Telat Bayar SPaylater, Begini Pengaruhnya terhadap SLIK OJK - Grid.ID",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQX1JObVRGOW8zaGFnTlFsbW5FV0ozR0NmNS1HSzloN1ltOXpsZEw1Wnd5QmpnQmFTOV9GNzE1ZnlJVFZzZ2hhYXI1TFdzQXNBM1VseXlvSDNJcWtRdGhueWhDWFZIYjNFMkRLR3gtYXd2TnVFN2JaVmFac3BGa1h1VXhPUHZIM0NUWWU3Z0VEbE9RanNJWTNRRmRad3JmbUYzazlvaV9DWENzN3I3WUtZ0gGuAUFVX3lxTE1heEJPTlp5anEwUkpCM0NfRVdpU3BxWFZnUGU4RDhzV01Cb3Axa0hIbkhLZ1BRczlodEZ2R1hhenp2d05DVkl2cHBxR3JfSWoyTThtc2s3bV9GZUg0S29vM2hfTHRDb24wZmlrRkRFeXl1VmpkS0NlYWRVWnRIcDFtdHdFSWsxTWdkMXlKaFdWNWExYUR4c3J3NHFjTTBydEJkRmw5OS10LUZ6VE9GQQ?oc=5",
-      "publisherUrl": "https://nova.grid.id",
-      "source": "Grid.ID",
-      "summary": "sering telat bayar spaylater begini pengaruhnya terhadap slik ojk grid id",
-      "id": "5beacd54b5a788f6",
-      "domain": "nova.grid.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f5984de186b5367d",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-23",
       "title": "Tanya Hukum: Seperti Apa Aturan Pinjam Duit? - kumparan.com - Kumparan.com",
       "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPclZuaVNuWTlBdHdiXzBVbHhwV0hwSWp5MFNIbEh4aVd1QUJFUVdKN3NkTGxuSmFJMzNzc0dZMnAtcjk5TG1OcXR6Y3JMV0tOcWl2LWcwaWpTUVpBUGJlQ1E0Z01KUXNwbnZSVFkzQ1p4Rno5eTktWi1yMGpoM0JrOTdJbjFPNEV0bF85eDJZUGVEQdIBmgFBVV95cUxOOGtfekV5ZWFEdWJzZGhqaDRzYV81aFByTm82WjhLOFlqcnpPellhRmFfWVNlNERGRVRQMm1VMGdXMkFaaURkdjNrdk1HRnhscmt1MFpSQmNBN2NxbEZwOVRSU0dab1g3aWdnYUFMNDdSdFBWSlduUjd6LWh0c3UtTWgySlpDV1NZSmRrZ3NENEJENThLWU5HMEZn?oc=5",
       "publisherUrl": "https://kumparan.com",
@@ -15615,6 +11614,28 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-df8d05fe35ecd4bc",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-24",
+      "title": "2.356 Aduan Pinjol Ilegal, Fraksi PDIP DPRD Jatim Desak Data Warga Diperketat - Harian Bhirawa",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQZWFCaHgzYnlwNkVIR2dZMHVDV2RJd0JxeExjR1BFZU91UmRpQm1EOHNROFhnME5HUVZ1Um1hdWkyM1c1MUJFTFdzLWdXa1NPMzRBQ2s0Qk9VNy0wRnMyejJwSUdHVkNVOWx4ZG9wcjZ2WGVJMUdtdVhoQUwtc092cXdUcmplUkkzVGhjczY1OFNMQjExOVdnZE9XbEtRemJXNm5wN0RZR2g?oc=5",
+      "publisherUrl": "https://harianbhirawa.co.id",
+      "source": "Harian Bhirawa",
+      "summary": "2 356 aduan pinjol ilegal fraksi pdip dprd jatim desak data warga diperketat harian bhirawa",
+      "id": "d9109d2c1b25d52d",
+      "domain": "harianbhirawa.co.id",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 60.5,
+        "label": "mixed",
+        "negativeWeight": 2.0,
+        "positiveWeight": 0.5,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-81af9c1a64f10d05",
+      "eventType": "fraud_or_illegal_practice",
+      "eventSeverity": 0.74
     },
     {
       "date": "2026-09-24",
@@ -15662,6 +11683,28 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-24",
+      "title": "Cegah Judol dan Pinjol, Satops Patnal Lapas Lhoksukon Razia HP Pegawai - Waspada.id",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcTFiTjI1MmVWalIweUFPNm5rTktrU3IwWDJtUzdpQnVIRWVuenkxZDFudGw1Tmdzb3JWcWlNZnZ1OFJsUkE0Qmd1WVExSllBa2xiT0w3Wmg2WUZNVUVHaU5TaUNPWEF2VkV3bWpKX2VnR2txaGY1TTlQWk51Q2JRM0VBazFYalYySE1RS0FhV1pwWjBqRTVfODF4VXBvTFZi?oc=5",
+      "publisherUrl": "https://www.waspada.id",
+      "source": "Waspada.id",
+      "summary": "cegah judol dan pinjol satops patnal lapas lhoksukon razia hp pegawai waspada id",
+      "id": "250ca438dd9602f3",
+      "domain": "waspada.id",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-fb9da7771364fa36",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-24",
       "title": "Darurat Identitas Dicatut Pinjol, DPRD Jatim Desak Pemprov Perketat Keamanan Data Warga - TIMES Indonesia",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOWmp3WllfdTZIS1d5ejdfZTVVNDFTdDA1UWNlWjdzSFd0czJ5UjF2c2o0bnlHcFBGOUltTUpFUGExSGtGcDRDTUlkMnMxbnJjVWNEZ0hWUk1fcnpsSE1XQ0xsa29jWjdxbkdtMUpESnJtM3gzQ25XVDNKV1VkUjloX1ZmMFJnLTZNRXRVdEdfUGRWcFk4TUQ1VUhLc01hVWJSSzNOMlZlQy1ZZ3FGX3FQVm9taGY0S3NXNXFUNUUxUGcwam9RalNYclFtcGh1cTJzTUpKUUV3?oc=5",
       "publisherUrl": "https://timesindonesia.co.id",
@@ -15701,28 +11744,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-6644605ea9ff8e7b",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-24",
-      "title": "Dua Ribuan Aduan Pinjol Ilegal, Fraksi PDIP DPRD Jatim Desak Perlindungan Data Warga Diperketat - beritajatim.com",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTUlRT1NRUFY1M3M1SGx6RzJ2TzlCNW5BMUZYb1VBTVFMT3pBNG1weU1lNFBmOENac2ptUFFMWEF1Um16R3hkdGpGVEkxQXJyU0NLU2psSjJTUUtDSE91dzNnYmdEcjJudm5WNXhjYnJicFlObG85RUowdGtlYjUxYV92dUswc1MyZWI1bWQ4QTFtRVlJelFjYXBNWkxkNmNqXzJZUnNMV2YzbGh1ZTRGaDJ3ZFh0blJTUlE?oc=5",
-      "publisherUrl": "https://beritajatim.com",
-      "source": "beritajatim.com",
-      "summary": "dua ribuan aduan pinjol ilegal fraksi pdip dprd jatim desak perlindungan data warga diperketat beritajatim com",
-      "id": "0d2025067a86ca52",
-      "domain": "beritajatim.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-beafa2750f12ecaa",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
     },
@@ -15816,12 +11837,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-24",
-      "title": "Pindar Tumbuh 25,88% Jadi Rp105 Triliun, Pengamat Soroti Nasabah Unbankable - wartaekonomi.co.id",
+      "title": "Pindar Tumbuh 25,88% Jadi Rp105 Triliun, Pengamat Soroti Nasabah Unbankable - Warta Ekonomi",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYlk0elBTVGxxOUQtbWVnZWtUc0U4T1JEZ2tMcVgwcU5RVjZ4QXpNNzllM3RmMUYtUEdTXzdXcm82UzNmclItWmdfWHU0a2k1T003LW9qRm04OU84cTh2YzJLTkk3cTdNMHlMZ2FMeTdHSk1sdmpOeU5CTVZUMGFINFAwVjd2Y05sS1dQeTlLQ1JkeUdEOGZJa1FiZHQ2M0E4bllMelJUQWFleUhKS21N0gG0AUFVX3lxTE1Bc3V2MU85NTRWcVVqQ0VMaWxUaHFJV1B4SGhaRGxvSXhIMFdJa2RJcTFlRVVPc3AyaXBOamdoTy04SzVIcTBPZHhQancyWkM3TVZjWFpyMkFwREQ3cXR5M3Q5WlB3ak1UY0RuSHA1UUU5Y3piMmdFVXo3bC1oc1NnUmNYdGRuNjNibzBPYlZHV1VYWEVHUGJmMUVLak9WOVdUUVhjRUhJTGlCUk83cTVqb05ubA?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "pindar tumbuh 25 88 jadi rp105 triliun pengamat soroti nasabah unbankable wartaekonomi co id",
-      "id": "8e29e780a5711c67",
+      "source": "Warta Ekonomi",
+      "summary": "pindar tumbuh 25 88 jadi rp105 triliun pengamat soroti nasabah unbankable warta ekonomi",
+      "id": "eb3fc8d461b600f1",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -15838,12 +11859,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-24",
-      "title": "Pinjol hingga Scam Mengintai, OJK Minta Literasi Finansial Dimulai dari Sekolah - wartaekonomi.co.id",
+      "title": "Pinjol hingga Scam Mengintai, OJK Minta Literasi Finansial Dimulai dari Sekolah - Warta Ekonomi",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQWlNwZjNBRFFzX2ZLUnhOb1l3bEVlYW9rM25PWWt6b0ZqeDE2a3FtRnpUempCaU5LTnBtVTZGT2RFaDRlc3hPV1NkMFpFT0laaWJURnJ3dHhmREVYY3NNc0NmOXNaNmtZeDVMSEp1dTRheWVlMTR5ZjdOQS1IVVdyTG9UYnlPOHJVenpIdVRrUmQ2Wmd5eE1wRU9kbnJ0WEJuNHFKcS1QT0hiQjdKVUJWVnlRWU9WOW_SAbwBQVVfeXFMTzV1TG52Um5iLThqa3N6MGRuWGRWRTZmcVlUV0sxRDZhUDBHc2dDNXVBbXBXcTYtVWR1OHBrcFhJZHNNc3RzbjVLVHgzZHNfb181WHF1VmZtZWhDb1VodU1feGFnanI3UGFKS2JMb1RRU1FvYVByS3hzd1llbHAyaGxDYUlNSFdEWFZwdXdncjhoQXRVTnZDcnVieENXdGs3R0pwVUxnMnRkc1pBSnMtT1N6Q1YtcmJVOU1CMFQ?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "pinjol hingga scam mengintai ojk minta literasi finansial dimulai dari sekolah wartaekonomi co id",
-      "id": "7e0af761b0e56b6b",
+      "source": "Warta Ekonomi",
+      "summary": "pinjol hingga scam mengintai ojk minta literasi finansial dimulai dari sekolah warta ekonomi",
+      "id": "2537fb16d3562aa1",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -15857,6 +11878,28 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-f930ad87ca0fed6f",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
+    },
+    {
+      "date": "2026-09-24",
+      "title": "Tembus Rp23,94 Triliun, Kenapa Orang Jabar Getol Pinjol? - TrenAsia",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPR1Z2S254RXJKaExyakhaVEJXMExGODlyTzB4YlBiRHFZaGlvT1NSdzY1THRyQl9WaFZIaTdQS1RRVWdkZ1BfSE95ckhlTFZySHJCLTdOYy1LWDItaEF0OTU0b0xqNHRzLUppdHZQS3drNk5jLTFLeXpvRk00eXBWUjB4NUlmWEZkZEVoalBRUG1jVjZS0gGLAUFVX3lxTFBJTk9oNFdiRXhxbU5OdU1xUVpDNEVwdTVMZHlRRlIwdzVaempkbVRxdUpLU3c0bnEzMDFUUGpOSV9CYVNMM0VBbmwxV3E0ZjJSV2xjY0s3anVxMVg1dFV5dTRrZEowTVVxdXpYemRmOFlfTDlrWk05UG9jUGNxa21aYzNJV2k5VEpZeDQ?oc=5",
+      "publisherUrl": "https://www.trenasia.id",
+      "source": "TrenAsia",
+      "summary": "tembus rp23 94 triliun kenapa orang jabar getol pinjol trenasia",
+      "id": "78055723c3e44092",
+      "domain": "trenasia.id",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-9d43916fbcd84631",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-25",
@@ -15882,23 +11925,23 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-25",
-      "title": "Cegah Pinjol, Judol, dan Narkoba, SPPG Al-Fathonah Perketat Pengawasan Relawan MBG ‎ - MediaAksara.id",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQaGFjMzZPZC1ualBQeVhpWDI4V25hN1I2YlYyaFF0U19Fb1UtZ2dtLVM4WHJRVHcyTU5UbG90aTZOWXhqSGFvQXpxeW9qSG55V3pqTTRScm1RZnBoN1pydE1rNnZ3UE83NE1ydUNlQ2t5b1hETDJrUlpIcU1YVkxfWTNaU3k3N1c4WlYxVGkxeFVKazhWUlNuTjJxZ3Z3QlE2R0lsRXpR?oc=5",
-      "publisherUrl": "https://mediaaksara.id",
-      "source": "MediaAksara.id",
-      "summary": "cegah pinjol judol dan narkoba sppg al fathonah perketat pengawasan relawan mbg mediaaksara id",
-      "id": "9c794698d6df807d",
-      "domain": "mediaaksara.id",
+      "title": "4 Tips Lolos Verifikasi Pinjaman Uang dalam Sekali Coba - Pikiran-Rakyat.com - Pikiran-Rakyat.com",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNWDlndktPNHVnaTBBSF8yX3JoRzBQSXRzenBDWXpoUktDU2Z0TEVXWWJOLTNsUUlReWNyOFNlZkVxaW9zRDgyOTFHd1Q2M3hSbHR6V2pZRnQ2Tm1rM250Mi02VDlEbjFnTWx2REdQeWNwRUJieXNJUEhBUEdYcWFnUWdISGFSNVZyWEZKcGRyLWdGYXRoWklzLVdna29zY1Zxa09pWWZMZzVjVHVwTzdXYdIBtgFBVV95cUxPQlJwNWNkX24yWFZpajlqZTlJVllsU3RZSjZTeG1BUzBBX1YtaXgyM1hvMjlKNWNjcVdfa0hkM2xPTEVtMjJwdWstd0dTNHRVbjRIeUVTT1VNYkZEZnNvOU5ZN1pQS1NqQW5jZGhWQ2FuQzVHV3c2MXowb2pmOERHWk92OW9rTDE0OFE1aUE2RjVZOWFzVVZHbGdDTmhiZ2lSQXZ6Yk0tWl9qV1FyV2thOVA0S1ZjUQ?oc=5",
+      "publisherUrl": "https://www.pikiran-rakyat.com",
+      "source": "Pikiran-Rakyat.com",
+      "summary": "4 tips lolos verifikasi pinjaman uang dalam sekali coba pikiran rakyat com pikiran rakyat com",
+      "id": "a43be66b0cf4d48d",
+      "domain": "pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 44.4,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-339d6028cb36ed30",
+      "eventId": "auto-95ee7c3473d4ef76",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -15992,10 +12035,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-25",
-      "title": "Hikayat Negeri Pinjol: Menelusuri Jejak Dana Himbara di Balik Ledakan Utang Pinjaman Digital - afu.id",
+      "title": "Hikayat Negeri Pinjol: Menelusuri Jejak Dana Himbara di Balik Ledakan Utang Pinjaman Digital - AFU.id",
       "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNVjhxVzBqZWh1bDhOTkN5UVN3YVp2TU9KYTNmM2o0Z3RqM1ExQy1mTVpUbWJrMlZTbXJGOGZ1TTloOE1nMTgyNXBfNFdrMnBDOGM5bG1TLXY1VTdpWGpMODU2R2t2TkotREhPZklyZ19mSkR6cldfVklKdDRmZEgyQ2NXRVdRcUlFQnJWYXlndXF0RjI2V3RERS04N1JZVjBjWUlYXzRsZ1NsdkFjZGpXQ3A5b0kxZw?oc=5",
       "publisherUrl": "https://afu.id",
-      "source": "afu.id",
+      "source": "AFU.id",
       "summary": "hikayat negeri pinjol menelusuri jejak dana himbara di balik ledakan utang pinjaman digital afu id",
       "id": "9ca83f35beb11226",
       "domain": "afu.id",
@@ -16014,10 +12057,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-25",
-      "title": "Jangan Salah Pilih, Ini Ciri Pinjaman Online Cepat Cair yang Resmi OJK - suara.com",
+      "title": "Jangan Salah Pilih, Ini Ciri Pinjaman Online Cepat Cair yang Resmi OJK - Suara.com",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxObWVTYmFDTWN5TVF6YVI2WThZM2Z4VG9TRjBsQ3U3Mk52emZxdUExd1BmSm5lY2RDS2VCV1hmYS1YeHJtVHhvdFdzeVlxZkduUlltXzZOTHJaMVpYdmJuRjNrcXhYTTFxZVIxVW91aFk5Zk52M2lsNDFNa2pNU2lYVzlyai1xeWNlLUExdFhfeWVEYkZVRnhIbkx3RzNoQW5zdmJGSUtWUTZiRm50NEQ0clduZkl4TVnSAbcBQVVfeXFMUDZDcnhPQU5ZaTFzUlZmSlFtZnB3R0E2bW02NTk4YWI5dDlIRUQzUDl5dTU0cXNKZVVWYmlkLV9BV252LVI1bnd2b2NzaVVjWVR5MEZuZGpWRjFqZkpnczA0cUpjU2kxc01PWkR5aFZWUndQaW9KSmdtdi05XzZuQnFEY1BTX2ZuNzk5bGtOaWE2elFTSzQzY1k0OW5UXzZoNWwxNWZLT0psVU03NU0wdko2bEVNd1Jv?oc=5",
       "publisherUrl": "https://www.suara.com",
-      "source": "suara.com",
+      "source": "Suara.com",
       "summary": "jangan salah pilih ini ciri pinjaman online cepat cair yang resmi ojk suara com",
       "id": "450a5f0b1ed57e7f",
       "domain": "suara.com",
@@ -16145,13 +12188,35 @@ const CREDIT_SENTIMENT = {
       "eventSeverity": 0.74
     },
     {
+      "date": "2026-09-25",
+      "title": "Tri Usaha Berkat Pinjol Apa? Apakah Penipuan? Ini Pengalaman Dapat Transferan dan Cara Mengembalikan - Berita DIY - Berita DIY",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxOdjJjNXhiYnR2N2d4cUplTWhuR09CWEtRTHdZem9pSUpNS0Z2RC0yWHdnOHBWQzJxRUNnd2RwanhkVW1Eb1Rjdnhfc1hTMzQ0Ync4MVlyQ2xjODhEd1hTWjhIYnowOXhpTjRleEtOc1dNNjVCblczZ3NLcGkzV0JJSUgxLTRBS1o0LWxQREk1VXVrUUs4RGR6bTY5OVpSbHM2LW4ybzhXLVNmWnhUOWlCQTB6OXBnNk9XRGhlOWRtZVcxcHdINnVBR21jLXloa2xjLVBXUEtreXlWeHMxRlc2ZkU2VlJ5a2daNzRiQ0RZZDZ6b2g0b3RjWll30gHzAUFVX3lxTE5jZm05bnVKUzVIeTJUYTVKa1BRcHlZdWN6enpiYmJFWlhDa29XMHRzU2prYThTTXpSSUtyQ3NaamxLcTNkT3g2NW9CTXk1bjczcUJ1dFl5VkgzRE1yRlhobnN2eXpYLVNkUDhIZmVwM0I0X2t5T0hOTHRqUjVZaDBfMmx6MUZmdTcwVW80M3Z0d1JvYjdQX3hOWEZoRl9DMFNfbVRRcEFWcllvMGFQUlJOWmY3X2NnZWxtelBZWkJyX2JiODVGckNJeEY1ZllmVmRmeU9wYlUteEdNb2ZfWlpLQ1pvQWVXdnp6M0hKWUxWMElVdw?oc=5",
+      "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
+      "source": "Berita DIY",
+      "summary": "tri usaha berkat pinjol apa apakah penipuan ini pengalaman dapat transferan dan cara mengembalikan berita diy berita diy",
+      "id": "c17cf33052e7e82b",
+      "domain": "beritadiy.pikiran-rakyat.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 61.9,
+        "label": "mixed",
+        "negativeWeight": 2.5,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-dbf507af22e1dbe8",
+      "eventType": "fraud_or_illegal_practice",
+      "eventSeverity": 0.74
+    },
+    {
       "date": "2026-09-26",
-      "title": "10 Aplikasi Pinjol Terpopuler di Indonesia, Siapa Teratas? | Pusat Data Ekonomi dan Bisnis Indonesia | Databoks - Databoks",
+      "title": "10 Aplikasi Pinjol Terpopuler di Indonesia, Siapa Teratas? | Pusat Data Ekonomi dan Bisnis Indonesia | Databoks - Databoks Katadata",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQS09UcHdQTTJ5WW9NVFlpQ2l2ZE9uSzlEaEJnWHFKcWNhbWlMSF9HaXhwQWZQc21oTXRaOXFNOVZoMnpZeWpDeHN5bzI1MUs2cGZhUmJ5REtrN2pZSUxnX01LWld5a2JQWVNIWVFEb0FlTFhaVXYxOTloMmRjWVNZZnZyeDBOYnBzXzNUcEFNUmxtdFJwa3V5NDFzLW5aNGU2QnVpRk1iOW1iSVRZX3ptZmpIRmJXeGVrSHV2d2Y1d2N1RWQxc1dZX3ZSWDNkVzNrdm5hbXl3?oc=5",
       "publisherUrl": "https://databoks.katadata.co.id",
-      "source": "Databoks",
-      "summary": "10 aplikasi pinjol terpopuler di indonesia siapa teratas pusat data ekonomi dan bisnis indonesia databoks databoks",
-      "id": "3b6f572865c68a23",
+      "source": "Databoks Katadata",
+      "summary": "10 aplikasi pinjol terpopuler di indonesia siapa teratas pusat data ekonomi dan bisnis indonesia databoks databoks katadata",
+      "id": "80708f2834d8b923",
       "domain": "databoks.katadata.co.id",
       "sourceClass": "established_media",
       "sourceFactor": 0.85,
@@ -16168,54 +12233,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-26",
-      "title": "7.363 Penerima Bansos di Sleman Terindikasi Judol, Utang Pinjol Tembus Rp1,4 Triliun - Radar Pati",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQajctbGlWVmFZZE5XZzNoOVBuTGVPNDIxQWk1RzJmYVB0Q2xWdzlxRzBEc0xnVm1jRDZ0WFB1U1VHcl9hMUp2ZUdPekQ0QlRtUTRKYlNLcjJFdEt3X0UxMXRib3pIQW5reGlUTDBkdnBscXpGSUxrY0R1dVRoSzRPQTkzSTJYcFBuV1NNSjFWLVlQakJHNDVQOWlkdDdRZEtSR2RCWTIxNWhpSUtlZGxMc0ZWb3lRMnIwcGRhRUV6dGY5RGJud3ZRaGhn0gHPAUFVX3lxTE5tVUpqQXNEMjdNb09mS19mNjF2Zkw4d3JmQ1F2MmIxNTBSNmtkY2NucWN2UWtPMXNlcktOVHVNY2FBWFhaRkpMRUF6b1ZRTFJ0RVlEYlMtWkFjYVVyRktreWlNT0k3TldBUlJXTkhQYUhFRVRmRnZMR0RESnJFMnVlQXd5YTZZbjRNRERRUjhUeWlMY3AycS1vS3RXajROY1NXc2J1ZV9VQmVEMEJyamdGT2dwVTlPMlNHbnI3Umt3cVBuMkNZcnljMHQ2Q0FuRQ?oc=5",
-      "publisherUrl": "https://radarpati.jawapos.com",
-      "source": "Radar Pati",
-      "summary": "7 363 penerima bansos di sleman terindikasi judol utang pinjol tembus rp1 4 triliun radar pati",
-      "id": "5a5f0ea1918353ca",
-      "domain": "radarpati.jawapos.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 57.0,
-        "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-439bcd3f65bc82de",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-26",
-      "title": "Bahaya Pinjol yang Perlu Diwaspadai, Bisa Rugikan Keuangan hingga Data Pribadi - sumeks.disway.id - Sumeks",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdUpPZE1pT0VBMll3bXNrcC1RUEE3czhtaC1HQjNZYy1nQkowRnNkeE5WNlBXUTZzZXB5bjBhbDFGMTFqMWgwdm9vc0FsRUh4LV9RdzZQcG1Ld05iN2IwTWZ0dVdwVUxqUkhTeTA0d1RwR1BQUG1tUjRXVTVRTGk5bklUaU5HR2ViREljc1h3dVJjSmdYZ3k3NWgxa3pvVE5MUHJQYkVIT0VxcUVLcVY3azBnN3Y0dkFzcEZHdnY5WWPSAbMBQVVfeXFMUFJHTTQ0dzFGQWRaZ0RfVFhROVJYZi1acVJDVHFOQXhrNjFSSHFMUmIwdDYtX1kwM2lvaFM1RkNMWlVxU1Y4NkJwTmlmWDJWU0FmX0VBWjlLeGtxaDhzOXA4VjRGbE5UM2kxdFJhNUJmcDA4dzhIdmFrMDd6ZEwxT082U0xUT1lURGFZbTVJSkQtWDEzOVBBYjd1eVVGZld6dmVrUnFRdllRSkNKcW5OUGk4Vkk?oc=5",
-      "publisherUrl": "https://sumeks.disway.id",
-      "source": "Sumeks",
-      "summary": "bahaya pinjol yang perlu diwaspadai bisa rugikan keuangan hingga data pribadi sumeks disway id sumeks",
-      "id": "7bc3e45de6c6700a",
-      "domain": "sumeks.disway.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3b3006936d777e42",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-26",
-      "title": "Bisalunas Rilis Formula Pelunasan Pinjol Tanpa Utang Baru - suara.com",
+      "title": "Bisalunas Rilis Formula Pelunasan Pinjol Tanpa Utang Baru - Suara.com",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPdldqc0RfYXdzc3pYY1pzVXpoNlFsUjdmdDNrbExfZDlEeEtlXzZQVzllcGJIenJ0NmpjdWp0cDZSb1dtdndraEkwbDZsNjloVG16WkdFWkw3czA1cHF5cVRxcXdUVUVYLW9qdU82U1ZzUXQ3dDA5SE41dVJaNFZiRzBCOGYxSkFwcXV6Wl8yVlpSZ0g0WlRvOVFpRkJSbEFTdXpYcVV3UdIBpwFBVV95cUxQZ18xODU0T24xbUlxUWhsT09yLWl2TmV2ZTdocWFCTndpRWtJNmN6d3RNbG1sek9nLV9QcGdWalNWMUU5UWdyU1FhUTBvQ2t0MnhQTkpBYWFreGFacXg1Ym4tb1BVdVBmMmlkZVdBS3ZSVVlXRkpFVG5US1c1LTNncDh4U21ra1Y5cXVQQ2NTQUluWVZ5T1JQaU5fQkVHajFqdllnQ0UwUQ?oc=5",
       "publisherUrl": "https://www.suara.com",
-      "source": "suara.com",
+      "source": "Suara.com",
       "summary": "bisalunas rilis formula pelunasan pinjol tanpa utang baru suara com",
       "id": "8ed2511f8d5cb73c",
       "domain": "suara.com",
@@ -16234,35 +12255,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-26",
-      "title": "DPRD Jatim Dorong Pemprov Perkuat Pelindungan Data untuk Cegah Pinjol Ilegal - memorandum.disway.id - Memorandum.co.id",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOY3o3TmtzY080bTJ0b1lVNjNTS0pjNnB2b2xvcUFfcHVkdjI1YkFMbFpXRi1WMEZfZWNZLWRYeE5TdWs2eGNnRGxRemVqY2RoamJMM3ZiamhLRTNZUjFOUDZCTkpmSkRpX2RnaHZ6RzlYakdnREI0WHdwOWdxSkJkZm5LNi1LZnI5WGY3UDE3ZzA4MllEcENURlVqazk1cngtSmFHcUhFUmctTmxDdnJzU2ZJWlVQLThwQmpGWnV4X03SAbcBQVVfeXFMTThPQmVrelJEbFNuYjIzcThQREhDSWE2ZnB3bDgxLWNZYkR3WHZyc2VOWmxMUkV3LXF2akFzUzdHQ25zV2JKRTJOQ1RXR0ExVm5sc3h2eXJwU291RlVUSGRsUGN3bGZzWURxbFBLbGhqSXFMSzBobDh5dGtGM0JxZ0xudThKUnlfZGN3MFBBandGTmZNUXZpZlpCaGhiRTVpbGQwTmhWVC1qSEJCQkU4N05SZ3hmUVRJ?oc=5",
-      "publisherUrl": "https://memorandum.disway.id",
-      "source": "Memorandum.co.id",
-      "summary": "dprd jatim dorong pemprov perkuat pelindungan data untuk cegah pinjol ilegal memorandum disway id memorandum co id",
-      "id": "5b526fb1b07c651a",
-      "domain": "memorandum.disway.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-86ad9360ba47d0b4",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-26",
-      "title": "Diduga Matel Hentikan Kendaraan di Jalur Tajur Bogor, Aturan OJK Soroti Penarikan Jaminan di Ruang Publik - Pojok Bogor - Pojok Bogor",
-      "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxORzJRS0FXTmtnZkNWTUc5Zy1zTmV2UlNlVnQ0NjlzOExUWF9SckpKVnJNRVNmRmQtbEd1bjd0QWQtUWRCU19oQlRDTUVpbVBjQ096LV9ZLW1OeHZkbnFHXzZuT3ZWcVoyN08xR1FEMFV0YjVJM3dfN05GRWlJUmVHZkNSTE1mWlpKSllDNXNJUm0tRGlKME5UeVh6NC14bTg4QlJGNEZMU05XeE1WSFZKY3VjWEFuTEFjZC0yTFphUXhqc0EtcmRCd2ZPbk1vV3pBdklBLWNNYTBlOFJSbklQdHRzdUVNdmx40gHuAUFVX3lxTE1RZzU5ZWE4UHFVZ3RmWGJYMHVsRUlZa21fVXgtWHlrWnBFcTVob2VUNVJCT0M5QzFaLWNpdUtZbHlQNTR4OHY4VV8zczFaaWlnZXJWZVRERlNBMkRlRGVMaDBCYnJCRjEyOWJ2RHRFYjdtUE1uNWhJXzNxUmpvQ3o5MXI2STF0NmwwQW9VZVp6VDkyMFpNXzVKQl9ldExZTDVlcHF6WTRGS3JWMHVKazllYmIxZWI2QUl2VW1kZmZydTJsUDhwMW9OY0dhNFVVbWRTb2kyUlg0eVZxaDhCVzJfNzJyYzNraUJhbjFGYnc?oc=5",
-      "publisherUrl": "https://bogor.pojoksatu.id",
-      "source": "Pojok Bogor",
-      "summary": "diduga matel hentikan kendaraan di jalur tajur bogor aturan ojk soroti penarikan jaminan di ruang publik pojok bogor pojok bogor",
-      "id": "629b1cbabf6cd575",
-      "domain": "bogor.pojoksatu.id",
+      "title": "Cara Kredit Motor Praktis Tanpa Survei Rumah - Pojoksatu.id",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE96Nk1Ob3RDSmR2dFBNNGVpSFBlbGN4VlN4Y2tYQW9aWDVkcnFuYS1HaEYtNWtIc19UbFdQWFJsbkdvRFN6SFh4NDNJeXp5cDNVOFRaQVBwcGllam5GbHdlTHI3WjNpWkxxdXFKTklZWExFd2FUN2lmcThJb0tERzA?oc=5",
+      "publisherUrl": "https://pojoksatu.id",
+      "source": "Pojoksatu.id",
+      "summary": "cara kredit motor praktis tanpa survei rumah pojoksatu id",
+      "id": "69f0eb7894293eec",
+      "domain": "pojoksatu.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -16272,18 +12271,18 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-2932d830918749c5",
-      "eventType": "regulatory_action",
-      "eventSeverity": 0.92
+      "eventId": "auto-79467eeae8a70926",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-26",
-      "title": "Download Pinjaman Plus Apk Sfile, Legal atau Ilegal OJK? Ada DC Lapangan? Ini Pengalaman Galbay Pinjam Plus - Berita DIY - beritadiy.pikiran-rakyat.com",
+      "title": "Download Pinjaman Plus Apk Sfile, Legal atau Ilegal OJK? Ada DC Lapangan? Ini Pengalaman Galbay Pinjam Plus - Berita DIY - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOcEdlZnBRMTVNeWpZdjJ4V0dESDJURlQ2ckxpTDQ5YmxmOC11R3plcFVwVEYzWnN4RHN4dUR1VThfaElMeHYxbXBxUF84cUxoN1lGS0s2b21ZVG9nZ0Z5VUVJZTl0dktoNjVuVGRZTVJPWlhRcmRQcFZCNWFqbm1qNFhMcEVfRUZXLXFRcEhaS1ZPYmhNeTZuT19hNGJTdzRDeXZiOTduamhwdy10Q2p1VTlIMVZtSWpWeW4zbkpvNF90NUVMWjVCemFCQXpuRkdPWUhhM3dYQVJXU0dwN0QxRHhpd3ctSHVMck5QZHNTaHN5LTdoRGlfZlpkODRqLXhxUHfSAfsBQVVfeXFMT2ZzeXhsZnBVU0x5V25MY1Uyb203NUVmNUFZa2ZPanRfa3pKZHNyUXZyTlNXd2N0VzBrVHJWWnNIVko2Zl9TazUzV00zR05XcVRlVXJIVFZyY09mSGhDQzk1UHV6aTNnWnFIT2FMSDlrVW80cC1oMTZVb1lWUUtUMXpkQi1nNkdaZDczeTRWcThySTlPYndvbFYzS25IZFZTSnl2VVlvR01nVlVyeXI2c1ZlbUZ4LW5RSi1wcGN1WW5pY1dYVHpIeWdtN0ljVmlHWWFpeW1wWVpSX1BPM0w3NmowM2JVSkJOYy1TLWJEZERGQlRsNTZSbzluMUE?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "download pinjaman plus apk sfile legal atau ilegal ojk ada dc lapangan ini pengalaman galbay pinjam plus berita diy beritadiy pikiran rakyat com",
-      "id": "f4a6037d3239c92d",
+      "source": "Berita DIY",
+      "summary": "download pinjaman plus apk sfile legal atau ilegal ojk ada dc lapangan ini pengalaman galbay pinjam plus berita diy berita diy",
+      "id": "7046e521a06697a6",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16300,23 +12299,23 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-26",
-      "title": "Melawan Pinjol dan Judol Lewat Filsafat Dakwah - Kompasiana.com",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQQVo0ZVVqZGFRM3V6b3ltUU1YOXdYRW5qT0haY0txUXpaMVRRa09ScnpQMjNUX3E2ZTAxU3ZjM01xWlZ4ZndJOEdJZjRmUGlNV1RSUV9EcWFXNnF6RTlRbG51Z2JlREZaTEZ3Wlc2OXEwTERLN0Y2NDlZZ1BvTktTTzBxaGxYaURDSG52c0NWTnFTclM3TXJ1UWRpU21xQ2ZleWc5b1RKTmloVjhFZWU1QUZOcEt3bzk0M1hPUHdn?oc=5",
-      "publisherUrl": "https://www.kompasiana.com",
-      "source": "Kompasiana.com",
-      "summary": "melawan pinjol dan judol lewat filsafat dakwah kompasiana com",
-      "id": "83bb6c24910916e4",
-      "domain": "kompasiana.com",
+      "title": "Kenapa Status Pinjaman Penting Saat Ingin Membatalkan Kredivo? - Tempo.co",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPc3BQcDlVdE1xZFV0ZUVGaEJwTGJ4NklpcWY2NXVjUjN5bk44Q2V3TFlBSjRBYlpEbEZNRkZfTllNZlhmWXpIeHNfVndKRnVFcnNucW9kdm5BTnRaSHc2Sk5VY3FRUG1PWWxqZHg5czVDMXpKQ0FUSXE4WlVQT1JFZjRPZ0VSLVZtOUYyNmJhVXVsTXROa0RqaGluNHhjQmFt?oc=5",
+      "publisherUrl": "https://www.tempo.co",
+      "source": "Tempo.co",
+      "summary": "kenapa status pinjaman penting saat ingin membatalkan kredivo tempo co",
+      "id": "9cb32a0f40a9ed27",
+      "domain": "tempo.co",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 44.4,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-398c473c2334103c",
+      "eventId": "auto-7943616228cbc042",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -16344,34 +12343,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-27",
-      "title": "DPRD Jatim Desak Pemprov Perketat Perlindungan Data Warga untuk Cegah Pinjol Ilegal - DPD PDI Perjuangan Jawa Timur",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOR2d0Ym9NSTd6YkVveDBzR205R3J6SUZUdFlQWGxGRkx1MG9qbHkyUzB1TW5XcUgzTzVId3B1Z0RjZ3RVODdqZng3MU45b2JaM3ZHZUdJWk9MS1FQcllsTm1sc3FFbGtFWktIWml4c3JCNTJxN0RPcks5REg3Qko0aXNVSEdzREkzVFRpVEg3VlFnNTlTZlE2TjZLUjRSeXp6dld3NVBxMUFtU2hUQ0hzckJqekJQeEU?oc=5",
-      "publisherUrl": "https://pdiperjuangan-jatim.com",
-      "source": "DPD PDI Perjuangan Jawa Timur",
-      "summary": "dprd jatim desak pemprov perketat perlindungan data warga untuk cegah pinjol ilegal dpd pdi perjuangan jawa timur",
-      "id": "0f56ee35c823bef6",
-      "domain": "pdiperjuangan-jatim.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-52dbb932f8783279",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-27",
-      "title": "Download BitTV v2.1.7 New-Obsidian Sfile Mobi untuk HP, STB dan Android TV atau Google TV - Berita DIY - beritadiy.pikiran-rakyat.com",
+      "title": "Download BitTV v2.1.7 New-Obsidian Sfile Mobi untuk HP, STB dan Android TV atau Google TV - Berita DIY - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOdHBvMzNJT2NxSThMa21sSVJPaHJmTHNDaGd2WFNoSDRadHAyUkdvRXdqdlVkMDZuWGJvWnNrZE05WE5Wel9NN2FsMzBNYVViUnNYQks0WlkwLTV4V0xLMjZ0d3JzeGpUNjVrY08wWGNZWk55bFJyQzRCc2tUSnpwZktFVGVxN05NTVR2SkkyYnM5R3A0TVFsSWlEY3FXUjdJdW84VWtxMHB6aXM5cFVmcU1zd2JWNTlWa0ZfSk9PUXFEZjNEcVloLV9iNFdHTVNWbXhQTFRQM2pmOFVwa3dYSU5tM2xweHg4WlHSAeMBQVVfeXFMTU1WVC16RllfR1JjNV83b3cyNllXbHBQYzIzcDRkajFLZFVFdUxxYWFwSjlsTmdEbEZSY1gxcjR0SVdLTTh0YlFQZkxnX2t1SGh1UUlCdFNRUS1RYlIwNTV6YnJPb3hzdllLNWZDWU5ZUnNaTHFxMnZtWV96ZEdCSGVIRXRiT1hwLU9jV1B3MXJoNEFEdEtyMjNiNW1qdG9rUHNYeE1XQi1JSnduanhPQzVlZFZtNi1BZGJ1SW9jb1BxUVhTX3FPMnhOVDg0T1RMRl9nSnd3NXdLMDc2Z0xFRDVDeTQ?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "download bittv v2 1 7 new obsidian sfile mobi untuk hp stb dan android tv atau google tv berita diy beritadiy pikiran rakyat com",
-      "id": "16618cab024da8a6",
+      "source": "Berita DIY",
+      "summary": "download bittv v2 1 7 new obsidian sfile mobi untuk hp stb dan android tv atau google tv berita diy berita diy",
+      "id": "af5bb49b77864476",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16388,12 +12365,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-27",
-      "title": "Download Duit Pasti Dana Kilat Pinjol Apk, Legal atau Ilegal OJK? Pengalaman Galbay, Sebar Data Kondar? - Berita DIY - beritadiy.pikiran-rakyat.com",
+      "title": "Download Duit Pasti Dana Kilat Pinjol Apk, Legal atau Ilegal OJK? Pengalaman Galbay, Sebar Data Kondar? - Berita DIY - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQRWF5U0tJMDZzZDFYZ3BiNllNMllEc0dHWkI3bVdKSEg2QngwQ2ZRRkRRVlhYSG1PanRsc1dBUnBKRVBBUTZaZk51NFBIc2RFeFNobjhVdWRlZ0ZiSUZzTHdwWFVSYm9GcHFwX19ONlQyaEl2aml0OEExYlZ1Rmp3T1pCMzNKOTlxM1ozWnhxcmJCZUdOTnNTTGw4UDA4bjI5Z21LdzI1NkxONExIY0ZCOUhaZENfd2NtUjFCSWRSNVpISzB5czc5dEVxNzcwN2JNUUh5YlYxVHYxLTREOEdySEFWUUNaRDVaVXpTcURENjYxM2N4VnFCM0xnc9IB9AFBVV95cUxOSENSdGlRLTk2T1o1VjdMdXlveUNnaTBHY0phel9EVk9acGNLbGd5UlR0WTA2bUIzbFVLbXVEX2J0VzFFNFYwOVQ3VkthUjhmellkNWlGQ3FvZEVpck01d2dsWjItMjV0Q21EU2xickZUY3U2MUtMeUJxd2Y2RHlTSnk3Y3daWWJWOG1sNkE1MGtJNDJKYUh0V2J1VWlJOXVFYm90OXpNd0Z6cjhzYVZSb2g4UDNhTFMxdUlmRm5EYnNMdkl1U0JRbTdsb3FZSkxJbUxtdnBidF9EMWxSWEpDY0ZNQ3llMnRDVU5kV0Rva3AtbzdY?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "download duit pasti dana kilat pinjol apk legal atau ilegal ojk pengalaman galbay sebar data kondar berita diy beritadiy pikiran rakyat com",
-      "id": "431287ee58fbd430",
+      "source": "Berita DIY",
+      "summary": "download duit pasti dana kilat pinjol apk legal atau ilegal ojk pengalaman galbay sebar data kondar berita diy berita diy",
+      "id": "e44063db2b7ba4a0",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16410,12 +12387,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-27",
-      "title": "Gelar Patroli Malam Bersama Jaga Warga di Cokrodirjan, Bhabinkamtibmas Polsek Danurejan Sosialisasi Pencegahan Judol dan Pinjol - jogja.polri.go.id",
+      "title": "Gelar Patroli Malam Bersama Jaga Warga di Cokrodirjan, Bhabinkamtibmas Polsek Danurejan Sosialisasi Pencegahan Judol dan Pinjol - Polda DIY",
       "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxON1ViZjF0Z1NocnBaUnNmaU9qdEZlZ3FtSGo4b1hQdnhNS3R3b1dHRDBRS05HUGtnRFhHc0F6RUQ2NGZ2VHBqemplUjZIRklhUFJOT1BYd1BUdERIdk1tTDRmSmFQU2h0NFkwTFJyNDg0UWxWV3B1M0Z2dTFqUGtLckVWdi0xdng2ODQ1QlNTZ2cwb2k3cDUtYzFMbXQxcDJLZTZ0TE8zZ3JHLUROYXcwYkR1YVZCUVI1ck5Kam1fS2R5ay1LRWNiZk5OYU13bFJ3ZXNtc3Q0YS1GLVg1bW0ySmk0S00yRm9xQWZHQ2cxN0J6ajNtT3lJRnJnbEZMRW9hVHhIdXRtV3ZKQWJ6dEtLUnNISUJ2TlVhZmp5MTdQMGxOU00?oc=5",
       "publisherUrl": "https://jogja.polri.go.id",
-      "source": "jogja.polri.go.id",
-      "summary": "gelar patroli malam bersama jaga warga di cokrodirjan bhabinkamtibmas polsek danurejan sosialisasi pencegahan judol dan pinjol jogja polri go id",
-      "id": "e147f6b1a00f97b1",
+      "source": "Polda DIY",
+      "summary": "gelar patroli malam bersama jaga warga di cokrodirjan bhabinkamtibmas polsek danurejan sosialisasi pencegahan judol dan pinjol polda diy",
+      "id": "79ff1c094a48c33b",
       "domain": "jogja.polri.go.id",
       "sourceClass": "primary",
       "sourceFactor": 1.0,
@@ -16432,34 +12409,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-27",
-      "title": "Jumat Curhat Polda Sulteng, Imbau Masyarakat Waspadai Narkob - Tribrata News",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxOZXdxRFZmNVZTd0VBeHoxYlRTS0RUdGtXRWRjc0Y2OUoyMWZ4OFBjWmZhNnhpLW5UOUJaZ2szV09kbkxOYkZJM0ZCY3c0R29IU09HRkZ2SE1oVTA5ZUN3cGlQQ29aWkt6VEZ4bE1ibVBDeXNqWkx3Z1FrTW5Ick1SUk5HaThTQjlWYkRCcmphbElleDhwTEZZSWZHLWEtX3pzWEtXLVAyRmhkMHBnTjRqWHpZYUk1cjcwNnkwVGY4eUV1dnBLeGJrMF9Kc0RfSHRZRmpzZ09iei1wOUFYOFRoZkVR?oc=5",
-      "publisherUrl": "https://tribratanews.polri.go.id",
-      "source": "Tribrata News",
-      "summary": "jumat curhat polda sulteng imbau masyarakat waspadai narkob tribrata news",
-      "id": "819d6b111463f7eb",
-      "domain": "tribratanews.polri.go.id",
-      "sourceClass": "primary",
-      "sourceFactor": 1.0,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-bc776b34d68de59f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-27",
-      "title": "Modus Pinjol Ilegal: Dapat Transfer Nyasar, Jangan Langsung Dikembalikan - jatimtimes.com",
+      "title": "Modus Pinjol Ilegal: Dapat Transfer Nyasar, Jangan Langsung Dikembalikan - Jatimtimes",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPbXhZbTJPeUQwdHZHWmRkQ0JTcmEwOUkyZ0xPZmlkQk4xcUhYUVkzQm4wVlc5MW5BRmpLQmRYSEJVT3dsc0pYUmJBcjROMTJvbTdyaXNpN21YRUtRUjI3UzlnZEtMekZ1NVdJUlpSOFN0UmlhTTlmMzhjWmNwN2tDTzhBRHhFb0ZNZTFqeTNhazRid0pGTGZCZW03MFg1b0tfc2pSb0FEMVZDcXExeTlKZlJrT0JLTTcxZWhueDZRMlMxa0HSAcgBQVVfeXFMT0VVdWc2MllUcE45Q1hMS1FzRnJJQXZ5N3hBbFRjQmduZ2VCejg1UEFHYlh4V3FsS1R5UzQ5RnBSWjJOVkU5UXNqVTlLMFJSVmkxelZPN3dhMkdCSXR3eklkRVdha2VoSjBudTdRMlBqa0UyR1ZQMGdCeXBYQ3Y2Q0pDQ3EzZFF3WlBFcEYtcHQwTnVsS1FYV00wa19FYy03RW9QMUtSUWljYkJwVmJROHNPMnU1MEM5NlFPOEZFZ1FpQUR2N0ZzR2w?oc=5",
       "publisherUrl": "https://jatimtimes.com",
-      "source": "jatimtimes.com",
-      "summary": "modus pinjol ilegal dapat transfer nyasar jangan langsung dikembalikan jatimtimes com",
-      "id": "bac07da4827ac14c",
+      "source": "Jatimtimes",
+      "summary": "modus pinjol ilegal dapat transfer nyasar jangan langsung dikembalikan jatimtimes",
+      "id": "645abda59e3248d8",
       "domain": "jatimtimes.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16473,50 +12428,6 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-d2e712507717ba7e",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-27",
-      "title": "Peminjam Usia Produktif Sumbang Kredit Bermasalah Terbesar, Pinjol Perketat Seleksi - kontan.co.id",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxORUhtOTg2OEExVEg5LVJiRVZHcnNoVzMwblZodEhVNllqMjJjUXBZcXdBSnJiak1BVENobWNQQUJVWFg1dllXVllPWmxIT2J6YkZ0S2lOb3JISkx2b2FLeWxvaGhIeEcyalFMbHNraExrM3BpS3U5bkhqRFFNQ2NoMFlFN1RyemtFa2lmbFVYQ1FKR0RULThfYnhDMFZFaDc0OWxRVmhvcHY0SGo0THFPbTd6VkxYdEMz0gGyAUFVX3lxTFAzUzVoaUs3ajFRRW9LbzExX0dacGJEN1VneF9XMkxYYUM4ZE5MNDJZbkNxQ2llQWhtT04yMG91WG94ZVFTZTZXWXpuV2toODFCV3UxMllISGtqcXB0bENPZ0FkbWdmUzgtRVdvVlE1SEZwcnJ6SV9ZX1VienUxSGh1MFZjclEydnE0YndTSmNRb0N6TFNCMG5laXp5RndvcVJtWkJIa0ZtQThhT0ZiTXhDLWc?oc=5",
-      "publisherUrl": "https://keuangan.kontan.co.id",
-      "source": "kontan.co.id",
-      "summary": "peminjam usia produktif sumbang kredit bermasalah terbesar pinjol perketat seleksi kontan co id",
-      "id": "2eb33efa68b0772f",
-      "domain": "keuangan.kontan.co.id",
-      "sourceClass": "established_media",
-      "sourceFactor": 0.85,
-      "sentiment": {
-        "risk": 61.2,
-        "label": "mixed",
-        "negativeWeight": 1.6,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-bf3386d42a068743",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-27",
-      "title": "Pinjol dan Perdagangan Manusia, Dua Isu Krusial Ikut Dibahas dalam Rapat Pleno KPKC KAS - beritabernas.com",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPb0xYekJQWFhiR3VOVUJEN0NuSkRiQWo1RFpRY2VjYXQ4b0MyR0xYQjEwTy1pU3dqUHRRMlZ0LTlaWlpaN2tjeXdudXlPZklNY21CMXN4TGhfU2xsOTlaR3RfcEFjVmE1TzhmV1lIc2pNZ2o0QmlJNF9XdFRUZFZKNWFVVkEwMDRsb3hHM2Z5alplWm1qdWtXQ0ZCOHdHMG15bGNSUHlZcEVkOTZXejJDV0h3?oc=5",
-      "publisherUrl": "https://beritabernas.com",
-      "source": "beritabernas.com",
-      "summary": "pinjol dan perdagangan manusia dua isu krusial ikut dibahas dalam rapat pleno kpkc kas beritabernas com",
-      "id": "6a84c9acacff48b7",
-      "domain": "beritabernas.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f06b899178955430",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-27",
@@ -16542,25 +12453,25 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-27",
-      "title": "Tingginya Pinjol Ilegal, Fraksi PDI Perjuangan Minta Pemprov Perkuat Perlindungan Data Pribadi - gesuri.id",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOdkV3MGdmdnVjYWF0TWRBdUVGczhBQWVLczd3d3lTaTRYWHNrZmV2NG1SVUg5aXpVbzdTZ2ZwX3FVZ2NqdFBSTGhDN0Y3a2ppTWw1VjdGMmlzejczNUt5MS1NTDdCQXJDbnVHWHVEZWJaSW1QS1NydnJDblJUTUg5NER2WS1ZMmx3NWt1RVlpS0tTTlEyYVVHbC1DVG41NmpLUHNvQVhmMzFESFMxaml3UURDNDU5MmFUcXVGcWJTWFdhYVZpU1dCNjFwWllVM2QtV0Nka2dn0gHbAUFVX3lxTFBSMmF4ZWpvUXdWZnZNMnJ1bUJEQ2ZnTlVMM21VeVpnUlRiRlVSOVBHRWtoUGNvc2ozZ1hVbmNSaHExYjhGbnBKeERWRV9wYU1fbDNxRmg0RWNrQ2JpTlQ5QlpLLTRxQUhhd2Y2eEI5UHhHUlBrSVZzMFVDNW5TbmFJM3V4NkpISDdxMkRuTjRaVGhqZl9fYXBSRXZGMGRBN1hGTTgtM3dTeVQ5Nk1tUXRoSUdUWTZYNDh2TU8yTmVKQy0ydi1peG52R0JGUHhxRE5GWTJLSjRTOG5XQQ?oc=5",
-      "publisherUrl": "https://www.gesuri.id",
-      "source": "gesuri.id",
-      "summary": "tingginya pinjol ilegal fraksi pdi perjuangan minta pemprov perkuat perlindungan data pribadi gesuri id",
-      "id": "451e64e3eb86d176",
-      "domain": "gesuri.id",
+      "title": "Ulama Jadi Kompas, Polri Jaga Rasa Aman: Kapolri Teguhkan Kolaborasi untuk Bangun Negeri - https://tribratanews.polrespasuruankota.com/",
+      "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPUi05cktxZWY2STNiZVJpaU1QWl9QVG9FR25XcWktZ1llQm9rWFlOU256Z0xlVkJPWFZnSi1meHVsY0FORjVkR0RqLVZ0VFc1aV9JN1FDU3lfNU1ScVU2bWZHQVFzR2JCdkhOdm1SS3ZvTXBmcFpYeW1LQklkS3c3UnMybkVnNWUwcVBoU25NMVBjaE01MThmY3JxT3BxazJDbUFBZ3BNdGM5YkVtVzJCMG5acEFZSW9rLW14V0g4TXJya3Zicm5GQnN4UHpITV82YWFteDJfTFpoQQ?oc=5",
+      "publisherUrl": "https://tribratanews.polrespasuruankota.com",
+      "source": "https://tribratanews.polrespasuruankota.com/",
+      "summary": "ulama jadi kompas polri jaga rasa aman kapolri teguhkan kolaborasi untuk bangun negeri https tribratanews polrespasuruankota com",
+      "id": "153432a80d3d7405",
+      "domain": "tribratanews.polrespasuruankota.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 60.5,
+        "risk": 44.4,
         "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-8dde2d73be02913c",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
+      "eventId": "auto-1942f3e68f9974f9",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-27",
@@ -16586,12 +12497,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-28",
-      "title": "Bagi-bagi Saldo Dana 250 Ribu Gratis Hari Ini Selasa 27 September 2026, Klaim Kode Link Dana Kaget BeritaDIY - Berita DIY - Halaman 2 - beritadiy.pikiran-rakyat.com",
+      "title": "Bagi-bagi Saldo Dana 250 Ribu Gratis Hari Ini Selasa 27 September 2026, Klaim Kode Link Dana Kaget BeritaDIY - Berita DIY - Halaman 2 - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQb2dfa1RCaE43SW5vYk5kazNVZUM0S2tPVW4tRWl3cUxyVU45MUhyb1FQOXVWYWdReVh0SUdWR2luM1Y1WktzNW9Dd2ZhYmJrODdPbU5rUXI1Y2EwVjVUcGpZX2M4NVZrVWxGQTlTbjdFR09jWXRacldrOFo5ZE1LdlE2S0NFM1RMa1lHdjRNWkJ6UWttYXN4cElCOHlGRkI4T0dQcllJd25GYjVVMDQ1Z0JMdHUwdnB3UVhQOEhvMmRQN0FzaGJwSDZHbHpSWU1HOTdmWFRSQlJXUk5QQWxhaHR4eGNYcWU2UE9MT1Q3RUpxdjFlN3VEQmZkXzlPQXI4TC0w0gGIAkFVX3lxTE9NVHFKdHAxTVlqMHhnaEdkbUpNbDBiRFpodS1XekJlaktGLWxzdEI4VXNjTDd5MWZKemV3ZjBUMDRJR1h0YldSNmZrVzdHc3RYWGdVNmlmVWtkZWxvZkd4eUZCQ0ZyZU5PalpCNFhGNXpReVZZMWxoMXJLREJPcnBLNWxCbTh4aExqaVZTTFl6V2puM0VpY1Q4M2FmWjR1bF8xbk9tYjVzdXhsdnRqbldnY01wd3FTS3RZSmtfNkhRclppTW82d1pod2x5ZzA2c3NEajlXZjNFcWlaRkZOX2VlTW9KcklxXzItbmpWN1hmNndKSDdub04tX3gyWkowWU9fQ1VUTmJIbw?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "bagi bagi saldo dana 250 ribu gratis hari ini selasa 27 september 2026 klaim kode link dana kaget beritadiy berita diy halaman 2 beritadiy pikiran rakyat com",
-      "id": "c0c11035d2c959ce",
+      "source": "Berita DIY",
+      "summary": "bagi bagi saldo dana 250 ribu gratis hari ini selasa 27 september 2026 klaim kode link dana kaget beritadiy berita diy halaman 2 berita diy",
+      "id": "fbf3160d5e4da160",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16608,25 +12519,47 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-28",
-      "title": "Foto : Penipuan Online Kian Canggih, Operasi dari Lapas hingga Libatkan Jaringan Internasional - Kompas.com",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOeURURXo5bEhsN3oyTjZWNU9ndWhwTDBUZ0JOXzN5VXptVmstVUZ4MjNKTnE0bVJDSGpDODFXdVI5UEhxRUotaTNNSFU3QThwM1lIbE8wb1p6LTFMY2prOWoxRXZlUXV3akZkS19lUmpESTFfNThXbHFuUzFkTlNpUWNDYVNBU2F2eTB6dEVaNjBOYWdJMllZZDQ4ZW1lTjVreGZmdEJkcENwMUJuS0Y0RV9PV0N6MkRLQ3M3a1VQMHA1UQ?oc=5",
-      "publisherUrl": "https://money.kompas.com",
-      "source": "Kompas.com",
-      "summary": "foto penipuan online kian canggih operasi dari lapas hingga libatkan jaringan internasional kompas com",
-      "id": "ef53f66163051287",
-      "domain": "money.kompas.com",
+      "title": "Berita - TPAKD Badung Edukasi Kader Posyandu Kuta soal Keuangan dan Bahaya Pinjol Ilegal - Pemerintah Kabupaten Badung",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPUFhudFRjT0plTHQ3R3ItelN3dXhvMHpqODlhVDZsdDZ1UGdxYXoxX0E2b3AwWDNBdmJvTVVjaVpiNmVjTkhiT1dlUjhDVmQxRWdFVWc3a0RVNzlZNTQweFpCcDdNMHB2OF81YmpHRFItR0QySUw5YlFxNkVjUjZjUkliRlJqZDBfN2ZPOXE1TWlTZl9mQXU3c3ZabGdoSGpBdk54bzdXMjVUYWxlWlF2Nnl1SDlzUkVSU3pPN2VOQ1NJb3laZEVVY2Z3?oc=5",
+      "publisherUrl": "https://badungkab.go.id",
+      "source": "Pemerintah Kabupaten Badung",
+      "summary": "berita tpakd badung edukasi kader posyandu kuta soal keuangan dan bahaya pinjol ilegal pemerintah kabupaten badung",
+      "id": "9d810c8716bcad97",
+      "domain": "badungkab.go.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 67.5,
-        "label": "negative",
-        "negativeWeight": 2.5,
+        "risk": 60.5,
+        "label": "mixed",
+        "negativeWeight": 2.0,
+        "positiveWeight": 0.5,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-5e69afa26dca3b9e",
+      "eventType": "fraud_or_illegal_practice",
+      "eventSeverity": 0.74
+    },
+    {
+      "date": "2026-09-28",
+      "title": "Bupati Magelang Ajak ASN Blonjo Warung Tonggo, Waspadai Pinjol dan Judol - Harianjogja.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdTdnQVE5QVBrY01DTEhQWE1MaklfNUJ1dll3dmZQa3dvR25IYzBVNGx1b1RJeU9VVHJQU3piTGpDcGp4X1hWTmMtZFphYTdxY2UxTDJETGcxQ3VXMFBRS3lDVmNCMm1IcDlTUXpJVFRSc1EzZFZRRmozRzkwbFNTVHVnNmpGVTRWcjFwNGg0bHRLYkgyUzFxUkh6RXhCaHdES25URVVmLWFaeXNSTFZOX1J3?oc=5",
+      "publisherUrl": "https://jateng.harianjogja.com",
+      "source": "Harianjogja.com",
+      "summary": "bupati magelang ajak asn blonjo warung tonggo waspadai pinjol dan judol harianjogja com",
+      "id": "21fd51ce38bd4de7",
+      "domain": "jateng.harianjogja.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-32689604fcdde664",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
+      "eventId": "auto-4ae3a3f7550c8625",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-28",
@@ -16674,45 +12607,23 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-28",
-      "title": "Mataram atensi kasus narkoba-pinjol saat evaluasi kinerja PPPK PW - ANTARA News Mataram",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNbEZFRmxuT082NXh6UXVZNkhjSzJVRmhWQkRUczhNOEVnQm9OUERxMXhZc053STZrdEZOYUJZc292eDE4VzY2V0JkT1FnRk9ONF9FLXRtSzNDS2ZCWjlqNk1IQWdBa2JrRUkzRVlIT3NfVVlNZVJuTGFiZkF6cWRKQ2doUnQ1bWtZZjNsX2JucGNvTWJkVXZRQXRFaU1sanhnb3NwWmEzTWxtT1R1QjQ4?oc=5",
-      "publisherUrl": "https://mataram.antaranews.com",
-      "source": "ANTARA News Mataram",
-      "summary": "mataram atensi kasus narkoba pinjol saat evaluasi kinerja pppk pw antara news mataram",
-      "id": "0caed968f8b623a0",
-      "domain": "mataram.antaranews.com",
-      "sourceClass": "established_media",
-      "sourceFactor": 0.85,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-48520456d56b86a5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-28",
-      "title": "Mewaspadai Pinjol di Kampus: Solusi Instan vs Ancaman Masa Depan Mahasiswa? - Kompasiana.com",
-      "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPN1ZZNjNrLUdPX19pdkRkSThOVkcwaGNRQ01pRnNyY3hnZDRxZG9hOFItaW90UEtXVXBqeDlWQmRNMkJ3QTdzWWJVek4wa3pnUkpHMmotRHBZektlbFhaU3R4ZDhJbHZHZVR3YVp3bC1KSlJKR3g4enJ0eEMtRmsxQV9SUklvY25DWHlCSG80TmZwaE85T0JjS0V1MVR6SXpsazJkOXQ3c0VyU3hNdVZaTWVHRE1Xa0RaRTVCOEp4TThmMXRYcEhOdkExNHNRNFZjT0tZeW1fOGRhUFFLdVZZdQ?oc=5",
-      "publisherUrl": "https://www.kompasiana.com",
-      "source": "Kompasiana.com",
-      "summary": "mewaspadai pinjol di kampus solusi instan vs ancaman masa depan mahasiswa kompasiana com",
-      "id": "0781a0bcda4b3ad5",
-      "domain": "kompasiana.com",
+      "title": "Keluarga Enggan Lapor Polisi, Kasus Santri Disetrika di Gresik Berakhir Damai - kabarbaik.co",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOTWV3YU1BZmlnaHFvV29vNlhEZmdpMVZNOGdWY1hwc2RfaVlGOXE1N3Q1U1hXSTJhQ0ctNUhaX1lzODg2UVpNWmhoTldreFdlNXZydHZZTXhvN3NzeTEycHY2VS1EQzlHMnVvWHhhcmFRS3ZQVlJJS0ZRd1RvY1FoQlI5ak1pM1YxSzVJQ2RBR2FtU243X2YtU2xGcUxHSm8?oc=5",
+      "publisherUrl": "https://kabarbaik.co",
+      "source": "kabarbaik.co",
+      "summary": "keluarga enggan lapor polisi kasus santri disetrika di gresik berakhir damai kabarbaik co",
+      "id": "8cf59cfe2270505d",
+      "domain": "kabarbaik.co",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 60.5,
+        "risk": 40.2,
         "label": "mixed",
-        "negativeWeight": 2.3,
-        "positiveWeight": 0.8,
+        "negativeWeight": 0.0,
+        "positiveWeight": 1.4,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-dc13a6523305e05d",
+      "eventId": "auto-41c37079000966a0",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -16740,12 +12651,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-28",
-      "title": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - suaralandak.co.id",
+      "title": "Outstanding Pinjol Capai Rp105,63 Triliun dan Bunga Resmi Turun - https://www.suaralandak.co.id/",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8wSkN4N01jeVl5cXhxbFBDNF9QdVFQMEdsend2VnpxRzNZOUtWZUZPSGVsUzZqZ25vQ2NKaVBOWW05NVE3LUN2WjRLclRnQW5xUDJuOFpLS2pMa0NZcUh2emZSOEVodzd3eGc?oc=5",
       "publisherUrl": "https://www.suaralandak.co.id",
-      "source": "suaralandak.co.id",
-      "summary": "outstanding pinjol capai rp105 63 triliun dan bunga resmi turun suaralandak co id",
-      "id": "0a1bc67052c383fe",
+      "source": "https://www.suaralandak.co.id/",
+      "summary": "outstanding pinjol capai rp105 63 triliun dan bunga resmi turun https www suaralandak co id",
+      "id": "2515d7d0bee17568",
       "domain": "suaralandak.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16757,28 +12668,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-12d776f9ff3ea1a3",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-28",
-      "title": "Peminjam Usia Muda Sumbang Hampir Separuh Kredit Bermasalah Pinjol, Seleksi Borrower Diperketat - kabarbisnis.com",
-      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONmFwaHJhSmZmLVRkVm1VblA0ZW9FbEpxZmhSMGVZTEtPMjhMdHRhV1JDTVJ5YUw5dks3Q0dBRGdiNnNpWmpyVDhNc3V5bjVGY25WODdqMTRqVDFQWXJyTUNyYXFkZ2s0ZzBtTVRyQjBNeDBVdDNybl9aSDgySHNuSmZtOG9VazdfU2JrU3ZhREhTeExsb18tdzc4MGgxZUJtYkc0UFBxZXlHOE9KbjhRbDN1TWNZOWt1NlhhaTMyWm1Cd2lQUFVkaDJhZDBua2EzRmc?oc=5",
-      "publisherUrl": "https://www.kabarbisnis.com",
-      "source": "kabarbisnis.com",
-      "summary": "peminjam usia muda sumbang hampir separuh kredit bermasalah pinjol seleksi borrower diperketat kabarbisnis com",
-      "id": "29b778cf77bcef2f",
-      "domain": "kabarbisnis.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 61.2,
-        "label": "mixed",
-        "negativeWeight": 1.6,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-275ac2a4dff527ac",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -16828,34 +12717,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-28",
-      "title": "Sekda Kupang Ingatkan Pengelolaan Keuangan Rumah Tangga Cegah Pinjol - Koran NTT",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxONnFjREpvalJVcHpPYWlpTlFOcFMxRU1Wd2k5UUMycVJPbDJqSXBONEEwWGVlRkFGUHV6S3c4amNER2htZUdBQkRsdHd1b2hmcWpqR3RmLWV1R29kdVZiU2JqUU1HRDJySnpZdEUxSWZqaDhuVmRveHZzSlRMNmY2R3VVQ21tdEdmMFItZDdGLXFCRWVJVWd6d29XZERzUXNCWEI0?oc=5",
-      "publisherUrl": "https://koranntt.com",
-      "source": "Koran NTT",
-      "summary": "sekda kupang ingatkan pengelolaan keuangan rumah tangga cegah pinjol koran ntt",
-      "id": "e13a9c9007186d75",
-      "domain": "koranntt.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-af9b1f488c91e067",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-28",
-      "title": "Sering Checkout Pakai Paylater? Cicilan Kecil Diam-Diam Bisa Jadi Gunungan Utang - wartaekonomi.co.id",
+      "title": "Sering Checkout Pakai Paylater? Cicilan Kecil Diam-Diam Bisa Jadi Gunungan Utang - Warta Ekonomi",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQM1JTQVpTOVVNTXYyMmp3eW8zX1J4Ymc1QW1OMHZ5Zmp3cW1Dczg3VGZvbkpMekRWSWJ0clF1RjMzUk5TZ0FtU0V2MV9tTXpEZ2w3bi1BSVdwakkxLWRGWVZxVmRpbk5KSlQyc1h6SVYtandzSDE0SUZBWERVQ1VZV2JyY0NuTXhBdmNNcHhZWmxuZHVWUnc3aFY1N19ESUJjMG5WSzJYOUtTUV9YcUNsczF5cC15Nkdi0gG-AUFVX3lxTE51T3NObTdzeW9VcEJCbTdoMDlTTWJpR0JGSFZvTTgtQ003QTFLNzJLLWlrX3hHdTIzemJaZzFhUC1xcDNzSVhVRk0zcjA3bXUwcUxpbzJlWkNlQklVa0JYNnVDQjZFaHZhVVRwNDdtTlB5eFNrODNHY1lJb204bzV6ZlVOcmcyUGJLNU9EOW5oa3lfTHlUaE5ZWjlFTFZvTS1COTlWM2xrZm92cXZoS0Z0R09Uenp1UzZ6cG5qQ0E?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "sering checkout pakai paylater cicilan kecil diam diam bisa jadi gunungan utang wartaekonomi co id",
-      "id": "82c23d792f53a45c",
+      "source": "Warta Ekonomi",
+      "summary": "sering checkout pakai paylater cicilan kecil diam diam bisa jadi gunungan utang warta ekonomi",
+      "id": "7e23f911e3ada8c8",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -16872,13 +12739,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-28",
-      "title": "Tanpa kartu kredit! Ini cara mudah ambil cicilan iPhone resmi - Elshinta",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPeHVnMWtLMGpOYnZwY1dWTkpSSlg3b2RJNjZld3NCNlZ3cVBoU3E0RTVCdmFTVFZUUmVZN29FeXJJNGUwaGNVeGp1VU56NGZnRmpIazNkWXpRRHdtY2FSZ2h2eW1tdG92alZfa2tmYU5GUTFnLXVjOEh1UFVSb2w2enhhSlZDdw?oc=5",
-      "publisherUrl": "https://elshinta.com",
-      "source": "Elshinta",
-      "summary": "tanpa kartu kredit ini cara mudah ambil cicilan iphone resmi elshinta",
-      "id": "1f3c347107d04197",
-      "domain": "elshinta.com",
+      "title": "Xiaomi Jual Redmi Note 17 Pro Series di Indonesia Mulai 25 September - Energika.id",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSzBoQUlfaDVlY05mQmRxeFprelVDMXBUNGhRUjZWanA4RS1oUkNZWDkzVDB0Rm1mbTdYWE5MN0JxZHlxNjhPV01XXzVUeGMwdW1iNUpYQ0FsbGlnTWUydWZPRFZxMnRRZ1ZIamhvTFpfYXZGWFNBX3hqb0FqSEEtdjB6ZzFIRkZtUDU1My1RQU50ZVo4cGMyMlcxalRYb3RqaUFV0gGfAUFVX3lxTE9TbUMyWlNXdFExY2pqOE5qLWltdE9qc2Y3ajI4elZPelYzWDg0a1lkOTNxa2xGdS1rcU1LV1NjWDNOekZaYkd6MG5LWFNlWWJXVlNBVEthcGdvNEJmWkpnS25Icm9DUTdIM0pDb1MxNVZXeC04ZEphZlloQ2I0S3FRZVFhek4yLXBMVjRDR1lUMm1QXzBlTXJlR3VOTDNFUQ?oc=5",
+      "publisherUrl": "https://energika.id",
+      "source": "Energika.id",
+      "summary": "xiaomi jual redmi note 17 pro series di indonesia mulai 25 september energika id",
+      "id": "e3f7e6296ec0ccf6",
+      "domain": "energika.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -16888,7 +12755,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-c39077c2ef8731af",
+      "eventId": "auto-7785e1005d61f6ae",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -16911,6 +12778,28 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-8600b152b824d40e",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-29",
+      "title": "AFPI Bentuk Tim Khusus Tangani Portofolio Pindar Bermasalah - Demokratis.co.id",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOEZxNUlSNk1NMVk3TUpUNjFOU00yaG5FRWFWUWhaX3RBRUxPUGNSWUw0NDBOcE9UaW5uQWEwS2tkRURHTC1BM3p5bWtXLWpBSzZRMGJWb0dsRTZ4ZWUzd3ZQdE5DbEZoSnp0SzFWQnZndkFRbnVkU3dNbW5Za2E3dnRRVngyOWJRekFhdg?oc=5",
+      "publisherUrl": "https://demokratis.co.id",
+      "source": "Demokratis.co.id",
+      "summary": "afpi bentuk tim khusus tangani portofolio pindar bermasalah demokratis co id",
+      "id": "7d62095b65979072",
+      "domain": "demokratis.co.id",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 61.2,
+        "label": "mixed",
+        "negativeWeight": 1.6,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-cdd2c217188be0fc",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -16960,34 +12849,78 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-29",
-      "title": "Dorong UMK Naik Kelas, Kanwil Kemenkum Kalbar Perkuat Legalitas Perseroan Perorangan Mempawah - Pontianak Post",
-      "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPQ2hJUi1KUXZWN2pjOFdhd3FtNk5JQS1VWng2WHRMTVIyYkR1d0VUaENISk8xQUF2STA3clVCWXBIRHZzNjJXTnFic2RqalhUdFpYT0xoeThydjlzX3JJSHpFbkNhVUZIR1B4Z0FadVQ0MzlvZkdFMHpaaUpGZnpiN25rVVYwd0RocG9FVVpnM0N3bzRIVDVpS19HMUJnbW9ScEFQclczRkVBOWlEZkJ6VmZ0cHpVSFdmbTQ0MWZFcTZrb1NfQkM4M1NSdHROblFZTzFuQ1R5LTZabVhsVG5DT1Nn0gHnAUFVX3lxTE1USTcyM0MwZTkxZW9VaGFqZXBSUHFuWTJadHBaM1VOV1RubTgzTnpqYWhDYWxJbHRlTjZGZDBpc282QS1rVzlKR3UxTW5TWXJLY2lka2Z2dmNzcmY1bnUwdFVGbU5sUnV6WXotMFQ1akdDb213am80dzJpQUZkQTRBUWJ4QUt3STNkdHhXY1hlMXdneHU2UGxDN1BrV25iU3NIQlVNRkZwZzBpTEVzOXZ3bzlGS0syQm05c045dmpsN2JHeDZmSUhvMW5uS3lBWndlOTJadGNZSWlXcE5WdWRwdHlEWGVVQQ?oc=5",
-      "publisherUrl": "https://pontianakpost.jawapos.com",
-      "source": "Pontianak Post",
-      "summary": "dorong umk naik kelas kanwil kemenkum kalbar perkuat legalitas perseroan perorangan mempawah pontianak post",
-      "id": "f75daa33716d1ce4",
-      "domain": "pontianakpost.jawapos.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
+      "title": "Asosiasi Fintech Bikin Tim Khusus Tangani Pindar Bermasalah - Suara.com",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNVDJxQmRNYkgyVzNrZll4X0F0U0RKZmZURWlKajZNdlUyQ2pvMnVQdEN4TkJtTFN4X01hbFRJcWVZbjBGMXJEQjVzSUZyZEROZmhSY21rQ2g5ZDh6VzJUN0pjSEkxWDBkQXd1N2Z5ZzZUaVRFTFlVdzZ5SkQyNWg2N1ZOZV9XX052NUUzLWY2aDZMSEZNN0lVczNIRy16RS00akd6T3oyVXdKZ9IBqgFBVV95cUxNSG1uYXNsd3RDWG1mbEpidEF3c2E5WVBCX3g2dXBBNFZPMVlfQ0VMd0E2b09SZF9OT19UZ2dqelBoZ0FLanpuelotZ1R3Rl8td096Q2FwTFBnSzRST3F6dC0wcmdjNTNPZXpKS3VOeHNMSUFHSllPcVZ4NXU2SmRSQ3NtYzNrZmZCdl9Nb0xzYTdVZ0RkQjJaRXJXYWpMSjlNRms1Z1pQNmJ1dw?oc=5",
+      "publisherUrl": "https://www.suara.com",
+      "source": "Suara.com",
+      "summary": "asosiasi fintech bikin tim khusus tangani pindar bermasalah suara com",
+      "id": "50add95f7ad3c99a",
+      "domain": "suara.com",
+      "sourceClass": "established_media",
+      "sourceFactor": 0.85,
       "sentiment": {
-        "risk": 40.9,
+        "risk": 61.2,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 1.3,
+        "negativeWeight": 1.6,
+        "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-13fe85ea36e9ad9d",
+      "eventId": "auto-ffaefc4c496f519f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "date": "2026-09-29",
-      "title": "Kas Pintar Legal atau Ilegal OJK, Apakah Aman? atau Aplikasi Kaspintar Penipuan? Ini Pengalaman Pengguna 2026 - Berita DIY - beritadiy.pikiran-rakyat.com",
+      "title": "Harga iPhone Duo: Fakta Resmi dan Status Indonesia - KreditPintar",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9ZUzVob3ZYQ3JUbnZEWXdBMU85NDNFMFVFbkNINkVGS2I5bF80QUIwZ0lxNThhZ0tBaDRRbzM4MkhLcFFWMXZwYlN1ZVhFa3B1UEtWR0lYd3hqRkFZMnV0enZndERYZw?oc=5",
+      "publisherUrl": "https://www.kreditpintar.com",
+      "source": "KreditPintar",
+      "summary": "harga iphone duo fakta resmi dan status indonesia kreditpintar",
+      "id": "a7f3b68d16bcc1dd",
+      "domain": "kreditpintar.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-23a8210eedc38254",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Jadi Pembina Upacara di SMAN 1 Ciasem, Kapolsek Peringatkan Siswa Tak Terjebak Judol dan Pinjol - Pikiran Rakyat Subang - Pikiran Rakyat Subang",
+      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOOFZBY0ZZd0ZCdW9ibTk0WVh1UDFsVWYtTGpVdWJ5YU5ySVBWSFZtcWxHNURkOUNPaGktQWZZRDMtWlVxVkZIUTJ0VThqYk9fT2gwNWV6WHh2WHJfSkVNZFU2TGNwZEM0N0g5dDRCWmJPblVocDcySmFwbkEtdWZVNWMyUlV6NUtuOUlfUm02c3ZiS2o4MTEzVU9GcWZ1bzlnai1TeFFzWmJKcTRYM3dOb0JtYjJXWGZaNU5DczBGeGhma2ZKYnoycUZtR2pLWWdhLUowYXJRb1pfRXRXcDFyUEZMRmIxMG9nd3fSAe8BQVVfeXFMUGtBQkpGQWg3NlBzZUJ6ZHVjcGpzMWpMVFBRTUpXNm9zV29pbWNWYVAzQUJWckxjOVFvOHZYdVJNWGVxczBrd3k5amZfWmVweFlFTmc5M3BEVE1KSzJSNEN1akJtMndob2Z1d21GT09xSGt4bmhYUTNwS0o5aEU5Y2h6VjdvcF9HenJpdWlNVWxkV0tVM2stejFkc0E1TVQ2cWRwbmdMd0hkbFFHVGk4eVlZRWl5Q3d4SmJ5UlpXRzRha1dBbFdyb0k3VmJ0aWFKU0dHaWxDWDZMNi1vaHl0NE5TMmZhcTJmNGQxNU9nSjQ?oc=5",
+      "publisherUrl": "https://subang.pikiran-rakyat.com",
+      "source": "Pikiran Rakyat Subang",
+      "summary": "jadi pembina upacara di sman 1 ciasem kapolsek peringatkan siswa tak terjebak judol dan pinjol pikiran rakyat subang pikiran rakyat subang",
+      "id": "f2ec5b7942efd7f2",
+      "domain": "subang.pikiran-rakyat.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-0b8c203bad853766",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Kas Pintar Legal atau Ilegal OJK, Apakah Aman? atau Aplikasi Kaspintar Penipuan? Ini Pengalaman Pengguna 2026 - Berita DIY - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPcGFmbHV5Y3VKVnJZZkEybldQbU9VVkxFTVo5WjN3cnk3Y1hfUWtFc3hTT08yc3hGRmdFM19GYnBYRTRDMlliZ2FhNVVrd20zYW9LRXlVUGtFUTU3QVkzMnotSE9IOXQwckR4MjUxX2hFM0RmekdpekFiaWtSWWR1ZS1oZ1ZqTG92cHBucXE1dTdJRTFfVFZLOG1NQU5BZ2tsWURXb21KQ1lTU0JvM3RFYVlQaEo1Q1pXMTFFUl9kbmFYdE0tSEs1LWJfNlh2S3RXSUxkQnJsYndEaDgwRVpFc0NCWTVRMnJKUkUyTFhqOTZUNTBVNE1mbXRDVmppZ3BlcXlkU9IB_gFBVV95cUxQS2c3UW44RzMtTFk1R1FOWEV0c3NPZl9mbEt4V1N0VkdlbXRIbHBlRG4zTEx2QVUtV2p5ZjVrdjVadDd4VW1CTnlqWlVNNktIRG85N1JvcjZIbWxPTjAxTUhBRnRYek9nSlpSeklqZHZ4bldRbDlicmhTQXRiTm5mZGdISWd6ZzVWSnBzWjM1U0JkQXFyc0xEdnBHdF94MHVVZklHX3BTRFN2VnpJZGd3SDFYdjFreEhjOWZDYjlobXczekV3UnZUcjdPSWY0S0FKdThyYnAxUXo3Y1FYenc1WU1aQ1dUUDR2WFRJZ29yQl96UnlQRjVlMVo5TGZWZw?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "kas pintar legal atau ilegal ojk apakah aman atau aplikasi kaspintar penipuan ini pengalaman pengguna 2026 berita diy beritadiy pikiran rakyat com",
-      "id": "a1dff59294b60463",
+      "source": "Berita DIY",
+      "summary": "kas pintar legal atau ilegal ojk apakah aman atau aplikasi kaspintar penipuan ini pengalaman pengguna 2026 berita diy berita diy",
+      "id": "3e9196634d1208ca",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -17004,10 +12937,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-29",
-      "title": "Mau Batalin Pinjaman Kredivo? Awas Tipu-Tipu dari Sumber Gak Resmi! - suara.com",
+      "title": "Mau Batalin Pinjaman Kredivo? Awas Tipu-Tipu dari Sumber Gak Resmi! - Suara.com",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZ0htN0liQUFmRE1nVWZ5dUhIcUI2RDBwaTRNMWptV296dkFKUklCelhMZkdZM0tXMVN4SXBJMWVBNm1TMENwNnh4OUhteGVzUGdxZHVRakRaYzU3aHhpUTFlSVBFQ1pCcGZkdkRqeElNa3hQZXNOM0U3NG96akk1dkk5TjFvSWdDRGpsVG5VOUhZMjRyY2s4RHI4Z2VETXR1eXZ3cjctcHdXaVhuQmlNVXhn0gGyAUFVX3lxTE9OUjg4WVlJNzlmY1J1NElIMDN0NVF5SXNGdkFJZ1p2Xy1XU0JiNU84UEdVd01HazVZaVNSRzhDOGY2aEM0Q09heWl5aFZRLXExTEJhOGdtT0R6ekQ0bDVXcy1TWDZhNUhYbDZiWERuczVpYnlTMS1NLVF6Y2Y0a0x0dnY3UEs4dW1tZS1QZkRLNUo3bzJsVUY5TURyeUtUNXB6ejRzcmRSdWZfb2lJT1ByMUE?oc=5",
       "publisherUrl": "https://www.suara.com",
-      "source": "suara.com",
+      "source": "Suara.com",
       "summary": "mau batalin pinjaman kredivo awas tipu tipu dari sumber gak resmi suara com",
       "id": "66752df8e12427a7",
       "domain": "suara.com",
@@ -17070,79 +13003,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-29",
-      "title": "Subsidi energi tahun 2027 dipangkas Rp11,44 triliun - ANTARA News Jateng",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQRGVfcFpQZFU1ZmdhaXRTMFdyMFlHTUdYRWxVbmU1aElBcGV2OWd4Tk8tclJMcENQbWo2SXIydkRpQUtGNDZWdlhQWmc0NGlEZ0VaZjhydm92TjRzdGVGUjhWMHpSQ3pzcndka0ozRXlvWEFpRm5CREcwelNXNl9FNkxJMUgzdWY5ZHZ3X1I2Snc1NkVqS0J6aTh3?oc=5",
-      "publisherUrl": "https://jateng.antaranews.com",
-      "source": "ANTARA News Jateng",
-      "summary": "subsidi energi tahun 2027 dipangkas rp11 44 triliun antara news jateng",
-      "id": "f2eb55bbcd81f027",
-      "domain": "jateng.antaranews.com",
-      "sourceClass": "established_media",
-      "sourceFactor": 0.85,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-4faef190119c982c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-29",
-      "title": "Tak Pernah Pinjam, Fithri Diteror Tagihan Pinjol hingga Namanya Dicatut di Instagram - indoartnews.com",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPaGk1bTAxRThXczY4cG5EejBhSURnQXlyMVJIZWJGTG1tM3lCTzZuZVhlNDNncUV5V0xwS3hNc3I0cWFFbTl1YmtZb0VVZmM2UFd0NlZrVl8tckZCT2R5czl4SWpyZG5jSkhTNEQwWTJ3M09rQ0x3M2ZNVV82dmdUT0NmcWNBblJheWdZQVBCNldKZXFXek96VGZ2dzF2VWFteXZNSy1ONzBEVHpSdHlOMkVxbXQ2Y25peTNDMUVsZ2xqQQ?oc=5",
-      "publisherUrl": "https://indoartnews.com",
-      "source": "indoartnews.com",
-      "summary": "tak pernah pinjam fithri diteror tagihan pinjol hingga namanya dicatut di instagram indoartnews com",
-      "id": "26c78e78b4178e73",
-      "domain": "indoartnews.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 81.5,
-        "label": "negative",
-        "negativeWeight": 5.3,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7cdd096b9f0f6b94",
-      "eventType": "consumer_harm",
-      "eventSeverity": 0.86
-    },
-    {
-      "date": "2026-09-29",
-      "title": "Tiba-Tiba Ada Uang Masuk Rekening? OJK Ingatkan Modus “Salah Transfer” Pinjol Ilegal - - Barometer Bali",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPVTNQU2JUYXZTYlh4bloxUHpQRUJXSzk4WU5xSnR1VVBPXzdENndOcGxrNlY1VTU1cW1laUt0Y09hN2RMM2FJUlZfSEYtdVRUUWdxeTZNSjc4VEJ3SEM4TEQ2dHp6SGdjTWd2Qm1rUkItT1FDNU8xY1FHMXhGWnRzNXppYXFCYnFOQmFWdGNxTHBhTXBWYWFCdkZMZGh0S2xDZ3dMOEdTUFBJNlEw?oc=5",
-      "publisherUrl": "https://barometerbali.com",
-      "source": "Barometer Bali",
-      "summary": "tiba tiba ada uang masuk rekening ojk ingatkan modus salah transfer pinjol ilegal barometer bali",
-      "id": "9059dc8278a3eb71",
-      "domain": "barometerbali.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-59b91b8f922fa61f",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-29",
-      "title": "Tidak Pernah Mengajukan Pinjaman, Nama Pegawai PT Bandung Dicemarkan Oknum Pinjol di Instagram - patrolicyber.com",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOLU9ySUs4Z18xNlo4aG1IdzNtNGU4ZWRRaHRERTF4RVY4X255M3FkN0pWR1IzTmVLZDVtRGs0bkUzQ2E0elVvbGtyemZUV19sVW5STDBUSlFuZzFseEJTdXpBb2FBeEZ0ZVlHa21hNGV5Z1NPb3BPY3RmZVVONDZncC1jQmlLcDB5RUlGUlFOOTNfVlRiYVFpNmdNN1cxTEdaZWlMaHd4RU5qNVpSMkRUa2g5VVNNQnBLbTZhMVNlN08?oc=5",
-      "publisherUrl": "https://www.patrolicyber.com",
-      "source": "patrolicyber.com",
-      "summary": "tidak pernah mengajukan pinjaman nama pegawai pt bandung dicemarkan oknum pinjol di instagram patrolicyber com",
-      "id": "339c2a6b12b392be",
-      "domain": "patrolicyber.com",
+      "title": "RUU APBN 2027 Resmi Disahkan, Pemerintah Apresiasi - BeritaManado.com",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1hMldHRnFqSm52ak53WktXWHItZjhJcjBtUVFVc1FteUNtVDlqTmVYbkk0Q29MUWFBZ3VHelJjQW9NazlCb1pXM0hpM0J2V2JvaVJ2TmFQZ3loYnZaUUdFcnVZTGc?oc=5",
+      "publisherUrl": "https://beritamanado.com",
+      "source": "BeritaManado.com",
+      "summary": "ruu apbn 2027 resmi disahkan pemerintah apresiasi beritamanado com",
+      "id": "4c516bf49a5d8ff7",
+      "domain": "beritamanado.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -17152,7 +13019,29 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-79efd1c422e98fb1",
+      "eventId": "auto-14de228dd1705ce4",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-29",
+      "title": "Siasat Lunasi Utang dan Paylater Menumpuk Tanpa Terjerat Pinjol - Liputan6.com",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQZGdydV82cjd6LW03b2tpUi1PSi05aXowb1VBQ0htc1VDR0lrbVhNZ1ZnTFBWODMxeGpRVXFRWG9FX3RJckxxYjRYb2lZZjByczV5ZlctNjhuWnVKb2Q2cjV4bnNQUGZVRk1ZaHJ5aUxDUHJjLXlzR0ZZWG13eHN0ZHVOaEl4OGVkS1lGSEFFUnlDLVRObmhwa1p4VEVxM3k3c3pSUU0xVWVhSnFF0gGiAUFVX3lxTFBiakVxS0tzWEdkVHoyd0w0cTd6NVhEVU1EalJ5Y1dYQWR2cFFfc29YRFVNb3dERlQ2ZmJETFdXMmpyRmNrQ2Z5Y2J2WnVxb2lmSnlSUmJQdDhTd0ctdGdkUXpJWjdqam1mUGNONE5XcjZwQi0teGRxV0ZxRTNZRUNKbjMtNC1iaFFFeDBSbUNjRFNLeVRVd05EUV9nMG5Vd1Rtdw?oc=5",
+      "publisherUrl": "https://www.liputan6.com",
+      "source": "Liputan6.com",
+      "summary": "siasat lunasi utang dan paylater menumpuk tanpa terjerat pinjol liputan6 com",
+      "id": "f72a02f4cf3b3b0b",
+      "domain": "liputan6.com",
+      "sourceClass": "established_media",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 71.0,
+        "label": "negative",
+        "negativeWeight": 3.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-b5885431a3aede39",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -17202,35 +13091,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "AFPI Bentuk Tim Khusus Tangani Portofolio Pindar Bermasalah - Demokratis.co.id",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxQOEZxNUlSNk1NMVk3TUpUNjFOU00yaG5FRWFWUWhaX3RBRUxPUGNSWUw0NDBOcE9UaW5uQWEwS2tkRURHTC1BM3p5bWtXLWpBSzZRMGJWb0dsRTZ4ZWUzd3ZQdE5DbEZoSnp0SzFWQnZndkFRbnVkU3dNbW5Za2E3dnRRVngyOWJRekFhdg?oc=5",
-      "publisherUrl": "https://demokratis.co.id",
-      "source": "Demokratis.co.id",
-      "summary": "afpi bentuk tim khusus tangani portofolio pindar bermasalah demokratis co id",
-      "id": "7d62095b65979072",
-      "domain": "demokratis.co.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 61.2,
-        "label": "mixed",
-        "negativeWeight": 1.6,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-cdd2c217188be0fc",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-30",
-      "title": "AION UT Urban Meluncur di GIIAS Semarang, Ini Fitur dan Harganya - Suara Merdeka - Suara Merdeka",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPVEFRRWdmeGpsV192d3JSMnFJeUg5WmZnekp5dFNiVzQzWnZMaEY0TDFvQ1J3a0s3eDN2RnpDWUNITkFEY0o1dDFiU0xzYXZjNy1YNnoyZEJOOGZIUmE1T1NKTVU4akpDOVA1TFZUN01LMlNzQTNVemMwQjFkVk9ZNjZkY09ON3N6Zm53QmE5Z0Q2ODJQcTFGMTlheVUyc3FiSnlZYVVFczNrcmMwc3pwLS1n0gG3AUFVX3lxTE1GT2FVUnFDamswc0UwVkNFRGNkb2ZMUGl5cEVoRHpTMzlNWkZSUWFEMkQ1MVpjblRvamFJNmg5dFM3THVlSjhHNnl3U1hWbEkyU3JWV0VLTHdicE9nakpBQzFQQ2U2bkdnYXZpZ2xJOUR6MV9GVnhFTXpvUTB0OFd2N0tKWV9jLVNFX1p6V0h5Unl2dmlJZVJwQlNCMkRiS3dreGNJWmZGUU5sTWtFQkRNUTU3bnk0VQ?oc=5",
-      "publisherUrl": "https://www.suaramerdeka.com",
-      "source": "Suara Merdeka",
-      "summary": "aion ut urban meluncur di giias semarang ini fitur dan harganya suara merdeka suara merdeka",
-      "id": "b2a467a980df66ff",
-      "domain": "suaramerdeka.com",
+      "title": "AFPI Bentuk Timsus, Tangani Portofolio Pindar yang Izinnya Dicabut - IDN Times",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNclo2dTN5OTNjdkdjZEZVSjR1RlcwSGRLeUw2NGRYWEsyb2pXNVhrdzBmaUROOVhISUZFUlFUZTJPT21uTThsc1RKeEY2VUljM0ZITVZIMFZWTmtrNVdPd3NqT3ZWd08xUTJnUjJzd3RJTzdPM1JSSmNJbkpQcG83dTd3RkFYS1ZoZ1dvZTUzU0hmajBHeXRTZW1xVWpKYVloUlhNSlRKWVh5eTJ2cEhaM1JfLU93d1JQNWZ3czJMU3LSAcYBQVVfeXFMTTVrdXBLUlZsbWFOR3dxQk5hSUI0SFdFS1Q2VEpqdjRsWVkyT0JvY1pwWWpPdUI2cHFYWk9XVTNtOVFxVnpLeHFQbXBPbDVHaF9oT3pMR1ZYVGpOMU5mTUxzazkzajQ3VVFHOEJMazJNVm5nVXJSQTd1Q2hXUy1NNzQ0azZDaW94blBfdnIzcVFYTWM0U04tY3ljUFJDWmhHb0NDYktwcWVfcEw1WmQzSnAxd0h6bmNNWWVyVUtDUDFOODRzNERR?oc=5",
+      "publisherUrl": "https://www.idntimes.com",
+      "source": "IDN Times",
+      "summary": "afpi bentuk timsus tangani portofolio pindar yang izinnya dicabut idn times",
+      "id": "b89c7a664410fcd0",
+      "domain": "idntimes.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -17240,18 +13107,18 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-04bc36365cc3c089",
+      "eventId": "auto-eb8497a561769a9c",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "date": "2026-09-30",
-      "title": "Awas Penipuan CS Kredivo Palsu Menyasar Pengguna Panik di Internet - suaralandak.co.id",
+      "title": "Awas Penipuan CS Kredivo Palsu Menyasar Pengguna Panik di Internet - www.suaralandak.co.id",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFBDaUxVOXJyRDFBQzl1Q2I2Q0lfeEdlVTdxeGUwRTRkQldKejgzZFhJYTR2NEdDak9JRE43bmxqY1M5UGtQTlFOWnhjTDhMSkJHb1pROUxPYk5tRkNSamF4V29SNUhUZW1jTG9BSkhnYTQ0WXlGcHhIdGlVSTQ?oc=5",
       "publisherUrl": "https://www.suaralandak.co.id",
-      "source": "suaralandak.co.id",
-      "summary": "awas penipuan cs kredivo palsu menyasar pengguna panik di internet suaralandak co id",
-      "id": "18240c7832d87dca",
+      "source": "www.suaralandak.co.id",
+      "summary": "awas penipuan cs kredivo palsu menyasar pengguna panik di internet www suaralandak co id",
+      "id": "4c00162f7c54cbe4",
       "domain": "suaralandak.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -17265,28 +13132,6 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-fc2e6d05a586336a",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Cegah Judol dan Pinjol, Propam Polres Bireuen Periksa Hp Personel - Prohaba.co",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVUF3WFRwa0lObUI5QXR4Q05MWVVuMW9KdDNLWjJFb3Y1ZnNCVFAyUlU2ZTVRYi1CTFEzT1FBcGZOMDE3NmJ3VjQyOW9VNnBfT043T0cxeTdDZEF5SFQ2bUlDV1R2LU1uRmVydzl2dWptVTRZSWI1OEJISmNhTm56Y2V4V2N0MGZibktHa3BMYlNpc241N1FxYzNqSDZYQnhCdnhmMkxVOHNQQXZnNTV3?oc=5",
-      "publisherUrl": "https://prohaba.tribunnews.com",
-      "source": "Prohaba.co",
-      "summary": "cegah judol dan pinjol propam polres bireuen periksa hp personel prohaba co",
-      "id": "b5a52f887a22a106",
-      "domain": "prohaba.tribunnews.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-79ce9bd349b345ac",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-30",
@@ -17312,23 +13157,23 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "Cegah Personel Terjerat Pinjol dan Judol, Propam Polres Majene Periksa Smartphone Personel - parepos",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQX0Nka3ZGWnRoLWNaNmRVaHlkWVJ5dHU1NENRS2cxRzRaaVJkLXltNzBYb1VUXzZDejJob3JtTkowOHZ6ZjVheGlnT3lWZUU3WDctOVp4ODM1SWRJM0Y5UW5TbzE2SjcwQ0NQN203MWdzYmw5a3NONnZ1YWcwVGtoZEhsTXg4SWxySmxpam5BQkJIOE1GelN0Zml0RklUVTQyTUpMMzJoeERmeGlqVGVGVllFRVl4WmdyMTdMTkpYaXJ3ekY3b3Jnag?oc=5",
-      "publisherUrl": "https://parepos.fajar.co.id",
-      "source": "parepos",
-      "summary": "cegah personel terjerat pinjol dan judol propam polres majene periksa smartphone personel parepos",
-      "id": "8d2bf52909121877",
-      "domain": "parepos.fajar.co.id",
+      "title": "Dampak Pembatasan Suku Bunga Pindar Terhadap Konsumen - SuaraGarut.ID",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBldk82NmpYaHdqRzNOZjlCX3VZTHpZT0dBNDBtVUtoYVhCMDN3TG4tYVBfbUFxTWs4cVVoX29DT2owSERxUlVzOHNvSGRBSnBndGw0V3d2d0NPbERlcVBkcWgxeklLLVJl?oc=5",
+      "publisherUrl": "https://suaragarut.id",
+      "source": "SuaraGarut.ID",
+      "summary": "dampak pembatasan suku bunga pindar terhadap konsumen suaragarut id",
+      "id": "f0fbc43ff28dc210",
+      "domain": "suaragarut.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 64.0,
+        "risk": 50.0,
         "label": "mixed",
-        "negativeWeight": 2.0,
+        "negativeWeight": 0.0,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-db7a40d9128f6448",
+      "eventId": "auto-650e8d3bba67892b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -17356,12 +13201,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "Guru Banyak Terjerat Pinjol, P2G: Pemerintah Sebenarnya Tahu, OJK Juga Tahu - wartaekonomi.co.id",
+      "title": "Guru Banyak Terjerat Pinjol, P2G: Pemerintah Sebenarnya Tahu, OJK Juga Tahu - Warta Ekonomi",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPdnRaSDRwenhuV0x5Mnkwc1BmbjZhMWYwanB0LXhXMVZDanNwU0tNTjlLek1RN1pRUnlFYXZDNERGeHFobmtOVW9XVmpCWTliOGN4ODZ0UURJYVVtRFJsN1FjU01QTXU5Yjk5bVM4dlV0OHRYY25WeXB6enJqUlhQQTBUMnVVVmY4aHpqekktU2RnMS16XzlNbkNDN3p0NWxlNHluSWRhSlFvT05rOE440gG0AUFVX3lxTE5IUzk0LUNBYktpaEVKNm1qck1NRklyOGtjNURHYjkwOGFWX1hGNWVaQTViZi1OeDVEZWJZVkRJX1pKYmc2QTFDZnRWMHRNYVZudUV1eVFUY1hzZE84cng2cUFKWm5DeExCczlqVFY3dWFhTWFDYWNrZThtUlFOMTFaanR2ZWtFN0E2ZGJwTXB5d3otU01sLXpobmtSZW12VzVEME1YRzlfQnludW42M1ROb1ZJSQ?oc=5",
       "publisherUrl": "https://wartaekonomi.co.id",
-      "source": "wartaekonomi.co.id",
-      "summary": "guru banyak terjerat pinjol p2g pemerintah sebenarnya tahu ojk juga tahu wartaekonomi co id",
-      "id": "a22c7a1f3c716b69",
+      "source": "Warta Ekonomi",
+      "summary": "guru banyak terjerat pinjol p2g pemerintah sebenarnya tahu ojk juga tahu warta ekonomi",
+      "id": "e63473b9d6798cdc",
       "domain": "wartaekonomi.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -17373,28 +13218,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-d7ffceeb453768cf",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Harga iPhone Duo: Fakta Resmi dan Status Indonesia - KreditPintar",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9ZUzVob3ZYQ3JUbnZEWXdBMU85NDNFMFVFbkNINkVGS2I5bF80QUIwZ0lxNThhZ0tBaDRRbzM4MkhLcFFWMXZwYlN1ZVhFa3B1UEtWR0lYd3hqRkFZMnV0enZndERYZw?oc=5",
-      "publisherUrl": "https://www.kreditpintar.com",
-      "source": "KreditPintar",
-      "summary": "harga iphone duo fakta resmi dan status indonesia kreditpintar",
-      "id": "a7f3b68d16bcc1dd",
-      "domain": "kreditpintar.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-23a8210eedc38254",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -17422,91 +13245,25 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "Jadwal Pemadaman Pasokan Listrik di Semarang Tengah, Simak Penjelasan PLN, Cek Daerah Terdampak - Suara Merdeka - Suara Merdeka",
-      "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOLUE1LXlKX0tVcWdsaUNtX3JNZkdKTy1KbEhxYnU4YmhpNVNYUkJscURmMGNuQjZQWHUxbzRzclA5NHpyQ3NIaDU4cEZ4NG1nQTgzY2tJSDhKZVItOUZkMHY1aWUxVG5NX2sxS1NDV1J5MjEtRTA4U1dZbnBQLWpKbEl5OGluRkVYVUFtMVQ2Y0FQV19SSm5LcUhGencydDBwNkhGdUxhQU9PTVFXdTZlYlZZZEFXRm0xYTd3SkRPaDI5RklKVURxVUVTUjJtUEFwLUs2UWs5ejl4MWxYSEJwWlVrN2lOT1nSAewBQVVfeXFMT0JKNkFPWUdpZHVEajRRSUh0RXNaS253Skc1RWdRX1hyYnBQNnhxeWd5WWhhS0RuSkF2ajlFTjRMdENQVWJXeklUaExocG9vSFd0NDI3WmFLaUVDVWxNR2lwV1YzUTRLSnFWZzBLZUpwMWtvTm1IWTBxVllJZ0JKWFgzN0d3eVZFc2Q4MS14OEtnLTB6N2lGSGUxd0NhZWlPX000WDlUYXVaS3RVRy0zMC1rOVprMmVLcXJrdm1TclJyYU80YTdWTFlDbk51YTFNRFFxbV9BajAtSFp1aFk1U2FmczFkNUYxMzNsSU8?oc=5",
-      "publisherUrl": "https://www.suaramerdeka.com",
-      "source": "Suara Merdeka",
-      "summary": "jadwal pemadaman pasokan listrik di semarang tengah simak penjelasan pln cek daerah terdampak suara merdeka suara merdeka",
-      "id": "7c161163c26250fe",
-      "domain": "suaramerdeka.com",
+      "title": "Kapolres Purworejo Ingatkan Pelajar Waspadai Penipuan Online, dari VCS hingga Pinjol Ilegal - Koran Bernas",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdFlTclV5QzlpUGI3VkllSmtiT1RvTWpKNVAyNFpRQVBBZUR5bTBXNm8waVp2NGN2UkNZTEF2blkzcHg1Z251R05EWjk3ZllrZFhhT1FKZzM2T2RBY1U0T0JzblR1aGpmSmhJQ0JWRENfZllCc0g0NDJZeDE3QThEOThZRl82MTQ0aTc4SnVmWjJUc0R4NU1DMEJDa2l5S05SYnhFZTJEQnpsYnBKdXNSdFdlMA?oc=5",
+      "publisherUrl": "https://koranbernas.id",
+      "source": "Koran Bernas",
+      "summary": "kapolres purworejo ingatkan pelajar waspadai penipuan online dari vcs hingga pinjol ilegal koran bernas",
+      "id": "f256d1254a77f3f5",
+      "domain": "koranbernas.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-86d3c7da28813367",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Kampung Bebas Rokok dan Pinjol yang Sejuk di Tengah Panas Surabaya - Kompas.com",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQLTlGRlFPSnVLUm43LTdqa2JXek05WUNxOFN3WXAxSm83dTQ4WjEwNUNXRjM2Z3YwZnpidEdrSkRkMVhKSHJsQ3FWLU9HcVd2aUNKTFNZSkJONnotcUlEYjZaUWRTYUc0U0hUYU81YjRqU3M3QTNyT2hyRDVKbTBpSGl4Yzllck1QV3A3XzhaRHZUVndaYmgxQ3hSSkxkR3V0OE9IOW9ITkZmbmdTRTFka0p6bjFLd21pR1BLSlZXZnBsLW55a1dn?oc=5",
-      "publisherUrl": "https://lestari.kompas.com",
-      "source": "Kompas.com",
-      "summary": "kampung bebas rokok dan pinjol yang sejuk di tengah panas surabaya kompas com",
-      "id": "a979a12ba2a5e901",
-      "domain": "lestari.kompas.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7c451c91ebfb9334",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Kasus Pinjol Ilegal di Papua Melonjak: 208 Pengaduan, OJK Sebut ASN Jadi Kelompok Dominan - Tribun-papua.com",
-      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOUEl1U0RFRjFqSl9aU0ZXZXhVX1lUa3J1MktKbW81blI2QWlZM3k0RlpoU0FTcHkzOW1aaFpydUQ3a1Q1eHZFY3pmczhVMTRrbEgwY3Etc0g3VjQyYllVcDFoVkk5VDQyeEd3aHpQVUdQUjY1M0hOaGtibFlYU2R6TDFBSko5VEtzWEpRMkdCaXVFOVBaOTlVc1ZrdXQtUDRsRVNQMEo1ZHl4ZFF2aDR3LV91Sk1YalZ2RjZsdHZvcjBNTXpWeU1r?oc=5",
-      "publisherUrl": "https://papua.tribunnews.com",
-      "source": "Tribun-papua.com",
-      "summary": "kasus pinjol ilegal di papua melonjak 208 pengaduan ojk sebut asn jadi kelompok dominan tribun papua com",
-      "id": "7b6b30a7aa5552ed",
-      "domain": "papua.tribunnews.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
+        "risk": 78.0,
+        "label": "negative",
+        "negativeWeight": 4.5,
         "positiveWeight": 0.5,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-6c4cb38691235648",
+      "eventId": "auto-6e86c940087d2d41",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
-    },
-    {
-      "date": "2026-09-30",
-      "title": "Kecewa Berat dengan Kredivo: Pertama Kali Telat Bayar, Dihukum Penalti 1 Bulan Penuh Rp1.174.850 dan Pelunasan Awal Malah Dipersulit - Media Konsumen",
-      "url": "https://news.google.com/rss/articles/CBMijgJBVV95cUxNdXFJQUwteS1zTmdRd19TRkZHMUZqbFc5eDNaVmVOeG5CbWVWTS1BVmZ5YW9CTzNnNW1YWG9TbWZ1X3Qwbm8wUktzY3dwcjBOY3pNSUNvVTA5TGlobkVHc0VaTWpFSmdjWjU1aFlidUo5R29oNDlvMlZodFJsM2RtUFE5U19VaFNISUxMS0VscWtkQ0xSQ0JLNGNBeExVNDhJQXl5ZWw2SmR5T0ZnN2ZUdWJCeTRxM0VDTkVVbmRqRFlfQjVZVW9ZU0hWYzNiUEN1T1otb3VPcnlfc1VRZGtTQjdTNnBlS1hObHpJd3plZ1locmtNcjVFVGwxN2JjcGVNc0hneG5DVFMtbENwQXc?oc=5",
-      "publisherUrl": "https://mediakonsumen.com",
-      "source": "Media Konsumen",
-      "summary": "kecewa berat dengan kredivo pertama kali telat bayar dihukum penalti 1 bulan penuh rp1 174 850 dan pelunasan awal malah dipersulit media konsumen",
-      "id": "d237c05aef11610f",
-      "domain": "mediakonsumen.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-eb1a66737dbe7b34",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "date": "2026-09-30",
@@ -17532,20 +13289,20 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "Kredit Digital Tak Lagi Sekadar Konsumtif, Modal Usaha UMKM Jadi Salah Satu Pemanfaatannya - jatim.tribunnews.com",
-      "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNSld5RU5fV2VwNDVheVlHcWFUOER6dDZxVkN2NkV6OGc1VXhKY2ktMnNoeWpHSjJKSjRWTzlKakdxNXlDVUJRbGNuLW5saGdWVUxnNmJ6RmhUSUdGamM3NlV2Y0NyNGxLOEwtWFNMNnhfc2RESXlKenJLWVBTMmlQaG5fa3E2bXlLbEdJNmhsbkRYd3ZHblhsUFotTlYyR09QT2d1azZMNjVfUEZuN0VGa2dVR21KQXRoU1VUWENSX0ZQNVBWUml4T25uaVA?oc=5",
+      "title": "Kredit Digital Tak Lagi Sekadar Konsumtif, Modal Usaha UMKM Jadi Salah Satu Pemanfaatannya - Halaman 2 - Tribunjatim.com",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQc0NSUTNucjFtTFg3b2xzdUpObjRPb0xQM0VVT3FXYW5TYmdrWWN3WFd4WG93bTF4b3gteEF1VGh5alRJWllJek9maTBwZkV4V2dUMzJzb1BRSU80dWJpX25EcWlwM1poLTRXSVB5eXB4NXlpdmRTZWdEVm1QcTdxckREM1l3WTJ6aHAzT2UyV09BbVc5NjZvT0dZRVFlRlViMURLeXBILUZHaHU5ZkJscDd1MjVjVHZHWjlnWVo4cWVhYkxTTDhEUGtGREZENVpwb2loX0xn?oc=5",
       "publisherUrl": "https://jatim.tribunnews.com",
-      "source": "jatim.tribunnews.com",
-      "summary": "kredit digital tak lagi sekadar konsumtif modal usaha umkm jadi salah satu pemanfaatannya jatim tribunnews com",
-      "id": "3efb15054e95eb56",
+      "source": "Tribunjatim.com",
+      "summary": "kredit digital tak lagi sekadar konsumtif modal usaha umkm jadi salah satu pemanfaatannya halaman 2 tribunjatim com",
+      "id": "765ce7f628d7bf04",
       "domain": "jatim.tribunnews.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 44.4,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-7d050fe9134776b7",
@@ -17554,20 +13311,20 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "Marak Scam dan Pinjol Ilegal, LDII Kalbar Gandeng OJK Perkuat Literasi Keuangan - Halaman 2 - Tribunpontianak.co.id",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQTnJRdWpLVnVoTFdXUnJfY3RIRlBHYnFLNFY1QmlSQ3BiUnpGeGlMRVpqTXpTSnBRYjQybG91QUx0Y3ZNbm1CN1p4d2R2LUUyWXVpNHBlS0dxc196YXFLbmtFa0tnZjJxSE5pbUFlM3Z1R0Q5SmtFMG94MW9YNE5rS0VYRkQzMVBleGhoOHVGY243b252WXNSOUlTdTE4ZEc4V0lZc2I5OEFSbEhQNmxKUjgydkw1aUh2YXBGUzVaQjhtRUZiRmZZMTRRZWVCLVpzN3E4?oc=5",
+      "title": "Marak Scam dan Pinjol Ilegal, LDII Kalbar Gandeng OJK Perkuat Literasi Keuangan - Tribunpontianak.co.id",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNaWE3VVlfbWNyMko0aXdGYTJBWVN2S1dLS3NZeDdiV0hBa2cybjNiVE9CNzl2SXZ0aXNjdzctZ09nZ0lId1JxQm1UNUZFZklKN1VOU3NQek9pbVRST21GaXdTdE1KRGlXRFk1US02d1Vqa1Z1V1h4WnFYS1RQWl9FRkdFdVRfSmtSMFVmQWY0bGtJRm5weHVud1pHVU1GUnU4akFIVDgwNE5WV3lvZ1pHZUpFdWhJQzE5NnlibUpVUlpodFZvcDZacFQ2ZXlFUXc3ZmE3WTdB?oc=5",
       "publisherUrl": "https://pontianak.tribunnews.com",
       "source": "Tribunpontianak.co.id",
-      "summary": "marak scam dan pinjol ilegal ldii kalbar gandeng ojk perkuat literasi keuangan halaman 2 tribunpontianak co id",
-      "id": "e0752baa772a7a79",
+      "summary": "marak scam dan pinjol ilegal ldii kalbar gandeng ojk perkuat literasi keuangan tribunpontianak co id",
+      "id": "53e6de279bbe46c6",
       "domain": "pontianak.tribunnews.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 70.3,
+        "risk": 75.9,
         "label": "negative",
         "negativeWeight": 4.2,
-        "positiveWeight": 1.3,
+        "positiveWeight": 0.5,
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-a51c92812edef29e",
@@ -17576,12 +13333,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
-      "title": "Masyarakat Diminta Laporkan Penyalahgunaan KTP untuk Pinjol Ilegal - suaralandak.co.id",
+      "title": "Masyarakat Diminta Laporkan Penyalahgunaan KTP untuk Pinjol Ilegal - www.suaralandak.co.id",
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9uQWJOSVRGdnJfSG9JU3RvRTFmUHhGVm85V01lcXBWVUFjT1JUQjY4eXk4RE5ud3FmMTh5dWJ4dmlYSkx5SkVhVXU1RGxFakFBUjY2NlZYdWJpVHhaRHY0ZWFTUm5VU044dFVWVjlhcWlxcU0?oc=5",
       "publisherUrl": "https://www.suaralandak.co.id",
-      "source": "suaralandak.co.id",
-      "summary": "masyarakat diminta laporkan penyalahgunaan ktp untuk pinjol ilegal suaralandak co id",
-      "id": "eada9147411fb5d2",
+      "source": "www.suaralandak.co.id",
+      "summary": "masyarakat diminta laporkan penyalahgunaan ktp untuk pinjol ilegal www suaralandak co id",
+      "id": "d8e890c4caf23f7e",
       "domain": "suaralandak.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -17592,7 +13349,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.5,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-f48186d29bf31acf",
+      "eventId": "auto-d910a11e58d2c898",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
     },
@@ -17686,6 +13443,50 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-09-30",
+      "title": "Pengaturan Bunga Pindar Dinilai Pakar Tak Otomatis Bisa Disebut Kartel - Suara.com",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQXzF2R1paYTl6Y3hTMzUzM1BMNVd0MWZYU2NSaDRwRHZWZk5OVnRtLVpoZ01fMnhDMGMxeHl3MjNlaUJxS1YyWjBLZmdLTGZzMTlScVh5UzlZMVVQWjRQYlhtQVNnSUw3a1NnVW90Ulp1dURzaFBWN1lhbnRvdXRmaHVud2tMZ3pCWGNGbGlwUUtBZ240YUVtQi01aGthdzZaUG1pUlVfemtDNXNiNXhyclY4TWpIcU100gG4AUFVX3lxTE1aa0xTNTZGTjdMUGZlZ1ZqcWRQRDdxUjR0a0VuRElVTU1LdEx3UHRwMFZkUnZVZTFXUmJuMFZYVHVnZENleXVfTko1djZvZVh6U1I5YVJDRkhtbi04OHdqdG5kZWZRaVR2TmtQWGtKZmdzLWZOQnc3S3hYMlFEaloweGxGbl9MQjJ1NXQtUXZGbnF0c2VfSndaWXJiV2wyV2p4eEc5c0FKV1hrZWNteDBWZmZSSTcyWFA?oc=5",
+      "publisherUrl": "https://www.suara.com",
+      "source": "Suara.com",
+      "summary": "pengaturan bunga pindar dinilai pakar tak otomatis bisa disebut kartel suara com",
+      "id": "def720a43021c91a",
+      "domain": "suara.com",
+      "sourceClass": "established_media",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-3f2b86908654df46",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-30",
+      "title": "Rasio Utang Pengguna Kredivo 10–19 Persen dari Pendapatan, Sinyal Penggunaan Kredit Digital Sehat - Tribun-bali.com",
+      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPLUs2cmMya2w1SXN3UTBjSWc0X05VUW1MNUw2N3dnSi1xb2ExdFhnMmFlOUtzSHJKTGo3bWpKZ2d0TTdDdjVxZXAtaE1POGQ3NFBwLVlzTG51XzU5bktidEhQc2l6T0lqT0NtNWxDajAtUWV2RXBGeGh5VnNNTi13R2Z4dU1JLXRFbFhLTWswVHF6WU5kV2Ywak5JSkJPck90dzJKZUNsaXdmYnpxekxuMWFaTWhZUHZoeURTSWVGSXBmRWt0NnhVbkRHWm1TNmJWNU5R?oc=5",
+      "publisherUrl": "https://bali.tribunnews.com",
+      "source": "Tribun-bali.com",
+      "summary": "rasio utang pengguna kredivo 10 19 persen dari pendapatan sinyal penggunaan kredit digital sehat tribun bali com",
+      "id": "9f77d336d544f786",
+      "domain": "bali.tribunnews.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 57.0,
+        "label": "mixed",
+        "negativeWeight": 1.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-3af12a893720bd59",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-09-30",
       "title": "Respons Risiko Macet Pindar, AFPI dan OJK Fasilitasi Kelanjutan Penagihan Portofolio - Jawa Pos",
       "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTHFYeEdEdDlnSVRHcHJVTVJGQnpDbkd0bkEtdDRwUUxCeENuWEtaU0dpWGZGaXQ0MlhZWFcxbmZTVks0cE9ZWld5VXFDYlZjcmJUcWk2VGowcVVNamFpTjRXd1piYi10OF9vYjZtZmZlNjBFaVFTd1RMSlJ4cnBZZjNSM096aDZKN2sxcko5bzdzNjdiVmZTaDBUQ2pLVEs0ZkVneHo4cC1WQW1hV1RGVDVtNjdUTE1ZNmt4Y1dGdw?oc=5",
       "publisherUrl": "https://jawapos.com",
@@ -17751,24 +13552,24 @@ const CREDIT_SENTIMENT = {
       "eventSeverity": 0.35
     },
     {
-      "date": "2026-09-30",
-      "title": "Update Aktivitas Vulkanik Gunung Merapi, Terjadi Semburan Lava Pijar 4 Kali ke Sungai Sat dan Sungai Putih - Suara Merdeka - Suara Merdeka",
-      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOMnFDNUtYQWt4VUJlWXlhSTY3RjFXQTdCNFAtMUJKcUtmSjEzVDZ2SU9XNFZ3MVRKLUZLUDR0Mzc5UkhVWDhWcGp1ZnpOYkFhUHI0WXNuTUdWTTFrQ2tSS0txSnJWNDhRVHR0bU9QTWoxZWt0NGdmUV9MdzFEbWNYblZUYjBzOE04Y1hqeFB2SU9WWFJtMG53VWdsQVQ1TWpDYkJnSkluMm9WcTEtbEVnSmxCQXBvWXNIcTRDTVdHcEhOQjJYV1R2b1FCZXJBWElIdF9peTY1ZjFSLTdCQU5MXzBUN3dkYldiWkIzamNn0gHzAUFVX3lxTE1WeXFFd012anY3aUNmOHJjOWh0M2h1VEM4eWJqUkJaM0pJREIxNEJDZzVqYjNRR2wwdWVIeTB3UmdXdlNwdENPeTR1LWQ4RklPZW9uU1dnM0ZKWjNxOUQxcUhfM1dhWFkwZmZVWml4OTRhRkZFODNXS2w5ZkQ1QVdCSW55MVFrUGRXRmVVSzZyZTZBLXhWQjRvUWxzWmtZZ0I4NHd1c0duQmYxOHc5NC1KYy1vWldzUFZRTTk2WVFBdWljNmtHSkc2ZV9WS1JHN1kzR1kyd3BiQVBWRkZsMnhoOE9Idk9vXzJtRUZxV0tnYnVNWQ?oc=5",
-      "publisherUrl": "https://www.suaramerdeka.com",
-      "source": "Suara Merdeka",
-      "summary": "update aktivitas vulkanik gunung merapi terjadi semburan lava pijar 4 kali ke sungai sat dan sungai putih suara merdeka suara merdeka",
-      "id": "f8d24c71735f7fcd",
-      "domain": "suaramerdeka.com",
+      "date": "2026-10-01",
+      "title": "3 Cara Membatalkan Pinjaman Kredivo secara Ringkas dan Jelas - Bloomberg Technoz",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOTnFxZlJ3akxqV3AwcVNqTnRYeFoyZlhrRDJ1Tlo1V3ZEZUVmZkhZVGNGUDhKa2FXRmxXN2owX1RhSUd3TFpuN2xXQUxfNG14ZTlrUm91TTJPckFBOUczcDFuWU91dUVoTUswTUkwTUpDQWhxNmJLSnJsNjBNY2RSVHVFOWtVdE1mMVVtWGJhZG9UeUlZRjFURHZrTG1KYjBRLVVIdmJjX3dLRnpIcDV4YXp3?oc=5",
+      "publisherUrl": "https://www.bloombergtechnoz.com",
+      "source": "Bloomberg Technoz",
+      "summary": "3 cara membatalkan pinjaman kredivo secara ringkas dan jelas bloomberg technoz",
+      "id": "13892aa8757883de",
+      "domain": "bloombergtechnoz.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 44.4,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-68a36d2c2706df5a",
+      "eventId": "auto-ebc6216dcd8693df",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -17796,12 +13597,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Apakah Stokity Legal OJK Halal Haram? Bisa Menghasilkan Uang, Ditarik ke Dana? Pengalaman Pengguna Stockity - Berita DIY - beritadiy.pikiran-rakyat.com",
+      "title": "Apakah Stokity Legal OJK Halal Haram? Bisa Menghasilkan Uang, Ditarik ke Dana? Pengalaman Pengguna Stockity - Berita DIY - Berita DIY",
       "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPQjI0bUJTd3prYVJscE9uZVlXNjRFWnc5Z0FObXB2akhfRW5RS0h2dmQydzE1RlVFN2NMYk5xR3YtS2RrbFNrRDJHMm5KNGlsZ0s1MnRyMElVaWFPd1poYno0WDNBY01zd3NjQXpLWFJCUWp5VlZWRXd0bUwwaGYwTUhCR3Q1Mkt5Q0trSFowTmVtRERseGlqbGthWE1VNmEzUVRJSzdkRWJQdzNMMVVUazdtTTdoR2RoWUdKeHEwTHFLdktNRlNYUlZia095d2tNcm9sc1NSNmQ1U1JhdndYSVRkWVVoblVMR09BS3Z5bWZKSG9vY1l3ZDlCdjRjSHB5YUHSAfsBQVVfeXFMUG9QTERobzdfc192SjdneU82VlJTcGdfb0NCc2FHaEtQQXpkVU5uZE5rMFprUnZFMWY4VVR4Wklrb2NMZnVhczFFc0V1NjVibHJFOHl6RUw3NWhNYkhqTmtVYWx3eTlfb2x2OUNQMFcwYUJGMnlqSnNGTzNsUFRuZHlsX0owN3RrelpyNUF4UHpEZ2lrMjZGa1htTlROMG1zMjRQLXlZTUx2cTVZc20yakFyYm5sRlNyT21FNnpWRzhsNEd5U2FpZlZyS1U4Z0FTZ3laNTBsTGk4Q2steEY5bVdVc0hxNTZicDFLV1AtTkJrMjkwRkJNeVQ4ZXc?oc=5",
       "publisherUrl": "https://beritadiy.pikiran-rakyat.com",
-      "source": "beritadiy.pikiran-rakyat.com",
-      "summary": "apakah stokity legal ojk halal haram bisa menghasilkan uang ditarik ke dana pengalaman pengguna stockity berita diy beritadiy pikiran rakyat com",
-      "id": "8f6fd82743e8ad38",
+      "source": "Berita DIY",
+      "summary": "apakah stokity legal ojk halal haram bisa menghasilkan uang ditarik ke dana pengalaman pengguna stockity berita diy berita diy",
+      "id": "38d3b8c49d1fa3a1",
       "domain": "beritadiy.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -17884,28 +13685,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Geely Hadirkan Geely Coolray di GIIAS Semarang 2026, Perluas Pilihan Compact SUV ICE di Jawa Tengah - Suara Merdeka - Suara Merdeka",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxONUhlUFZ3YXhrdkJ3dENmcld3ZHpaeWZZWGNLcTNlNDM2YXcyRmVibjZHa0tnWkxsem4tSEpCQUlrSkNwWU42dVJJM01JcFk4N3N0aFdlbkZSeGdfY1Z0UTVITHZsSzh1Ny00RHpOZ0Vpa1cwMVpKaVhpWXd4WHp1a0I5ZE5zNVBWZXVDMHJLdmFuZzNDdGVVbFdrUWo3QTVQQlFpaDNHM1JERmt2bWlFU0pvSUtVRlpQS24wWXJPR05TVEhiNndrYlFPMDNGZ1o4dmt6eUV1RGN0U0JYSmFtancybkR3bVR4WkHSAe8BQVVfeXFMUElGZTlpaUpUaWt2ZXBfcTNYZTRCaDk0bEtweWc5QS04cEtJUDBSdTQ3SzIxUmp1SU9jck92UlVGbXQ4WGVLWUFnZjdDdFZLbmkzMDY4bllyWVRRYWh3ZFJydkpwazRPeWl0eWpyRDFla29YaUh5eGh5czdqSVBfQVZsVnVBTzJWV0JLWjBQZWFDN1J6T1otVzMzdDRfaGZRY0dMQnVRSERDWHo0cXdfZ29icVp3RTItRk16Tllhdnc3MDVzNnJxRTMxT2oxSE4wSXRNRUNHRTVENmcwLVpHT1NWXzJHSU1JTzQtX1lzXzg?oc=5",
-      "publisherUrl": "https://www.suaramerdeka.com",
-      "source": "Suara Merdeka",
-      "summary": "geely hadirkan geely coolray di giias semarang 2026 perluas pilihan compact suv ice di jawa tengah suara merdeka suara merdeka",
-      "id": "3a42589a9d2aff86",
-      "domain": "suaramerdeka.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-cfe6f4bced39519c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-01",
       "title": "Jokowi Punya Kekuatan Besar, KPK Tidak Akan Berani Periksa Bobby Nasution - Suara Pembaharuan",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQOVNzZHVVVExYbUhmcmJvWDE2Y281WExObHR2YVpkY3RVdG9mYl9fWmN6cEFEcVVZNzJpMkNNS21LLVRDQV82MzRKS1I2ZUh1X3ZORnlPUzBxNDFFRlJ3SktoSzBLM3pDaE5vQjJYNkVOTUZfN2wyWGFFSkRVRU13U000WUJ6aWRITTBZ?oc=5",
       "publisherUrl": "https://www.suarapembaharuan.com",
@@ -17928,13 +13707,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Kapolres Kediri Kota dan OJK Perkuat Sinergi, Bahas Pinjol hingga Bahaya Judi Online - Sekilas Media -",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNdXhnRFJHU05yVzREWnhfSmUtbXVJYWp3bTU2VTRNR0xKOWE1QUQta2ltYTQyU2dpemVwSDR5UnJITGpnSzRPei1kOFdrSzNnV2JXNE9rTmFXV05yc0tCeVJwUXdmNDRXN01FTUdhVi1aNV9NUmVmc0NrbkNNM3ZnVFV5Vk4wXzlZOGVyZTAwMGdaNFZaSnhZdXNvUnM3YkVteENQWkRJc21kYU9kY0dRXzZFZERCS2Q5?oc=5",
-      "publisherUrl": "https://sekilasmedia.com",
-      "source": "Sekilas Media -",
-      "summary": "kapolres kediri kota dan ojk perkuat sinergi bahas pinjol hingga bahaya judi online sekilas media",
-      "id": "21fedce3ed8dc37e",
-      "domain": "sekilasmedia.com",
+      "title": "Kapolres Kediri Kota dan OJK Perkuat Sinergi, Bahas Pinjol hingga Bahaya Judi Online - Harnasnews.com",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0wclQ5SWZqdjhuZTloUFg3Y1dYWno4R2lzcHJ0dFMxSWhsMjlsY0xQXzlBQ3VlVlkzaW5hc2NFeDEyVTdXOUFtanByZ2FIX3ZMa01FT2lB?oc=5",
+      "publisherUrl": "https://www.harnasnews.com",
+      "source": "Harnasnews.com",
+      "summary": "kapolres kediri kota dan ojk perkuat sinergi bahas pinjol hingga bahaya judi online harnasnews com",
+      "id": "0590c6b52ce7e4f3",
+      "domain": "harnasnews.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -17950,34 +13729,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Kecanduan Judi Onlene &Pinjol Halaman all - Kompasiana.com",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOR1RyTmpaM3RqQkN4aW44bXNzWGhUdUJYTGFieHZOZU5RWWhuMDd4N1hMRWFLc1NLQ2hzZFRYRjVqMEJvMmljV1BZeERCNGNqSFlEQjNFRmZwOXlfcE9TQUlTRDh0T09aSFNCa1RZWS1Ka3puR1AzSDFtSmFSZXdjUkF4enBxc2RJekxNNVdDVUhoTzBfS2UxUkRVdGhzUUNkNVlQdFdtSWVyaDhGdUlTRjFB?oc=5",
-      "publisherUrl": "https://www.kompasiana.com",
-      "source": "Kompasiana.com",
-      "summary": "kecanduan judi onlene pinjol halaman all kompasiana com",
-      "id": "7547db1151fb75da",
-      "domain": "kompasiana.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-40445c2a3f74fda9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-01",
       "title": "Kena modus salah transfer pinjol ilegal? Ini tips mengatasinya - ANTARA News",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZENuWXhkbURpNGdfZ0w5ZXQ4eEp6SEI5YnZnNkZzdWM5aUg2TUZNendWRTYwa09zNFZBVHVZMm9lQnEydm0yYXcwNHNIdnVMLTBfM282QmE4WHRXR20wZGdnSDBSSUdKU3ZBT2lJTkF4cG1nYk1oZnNWcGJ0eVdpYkJYZUZIbjNrODJBQ1hrLTFYQnc3b2NrOHlXRjBUdTQ0QzBTUWtR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOZENuWXhkbURpNGdfZ0w5ZXQ4eEp6SEI5YnZnNkZzdWM5aUg2TUZNendWRTYwa09zNFZBVHVZMm9lQnEydm0yYXcwNHNIdnVMLTBfM282QmE4WHRXR20wZGdnSDBSSUdKU3ZBT2lJTkF4cG1nYk1oZnNWcGJ0eVdpYkJYZUZIbjNrODJBQ1hrLTFYQnc3b2NrOHlXRjBUdTQ0QzBTUWtR0gGoAUFVX3lxTFB6MWxpOUJaZk5SRnAzeGhOQURxejN5NnROVVF1S0daQUxVZEZXX0hfd05XN1kxQXFnLVZvTjV6dzhXQ1pxSkd2T0pTQ2RHMlp0enBSeVVzRkYzczZHV0RWbnFtZUtNQWtDTVFzeTcyNHhGaElObHE0NjlwbnZGajdwNUFPQ3c1ZE5ielFVNVlBeTJ5MFRLTnhKZUlsSGg5NG5WMWxHdHF0Qw?oc=5",
       "publisherUrl": "https://www.antaranews.com",
       "source": "ANTARA News",
       "summary": "kena modus salah transfer pinjol ilegal ini tips mengatasinya antara news",
-      "id": "81e5208c1167aebc",
+      "id": "060c3019728c7edf",
       "domain": "antaranews.com",
       "sourceClass": "established_media",
       "sourceFactor": 0.85,
@@ -18016,12 +13773,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "LDII dan OJK Kalbar Bahas Ancaman Scam hingga Pinjol Ilegal - suaranusantara.co.id",
+      "title": "LDII dan OJK Kalbar Bahas Ancaman Scam hingga Pinjol Ilegal - https://www.suaranusantara.co.id/",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNSGo1QmcwVnFFbVJjVC01V2x3VEZwR0M3SV84R0cweTYzQktqcGtoLUNfRmNHUWxEYlVUbF9MSlMxZmlJTjd4WUdkNUJvLVJ5eGREY2h5VGoxSld3cDJfRG04dW5PRGljQVVZSDVIdE9MdklfejJMenU3dDJNdzI3RXlpWk1pWkp2MDRwMA?oc=5",
       "publisherUrl": "https://www.suaranusantara.co.id",
-      "source": "suaranusantara.co.id",
-      "summary": "ldii dan ojk kalbar bahas ancaman scam hingga pinjol ilegal suaranusantara co id",
-      "id": "1c9cc6f3a42fdd7f",
+      "source": "https://www.suaranusantara.co.id/",
+      "summary": "ldii dan ojk kalbar bahas ancaman scam hingga pinjol ilegal https www suaranusantara co id",
+      "id": "30380a3e193336c2",
       "domain": "suaranusantara.co.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -18060,45 +13817,23 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Leapmotor Perluas Kehadiran di Jawa Tengah Melalui GIIAS Semarang 2026 - Suara Merdeka - Suara Merdeka",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMU44SUNaZERSLUVFSWtSMG1Dc09sWVhFTHJGUWNBazFVV2o0eXlqdFYxLURIQ2p2b1I0MFlGZUc5UDlQSmNUZ2J4VmJ2OGkxUlRZUUlpeS1RZy1GUEdKRTJZNkZrdHpwMXduTmpGNk1rcTF6ZTNDclFQVnhIcU01T3FWQURxTGx3U2tqZG5QRzFvUWYzY2JzN0hFRGZ3QVE5cmRNOGNRWU5KM2t2RzdEODhOT29ZVlg3XzVxcFQxcWNXbVI10gHKAUFVX3lxTE9SaHBMVnhNZTFPY3dMWmV6S3FfRHZjbHVSaGpTaUpxZnZjNW5ZZHBtVVdVNXZuanBOSFVEeldQVmY4cEZSNXlLZ1RmMGxxLS1ER2xzSU1PdjdTT0FnOUxxWklqdEw4WFVXckRFRWs3TmRVSEpyN2d0TXR5VVRqZEVKOExtLUFHNXpPMl9maVFSUGZCNXJ2T2F3WnVyYjdtSDVBMUdybFU2UUpIYWNNQWs4T0I4a2luWjZRMm5EQkJDR1djVUJhQ05EQmc?oc=5",
-      "publisherUrl": "https://www.suaramerdeka.com",
-      "source": "Suara Merdeka",
-      "summary": "leapmotor perluas kehadiran di jawa tengah melalui giias semarang 2026 suara merdeka suara merdeka",
-      "id": "870498e57ae4d956",
-      "domain": "suaramerdeka.com",
+      "title": "OJK Kepri Ingatkan Warga Cek Legalitas Pinjol Sebelum Berutang - Ulasan.co",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOazVNdkV4WEx4ejU1OUpnTnVCUkFoeWNMNWN5RW9UcEhhSWk4andUVkhuaGZ4UzVkbVFjaU9LbHUtT09QWTlvX3JrdWt3WkJkQjBuMW9GX1BCa2g2dFhmWm1MMC16NnpnVVZjUDE3UU9HZE1qQVBaZWRRXzdFZldxODhlOE03T19h0gGQAUFVX3lxTE1ObXEwb0ttMnE4MXNQZkxuR3VmazVsVlNkU0NTamVzNlVRb3NkUGlQeWFiZWRaemJKeGJIRUZBRV9JYzB3T1hIbWR2UDliU1VudnlXaWZUM0V2QWF6bVhOUGNXYUU1ZEdpZGlSeW5DbU5UYVJISjdJZTZRSGZBWFp0cVpCbWQ2S1Z1cjhYU2tnaQ?oc=5",
+      "publisherUrl": "https://ulasan.co",
+      "source": "Ulasan.co",
+      "summary": "ojk kepri ingatkan warga cek legalitas pinjol sebelum berutang ulasan co",
+      "id": "4a25808ba6ac42d9",
+      "domain": "ulasan.co",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 53.5,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "negativeWeight": 1.0,
+        "positiveWeight": 0.5,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-34dad2aca987221b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-01",
-      "title": "Manang Soebeti Peringatkan Petinggi Pinjol soal Doxing: Masyarakat Sudah Marah - Koma.id",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPRC10X1VnUHRKSzh6T2pkMkdBaU5WbDU4UG5ONndLdGJRTXE4TWtsVHZCREpsa3pOcFREUzg3a3N2Y3FsWEZ5TGRkUlhab21aTnFzcGlScUpXTFpKT2ZPOVBEd1NJTXMwQ2pHcHh5WXFxTW9odTJyXzJSblhOS3ZLcGVvMFhCZ0x1WmIxY0pfTVNWbzZubmp2ZmV3?oc=5",
-      "publisherUrl": "https://koma.id",
-      "source": "Koma.id",
-      "summary": "manang soebeti peringatkan petinggi pinjol soal doxing masyarakat sudah marah koma id",
-      "id": "25c252373e844cde",
-      "domain": "koma.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-48554e9d828dd203",
+      "eventId": "auto-39d053a1caf80512",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -18170,50 +13905,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Pinjol dan Judol Disebut Picu Perceraian di Bantul, Didominasi Pasangan Muda - Yogya Pos",
-      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUDdjWW4wZ2VVZF9rczFEVjQ0b25OMXBVUmFHWnIzSEktNXRWbGJqYThhWklUamMwZUh0algtNXV6clhuQm1lamVDeXJnTHNscFNCTlpmbEJyamNJeHBjRjhkVXhOSmVqNHI2WjZQTmhmS0ktbnVsaFhFaWJQXzBvZWdsZWJwTnk3UnRLNXEwVEdTN3cwZ0hjUmtzcWQwWGh6ZHVIRy14VXI0SzE3VUZN?oc=5",
-      "publisherUrl": "https://yogyapos.com",
-      "source": "Yogya Pos",
-      "summary": "pinjol dan judol disebut picu perceraian di bantul didominasi pasangan muda yogya pos",
-      "id": "5ab63c906aaa29bc",
-      "domain": "yogyapos.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fd0ee1f48061b7e9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-01",
-      "title": "Prediksi Skor Indonesia vs Bangladesh FIFA ASEAN Cup 2026: Mengulas Rekor Head to Head dan Statistik Kedua Tim - Suara Merdeka - Suara Merdeka",
-      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxNNXd1Zkl1aDZKcWRlUEFManZTdlU5QnRlRlhBRkhhZjBaQ0ppeWpkWGhTR3RyWXRNcm1XMlBVZExVc0Nldmw5RUNxdVc0ZHZLdF9XbHpaRHhvSFhXMnpRM0VTOTFZOUNfd3Y4N0V0QU0tXzlxOWZicE9TSUlsRF9LM1k0Z285LXYzNVY0WTd1RHRsR012eFR2VndFQ1VQS2NvX2d6dDBQaHJvallPNS0xb2Z3Q1lnMFZOWEhfTS1PMUszMERQMjUwcGdKSHE1LXBUSy1aSVN5S3E4WjYwYndFMFkzYWJrNXJxZDlUbkk4engydU3SAfgBQVVfeXFMTUowZFVVTm96TEFCd2ZtZ292bE5wTnFrNTh0bnFNSjNxcmZ1WlE0SklSZldsQkQ4bkljVDJHRXI5Q2gzSVdQTlVsWEc4X0xYY1VOamlJa2JCNjJmVXZ6YTdPZE40Z2I2WHB4akh2bUdVYkNqU2hJbVpqMDVsd3VwMFdaNHhSUUdrZTVDSTFMYjNKNmFEU0xiUmIzMElIVzFvSFZ4NkRhNFk0dVhTWnpWb1ZxcmtDSGNxZWs0NWZLelFLVE14Q3BHWnh4VW5aVXdtU0MyV3ZWNFk0RFlSemlwdlJlN0l1MWVyV3hDWWFXdmE2Q0R4Tkt0a24?oc=5",
-      "publisherUrl": "https://www.suaramerdeka.com",
-      "source": "Suara Merdeka",
-      "summary": "prediksi skor indonesia vs bangladesh fifa asean cup 2026 mengulas rekor head to head dan statistik kedua tim suara merdeka suara merdeka",
-      "id": "b7f8e5c56375e6cd",
-      "domain": "suaramerdeka.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-116314c071adcabe",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-01",
       "title": "Propam Bidik Polisi Pinjol-Judol - Gorontalopost.co.id",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTFAxaHBwOWt5NDJndFVxVXhvcy13MWo0NkFqcVUtdVM4SERkdk1HWXJWeERaQlJnVWpWX1ZOZUF0YTVNWGF2SENKVHhiRkJmd2JNU0tlXzRUOU52eV96eG1kOExWdmRSUmZkN0xmQTVYcDE3QjNvYmZpOGt3aHE?oc=5",
       "publisherUrl": "https://gorontalopost.co.id",
@@ -18280,23 +13971,23 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-01",
-      "title": "Waspada Investasi Bodong, Kulon Progo Bekali Warga dengan Literasi Pasar Modal - Radar Malioboro",
-      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQcm9WVGRIYUsxMHdVbzRnZTltTEZLLXRXczJtWUozb0tMcWZKakh0eDV6azdtT25pOUVLaFhOYVZCY0E2RldGRXNQRXRiY2p0ODFRUHQwRzJLZm5uR2lHWHloY1Jka0tJXzZFUDhzQkt5d3BseGdYMWV1Y29iODNzYi12OTBpOFF0a0JtZUNTTFJUb29YdTJqYkxMTnJSVWlINWhvTlVPemtMcXVwUnVFcXVVdEc2NFVXU1Z0TGp0RkV1YWdaRGNhdmx0WdIB0AFBVV95cUxPZTQxamVGV1U3NHc1MVVsZmIxME9fazEwU05YYmtsbUVnNkJCQ1MtMXdpZTg4OXI0T3ZwbndUT09HZVA0am5PUmROWkdpUVNtMDFWcmNZR1p6aE01TGhzVWI1Rks0RzdpSFB4MGJKN0lLdE1fWkpsemVGenZxWW5Va0RhSTNmYzhzbUlZYW1kSjFNQW5TWXU1WHpHaVJmVTFLWW02Q3hfLUJxNWNfMng3T0JyOHFPZTFaM2U2N05FQ3B2QjRwY3lqcVJtUWZZSWtY?oc=5",
-      "publisherUrl": "https://radarmalioboro.jawapos.com",
-      "source": "Radar Malioboro",
-      "summary": "waspada investasi bodong kulon progo bekali warga dengan literasi pasar modal radar malioboro",
-      "id": "0d2afed21e8ffaa8",
-      "domain": "radarmalioboro.jawapos.com",
+      "title": "Update Harga BBM 1 Oktober 2026, Pertamax Naik Hari Ini atau Tidak? Cek Daftarnya - Info Temanggung - Info Temanggung",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPZllYREkxSEo4Vm9MSlRTQThXU1lwQXlSMEV6REVvblo4TzBOYkhXbEhCYjhuOWlnY203MmFLZktkanpYNG95OEtoaHh0NURVZjhvTVp4bG13LTFiTzBSVzY0a2lBUlp0ZUdZQTRpUnU0UHBmSW5LUWY3bkFLNFR1Qm1mcmxHOU1Idmk1Ql9KNE5lUWJFb2lfdjBoZV83ZHhhS2ZvWFhjV2M5YjdEdEE5M3FtcjBwR2ZyazZhUExPNUFYOS1weHpSWEJSRm9fZXBpSkZlT09jZ9IB3AFBVV95cUxNRHlEZC1GdG4tZExmczNjbWRzN0lvUmtPTVA1b3dyRHpST094NXZ3LTR2NHlpX1NWeU1vRlVjV2x1LVZtLUR1cldYdFMwdEstTnZ4d2FPSHpEemF6V3hsdHhyNTc5dnhlaTg4SldqMlJMOWg2QXhpblVMcFRjVkdzSndtXzJNZDJfam5jZUFydHplbkRiU1ZLV2xxX2tGZGpmdk1oUUw3LU5velFmZUxlaTN2ejhXaUlmdXN2TkdDZzBiXzZDMWIyS21PVDJkSGZKRV9iT0s5YkZhNGNn?oc=5",
+      "publisherUrl": "https://temanggung.pikiran-rakyat.com",
+      "source": "Info Temanggung",
+      "summary": "update harga bbm 1 oktober 2026 pertamax naik hari ini atau tidak cek daftarnya info temanggung info temanggung",
+      "id": "ff4805c736006b43",
+      "domain": "temanggung.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 50.0,
+        "risk": 44.4,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-ddf266975d5776dd",
+      "eventId": "auto-2b5eda2786f861be",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -18346,6 +14037,28 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-02",
+      "title": "Aspek Perlindungan Konsumen Harus Jadi Prioritas dalam Penyelesaian Masalah Pindar-KPPU - VIVA.co.id",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPemZBZFMwM1JPX1pZSHByVENKaUxUdGpnOFh2Q0llTGNKQWN4Q3dXVEl6cmxXV0lUZ2hZUEZQVXlfZEh2NWlYOHBZNjV1T25vRnZqU2YtcHRza0h3TWF6R0w3UUZSZjMzSEFXZXJKcF8ya1MwRFhGZFNaVFVmeVJLaVlHVFl3b1BCU3Q5TnlfaEFEOUhvSEJHcFlNejdORTJDaDluMHp4ZGhOaW96OFNRNkpiLXNCUVZUcW1DbGc1cHdYZFHSAcgBQVVfeXFMUEVBTG5abE45djYzRDNSQkxkRGwwVF9MNzZNLW5TSFNKcXU0Q0dTQ050cmVrVHAwN3RQbDBYckZWVEtvcE4tSEtUZHgwc2FRTHpNU2V0U2N3Yk54ZXFOUjBUbWctOHpqemFQUGtlYnh3Y3ZDT01LcW5fNEJBZkpIaWdDVm1aN09DNzV3S0hiWk82SUw5b0RQcVFkM25hdFJCSU4zNTY3T0k1dm1ncjVaQWVUSEpKeEVpNXNpdEJEQkd2WGpNeS1nZFo?oc=5",
+      "publisherUrl": "https://www.viva.co.id",
+      "source": "VIVA.co.id",
+      "summary": "aspek perlindungan konsumen harus jadi prioritas dalam penyelesaian masalah pindar kppu viva co id",
+      "id": "8f9f4ebc2b0383ce",
+      "domain": "viva.co.id",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 44.4,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-70a5769f1d76976a",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-10-02",
       "title": "Bank bjb Imbau Nasabah Waspada Modus Salah Transfer, Bisa Berujung Jeratan Pinjol - Ekbisbanten",
       "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOaThFVmhGa1k5OWNFTUpVWU5UQm5XU0xtMXYyZFhXMFVwZzNKU0JDUS1MOFVSX1ZrajAwWjZzMXN6eWRyY1d1eVI4NkdMLW9YNkdPZDFJY2kweUdjVFE3TG0yTWJBNDROWHZmT01WTEZ0YlIxMlJINGdsTm1TMXFtMzNMbHIwVENrVENxQUJ3d1QzdC1EQWVPN0pSdmRWeUxMMDFQc1MxMm9BOWVyVjFha3Rn?oc=5",
       "publisherUrl": "https://ekbisbanten.com",
@@ -18390,28 +14103,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-02",
-      "title": "Cepat Berganti, Cepat Terbuang: Dampak Fast Fashion - Kompasiana.com",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxON3E5ZG0yeGNud1UtRVE2bmRwUHl0OEp3LU9zMmU2LXExRlpsMTBiemJXY0J4UWx5bFRCMHJ6MUxPdWxPSmdhQnZIQUJJcm5BeFJNdC1ieDM3cGtqaTY3NXlkbFg5SzZzU1dZdEFIZTZRWVBYOHpvXzctNzl6Y0cxaGpfX0s0SzUwMnNjcndTaHZPalBxZDJNUl82SGxKY3hsX1FVWWY3T3lyWEtIb2lsNGJhN2luNldzTVRn?oc=5",
-      "publisherUrl": "https://www.kompasiana.com",
-      "source": "Kompasiana.com",
-      "summary": "cepat berganti cepat terbuang dampak fast fashion kompasiana com",
-      "id": "3781a13f9e139fe5",
-      "domain": "kompasiana.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-71b3249a2987a9ef",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-02",
       "title": "DPR Sentil OJK Soal Maraknya Pinjol dan Investasi Ilegal - Todaynews.id",
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOdnUtRVJ4bmdiMTZORXBoVFpQdHVfV0YyRTgzWWlDRm5SSGp0MlVEdGlNRHFaUnpVZ3l5eGUxcDlmcEZOU3BiTWtjOThjRXBhSHZuTGJoamZPckw0N1p1aWE2WnNZMVNHa05hRGVrdktjaFZfYTRmeWVEbE9RNDF6M3hJS3Q?oc=5",
       "publisherUrl": "https://todaynews.id",
@@ -18434,47 +14125,25 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-02",
-      "title": "Hasil Studi : Rasio Utang Pengguna Kredivo Hanya 10–19% dari Pendapatan, - KilasJatim.com",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYkhfVjZfMDBmQ3VKaDRhbEtjSzdaNUItNEtCWVB2OGo1QlZXcXg1MDE1d3RwT1QwRUxjb3dRQkRnRHZmZmFpZWFrN3VIM1NyU0hQRUstSDgyWFdUTEtYR3NJNjk0b19OT1h1T0ZnMjY2NU40TS1ndXdFeF85Vkk3S2h3YUpwMGlzRDBrRC00Nnp2UFpTTUNXSEJmQmxfUlV4X1kyWVR3?oc=5",
-      "publisherUrl": "https://kilasjatim.com",
-      "source": "KilasJatim.com",
-      "summary": "hasil studi rasio utang pengguna kredivo hanya 10 19 dari pendapatan kilasjatim com",
-      "id": "e892f35122125c31",
-      "domain": "kilasjatim.com",
+      "title": "Doxing Balasan Jadi Alarm Krisis Kepercayaan Penegakan Hukum - Teknologi - Bloomberg Technoz",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPbkNPRzhvbF9feG9nVWh1ZlJ5OHYyOExmSFpMN2lXNTEyV3J0RG5DOGdGRkNTZFFPNVQzUnc2TFdERC1iRG0zMGVPRnNINGNsbHZNUkVGN2s5N2Q5aWRfVEY2UnRUdXd2QXdKNlhBOC1jaHg3RzFqUkdmdkJaa2lCOWJlZ1J3SDZFRXlnVUVxS2pyYWpNMkItdmRvUlVleEVFSG92aWh0NWVwV1FPbTRwUEdn?oc=5",
+      "publisherUrl": "https://www.bloombergtechnoz.com",
+      "source": "Bloomberg Technoz",
+      "summary": "doxing balasan jadi alarm krisis kepercayaan penegakan hukum teknologi bloomberg technoz",
+      "id": "a2a1bc12c60284c5",
+      "domain": "bloombergtechnoz.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 57.0,
+        "risk": 50.0,
         "label": "mixed",
-        "negativeWeight": 1.0,
+        "negativeWeight": 0.0,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-48c64d7a567bc5dc",
+      "eventId": "auto-b22fd034714eb93e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-02",
-      "title": "Irfan ND Soroti Pinjaman Daring: Pertumbuhan Pindar Jangan Sampai Hanya Pertumbuhan Utang - Indopolitika.com",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOc09PeXgzaTNHNWNBV3Y0aGthZFNPVGZJVVBDRkZtVXluZndxcG41SUNRQVl0c2pBTWJrZ3Y4UnJJSzQwY0QtQ29EUDNrSzlWUDZYUmxDRndSX3NrVkVYa1NOemZYY3ZMVlQwV3FYaFBzNk0ySmx0dU9Uc0Nnakk2bGhMU1Z5a2JCN2pVOHp3WXhrcTIxMXEtblZQd3Fpelh2alhDNW5wc1o5V3lSSVJ5TEIyQnk?oc=5",
-      "publisherUrl": "https://indopolitika.com",
-      "source": "Indopolitika.com",
-      "summary": "irfan nd soroti pinjaman daring pertumbuhan pindar jangan sampai hanya pertumbuhan utang indopolitika com",
-      "id": "26d4b067e5524efc",
-      "domain": "indopolitika.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 41.6,
-        "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 2.2,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c20e8db3365f2331",
-      "eventType": "industry_update",
-      "eventSeverity": 0.18
     },
     {
       "date": "2026-10-02",
@@ -18500,6 +14169,28 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-02",
+      "title": "Kemenko PM Ingatkan Santri Jangan Terjebak Pinjol dan Judol: Harta Bukan Tujuan Hidup - Suara.com",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxORTNUT0FkNzEzY2swRkkwUFYyX3ZJVnpaeWtjYVNmalYyLWhyWE1ydFV5bDVlaGlnclhKY2hlMDZHM3J0aDFzYmhfMlQ5UHlrSkV5dVRwQXFhdkRZY1dhekJNRi1PZXZuYjNjNktHNHc3NlFLN3dJYVRhT0hjWDBIR3hOdEJVSjl5bGVQYjRGOGpOTDJCTEhBNkxMSUpSbnhtWmRFaHpwZ051V1dBMlFpaVNaU2ZFQmZqdGdJeThycFFicFd2dDgxetIByAFBVV95cUxNZjVzVWhnV3h6WXZDM0pHQWRxaWNHVkxJd1lBODZ3N2s0bzItSjlWc3hWM1Frdkl4VFNuSUFlVmZNMkFFeVFtUHhSYlZHc1lCTk4zbzNIQzM5YklUMnZqNG5UMERQdFdvNjZ4dE8zYlNjV2ZBQ3pFdTkzWkZTZWlWbTFzajBacUxmaTItdVc1bDk1Vmo2TERmNDFOSC1XUE82LThwRGpNQ0k4dmRMTmdvVnByUUhucUJMa3lrS0x2VW1lYXNaNzB2Sw?oc=5",
+      "publisherUrl": "https://www.suara.com",
+      "source": "Suara.com",
+      "summary": "kemenko pm ingatkan santri jangan terjebak pinjol dan judol harta bukan tujuan hidup suara com",
+      "id": "484ec3f6bcfcd5f4",
+      "domain": "suara.com",
+      "sourceClass": "established_media",
+      "sourceFactor": 0.85,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-9e503be11a6aa092",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-10-02",
       "title": "Kemenko PM ingatkan santri waspada pinjol ilegal dan judol - ANTARA News",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQUFQ5czZiOGhzQlV0LS10b211WkU2S0N1NG1xUHhPd2JMejMxS1VVZk1EVzFKM1paU1dnVjZsR2hueXpld3JIZEJubFA0b1V2YUhFMmFueFphR2toYUxzeTdhOUFWUG9xTFROcXFfMHRIWE83Q3RCTTVsUGYzenJVRTJ2TXVaSWlYSnlwYW82Q3ltS0NyTUVoSjUyM0JBYnVScEHSAaQBQVVfeXFMTlB0Vl8xdVVWTDBkQVoySEFoNmduZWpRUlp6bll2NTltNFNrcTU3R1FmRkpEbERKMlhQVTlZNmRzZVFVOEZXcDQ3cmFMUXprY2JpSmpIcTlxUmFucjdIeXlkejlZbzVoRXRvTzVDM1I4OVdYcW52S2s0OVhyYmpzTmhTaUxBb0RRcVBUUFEyMmdYalVCVEFxNE0xQ2VCUFRsSng0MFY?oc=5",
       "publisherUrl": "https://www.antaranews.com",
@@ -18519,6 +14210,28 @@ const CREDIT_SENTIMENT = {
       "eventId": "auto-982c44403768d32f",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
+    },
+    {
+      "date": "2026-10-02",
+      "title": "Kredit Pintar soroti kemampuan bayar di tengah pertumbuhan akses pembiayaan - Traders Union",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPSmlTMEtzTU0wMnVHWDV5ODBxUHVzWlpkQy0tU21fcWJIS08zV0dwNVk0X2d4VkgwZnhpZXlzU2FBdDlNeDdFTFR2SVV0bGxLYjdrcVFFdEQ2cjJ6d1JYalUzc0xxUXZFRV9sY3NTZW1FZ3dQUzhfc2ZVeTRfcUdZUW9VTXhtVkNnNDJicHdRaE1kYkxGeDM3QTkxRDlDR1VOVk5YcE9pend5TzUyWmc?oc=5",
+      "publisherUrl": "https://tradersunion.com",
+      "source": "Traders Union",
+      "summary": "kredit pintar soroti kemampuan bayar di tengah pertumbuhan akses pembiayaan traders union",
+      "id": "6771185bd83cec9e",
+      "domain": "tradersunion.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 40.2,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 1.4,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-b8d1302100b4c52c",
+      "eventType": "industry_update",
+      "eventSeverity": 0.18
     },
     {
       "date": "2026-10-02",
@@ -18654,35 +14367,13 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-02",
-      "title": "Waspada Modus Salah Transfer, Bisa Berujung Jeratan Utang Pinjol - bisnisbanten.com",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOMV9rbTBKSnlmQ2ZKYTI3RU9SbEpoMmJqeFBBRG5jTFJlbDdkWlBqQmJOdDM2OTQyaXdEbWNXd1daTDFWTmo1bzlmVEVOZDE3b2pnQ2ExOEgxUW9Fd0VNNW1JTE54Q3BVMVJCc01SSWtKUkJfR2VON2JpaHpRZmZsZE9RcWQyRFFKRy1PRW9nUjk3UGs?oc=5",
-      "publisherUrl": "https://bisnisbanten.com",
-      "source": "bisnisbanten.com",
-      "summary": "waspada modus salah transfer bisa berujung jeratan utang pinjol bisnisbanten com",
-      "id": "bd4b1bff0aff7196",
-      "domain": "bisnisbanten.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 57.0,
-        "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-5c631d768337b0d5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-03",
-      "title": "Abaikan Danantara, Dirut PLN Diduga Lakukan Abuse Of Power Lewat Praktik Rombak Petinggi AP dan SH - Suara Pembaharuan",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPRDZibkNvS3JrR3cxNzFpRnZnNFZ4OGFYTjNiYjVkRlJ6VlFoLUJUVzBMMXlJSHAzTUxLbWRrOTFfN25xVzk5OU1VYkJXMWJuVTYxMklKNWw0NFRBTkFrWW5URDdnLS1ycmFhbnRzQVpBa2hic2pjN0hFY1M1X1dYNEhxaDhIbHM?oc=5",
-      "publisherUrl": "https://www.suarapembaharuan.com",
-      "source": "Suara Pembaharuan",
-      "summary": "abaikan danantara dirut pln diduga lakukan abuse of power lewat praktik rombak petinggi ap dan sh suara pembaharuan",
-      "id": "a2cb441c4c640e88",
-      "domain": "suarapembaharuan.com",
+      "title": "Viral Video Diduga Pegawai Koperasi Dikeroyok Nasabah di Gresik - kabarbaik.co",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOVQ5VUtxTnk4Q0ZyYkFRRjZ5aWNRU1dSaDZuU054RFc5ZlZMeE5HUWFGQzh4NU9RVHRHenp2LUFQX01ITFlod1NBNElHWjU3MUtUMXdaZHYzZkpIUVNOT3ZfSHVLeHJtWENCUzJfcGdSNFRYZ2djRUNRTjFqbVRiSTZVTHgtdVdMZUt0WG1n?oc=5",
+      "publisherUrl": "https://kabarbaik.co",
+      "source": "kabarbaik.co",
+      "summary": "viral video diduga pegawai koperasi dikeroyok nasabah di gresik kabarbaik co",
+      "id": "a136dec0809d7378",
+      "domain": "kabarbaik.co",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
@@ -18692,29 +14383,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-77774574aa30fe4a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-03",
-      "title": "Berita Terkini Harian Pinjol Resmi Ojk Oktober 2026 Terbaru Hari Ini - Kompas.com",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1rZ054ZDQzUm1zZlRUcFA3c01nM19ud0pLTGZvSWo5ZnRpUTQ0NWN5MFhKVHpKVTVLMTMtZW10c3RGNUlqV21TUWtBVVVUX2thVE5SdlJjd2ZpeExhR3kxTXdkd3VSaGM?oc=5",
-      "publisherUrl": "https://www.kompas.com",
-      "source": "Kompas.com",
-      "summary": "berita terkini harian pinjol resmi ojk oktober 2026 terbaru hari ini kompas com",
-      "id": "fb3522939256aa3d",
-      "domain": "kompas.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a9b0e4964c5fecaa",
+      "eventId": "auto-2a9e9fa7b98c6348",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -18742,34 +14411,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-03",
-      "title": "Daftar 94 Pinjol Resmi Berizin OJK Terbaru Oktober 2026 - Lensa Hukum",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBUSFZwTDNaSGpWLUV2ZVB4cDBoMnlFUWp5SWRuc29DZGduUTU5RFBaX3dHOXpubno2eHlWSnI3RmxWcV9sZFZqZ0RLNXVyclV2T1FpMDZzeFJqYmF5N3p1QmVhamdDUVU?oc=5",
-      "publisherUrl": "https://lensahukum.co.id",
-      "source": "Lensa Hukum",
-      "summary": "daftar 94 pinjol resmi berizin ojk terbaru oktober 2026 lensa hukum",
-      "id": "19b3a44df0cb4b68",
-      "domain": "lensahukum.co.id",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a09b470d42d0f3c0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-03",
-      "title": "Download Duit Pasti APK 2026, Legal atau Ilegal OJK? Cek Status Pinjol dan Risiko Galbay - Info Temanggung - Halaman 4 - Info Temanggung",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPOGZBSmw3RW4xVkdjMjFzWjVFcWR2VzB6dEt0eGNRUFJKdk5LQjlhVnQyazl0RHZlQTV3d2RlbkNQTjlrZkNmakNqR29YcW93ZDZyOFJwWS1hek9SUGk2bVM5RHhXNlJLV0haMWFXUUxlQmYtTzYtdW12Y3pRaE1BMjhqT1BwbGx5Tkp3M21vUFFKcV9GeGw0RC1qYk9kb3gzREpHTG9WQy1JaldmTTV5WkphLUhsQldCTGxVcEdjYVRLQXh4dExlc1k1VnFMNU9xXzdScGtDcjFaMm00MEVLZGVkMDE4S1hSNUtqekJLUdIB7wFBVV95cUxPOGZBSmw3RW4xVkdjMjFzWjVFcWR2VzB6dEt0eGNRUFJKdk5LQjlhVnQyazl0RHZlQTV3d2RlbkNQTjlrZkNmakNqR29YcW93ZDZyOFJwWS1hek9SUGk2bVM5RHhXNlJLV0haMWFXUUxlQmYtTzYtdW12Y3pRaE1BMjhqT1BwbGx5Tkp3M21vUFFKcV9GeGw0RC1qYk9kb3gzREpHTG9WQy1JaldmTTV5WkphLUhsQldCTGxVcEdjYVRLQXh4dExlc1k1VnFMNU9xXzdScGtDcjFaMm00MEVLZGVkMDE4S1hSNUtqekJLUQ?oc=5",
+      "title": "Download Duit Pasti APK 2026, Legal atau Ilegal OJK? Cek Status Pinjol dan Risiko Galbay - Info Temanggung - Halaman 3 - Info Temanggung",
+      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNaGk3NGRnUnRvSHhUTnRxUm9ucmlwLUl2WTAtdGlTR1dfRWN0NUItcE50YlFQM3ZDNzdkbnVnMGUtREZFdnBpRFdfOFVwRXBKRmlaM0hlOXB1U0s0NmhFOEt3SmdOdmZfZHNLVG5qREZkZ2NKLUpaXzJpNEw5S1lIbHU5bkI1YW1oWXJtRVJwMXpXM2s1ZUtqaDhoMU96bTExdjJuRzUzTFl5amZqZ2U0bnl3aWxTQWVHamY5Q19WbVduaEtKYk4zSmxsTnFQckFmcVd6bUlYRmlVcFYyelhlRlpCenVkZ2lfamZac1gxZ9IB7wFBVV95cUxNaGk3NGRnUnRvSHhUTnRxUm9ucmlwLUl2WTAtdGlTR1dfRWN0NUItcE50YlFQM3ZDNzdkbnVnMGUtREZFdnBpRFdfOFVwRXBKRmlaM0hlOXB1U0s0NmhFOEt3SmdOdmZfZHNLVG5qREZkZ2NKLUpaXzJpNEw5S1lIbHU5bkI1YW1oWXJtRVJwMXpXM2s1ZUtqaDhoMU96bTExdjJuRzUzTFl5amZqZ2U0bnl3aWxTQWVHamY5Q19WbVduaEtKYk4zSmxsTnFQckFmcVd6bUlYRmlVcFYyelhlRlpCenVkZ2lfamZac1gxZw?oc=5",
       "publisherUrl": "https://temanggung.pikiran-rakyat.com",
       "source": "Info Temanggung",
-      "summary": "download duit pasti apk 2026 legal atau ilegal ojk cek status pinjol dan risiko galbay info temanggung halaman 4 info temanggung",
-      "id": "a566aa3917c26d89",
+      "summary": "download duit pasti apk 2026 legal atau ilegal ojk cek status pinjol dan risiko galbay info temanggung halaman 3 info temanggung",
+      "id": "c956039a5d5c7264",
       "domain": "temanggung.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -18778,28 +14425,6 @@ const CREDIT_SENTIMENT = {
         "label": "negative",
         "negativeWeight": 5.1,
         "positiveWeight": 1.3,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-04488bf2f58e26f7",
-      "eventType": "credit_quality_stress",
-      "eventSeverity": 0.58
-    },
-    {
-      "date": "2026-10-03",
-      "title": "Download Duit Pasti APK 2026, Legal atau Ilegal OJK? Cek Status Pinjol dan Risiko Galbay - Info Temanggung - Info Temanggung",
-      "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOMzJZUmZDZklVd0FhMHUxQVJ4QzJxd1lJZE96VHlGWnVjZzBNY3ZTRmVrNVFSLU9fR0V3U1d0U3NwWkFsNDNQZE9FV2tBNm1sdnowM1hDMVlrU0NOZks4UzdKZFh4QVJUOEtQblhXM0ZpSVAxSnVmRUdfVXVQbk41S0hXVzBhajNqUUZDMjduNF93TjBSdnA1TWtlR1hJd2FkQlY2cV9wNThGRHNOdGpHTDQxTXNfaVB3ZjNhczF6anNaekw3QWxYTDJ1UDUwNjNCWUhQN1BTcXpYcENRdmp3a0lsSVVod9IB5gFBVV95cUxOMzJZUmZDZklVd0FhMHUxQVJ4QzJxd1lJZE96VHlGWnVjZzBNY3ZTRmVrNVFSLU9fR0V3U1d0U3NwWkFsNDNQZE9FV2tBNm1sdnowM1hDMVlrU0NOZks4UzdKZFh4QVJUOEtQblhXM0ZpSVAxSnVmRUdfVXVQbk41S0hXVzBhajNqUUZDMjduNF93TjBSdnA1TWtlR1hJd2FkQlY2cV9wNThGRHNOdGpHTDQxTXNfaVB3ZjNhczF6anNaekw3QWxYTDJ1UDUwNjNCWUhQN1BTcXpYcENRdmp3a0lsSVVodw?oc=5",
-      "publisherUrl": "https://temanggung.pikiran-rakyat.com",
-      "source": "Info Temanggung",
-      "summary": "download duit pasti apk 2026 legal atau ilegal ojk cek status pinjol dan risiko galbay info temanggung info temanggung",
-      "id": "1d2538c26de21a1c",
-      "domain": "temanggung.pikiran-rakyat.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 82.2,
-        "label": "negative",
-        "negativeWeight": 5.1,
-        "positiveWeight": 0.5,
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-04488bf2f58e26f7",
@@ -18984,10 +14609,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "20 Aplikasi Pinjol Terpercaya yang Berizin OJK 2026, Cek Sebelum Mengajukan Pinjaman - topik.id",
+      "title": "20 Aplikasi Pinjol Terpercaya yang Berizin OJK 2026, Cek Sebelum Mengajukan Pinjaman - TOPIK.ID",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPTEp0RTIydDRQMUVac3Nsa3BuMlhIaV82bDZPZ3RSYmVDQUJkd09WZERYekVUdHVPUlNPOThSR0JnbmRRcThRN3Z2M1VPTUtwRzJWdVNZSFV0R3dWeVZSZmlWeEhPdXhfWk1ZTmpaX2xKTWVqMDF5Sy1lUml5RERnZ1BQZEJSQU1ZelZrZWxiMkRvVy1OaU1LLUplM2tZb1dCbXJNTFJFcw?oc=5",
       "publisherUrl": "https://www.topik.id",
-      "source": "topik.id",
+      "source": "TOPIK.ID",
       "summary": "20 aplikasi pinjol terpercaya yang berizin ojk 2026 cek sebelum mengajukan pinjaman topik id",
       "id": "6c7b25aa299fdf34",
       "domain": "topik.id",
@@ -19006,10 +14631,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "5 Aplikasi Pinjol Resmi yang Cepat Cair dan Berizin OJK 2026 - topik.id",
+      "title": "5 Aplikasi Pinjol Resmi yang Cepat Cair dan Berizin OJK 2026 - TOPIK.ID",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQUThLclpkOS1VakVvc3NwLW9UbUxzNjN5RnlicTFCbDhBZklfM2daTmhtZEFVcU1uMmdDUlpCNXdhdnNIcnF0Y0E1d3ZmdmlsYlZPM1E4UDVXQnRibXRxNTFqcnlEV1c0YzVmVk9KUW5pZUxFTjNrcjc5RWRzMG8xNWpTUXpZNWJX?oc=5",
       "publisherUrl": "https://www.topik.id",
-      "source": "topik.id",
+      "source": "TOPIK.ID",
       "summary": "5 aplikasi pinjol resmi yang cepat cair dan berizin ojk 2026 topik id",
       "id": "35965061b6c775e2",
       "domain": "topik.id",
@@ -19028,25 +14653,25 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "5 Modus Penipuan Pinjaman Online, Jangan Sampai Jadi Korban - Erafone",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB1eHVRdzZsTGI5T3BMLTNpS2dhc3k0cVg5cGZaM3JMSVlaRkVuc3gxN09aeWt0bG8yWGhWdUlTRkdmQ3RmUnVHeUU0cnVickdSb1lZVzh0MmFPdmJfRy1wZ1p1NmtFZXFqXzhCMQ?oc=5",
-      "publisherUrl": "https://erafone.com",
-      "source": "Erafone",
-      "summary": "5 modus penipuan pinjaman online jangan sampai jadi korban erafone",
-      "id": "acffbe4d2ee93abe",
-      "domain": "erafone.com",
+      "title": "5 Cara Hapus Jejak Data KTP yang Terindikasi Judol dan Pinjol - IDN Times",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRGVoM25UNTBpdmVUMHA5Vkk4aXVDNTM2TFVPTklGVnFDWUJiU3Y1SEstV0dLQThPM0xvZFE0T2xPQy1qUHQtRHhlZC1VdnJMRkxGQS1aR01hNGlzMGduUWkzOF9ZWEd5dnJSM2FYNUNBd3ZHTU9iSWRyVXlqQmJ1b0NWdm1QUFFkaUJXbU81TEdTZzB6dXdmRnBSNG1JREh1bUxDUmFnRVBrX09jY3BhRjBadGlubFk1QTFGandScGvSAcYBQVVfeXFMTWpiMTdPVDFPdzY1dXF2QmZUdVBYcXJZQ1I2ZkFXVzV2X2VoU2dlek45My10RmdfTzlDd3lzUUd3WmxhUk82MlZYUGdXVlpRcndGWW9iNVpaZVk1RjEyd09iakZWTElvbzhZZEFwNkhGdjJJME1iLVFoMXR6VDZ1VXYzMjNMNHU1bFlFZFRjaFRyT2tid2pUalhmWS1VcjAyanlqb0JadlhvVWV3RFRZMkVoaTlxR2paNHg4TEFiNnlrTlgwY3h3?oc=5",
+      "publisherUrl": "https://www.idntimes.com",
+      "source": "IDN Times",
+      "summary": "5 cara hapus jejak data ktp yang terindikasi judol dan pinjol idn times",
+      "id": "f1fb47d08a18d116",
+      "domain": "idntimes.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 73.8,
-        "label": "negative",
-        "negativeWeight": 4.2,
-        "positiveWeight": 0.8,
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-0c71f35bd3f980fa",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
+      "eventId": "auto-0d3a6ffff3d292e0",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "date": "2026-10-04",
@@ -19116,10 +14741,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "Benarkah Utang Pinjol Ilegal Tidak Perlu Dibayar? Ini Penjelasannya - topik.id",
+      "title": "Benarkah Utang Pinjol Ilegal Tidak Perlu Dibayar? Ini Penjelasannya - TOPIK.ID",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNelJRT0JFVGF5SEhnLUphbXI1NHVOMlVJbVNKMjE0dG1KTEZ2THA1bGtUX25UcHZZRVpCQVZrdFRqekhhRDlIcmFmb01FMFZ0QWxzWWRnVUlKSFhSdTZhd0NrSXZQN2FMREstbzhxZXo5S3VnM1VIMHpfQzJDSnFkVkZnUXdTVUJNYkRoU0FkNXo?oc=5",
       "publisherUrl": "https://www.topik.id",
-      "source": "topik.id",
+      "source": "TOPIK.ID",
       "summary": "benarkah utang pinjol ilegal tidak perlu dibayar ini penjelasannya topik id",
       "id": "0cfacf054a794212",
       "domain": "topik.id",
@@ -19160,28 +14785,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "Cara Membatalkan Pinjaman Kredivo - tribratakutim.com",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNeHR5S0lJSWdOVlc3UG1UMmpUVEtNT241NlZ3ZFVPRk9Kek53SlZfU0xndjhuSHlGVDJITXU1clhEUnRuUjJpbnk1ei01bVE4eGxTWmc1MXlicGltQTFEX1VzOFhaMllQclgtT0xvaU5QLWhRU0U3M2RDQ0tpUVRGQzRaREQxV2d6ck53YjF1WQ?oc=5",
-      "publisherUrl": "https://tribratakutim.com",
-      "source": "tribratakutim.com",
-      "summary": "cara membatalkan pinjaman kredivo tribratakutim com",
-      "id": "41713d029b032d5a",
-      "domain": "tribratakutim.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3d634e2847c22b40",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-04",
       "title": "Cerdas Berkeuangan di Era Digital, OJK Sulselbar Siapkan Duta LIK untuk Tangkal Pinjol dan Investasi Ilegal - Rakyatku.Com",
       "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPWnA5NHpLWkNESEprTExIdnlVdk9QejBwR2tVQU9NR00teGQtbEQxa0Z6dTR0ck5hSnVyY3licG9GUnhLaGYzS2U2bmd2VXZLaWJpb3JlRUtiaWRXYXhWcHRhaGJPWlV4MWFMZUdiWS0yV0JadHZQNHMxQWtrQWpGZlRkS1R3bEkzZmg1dnM3MDB4OFVrWFB0dDc0bnBLb3UwNC11UUtwUkJxYzlGSkRNVjY0aGpReExVQTcxczJLVEV5VV9PaEpCVWRiY2trZmpOWFlHS0lB0gHbAUFVX3lxTFBQc0tWYUlnT0hSMFFMdTFqZ0tEdGh3YzdSREN4Skc4MzNialhGREhZeHY1cU92dEdTUWRCcWdhMnNYcnpYSXpPSGM2ZUJSY1l6djBzTjRlemZLSWJZajlWbnhlTUM2ZW1uV1lBaE5yU3dOSlc5b3liZVVWTFk4UDZZbEE0R0w3YnczR0xCVHRvOEpjb2w2OGRfWk1RZ1dYQ3FSZjRMLTJ2dkZKMFRYTXFONjJ6VzVsdHE1YXAzcmtxem1FRmw4OUROUDQ5bGdaRFRPNFZtdUZXc1dZSQ?oc=5",
       "publisherUrl": "https://rakyatku.com",
@@ -19204,10 +14807,10 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "Daftar Aplikasi Pinjol Ilegal 2026, Cek Sebelum Pinjam - topik.id",
+      "title": "Daftar Aplikasi Pinjol Ilegal 2026, Cek Sebelum Pinjam - TOPIK.ID",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16SXFxQk1YbDdCWXVGejVXR2k0WHE0ZVc4a3VsLWIyaG81UW0yY2lJM0VpSnhScVEtRVFlMkI3bjFPcXlNbWk5UWJJMXEwV1F1RDFKVTdxRC1ud0ljTTNzZ1psU2V1bElJNXB1NEhfbGtTVjdOWjVqVFV5Y2hIR3M?oc=5",
       "publisherUrl": "https://www.topik.id",
-      "source": "topik.id",
+      "source": "TOPIK.ID",
       "summary": "daftar aplikasi pinjol ilegal 2026 cek sebelum pinjam topik id",
       "id": "fa2eeb19708848ab",
       "domain": "topik.id",
@@ -19270,28 +14873,6 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "Masyarakat Pesimistis Kasus Korupsi MBG Diusut Tuntas - Suara Pembaharuan",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOTGs3UnF3dHd1azNsUGEyOWFyTHBsaTFKdlhrR0VwR1hwSWVlN3FheEN4TUE2Y0R0SVVBWC1WRTBMZ05aM3JmMUgybE5qTmduMmliNUpjMDBYV3lneDh0SkhncTNUYW0yUEF1bzgzZXpRQnhFVHZFeXphcGFqd2NVTDZyaUtWZw?oc=5",
-      "publisherUrl": "https://www.suarapembaharuan.com",
-      "source": "Suara Pembaharuan",
-      "summary": "masyarakat pesimistis kasus korupsi mbg diusut tuntas suara pembaharuan",
-      "id": "c3984c7d10864182",
-      "domain": "suarapembaharuan.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2e05564637b2b229",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-04",
       "title": "Penyebab Bansos Tidak Cair: Benarkah Gagal Bayar Pinjol Jadi Pemicunya? Cek Faktanya! - infotren.id",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOa0NMWFJLUksweGY3dlduR2xxNG10ZzMwUEhPZlJHTjhCNjYwbnVMOW51VFBwVENDYUQyU0doZkVJUzVPRzdnNlFtUEpVSmQ0eXZsdzR3SFd5Qzl3bk5jOS1UOHlURkVQbE9UR3BUZGZzcVpkX3dpVVlWQnJDR3N4Z1ZTb092NXduMkZsRHVMNjE2U2F5bENrczg4SjJRcnhqUmpERQ?oc=5",
       "publisherUrl": "https://infotren.id",
@@ -19314,69 +14895,25 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-04",
-      "title": "Tutorial Cara Membatalkan Pinjaman Kredivo - tribratakutim.com",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNQ1lyVUxvQWdydW5DNXVzU0RmaU5sVkxFX2hCYzZsOFNEYWM2UUIxTjJEZjhsLXdjVWJYNzdLck13TU5BTjNxcUx2ZWJxZUxhM0F1cGYzR1UyTXF3VlNnUHNBLWxPaVZfWE0wWGdhUUdmNGJReGhkN3Jfa1p1U3hRaHl0WUNub2JYR2ZaaTdGcU1BLUNtVFN2VFpMbXFZSF9MdlN6M2VsaExUeEU?oc=5",
-      "publisherUrl": "https://tribratakutim.com",
-      "source": "tribratakutim.com",
-      "summary": "tutorial cara membatalkan pinjaman kredivo tribratakutim com",
-      "id": "f95a60a22f8172f3",
-      "domain": "tribratakutim.com",
+      "title": "Waspada Modus Penipuan Salah Transfer, Bisa Berujung Jeratan Utang Pinjol Ilegal - TOPIK.ID",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOd0k2LUJtRk1LRzFhRGJYUEdfa2hXLVB6OVRuNGcwLUZOaEltTl90anpUMm5kdTJFTWhCdVlRdlBIUU4yT1ZRNzY1eGNHa0JnX0Q5dTkwOTVWYUdMa1hoWHFBZWdyQm1VdXQ1Rm9SbkNWb3JrNXZtMlVFWmdEMDV1ZmJ5SnphXzJacC0zaXhOS3lNRTFkMzZaNFI1N1hBZ0M3emc?oc=5",
+      "publisherUrl": "https://www.topik.id",
+      "source": "TOPIK.ID",
+      "summary": "waspada modus penipuan salah transfer bisa berujung jeratan utang pinjol ilegal topik id",
+      "id": "36b83dba8693eb57",
+      "domain": "topik.id",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
       "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
+        "risk": 85.0,
+        "label": "negative",
+        "negativeWeight": 5.5,
+        "positiveWeight": 0.5,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-bc2415229f122cc1",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-04",
-      "title": "Usut Dugaan Keterlibatan Menantu Riza Chalid di Kasus Korupsi Minyak Mentah Pertamina - Suara Pembaharuan",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYnZGcER4S2tRWHFwTWQxVTlXVXpXOWlpOC0yY1lXdnBkU3RLRGpQQk82azlSN2c2TTB5bzZUQ3RoZkV3TGNVTVJpMXJ1LXBHdnpTczZkZkJ0eVlrQzEzSVl2SFdfWkt0MlBGLVpOY0Y4M1Fiakw5ME0ya1F5eXFRdXNNQXhxZzRo?oc=5",
-      "publisherUrl": "https://www.suarapembaharuan.com",
-      "source": "Suara Pembaharuan",
-      "summary": "usut dugaan keterlibatan menantu riza chalid di kasus korupsi minyak mentah pertamina suara pembaharuan",
-      "id": "26b474ee42ed02d3",
-      "domain": "suarapembaharuan.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-96f4ec3ac7307043",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-04",
-      "title": "Waspada Pinjaman Online, Ancaman bagi Stabilitas Keuangan dan Keamanan Data - RRI.co.id",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOOEVwV3VhSmtWc2RZNDBLS3J0MXV1U2wzRlVKZVJLelJpWUZtSVlHNHZNNmJGTkV6VjhhbEhEcWpEbVRUTVE2NzN3WkZiMVozMjY5QkF2aEt5dC01NjhPa3hMTzdwOFljV3ZWaXZlUUNXRUVENjl4TUxPOFE2Q1hvVm42WjRPZ1RmdmhwN2p2dEttU1FybUlicS01bXhzbU5UZmhqWmtPZ0dUSVpMVkY5ZkNLRzFzYjNIaDRiNXlUMlpnWVhY?oc=5",
-      "publisherUrl": "https://rri.co.id",
-      "source": "RRI.co.id",
-      "summary": "waspada pinjaman online ancaman bagi stabilitas keuangan dan keamanan data rri co id",
-      "id": "fb9ffdbd767978ca",
-      "domain": "rri.co.id",
-      "sourceClass": "established_media",
-      "sourceFactor": 0.85,
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.3,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2bf678fe2c7df7c2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-c394ddfe496a5c60",
+      "eventType": "fraud_or_illegal_practice",
+      "eventSeverity": 0.74
     },
     {
       "date": "2026-10-05",
@@ -19402,34 +14939,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-05",
-      "title": "Aktif DTSEN Artinya Apa? Ini Penjelasan DTSEN Triwulan 3.2 2026 dan Bedanya dengan PPKE - Info Temanggung - Info Temanggung",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOQk05NXFpcUYtTDhNampLTHYtRTd4b1dsSE81RUs0R1pCdUh5eURrTmxjNDRoUGRrWFJ5Rm5UV2kxR2ZfckVyeVhKbGRQV3QxNFpkOGE3SkZRenpEZms4X2FXQ3NqaVdCWkY5MDgwNm44eTZFYmdiQ1d4U2FETHByYXpoVXBzX1pXVE1HUl9RM0pBa0NuQU9iaHIxUzFsMWNFMTZPN0Zvb2JVdlNjc1hUNzJDcjloVTVYZEZMd0F5RFhPYks3S1A3Zy1sbjFWRExURWY2bGtsZ09MYndxcDcw0gHkAUFVX3lxTE53cTViOTltTjNWMVVSVGpkSmJhcWtuVTR5M19GTXh1U28tNFNBTEcwWjBrVXpwWFBKclZLdlJxYWNUQi1jM05PMmx0LTNBbFZGX1dfZmM3aEZVUG1KMmw0YjlfNllCcHJ1REVYaVJlYXowdFQwdS1PUE1rdV9wZVc5TlNzMmp5WnZld3cxb1ZXMkU5V2wwWHV2dGR3UlpOeEJqSFV3NGhrWXRMb3NTSXhiLU4tUWxVMVJSa28xTEQ1UUpTS2RZZ1N4OG0xTkY5NjFKdTVlWHpJNFdRU3lBUmJ3YmRkUw?oc=5",
-      "publisherUrl": "https://temanggung.pikiran-rakyat.com",
-      "source": "Info Temanggung",
-      "summary": "aktif dtsen artinya apa ini penjelasan dtsen triwulan 3 2 2026 dan bedanya dengan ppke info temanggung info temanggung",
-      "id": "5f956eb3666aae99",
-      "domain": "temanggung.pikiran-rakyat.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-9ef60beb51943c82",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-05",
-      "title": "Fantastis! OJK Catat Utang Pinjol Warga RI Capai Rp106,94 Triliun, Segini Angka Macetnya - jateng.pikiran-rakyat.com",
+      "title": "Fantastis! OJK Catat Utang Pinjol Warga RI Capai Rp106,94 Triliun, Segini Angka Macetnya - Pikiran Rakyat Jateng",
       "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeUpoYU90MUtXajZaQVFqSTFlZlFPdlBFYUtaQUdhR2d2cFNmODVtNE9GaWRlZjRCUkJsektvWEFtTXlTVFRmSm1wa2E5WEM3MXFZMDVmb00xT2JtcmNwM0tNNzFFNklfOTA3bkRkUVZyV3ltV2NmWkpjU3lqVDBBbWR0Ni1GMU9BcWZFMGZoYnZzQjNvZFA4d3NXQ001UERQOTdFV0lBcWdETkhHc0Ytamd1VGJJYkRLN1lER0MxOFh5cXJuNVZuc2RmaVFzQlRhenFvZw?oc=5",
       "publisherUrl": "https://jateng.pikiran-rakyat.com",
-      "source": "jateng.pikiran-rakyat.com",
-      "summary": "fantastis ojk catat utang pinjol warga ri capai rp106 94 triliun segini angka macetnya jateng pikiran rakyat com",
-      "id": "26986d654c977833",
+      "source": "Pikiran Rakyat Jateng",
+      "summary": "fantastis ojk catat utang pinjol warga ri capai rp106 94 triliun segini angka macetnya pikiran rakyat jateng",
+      "id": "95c284b67bab049f",
       "domain": "jateng.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -19441,6 +14956,28 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-c0ebf6957cf9a855",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "date": "2026-10-05",
+      "title": "Kasus Doxing Balasan Jadi Sinyal Rapuhnya Pelindungan Data - Bloomberg Technoz",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObWtpa1lxeGxlSklwdllVVHhkaDJPYjQ4OWk0ejBsbnN1Wlp5aFl6WUFXeVF5eVlwZGZmUjhVcXZkTHhIREVWY2VKbWg5UzN2WHJOTUQ3WTlUWnMtc3hKcDh1Z1cyak1ubi1UNFdJX1FwdWlTc01ld04ybU1JWlpXVzhfX3pjRzRDQkNtVGd1TE9jVExBaWRkQ2tUSW5Lekt4X05sQjBldVpNN2NUU3VN?oc=5",
+      "publisherUrl": "https://www.bloombergtechnoz.com",
+      "source": "Bloomberg Technoz",
+      "summary": "kasus doxing balasan jadi sinyal rapuhnya pelindungan data bloomberg technoz",
+      "id": "65981e79d17d08b7",
+      "domain": "bloombergtechnoz.com",
+      "sourceClass": "other_media",
+      "sourceFactor": 0.7,
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-5ff2f3128a88e868",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -19468,34 +15005,12 @@ const CREDIT_SENTIMENT = {
     },
     {
       "date": "2026-10-05",
-      "title": "Kenapa DANA Cicil Tidak Bisa Aktivasi dan Tombol Tidak Bisa Dipencet Oktober 2026? Ini Penyebabnya - Info Temanggung - Info Temanggung",
-      "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxNT3hDeGtsRmhEY2wyXzlIdzNMaU9GV1R0REF6WlQ5c0Jfemh6VndTR0tiMDgyNmtuWFRKb3U4eS1jOWVSWUNvNDUtMjB6bVNYcm5qd3hxZUdkdTdOOC05eU5GYVlPS3Q5NlByWHJEeExvajJ5YUgwb0dKZ3lvVktJMnlEcTNmckJkXzZiYXpEa0ZnMjRxQWROY29IYWt4R1JfcWJuSTc2dTE4bmljODZwWXFrZU1ReFFPRUVvLXhlS1IwTkZ3NkEyMzJPMXE1LWdNeFl6YkIzN3JDU2s0dU9PTGdRaG9icHFwWlZyLW9QWdIB9AFBVV95cUxQd0xrN2VfTFh3YjJBcUhwUno4blpPd1VmUmhZVHBUUXNxR0M4b3ZZaV83LTJZaTV0MThHbFE5emR0R1VZWERIVjBxYzZ3LU9ERXZtUzVaMjZYYnhqWVRLYXBpQkhjUXpUbDVxVTE1R3RvdDZhRHdLbk10dUI2enIzLTlKa01YTlZjbGFlaTh1dEpkN0QtX1lnZmdnS3Q4TmxKNE00YnFhVUJHXy0tcGZSYW0xaTlSM1h4R3ZGY1NFU1BOWi1pOFh3ZmNGZ3JNQ2NzcFYxV0FvU2x4LXBfME5qdTNmRGU0RDV3N1RHazF1aXJXcERk?oc=5",
-      "publisherUrl": "https://temanggung.pikiran-rakyat.com",
-      "source": "Info Temanggung",
-      "summary": "kenapa dana cicil tidak bisa aktivasi dan tombol tidak bisa dipencet oktober 2026 ini penyebabnya info temanggung info temanggung",
-      "id": "f290b03cd8f1c997",
-      "domain": "temanggung.pikiran-rakyat.com",
-      "sourceClass": "other_media",
-      "sourceFactor": 0.7,
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-08e858cad9b48fb3",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "date": "2026-10-05",
-      "title": "OJK Ungkap Utang Pinjol Warga RI Tembus Rp106,94 Triliun - jateng.pikiran-rakyat.com",
+      "title": "OJK Ungkap Utang Pinjol Warga RI Tembus Rp106,94 Triliun - Pikiran Rakyat Jateng",
       "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQb1dHRmxfOFFTeWVmNG1EUXRGYXhZNmtBZVFrbDUzb2VCN2FKRU9QVmlGLXZFTS1Ta0FQMlVlZzdkR2dfTHNxOFE5UWpSLWtBREVfeFE4QUlKQjBudjlhM2I5QWlxeVRMdGdpVW43OHdPTzZrZm1ZaEduc2tUWThsejFtUXlEYkxBODZsM0ZXTndHN1dJRHNpaVotSGYtSnl0UklMQVJXX19QWXpT?oc=5",
       "publisherUrl": "https://jateng.pikiran-rakyat.com",
-      "source": "jateng.pikiran-rakyat.com",
-      "summary": "ojk ungkap utang pinjol warga ri tembus rp106 94 triliun jateng pikiran rakyat com",
-      "id": "157e79dbec5c2b95",
+      "source": "Pikiran Rakyat Jateng",
+      "summary": "ojk ungkap utang pinjol warga ri tembus rp106 94 triliun pikiran rakyat jateng",
+      "id": "60839294d197d0a4",
       "domain": "jateng.pikiran-rakyat.com",
       "sourceClass": "other_media",
       "sourceFactor": 0.7,
@@ -19534,26 +15049,6 @@ const CREDIT_SENTIMENT = {
     }
   ],
   "socialItems": [
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwRfzpM_EusZBwK6DR4AaABAg",
-      "date": "2026-09-13",
-      "text": "Mau saldo dana gratis seperti 10 Nama Pemenang di video?\nBales pin komentar ini, kasih tau kebutuhan untuk apa👇\n\nALTERNATIF PINJOL :\n\n1⃣ Daftar doang, Dapat Rp100.000\nhttps://s.id/DanaGratis1\n2⃣ Daftar doang, Dapat Rp180.000\nhttps://s.id/DanaGratis2\n3⃣ Daftar doang, Dapat Rp340.000\n https://s.id/DanaGratis3\n4⃣ Daftar doang, dapat Rp160.000\nhttps://s.id/DanaGratis4",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 124,
-      "id": "c30d32b6ed194f81",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a2c6befd9f888363",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
     {
       "platform": "youtube",
       "contentType": "comment",
@@ -19622,14 +15117,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bagaia mana menurut  raga galbay mengenai seabanm menau nhj beberapa pindar karena. Banyak yg galbay di pindar\" trsb",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 2,
-      "id": "e6324bf266790536",
       "sentiment": {
-        "risk": 64.7,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 64.7
       },
+      "id": "e6324bf266790536",
       "eventId": "auto-b4dfa8e9890bbfc4",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -19641,15 +15137,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-21",
       "text": "Cara Aktifkan Dana Pinjam Supaya Bisa Pinjam Uang Di Dana Langsung Cair",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 34728,
-      "id": "2cbaa1b07c406ba2",
+      "engagement": 34819,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "2cbaa1b07c406ba2",
       "eventId": "auto-c56326dcc516effe",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19662,14 +15159,15 @@ const CREDIT_SENTIMENT = {
       "text": "Galbay 3,5.. baru berjalan",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 2,
-      "id": "c03cd144af712f06",
       "sentiment": {
-        "risk": 64.7,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 64.7
       },
+      "id": "c03cd144af712f06",
       "eventId": "auto-b8e21544572c6a5f",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -19682,55 +15180,16 @@ const CREDIT_SENTIMENT = {
       "text": "Hadir bang rg, next vidiio tentang pindar berada pada naungan sea bannk bang, selalu nunggu vidionya bang",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 2,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
+      },
       "id": "2459c3ae3e575f1f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-59dff249846b4309",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw9_snFKxLcJzLbacN4AaABAg",
-      "date": "2026-09-21",
-      "text": "Kelas king 😂",
-      "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
-      "engagement": 2,
-      "id": "af49ccc95a4ccaa6",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-39bdb6d3c1db793b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyGMc1dmQld79vpPQN4AaABAg",
-      "date": "2026-09-21",
-      "text": "Lancar terus YouTubenya bang🎉❤",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "d01b9d8be9d15780",
-      "sentiment": {
-        "risk": 43.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 1.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e39d5ddd56506af1",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -19742,15 +15201,37 @@ const CREDIT_SENTIMENT = {
       "text": "Mau Saldo Dana Gratis?\nTonton habis, komen saja mau dana kaget hari ini untuk kebutuhan darurat apa 👇 https://link.dana.id/danakaget?c=slbjrkhdw&r=c7Q38x&orderId=20260924101214931315010300166276299657774",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 93,
-      "id": "bf819ba6a8f47825",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "bf819ba6a8f47825",
       "eventId": "auto-1fca027101ec813a",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgysFmlgJ3ISrsotov94AaABAg",
+      "date": "2026-09-21",
+      "text": "Mau buat bayar uang gedung sekolah bang",
+      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
+      "id": "c0ab876290722174",
+      "eventId": "auto-ed21e2b1cd76e796",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -19761,15 +15242,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-21",
       "text": "Pocong ungu bawa buku tagihan pinjol😄 #squishy #horror #craft #pocongviral #papersquishy",
       "url": "https://www.youtube.com/watch?v=0O7ZUV5M2Io",
-      "engagement": 31003,
-      "id": "b1a9dd732932d3c2",
+      "engagement": 31034,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "b1a9dd732932d3c2",
       "eventId": "auto-a84e6242b03264da",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19781,15 +15263,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-21",
       "text": "SAYA DOWNLOAD ULANG APK PINJOL YANG SUDAH 1000 HARI GALBAY!!",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
-      "engagement": 25935,
-      "id": "43f13921b7a56478",
+      "engagement": 26314,
       "sentiment": {
-        "risk": 64.7,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 64.7
       },
+      "id": "43f13921b7a56478",
       "eventId": "auto-ad56e96a50091a82",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -19802,14 +15285,15 @@ const CREDIT_SENTIMENT = {
       "text": "Salam Galbay Padukaa 🎉",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 5,
-      "id": "efc95cfa02e732b3",
       "sentiment": {
-        "risk": 64.7,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 64.7
       },
+      "id": "efc95cfa02e732b3",
       "eventId": "auto-a4b62ce70e06626f",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -19822,14 +15306,15 @@ const CREDIT_SENTIMENT = {
       "text": "Sehat selalu paduka",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 1,
-      "id": "8c763bd12bc80826",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
       },
+      "id": "8c763bd12bc80826",
       "eventId": "auto-ba3ce0d29c67118c",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19842,14 +15327,15 @@ const CREDIT_SENTIMENT = {
       "text": "Semangat \"GALBAY\" kan semua pinjol selamanya...✊️",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 13,
-      "id": "e9694972b67aa211",
       "sentiment": {
-        "risk": 59.1,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 59.1
       },
+      "id": "e9694972b67aa211",
       "eventId": "auto-eaac5e60cf8d76d1",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -19862,14 +15348,15 @@ const CREDIT_SENTIMENT = {
       "text": "Sy galbay 9jt..takut sy Uda setahun  dak dik Duk ini om",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 4,
-      "id": "6dd6259608732f0a",
       "sentiment": {
-        "risk": 64.7,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 64.7
       },
+      "id": "6dd6259608732f0a",
       "eventId": "auto-48deaa17d2ae146b",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -19882,14 +15369,15 @@ const CREDIT_SENTIMENT = {
       "text": "Sy lebih dari segitu dari tahun 2023",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 4,
-      "id": "73f4da342a504219",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
       },
+      "id": "73f4da342a504219",
       "eventId": "auto-309102368e25002c",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19902,14 +15390,15 @@ const CREDIT_SENTIMENT = {
       "text": "hadir paduka raja",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 1,
-      "id": "93735d86fbd72bfd",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
       },
+      "id": "93735d86fbd72bfd",
       "eventId": "auto-de30f9b9ed65fc3e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19922,14 +15411,15 @@ const CREDIT_SENTIMENT = {
       "text": "katanya mereka harus lapor ke OJK jadi mereka tutup buku , mungkin daya yg diberikan OJK itu mungkin data palsu atau OJK yg gak peduli",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 4,
-      "id": "b610f09c9c043578",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
       },
+      "id": "b610f09c9c043578",
       "eventId": "auto-e87f117383515f48",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19942,14 +15432,15 @@ const CREDIT_SENTIMENT = {
       "text": "❤❤❤ infonya mencerahkan",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 1,
-      "id": "35065371c871f92b",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "35065371c871f92b",
       "eventId": "auto-e6a894169aaf817f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -19957,32 +15448,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "video",
-      "externalId": "loNri68L03s",
+      "externalId": "5q979RI37u8",
       "date": "2026-09-22",
-      "text": "3 Aplikasi Pinjaman Online Langsung Cair 2026 - Pinjol Mudah Cair Ke Dana TANPA BI CHECKING",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 37211,
-      "id": "c64bdca48934a26b",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7770eb8e8f7c4eef",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyX4QZse1C6BXuyrAJ4AaABAg",
-      "date": "2026-09-22",
-      "text": "Bismillah",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "42522453fa66ac24",
+      "text": "ADAKAMI, AKULAKU, LUMBUNG DANA, EASYCASH, SAMIR, UATAS KREDIVO, SHOPEE DLL",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 14817,
+      "id": "2ac394b6acb62f2c",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -19990,7 +15461,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-a1dd395c19f3a1f7",
+      "eventId": "auto-a1b0aa3d7d3de73e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20002,14 +15473,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah\nSubuh subuh nyari ginian semoga rezeki di subuh hari\nUntuk makan dan beli susu anak",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
-      "id": "6499f2f86c2805d9",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "6499f2f86c2805d9",
       "eventId": "auto-e21b81a5acb198fa",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20017,20 +15489,42 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxbWcQ0uEG05vCyQOZ4AaABAg",
+      "externalId": "Ugy-aThZFpwPTUu3jPp4AaABAg",
       "date": "2026-09-22",
-      "text": "Bismillah semoga rezeki lancar🤲",
+      "text": "Bismillah bang buat bayar kontrakan dan ngasih orang tua gw udh mau jatuh tempo tgl 30 ini😢",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
-      "id": "bca78b74497c472d",
       "sentiment": {
-        "risk": 43.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 1.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-46de789cd66b4a86",
+      "id": "05e6ed6592ed3897",
+      "eventId": "auto-25cf03b0675f0fff",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwvloNYNtIsr5UxyNZ4AaABAg",
+      "date": "2026-09-22",
+      "text": "Bismillah buat berobat orang tua amiinnn",
+      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
+      "id": "9faa6d3eb8535e33",
+      "eventId": "auto-9850e3cd71c7ed68",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20042,15 +15536,37 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga terus nonton video Abang ini bisa dpt. Buat bayar hutang",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 1,
-      "id": "76ab271e50f8b57a",
       "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 64.0
       },
+      "id": "76ab271e50f8b57a",
       "eventId": "auto-bbfba1f63efa6b0d",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwNECkiYC-UH1GL9gx4AaABAg",
+      "date": "2026-09-22",
+      "text": "Bismillahirrahmanirrahim bang buat biaya lahiran anak ke 2 semoga ada rezekinya buat istri dan anak ku bng min❤",
+      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
+      "id": "43c154dcf8c1f278",
+      "eventId": "auto-eff74c204095220c",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20062,14 +15578,15 @@ const CREDIT_SENTIMENT = {
       "text": "Chnel nya makin rame lagi bang sehat selalu , udah di coba tapi ga ketemu ehehe",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 0,
-      "id": "d07e9a91601ebe9d",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "d07e9a91601ebe9d",
       "eventId": "auto-5ca1b4f96045827c",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20082,14 +15599,15 @@ const CREDIT_SENTIMENT = {
       "text": "Harus terhubung sama E-commerce dulu baru bisa aktif ya bang tolong dibalas 🙏",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 0,
-      "id": "717be819c5b8470f",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "717be819c5b8470f",
       "eventId": "auto-d75e70a47bcbcf24",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20097,32 +15615,33 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugwgpx_Hlz2Wa0jYgul4AaABAg",
+      "externalId": "UgzgoezvHIz3GwQr0c94AaABAg",
       "date": "2026-09-22",
-      "text": "Mantap bang..tetap semangat buat kontenya n banyak rezeki",
+      "text": "Hoak,ga bisa cari aktifasi fitur pinjaman dana kilat",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "09adfa5e6b0c7fdf",
+      "engagement": 9,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 44.4
       },
-      "eventId": "auto-46bee459c00a63c3",
+      "id": "d301bb547b250cc1",
+      "eventId": "auto-6f73975faf376572",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
-      "contentType": "video",
-      "externalId": "MX-5lEHt8zo",
+      "contentType": "comment",
+      "externalId": "Ugxoyu29IvqensGo-8V4AaABAg",
       "date": "2026-09-22",
-      "text": "NEKAT PINJOL AGAR TIDAK KALAH SAING DENGAN TETANGGA | Kartun Drama Animasi",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 144794,
-      "id": "8fc709e3c45075bf",
+      "text": "Hpus aja izin apk'a",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 2,
+      "id": "79dde7c36328db79",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20130,9 +15649,69 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-1e1efe494048c2bf",
+      "eventId": "auto-a2576a1449240c25",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgzUOLXc8FNPOIpsSs94AaABAg",
+      "date": "2026-09-22",
+      "text": "Kak cb bahas kemaren yg DC uang me menawarkan bayar pokok,tapi pas SDH dibayar malah mlh msh di datengi DC kerumh dng jumlah tagihan lebih banyak.mana yang harus di percaya dan bagaimana solusi terbaiknya.krn ternyata pembayaran pertma tidak masuk di apk tersebut",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 6,
+      "id": "0dcd69c8b1375606",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-50e0189b3a8d6b56",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "Ugz5hqQzRw9_UrHZD8t4AaABAg",
+      "date": "2026-09-22",
+      "text": "Kak,, saya galbay di shopee tp sy masih sering belanja di shopee,,, dgn cod,,tadinya akun saya dinonaktifkan tp sekarang udah dibuka lagi,,jadi sering saya pesen barang. gmana kak sarannya",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 7,
+      "id": "9bb022e642b1d1da",
+      "sentiment": {
+        "risk": 64.7,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-0ea612935604109b",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxwQCJd9dHZVnKaCmN4AaABAg",
+      "date": "2026-09-22",
+      "text": "Lagi galbay tp mau uninstal aplikasinya bingung no hp nya sdh tdk aktip.\nKawatir saat instal ulang tdk bisa login lagi",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 1,
+      "id": "b587a09563ef2b7b",
+      "sentiment": {
+        "risk": 64.7,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-4415a76f61ce9541",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
     },
     {
       "platform": "youtube",
@@ -20142,14 +15721,15 @@ const CREDIT_SENTIMENT = {
       "text": "Para ilat pelatmu kang😂😂,tambah semangat galbay q 😂😂",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 0,
-      "id": "a384d26e32d4bac3",
       "sentiment": {
-        "risk": 64.7,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 64.7
       },
+      "id": "a384d26e32d4bac3",
       "eventId": "auto-49f538711bb1e981",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -20157,92 +15737,155 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwDYovTK3EICYdVtaF4AaABAg",
+      "externalId": "UgwbixZBFFBbInOOCD14AaABAg",
       "date": "2026-09-22",
-      "text": "Semoga beruntung",
+      "text": "Sama kaya aku, kemaren mau ngajuin KPR eh malah keditek kredit macet pdhal gapernah galbay, bener saya pernah pinjol dan paylater tpi gapernah nunggak, lunas semua, tpi malah datanya jelek ada kredit macet😢",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 6,
+      "id": "44ca595b96a2aaea",
+      "sentiment": {
+        "risk": 75.2,
+        "label": "negative",
+        "negativeWeight": 3.6,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-8b04eed295844c52",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwA2mPo5iehyGN9Vot4AaABAg",
+      "date": "2026-09-22",
+      "text": "Saya instal ulang aplikasi, tapi di aplikasi tagihan nol apakah lunas?",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 6,
+      "id": "c96b41f4bfbd054c",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-d05b01bc51679ad7",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgzyW8cBnVAijXYVLEx4AaABAg",
+      "date": "2026-09-22",
+      "text": "Saya mau belanja di shope tapi memakai akun baru apakah boleh ?",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 14,
+      "id": "e8fbe2adcaf9a801",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-216596382885e77f",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxBbSReww5Djp2tKq54AaABAg",
+      "date": "2026-09-22",
+      "text": "Semangat GALBAY selamanya...✊️",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 8,
+      "id": "cc5a2e999a7b127a",
+      "sentiment": {
+        "risk": 59.1,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-949ea8e9cf18e662",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxlKvQh8H6neUzufqJ4AaABAg",
+      "date": "2026-09-22",
+      "text": "Semoga menang ❤❤\nKalo menang bisa beli buku tulis anak",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 1,
-      "id": "9af7380d91633ac2",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-45b89bb502762339",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzG7aGV4ZosERMuOpN4AaABAg",
-      "date": "2026-09-22",
-      "text": "Seru ih nemenin sahur aku🥰",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 3,
-      "id": "a71c92a56e172e85",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ca4e487bb156a036",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz951Y9oDJAI4EnHCR4AaABAg",
-      "date": "2026-09-22",
-      "text": "Tolong bang saya perlu biaya buat berobat ortu😢😢",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 1,
-      "id": "a902f4800f3eff83",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-34fb4248dc42f680",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyXQqrqBL51esLkXVx4AaABAg",
-      "date": "2026-09-22",
-      "text": "bismillah ya Allah semoga rezeki hamba.buat bayar anak sekolah bang",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 0,
-      "id": "d7e6fb133ae401d5",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-b2fd50ffc502f9a3",
+      "id": "8cdd2b7e3a0742a8",
+      "eventId": "auto-d9c34df740e8c166",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugxiah0vlIy_UAracd94AaABAg",
+      "externalId": "UgwedJdYY7_wius63fl4AaABAg",
       "date": "2026-09-22",
-      "text": "first. pertama kali nonton channel ini🎉",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 5,
-      "id": "31d8ac0eb95feb22",
+      "text": "bismilah semoga dapet buat bayar motor🤲🏻🤲🏻",
+      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
+      },
+      "id": "944982553f2c9fb2",
+      "eventId": "auto-d0edeb23faff907f",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgyYypyFGimIFaOTWzh4AaABAg",
+      "date": "2026-09-22",
+      "text": "bismillah rezeki hamba tuhan semoga menang",
+      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
+      "id": "7f513daf73b30cc2",
+      "eventId": "auto-ed85ba712eb326d8",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "Ugya5cchGTW_oCJLy5d4AaABAg",
+      "date": "2026-09-22",
+      "text": "kak maaf klo pihak 3 mba consult dari spaylater,apakah akan visit ke rumah daerah bdg?terima kasih yg udah jwb",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 15,
+      "id": "fe57704512467b2d",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20250,7 +15893,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-d0f99c00c0d6df5c",
+      "eventId": "auto-d7993c0c07d8cc54",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20262,14 +15905,15 @@ const CREDIT_SENTIMENT = {
       "text": "makasih infonya bang",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 0,
-      "id": "fa269b5262b50407",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "fa269b5262b50407",
       "eventId": "auto-2bac795b9267f546",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20277,62 +15921,22 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyBJ1s_e5vO2G2kldJ4AaABAg",
-      "date": "2026-09-22",
-      "text": "semangat bosku🎉",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "50bd6cab5e49d345",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-99d3078174c1651b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxfnklFOXCKDgjcs-J4AaABAg",
-      "date": "2026-09-22",
-      "text": "sukses cerita abang",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 2,
-      "id": "b8ce6db14041da20",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f286c4d5f2c297c6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw3bj931QvdskvgEcp4AaABAg",
+      "externalId": "UgwY7EkYzfm0199Yel54AaABAg",
       "date": "2026-09-23",
-      "text": "0",
-      "url": "https://www.youtube.com/watch?v=0O7ZUV5M2Io",
-      "engagement": 1,
-      "id": "978bf7b9d19ac743",
+      "text": "Akulaku 300ribu dtng gak soalnya  baru bgt galbay mau sebulan😅",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 12,
+      "id": "182c8fedb5cbd5d9",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 64.7,
         "label": "mixed",
-        "negativeWeight": 0.0,
+        "negativeWeight": 2.1,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-5feceb66ffc86f38",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-f8dda45674f717a0",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
     },
     {
       "platform": "youtube",
@@ -20357,12 +15961,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwVRjAbwVeXIAA4Acx4AaABAg",
+      "externalId": "UgzLzsdnBiKGroWzBO94AaABAg",
       "date": "2026-09-23",
-      "text": "Bismillah mudah mudahan ada rezeki nya buat anak pesantren",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "text": "Bismillah buat ngopiiii",
+      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
       "engagement": 0,
-      "id": "9192ab6652c545c0",
+      "id": "515d6dc6389b6f05",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20370,6 +15974,27 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
+      "eventId": "auto-d26aed6afea8e70a",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwVRjAbwVeXIAA4Acx4AaABAg",
+      "date": "2026-09-23",
+      "text": "Bismillah mudah mudahan ada rezeki nya buat anak pesantren",
+      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
+      },
+      "id": "9192ab6652c545c0",
       "eventId": "auto-a0417b4dd08c964b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20397,12 +16022,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzZ-Gg_TMW8auhGfD94AaABAg",
+      "externalId": "UgxT3azBp86nm56n3bF4AaABAg",
       "date": "2026-09-23",
-      "text": "Bismillah, Alhamdulillah",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
+      "text": "Bismillahirrahmanirrahim Buat Anak Om😊😊",
+      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
       "engagement": 0,
-      "id": "94564d7445d065d2",
+      "id": "991cd70f7d8e8fd0",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20410,7 +16035,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-66b23b13a97bbc15",
+      "eventId": "auto-34ca896940a10c9b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20422,14 +16047,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillahirrahmanirrahim buat biaya anak sakit semoga terkabul amin",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
-      "id": "60df1b95b78754ae",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "60df1b95b78754ae",
       "eventId": "auto-6c69b1602f3a8761",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20442,14 +16068,15 @@ const CREDIT_SENTIMENT = {
       "text": "Butuh dana 6jt bos buat bayar utang soalnya Waktu itu pinjam karena butuh buat benahin kandang bebek Peking",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 0,
-      "id": "ede87afb19c70e1e",
       "sentiment": {
-        "risk": 57.0,
-        "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 57.0
       },
+      "id": "ede87afb19c70e1e",
       "eventId": "auto-6fde74d0855edaff",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20462,14 +16089,15 @@ const CREDIT_SENTIMENT = {
       "text": "GK bisa bang pasdioencarian aktivasi fitur pinjaman dana kilat dia GK mau nyari diem bae",
       "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
       "engagement": 0,
-      "id": "6dc1b33c7091e2c8",
       "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 44.4
       },
+      "id": "6dc1b33c7091e2c8",
       "eventId": "auto-5b20aff69a08db37",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20477,52 +16105,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugx-CQX8EVu6ep7Bl054AaABAg",
+      "externalId": "UgzbzoFJXJsWHNDxThd4AaABAg",
       "date": "2026-09-23",
-      "text": "Hadir abangku smoga sehat selalu",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "6a86bfeb5ad6a0d9",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-4f2130b1f540b40c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzEMXq2DhvnsuGqrjd4AaABAg",
-      "date": "2026-09-23",
-      "text": "Istri kayak gitu mening buang aja bang nyusahin😢😅😂😅😂😅😂😅",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 0,
-      "id": "c2480a8ab02458bd",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-b953bc5b503ea9e8",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz7yVY5N1z7lbIB5OR4AaABAg",
-      "date": "2026-09-23",
-      "text": "Ok baik bang.trmksh",
+      "text": "Kak semoga aku yang menang kak buat biaya masuk kerja kak",
       "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
       "engagement": 0,
-      "id": "506071b386190c58",
+      "id": "f21f91cd9732d35c",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20530,67 +16118,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-8333950cbe413ab6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzqRx9HSg_7Xq5IrO94AaABAg",
-      "date": "2026-09-23",
-      "text": "Oke bang saya siap",
-      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
-      "engagement": 0,
-      "id": "fc042735bf753b61",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-4837c26b739ba223",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxoQkvdx--TbA-X7vh4AaABAg",
-      "date": "2026-09-23",
-      "text": "Perdana lihat Chanel ini",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 2,
-      "id": "7c53e3f61cf32a10",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d047c29a493e5067",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwlU6dPp6qKggDfWkN4AaABAg",
-      "date": "2026-09-23",
-      "text": "Saking sibuknya pingin terlihat kaya ,sampek Daster nya bu marni lupa gak ganti sampek berminggu minggu 😂😂",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 2,
-      "id": "58d4e926ab9aa21d",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a778d0de93f8ad37",
+      "eventId": "auto-cc1132d897b4c900",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20602,14 +16130,15 @@ const CREDIT_SENTIMENT = {
       "text": "Saya baru cek status kredit saya di cermati semua nya jelas disana total hutang 13 JT penilaian kol 5\nYang dari tahun 2021 - 2023 tidak ada lagi ..yg ad di 2024,2025,2026 \nNunggu asuransi mudah2 an 3 bln bisa minjol lagi",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 0,
-      "id": "6b4726b04a103d0e",
       "sentiment": {
-        "risk": 64.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 64.0
       },
+      "id": "6b4726b04a103d0e",
       "eventId": "auto-8b2ff6320d703558",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20617,72 +16146,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwCpMZdzNs43GG3HNx4AaABAg",
+      "externalId": "Ugxzu0v4WFwaTQ_xnUd4AaABAg",
       "date": "2026-09-23",
-      "text": "Semangat terus bg ngonten nya",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "b4d37a44685385ef",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7c6a99c132463a9f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyiiKC0fMFdWi_IYf94AaABAg",
-      "date": "2026-09-23",
-      "text": "Semangat terus bng😊",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 1,
-      "id": "acab4cef67f7e021",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-57f23178886ba34a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx5bfIv-K8T7wRrb5J4AaABAg",
-      "date": "2026-09-23",
-      "text": "Semoga beruntung bagi bagi nya🙏",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "2839c0c4699e8783",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a9f4090572e87754",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxKe5TxEy1zeUc8WqJ4AaABAg",
-      "date": "2026-09-23",
-      "text": "Semoga beruntung...amiinn",
+      "text": "Saya pusing mau kebutuhan seragam and alat2 sekolah anak saya..",
       "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
       "engagement": 0,
-      "id": "142d2790c98e3868",
+      "id": "9435ba3da80ac917",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20690,69 +16159,29 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-5e6aa3e4e2e0784e",
+      "eventId": "auto-864161cea06fa97a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzodCwXhmd5f1wHXbR4AaABAg",
+      "externalId": "Ugw83MReaex8MG7xTQ94AaABAg",
       "date": "2026-09-23",
-      "text": "Semoga dapat buat modal usaha kecil\"an",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 0,
-      "id": "0d1194336207a6c3",
+      "text": "Sekarang makin gila teror2 di pinjaman SAMIR. ADA KAMI. SPAY. KRDWAN. Terutama SAMIR kk sya bkn galbay tapi cuma jatuh tempo. Tapi TEROR Nya ANCAMAN NYA. SUPER LUAR BIASA. SOLUSI KK",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 8,
+      "id": "747ee9c0d5ec2e34",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "risk": 92.7,
+        "label": "negative",
+        "negativeWeight": 6.9,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-dcea2206bcbc61db",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyCaVz62lhJ-Vfj3cF4AaABAg",
-      "date": "2026-09-23",
-      "text": "Semoga sukses bg.sehat selalu murah rezeky.semoga cepat berkembang youtube nya.amin",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "774dded0f42720f4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7e15cd63f17a1be0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxBD7oAYGqr9emo_CR4AaABAg",
-      "date": "2026-09-23",
-      "text": "Susah bang, udah aku coba kemarin sebelum nonton video ini gaada yang cair",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 0,
-      "id": "b7d5821337f1ae7b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c3e09ceb4b78b8bf",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-e14a55c6283f12f7",
+      "eventType": "consumer_harm",
+      "eventSeverity": 0.86
     },
     {
       "platform": "youtube",
@@ -20761,7 +16190,7 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-23",
       "text": "Tanpa BI CHECKING?! Pinjol Mudah Cair 2026 ke DANA - Pinjol Data Pinjaman Online Langsung Cair",
       "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
-      "engagement": 18151,
+      "engagement": 18306,
       "id": "dd7a854e411ca5b9",
       "sentiment": {
         "risk": 44.4,
@@ -20777,39 +16206,20 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyTbBwyCrTx8MX6EGR4AaABAg",
-      "date": "2026-09-23",
-      "text": "ada jg org mcm ni",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 1,
-      "id": "1d02a2c81568b6ef",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-13a1154b6654ac90",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgwzSmA011RXY5-Q7dZ4AaABAg",
       "date": "2026-09-23",
       "text": "bang tolong bantu syaa dong bang saya belum bayar kostan belum bayar biaya sekolah dirantau sendiri bang😢",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 2,
-      "id": "1fe590e69daace23",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "1fe590e69daace23",
       "eventId": "auto-bcfa5b74ad157896",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20817,20 +16227,20 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugwc_1mY7-qg6Hi-EYd4AaABAg",
+      "externalId": "Ugw-IcToVpPNqOUJFXx4AaABAg",
       "date": "2026-09-23",
-      "text": "bg kalo belum terhubung akun bisa keluar ga itu pinjamannya bg",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
+      "text": "bismillah bang lagi butuh uang buat bayar cicilan motor",
+      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
       "engagement": 0,
-      "id": "da91fc03c0e8634a",
+      "id": "0cb95a51c1c0afdd",
       "sentiment": {
-        "risk": 44.4,
+        "risk": 50.0,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
+        "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-457806dace487ba9",
+      "eventId": "auto-5638e22986d96dda",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20857,62 +16267,63 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
+      "externalId": "Ugw5e1fujrstRGOzc9l4AaABAg",
+      "date": "2026-09-23",
+      "text": "hadir terus walau gk paling awal🙏🏼🙏🏼",
+      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
+      "engagement": 1,
+      "id": "64e36681714b3773",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-9a5a5d5481dca03f",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgzLfZYnGQtEBnbwF3Z4AaABAg",
+      "date": "2026-09-23",
+      "text": "info aja mba desi.hp sekarang udah canggih2 hp bisa ko di lock semua supaya g bisa kedetek sama apk.",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 2,
+      "id": "848883fdcdbe9214",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-47c7c78664d2b376",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
       "externalId": "Ugz9dLja_zQ73Q6z0Xd4AaABAg",
       "date": "2026-09-23",
       "text": "iya bang, saya juga. pas lebaran butuh duit malah dikasih duit tambahan 3 juta.hbs gitu mumet bang. ga bisa bayar😅.akhirnya galbay udah 6 bulan dari lebaran kmrn",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 4,
-      "id": "990425f9c9e2bc90",
       "sentiment": {
-        "risk": 64.7,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 64.7
       },
+      "id": "990425f9c9e2bc90",
       "eventId": "auto-54c47b2ac3c5ae01",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxblj6cojywmbAii1x4AaABAg",
-      "date": "2026-09-23",
-      "text": "minn ide yg lain dung,ini udh pernh nontn di chanel lain",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 27,
-      "id": "9bcc3081e55027fd",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-16b536fab8c33ce9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy2srYxvTQ-OLc5btB4AaABAg",
-      "date": "2026-09-24",
-      "text": "Aku sekarang mikir tetangga lagi tambah pusing 😂😂😂😂",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 0,
-      "id": "b7ad394ab0e0d2f1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-4e629a27bae165b0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
@@ -20942,14 +16353,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bang saya didatengin fc kp baru 12hari telat mau bayar sudah ga sangup..sya jelaskn keadaann saat ini",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 0,
-      "id": "dbdca98d73890da2",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "dbdca98d73890da2",
       "eventId": "auto-bf1350a11f59c3cb",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -20957,12 +16369,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzjHoJ_-FSOG7LZ8j94AaABAg",
+      "externalId": "UgznYZG27Wt7U08Nmbx4AaABAg",
       "date": "2026-09-24",
-      "text": "Bismilah",
-      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
+      "text": "Bismillah ...\nSemua ga dpet \nLagi nganggur 6 bulannn",
+      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
       "engagement": 0,
-      "id": "6ca2b49ee7813836",
+      "id": "bfb1da574f47cc39",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -20970,7 +16382,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-7df8a875d0598835",
+      "eventId": "auto-0b403afa16472001",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -20991,26 +16403,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-56cacce104a68f8b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyJdBzLto5AInyrfeR4AaABAg",
-      "date": "2026-09-24",
-      "text": "Bismillah bang semoga dpt, sehat selalu dan lancar rejekinya",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "34f841ea8c9e0783",
-      "sentiment": {
-        "risk": 43.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 1.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-aa6a805bc460ffb0",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21062,7 +16454,28 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga ada rezeki dari ABG buat istri yg lagi hamil",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
+      },
       "id": "0ca2ceb4df8231ae",
+      "eventId": "auto-6370d5c2310a00f0",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "Ugx3Vk-RWXQIoPUY2sR4AaABAg",
+      "date": "2026-09-24",
+      "text": "Bismillah semoga aku yang menang kak buat biaya masuk kerja kak",
+      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
+      "engagement": 0,
+      "id": "d24eeeeefc22020b",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -21070,7 +16483,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-6370d5c2310a00f0",
+      "eventId": "auto-8cc818192dd13117",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21102,14 +16515,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga dapet aku punya pinjol telat 5hr 😭",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
-      "id": "3956f04d51521f74",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "3956f04d51521f74",
       "eventId": "auto-fa3c04a2545c9dca",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -21122,14 +16536,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillahirrahmanirrahim semoga dapat untuk uang makan",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 1,
-      "id": "63cbfc135dd245ab",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
       },
+      "id": "63cbfc135dd245ab",
       "eventId": "auto-00234c0555cf3195",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -21137,12 +16552,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxW0GeEWUAI2i8B_J14AaABAg",
+      "externalId": "Ugygtk13O3_-uQ7cv3B4AaABAg",
       "date": "2026-09-24",
-      "text": "Haii la marni marniii. Seandainya kamu tidak mengikut rasa iri dan cemburu pada tetangga, tentu kamu hdup bahagia tanpa rasa sakit hati lalu hancur semuanya.",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
+      "text": "Hadir bos,untuk kebutuhan sehari-hari",
+      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
       "engagement": 0,
-      "id": "c2815a4b36b7bf9a",
+      "id": "bb1ee8b65331a1fe",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -21150,7 +16565,67 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-69a00b8d95bdc94f",
+      "eventId": "auto-eee173c7ab1ce480",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgzBC8sWEj-24v_1mcx4AaABAg",
+      "date": "2026-09-24",
+      "text": "Ini pelajaran buat kita semua . \nGalbay jaln 1,1 nya . fokus cari uang untuk makan , badan sehat pikiran sehat . jgn pikir nanti kredit di bank tdk bisa . mulai sekarang jgn pinjol jgn kredit2 . \nCari kerja lebih giat untuk diri sendiru .\nDc telpon maki2 . maki balik . \nKita lagi pusing di telpon maki2 . enak saja 😢😅",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 3,
+      "id": "3ab40e1e0189ae5d",
+      "sentiment": {
+        "risk": 64.7,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-a471204db9c48174",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgzP8RJvfSN_666PYt14AaABAg",
+      "date": "2026-09-24",
+      "text": "Mbak klo di aplikasi kita GK ada catatan pinjaman trus tiba2 ada yg datang bilng kita punya hutang diaplikasi tersebut itu gmn ya, dan apa yg harus dilakukan, mohon dijawab ya mbak Desi 🙏",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 0,
+      "id": "948d152bf8b54c92",
+      "sentiment": {
+        "risk": 58.4,
+        "label": "mixed",
+        "negativeWeight": 2.0,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-997e0d1fa3aa755d",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwGGR1EtdA4LMGsEdt4AaABAg",
+      "date": "2026-09-24",
+      "text": "Semoga beruntung , buat bayar hutang 🙏🙏",
+      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
+      "engagement": 0,
+      "id": "b385d97fb7075f91",
+      "sentiment": {
+        "risk": 64.0,
+        "label": "mixed",
+        "negativeWeight": 2.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-1b0dced50eb34a6f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21161,7 +16636,7 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-24",
       "text": "TANPA BI CECKING! PINJOL MUDAH CAIR KE DANA 2026 - PINJOL DATA PINJAMAN ONLINE LANGSUNG CAIR",
       "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 17255,
+      "engagement": 17349,
       "id": "771028051ff28e78",
       "sentiment": {
         "risk": 44.4,
@@ -21171,66 +16646,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-f004b55e0c0ac1c4",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyjtK7yivmrkuVhoAF4AaABAg",
-      "date": "2026-09-24",
-      "text": "Terimakasih yang udah nonton✨kalau kalian punya tetangga modelan kaya gini gimana?😂",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 5,
-      "id": "394695d721fe49ed",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-28dce0dfb6e358f1",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzMpK6imeZ0M_n5Zeh4AaABAg",
-      "date": "2026-09-24",
-      "text": "Tonggone Yo kompor bleduuukkkk",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 0,
-      "id": "7452d2118d78f6ff",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-12ec6d4016938812",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxmuNCOF-ev6BggzTh4AaABAg",
-      "date": "2026-09-24",
-      "text": "Untuk memperbaiki hp.",
-      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 0,
-      "id": "42add1405e7dd3de",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-77fd9beefc619a98",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21251,46 +16666,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-2a2dae5f5d189059",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz3FijgfCYUPet9TUV4AaABAg",
-      "date": "2026-09-24",
-      "text": "amin",
-      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 0,
-      "id": "2cd475b0663a8a5f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-29a669940f66f7d5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw5mft94w5ONSzgF7R4AaABAg",
-      "date": "2026-09-24",
-      "text": "bismilah lagi butuh bgt buat berobat adik🤲",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 0,
-      "id": "07aea2246c3486d0",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6b6668a43bb30bca",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21337,6 +16712,26 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
+      "externalId": "UgypZ1Cha7rvWfTJXQJ4AaABAg",
+      "date": "2026-09-24",
+      "text": "iya bener klo lagi galbay jgn di install ulang lagi, saya ngetes install ulang adakami malah kena teror lagi...",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
+      "engagement": 4,
+      "id": "ef38f8227ffca2f9",
+      "sentiment": {
+        "risk": 82.2,
+        "label": "negative",
+        "negativeWeight": 4.6,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-1eec10d948d3fc1d",
+      "eventType": "consumer_harm",
+      "eventSeverity": 0.86
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
       "externalId": "UgwZdwHdfyORZz3AzPJ4AaABAg",
       "date": "2026-09-24",
       "text": "mantap bang,, semoga bisa jadi berkah bagi yang membutuhkan",
@@ -21357,39 +16752,20 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxXGZQtIXZKAvcEJ154AaABAg",
-      "date": "2026-09-24",
-      "text": "tetangga ga bnr mlh jd kompor",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 1,
-      "id": "8cb1759536db65fc",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c0a91d42ec107dd6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgxIV7g1ccOBMWhjxid4AaABAg",
       "date": "2026-09-25",
       "text": "Aku mungkin galbay sekitar 35 juta kurleb di semua pinjol. Kalau ada rezeki rencana mau lunasin yang biasa ngasih pinjaman limit gede dulu yang ku utamakan untuk dilunasin.",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 0,
-      "id": "c17cc167ccfefcff",
       "sentiment": {
-        "risk": 59.1,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 59.1
       },
+      "id": "c17cc167ccfefcff",
       "eventId": "auto-b812902ee331cd85",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
@@ -21442,14 +16818,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah om buat benerin atap pelafon bolong kalo hujan bocor gede, butuh dana 1 juta om 😢😢😢",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
-      "id": "d743d18602a0ce03",
       "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 64.0
       },
+      "id": "d743d18602a0ce03",
       "eventId": "auto-52ff0319f3156cf9",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -21482,14 +16859,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillahirrahmanirrahim semoga dapet uang nya buat renovasi kamar 😊",
       "url": "https://www.youtube.com/watch?v=loNri68L03s",
       "engagement": 0,
-      "id": "739698e975f02d31",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "739698e975f02d31",
       "eventId": "auto-bae37134dc32df28",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -21517,52 +16895,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwT7JjzQ2OoGFofulp4AaABAg",
+      "externalId": "UgyRzk3QWGxKQ0U0eJx4AaABAg",
       "date": "2026-09-25",
-      "text": "Bnyak2 istighfar marni hadeuh😂😂😂capek amt hidup",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 2,
-      "id": "eab294c3b5c2df5b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-90f226a985fd4e8c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzS4xh_Gi_s6gaBonN4AaABAg",
-      "date": "2026-09-25",
-      "text": "Dua tetangganya jg tukang kompor2 in😂",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 0,
-      "id": "f2291d8f9e432093",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-78e216d99675e5d8",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwZYdsx9GLCKHQVpy54AaABAg",
-      "date": "2026-09-25",
-      "text": "Mantap bang",
+      "text": "Hadir bang, saya cuma butuh dana hanya untuk bayar uang kuliah sama belanja sja sih 😢🙌",
       "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
       "engagement": 0,
-      "id": "975fe2515943e899",
+      "id": "298840635af7041b",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -21570,7 +16908,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-b52321e37d8d8291",
+      "eventId": "auto-5a21c473f6d0fd20",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21597,52 +16935,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugy0kM7kyFiF4RUe3XF4AaABAg",
+      "externalId": "Ugw06SAanVVLrfMpl1F4AaABAg",
       "date": "2026-09-25",
-      "text": "Pocong nagih pinjol 😂",
-      "url": "https://www.youtube.com/watch?v=0O7ZUV5M2Io",
-      "engagement": 1,
-      "id": "14cc114bb8a9708c",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-8d144387f88c2c1a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzCEGsNh3pjyyLE5714AaABAg",
-      "date": "2026-09-25",
-      "text": "Tetangganya toxic semua njir 😂",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 2,
-      "id": "0f4e8e5de01fa0b8",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c1fc18a68b8c7bb7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyFPpCs5UGjem_HcMB4AaABAg",
-      "date": "2026-09-25",
-      "text": "doa subuh bissmillah",
-      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
+      "text": "Semoga rejeki aku lewat jalan ini aamiin",
+      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
       "engagement": 0,
-      "id": "e666b271d928ef93",
+      "id": "cc0663db9c097968",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -21650,27 +16948,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-41c4aa284b0e7e67",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgznF47XzSBnuHoKjit4AaABAg",
-      "date": "2026-09-25",
-      "text": "mas bisa bantu aku ga mas aku abis kehilangan dompet,dan ada angsuran motor yang harus aku bayar tapi malah ilang uang nya🙏🙁",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 0,
-      "id": "b04f14c2aae46c10",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ae3fabec0a739a80",
+      "eventId": "auto-2b06872a2f1d20a6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21681,176 +16959,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-26",
       "text": "3 Aplikasi Pinjaman Online Langsung Cair 2026 - Pinjol Mudah Cair Ke Dana TANPA BI CHECKING",
       "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 35492,
+      "engagement": 36887,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 44.4
+      },
       "id": "955f6ac0fdf947d6",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-7770eb8e8f7c4eef",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugwak_qSadZqtSHp9ct4AaABAg",
-      "date": "2026-09-26",
-      "text": "Alhamdulillah",
-      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 0,
-      "id": "ade754399e3fda39",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-30346ecf2624fb5d",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxri38CyJwiadWUgkJ4AaABAg",
-      "date": "2026-09-26",
-      "text": "Amin",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "bc18340951fbb60a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-29a669940f66f7d5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyXww3wVlwn_fEMVsV4AaABAg",
-      "date": "2026-09-26",
-      "text": "Amin",
-      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 0,
-      "id": "3358170cb800f23c",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-29a669940f66f7d5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyKCD5ti-AIV76hPPh4AaABAg",
-      "date": "2026-09-26",
-      "text": "Aminn",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "ce3e4a475ff6d585",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fbc5bf4f786dabad",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxbqw6so8BKK9rdtR94AaABAg",
-      "date": "2026-09-26",
-      "text": "Assalamualaikum bang semoga dapat untuk perbaikan motor",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 2,
-      "id": "46e1050e77646c3e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-947a60af5d2faa16",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxspgrLDbTujDtoe7B4AaABAg",
-      "date": "2026-09-26",
-      "text": "Bang klw nor dana ny uda gak AKTIF bang ap ka bisa soalny nor dana aq uda hilang",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "8a342e8b5f956973",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-165603b108a8557d",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzrrYRd6kf4C0Y0QKF4AaABAg",
-      "date": "2026-09-26",
-      "text": "Baru pertama ngikutin.. nasip rakyat biasa jdi begini , minta bantu pemerintah yg ada selak mati wkwk otw pinjem",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "9dde917c409a47b6",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0e61446ce64f57c6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwO20_4GIx5h9ZIHFF4AaABAg",
-      "date": "2026-09-26",
-      "text": "Betul kah itu bang bisa",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 1,
-      "id": "b873f88b0f3590cb",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-62a33d816e83ce32",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21871,66 +16990,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-6db47746bb2ae4f6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxTqHbNfAsgjvL56Zt4AaABAg",
-      "date": "2026-09-26",
-      "text": "Bismillah",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "32be0c90f4df5e45",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzloQMYX4E4o1PIhJR4AaABAg",
-      "date": "2026-09-26",
-      "text": "Bismillah",
-      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 0,
-      "id": "86791fbdbae2f440",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxL1pdTaTqJBHHbrtp4AaABAg",
-      "date": "2026-09-26",
-      "text": "Bismillah , semoga dapat untuk bayar cicilan yang sudah jatuh tempo besok 😥😥",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "beb0bbc157d03611",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0c2e93f3896b5985",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -21977,12 +17036,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugyebx3-dKBsn7pSg2R4AaABAg",
+      "externalId": "UgweK6bRh33JBteS4D14AaABAg",
       "date": "2026-09-26",
-      "text": "Bismillah menag ❤❤❤🎉🎉🎉",
+      "text": "Bismillah lagi bu bgt semoga dpt dana kaget bg",
       "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
       "engagement": 0,
-      "id": "791856bcb01ed112",
+      "id": "0ee8536f8952bcf5",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -21990,47 +17049,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-f70a462ba5898b0a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz1834HPNCUlp_Bedh4AaABAg",
-      "date": "2026-09-26",
-      "text": "Bismillah semoga dapat buat bayar angsuran",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "14a7f5d4948b1081",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-63624a2ad0b1b3cd",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwopXRlk1SjgQdo1OZ4AaABAg",
-      "date": "2026-09-26",
-      "text": "Bismillah, mama lagi skit dirs bingung cari uang daftar pinjol sana sini gak acc😢",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "9f72d74c564b74cf",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-eccb18787847aabc",
+      "eventId": "auto-6bc9aab17f03a773",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22061,7 +17080,7 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-26",
       "text": "Cara Pinjam Uang Di Dana Langsung Cair | Cara Pinjam Saldo Dana Tanpa Dana Paylater",
       "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 17642,
+      "engagement": 17685,
       "id": "4cd497ac1562144c",
       "sentiment": {
         "risk": 50.0,
@@ -22077,31 +17096,11 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "video",
-      "externalId": "X0_6MCUl0n4",
-      "date": "2026-09-26",
-      "text": "Cara Pinjam Uang di Dana | Cara Pinjam Saldo Dana",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 25778,
-      "id": "fc10a52de5536973",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d2e657cdd636f9e3",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "video",
       "externalId": "ua3qYmBT9UM",
       "date": "2026-09-26",
       "text": "Galbay Pinjol #pajak #tax #menterikeuangan #kemenkeu #beritapajak",
       "url": "https://www.youtube.com/watch?v=ua3qYmBT9UM",
-      "engagement": 16627,
+      "engagement": 16664,
       "id": "2090910b9b052c7e",
       "sentiment": {
         "risk": 64.7,
@@ -22117,160 +17116,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzJmjLQQYo1UQG5p194AaABAg",
-      "date": "2026-09-26",
-      "text": "Hadir bang siap",
-      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
-      "engagement": 0,
-      "id": "30f973b0f5413d10",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-66f55f451efee6d5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxjrRtZzw51dTh7qxp4AaABAg",
-      "date": "2026-09-26",
-      "text": "Hadir bang, sehat sll, smoga dapet bismillah 🤲",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 2,
-      "id": "6c01dad9e569817a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-40c15135641e7351",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyptBP96VkuGl356Bh4AaABAg",
-      "date": "2026-09-26",
-      "text": "Iya semoga jdi berkah",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "a1abf5e9543e9acf",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a489fb5676368261",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugzr9T1yq8w2QATWMcp4AaABAg",
-      "date": "2026-09-26",
-      "text": "Kak semoga aku yang menang kak buat biaya masuk kerja kak semoga ini beneran nyata",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 1,
-      "id": "7ff1dbca823951db",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-cc1132d897b4c900",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgzxMkqjpRI7g8h-Ol54AaABAg",
       "date": "2026-09-26",
       "text": "Mau saldo dana gratis seperti 10 Nama Pemenang di video?\nBales pin komentar ini, kasih tau kebutuhan untuk apa👇 \n\nALTERNATIF PINJOL : \n\n1️⃣ Daftar doang, Dapat Rp100.000\nhttps://s.id/DanaGratis1\n2️⃣ Daftar doang, Dapat Rp180.000\nhttps://s.id/DanaGratis2\n3️⃣ Daftar doang, Dapat Rp340.000\nhttps://s.id/DanaGratis3\n4️⃣ Daftar doang, dapat Rp160.000\nhttps://s.id/DanaGratis4",
       "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
       "engagement": 38,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
+      },
       "id": "35dbee992e5c1f41",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-a2c6befd9f888363",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy323Sw33eu7M-1Ol54AaABAg",
-      "date": "2026-09-26",
-      "text": "Mudah mudahan ada rejeki nya ,🤲🤲",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "74981bae86db3d8a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0664a66744f5dfd9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyEJxGNQUu4Zm427j54AaABAg",
-      "date": "2026-09-26",
-      "text": "Olah Sri Sri nama nya juga orang kek dia itu udah aplikasi pinjaman online nyari pekara hih Sri kalo aku jumpa orang Dari pinjaman online itu ku tampar aja buat apa nagih pinjaman dia pikir ngak Tau kehidupan orang sekarang lagi mlarat 🤦🤦🤦🤦🤦🤬🤬",
-      "url": "https://www.youtube.com/watch?v=8nHzDZ74suo",
-      "engagement": 3,
-      "id": "788cf39a526c646d",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-68889ae3e5acfe02",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "video",
-      "externalId": "8nHzDZ74suo",
-      "date": "2026-09-26",
-      "text": "PINJOL VISIT KAMPUNG MAK BETI | #makbeti #makbetiterbaru #makbetiterbaru2026 #filmmakbeti #beti",
-      "url": "https://www.youtube.com/watch?v=8nHzDZ74suo",
-      "engagement": 95485,
-      "id": "b3e3cb3efe70e2d7",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a8face81b9a061da",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22297,86 +17157,6 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzBRTxdwLIQ-6Veck54AaABAg",
-      "date": "2026-09-26",
-      "text": "Selalu setia bang nungguin video terbaru",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "fcbc8a56c097be11",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-956314ca56758fd2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxOAnrGErfXN4-OOo54AaABAg",
-      "date": "2026-09-26",
-      "text": "Semangat bang, terbaik😊",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "dc561a7e74c8d28b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ad4851a901fbff4f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz8jt984pysSdiw-OZ4AaABAg",
-      "date": "2026-09-26",
-      "text": "Semangat terus bang makin rame terus  chenel nya",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "5c149d4628be106d",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0ec4b21306d8354f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw8eGjemNZ6TODFuqF4AaABAg",
-      "date": "2026-09-26",
-      "text": "Semoga dapat buat modal usaha",
-      "url": "https://www.youtube.com/watch?v=MtrhjA0RdKo",
-      "engagement": 0,
-      "id": "e1401f36115b63aa",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-12e6164ea9d3483b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgxMr9kpT7rniSOOIs54AaABAg",
       "date": "2026-09-26",
       "text": "Semoga rejekinyah aku di bulan ini buat bayar kontrakan",
@@ -22397,52 +17177,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugw9uAE1090GFaM5Hh94AaABAg",
+      "externalId": "Ugw_CtZIgyLzR-dzkeR4AaABAg",
       "date": "2026-09-26",
-      "text": "Smg dijauhkan dr hutang piutang....amin",
-      "url": "https://www.youtube.com/watch?v=ua3qYmBT9UM",
-      "engagement": 3,
-      "id": "2d83d0d9c75fe9b7",
-      "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-929016e8fa2324cd",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzVbs28lHbc_qQSSIN4AaABAg",
-      "date": "2026-09-26",
-      "text": "Sukses selalu sehat terus bang semoga info yang abang buat menjadi amal aamiin\n\nBismillah untuk bantu anak sekolah tk",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 2,
-      "id": "eb40a1d8bd33a1e3",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fe11ae4021a198ec",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgySDB-W1VJr3W8p4-d4AaABAg",
-      "date": "2026-09-26",
-      "text": "bismilah buat bayar sekolah anak",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
+      "text": "Ya allah buat bayar seragam olahraga dan buku anak sekolah",
+      "url": "https://www.youtube.com/watch?v=C_JAAnprm-s",
       "engagement": 0,
-      "id": "73738112809c2ee7",
+      "id": "b3466f5b540491f9",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22450,107 +17190,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-f155a7abac2b2fc6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxWcuQVrZP0ZssTpjx4AaABAg",
-      "date": "2026-09-26",
-      "text": "bismillah semoga dapat bang buat kebutuhan sehari hari 😇",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 5,
-      "id": "585e24d095e0e131",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6451508eedad5288",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx6aOLRfKCrrVtgJ994AaABAg",
-      "date": "2026-09-27",
-      "text": "Akhirnya ada video yg gak ada iklannya",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 32,
-      "id": "90fc0ec57f602984",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c9a931386e8f97eb",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzShjv4L6RDBUDRgTx4AaABAg",
-      "date": "2026-09-27",
-      "text": "Akhirnya bukan iklan",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 9,
-      "id": "388629b75e77fc7e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3b11d8116be427fc",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw2rSeu1O3eB5ebk6V4AaABAg",
-      "date": "2026-09-27",
-      "text": "Alasan gamau pinjol, serem bgt",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "02a78192f53cdc8d",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-02ccfdee495da123",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzrtRYRwDKYyvshaTh4AaABAg",
-      "date": "2026-09-27",
-      "text": "Aminnn",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "27d44ee7aedb8fa6",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-de869e2e71a4e6ba",
+      "eventId": "auto-5d3e7b4e7a033df9",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22562,37 +17202,18 @@ const CREDIT_SENTIMENT = {
       "text": "Anjay mau coba lagi udah susah di ACC siapa tau ada yang tau gampang ACC kawan....\nMau main galbay lagi tapi data udah busuk bener",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 0,
-      "id": "6fbb5546ca61a2d0",
       "sentiment": {
-        "risk": 64.7,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 64.7
       },
+      "id": "6fbb5546ca61a2d0",
       "eventId": "auto-36bf1d3e5cd4a6fc",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyFENJ9M8fytCPWsD54AaABAg",
-      "date": "2026-09-27",
-      "text": "Bagaimana cara pinjam uang undodana .sedangkan  spam nawarin berupa barang sedangkan saya butuh dana cash",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 3,
-      "id": "0c52952deeb106c4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-40f658016f82c6ba",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
@@ -22602,14 +17223,15 @@ const CREDIT_SENTIMENT = {
       "text": "Betul tolong para pakar dan pejabat tolong suarakan hapus semua pinjol yg membebani rakyat",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 73,
-      "id": "d62e9c3fff60e79c",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "d62e9c3fff60e79c",
       "eventId": "auto-ff51d65b19e0bba8",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -22637,6 +17259,46 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
+      "externalId": "UgxuiYzw5v2-ooCzovd4AaABAg",
+      "date": "2026-09-27",
+      "text": "Bismilah buat sekolah anak dan biaya keluarga",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
+      "engagement": 0,
+      "id": "a520a3d6e65516a9",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-d727415f6cfd6af9",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwlkqJGzupoFaQLZKx4AaABAg",
+      "date": "2026-09-27",
+      "text": "Bismilah semoga dapat buat beli sepatu anak 🤲",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "engagement": 0,
+      "id": "8257d794c8167100",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-c7f222e6aa37a479",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
       "externalId": "UgyRbR8uFBNB4vxeLCh4AaABAg",
       "date": "2026-09-27",
       "text": "Bismilah, semoga berkah orang baik🤲",
@@ -22651,46 +17313,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-1738aeabea6ea432",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz4RFr8jgLNekdjSqh4AaABAg",
-      "date": "2026-09-27",
-      "text": "Bismillah buat bayar BPJS anak saya bang lagi sakit panas muntaber🙏",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "d3b8cedab2cce4d2",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a9c3eb2e6be19d62",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwC9pVskVd9Dcazbo14AaABAg",
-      "date": "2026-09-27",
-      "text": "Bismillah buat bayar kontrakan yang dah numpuk 3bln😢",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 0,
-      "id": "6822e15f3b53d3fc",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-976829732d7a0a7f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22717,12 +17339,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzGixQmYuo5Jl4_YRR4AaABAg",
+      "externalId": "UgzcGX5MdCMeG0ybbNp4AaABAg",
       "date": "2026-09-27",
-      "text": "Bismillah buat ongkos nyari kerja🙏🙏🙏🙏🙏",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
+      "text": "Bismillah buat biaya berobat ibu mertua yg lgi di rumah sakit ❤❤",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
       "engagement": 0,
-      "id": "7780aab640948745",
+      "id": "491fa433a3e6b4eb",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22730,19 +17352,19 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-c5434cffd5f944a4",
+      "eventId": "auto-d64e9748f89ad1c3",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyHBKA5fghoBFiPWnJ4AaABAg",
+      "externalId": "Ugxh18CxZX6jIi69i314AaABAg",
       "date": "2026-09-27",
-      "text": "Bismillah semoga ada rezeki saya, buat oprasi benjolan di paha kaki🤲🤲🤲",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
+      "text": "Bismillah buat ngasih orang tua bang,, 🙏",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
       "engagement": 0,
-      "id": "eecfd4fb201a12ad",
+      "id": "9b808a0c6f86d329",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22750,19 +17372,19 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-017c1dce13f234cb",
+      "eventId": "auto-cf93197dd9b6c7bc",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugx8lnEUhe_vDUNP-GJ4AaABAg",
+      "externalId": "UgynxTcZ0NbXj_5xsB94AaABAg",
       "date": "2026-09-27",
-      "text": "Bismillah... moga dpt rejekinya buat kebutuhan anak sekolah 🤲🏻",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 1,
-      "id": "cce983245d8e03e5",
+      "text": "Bismillah semoga menang buat biaya masuk kerja kak pengen ngerasain menang kak",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "engagement": 0,
+      "id": "981b234ea13f3a21",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22770,7 +17392,27 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-f9b1e9bf008f4498",
+      "eventId": "auto-fe8a26a4698ed390",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgzgYuXp5vhFtURuZLt4AaABAg",
+      "date": "2026-09-27",
+      "text": "Bismillah,, kalau dapat bisalah sarapan esok pagi😁",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "engagement": 0,
+      "id": "9aa0eb4484d628a4",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-0adfe829a54635e1",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22797,12 +17439,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugyptayn09XPFTZd8l54AaABAg",
+      "externalId": "Ugxokkn1nhjITsmU0fJ4AaABAg",
       "date": "2026-09-27",
-      "text": "Buat bayar seragam anak sekolah..mudah mudahan ada rejeki...",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
+      "text": "Btuh buat beli sepeda adik.. Moga dapat.. Makasih bang",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
       "engagement": 0,
-      "id": "b8f3a09ab0568d72",
+      "id": "daadfd9d0ef7ea88",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22810,27 +17452,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-1a8eee8678587472",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwVBr27nz0ohhzvPlN4AaABAg",
-      "date": "2026-09-27",
-      "text": "Buat bayar uang kos karena orang tua lagi terkena dampak gempa Flores😢",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "ddec3cb7a1841adc",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-dc84feb400b63fee",
+      "eventId": "auto-1cebea6c3f02cb64",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22841,7 +17463,7 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-27",
       "text": "DATA BUSUK ACC?! Pinjol Mudah Cair 2026 ke DANA - Pinjol Data Pinjaman Online Langsung Cair",
       "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 17462,
+      "engagement": 18228,
       "id": "457bd7afe3be80db",
       "sentiment": {
         "risk": 44.4,
@@ -22857,12 +17479,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyPYVUbGpnsyivNyVN4AaABAg",
+      "externalId": "UgyX37tKOtSqDRxJ7kN4AaABAg",
       "date": "2026-09-27",
-      "text": "Di up ulang ya mas",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
+      "text": "Ijin subscribe bang...... moga bermanfaat bagi kita semua",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
       "engagement": 0,
-      "id": "d7a2cf843c7483c5",
+      "id": "71304bc21885b65f",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22870,47 +17492,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-378f11dc7566c7c7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzbH7Y7Sfql1FGQCYh4AaABAg",
-      "date": "2026-09-27",
-      "text": "Endorsenya ditarik ya bang😂",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 23,
-      "id": "8a5bdab123d04bd7",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7434081fd57ced09",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyagsZOmCRCJKQZTS54AaABAg",
-      "date": "2026-09-27",
-      "text": "Hadir bang semoga dapat rezeki buat kebutuha. Mendesak😊",
-      "url": "https://www.youtube.com/watch?v=loNri68L03s",
-      "engagement": 0,
-      "id": "33fb054cc3ec9495",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3107af7f08f13417",
+      "eventId": "auto-ffa79a427fd42b6f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22922,14 +17504,15 @@ const CREDIT_SENTIMENT = {
       "text": "Ini Chanel Terkeren.Konsisten.Salut Bang.Lu Udah Banyak Menyelamatkan Banyak Anak Bangsa",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 3,
-      "id": "c5faef5c3702e95c",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "c5faef5c3702e95c",
       "eventId": "auto-f7a1ae29d7768314",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -22937,20 +17520,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwEbsITc8lvPKpe6Vp4AaABAg",
+      "externalId": "Ugy8O0jVaJZCLqEGFkN4AaABAg",
       "date": "2026-09-27",
-      "text": "Kalo nyadar ada beberapa dialog yg berubah 🗿",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 123,
-      "id": "0a30722e95e9a273",
+      "text": "Kemiskinan akibat minjam cpt pinjol😂😂",
+      "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
+      "engagement": 2,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-4e6a1319dbe75056",
+      "id": "2c0caa488dd967c4",
+      "eventId": "auto-ccdb68edfac15e3c",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -22962,14 +17546,15 @@ const CREDIT_SENTIMENT = {
       "text": "Kerusakan era pemerintahan Jokowi sangat terasa saat ini.",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 106,
-      "id": "b73faee2ac93c63e",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "b73faee2ac93c63e",
       "eventId": "auto-dca84125d5260c43",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -22977,12 +17562,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxDTAGKc96Jv-bqOid4AaABAg",
+      "externalId": "UgyXDIxMwdx9u8ppxnZ4AaABAg",
       "date": "2026-09-27",
-      "text": "Kurang Si pinjam",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 1,
-      "id": "5b2fb1ebd6691bad",
+      "text": "Makin rame terus bang chnel nya di setiap upload nya",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "engagement": 3,
+      "id": "a250ad3d133955f6",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -22990,27 +17575,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-5ea4589758a6125c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyMoejlVkxTx8JEv5l4AaABAg",
-      "date": "2026-09-27",
-      "text": "Makasih infonya",
-      "url": "https://www.youtube.com/watch?v=ua3qYmBT9UM",
-      "engagement": 2,
-      "id": "6f75ab159944c135",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d1cdf35c7f5e90e3",
+      "eventId": "auto-6d86461aac3bb5d3",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23062,14 +17627,15 @@ const CREDIT_SENTIMENT = {
       "text": "Miris, halo ppatk & komdigi 😢",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 10,
-      "id": "17b6192a197ae117",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "17b6192a197ae117",
       "eventId": "auto-51cc8fa13edceac4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -23082,35 +17648,16 @@ const CREDIT_SENTIMENT = {
       "text": "Negara sakit mngkin mengarah sudah menuju kematian (nama Indonesia akan hilang pecah jadi kondisi sblum adanya indonesia). Wadah besar bernama indonesia yg dulu diharapkan para pejuang sblum kemerdekaan untuk mensejahterakan rakyat nya saat ini malah tidak terwujud. Para penjahat, mafia, penjajahnya ternyata adalah saudara sebangsa setanah airnya sendiri.. pejabat dan pemerintahy sudah dikuasai oleh orang2 jahat yg lebih tega dr penjajah dr bangsa luar. Masih banyak warga yg baik tp saat ini lebih banyak warga yg lebih jahat dan yg memerintah warga yg baik adalah warga yg jahat.  MIRIS",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 21,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
+      },
       "id": "b1f21eac8ea06fa1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-715e349020024cc8",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyvJph3q3vz_VB9dZR4AaABAg",
-      "date": "2026-09-27",
-      "text": "Ninggalin jejak sebelum rame",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "7645a71c58e42f85",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-596e5ad6d84fcf64",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23121,15 +17668,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-27",
       "text": "OMBUDSMAN: RATUSAN TRILIUN PUTARAN UANG PINJOL SETIAP BULAN",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
-      "engagement": 131091,
-      "id": "9d9ed8abb48e45ce",
+      "engagement": 131642,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "9d9ed8abb48e45ce",
       "eventId": "auto-e0cdf4e3478dd210",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -23137,12 +17685,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyfZnREFqGfG1Z2jFZ4AaABAg",
+      "externalId": "UgwjVWejbNtRXNjON4J4AaABAg",
       "date": "2026-09-27",
-      "text": "Oh. Ada versi ga iklan ya bang",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
+      "text": "Pengikut lama semoga dapet🎉",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
       "engagement": 0,
-      "id": "4dd834a6a8f0b770",
+      "id": "c9238a18141f9d92",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -23150,7 +17698,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-f419f4100b6d6752",
+      "eventId": "auto-6773bb23e9ff0283",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23162,14 +17710,15 @@ const CREDIT_SENTIMENT = {
       "text": "Pinjol ada karena pemerintah  tidak membuka lapangan kerja yang memadai.",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 18,
-      "id": "11636b7a58ed0f36",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "11636b7a58ed0f36",
       "eventId": "auto-ba80960f90ceca5d",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -23182,14 +17731,15 @@ const CREDIT_SENTIMENT = {
       "text": "Pinjol jelas menjerat masyarakat, dan sebagiannya tergoda untuk berbuat culas didalamnya. Terang sdh pinjol membawa keburukan bagi negara dan bangsa.",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 46,
-      "id": "5a10888f6f26e62e",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 50.0
       },
+      "id": "5a10888f6f26e62e",
       "eventId": "auto-9c6aef60fa18db2a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -23201,7 +17751,7 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-27",
       "text": "Resmi Ojk ✅ Pinjam Saldo DANA Tanpa Dana Paylater Dana Cicil | Cara Meminjam Uang di Dana Tanpa KTP",
       "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 19833,
+      "engagement": 19993,
       "id": "f69ad64c7150d725",
       "sentiment": {
         "risk": 50.0,
@@ -23216,40 +17766,21 @@ const CREDIT_SENTIMENT = {
     },
     {
       "platform": "youtube",
-      "contentType": "video",
-      "externalId": "yr_p-YTmz_w",
-      "date": "2026-09-27",
-      "text": "STOP Transfer Balik Kalo Ada yang Salah Transfer",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 548276,
-      "id": "14aafa45b127e490",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-5937ce0c38591422",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
       "contentType": "comment",
       "externalId": "UgwWKemVTqNEv9r8b1Z4AaABAg",
       "date": "2026-09-27",
       "text": "Sangat prihatin kita...negara! Berbuatlah untuk dengan serius menyelamatkan masalah ini.",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 4,
-      "id": "97312ac92f93352d",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "97312ac92f93352d",
       "eventId": "auto-6d37daa771a55e20",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -23257,32 +17788,32 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyzWq2A3v6KCklHNRR4AaABAg",
+      "externalId": "UgxjfYniJiBCR_SHRrh4AaABAg",
       "date": "2026-09-27",
-      "text": "Semoga saya dapat ya Allah..buat nambah2 buat beli susu anak",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
+      "text": "Semangat dan lancar trs",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
       "engagement": 0,
-      "id": "ecde552d69035649",
+      "id": "306d0971e7e3b96d",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 43.0,
         "label": "mixed",
         "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "positiveWeight": 1.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-5c6959a875f4a689",
+      "eventId": "auto-dc544d7b7c54c7a7",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzX9Bgi76N2dkGkj5x4AaABAg",
+      "externalId": "UgxPKhen-eHXc-es73N4AaABAg",
       "date": "2026-09-27",
-      "text": "Semoga saya dapat ya allah",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
+      "text": "Semoga ada rezeki \nBuat kebutuhan anak sekolah",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
       "engagement": 0,
-      "id": "febc32a3e8d70637",
+      "id": "7d6da5dac8c5c279",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -23290,7 +17821,27 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-9fb8da281464bf9b",
+      "eventId": "auto-00e9810491908fa1",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxLGLozSHTBjr1fdIR4AaABAg",
+      "date": "2026-09-27",
+      "text": "Semoga rezeki ku bang lgi nganggur buat bertahan hidup",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
+      "engagement": 0,
+      "id": "c15f37ed9f98f9f7",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-dc26eba7b7c715a0",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23302,14 +17853,15 @@ const CREDIT_SENTIMENT = {
       "text": "Semua KASUS KRIMINAL yg pernah ada di INDO itu GAK PERNAH diselidiki sampe KE AKAR nya.\nItu yg membuat KEJAHATAN itu BERULANG terus.\nKorupsi, kasus NARKO, Human Tracking, Pinjol, Scam kita gak pernah tahu siapa AKTOR UTAMA nya, padahal itu kejahatan TERORGANISIR.\n\nMungkin BOSS PENJAHAT nya KENAL dgn PENGURUS NEGARA kali yaa.. ? 😊",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 23,
-      "id": "6c41cca0ae503b00",
       "sentiment": {
-        "risk": 82.9,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 4.7,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 82.9
       },
+      "id": "6c41cca0ae503b00",
       "eventId": "auto-29577769eabf121f",
       "eventType": "consumer_harm",
       "eventSeverity": 0.86
@@ -23317,12 +17869,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxC6qHpcxk9q2B0Mgt4AaABAg",
+      "externalId": "Ugw3JHzgUR0nTFy7BIl4AaABAg",
       "date": "2026-09-27",
-      "text": "Speedrun ancurin idup",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 1,
-      "id": "98fa08c2fe6c876b",
+      "text": "Siyaaap bang, buat kebutuhan keluarga bang",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "engagement": 0,
+      "id": "d66dc62cb0fbe1d3",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -23330,7 +17882,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-ee90e9c3c8ed1d8a",
+      "eventId": "auto-96f6c7d289e0ac19",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23342,14 +17894,15 @@ const CREDIT_SENTIMENT = {
       "text": "Ya...Allah....harusnya pemerintah menutup ini progrsm iblis dajjal laknatullah",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 34,
-      "id": "eb7304d5ccf351db",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 50.0
       },
+      "id": "eb7304d5ccf351db",
       "eventId": "auto-29250b6a79b596ef",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -23357,12 +17910,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxpQ1GmvWWYPSJqdXl4AaABAg",
+      "externalId": "Ugz0M0bIT-i5Rx9EcJN4AaABAg",
       "date": "2026-09-27",
-      "text": "amin",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
+      "text": "bissmillah semoga dapat , udah seminggu ga pegang uang",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
       "engagement": 0,
-      "id": "89194be18e1dafbc",
+      "id": "69d951e17f61bffe",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -23370,19 +17923,19 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-29a669940f66f7d5",
+      "eventId": "auto-b8a99bfdbe9f2549",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxaIyTUkj3AzlC9C1h4AaABAg",
+      "externalId": "UgzFAkiFvmbMVON6Cpt4AaABAg",
       "date": "2026-09-27",
-      "text": "beda versi bukan iklan",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 152,
-      "id": "9f61728fee788d4e",
+      "text": "hadir bang buat bayar ujian sekolah 🙏🏻",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
+      "engagement": 1,
+      "id": "870012519e4e540d",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -23390,147 +17943,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-93878a0e23dfae88",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwmOxfkE-OUQtpVGrN4AaABAg",
-      "date": "2026-09-27",
-      "text": "bismillah semoga dapat buat jajan anak sekolah",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "a77d09400d711fc2",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-67c9f5b58e8cd8ad",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "video",
-      "externalId": "JlQ2gj8TmAo",
-      "date": "2026-09-27",
-      "text": "bukan iklan #skit #ngakak #fyp #drama #pinjol",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 219899,
-      "id": "c270e4ab43ad4df8",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-48c29f800ceb7ba5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugweem_6ecaRORHNcWx4AaABAg",
-      "date": "2026-09-27",
-      "text": "hadir,  semangat bikin kontennya bang wicak",
-      "url": "https://www.youtube.com/watch?v=zUSQ4Jzc8pY",
-      "engagement": 0,
-      "id": "2bb90548306b442a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-71d3dba369d79bb3",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxFys1hgeTvOvd7fGh4AaABAg",
-      "date": "2026-09-27",
-      "text": "ko lazada saya gada menu tagihan bg",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 2,
-      "id": "2f97b5894db65617",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-56368ad98b0571ae",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxW-SuuD0a4JdhQR0x4AaABAg",
-      "date": "2026-09-27",
-      "text": "mas deni udah kaya ga bikin iklan lagi loh ya 😹🤭",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 2,
-      "id": "b57e5f68e011bc54",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-94a04d867c96eb7a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgylEUy7j-O9FOuZ0o94AaABAg",
-      "date": "2026-09-27",
-      "text": "versi iklan nya lebih memarik sih, tapi tetap kocak",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 6,
-      "id": "06f001ea2e7d5bff",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fa61c2257d00b9e5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyZDhBd6s1PjCk2VQ94AaABAg",
-      "date": "2026-09-27",
-      "text": "𝐈𝐭𝐮 𝐛𝐭𝐮𝐥 𝐤𝐚𝐡 𝐛𝐢𝐬𝐚",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 0,
-      "id": "ab7646cbc959b0c5",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e3b0c44298fc1c14",
+      "eventId": "auto-c382c387e59a03c7",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23557,59 +17970,20 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyT5d5eaReXDjoDEPp4AaABAg",
-      "date": "2026-09-28",
-      "text": "Allahuakbaar...",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "3d2c1dd45ea4274f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a765cf5b58164a85",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzGMFxpfIsT8t76qcx4AaABAg",
-      "date": "2026-09-28",
-      "text": "Bagi yg gak ngerti, jadi si penipu ini aslinya uda mengantongi data korban, no wa, rekening, ktp. Dia lalu mengajukan pinjol, uangnya masuk ke rekening kita. Untuk mendapatkan uang itu, dia nge-wa pura2 salah tf. Kalau kamu transfer, ujungnya dia dapat uang, cicilannya kamu yg harus bayar. \nLogikanya, orang yg salah transfer gak mungkin bisa minta kembalikan karena, gak mungkin tau wa kita 😁. Orang yang paling cepat balikin mungkin bukan cm paling jujur, tapi jg kurang hati2.",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 1,
-      "id": "028f9dbb0c9b4ff3",
-      "sentiment": {
-        "risk": 61.9,
-        "label": "mixed",
-        "negativeWeight": 1.7,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d26cc24037bfd032",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgygnsifjmxqJwrsBPR4AaABAg",
       "date": "2026-09-28",
       "text": "Banyak sekali modus penipuan sekarang ini😢😢😢😢",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 1241,
-      "id": "67dde13bfc7e3e52",
+      "engagement": 1270,
       "sentiment": {
-        "risk": 67.5,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 67.5
       },
+      "id": "67dde13bfc7e3e52",
       "eventId": "auto-1a11aefd58aa7bd9",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
@@ -23622,75 +17996,16 @@ const CREDIT_SENTIMENT = {
       "text": "Benar2 rakyat dan generasi di hancurkan oleh mafia2 yg berada di pemerintahan.",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 10,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
+      },
       "id": "ee292c9d21636a06",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-d4c9d80b4d55a918",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxyK8AFHyxgoSAvPb54AaABAg",
-      "date": "2026-09-28",
-      "text": "Bismilah",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "e5862753d7d5cdeb",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7df8a875d0598835",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxRplExg4RK1WDH6HN4AaABAg",
-      "date": "2026-09-28",
-      "text": "Bismillaahirrohmaanirrohiim... semoga saya dapat buat bayar biaya sekolah",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "7d4c94208c9ba997",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0a3391166666dc9a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugzb-0rPdb0HKiaBoZl4AaABAg",
-      "date": "2026-09-28",
-      "text": "Bismillah",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "cc99861012c8f902",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23717,46 +18032,6 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyUAXPZhWJPssDeUPd4AaABAg",
-      "date": "2026-09-28",
-      "text": "Bismillah bang, lagi buntu banget buat berobat ortu , sesusah itu cari kerja di Indonesia, buat nyari uang berobat aja sulit",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "ff0f11ac34d60231",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c289ec785fc99c60",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwQnQAo1BaJ1TJkzDx4AaABAg",
-      "date": "2026-09-28",
-      "text": "Bismillah buat biaya berobat sepupu yang kena katarak, karna harus di operasi. 😢",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "3b0e3137f25348ee",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-407e900f11941bbd",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "Ugx_7iKj4K5ARgFbfEJ4AaABAg",
       "date": "2026-09-28",
       "text": "Bismillah hhe semoga rezeki",
@@ -23771,26 +18046,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-43a225b7cb40efbb",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxfLFjAc6ezQTFJ3Gh4AaABAg",
-      "date": "2026-09-28",
-      "text": "Bismillah kang buat bayar kontrakan, udah janji janji terus ke ibu kontrakannya masih belum bisa bayar",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "c0149e0e274b67de",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-86f27e08c093a6b0",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23831,6 +18086,26 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-738fd757034c6b32",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwnwtlblTiR1qizx-B4AaABAg",
+      "date": "2026-09-28",
+      "text": "Bismillah...semoga ada rejeki 😊🤲. Untuk kebutuhan sehari hari di tanggal tua ini",
+      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
+      "engagement": 2,
+      "id": "7a95b952c1eec9f3",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-08b48155e47d4e62",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -23917,100 +18192,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugyq2KssV-ipqNB06S54AaABAg",
-      "date": "2026-09-28",
-      "text": "Dari \"buat bayar parkir\" sekarang jadi \"buat lap ingus\", terus dari \"Lu minjem?\" Jadi \"Lu pinjol?\"🗿",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "d6010962eb1db75a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fa2ff5f4fa895566",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgySbTK68ipUnFyp2F94AaABAg",
       "date": "2026-09-28",
       "text": "FYI :  Perusahaan yg megang data warga indo itu milik 9 naga, dan mereka sama sekali gak di denda dan di penjara pas data warga indo bocor, contohnya pas di hack bjorka, sedangkan kalo pake perusahaan negara lain pasti mereka di denda dan di penjara.",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 16,
-      "id": "4bdc89d801595c6f",
       "sentiment": {
-        "risk": 72.4,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 3.2,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 72.4
       },
+      "id": "4bdc89d801595c6f",
       "eventId": "auto-4355f82e56f7f681",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx_g2a9tZq_dBE74ZF4AaABAg",
-      "date": "2026-09-28",
-      "text": "Follow channel gue kalo lo suka tips/life hack yang bermanfaat kayak gini. Gue bakal upload tiap hari. Cek video lain di Channel ini ya!",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 88,
-      "id": "430f30efa08b729d",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-cd5f30f35fbce57b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw7U8-CJM3wn0RL-lN4AaABAg",
-      "date": "2026-09-28",
-      "text": "Ga pernah pinjol jadi ga paham yg dibahas",
-      "url": "https://www.youtube.com/watch?v=ua3qYmBT9UM",
-      "engagement": 0,
-      "id": "0c6b1865878c3b70",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e15a8bef08e6943a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugzzxk4C-ulh0alznnF4AaABAg",
-      "date": "2026-09-28",
-      "text": "Gini kan asik, ini iklannya juga pinjol 😂",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "0f194afbee57ca35",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-1c7e7ac89485a72b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24022,14 +18218,15 @@ const CREDIT_SENTIMENT = {
       "text": "Gw pernah kejadian orang salah tranfer ke rekeningku 50jt sudah saya kembalikan untungnya g penipuan.. Emang beneran salah transfer.. Ngeriiii",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 5,
-      "id": "bff5c1b0ee148fc8",
       "sentiment": {
-        "risk": 67.5,
-        "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 67.5
       },
+      "id": "bff5c1b0ee148fc8",
       "eventId": "auto-199a5a0c74c1c59d",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
@@ -24117,46 +18314,6 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwBY8OYmcxwoxvS_U14AaABAg",
-      "date": "2026-09-28",
-      "text": "Harus nya secara logika aja, gimana bisa dia tau exactly nomor lu pribadi beberapa menit setelah biaya masuk, itu udah sangat2 aneh",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 280,
-      "id": "55cf80406bb98ac4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-cf728fedfa09542a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugzul_3Gn1SLX_NOhRp4AaABAg",
-      "date": "2026-09-28",
-      "text": "Jelaskan juga bang, pinjol apa yang suka mencairkan dana dengan verifikasi segampang itu. Agar mudah ditelusuri asal dana yang masuk.",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 96,
-      "id": "4d3d5c4be5b07165",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a155c88dac65aba8",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgwxySIDD9Bo4JZG1qx4AaABAg",
       "date": "2026-09-28",
       "text": "KALAU GA SANGUP BAYAR JANGGAN DI PAKSA YAH TEMAN TEMAN AYO GAGAL BAYAR SAJA KALAU LUH PAKSA BAYAR TERYS EKONOMI MU KURANG SAMA AJA MEMPERSULIT HIDUPMU",
@@ -24182,14 +18339,15 @@ const CREDIT_SENTIMENT = {
       "text": "Kalau dapat uang gak jelas dan ada yang chat gua, Nanti gua blokir dan pura2 gak lihat.",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 6,
-      "id": "a1b499401bd52ee4",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
       },
+      "id": "a1b499401bd52ee4",
       "eventId": "auto-e3339e4db11fae20",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24202,14 +18360,15 @@ const CREDIT_SENTIMENT = {
       "text": "Kalau gw gini, ada yg spam tlpn trs lanjut wa dan bilang minta dikembalikan uang yg salah tf buat bayar motor. Posisinya gw lg nyicil motor dan yg spam tlpn juga lg nyicil motor. Dari no tagihan aja udh beda, ini org tetep minta dikembalikan gara² salah masukin angka sm nama. Nama gw sm dia aja beda, diperpanjang sampe akhirnya ke pihak mcf buat konfirmasi. Ujung²nya diblokir trs uang dia yg masuk ke motor gw ga dibalikin sm gw.",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 7,
-      "id": "9d1b61fc064c1531",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "9d1b61fc064c1531",
       "eventId": "auto-3fda762d37b65ad6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24241,36 +18400,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Kebobrokan pemerintah tidak bisa melindungi data-data rahasia milik rakyat ya begitu, yang tau no rekening rakyat pegawai bank. Jadi?",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 19,
+      "engagement": 20,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
+      },
       "id": "b11e768c8af309be",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-8d5bd337b6d6223b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzdxM7BK6Y2bGqQWa94AaABAg",
-      "date": "2026-09-28",
-      "text": "Kelamaan bang. Caranya: kirim gambar uang tunai. Kemudian suruh ambil dirumah. Pas dia kerumah siap2 dengan pak RT dan warga. Selanjutnya bisa gebukin rame2 atau serahkan ke polisi",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 25,
-      "id": "55b9f78233795400",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fedefb02c7e67ad6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24281,56 +18421,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Kirim stiker sebanyak mungkin, blokir, hapus, kelar 🗿",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 13,
+      "engagement": 14,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "728dd5db98b4e72f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-b47c734fc64cd0b7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwVJ0Nftli5nkY8J5x4AaABAg",
-      "date": "2026-09-28",
-      "text": "Kk saya pernah alamin kaya gini, ga pakai duitnya sepeserpun, udah lapor ke bank, ojk, tetep aja dibombardir sama ratusan nomer pinjol ilegal itu, ojk ma bank ga bisa lindungi kita dari terror nya.",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 53,
-      "id": "5a72df55ab52e48a",
-      "sentiment": {
-        "risk": 68.9,
-        "label": "negative",
-        "negativeWeight": 3.2,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3eabb3b3cd80dbf6",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxM3l9d2sV7uf0xbx14AaABAg",
-      "date": "2026-09-28",
-      "text": "Klw sudah rezeki ga akan kemana",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "43670f96b96861a5",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-64931d391b0946e6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24357,39 +18458,20 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugw5xnUN9YG2sUMaibV4AaABAg",
-      "date": "2026-09-28",
-      "text": "Kunfayakun dapat",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "854479315c4589f4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6d56653f9f8e7162",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgxdjxFHgnukIxBVBu14AaABAg",
       "date": "2026-09-28",
       "text": "Lagi asik nonton podcast ini soal pinjol malah diinterupsi oleh iklan pinjol 😂😂😂",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 3,
-      "id": "932bb6bd4ce05879",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 50.0
       },
+      "id": "932bb6bd4ce05879",
       "eventId": "auto-b7fce457dc53dcdb",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24402,35 +18484,16 @@ const CREDIT_SENTIMENT = {
       "text": "Langsung lapor ke Bank ya temen2, lapor juga ke RT, RW, kalurahan & keamanan seperti babinsa juga",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 40,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 44.4
+      },
       "id": "dae102d8edce5890",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-d5769caaef12601d",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugybp8GVH0Qj_WCSbVF4AaABAg",
-      "date": "2026-09-28",
-      "text": "Lapor OJK? ini Indonesia kah?emang bisa? emang bakal direspon?",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 58,
-      "id": "1776396f16e813de",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3da3c1862a91c005",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24442,55 +18505,16 @@ const CREDIT_SENTIMENT = {
       "text": "MUI mana suaramu? Hapuskan pinjol.. LegaL maupun iLegaL.. penjajahan model baru secara perlahan menghancurkan generasi bangsa..",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 34,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 60.5
+      },
       "id": "c446391e16dbf64f",
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-a012f3496d19262a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy-W3zTClwMeTtET_14AaABAg",
-      "date": "2026-09-28",
-      "text": "Makanya gw lebih suka dengan metode PIN BB.\nKita tidak perlu ngasih no hp kita.",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 8,
-      "id": "c43df07d4781d716",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0cf795d5d03eca56",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw4Zj84Fb4vGlsyEIN4AaABAg",
-      "date": "2026-09-28",
-      "text": "Manfaat skli, terimakasih orang baik 👍🙏🤗",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 1,
-      "id": "b7661a2d699907bc",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c93f6490759a7529",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24502,14 +18526,15 @@ const CREDIT_SENTIMENT = {
       "text": "Mau saldo dana gratis seperti 10 Nama Pemenang di video?\r\nBales pin komentar ini, kasih tau kebutuhan untuk apa👇\r\n\r\nALTERNATIF PINJOL :\r\n\r\n Daftar doang, Dapat Rp100.000\r\nhttps://s.id/DanaGratis1\r\n Daftar doang, Dapat Rp180.000\r\nhttps://s.id/DanaGratis2\r\n Daftar doang, Dapat Rp340.000\r\n https://s.id/DanaGratis3\r\n Daftar doang, dapat Rp160.000\r\nhttps://s.id/DanaGratis4",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 87,
-      "id": "8cbe0100be370213",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "8cbe0100be370213",
       "eventId": "auto-a2c6befd9f888363",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24521,15 +18546,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Modus Salah Transfer Pinjol, Jangan Transfer Balik!",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 1697971,
-      "id": "761cbc4dd4690db3",
+      "engagement": 1775189,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "761cbc4dd4690db3",
       "eventId": "auto-64e5296c0a446c32",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24542,14 +18568,15 @@ const CREDIT_SENTIMENT = {
       "text": "Modus begini ga bakal ada kalau penegakan hukum dan undang² perlindungan konsumen jelas.\nBisa minjam uang bermodalkan KTP tanpa persetujuan orangnya secara langsung ajah, udah melanggar hukum.\nBelum lagi data KTP WNI kan sudah bocor akibat ketidakbecusan pemerintah.",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 42,
-      "id": "74499f9376ce665f",
       "sentiment": {
-        "risk": 58.4,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 58.4
       },
+      "id": "74499f9376ce665f",
       "eventId": "auto-bae475c354e1b0ef",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24561,15 +18588,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Negara open source, ga ada privasi bagi rakyat. Yang penting pemerintah cuan walaupun sistem nya bobrok bin ancur",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 460,
-      "id": "ad96e44a8765be1b",
+      "engagement": 464,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "ad96e44a8765be1b",
       "eventId": "auto-365372fdb18098e5",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24577,22 +18605,23 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugztx0dcadh1B_v2sBZ4AaABAg",
+      "externalId": "Ugyle1cd4PqfbtwbPf14AaABAg",
       "date": "2026-09-28",
-      "text": "Njir saya pernah dapat 50k di dana 6 bulan lalu,tp aq balikin 4 jam kemudian karena orgnya ngomong baik\" dan berterimakasih... mungkin yg ini bukan penipuan,tp alangkah baiknya ikuti prosedur di video",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 47,
-      "id": "9cbcd74597f4782b",
+      "text": "Nomor hp keluargaku dipakai orang pinjam uang di gopay later, lebih dari UMK sebulan dan kami harus bayar 3angsuranx2jt lebih, kasian sekali anaknya yang punya nomor hp itu lagi skripsi beruntung tidak begitu stres banyak keluarga lain mendampingi, sudah lapor kemana-mana juga tetap kami harus bayar angsurannya karena bunga naik terus jika lambat angsurannya, \nSemoga pihak findaya, gopay later, sebelum mengeluarkan uang, tolong telpon seluruh keluarga di peminjam dulu, apakah benar dia yang pemilik no hpnya yg ajukan pinjaman itu, jangan asal kasih-kasih saja. Hampir stres anak itu, sudah lapor ke OJK dll juga tetap kami harus bayar. Padahal bukan tanggung jawab anak ini..",
+      "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
+      "engagement": 24,
       "sentiment": {
-        "risk": 67.5,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 38.8
       },
-      "eventId": "auto-ccbd15cf2d1b428e",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
+      "id": "5c89fb887208d6fc",
+      "eventId": "auto-74eeb2727e11450f",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
@@ -24601,56 +18630,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Pemerintah harus stop pinjol",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 74,
+      "engagement": 77,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
+      },
       "id": "bfe9ea4d1d149d32",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-93055785353df19e",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw7BilpQIDl-BXbS-14AaABAg",
-      "date": "2026-09-28",
-      "text": "Penipu. Cari duit sampe gitu gitu amat...",
-      "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 19,
-      "id": "a54fe97d6425bcba",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fa6632f05b0ca7cc",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzKfy27EeijxksD9b94AaABAg",
-      "date": "2026-09-28",
-      "text": "Pinjem 2M balikinnya 5M \nBeginilah neraka dunia bekerja 😅😅😅",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 6,
-      "id": "78749977235fbc15",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-31b3877012c32ec3",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24662,14 +18652,15 @@ const CREDIT_SENTIMENT = {
       "text": "Pinjol dan judol adalah jalan terbaik saat ini bagi pelaku korupsi untuk mencuci uang, disaat likuiditas kering di perbankan.  Mengapa ? akibat salah kebijakan pemerintah menetapkan program plus salah sasaran berdampak utang membengkak membebani APBN.  Pemerintah kehilangan kekuatan dan dihadapkan dua pilihan, harus berutang lagi jauh lebih besar, atau gencet pajak rakyatnya.  Keduanya berujung penurunan daya beli dan ketahanan menghadapi krisis.\n\nMulanya era menteri Srimulyani gali lubang tutup sumur, saat ini sudah gali sumur tutup jurang. Makin parah.  Apa akibatnya ? usaha kecil menengah kesulitan pembiayaan dengan bunga murah, yang tersedia kredit dengan bunga lebih mahal untuk segala kebutuhan, modal kerja, konsumsi juga investasi.  \n\nBelum putus sampai disitu, masih dihantui bayang bayang ketakutan, apa itu ? Kredit macet, dikejar pajak usaha dan individu, pungli mengintai.  Masih ditambah lagi politik global memanas dampak ekonomi dalam negeri memburuk, makin menambah tantangan tersendiri. Kehidupan harus terus berjalan walaupun ditantang biaya hidup makin tinggi.\n\nTapi alangkah kejamnya pemerintah seolah membiarkan lingkaran setan pemburukan kondisi sosial ekonomi di tengah masyarakat kelas menengah bawah yang teriak teriak kesulitan.  Tak ingin segera diputus ? ditunda ?? demi tujuan politik kelas atas ??? Itu mengakibatkan setan setan politik dan koruptor juga pungli makin berpesta pora sedangkan rakyat makin terhina, tergerus kepercayaan hilang tertekan hegemoni kekuasaan korup dan bejat.\n\nPenguasa rezim yang masih terus menindas dan menghisap sisa sisa kekayaan dan ketahanan rakyat tepat disaat menghadapi situasi kompleks serba sulit.  Fiskal APBN makin terjepit, masyarakat tak berharap ekonomi keluarga berujung morat marit.  Semoga pada waktunya nanti Menteri yang baru tidak gali jurang tutup sungai yaa...duh! rezim Wowo ini mengerikan!! 😩😩😮‍💨😵‍💫☝️👻☝️",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 12,
-      "id": "8d0bc60d21ada60e",
       "sentiment": {
-        "risk": 67.5,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 67.5
       },
+      "id": "8d0bc60d21ada60e",
       "eventId": "auto-7d0c2f1dc3e54c54",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24682,14 +18673,15 @@ const CREDIT_SENTIMENT = {
       "text": "Pinjol dengan DC adalah satu kesatuan...tertibkan DC maka pinjol melemah dibantu dengan peran aktif kemendigi yang dibackup APH secara penuh",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 6,
-      "id": "e39574dfc72400fb",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "e39574dfc72400fb",
       "eventId": "auto-297be915feab6481",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24702,14 +18694,15 @@ const CREDIT_SENTIMENT = {
       "text": "Pinjolnya yg di blokir",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 105,
-      "id": "1203d1c7dd421cb0",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "1203d1c7dd421cb0",
       "eventId": "auto-eb8971ca6dc65b70",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24721,15 +18714,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Ribet amat cara ngatasinya, langsung musnahin aja yg punya bisnis pinjol, menyusahkan yg udah susah",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 50,
-      "id": "e94843f53ef95646",
+      "engagement": 52,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "e94843f53ef95646",
       "eventId": "auto-8880a1078b21d857",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24741,7 +18735,7 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "SELAMAT!! SEKARANG BEBAS GALBAY PINJOL KECIL &amp; PINJOL BESAR. (AKULAKU EASYCASH KREDIVO UKU )",
       "url": "https://www.youtube.com/watch?v=wk7KF8cq4Pk",
-      "engagement": 20833,
+      "engagement": 21096,
       "id": "61f0698c3eb8e947",
       "sentiment": {
         "risk": 64.7,
@@ -24762,35 +18756,16 @@ const CREDIT_SENTIMENT = {
       "text": "Saking gak ada duit buat di tabung aku sampe gak punya rekening di bank manapun, ternyata ada untungnya juga 😂😂",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
       "engagement": 128,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.5,
+        "lexiconRisk": 50.0
+      },
       "id": "c34e8699b13682ee",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-3574c5eb31f91029",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxtszB2ttP5XBaPLpF4AaABAg",
-      "date": "2026-09-28",
-      "text": "Sangat jelas langkah2 ngatasi masalah.... terimakasih yg banyak kak, di channel ini SDH berbagi info urgent.\nSemoga Allah membalas kebaikan kakak",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 0,
-      "id": "73f82ea72f63bb47",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-779b3616208ee534",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24802,14 +18777,15 @@ const CREDIT_SENTIMENT = {
       "text": "Saya udah 7 tahun,di slik ojk kok kol 1 ya,ad akulaku juga udah tertulis lunas mungkin asuransi,baki debet 0 tunggakan 0 hari 😂😂😂😂",
       "url": "https://www.youtube.com/watch?v=LoZdREnkpkY",
       "engagement": 0,
-      "id": "fc3724414ee832a2",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
       },
+      "id": "fc3724414ee832a2",
       "eventId": "auto-794943b8fcbf58ec",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -24831,26 +18807,6 @@ const CREDIT_SENTIMENT = {
         "method": "deterministic_id_lexicon_v2"
       },
       "eventId": "auto-ba3ce0d29c67118c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwSKS-8YcV-rba_4kB4AaABAg",
-      "date": "2026-09-28",
-      "text": "Selama penegak hukum bisa dibeli, maka penjahat akan leluasa merajalela dan rakyat menderita",
-      "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
-      "engagement": 1,
-      "id": "93c270339df6f6a6",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-75cffe50803fa267",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24881,8 +18837,29 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Semenjak Jokowi berkuasa,mafia mafia industri keuangan bermunculan dari perbankan, asuransi, pasar modal termasuk pinjol.",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
-      "engagement": 16,
+      "engagement": 15,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
+      },
       "id": "e8d4616452903092",
+      "eventId": "auto-6b28c03518b4e6cf",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "Ugw5Qf_QHQxvQ0o-wcZ4AaABAg",
+      "date": "2026-09-28",
+      "text": "Semoga berkah amin sehat selalu",
+      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "engagement": 0,
+      "id": "9d26fa1f46e9ab7c",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -24890,7 +18867,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-6b28c03518b4e6cf",
+      "eventId": "auto-c175f40564a810b6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -24937,26 +18914,6 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyG2VS-oDW1ILQHby14AaABAg",
-      "date": "2026-09-28",
-      "text": "Semua kerusakan di negeri ini akibat dari ulah pemimpinnya yg tidak mampu mengendalikan aparat hukumnya sendiri.",
-      "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
-      "engagement": 1,
-      "id": "bd4c2bad63a27675",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-019525507889d3a2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "UgwzOpDKLshZ9ne9n_t4AaABAg",
       "date": "2026-09-28",
       "text": "Si rizki gk pake celana, rezeki gk kemana.🤲😇🔥",
@@ -24997,80 +18954,40 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxjL_TZrbQDCE0A6QZ4AaABAg",
+      "externalId": "UgyR4XJcN40d0hjlCux4AaABAg",
       "date": "2026-09-28",
-      "text": "Terima kasih informasinya bang 🙏",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 1,
-      "id": "13cf8785621dffe8",
+      "text": "Sy dulunya gali lubang tutup lobang, akhirnya sy galbay drpd klg hancur, Alhamdulillah suami mengerti dan di suruh tdk usah di bayar alias anggap saja bansos, cuma resikonya kita kol 5😂😂",
+      "url": "https://www.youtube.com/watch?v=wk7KF8cq4Pk",
+      "engagement": 76,
+      "id": "6b20f43ed68a5d1b",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 64.7,
         "label": "mixed",
-        "negativeWeight": 0.0,
+        "negativeWeight": 2.1,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-1777d113e86ee792",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-7e5a8810e34c86cf",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
     },
     {
       "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyP8tdq8gGQaajyk314AaABAg",
+      "contentType": "video",
+      "externalId": "Pcn2cwVVA-M",
       "date": "2026-09-28",
-      "text": "Terima kasih onfonya",
-      "url": "https://www.youtube.com/watch?v=ua3qYmBT9UM",
-      "engagement": 0,
-      "id": "b0b318d917877a20",
+      "text": "Terjerat Pinjol, Suami Habisi Istri",
+      "url": "https://www.youtube.com/watch?v=Pcn2cwVVA-M",
+      "engagement": 19002,
+      "id": "64bab3eccdad556a",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 64.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
+        "negativeWeight": 2.0,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-239645ab61a35ed2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwZjqp5RCahl7kuJ_l4AaABAg",
-      "date": "2026-09-28",
-      "text": "Terimakasih bang,,saya jadi faham 🙏🏻",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 7,
-      "id": "619d8045f260b40b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-68e1e737300fd2cb",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyLbuPQh6ExSl4BHdB4AaABAg",
-      "date": "2026-09-28",
-      "text": "Tolong Bang 🙏🥺 kebutuhan buat modal buka Usaha",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 1,
-      "id": "39f3c4eee6c99bef",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0a9dc8817ba54773",
+      "eventId": "auto-718177f6a2b8348d",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25082,35 +18999,16 @@ const CREDIT_SENTIMENT = {
       "text": "Tolonglah para pejabat di hapus judol dan pinjol,banyak rakyat sengsara",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 4,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 50.0
+      },
       "id": "2eb2bcd1d8f2f365",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-6253c53ae7b62285",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwxYknVMkIZPBwySsl4AaABAg",
-      "date": "2026-09-28",
-      "text": "Trimkasih🙏mas infonya😇Tuhan berkati",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 0,
-      "id": "3d61010313d1749f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0c05c1ff857502ae",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25137,59 +19035,20 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxloT4UAdAS2v0dwwJ4AaABAg",
-      "date": "2026-09-28",
-      "text": "Usahakan hidup sesuai kebutuhan . Jgn masuk ke tingkat keinginan. Sekarang cari sangat susah harga barang semua mahal . Hargai uang setiap pengeluaran sambil berdoa.",
-      "url": "https://www.youtube.com/watch?v=ua3qYmBT9UM",
-      "engagement": 0,
-      "id": "98e57af1a16dcd6d",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-9b4d6ef486dc6971",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzpNq7cFjjtGgFH8GN4AaABAg",
-      "date": "2026-09-28",
-      "text": "Wow modus penipuan yang jenius. Thx atas infonya bang, sangat bermanfaat bagi kita yg masih awam.",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 1,
-      "id": "6c45642dba3fef90",
-      "sentiment": {
-        "risk": 67.5,
-        "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-098605ac54ad7027",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "Ugx3u3YKnJigM7FuJw14AaABAg",
       "date": "2026-09-28",
       "text": "Yang keterlaluan ya pinjolnya juga. Modal data KTP dan no.rek langsung tembus. Harusnya ada authentication dulu lah. Yang parahnya lagi si pelaku bebas ngasih nomor jaminan. Bini ane pernah di teror pinjol karena ternyata nama dan no.hp nya dipakai sebagai penjamin",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 297,
-      "id": "4834a2910594012a",
+      "engagement": 300,
       "sentiment": {
-        "risk": 67.5,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 67.5
       },
+      "id": "4834a2910594012a",
       "eventId": "auto-9943462bae4fba89",
       "eventType": "consumer_harm",
       "eventSeverity": 0.86
@@ -25201,56 +19060,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "Yg tambah bikin kesal kok bisa data pribadi kita bocor 🤬, mana nih tanggung jawabnya pemerintah ini tugas anda2 hey",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 478,
+      "engagement": 492,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 64.0
+      },
       "id": "f7b2c42110c4e1ae",
-      "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-b7f919864ad4f725",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzgnBWehnZDj7c9clB4AaABAg",
-      "date": "2026-09-28",
-      "text": "alhamdulillah puji tuhan masih ada orang baik yg suka berbagi..sehat selalu kaka",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "d24de17797deac18",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-8716345d1bc0e07c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxA-r89117LIpioSjt4AaABAg",
-      "date": "2026-09-28",
-      "text": "buat mkan sehari-hari...🤲",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "3bd3e399f18b5232",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0b5c8009d1549130",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25277,120 +19097,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxrLwGfy52OY73jtYx4AaABAg",
-      "date": "2026-09-28",
-      "text": "jgn gk asal ngonten orang ini\n..ya kalau kita bayar dngn paylater ya bisa mslhnya paylater nya ada saldo...jdi y bisa lah coba klw gk ada saldo kan gk bisa lh",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 2,
-      "id": "65a2a53760885490",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-5abc380a9df1e46a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy0YGeDwJvDqr7B7AN4AaABAg",
-      "date": "2026-09-28",
-      "text": "lewat lazada tetap bayar pake payleter",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 5,
-      "id": "b6afea739513e36e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-880f52b0205e6dd9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwrKjTBxgx9vR11aKF4AaABAg",
-      "date": "2026-09-28",
-      "text": "lg perlu utk tambahan modal usaha kaa..smoga ada rejeki nya",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "4ce7ae79ad8e8f8d",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6ab17d89958ae8a0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxVRGtjQ49-w8gYYHx4AaABAg",
-      "date": "2026-09-28",
-      "text": "makasih bang, ini biar jadi mudah menjelaskan ke orang tua. \nlangsung subs n like.",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 43,
-      "id": "567d89f82073626f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2b9b434d650d1cde",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
       "externalId": "Ugzz5fz7DUGVvrUbC6p4AaABAg",
       "date": "2026-09-28",
       "text": "niat berbaik hati dengan mengembalikan transferan yg salah masuk, eh ujungnya ditagih pinjol.\nemang dajjal kelakuan manusia2 laknat penipu seperti itu.\nsemoga kita semua dijauhkan dari kejahatan keuangan.",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 2804,
+      "engagement": 2851,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 50.0
+      },
       "id": "3e0f60b5dda94109",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-8879bbb5c07f85bf",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw38EkZtCUSgcp5Fx54AaABAg",
-      "date": "2026-09-28",
-      "text": "pentingnya jaga privasi. no wa tanpa nama (nomor tidak dikenal) harus diwaspadai. gue salah satu org yg gak pernah mau angkat telpon tanpa nama sebelum dia wa/sms mengenalkan diri",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 453,
-      "id": "8c4becf1a44fdeb1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d333fc51bbb0b0c3",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25401,15 +19122,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-28",
       "text": "pinjol hrs ditutup di Indonesia...",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 114,
-      "id": "4c4abb58d564e4fb",
+      "engagement": 116,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "4c4abb58d564e4fb",
       "eventId": "auto-be693d51c79c0455",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -25422,14 +19144,15 @@ const CREDIT_SENTIMENT = {
       "text": "untuk saran kotak amal dipakai buat melunasi uang orang itu tidak tepat pak, mental tukang utang gak akan sembuh dengan dibantu seperti itu, kita bantu dengan uang kotak amal buat sewa lawyer aja untuk menggugat perusahaan yang melanggar masyarakatnya dikumpulin tuh siapa aja yang udah diteror didesa itu buat laporan . saran aja",
       "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
       "engagement": 5,
-      "id": "1fbe748378e62222",
       "sentiment": {
-        "risk": 94.1,
-        "label": "negative",
-        "negativeWeight": 6.3,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 94.1
       },
+      "id": "1fbe748378e62222",
       "eventId": "auto-6c3d2d96034c9c2a",
       "eventType": "consumer_harm",
       "eventSeverity": 0.86
@@ -25441,15 +19164,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Amit\", semoga hidup ini terhindar dari segala macam pinjaman.. Mau itu pinjol, paylater, bank keliling, dll 😊",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 165,
-      "id": "67af425ab56f5c6d",
+      "engagement": 171,
       "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 44.4
       },
+      "id": "67af425ab56f5c6d",
       "eventId": "auto-38e0445196c3cecc",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -25461,36 +19185,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Baru kali ini iklan awalnya dibikin relate😅👍🏻",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 1593,
+      "engagement": 1632,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "086e06044372084a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-094423e8246aaac2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzsHYey216jy-XwoPt4AaABAg",
-      "date": "2026-09-29",
-      "text": "Bismilah bang semoga dapet dana kagetnya buat lunasin hutang ibuk🤲",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "b21421c44c7857e9",
-      "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-dee4c31a6cb0f23f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25502,15 +19207,37 @@ const CREDIT_SENTIMENT = {
       "text": "Bismilah semoga aja dapat. Buat berobat. 🙏🙏",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "552583f1f671246b",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "552583f1f671246b",
       "eventId": "auto-4b69ddaf44cf5b89",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwNomsinYMQAbDojt94AaABAg",
+      "date": "2026-09-29",
+      "text": "Bismillah Bg sya butuh buat byar SPP 😢",
+      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
+      "engagement": 1,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
+      "id": "14da08db214d4b2f",
+      "eventId": "auto-eccbd190146ccbc4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25522,14 +19249,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah aja bang dapet syukur ga dapet dah biasa buat bayar utanf bang",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "da99fadd6f264ee6",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "da99fadd6f264ee6",
       "eventId": "auto-4cb3c68aee72bdb5",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -25537,40 +19265,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzCS6ZbHOtqP6I232t4AaABAg",
+      "externalId": "UgyLJOYlBh0C4g_f99l4AaABAg",
       "date": "2026-09-29",
-      "text": "Bismillah buat bayar listrik bang... Semoga dapat",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "text": "Bismillah bang dapat buat beli kebutuhan dapur sehari hari bang",
+      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "82c93726f544fae7",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-5758032c30253949",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgytsHzGqqKpH83PaUZ4AaABAg",
-      "date": "2026-09-29",
-      "text": "Bismillah semoga dapat",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "5c4baa08c8861cd5",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-70c387fe4710fbdf",
+      "id": "800b5b5f3acab25a",
+      "eventId": "auto-8bdf555debc48089",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25641,15 +19350,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Dan Indonesia adalah negara Open source jadi gk heran, pemerintah jga gk ngerti sama sekali bahayanya 😅😅😅",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 57,
-      "id": "c95ca96245315df5",
+      "engagement": 60,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "c95ca96245315df5",
       "eventId": "auto-b7ff15b9625f9b51",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -25661,16 +19371,37 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Dari kecil sampe sekarang udh bisa menghidupi diri sendiri, mama saya selalu ngajarin lebih baik susah daripada harus ngutang dalam bentuk apapun.. jadi saya lebih milih makan seadanya daripada punya utang atau pinjaman Krn hal² kek gitu bisa mancing dosa, dan masalah yg kita sendiri gatau bakalan sampai gimana. \n\nPintar²lah berhemat, lebih baik tampil sederhana tpi mampu beli kebutuhan dan keinginan, daripada tampil mewah tapi hasil pinjam dan utang.",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 12,
-      "id": "09f38629a2dd6128",
+      "engagement": 13,
       "sentiment": {
-        "risk": 51.4,
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 51.4
+      },
+      "id": "09f38629a2dd6128",
+      "eventId": "auto-87a61f39facc85b9",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "video",
+      "externalId": "OUcRDp3hf94",
+      "date": "2026-09-29",
+      "text": "Demi Enggak Kalah Sama Tetangga, Sampai Rela Pinjol! — Endingnya Bikin Sadar",
+      "url": "https://www.youtube.com/watch?v=OUcRDp3hf94",
+      "engagement": 15617,
+      "id": "dc33548823a6aaa8",
+      "sentiment": {
+        "risk": 50.0,
         "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 0.8,
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-87a61f39facc85b9",
+      "eventId": "auto-47e9d5880e47a828",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25681,36 +19412,37 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Gara gara ga tau ini, temen dan keluarga pada ditelponin satu-satu? #SPinjam #ads #shorts",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 652598,
-      "id": "49089a323d55a23b",
+      "engagement": 672978,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "49089a323d55a23b",
       "eventId": "auto-588bd5dac5ecf2c4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwdNZKhdUe1ac01BNJ4AaABAg",
+      "contentType": "video",
+      "externalId": "4rnX0p-EAew",
       "date": "2026-09-29",
-      "text": "Huh kok beda perasaan kemaren ngak gini",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "4bce1b49eff9ea06",
+      "text": "Hidupmu di Setiap Level Sebagai Debt Collector",
+      "url": "https://www.youtube.com/watch?v=4rnX0p-EAew",
+      "engagement": 15411,
+      "id": "631b2467b82a2b79",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 64.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
+        "negativeWeight": 2.0,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-6f20d6e6525c52bb",
+      "eventId": "auto-102b341e1fe9a9e6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25721,36 +19453,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Ingat ya, pindar pun bunganya tetap tinggi & riba. Dan jangan sampe ngasih pinjam ke orang lain pakai akun kamu, nanti kamu rugi kalo orangnya gak tanggung jawab😢",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 68,
+      "engagement": 71,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
+      },
       "id": "19e305cc481afd61",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-5d913d835d53e317",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxQ9VU4ZKw4B5YxjRd4AaABAg",
-      "date": "2026-09-29",
-      "text": "Jam segini upload udah ketebak pasti iklan 😹",
-      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 279,
-      "id": "45262809ced1fdae",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-8cc84c1662429818",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25761,56 +19474,37 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Jangankan pinjol, yang offline juga sama\n\nPernah ngalamin, claimnya gak akan disamperin ke rumah, gak akan kontak pribadi karena terafiliasi sama perusahaan, halah bs\n\nDisamperin kerumah, di chat terus, padahal perjanjian potong gaji, gegara telat 1 2 bulan karena perusahaan sempet down sebentar, nyebelin banget 😭😭",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 2,
-      "id": "1c249ced86a98b77",
+      "engagement": 3,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "1c249ced86a98b77",
       "eventId": "auto-ac363c377b49117f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyBN9FYeYuwtTstrUt4AaABAg",
+      "contentType": "video",
+      "externalId": "TU_5e73Se8A",
       "date": "2026-09-29",
-      "text": "Kalimat yg selalu ku tunggu, ga ada bang.. \n\"Gak mungkin lah.. Gak Mungkin!\"\n😂",
-      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 3,
-      "id": "7d8c13e9463e0fe9",
+      "text": "KARMA INSTAN! BARU 2 MINGGU NIKAH, BOWO BONGKAR UTANG PINJOL AJENG 50 JUTA! 💥😱",
+      "url": "https://www.youtube.com/watch?v=TU_5e73Se8A",
+      "engagement": 14372,
+      "id": "bc07a82c712dae64",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 57.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
+        "negativeWeight": 1.0,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-61c98ca9b39b8814",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzrUmMJXnSywus6Wp54AaABAg",
-      "date": "2026-09-29",
-      "text": "Kondisi spti ini justru harusnya gotong royong dukung pemerintah berantas sgala bentuk kejahatan di negeri ini. Optimis penegakkan hukum dibawah presiden prabowo bakal bs berantas smua kejahatan2",
-      "url": "https://www.youtube.com/watch?v=LoboytoC_gE",
-      "engagement": 1,
-      "id": "ca647f73a3de019c",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-04a5bda0ed415d3d",
+      "eventId": "auto-9ec6b49d8226df60",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25821,15 +19515,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Ku mah kalo gk mampu beli sesuatu ya gk maksain diri sampai utang pinjol lgian pinjol utang berbunga apapun itu sama aja ngasih makan pegawai nya dengan uang RIBA bukan gaya akyu🤤",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 213,
-      "id": "275266b03e26a83b",
+      "engagement": 215,
       "sentiment": {
-        "risk": 57.0,
-        "label": "mixed",
-        "negativeWeight": 1.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 57.0
       },
+      "id": "275266b03e26a83b",
       "eventId": "auto-c35ca41642cd6669",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -25841,15 +19536,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Masalahnya sekarang juga ada modus penipuan dimana orang \"salah transfer\" ke akun bank kita. Kalo kita pake duitnya/balikin ke orang tersebut ujung²nya kita sendiri yang terjerat pinjolnya. Coba bahas ini deh bang (meskipun tau video ini ngiklan sih)",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 37,
-      "id": "8d21e8f6705656d3",
+      "engagement": 38,
       "sentiment": {
-        "risk": 81.5,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 4.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 81.5
       },
+      "id": "8d21e8f6705656d3",
       "eventId": "auto-258bcdb701d73350",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
@@ -25857,20 +19553,42 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugz8l1U6AFskQi18ond4AaABAg",
+      "externalId": "Ugzr5m_pzo-fh7K8VxB4AaABAg",
       "date": "2026-09-29",
-      "text": "Nipu ini",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 0,
-      "id": "6c84d274c9ea36f9",
+      "text": "Mau legal dan aman kyk apapun, jangan lakukan pinjaman berbunga ya.. riba ges ribaa... dosanya gede banget",
+      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
+      "engagement": 3,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.95,
+        "lexiconRisk": 40.9
       },
-      "eventId": "auto-a6fd422282e67f34",
+      "id": "80d8908c639ee467",
+      "eventId": "auto-948f48d9eea9840a",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwFnlbC8494cmyRjTR4AaABAg",
+      "date": "2026-09-29",
+      "text": "Pesan moral=jgn pinjol illegal😅😅😅",
+      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
+      "engagement": 15,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 46.5
+      },
+      "id": "f25f23ffab1f1b41",
+      "eventId": "auto-99b273523667ff3a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25881,36 +19599,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Pindar cuma translate-an dari pinjol, daring = online, emang biar keliatan kerja aja ngubah² nama😹",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 55,
+      "engagement": 57,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
       "id": "d729956ee768b438",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-95bfc19447c26fda",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugyup9FlR0qY1Fy_rm54AaABAg",
-      "date": "2026-09-29",
-      "text": "Plot twist, saldo negatif ngejek saldo minimum",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "a5e1f09ed6edba12",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-9bbbbde55aec2e56",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -25961,15 +19660,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Sebisa mungkin jangan pinjam. Mau pinjol atau pindar. Sama sama aja ada bunga nya dan riba 🗿.",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 908,
-      "id": "fe2f5ef52c400361",
+      "engagement": 936,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "fe2f5ef52c400361",
       "eventId": "auto-ec578df350d3ea5f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -25997,20 +19697,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwK_gqys06W5Y7rHHl4AaABAg",
+      "externalId": "UgwFl1NQaNCzg-N5nux4AaABAg",
       "date": "2026-09-29",
-      "text": "Setuju😅",
-      "url": "https://www.youtube.com/watch?v=wk7KF8cq4Pk",
+      "text": "Semoga dapett rezeki di sini",
+      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "e4b8aee2dc4b5a30",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-c5f882164bd52e8f",
+      "id": "d969ac8e53f6bf0c",
+      "eventId": "auto-82c014e27db4c42d",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26021,15 +19722,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "Tanpa BI CHECKING?! Pinjol Mudah Cair 2026 ke DANA - Pinjol Data Pinjaman Online Langsung Cair",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 22171,
-      "id": "262887b8aa92160e",
+      "engagement": 22316,
       "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 44.4
       },
+      "id": "262887b8aa92160e",
       "eventId": "auto-5bb290eedc9250ff",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26081,15 +19783,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "_\"Bismillah inget kata _*_CAMILAN_*_ izin\"_\nuntuk mengingatkan ke orang sekitar saya agar tidak sembarangan allow/izinkan walaupun terlihat sepele😊",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 14,
-      "id": "3426aa2837827be5",
+      "engagement": 15,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "3426aa2837827be5",
       "eventId": "auto-7e29619f4f777c7b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26097,20 +19800,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugz7kUfveQCIGQDdnj94AaABAg",
+      "externalId": "UgyEKjSLs0TwpE6_MUN4AaABAg",
       "date": "2026-09-29",
-      "text": "bismillah buat modal usaha",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
+      "text": "bismillah dapat buat biaya persalinan😢",
+      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "0955b8458a48daf9",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-b7e39e6131df41a2",
+      "id": "f8fc64558631dd97",
+      "eventId": "auto-f135a25093ae994b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26141,18 +19845,39 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "mereka yang suka pinjol itu bukan niat pinjam sebenernya bang, pernah liat grup galbay gak? itu mereka pinjol ilegal tapi gak mau bayar, cuma duit nya aja (mirip curi si). jadi walaupun lu kasih tahu banyak platform pinjol resmi OJK pasti mereka gak dengerin.",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 1007,
-      "id": "977841d38ed2027a",
+      "engagement": 1033,
       "sentiment": {
-        "risk": 75.2,
-        "label": "negative",
-        "negativeWeight": 4.1,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 75.2
       },
+      "id": "977841d38ed2027a",
       "eventId": "auto-f9f7e3f814d6d131",
       "eventType": "fraud_or_illegal_practice",
       "eventSeverity": 0.74
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgypdX_BwV4rbb5SsHJ4AaABAg",
+      "date": "2026-09-29",
+      "text": "tolong bantu bang dan kagetny a.buat bellian anak hp buat sekolah",
+      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
+      "engagement": 0,
+      "id": "6c2c6a30fd84bcc0",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-e7c9dbbe24fb39cf",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
@@ -26161,96 +19886,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-29",
       "text": "yang bikin kesel, ada temen yang nyantumin nomer kita buat pinjol, apalagi dia malah engga bayar, alhasil ikutan kena spam dari pinjolnya😭😭😭",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 45,
+      "engagement": 46,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
+      },
       "id": "18196160210062d4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-37518dda45f3f770",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw7sIYas6uIfoRkuRR4AaABAg",
-      "date": "2026-09-29",
-      "text": "❤",
-      "url": "https://www.youtube.com/watch?v=8nHzDZ74suo",
-      "engagement": 0,
-      "id": "c08a02f4e6e9e43c",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e3b0c44298fc1c14",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzSelMzPIfJ3lFNzIl4AaABAg",
-      "date": "2026-09-29",
-      "text": "🤦🤦🤦🤦🤦🤦 🤬🤬🤬🤬🤬",
-      "url": "https://www.youtube.com/watch?v=8nHzDZ74suo",
-      "engagement": 0,
-      "id": "0bd209930cab7b51",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e3b0c44298fc1c14",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwVKHa7OJkTD3BkrcN4AaABAg",
-      "date": "2026-09-29",
-      "text": "🤲🏻",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "6ef4d3050f6b5718",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e3b0c44298fc1c14",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx2t0JI8BYVPCY_Jz54AaABAg",
-      "date": "2026-09-30",
-      "text": "Aamiin...semoga sehat selalu",
-      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 2,
-      "id": "3c23e7c800850bd3",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-9d96bfa592496575",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26262,14 +19908,15 @@ const CREDIT_SENTIMENT = {
       "text": "Alah tidak ada yang work",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
-      "id": "7126705f45ed396a",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "7126705f45ed396a",
       "eventId": "auto-5e81371060ca18dc",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26277,20 +19924,21 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwwrutswIFIWESZsBN4AaABAg",
+      "externalId": "UgxGV5XngXwbeebTr8h4AaABAg",
       "date": "2026-09-30",
-      "text": "Alhamdulillah buat membantu orang tua membayar hutang",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
+      "text": "Aneh konten gaje",
+      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
-      "id": "d112aea80d35d5fb",
       "sentiment": {
-        "risk": 58.4,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-713394dfb90056a2",
+      "id": "0ec6ec863dc5084b",
+      "eventId": "auto-9d83587affbb6e07",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26302,55 +19950,16 @@ const CREDIT_SENTIMENT = {
       "text": "Assalamualaikum warahmatullahi wabarakatuh.\nButuh buat bayar sekolah, berobat dan bayar kontrakan bang udah telat",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
+      },
       "id": "e89ba19808455f9a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-cb0b15d74a282845",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwG6EP2hHM5pLUFR854AaABAg",
-      "date": "2026-09-30",
-      "text": "Bismillah",
-      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 0,
-      "id": "168ec57c6cbb4363",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyF6C8u4woqp7x9BlV4AaABAg",
-      "date": "2026-09-30",
-      "text": "Bismillah bang😊",
-      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 2,
-      "id": "9ea6a4902afeb9d0",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-19baedb3ffb3a428",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26362,14 +19971,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga keajaiban dpt rejeki dari abang ini",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "b5f86afd2b0be6e6",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "b5f86afd2b0be6e6",
       "eventId": "auto-9fda295f36f104f4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26382,14 +19992,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah tolong  untuk modal dagang dan untuk kbutuhn sekolh,, mudah2n dikabul yaAlloh,Aamiin YRA 🤲🏻😊",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 1,
-      "id": "042d7e38b8c9e8ee",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "042d7e38b8c9e8ee",
       "eventId": "auto-d7b7c2e446d72eeb",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26402,14 +20013,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah... Mudah\"nada rejeki buat anak beli al-Qur'an buat ngaji",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "9ea64f58de59ad1e",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "9ea64f58de59ad1e",
       "eventId": "auto-2477ca494e5ad9da",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26422,35 +20034,16 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillahirrahmanirrahim buat bayar SPP anak ka",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "0d4e951154cf25fe",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-ce5f65a209e3da57",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwxBxEKJIlnlSqX-Yd4AaABAg",
-      "date": "2026-09-30",
-      "text": "Bismillahirrahmanirrahim buat bnerin motor . Buat ngidupin keluarga aminn",
-      "url": "https://www.youtube.com/watch?v=f7hdEtEfVsg",
-      "engagement": 0,
-      "id": "01d9c06758d9edac",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2a4c73e5cd81bf3a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26462,35 +20055,16 @@ const CREDIT_SENTIMENT = {
       "text": "Bissmillah smoga dapat buat bayar angsuran karena sudah dekat jatuh tempo 😢",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
+      },
       "id": "ecb64662b23c2d79",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-47e8fe9bd2d48cc7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgypoyFXM6dJHxJIoXZ4AaABAg",
-      "date": "2026-09-30",
-      "text": "Buat beli hp untuk ngojol sih",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 0,
-      "id": "0a8473e5731dd980",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-54c062357144ed6f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26502,14 +20076,15 @@ const CREDIT_SENTIMENT = {
       "text": "Buat ganti lcd KA , kali aja rejekinya akuhh 😂",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 1,
-      "id": "8786fa382da7e6f8",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "8786fa382da7e6f8",
       "eventId": "auto-62bbd318b6e1eae4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26517,12 +20092,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyjgQx2KChBS_kYctZ4AaABAg",
+      "externalId": "Ugws9YoZo2SoC4oNdch4AaABAg",
       "date": "2026-09-30",
-      "text": "Buat keperluan kak",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
+      "text": "Buat ganti peleg mobil bismillah",
+      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "41e9f0d01da3ffae",
+      "id": "abd4d9d28175eeab",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -26530,7 +20105,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-ab5f3b8bb19e7770",
+      "eventId": "auto-426674b860b62d52",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26542,35 +20117,16 @@ const CREDIT_SENTIMENT = {
       "text": "Buat makan soalnya ayahku Sdh seminggu lbih gak kerja gra² sakit 😢😢",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
+      },
       "id": "9ab3d76fc7d8df53",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-1ad847f436813073",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "video",
-      "externalId": "8225kQfXiLI",
-      "date": "2026-09-30",
-      "text": "Cara Aktifkan Dana Pinjam Supaya Bisa Pinjam Uang Di Dana Langsung Cair",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 31674,
-      "id": "98ec90a941ff91ea",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c56326dcc516effe",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26581,15 +20137,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-09-30",
       "text": "Di bohongin kalian sy SDH coba TDK bs,,,",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 9,
-      "id": "f629f104c8a95cb5",
+      "engagement": 11,
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 50.0
       },
+      "id": "f629f104c8a95cb5",
       "eventId": "auto-9fdc44efdc64dc6a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26602,95 +20159,16 @@ const CREDIT_SENTIMENT = {
       "text": "Gw nga bisa padahal udahgw ikutin tutorial nya",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 3,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
+      },
       "id": "28c664378a2877ee",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-c71735d3e6166711",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "video",
-      "externalId": "xG-BopXtsS4",
-      "date": "2026-09-30",
-      "text": "Jangan kirim foto KTP sembarangan",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 30062,
-      "id": "9264089caaccb606",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f99e487dadac582f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzlLx6DfUowlvQ-WwB4AaABAg",
-      "date": "2026-09-30",
-      "text": "Kebutuhan ku banyak banget untuk bulan2 ini. Semoga di buat oktober lebih baik lagi. Aminn",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "26de060a4e8e246f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f8f3ba839678e34f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyuZwIdnZdM8Iv7at94AaABAg",
-      "date": "2026-09-30",
-      "text": "Kk bagaimana cara untuk mengajukan pinjaman dana itu kk",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 0,
-      "id": "cd7588935135ce5a",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-4cc01f7b31118ec3",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyDzoggiCPkrZKW0254AaABAg",
-      "date": "2026-09-30",
-      "text": "Mau Saldo Dana Gratis?\nTonton habis, cukup komen saja mau daget divideo ini untuk kebutuhan apa y👇 https://link.dana.id/danakaget?c=sn9b7qqk5&r=c7Q38x&orderId=20261003101214550715010300166276200895293",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 81,
-      "id": "0c4d128f9738b3c4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-8c427cbe6f399bdb",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26702,14 +20180,15 @@ const CREDIT_SENTIMENT = {
       "text": "Pinjol di playstore sudah saya download ada 20 pinjol tidak ada satupun yang di ACC.padahal data masih bersih..😂parah!!",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "bb9b391597078d9d",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 50.0
       },
+      "id": "bb9b391597078d9d",
       "eventId": "auto-ab8ff4e0ce439ba4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26722,14 +20201,15 @@ const CREDIT_SENTIMENT = {
       "text": "Saya butuh daget uang saya habis ilang pusing gada jalan lain",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
-      "id": "2e7e82f655b41d72",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 50.0
       },
+      "id": "2e7e82f655b41d72",
       "eventId": "auto-9f719d8ca74df390",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26762,35 +20242,16 @@ const CREDIT_SENTIMENT = {
       "text": "Semoga dappet rejeki buat melanjutkan hidup sehari harii aminn",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "091ad1f412648efd",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-883184584bddf920",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy8APzkd7ZzU8NPBcl4AaABAg",
-      "date": "2026-09-30",
-      "text": "Semoga saya dpat rejeki",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 0,
-      "id": "31231be849ad64f0",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-01f95ea2c77337b5",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26802,55 +20263,16 @@ const CREDIT_SENTIMENT = {
       "text": "bismillah semoga rezeki buat beli kado ultah anak",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
       "id": "059cce8ad1dd444c",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-85150a4e69c9e2dc",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyRhXZet0bfbrnFplh4AaABAg",
-      "date": "2026-09-30",
-      "text": "bismillahirrahmanirrahim moga dapet saldo dana buat bayar sekolah",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "8993e8b3144bb522",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7b83881c89677abd",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzMmV0SwOAARjh6jUt4AaABAg",
-      "date": "2026-09-30",
-      "text": "bismillahirrahmanirrahim ya Allah rezekinya aku disini amin🙏",
-      "url": "https://www.youtube.com/watch?v=lvNldk74KaU",
-      "engagement": 0,
-      "id": "d4ef525214302577",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0f660840a78bd98e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26862,55 +20284,16 @@ const CREDIT_SENTIMENT = {
       "text": "punyaku ga ad muncul limitnya",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 2,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 50.0
+      },
       "id": "7826b04dfc780cd6",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-30abe3d859943c03",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzDFgoaNjojZ_NTITh4AaABAg",
-      "date": "2026-10-01",
-      "text": "Bang",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 1,
-      "id": "6b4b55515a5231fb",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-1ae3d35454b6ddf2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwsHsZVWCEMK6HkyYB4AaABAg",
-      "date": "2026-10-01",
-      "text": "Bismillah semoga rejeki...",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "e091ba21981d1786",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-681377e770039e67",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -26922,14 +20305,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillahirrahmanirrahim semoga menang,buat hidup sehari hari sama bayar hutang aaminn",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "9996be4f13d31a06",
       "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 64.0
       },
+      "id": "9996be4f13d31a06",
       "eventId": "auto-90c4dd7d177bcc3f",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -26942,95 +20326,16 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillahirrahmanirrahim semoga rejeki, buat berobat.",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 4,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
+      },
       "id": "70dc889dedeea110",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-1eae1a2e536535c0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgydsL0VpL1TZuOHGjt4AaABAg",
-      "date": "2026-10-01",
-      "text": "Butuh banget demi apapun bg butuh buat ongkos kerjaa",
-      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 0,
-      "id": "21fc375d7a02f201",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-173da855dcef1573",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyYFa0nl4s9z2JSdiZ4AaABAg",
-      "date": "2026-10-01",
-      "text": "Gimna cara dpt Dana kaget.soal nya sya butuh bngt.buat modal usaha",
-      "url": "https://www.youtube.com/watch?v=Mzj655so0tM",
-      "engagement": 0,
-      "id": "bffbaf9e79ee6ee5",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f7506ffae0f254ff",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgymIR5UdpXceVQffhd4AaABAg",
-      "date": "2026-10-01",
-      "text": "Ini bisa di buktikan bahwa ini 100% aman bang.?",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 1,
-      "id": "11b026aa22cbd80a",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-02f1b4612238c975",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyVDKxowNC78BDSG6B4AaABAg",
-      "date": "2026-10-01",
-      "text": "Ini bisa di buktikan bahwa ini 100% aman ga bang",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 3,
-      "id": "baa8f4b94c26e0cb",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-eae2ee7b52767d26",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27042,35 +20347,16 @@ const CREDIT_SENTIMENT = {
       "text": "Iya mana gada lagi kocak",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.65,
+        "lexiconRisk": 50.0
+      },
       "id": "b79794f06119b710",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-8e1bc735be66c67f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyEMnNcwQFdFoGs1zZ4AaABAg",
-      "date": "2026-10-01",
-      "text": "Kayaknya percuma juga komen yg buat content mungkin 99% AI",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 16,
-      "id": "bc0f48cf148fa051",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d9a9a6dc0de69d0a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27082,14 +20368,15 @@ const CREDIT_SENTIMENT = {
       "text": "Kontennya gak ada yg bisa KLO d coba...",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
-      "id": "7ad6a2a88edf441e",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "7ad6a2a88edf441e",
       "eventId": "auto-8b22146fccdd238e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27122,35 +20409,16 @@ const CREDIT_SENTIMENT = {
       "text": "Ngk bisaa!",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
       "id": "3b8f44a3680725f8",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-6ac712252a3e1977",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "video",
-      "externalId": "f1EKN0vBNY8",
-      "date": "2026-10-01",
-      "text": "Niko minta dividen sendiri serasa pinjol ke temen😭 #nikojunius #sidebrother",
-      "url": "https://www.youtube.com/watch?v=f1EKN0vBNY8",
-      "engagement": 32203,
-      "id": "549dcd1b3de710c6",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-535dc32b494cea7b",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27161,15 +20429,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-01",
       "text": "Percayalah orang minjem duit kebanyakan sekarang bukan untuk bisnis, tapi untuk nutup keadaan.\n\nItu kondisi ekonomi kita. Siapa yang bilang ekonomi kita tumbuh keatas, narkoba jenis apa yang dia konsumsi 😂",
       "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 3,
-      "id": "e679faf7830a2a94",
+      "engagement": 4,
       "sentiment": {
-        "risk": 40.2,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 1.4,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.75,
+        "lexiconRisk": 40.2
       },
+      "id": "e679faf7830a2a94",
       "eventId": "auto-cb4c72216e3d1bbf",
       "eventType": "industry_update",
       "eventSeverity": 0.18
@@ -27182,47 +20451,28 @@ const CREDIT_SENTIMENT = {
       "text": "Semoga dapat,soalnya mau bayar UKT Kuliah",
       "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
       "engagement": 0,
-      "id": "0fd8f2c187b4cf20",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "0fd8f2c187b4cf20",
       "eventId": "auto-e64b78447f04ae41",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
-      "contentType": "video",
-      "externalId": "hrANyUi_ZDM",
-      "date": "2026-10-01",
-      "text": "Suami Diam-Diam Pinjam Pinjol, Data Keluarga Ikut Dipakai! Istri Langsung Murka 😱",
-      "url": "https://www.youtube.com/watch?v=hrANyUi_ZDM",
-      "engagement": 69657,
-      "id": "0381130bc8a0f9af",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-87dbdbf9e3e1eda7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugx51o2XBZu_dgwvu4t4AaABAg",
+      "externalId": "Ugw4B8cjgzp4yBnBryF4AaABAg",
       "date": "2026-10-01",
-      "text": "Tapi realita sih😌",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
+      "text": "Setelah ini rakyat harus bisa serang OJK untuk menyelamatkan rakyat dari status kolekbilitas karena menyusahkan rakyat, harus ada pemutihan dalam waktu 5 tahun",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
       "engagement": 0,
-      "id": "5c4c9e8e9c25d875",
+      "id": "1552e1c34cb0d891",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -27230,27 +20480,7 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-96c0d127c2b77f6c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxHtwemFD8LfMgjd2R4AaABAg",
-      "date": "2026-10-01",
-      "text": "Terimakasih udah diinformasikan 🤘🙏",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 0,
-      "id": "ca8df859c3c16dea",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-05754f2bb769a5b6",
+      "eventId": "auto-283a88f1ee68e333",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27261,136 +20491,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-01",
       "text": "Tiền Mượn Mạng Gây Họa Tiếp #funny #shorts #giaitri",
       "url": "https://www.youtube.com/watch?v=r0xJ4eG4WxM",
-      "engagement": 34968,
+      "engagement": 35188,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "8d8af555009e1b6e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-a8c86b8a69461344",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz16t7Zei1cSsYFuhF4AaABAg",
-      "date": "2026-10-01",
-      "text": "Wkwkwkw jepit rambut nya pindah ke rambut suaminya,,tapi overall bagus sihh",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 3,
-      "id": "1876b9c60519c771",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a2bb04daf8fd485f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzpuAWPr5gbUi1UwmF4AaABAg",
-      "date": "2026-10-01",
-      "text": "Yang ada malah aplikasi ini yg mau memampaatkan poto coppy ktp kita.",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 33,
-      "id": "8d54c6a1bc48c40e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-3c42727c9fa3a5e7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxbAeE3RkWx5LcUr2V4AaABAg",
-      "date": "2026-10-01",
-      "text": "bissmilah bang buat ngelanjutin hidup",
-      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 0,
-      "id": "b674d23067d98680",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-80d773172e2cef57",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgySAe2u3O8VwePdd2d4AaABAg",
-      "date": "2026-10-01",
-      "text": "penyakit hati emg ga ada obat nya😮",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 2,
-      "id": "3316c33624e72a27",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-087c097617f0672f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy_Kq3b8jZWsUZC1G14AaABAg",
-      "date": "2026-10-01",
-      "text": "❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤❤em gửi chái tim rồi",
-      "url": "https://www.youtube.com/watch?v=r0xJ4eG4WxM",
-      "engagement": 2,
-      "id": "ce45287f160ba538",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-34a1705ff1f3220c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzvbFYd1cIjrlNnYc94AaABAg",
-      "date": "2026-10-01",
-      "text": "😂",
-      "url": "https://www.youtube.com/watch?v=f1EKN0vBNY8",
-      "engagement": 1,
-      "id": "60a64ac8f6061bfc",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e3b0c44298fc1c14",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27401,36 +20512,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-02",
       "text": "3 Aplikasi Pinjaman Online Langsung Cair 2026 - Pinjol Mudah Cair Ke Dana TANPA BI CHECKING",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
-      "engagement": 23149,
+      "engagement": 24523,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.85,
+        "lexiconRisk": 44.4
+      },
       "id": "8dba87c5be5d7fb9",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-7770eb8e8f7c4eef",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyqKs7TmIzTgyJuaX94AaABAg",
-      "date": "2026-10-02",
-      "text": "Belum tentu dapat antrian. Seringnya quota habis. Saya pernah ngajukan cek SLIK ke OJK, tapi yg dikirim ke emailku malah data SLIK orang lain. Setelah komplain via email, seminggu baru dikirim file yg bener.",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 1,
-      "id": "81585c402faf84f7",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7561f27850985fc6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27442,14 +20534,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga dapet buat tambah beli hp, soalnya hp hilang, dan cuma bisa pakai hp adek untuk sementara 😢😢",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "b99ce4b0b240a57d",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "b99ce4b0b240a57d",
       "eventId": "auto-feeb516678481e6a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27462,14 +20555,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah tlng dong kak,buat biaya anak sekolah ,soalnya belom bisa kirim kampung ,msh cri2 kerjaan d perantauan 🙏",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "7e65655a6023ab52",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "7e65655a6023ab52",
       "eventId": "auto-6b2c6c0f27ca38e9",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27482,115 +20576,16 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah ya Allah, Semoga dapet buat tambahan modal usaha 🤲🏻",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
       "id": "2289a564b1f52d25",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-40a3eb6971b02928",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyavuoY1V7CP882PhB4AaABAg",
-      "date": "2026-10-02",
-      "text": "Bismillah 🙏🙏",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 0,
-      "id": "343037dd2fbd2be4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy8ErDza8rTfqzSYGl4AaABAg",
-      "date": "2026-10-02",
-      "text": "Bismillah 🤲",
-      "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
-      "engagement": 0,
-      "id": "656fa410af513cc1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxcec293unuFPxQJRp4AaABAg",
-      "date": "2026-10-02",
-      "text": "Bro ini ai tapi berguna",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 1,
-      "id": "59a3d91cf191c4b9",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-b6f1e4fb2d1fb5a9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwRPc3Q78EA5RbU_lh4AaABAg",
-      "date": "2026-10-02",
-      "text": "Capek deh sama pinjaman online... intinya saya gak pinjam ya gak pinjam!!!!! Itu urusan penipu dan pinjol onlinenya sendiri!! Gak ada urusan sama kita yang gak pernah minjam!!",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 1,
-      "id": "0c0ad9b49b14bcd0",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-31f19e3476695b7d",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgylAQP6-UEuttVs1654AaABAg",
-      "date": "2026-10-02",
-      "text": "Follow channel gue biar lo dapet tips life hack yg bermanfaat kayak gini tiap hari 🔥 cek video gue yg lain di Channel",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 2,
-      "id": "a803832113be7d2e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-7999da3bd82cbc36",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27602,14 +20597,15 @@ const CREDIT_SENTIMENT = {
       "text": "Ga muncul dana kilat pinjam nya",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
-      "id": "f5a64369baa25394",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "f5a64369baa25394",
       "eventId": "auto-6ae141d015e657d7",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27621,15 +20617,16 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-02",
       "text": "Gengsi Sehari, Teror Seumur Hidup! 😱💔 (Pikir-pikir Lagi Sebelum Pinjol!)",
       "url": "https://www.youtube.com/watch?v=cIMFUMt5sX0",
-      "engagement": 35934,
-      "id": "698f139ee2dbc190",
+      "engagement": 37394,
       "sentiment": {
-        "risk": 67.5,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.9,
+        "lexiconRisk": 67.5
       },
+      "id": "698f139ee2dbc190",
       "eventId": "auto-7ae50996323d8743",
       "eventType": "consumer_harm",
       "eventSeverity": 0.86
@@ -27641,56 +20638,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-02",
       "text": "Jadi orang baik-jujur di jaman ini pun harus berhati-hati & teliti",
       "url": "https://www.youtube.com/watch?v=34Vz7qHp8QI",
-      "engagement": 12,
+      "engagement": 16,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 44.4
+      },
       "id": "d649ed2d83719d88",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-58317477d7c2aa4e",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzAF38fB-RJk_g5XUJ4AaABAg",
-      "date": "2026-10-02",
-      "text": "Jjifodi",
-      "url": "https://www.youtube.com/watch?v=hrANyUi_ZDM",
-      "engagement": 2,
-      "id": "ac3efc86f48697de",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-80ba6dcbc1946318",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwyEUuuWMFK2vn3OJp4AaABAg",
-      "date": "2026-10-02",
-      "text": "Lah banyak banget lu bikin Aplikasi,woy lah ni channel mau NYARI UNTUNG dengan segala hal 😂😂😂😂",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 0,
-      "id": "6151b5aeb3c03e00",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-10cd3c45f558ea07",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27701,56 +20659,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-02",
       "text": "Mau saldo dana gratis seperti 10 Nama Pemenang di video?\r\nBales pin komentar ini, kasih tau kebutuhan untuk apa👇\r\n\r\nALTERNATIF PINJOL :\r\n\r\n Daftar doang, Dapat Rp100.000\r\nhttps://s.id/DanaGratis1\r\n Daftar doang, Dapat Rp180.000\r\nhttps://s.id/DanaGratis2\r\n Daftar doang, Dapat Rp340.000\r\n https://s.id/DanaGratis3\r\n Daftar doang, dapat Rp160.000\r\nhttps://s.id/DanaGratis4\r\n Daftar doang, dapat Rp530.000\r\nhttps://s.id/DanaGratis5",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
-      "engagement": 51,
+      "engagement": 49,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
+      },
       "id": "3bf96d4b347b78fb",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-a2c6befd9f888363",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyHYMWeMOPfg2p5yol4AaABAg",
-      "date": "2026-10-02",
-      "text": "Meanwhile yang diteror pinjol illegal 😂",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 0,
-      "id": "24843a130bcc2008",
-      "sentiment": {
-        "risk": 83.6,
-        "label": "negative",
-        "negativeWeight": 5.3,
-        "positiveWeight": 0.5,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-219a3c9d636a9a01",
-      "eventType": "consumer_harm",
-      "eventSeverity": 0.86
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyUE0dKF8PL_nt6t9N4AaABAg",
-      "date": "2026-10-02",
-      "text": "Riport yt nya penipu",
-      "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
-      "engagement": 1,
-      "id": "58ad00ccda4fe4c4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-80a6fea1c87c80da",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27762,75 +20681,16 @@ const CREDIT_SENTIMENT = {
       "text": "Semoga dapet ya allah buat bayar spp sekolah",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 1,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "d305aec6ba68203b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-b17fcada9345f556",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxVXI8Wu25lImRhIw94AaABAg",
-      "date": "2026-10-02",
-      "text": "Terima kasih",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 0,
-      "id": "0456ff2da6836183",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-56ada838860e4f85",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx4-Zzm-hYeCgAplqR4AaABAg",
-      "date": "2026-10-02",
-      "text": "Video nya juga AI",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 12,
-      "id": "c68f4595d8378774",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-9f7f0fc437ac1e52",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxH7AiHlnjbWu1Nq8h4AaABAg",
-      "date": "2026-10-02",
-      "text": "Well yang sering ku lihat tuh nilai sekolah yang kesebar",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 0,
-      "id": "fe9dbec62593ca0f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-4a8311e28b0b11c5",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27842,35 +20702,16 @@ const CREDIT_SENTIMENT = {
       "text": "bismillah rezekinya penonton setia semoga dapet rezekinya buat modal usaha🙏🏻",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 2,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
       "id": "90592231fd20585a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-1a741f313566abe2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyfuDm6w-Mtj0TSa4l4AaABAg",
-      "date": "2026-10-02",
-      "text": "gocap yang awalnya buat parkir sekarang jadi lap ingus🗿",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "2ca943f79d55880f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d44d2428a63cf1e6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27882,7 +20723,28 @@ const CREDIT_SENTIMENT = {
       "text": "Bang bisa bantu ada in dana instan gak bang",
       "url": "https://www.youtube.com/watch?v=8225kQfXiLI",
       "engagement": 0,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
+      },
       "id": "6738d66f7015de38",
+      "eventId": "auto-c6c0195d66244541",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxrdPYmwouv5_9rzS14AaABAg",
+      "date": "2026-10-03",
+      "text": "Bank aku mow gabung di wa,sudah request buat joint",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "e95846b6c32eb34f",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -27890,7 +20752,27 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-c6c0195d66244541",
+      "eventId": "auto-ea4e1793e78f8e01",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxGhm9RQCt3eotI4714AaABAg",
+      "date": "2026-10-03",
+      "text": "Berarti pihak adapundi punya DC lapangan yg kerjasama sama DBS ya kak...itu pasti GK datang kerumah ta kak pihak ketiga adapundinya",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "654090d7735862fe",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-2e27fd25be6b51e3",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -27902,14 +20784,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismilah bang saya buat,berangkat ke pondok lagi GK ada uang bangett😢",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "76b412e91bcbd58a",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "76b412e91bcbd58a",
       "eventId": "auto-22705e7a7b4949f8",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27922,14 +20805,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah bang buat bantu ortu tambah biaya adik sekolah🙏",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "c774fa8571b59ffb",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
+      "id": "c774fa8571b59ffb",
       "eventId": "auto-4b0643bb85cd0120",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27942,14 +20826,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah ya Allah, Semoga Dpat, biar Bisa Bantu Orng Tua Ya Allah🤲🤲🤲",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "b80372f3b8e2b0c0",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "b80372f3b8e2b0c0",
       "eventId": "auto-2c82fdb0892fb86a",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -27962,35 +20847,16 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah... Semoga rezekinya... Aamiin YRA 🤲🤲",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
+      },
       "id": "b18d12a4e63e5042",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-fcbba5bb54684e63",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwjajzOZ9Sj7JloROt4AaABAg",
-      "date": "2026-10-03",
-      "text": "Buat Yang Versi KK Bang",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 0,
-      "id": "348055666bd0f20b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-05f4513e1f2b8451",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28002,14 +20868,15 @@ const CREDIT_SENTIMENT = {
       "text": "Hadir bang,  bissmillah dapat, buat bayar hutang diwarung.\nSukses selalu buat abang",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "09abcbd3a243051f",
       "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 64.0
       },
+      "id": "09abcbd3a243051f",
       "eventId": "auto-c39742116a62c12e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -28017,12 +20884,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugx5o7smLppE7EF00cd4AaABAg",
+      "externalId": "Ugwibkjt42JpnSdEb9l4AaABAg",
       "date": "2026-10-03",
-      "text": "Kok punya ku GK bisa bg?",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 1,
-      "id": "42a9e6a2c63d55cb",
+      "text": "Hadir sllu bang. Pinjmyuk ktp ciamis cmn rantau di bekasi didtngn ke tmpt kerja kah?",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 5,
+      "id": "520447ca8b4fa99d",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -28030,7 +20897,87 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-2fcb701134f04a9b",
+      "eventId": "auto-56a32ba2d2e0c908",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgymSX3wasDA8z_vxDd4AaABAg",
+      "date": "2026-10-03",
+      "text": "Kang saya dapet wa dari colmitra . Ini kayanya pihak ke 3 dari 2 Oren isi Wanya akan ada penagihan lapangan.  Apa bener akan ada FC datang kerumah.",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "7ace91f7597aa0d1",
+      "sentiment": {
+        "risk": 57.0,
+        "label": "mixed",
+        "negativeWeight": 1.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-ccee5356fe59b052",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "Ugy-jFHGID0wSHxRQQF4AaABAg",
+      "date": "2026-10-03",
+      "text": "Klo sudah galbay, relakan. Jangan galob tulob, ķo datang dc nya k rumah kawan² hadapi. Tidak ada hukumnya pinjol lewat pihak ketiga melakukan penagihan sampai lunas. Yang boleh melakukannya hanya pegawai resmi dari pinjol yg bersangkutan..kerja dan hidup dengan tenang kawan.",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 6,
+      "id": "80951a09f963dda5",
+      "sentiment": {
+        "risk": 71.7,
+        "label": "negative",
+        "negativeWeight": 3.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-4bbb405e153974ca",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "video",
+      "externalId": "jloKjno-wXQ",
+      "date": "2026-10-03",
+      "text": "RESMI! PIHAK KE 3 PINJOL-PINJOL INI SIAP KERUMAH ANDA!",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 19638,
+      "id": "705afca4a8d3013f",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-a712e1395fe43187",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwPRHHOfW9tVsKLRLt4AaABAg",
+      "date": "2026-10-03",
+      "text": "Saya hanya verifikasi tidak pengajuan di kirim 1jt tidak ada info pengiriman tau tau di tagih via telephon bersama bunganya , dananya bgendap di rekening",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "f80c56cf84d8467b",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-f3f8c5b9119844eb",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28042,14 +20989,15 @@ const CREDIT_SENTIMENT = {
       "text": "Semoga aja rezeki 🥰🥰 butuh untuk bayar kontrakan 😭 suami sudah hampir 2 minggu nganggur 😭😭",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "2b62bd0ccf8a61e9",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.8,
+        "lexiconRisk": 50.0
       },
+      "id": "2b62bd0ccf8a61e9",
       "eventId": "auto-53256502a6b3b0a2",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -28057,42 +21005,22 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyTqcnlbl78qa2tHqN4AaABAg",
+      "externalId": "Ugw9jSlsuXgzsPZyhuJ4AaABAg",
       "date": "2026-10-03",
-      "text": "Sumpah ni channel berguna bgt😝",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 0,
-      "id": "143ab9546e4d0f88",
+      "text": "Tq edukasi Kang🙏🏻 DC lapangan tunaiku datang ke rumah gencar 😢 ksh somasi ,berikutnya rutin dtg pas galbay 3 bln ,masuk bln 4  dan skg galbay bln ke 5 tidak datang ,blm bs byr😢pihak ke  3 ivoji msh rajin dtg😢pdhl dh galbay 5 bln ,blm BS byr 😢🙏🏻yg ada krj keras utk bertahan hidup 😢",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 7,
+      "id": "ba7a361ef97067d6",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 59.1,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-3463a85becf468e1",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyP1qgnjBMCiVdpT0F4AaABAg",
-      "date": "2026-10-03",
-      "text": "Terima kasih informasinya, smg kita terlindungi dr sgl.hal.penipuan",
-      "url": "https://www.youtube.com/watch?v=yr_p-YTmz_w",
-      "engagement": 0,
-      "id": "29982e7d61928907",
-      "sentiment": {
-        "risk": 67.5,
-        "label": "negative",
-        "negativeWeight": 2.5,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d9822fa6c2cf26b5",
-      "eventType": "fraud_or_illegal_practice",
-      "eventSeverity": 0.74
+      "eventId": "auto-a331587f1abb11fc",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
     },
     {
       "platform": "youtube",
@@ -28102,15 +21030,37 @@ const CREDIT_SENTIMENT = {
       "text": "bismilah om buat ongkos ngelamar kerja ga usah banyak2 om 200 aja udah seneng🙏",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "431807ce55bdc744",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "431807ce55bdc744",
       "eventId": "auto-e6718ebb04cbf58d",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwbGWrnNT6lrS4Hugp4AaABAg",
+      "date": "2026-10-03",
+      "text": "bissmilah rezeki saya kali ini om butuh 200 aja om buat beli beras sama token listrik",
+      "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
+      "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
+      "id": "aad9e9dcdf5ea9ac",
+      "eventId": "auto-8f12102edefacca2",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28142,75 +21092,16 @@ const CREDIT_SENTIMENT = {
       "text": "malu miskin takut sederhana bikin terancam seumur hidup . sederhana rendah diri gak suka pamer  bikin hati tenang dan nyaman . masabodoh kata orang yg pentinga  menikah secara sah di mata tuhan dan saksi di lingkungan kita sudah cukup  👍",
       "url": "https://www.youtube.com/watch?v=cIMFUMt5sX0",
       "engagement": 0,
+      "sentiment": {
+        "risk": 52.0,
+        "label": "mixed",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.5,
+        "lexiconRisk": 60.5
+      },
       "id": "794a3664a39dae43",
-      "sentiment": {
-        "risk": 60.5,
-        "label": "mixed",
-        "negativeWeight": 2.3,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-cf98d0fc12bf1faf",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxz_4pYb5e1sskNPUV4AaABAg",
-      "date": "2026-10-04",
-      "text": "Apapun yg sifatnya meminjam uang lalu kembali dengan tambahan itu adalah riba, dan RIBA adalah jalan pelan pelan menuju kehancuran.. hukum Allah itu ga bisa di ganggu gugat.. siapapun yg sedang terjerat, mohonlah ampunan dan segera selesaikan dan STOP",
-      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 1,
-      "id": "008484f9e786c46f",
-      "sentiment": {
-        "risk": 64.0,
-        "label": "mixed",
-        "negativeWeight": 2.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6a1522f91837c479",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwhhsFTNw_4QrAB08R4AaABAg",
-      "date": "2026-10-04",
-      "text": "Banyak Scene extended euy",
-      "url": "https://www.youtube.com/watch?v=JlQ2gj8TmAo",
-      "engagement": 0,
-      "id": "cf0b65a3781b1958",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-eace79259b476296",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxME6bj-odtUR5uaDB4AaABAg",
-      "date": "2026-10-04",
-      "text": "Bismillah",
-      "url": "https://www.youtube.com/watch?v=ZbRTIk7A3iM",
-      "engagement": 0,
-      "id": "9d8feb7f7671148b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a1dd395c19f3a1f7",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28222,14 +21113,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga aku ga dapet,yg dapet bagi orng²yg kurang mampu aja,,tpi aku ngomong gitu bukan mau sombong ya🙏🙏",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "0194c5d64e260b3f",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "0194c5d64e260b3f",
       "eventId": "auto-61c0c1592eb80cf0",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -28242,14 +21134,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah semoga dapat rezeki dari abang Aamiin🤲",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "ebc938f9e036eda7",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "ebc938f9e036eda7",
       "eventId": "auto-7f20f91eae94ad47",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -28257,132 +21150,12 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugw8x-8x3CTfSyfB22V4AaABAg",
+      "externalId": "UgzpQfI31KE_wOuPA6h4AaABAg",
       "date": "2026-10-04",
-      "text": "Bismillah semoga dapat rezekinya melalui video ini, saya benar\"sedang buntu posisi di perantauan, gajian ditunda dan dijadikan 1 di bulan depan. Parahnya uang saya cuma tinggal 100 + belum bayar kontrakan. Disini saya benar\"nyerah sampe nyari\"pinjol, kebetulan saya Nemu video ini disaat putus asa, semoga saya menjadi salah satu orang yang beruntung dipercayai Allah lewat perantara channel ini.\n\"Fa inna ma'al usri yusra, inna ma'al usri yusra\" \n\nSaya hanya butuh untuk bayar kost & biaya buat pulang kampung😞🙏\nBismillah yaAllah....",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "e4f6e771c2bced3a",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6f4b8212b39762d5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx2GVRzDQMeh-mXX9J4AaABAg",
-      "date": "2026-10-04",
-      "text": "Bismillahiharmanirahim, smga ada rejeki nya buat bayar tagihan yang Sdh jatuh tempo 🤲🤲🤲",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 2,
-      "id": "5523451d677bf8b4",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-df2fbb5356db6547",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzlB42jOFU4mJ4043d4AaABAg",
-      "date": "2026-10-04",
-      "text": "Bismillahirrahmanirrahim,,, mudah 2@n ,, dapat buat biaya berobat bang,,,",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "2474b93fc46fecd2",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-5f6cdc9498571f22",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzMA9zJ-CpHLOGpqUB4AaABAg",
-      "date": "2026-10-04",
-      "text": "Can anyone say STALKER VIBES",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 65,
-      "id": "f1fe862f2933f913",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-23d318cd2791ad4a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzvaHNtl4Tr_XJEOHF4AaABAg",
-      "date": "2026-10-04",
-      "text": "Doesn't Caleb have a partner? He could simply say he's not looking, not available, in a committed relationship, does not find her attractive. Shut her down",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 85,
-      "id": "1612839219371dbf",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-97af0216d1a806a1",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxJYARKTLkM5GxqKBt4AaABAg",
-      "date": "2026-10-04",
-      "text": "Hadir",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 1,
-      "id": "220e52a3eec486c1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-d76d3ef651644d38",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugz_pvpWSOxUyq7cVKl4AaABAg",
-      "date": "2026-10-04",
-      "text": "Hadir bang, semoga dapat untuk berobat, sukses slalu bang",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
+      "text": "Dc klo belum pernah masuk penjara 3 kali jgn coba2 temui saya.",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
       "engagement": 3,
-      "id": "dee35c708a994611",
+      "id": "2dd2ecb1c2212d55",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -28390,49 +21163,29 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-ef545921845e8184",
+      "eventId": "auto-d541f5817bf82eb6",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgxDRHLdQDR0DtwzvcZ4AaABAg",
+      "externalId": "UgzQ41SgT5HA87sFlRJ4AaABAg",
       "date": "2026-10-04",
-      "text": "I would love to meet Caleb but…. Not THAT bad sorry lol he’s great but that’s insane",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 41,
-      "id": "62b1e9a3ae007b33",
+      "text": "FC Dateng ,tapi ketetangga bang nanya² rumah dan bilng punya hutang saya ga tau itu FC apa,punya cicilan di kredivo,yup, shopee,gimna yaa bang jadi takut sebar data",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 4,
+      "id": "58d4f7575756d7b2",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
+        "risk": 83.6,
+        "label": "negative",
+        "negativeWeight": 4.8,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-250083771a1810e6",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwwXPTjPpj4M6mBva14AaABAg",
-      "date": "2026-10-04",
-      "text": "Just by looking to her eyebrows, I can see that she is C R A Z Y!",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 16,
-      "id": "38ff20c812826a6f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2f6581c260c491f2",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-854650d2c120f97b",
+      "eventType": "consumer_harm",
+      "eventSeverity": 0.86
     },
     {
       "platform": "youtube",
@@ -28442,75 +21195,16 @@ const CREDIT_SENTIMENT = {
       "text": "Kak tolong kak semoga dapat buat orang tua saya,buat bantu kekurangan modal warung ortu,kasihan orang tuaku warungnya kehabisan modal 😭",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
+      "sentiment": {
+        "risk": 82.0,
+        "label": "negative",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
+      },
       "id": "696bec28abb194fd",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-781ec1b352909bfe",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxpad1HB0ZmU3lPxLJ4AaABAg",
-      "date": "2026-10-04",
-      "text": "Kayaknya lu doang bang yg iklan bisa pas sama apa yang lu bahas, gokil🗿",
-      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 1,
-      "id": "81249a6e9c7a7b7b",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-59dab31cd6b98380",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw9h1mN1HiqEXRD7jJ4AaABAg",
-      "date": "2026-10-04",
-      "text": "Lebih seneng di Shopee sih😅, beli barang tapi bayarnya bulan depan behh mantap dahh",
-      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 1,
-      "id": "a9706b97edc18b76",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-f512e943f8738cbb",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugwuhi4aerD9H5joHch4AaABAg",
-      "date": "2026-10-04",
-      "text": "Masih yg pertama bang., Sehat selalu ya bang , buat beli keperluan rumah bang",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 1,
-      "id": "f2ee52c819b53420",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-b144e91aa7fef649",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28521,36 +21215,17 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-04",
       "text": "Mau saldo dana gratis seperti 10 Nama Pemenang di video?\r\nBales pin komentar ini, kasih tau kebutuhan untuk apa👇\r\n\r\nALTERNATIF PINJOL :\r\n\r\n Daftar doang, Dapat Rp100.000\r\nhttps://s.id/DanaGratis1\r\n Daftar doang, Dapat Rp180.000\r\nhttps://s.id/DanaGratis2\r\n Daftar doang, Dapat Rp340.000\r\n https://s.id/DanaGratis3\r\n Daftar doang, dapat Rp160.000\r\nhttps://s.id/DanaGratis4\r\n Daftar doang, dapat Rp530.000\r\nhttps://s.id/DanaGratis5",
       "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 90,
+      "engagement": 107,
+      "sentiment": {
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 50.0
+      },
       "id": "410b88f88cbb90d1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
       "eventId": "auto-a2c6befd9f888363",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxfCOkn5053Hziq3nR4AaABAg",
-      "date": "2026-10-04",
-      "text": "Mudah mudahan dapet  buat kebutuhan kuliah",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 1,
-      "id": "63b2431a6de48e07",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ace8ced905a6719e",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28561,38 +21236,19 @@ const CREDIT_SENTIMENT = {
       "date": "2026-10-04",
       "text": "RAME YANG GALBAY?! Pinjol Mudah Cair 2026 ke DANA - Pinjol Data Pinjaman Online Langsung Cair",
       "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 19827,
-      "id": "3affc2c63809c5c7",
+      "engagement": 26485,
       "sentiment": {
-        "risk": 59.1,
-        "label": "mixed",
-        "negativeWeight": 2.1,
-        "positiveWeight": 0.8,
-        "method": "deterministic_id_lexicon_v2"
+        "risk": 25.0,
+        "label": "positive",
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "POS",
+        "modelConfidence": 0.55,
+        "lexiconRisk": 59.1
       },
+      "id": "3affc2c63809c5c7",
       "eventId": "auto-abac53addd62784f",
       "eventType": "credit_quality_stress",
       "eventSeverity": 0.58
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwuX-ORSPUueF5xjg94AaABAg",
-      "date": "2026-10-04",
-      "text": "Realita nya lapor ojk agak ribet 😅",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
-      "engagement": 0,
-      "id": "9eb6780f62f1fc90",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-abd9e4891b03f59e",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
@@ -28602,14 +21258,15 @@ const CREDIT_SENTIMENT = {
       "text": "Semoga ada rezeki❤\nBuat tambahan kirim ke orang tua amin🙏🙏",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "0a958a013164b49c",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "0a958a013164b49c",
       "eventId": "auto-f8b1a72e4e36f3e4",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -28617,32 +21274,32 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzdqnSxukg40qt6qzp4AaABAg",
+      "externalId": "UgwffIgLyJZqLIRPAmB4AaABAg",
       "date": "2026-10-04",
-      "text": "She has huge issues….run as you could end up her never person to stick",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 12,
-      "id": "f4ed9a8cddc9ccde",
+      "text": "aku Galbay di Oren hampir 5 bulan",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 5,
+      "id": "46442a703bed3d0e",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 64.7,
         "label": "mixed",
-        "negativeWeight": 0.0,
+        "negativeWeight": 2.1,
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-d3e3d903c263e988",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
+      "eventId": "auto-fee385707c63eee8",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
     },
     {
       "platform": "youtube",
-      "contentType": "video",
-      "externalId": "tyBUp8aN5cU",
+      "contentType": "comment",
+      "externalId": "UgyEedx9CMkZwljpMjh4AaABAg",
       "date": "2026-10-04",
-      "text": "She took a payday loan to meet her crush Caleb #calebhammer",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 54981,
-      "id": "30fd316a9bc8b63c",
+      "text": "pihak ke 3,4,5,6 sini maju, tak ladeni",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 6,
+      "id": "2bcd8b340b993861",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -28650,287 +21307,48 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-8e7012d0ef7452ff",
+      "eventId": "auto-ba3118ec004794bf",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwL0YmIjdoAd1wHjnV4AaABAg",
-      "date": "2026-10-04",
-      "text": "She wanted the publicity..",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 29,
-      "id": "234803684369f6c0",
+      "externalId": "Ugzn2igtcofIY0tUvsF4AaABAg",
+      "date": "2026-10-05",
+      "text": "Bang kalo misalkan kita blokir wa spinjam aman ngx ea soal nya dia ngancam2 mulu ngirim foto surat undangan terus ngancam mau datang kerumah",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "8b4d680acb45f5c7",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 60.5,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
+        "negativeWeight": 2.3,
+        "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-37ced3b8528dcc48",
+      "eventId": "auto-caff5cdab8eac4e0",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgyGTH3AXP81Lm5Wz9d4AaABAg",
-      "date": "2026-10-04",
-      "text": "She wants that money 💰",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 7,
-      "id": "434c30f1b17539a0",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-815e2e62964ac7be",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugyw3emjpXgILYjlbzh4AaABAg",
-      "date": "2026-10-04",
-      "text": "She's a redhead. Good luck bro 😂",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 91,
-      "id": "564ae1557a17550f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0d1a52e11698beb1",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxLe1YOwJTeTgSW7tR4AaABAg",
-      "date": "2026-10-04",
-      "text": "Terlalu baik kalok gua udah gampar tu anak",
-      "url": "https://www.youtube.com/watch?v=MX-5lEHt8zo",
-      "engagement": 0,
-      "id": "1853193e539622d7",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-8f5463c426c09e34",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzT8rG5VcOu3PPtlcx4AaABAg",
-      "date": "2026-10-04",
-      "text": "UNSTABLE personified.",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 9,
-      "id": "f5fa12b7de5bc7e7",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-027f9f41114946e9",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyZAV0N_ci6-LUuUdd4AaABAg",
-      "date": "2026-10-04",
-      "text": "abang tolong dibantu . buat nene lagi sakit buat berobat bang 🥲🙏🙏🙏🙏🙏",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 1,
-      "id": "1e05d8de4adfa1cc",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a40128772bfc5e6c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugwj9GL4WDlOT6HdLAl4AaABAg",
-      "date": "2026-10-04",
-      "text": "bismilah . buat berobat nenek bos",
+      "externalId": "UgwwD7AAkK-1SRDeH-14AaABAg",
+      "date": "2026-10-05",
+      "text": "Bismilah semoga dapat buat bayar spp anak sekolah",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "c19173bc498d55bd",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e61dbe0beec1ea65",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugw33RVHByyYMOYftWR4AaABAg",
-      "date": "2026-10-05",
-      "text": "Aminn",
-      "url": "https://www.youtube.com/watch?v=QzQb5FP4JBA",
-      "engagement": 0,
-      "id": "e1a05cbe06738609",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fbc5bf4f786dabad",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyGghvkzDc9YWVKwrN4AaABAg",
-      "date": "2026-10-05",
-      "text": "At least she’s committed.",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 0,
-      "id": "01e2e7b24c54d6b0",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-014ec42af9c1c23b",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx8_Okb3Yni24ILYXF4AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillah buat patungan sama istri ganti uang habis 5jutaan BPKB motor jadi korban gegara nutupin hutang pinjol 😢",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "22b36c7bfa72dd00",
-      "sentiment": {
-        "risk": 75.9,
+        "risk": 82.0,
         "label": "negative",
-        "negativeWeight": 3.7,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "NEG",
+        "modelConfidence": 0.7,
+        "lexiconRisk": 50.0
       },
-      "eventId": "auto-9180310c8fb31ac4",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzlbaRS-XOG7JRTQpF4AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillah dapat, untuk tambahan modal jualan krengsengan bekicot 😊",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "4ad227f1941d84b5",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-b23c58520047d547",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugwj37H_ESUj7XLTC4N4AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillah gak berharap kalau rejeki gak kemana",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "a37bd22461c75c9c",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ef2f5899f757a786",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzBo4yeLXIXRMLy9354AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillah semoga dapat ya bg, buat tambahan wisuda hehe 🙏❤",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "44d9327888633cb0",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-db24ce5dd0b3bb4f",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwzC--KOyVwAfIfRCl4AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillah semoga dapet, buat bayar spp bulnaan adek",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "699c27b1cc7981ec",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ed254758c93e38c3",
+      "id": "04961cfe893cfee9",
+      "eventId": "auto-f4dbd6bf533a8f94",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
@@ -28942,14 +21360,15 @@ const CREDIT_SENTIMENT = {
       "text": "Bismillah,moga dapat dana kaget buat tambah modal usaha",
       "url": "https://www.youtube.com/watch?v=mSfNs-xK114",
       "engagement": 0,
-      "id": "ba055acc15543c25",
       "sentiment": {
-        "risk": 50.0,
+        "risk": 52.0,
         "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
+        "method": "deepseek_credit_social_v1",
+        "modelLabel": "MIX",
+        "modelConfidence": 0.6,
+        "lexiconRisk": 50.0
       },
+      "id": "ba055acc15543c25",
       "eventId": "auto-e8c82b128e99bfeb",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
@@ -28957,372 +21376,52 @@ const CREDIT_SENTIMENT = {
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "Ugy_pgiHvhKZZ9_3imN4AaABAg",
+      "externalId": "UgwrlHbYYJ6A7IAzJ2h4AaABAg",
       "date": "2026-10-05",
-      "text": "Bismillahirrahmanirrahim semoga ada Rizki ya",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "09a28d69fce20d7f",
+      "text": "Gw sih milih aman aja deh ga perlu pake utang segala .. kerja ya kerja ckup bersyukur dan hidup sehat",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "ccb2c249e1d7d20f",
       "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-1897fd67072b079c",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgydfxK-z-YuVZegRFV4AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillahirrahmanirrahim semoga dapat buat beli hp baru buat anak",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 1,
-      "id": "52f4fba34e8276f1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e17860afc8ef27f0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxzJ0yVVlq4R8maT214AaABAg",
-      "date": "2026-10-05",
-      "text": "Bismillahirrahmanirrahim,, mudah mudahan bisa dapat rezeki untuk bisa bikin rumah 🤲",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "cf08ff06acf6251e",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-aa4b8258c0e96088",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugyvv51toNXtvKt8SA14AaABAg",
-      "date": "2026-10-05",
-      "text": "Caleb was definitely flattered, lowkey taking it to heart not going past it. happens to the best of us.",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 6,
-      "id": "24eedd48d57cd691",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-e59eb990e812ae54",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzXUhG5G_aacmBJHUp4AaABAg",
-      "date": "2026-10-05",
-      "text": "He was secretly considering it 😂",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 90,
-      "id": "bc384213c9249327",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-6b4d8afefeb49fb3",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxqIddOPTdqFcNOx4l4AaABAg",
-      "date": "2026-10-05",
-      "text": "I love Caleb just for his straight forward  content. He just says it as it is.",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 1,
-      "id": "a19f3011f74aa833",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-519fda3877b6c568",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwmxfvNHBkzO0xeXk54AaABAg",
-      "date": "2026-10-05",
-      "text": "Kok bisa ya konten kyk dia ini bnyak yang tertipu",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 0,
-      "id": "d318907a775720c1",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-00a8a2f8a34438b0",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx-yZqxrpUv__jU0EN4AaABAg",
-      "date": "2026-10-05",
-      "text": "Laporkan akun nya",
-      "url": "https://www.youtube.com/watch?v=X0_6MCUl0n4",
-      "engagement": 0,
-      "id": "f8c18a1988aaae9f",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-fc36248d653dcbb8",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxjjei3QQCBsriXXq54AaABAg",
-      "date": "2026-10-05",
-      "text": "Reminds me of Isla Fisher in the Wedding Crashers. \n\"Don't ever leave me... cause I'd find you\"",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 24,
-      "id": "c3ad32eae67f4ada",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-ad69e7bc5e721eb5",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgwwVSZgl-C8zOuUoUZ4AaABAg",
-      "date": "2026-10-05",
-      "text": "Semoga hari ini kedepannya ada rejeki buat bayar kebutuhan ☺️",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "cc351d0c700fa864",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-c46dccbf0460abae",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyelQlIpP-9BLSA0y14AaABAg",
-      "date": "2026-10-05",
-      "text": "She is the rebound if things don't work out with his relationship.",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 0,
-      "id": "5568cbd09a20a469",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-dec409dccbdda842",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugxf0Qo24ygB6ork25V4AaABAg",
-      "date": "2026-10-05",
-      "text": "She seems kinda crazy, but she's really cute",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 2,
-      "id": "3605fedbc143daa5",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-0bf37c204050007a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyEiR1fv7yVjmMbo7h4AaABAg",
-      "date": "2026-10-05",
-      "text": "She's like \"well, there goes that plan.\"",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 0,
-      "id": "f435ff2dbe35edaf",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-2d289e2c273b225e",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgyfhRypBsewvcKyq2x4AaABAg",
-      "date": "2026-10-05",
-      "text": "Taylor Swift fans would 100% do this type of sht, lol.\n\nStupid typo",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 18,
-      "id": "158e86f896484477",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-bb49477a1f4ecdcf",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugx_E76ATGuOWKuwlX94AaABAg",
-      "date": "2026-10-05",
-      "text": "The eyes chico, they never lie…and those looks deranged psychotic",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 6,
-      "id": "3b93f1c32f86fb77",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-a410e282cda0091a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgzTyKzmm04pzyDv96t4AaABAg",
-      "date": "2026-10-05",
-      "text": "mantap sehat selalu bang semoga rejeki nya buat kebutuhan utang😢🙏",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "2aaaa59af17ac1a2",
-      "sentiment": {
-        "risk": 57.0,
+        "risk": 51.4,
         "label": "mixed",
         "negativeWeight": 1.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-aed8cc059c3c049a",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "Ugy7AzjfbQgf5K0GxlR4AaABAg",
-      "date": "2026-10-06",
-      "text": "Bang aku lagi butuh dana buat modal jualan aku dah. Cape nyari kerja, moga Abang bisa bantu aku mau buka dagangan sendiri🙂‍↕️",
-      "url": "https://www.youtube.com/watch?v=r8C219ADOME",
-      "engagement": 0,
-      "id": "09b0d26946e1f492",
-      "sentiment": {
-        "risk": 50.0,
-        "label": "mixed",
-        "negativeWeight": 0.0,
-        "positiveWeight": 0.0,
-        "method": "deterministic_id_lexicon_v2"
-      },
-      "eventId": "auto-680534e78b752394",
-      "eventType": "general_sentiment",
-      "eventSeverity": 0.35
-    },
-    {
-      "platform": "youtube",
-      "contentType": "comment",
-      "externalId": "UgxxkGPwxCFNFiwC4jd4AaABAg",
-      "date": "2026-10-06",
-      "text": "Ngeri dua2nya, pengalaman bunga kecil tapi justru biaya administrasinya yang lumayan, cek aja dah..",
-      "url": "https://www.youtube.com/watch?v=h5hI9UWgmzY",
-      "engagement": 0,
-      "id": "343f3bf09f5c2871",
-      "sentiment": {
-        "risk": 44.4,
-        "label": "mixed",
-        "negativeWeight": 0.0,
         "positiveWeight": 0.8,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-75a05a42df55df2d",
+      "eventId": "auto-507aa523ff6e4e98",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgzUn0UdUW2OeA0NPGF4AaABAg",
-      "date": "2026-10-06",
-      "text": "OJK..., Ya untuk orang besar saja.",
-      "url": "https://www.youtube.com/watch?v=xG-BopXtsS4",
+      "externalId": "Ugzu-DfO3nq0lYohSnx4AaABAg",
+      "date": "2026-10-05",
+      "text": "Kak kalo galbay apa harus di uninstal apk nya,,atau gak usah",
+      "url": "https://www.youtube.com/watch?v=5q979RI37u8",
       "engagement": 0,
-      "id": "95f6c76f35f5e5fc",
+      "id": "c0f4aa1185cd279a",
+      "sentiment": {
+        "risk": 64.7,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-45f763231616f1a2",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwXD7_WyzFK-YDzAul4AaABAg",
+      "date": "2026-10-05",
+      "text": "Mantap bang edukasinya",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "e0709f0eef7e9c7c",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -29330,19 +21429,79 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-ab5035d568ea8e7f",
+      "eventId": "auto-d03eba4a1516b701",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     },
     {
       "platform": "youtube",
       "contentType": "comment",
-      "externalId": "UgwRd3SUuFKWKtW4rNN4AaABAg",
+      "externalId": "Ugxvh0K33mJ8bkpj2Id4AaABAg",
+      "date": "2026-10-05",
+      "text": "jgn cuma galbay and terima teror spam telpon bray\n\nkita bisa juga perangi pinjol2 nya asal rame2 perangi iklan pinjol2, caranya?\n\nlaporkan iklan pinjol ke google, klik titik tiga, laporkan sbg app spam (memang mereka kbanyakan app scammer nyolong data pribadi dari hp user) , isi kolom mereka menggunakan kontak telfon dan foto 2 dari galeri user untuk mengancam user.\n\nnanti dari situ kalian lihat, inisial dan lokasi asli pengiklan, kebanyakan mereka dari China dan Hongkong\n\ngue ud 3 bulan jalan, skrg ud sepi iklan pinjol di hape 😂",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 4,
+      "id": "4ef74b15a8c78aa7",
+      "sentiment": {
+        "risk": 95.0,
+        "label": "negative",
+        "negativeWeight": 9.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-48a4daa8275a1379",
+      "eventType": "consumer_harm",
+      "eventSeverity": 0.86
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwUgwuaun44fkhI2lt4AaABAg",
       "date": "2026-10-06",
-      "text": "She really creeps me out, she comes across as someone who you wouldn't want close to you",
-      "url": "https://www.youtube.com/watch?v=tyBUp8aN5cU",
-      "engagement": 0,
-      "id": "8ad1c77f09922164",
+      "text": "Bg saya galbay 5jt superbank area jatim aman ga.. Solusinya bg",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "39ca0d1d41ee3fd6",
+      "sentiment": {
+        "risk": 59.1,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.8,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-80db375b3b4213bd",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgxZwKldqte82D-OtQ94AaABAg",
+      "date": "2026-10-06",
+      "text": "Kalo saya ada dc kerumah saya kalo masih baik saya pun jwab baik tp kalo intimidasi lngsung samurai melayanng😂",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "ae496e3eb37a3a1c",
+      "sentiment": {
+        "risk": 67.5,
+        "label": "negative",
+        "negativeWeight": 2.5,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-8f55698ee1aa5a86",
+      "eventType": "consumer_harm",
+      "eventSeverity": 0.86
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwIMlAMtXamAOgIco54AaABAg",
+      "date": "2026-10-06",
+      "text": "Mau pihak ke 3,4,5,6 bodo amat emang gua pikirin!!! 😂😂😂",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "9955ee347e81a052",
       "sentiment": {
         "risk": 50.0,
         "label": "mixed",
@@ -29350,7 +21509,47 @@ const CREDIT_SENTIMENT = {
         "positiveWeight": 0.0,
         "method": "deterministic_id_lexicon_v2"
       },
-      "eventId": "auto-5715d8abc30e5112",
+      "eventId": "auto-ae6367f84db6a075",
+      "eventType": "general_sentiment",
+      "eventSeverity": 0.35
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgysbAwBXl125qXtWyF4AaABAg",
+      "date": "2026-10-06",
+      "text": "What, kang galbay mau maen kerumah.... Ya udah aq tungguin...",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "fb4a26f49ac9a465",
+      "sentiment": {
+        "risk": 64.7,
+        "label": "mixed",
+        "negativeWeight": 2.1,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-8e42057cd4c4148f",
+      "eventType": "credit_quality_stress",
+      "eventSeverity": 0.58
+    },
+    {
+      "platform": "youtube",
+      "contentType": "comment",
+      "externalId": "UgwAGB_ZJBO8HyYMoMV4AaABAg",
+      "date": "2026-10-07",
+      "text": "Bang kalau udah di alih kan ke pihak ke 3 abaikan atau bales chat nya bang",
+      "url": "https://www.youtube.com/watch?v=jloKjno-wXQ",
+      "engagement": 3,
+      "id": "95ddf0d87e3160dc",
+      "sentiment": {
+        "risk": 50.0,
+        "label": "mixed",
+        "negativeWeight": 0.0,
+        "positiveWeight": 0.0,
+        "method": "deterministic_id_lexicon_v2"
+      },
+      "eventId": "auto-b4694fe96e031490",
       "eventType": "general_sentiment",
       "eventSeverity": 0.35
     }
@@ -29360,23 +21559,29 @@ const CREDIT_SENTIMENT = {
     "mode": "live_multi_source_v2",
     "successfulChannels": [
       "google_news",
+      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
     "socialClassifier": {
-      "method": "deterministic_id_lexicon_v2",
-      "status": "failed",
-      "inputCount": 491,
-      "classifiedCount": 0,
-      "irrelevantDropped": 0,
-      "detail": "HTTP Error 402: Payment Required"
+      "method": "deepseek_credit_social_v1",
+      "status": "ok",
+      "inputCount": 393,
+      "classifiedCount": 164,
+      "irrelevantDropped": 76,
+      "model": "deepseek-chat",
+      "fallbackCount": 153,
+      "labelCounts": {
+        "NEG": 105,
+        "MIX": 36,
+        "POS": 23
+      }
     }
   },
   "sourceMode": "live:multi-source-v2.1"
