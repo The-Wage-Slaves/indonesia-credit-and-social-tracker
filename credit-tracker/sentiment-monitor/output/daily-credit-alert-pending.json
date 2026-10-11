@@ -1,118 +1,61 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-10",
-  "level": "high_pending",
+  "date": "2026-10-11",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 18.0,
-    "socialDailyVolumeRisk": 18.0,
-    "negativeSocialShare": 36.1,
+    "newsDailyVolumeRisk": 19.6,
+    "socialDailyVolumeRisk": 28.5,
+    "negativeSocialShare": 17.3,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=2; prior-7d median=40.0; robust z=-2.14",
-    "socialVolume": "today=1; prior-7d median=20.0; robust z=-2.14"
+    "newsVolume": "today=1; prior-7d median=37.0; robust z=-2.02",
+    "socialVolume": "today=3; prior-7d median=20.0; robust z=-1.43"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-7eaeba266110",
+      "id": "llm-867269d53072",
       "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "Pinjol Ilegal",
-        "Polres Gresik"
+        "DC Pinjol",
+        "Wanita Gresik"
       ],
-      "headline": "Perburuan DC Pinjol Peneror Wanita Gresik Pakai Foto Porno Editan - detikcom",
-      "headlineZh": "Gresik女子遭催收恐吓",
-      "summaryZh": "Gresik一名女子未借款却遭非法网贷催收用合成色情照恐吓，警方已立案追捕催收员。",
-      "rationale": "警方立案的催收伤害案",
-      "independentSourceCount": 5,
+      "headline": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
+      "headlineZh": "Gresik催收团伙用色情照恐吓",
+      "summaryZh": "东爪哇Gresik一名女性遭线上贷款催收人员用合成色情照片恐吓，警方跨岛追捕涉案催收团伙，属警方立案的催收伤害案。",
+      "rationale": "警方立案追捕的催收恐吓伤害事件",
+      "independentSourceCount": 1,
       "domains": [
-        "detik.com",
-        "jatim.tribunnews.com",
-        "memorandum.disway.id",
-        "surabaya.tribunnews.com",
-        "suryamalang.tribunnews.com"
+        "detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "c83e71af291df724",
-        "4ad89b247f420f0a",
-        "9b430e7d2a492770",
-        "f0d2e9bb9224a993",
-        "1c7aa46e6edc8132",
-        "bd2008ffae3bbe12",
-        "9141e0a34331af64"
+        "e3c624e6eb2e01cc",
+        "4bf6efba33b76133",
+        "c83e71af291df724"
       ],
       "articles": [
+        {
+          "title": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZzcmE1VWN4WkwtV1RIWGljU1dEWnpYYjBhZ2J6WDlSMnFLU3FGdnFaSV9QdmYwa0ZndTA2Y2pKd2FMZEtRVEdaNk9BZ2lONk84N0wtbDNWc1p0a051OTNva2pYdlExN0s3bzhURHNUa2dYQ0V5cHM2UV9vRjlRYUVfRkItaFA0VExYZUhnYVBtdUhzNW5oem9VMGJmRVhWdjR3LVl0ZnN2eUExdHNXeFROYkY0QWFmc2dkdW1lTkFnZG_SAcgBQVVfeXFMT2o2QTVOMXF5eFpyQXVkWVBXTzE3YUtoNmlxMDI2c2dnN0JEcWNUS0JCYUNyMjRON1hrRmFPYUIwSko0WktwUkdGZkZ5bFhxczFfWWdlT2llUkY2TDA5QmVVT1RoNGZzWW1pdmgxd2Fwa2JvbXJiLTljcEVtRG0xYnRCcmg1SmxzdDJvV0pjZHdfSkFRS1l2VFVXeVpNaHFQeUltOS1Oai10UmE4UXFXN1BXeF9fb09kMjZ5RFAtYVlNdVFlckFGck4?oc=5"
+        },
+        {
+          "title": "DC Pinjol Teror Wanita Gresik Pakai Foto Porno Diburu hingga Luar Pulau - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMmNhcDBfb0VUdXhJS2VKLXlyclk1dFZ6a2ZvRjJ0QTRTMGh0VlhMWkJybVBRZEk0ZWU1WGhsRm11RFVSczNOWVBUaWJtMU5nVVVfQ01PWm5EV052VlJ1clg4TF9KQjctZmZXQ21PNmlXcjZfUUE5dm95RkE1SE9lQ0owR0VReXBLT2JmX3dfX0I3bHFOc2tTa3BBZFMtX2lTaG1qbUZ2SkcxdzBUODNCN1N6ZVpZeTRLeURHNUpCaVNVUThUNHFZ0gHMAUFVX3lxTE0weTZTdFdhQUhHeEU3d3A3dW5CTk5YZ0w3TWxRd2RTUk5YenREd2l3QzM3WGhlbkY5cXVNTGh4djN1dlZJVy0za0NUSTBveHRvRVlqSENqMDN0eC1QVmUzNTAwbHhRMHV0UUM5aTZsaHVmYUtzbGwyYU9WQXMwMVY3WmZlTU8xZkQwZHpWTTRBZlFIcTZaSzluaXA1VnFtS1Z5allQQTU2Mm1xckprLThheW9kbFVXOXhpcHp1NmVRcUFwWFZ3OHRGSG4yLQ?oc=5"
+        },
         {
           "title": "Perburuan DC Pinjol Peneror Wanita Gresik Pakai Foto Porno Editan - detikcom",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPOVBKVUdmOUpqOGdLeXdyNTZtZ0d5d2FydXBCZUVQQ0lTSWxvU0VOVzljeXpYY1NYSU8zc2Voend3S0pRZVhKTHdVaGFvckhBNFA5ZTlKUnFOSFBUamdmdUZQZ0dLQy1jZVViaDFHQ0xTQkYtZi1HQ0d5Mjd6Q3J0SUhFMFVTWHUyMnFQQkQ5ZkZjb1VNRDZNU2RjZ0FveDR0RWRYaHFTM1pZQ3BDenJqc1hPMXhYZ0FxdVlSdHlUc9IBxAFBVV95cUxOaUJvRUNhWWh0N0xXUXZpZVVDc05oVm1CS21sSURxN1NwbHIwalNsRkZnSF92bHA2bTF4RW1IbGtkRzkwMy1ZU200R0I1ZkRpWVNrQTV6WDBMZDNKclo5LV82N0xudHFMVUVzWk9aQllHNk0wQnQ5YmY5cmVqbWYtQ3VHcFAzcG92UWhEdm5YbTRBNXc1OTM1dFdNM2JlelR2NEhpal9KRGEwNnN5YkZDUE9oQUFZaW5XZjJPbGJMek5IdDdT?oc=5"
-        },
-        {
-          "title": "Kagetnya Wanita di Gresik Tak Utang tapi Diteror DC Pinjol Ilegal - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVFlmOWRXSFVEU2JCMlRZNHE3QXp4MEJLOWN0NXNYR05wUG42ekVJZlNteXlaNk5JN203bGpyYko4b1pQRUZ0WjBBaC1CdDczLWNadGl4anJMc1NaT1pxcUpYalVVUVVZODY0TXo3bkQ3b2RXQkpyUkI4b21VTjN3SlB0ZEtySFgwNEFCcFZadzJrc2dkM1dZcXdFVkg2ZWxyVEhNX1dkNVY5OHkxc3NBNFdjSERBVndJMVliaDNVONIBxAFBVV95cUxObjZwdzBSYkhqTmRhbHpLSVRQVHMyUnFFZmZ1cWQ5WjhicG1aY281MlltbG96ZFk0UHF3eDZDblpHQlRhYXBWWmdpcVpJY29KWnl0QTh1dVdBdFZIRzFReWw5ck5JMjl3RlRGb3k3TDZzb2czT00zbmg4VWR6OWxsMTJhU2sweFFjd0luaWJ5dEsxcmpRVmQ2cmVTT1JkbWVhVHZpclRFQk80cGg3ZW9Fb0RFR284a1JNZzZYLXIzUFhwcjF0?oc=5"
-        },
-        {
-          "title": "Polisi Buru Debt Collector yang Ancam Warga Gresik Pakai Foto Syur, Pelaku Tak Beraksi Sendiri - Tribunjatim.com",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPV3EtMFhLNkJjNXQ1U3pUajJjMlUxOUdwc1FEeGdUdTN1WFpEZi1nTUFtQXRBdUhET0hiRjhWQ1VwYkpTQWk2eXNERUdDUmJWRTBVNHVOYjdJbno5UWxuT0JBZnBMSVJ5WXVFWVFJVGVJRFpUdm5iNFRWeTZwSWIzbkxnd1FvQXhzOWoyU2NFM2ZiWDZ2enl6YTZaRUtkTGRCYjBHQTFEMVBvOGZPUDNOOGJkUm80MnJqdk9uQzlkeWFwTENrMWdkcHdXVTF6NEpnb2c?oc=5"
-        },
-        {
-          "title": "Polisi Buru Penagih Pinjol Peras IRT Gresik dengan Foto Syur Editan, Pelaku di Luar Jawa - memorandum.disway.id - Memorandum.co.id",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPd01GYzJGVE1Fbi1zbmUwUE9TQ1RfMkFDZnBXU1Q4LUxZdmU4OEs2U1V1QURVUUZWdE1FTlNFc25rR1NKQ1BHMWtDWVNZbS1UMTNrUm1INjlBbWlpN3J0Ni1nQTdpbmtHMXd5OVZld3h3SkNBQTFaSzBFSVA1QVRCWHJZamZNTDBMZy13U19UbEtCLTJ2NVBDMDJSUHlUUXAyVGlBeGgxTWdaWkdLNXpBemN1UW5seTRqUTFxS1JTeklvT3MxZGfSAcYBQVVfeXFMT3dNRmMyRlRNRW4tc25lMFBPU0NUXzJBQ2ZwV1NUOC1MWXZlODhLNlNVdUFEVVFGVnRNRU5TRXNua0dTSkNQRzFrQ1lTWW0tVDEza1JtSDY5QW1paTdydDYtZ0E3aW5rRzF3eTlWZXd4d0pDQUExWkswRUlQNUFUQlhyWWpmTUwwTGctd1NfVGxLQi0ydjVQQzAyUlB5VFFwMlRpQXhoMU1nWlpHSzV6QXpjdVFubHk0alExcUtSU3pJb09zMWRn?oc=5"
-        },
-        {
-          "title": "Polisi Selidiki DC Pinjol Teror Wanita Gresik Pakai Foto Porno Editan - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPR0ZNemtJdWVOeUMtSWtyYnRMUTdseUtCc0U0OTdQX3FMS1g0SnRheTh6OTZfdFlHd3I2UV9CSUgtWTBTcEZVRk8wQ1A3dFhTUUprZVJQYUgySVZFUmxuWGNtMmR1SWdEYU95dWZzalpvYm1pWks0aUpEMVRjVFotODRtNTBqTkQxTDNOZG9HbjAtYlYybWdTSG5DNW5ZNGtUalZsRmlGNi1fMWpSbklrcVk2VzY2em9FbDRMQ3ZrVW9UREt10gHKAUFVX3lxTE9tcVpLekgzVGp5SXdUUzNWVVpkM2lwdGZUTllQdkdJNnNyNk14b0FrZTd4MFRYRzU2a21iV3NUbXE3RWZKczlBQ2hnVWtxQ3VaVWtVQ1BNTDBLSTF0ME40NE40amo3TkNNdVplcXozUTRRbk1qcENYR2VlOXFYTHAzRkU2ZFQyMk5aRjlZdWRUaUZ3MjZvZUZ0el9HRnNUbThUSi10VWF3eXdCa2RvZUlEVTlZclg3eW5oaWg2ZlpZZTdlYjlfcTY1NWc?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 7,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-5ccd1457230a",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Batas Kredit Macet Pinjol Mau Diubah Jadi 180 Hari, Ini Alasan OJK - kabarbisnis.com",
-      "headlineZh": "OJK拟改网贷坏账期限",
-      "summaryZh": "OJK拟将网贷不良贷款认定标准从90天改为180天，属监管政策调整。",
-      "rationale": "监管政策调整",
-      "independentSourceCount": 2,
-      "domains": [
-        "kabarbisnis.com",
-        "katadata.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "4a5a3de9fa44047f",
-        "6c83572af475e7c4"
-      ],
-      "articles": [
-        {
-          "title": "Batas Kredit Macet Pinjol Mau Diubah Jadi 180 Hari, Ini Alasan OJK - kabarbisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdkVhMUVRUVc2Njkxa2hBTjNiRFZBRTNJUm55RkxKbnB2ZExQUEtSaW9qVnVRTFZXUGRxS0VZRHNLcTJVdkQwaEZYX0psSnNQakJkSW5OTHM5SGZ5TnUyc1RVSTREbnVCZ002U2lzYkRXenJRYXdPMjlrZWN5dVdZYjlqdTRWTHkzeUlqaHMyTDVXWEhuUkg3Tmx0YXhsUExnQ1Vnb1plZV9FUEk?oc=5"
-        },
-        {
-          "title": "OJK Ubah Batas Pinjaman Online Disebut Kredit Macet Jadi 180 Hari - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdVNJdU54dUJjSlF5WkRrSFBTWl9GR0x6VnNaY0Vub3pIX0ZuVVBlZ1ZUZV9BQ0h0SHBOZlo2RXF2dXRENV9JU0hDRlltanBYWVQtb3JyZGYxamltaWVfanVsbDE4WXpkRnZib01fZTZDS2ZmOUoxWVFDSmdjWm5QWnRyT1FVdXNyeHk5eE1UTlhuUDViODFDZHBpQWZVY1lLMXJfSW9XRXZJSmVLbjFHRFJmd1p4cjNfc0HSAb8BQVVfeXFMT0hJTjdkRm1Bc2xNRHZaSDRkMDdnWWdaN1NwSnQ5MHRnWmYwY3pTMFpBQUFlTW5FVU9HZmRHMVVqU2lNX3FidUR0VlRTYld1ZFktZjZ1eDNvMFEzenc3aUtRWk90c1Y1MUpLQ2xlQ01vbEdCNVlqRzBualJWTGhOSUFES3NjaTh1dVI2ZXFDN0pvQnlDSFpYclo5OUh6TFBpME51RlpJLTh1QzhyVVRFOVNHOWhpV3VsY3hsQmtmQk0?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -122,28 +65,28 @@
       }
     },
     {
-      "id": "llm-347af38b24ca",
+      "id": "llm-b0e8b3b2a543",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "线上贷款行业"
       ],
-      "headline": "Kredit Macet Pinjol Naik 4,73%, OJK Soroti Kemampuan Bayar Borrower - Bisnis.com",
-      "headlineZh": "网贷坏账率上升4.73%",
-      "summaryZh": "OJK指出网贷不良贷款率上升4.73%，关注借款人还款能力，属资产质量承压。",
-      "rationale": "资产质量承压数据",
+      "headline": "Laba Pinjol Turun 2,99% Jadi Rp1,58 Triliun per Agustus 2026 - Bisnis.com",
+      "headlineZh": "线上贷款利润下滑2.99%",
+      "summaryZh": "截至2026年8月线上贷款行业利润同比下降2.99%至1.58万亿盾，反映行业资产质量与盈利承压。",
+      "rationale": "行业盈利下滑，资产质量承压信号",
       "independentSourceCount": 1,
       "domains": [
         "finansial.bisnis.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "3305b70c6f9a485e"
+        "c5a02d9428c1e1da"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pinjol Naik 4,73%, OJK Soroti Kemampuan Bayar Borrower - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaklua0tDWndKRDRvZkwwdWpUQ2hWSzFYR2w0ellOLU82QWZCamJ0aUZLWmpXSU1IdFA2emtjSzFDOVBCTG9DSFZKdUpNUFdGR1Z4aWlmM3hFOGhidzFIa25GZmFqX3U0MkZRdGhYMWtSRGJHOEFEYUNVX1hJUTRzZWh0dTdCM1JNVmxIYUZzNTI5Y19JY2lZT0ZJZlVZYmVnZ2JzaTkwcno0SWJEcGowcVBrOHZuNkppOTJr?oc=5"
+          "title": "Laba Pinjol Turun 2,99% Jadi Rp1,58 Triliun per Agustus 2026 - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPUXVNVVRDZ2VIT3pKSnhUWnpmd3JWd2d4bGE3NzhsQS1VMG5XLWh3ZXJEdE5CX1lTbmF6WTAwaGRsX2FHVXpVcVpLMkJ6aDN3ZUdOaUFnZThfdVVyRHlsTzVjQXcwWjh2WDF3VFJUQWNZR2JRczE2ZHNqXzVMQk5NVDB4YlljeDVhcDBBMDJvMEJRa3ZBWUM3bkxnaFJueUlMZW5ZV2dDWS1nN001WmRGSnRn?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -156,96 +99,29 @@
       }
     },
     {
-      "id": "llm-0d35fe765fe1",
+      "id": "llm-36917e36ad96",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "OJK",
+        "Pindar"
       ],
-      "headline": "OJK Akan Wajibkan Pinjaman Daring Sisihkan 5% Fee untuk Dana Perlindungan Lender - Katadata.co.id",
-      "headlineZh": "OJK拟强制网贷拨备5%",
-      "summaryZh": "OJK拟要求网贷平台拨出5%费用作为出借人保护基金，属监管政策调整。",
-      "rationale": "监管政策调整",
+      "headline": "OJK Batalkan Batas 3 Pindar — Risiko TWP90 19 Penyelenggara Mengintai - BERNAS.id",
+      "headlineZh": "OJK取消Pindar三机构上限",
+      "summaryZh": "OJK取消对Pindar三家机构的限制，同时19家机构TWP90逾期率超5%，监管调整与资产质量风险并存。",
+      "rationale": "监管政策调整，涉及行业风险指标",
       "independentSourceCount": 1,
       "domains": [
-        "katadata.co.id"
+        "bernas.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f677b016ef178e22"
+        "1981b84290db793b"
       ],
       "articles": [
         {
-          "title": "OJK Akan Wajibkan Pinjaman Daring Sisihkan 5% Fee untuk Dana Perlindungan Lender - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPTzc4S3BOajN0YmFUZXFYQjJGQUg4Y01pZ0kwcHpDdzg1QmFHdTRqTmlWVkpNcWpqdlhhT1FWUU5XdGdXbi1UQm8xM05WYV96b0JxVGtyQ29fWDZBUmpFUUY2MkdnUXV6YVpvV25BdDk3WThiWFozTExaYlNnRnlxaWY5RDl4VmtLbDZMakdnRkYydmZhS0RKa3QxZThldWF0R0JjRXdqN3gycnJGZG1QX0kwOXpTSFhoRUR2aEhHTE5tZ0JLZmFZSkZHV1PSAdIBQVVfeXFMUHM0cW93YkRMei1CMktjVEF2cWNObEw5bU45WXpTdGdPTDhpc0h0Qnd4U1NfdjJlS0hqZm9WM3l0RlVBU3FwUjBNSml3Z2h0LVN1OXpWSFNJVzBOUGpELV9zaF9TX0EtYkwxbDJUeUptOHdHWVJMWEVxRF9nVGxNS1d5ZFJxYm9SdkZDWE9aeVZiYWhKR0ZxMm9LNjZwNzNQVWZkdVVsTmdNWXlYaDdXZFpNUXZydXN6cHFOUkVTaHZQTFVIOElZSnJpMXozM1ozSVhR?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-2ec82a1f9b9f",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Pinjol Ilegal Dominasi Pengaduan Masyarakat, OJK Hentikan 951 Entitas - metrokalimantan.com",
-      "headlineZh": "OJK关停951家非法网贷",
-      "summaryZh": "OJK因非法网贷占投诉主导，已关停951家非法实体，属监管执法行动。",
-      "rationale": "监管关停执法行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "metrokalimantan.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8f7e2f4bf03b3c42"
-      ],
-      "articles": [
-        {
-          "title": "Pinjol Ilegal Dominasi Pengaduan Masyarakat, OJK Hentikan 951 Entitas - metrokalimantan.com",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcml2VThCVmxESko3NDVMTllSQUNFTUlmNWktRzdTVHZJQVhpVEszSFZLcndwVXBuWWp1V3phR2M0ZmhKNXJjeEZOdHRiRVo3ZjdnOUYzNlhwUFVpU1BEbjM2UUtNM1NXTUZiOW4tNlhQVXlXb1NfeU5ucXhfWTMwaUNXMA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-347af38b24ca",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Skema Tadpole Pinjol Dikeluhkan, OJK Soroti Pelindungan Konsumen - Bisnis.com",
-      "headlineZh": "OJK关注Tadpole模式投诉",
-      "summaryZh": "OJK就Tadpole网贷模式投诉关注消费者保护问题，属监管关注。",
-      "rationale": "监管关注消费者保护",
-      "independentSourceCount": 1,
-      "domains": [
-        "finansial.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b001292a68db385b"
-      ],
-      "articles": [
-        {
-          "title": "Skema Tadpole Pinjol Dikeluhkan, OJK Soroti Pelindungan Konsumen - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNRkd6dDBIR1NtdzdSaGg0eGZ6Y09LZmVhanh4bW5lRHJmaFlfckJsdTZKellidmhDd281WTJDbWlER0x4SXNQdGh4eVI3VlNWeS1hTU9IVFFVQTl2N19VWnE4TVJjS1p5dENDdHExNHJfTHMwWUNiZkZET0FvMXBzMzFTc1ZTZTNJUXJJZG1hdW04aDJsbTZWTDNTb0JxVlVCWXdvQW1oTlVJZVppa2ZnWHZsUmlfSnhhZEE?oc=5"
+          "title": "OJK Batalkan Batas 3 Pindar — Risiko TWP90 19 Penyelenggara Mengintai - BERNAS.id",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSVIzcDBMSTNGMl9FNHIwaVp1cGhYZXBaalY2MVZOM0I3U21nb2pBTl9XTnNlNndpc0RZbUNVWVQtc05qUmFIazlCY2Zsb0plME9aeUgzUWV2TGJWVFdMZ2ZOMnE4ellpRmdxcWh6V21ueGNwYl8tZ3ZhdVVLR2FZd0Jta201R3RqeXpZX2hVVThSSnpfeUhlVHhTTDBVaHlmZF9LLTFxdGxlSy1tSU04?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -262,69 +138,53 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 25,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 11,
+    "candidateCount": 10,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 4,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 25
+      "ok": 10
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-7eaeba266110",
+      "id": "llm-867269d53072",
       "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "Pinjol Ilegal",
-        "Polres Gresik"
+        "DC Pinjol",
+        "Wanita Gresik"
       ],
-      "headline": "Perburuan DC Pinjol Peneror Wanita Gresik Pakai Foto Porno Editan - detikcom",
-      "headlineZh": "Gresik女子遭催收恐吓",
-      "summaryZh": "Gresik一名女子未借款却遭非法网贷催收用合成色情照恐吓，警方已立案追捕催收员。",
-      "rationale": "警方立案的催收伤害案",
-      "independentSourceCount": 5,
+      "headline": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
+      "headlineZh": "Gresik催收团伙用色情照恐吓",
+      "summaryZh": "东爪哇Gresik一名女性遭线上贷款催收人员用合成色情照片恐吓，警方跨岛追捕涉案催收团伙，属警方立案的催收伤害案。",
+      "rationale": "警方立案追捕的催收恐吓伤害事件",
+      "independentSourceCount": 1,
       "domains": [
-        "detik.com",
-        "jatim.tribunnews.com",
-        "memorandum.disway.id",
-        "surabaya.tribunnews.com",
-        "suryamalang.tribunnews.com"
+        "detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "c83e71af291df724",
-        "4ad89b247f420f0a",
-        "9b430e7d2a492770",
-        "f0d2e9bb9224a993",
-        "1c7aa46e6edc8132",
-        "bd2008ffae3bbe12",
-        "9141e0a34331af64"
+        "e3c624e6eb2e01cc",
+        "4bf6efba33b76133",
+        "c83e71af291df724"
       ],
       "articles": [
+        {
+          "title": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZzcmE1VWN4WkwtV1RIWGljU1dEWnpYYjBhZ2J6WDlSMnFLU3FGdnFaSV9QdmYwa0ZndTA2Y2pKd2FMZEtRVEdaNk9BZ2lONk84N0wtbDNWc1p0a051OTNva2pYdlExN0s3bzhURHNUa2dYQ0V5cHM2UV9vRjlRYUVfRkItaFA0VExYZUhnYVBtdUhzNW5oem9VMGJmRVhWdjR3LVl0ZnN2eUExdHNXeFROYkY0QWFmc2dkdW1lTkFnZG_SAcgBQVVfeXFMT2o2QTVOMXF5eFpyQXVkWVBXTzE3YUtoNmlxMDI2c2dnN0JEcWNUS0JCYUNyMjRON1hrRmFPYUIwSko0WktwUkdGZkZ5bFhxczFfWWdlT2llUkY2TDA5QmVVT1RoNGZzWW1pdmgxd2Fwa2JvbXJiLTljcEVtRG0xYnRCcmg1SmxzdDJvV0pjZHdfSkFRS1l2VFVXeVpNaHFQeUltOS1Oai10UmE4UXFXN1BXeF9fb09kMjZ5RFAtYVlNdVFlckFGck4?oc=5"
+        },
+        {
+          "title": "DC Pinjol Teror Wanita Gresik Pakai Foto Porno Diburu hingga Luar Pulau - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPMmNhcDBfb0VUdXhJS2VKLXlyclk1dFZ6a2ZvRjJ0QTRTMGh0VlhMWkJybVBRZEk0ZWU1WGhsRm11RFVSczNOWVBUaWJtMU5nVVVfQ01PWm5EV052VlJ1clg4TF9KQjctZmZXQ21PNmlXcjZfUUE5dm95RkE1SE9lQ0owR0VReXBLT2JmX3dfX0I3bHFOc2tTa3BBZFMtX2lTaG1qbUZ2SkcxdzBUODNCN1N6ZVpZeTRLeURHNUpCaVNVUThUNHFZ0gHMAUFVX3lxTE0weTZTdFdhQUhHeEU3d3A3dW5CTk5YZ0w3TWxRd2RTUk5YenREd2l3QzM3WGhlbkY5cXVNTGh4djN1dlZJVy0za0NUSTBveHRvRVlqSENqMDN0eC1QVmUzNTAwbHhRMHV0UUM5aTZsaHVmYUtzbGwyYU9WQXMwMVY3WmZlTU8xZkQwZHpWTTRBZlFIcTZaSzluaXA1VnFtS1Z5allQQTU2Mm1xckprLThheW9kbFVXOXhpcHp1NmVRcUFwWFZ3OHRGSG4yLQ?oc=5"
+        },
         {
           "title": "Perburuan DC Pinjol Peneror Wanita Gresik Pakai Foto Porno Editan - detikcom",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPOVBKVUdmOUpqOGdLeXdyNTZtZ0d5d2FydXBCZUVQQ0lTSWxvU0VOVzljeXpYY1NYSU8zc2Voend3S0pRZVhKTHdVaGFvckhBNFA5ZTlKUnFOSFBUamdmdUZQZ0dLQy1jZVViaDFHQ0xTQkYtZi1HQ0d5Mjd6Q3J0SUhFMFVTWHUyMnFQQkQ5ZkZjb1VNRDZNU2RjZ0FveDR0RWRYaHFTM1pZQ3BDenJqc1hPMXhYZ0FxdVlSdHlUc9IBxAFBVV95cUxOaUJvRUNhWWh0N0xXUXZpZVVDc05oVm1CS21sSURxN1NwbHIwalNsRkZnSF92bHA2bTF4RW1IbGtkRzkwMy1ZU200R0I1ZkRpWVNrQTV6WDBMZDNKclo5LV82N0xudHFMVUVzWk9aQllHNk0wQnQ5YmY5cmVqbWYtQ3VHcFAzcG92UWhEdm5YbTRBNXc1OTM1dFdNM2JlelR2NEhpal9KRGEwNnN5YkZDUE9oQUFZaW5XZjJPbGJMek5IdDdT?oc=5"
-        },
-        {
-          "title": "Kagetnya Wanita di Gresik Tak Utang tapi Diteror DC Pinjol Ilegal - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVFlmOWRXSFVEU2JCMlRZNHE3QXp4MEJLOWN0NXNYR05wUG42ekVJZlNteXlaNk5JN203bGpyYko4b1pQRUZ0WjBBaC1CdDczLWNadGl4anJMc1NaT1pxcUpYalVVUVVZODY0TXo3bkQ3b2RXQkpyUkI4b21VTjN3SlB0ZEtySFgwNEFCcFZadzJrc2dkM1dZcXdFVkg2ZWxyVEhNX1dkNVY5OHkxc3NBNFdjSERBVndJMVliaDNVONIBxAFBVV95cUxObjZwdzBSYkhqTmRhbHpLSVRQVHMyUnFFZmZ1cWQ5WjhicG1aY281MlltbG96ZFk0UHF3eDZDblpHQlRhYXBWWmdpcVpJY29KWnl0QTh1dVdBdFZIRzFReWw5ck5JMjl3RlRGb3k3TDZzb2czT00zbmg4VWR6OWxsMTJhU2sweFFjd0luaWJ5dEsxcmpRVmQ2cmVTT1JkbWVhVHZpclRFQk80cGg3ZW9Fb0RFR284a1JNZzZYLXIzUFhwcjF0?oc=5"
-        },
-        {
-          "title": "Polisi Buru Debt Collector yang Ancam Warga Gresik Pakai Foto Syur, Pelaku Tak Beraksi Sendiri - Tribunjatim.com",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPV3EtMFhLNkJjNXQ1U3pUajJjMlUxOUdwc1FEeGdUdTN1WFpEZi1nTUFtQXRBdUhET0hiRjhWQ1VwYkpTQWk2eXNERUdDUmJWRTBVNHVOYjdJbno5UWxuT0JBZnBMSVJ5WXVFWVFJVGVJRFpUdm5iNFRWeTZwSWIzbkxnd1FvQXhzOWoyU2NFM2ZiWDZ2enl6YTZaRUtkTGRCYjBHQTFEMVBvOGZPUDNOOGJkUm80MnJqdk9uQzlkeWFwTENrMWdkcHdXVTF6NEpnb2c?oc=5"
-        },
-        {
-          "title": "Polisi Buru Penagih Pinjol Peras IRT Gresik dengan Foto Syur Editan, Pelaku di Luar Jawa - memorandum.disway.id - Memorandum.co.id",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPd01GYzJGVE1Fbi1zbmUwUE9TQ1RfMkFDZnBXU1Q4LUxZdmU4OEs2U1V1QURVUUZWdE1FTlNFc25rR1NKQ1BHMWtDWVNZbS1UMTNrUm1INjlBbWlpN3J0Ni1nQTdpbmtHMXd5OVZld3h3SkNBQTFaSzBFSVA1QVRCWHJZamZNTDBMZy13U19UbEtCLTJ2NVBDMDJSUHlUUXAyVGlBeGgxTWdaWkdLNXpBemN1UW5seTRqUTFxS1JTeklvT3MxZGfSAcYBQVVfeXFMT3dNRmMyRlRNRW4tc25lMFBPU0NUXzJBQ2ZwV1NUOC1MWXZlODhLNlNVdUFEVVFGVnRNRU5TRXNua0dTSkNQRzFrQ1lTWW0tVDEza1JtSDY5QW1paTdydDYtZ0E3aW5rRzF3eTlWZXd4d0pDQUExWkswRUlQNUFUQlhyWWpmTUwwTGctd1NfVGxLQi0ydjVQQzAyUlB5VFFwMlRpQXhoMU1nWlpHSzV6QXpjdVFubHk0alExcUtSU3pJb09zMWRn?oc=5"
-        },
-        {
-          "title": "Polisi Selidiki DC Pinjol Teror Wanita Gresik Pakai Foto Porno Editan - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPR0ZNemtJdWVOeUMtSWtyYnRMUTdseUtCc0U0OTdQX3FMS1g0SnRheTh6OTZfdFlHd3I2UV9CSUgtWTBTcEZVRk8wQ1A3dFhTUUprZVJQYUgySVZFUmxuWGNtMmR1SWdEYU95dWZzalpvYm1pWks0aUpEMVRjVFotODRtNTBqTkQxTDNOZG9HbjAtYlYybWdTSG5DNW5ZNGtUalZsRmlGNi1fMWpSbklrcVk2VzY2em9FbDRMQ3ZrVW9UREt10gHKAUFVX3lxTE9tcVpLekgzVGp5SXdUUzNWVVpkM2lwdGZUTllQdkdJNnNyNk14b0FrZTd4MFRYRzU2a21iV3NUbXE3RWZKczlBQ2hnVWtxQ3VaVWtVQ1BNTDBLSTF0ME40NE40amo3TkNNdVplcXozUTRRbk1qcENYR2VlOXFYTHAzRkU2ZFQyMk5aRjlZdWRUaUZ3MjZvZUZ0el9HRnNUbThUSi10VWF3eXdCa2RvZUlEVTlZclg3eW5oaWg2ZlpZZTdlYjlfcTY1NWc?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 7,
+      "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -334,68 +194,28 @@
       }
     },
     {
-      "id": "llm-5ccd1457230a",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Batas Kredit Macet Pinjol Mau Diubah Jadi 180 Hari, Ini Alasan OJK - kabarbisnis.com",
-      "headlineZh": "OJK拟改网贷坏账期限",
-      "summaryZh": "OJK拟将网贷不良贷款认定标准从90天改为180天，属监管政策调整。",
-      "rationale": "监管政策调整",
-      "independentSourceCount": 2,
-      "domains": [
-        "kabarbisnis.com",
-        "katadata.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "4a5a3de9fa44047f",
-        "6c83572af475e7c4"
-      ],
-      "articles": [
-        {
-          "title": "Batas Kredit Macet Pinjol Mau Diubah Jadi 180 Hari, Ini Alasan OJK - kabarbisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPdkVhMUVRUVc2Njkxa2hBTjNiRFZBRTNJUm55RkxKbnB2ZExQUEtSaW9qVnVRTFZXUGRxS0VZRHNLcTJVdkQwaEZYX0psSnNQakJkSW5OTHM5SGZ5TnUyc1RVSTREbnVCZ002U2lzYkRXenJRYXdPMjlrZWN5dVdZYjlqdTRWTHkzeUlqaHMyTDVXWEhuUkg3Tmx0YXhsUExnQ1Vnb1plZV9FUEk?oc=5"
-        },
-        {
-          "title": "OJK Ubah Batas Pinjaman Online Disebut Kredit Macet Jadi 180 Hari - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPdVNJdU54dUJjSlF5WkRrSFBTWl9GR0x6VnNaY0Vub3pIX0ZuVVBlZ1ZUZV9BQ0h0SHBOZlo2RXF2dXRENV9JU0hDRlltanBYWVQtb3JyZGYxamltaWVfanVsbDE4WXpkRnZib01fZTZDS2ZmOUoxWVFDSmdjWm5QWnRyT1FVdXNyeHk5eE1UTlhuUDViODFDZHBpQWZVY1lLMXJfSW9XRXZJSmVLbjFHRFJmd1p4cjNfc0HSAb8BQVVfeXFMT0hJTjdkRm1Bc2xNRHZaSDRkMDdnWWdaN1NwSnQ5MHRnWmYwY3pTMFpBQUFlTW5FVU9HZmRHMVVqU2lNX3FidUR0VlRTYld1ZFktZjZ1eDNvMFEzenc3aUtRWk90c1Y1MUpLQ2xlQ01vbEdCNVlqRzBualJWTGhOSUFES3NjaTh1dVI2ZXFDN0pvQnlDSFpYclo5OUh6TFBpME51RlpJLTh1QzhyVVRFOVNHOWhpV3VsY3hsQmtmQk0?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-347af38b24ca",
+      "id": "llm-b0e8b3b2a543",
       "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "线上贷款行业"
       ],
-      "headline": "Kredit Macet Pinjol Naik 4,73%, OJK Soroti Kemampuan Bayar Borrower - Bisnis.com",
-      "headlineZh": "网贷坏账率上升4.73%",
-      "summaryZh": "OJK指出网贷不良贷款率上升4.73%，关注借款人还款能力，属资产质量承压。",
-      "rationale": "资产质量承压数据",
+      "headline": "Laba Pinjol Turun 2,99% Jadi Rp1,58 Triliun per Agustus 2026 - Bisnis.com",
+      "headlineZh": "线上贷款利润下滑2.99%",
+      "summaryZh": "截至2026年8月线上贷款行业利润同比下降2.99%至1.58万亿盾，反映行业资产质量与盈利承压。",
+      "rationale": "行业盈利下滑，资产质量承压信号",
       "independentSourceCount": 1,
       "domains": [
         "finansial.bisnis.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "3305b70c6f9a485e"
+        "c5a02d9428c1e1da"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pinjol Naik 4,73%, OJK Soroti Kemampuan Bayar Borrower - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPaklua0tDWndKRDRvZkwwdWpUQ2hWSzFYR2w0ellOLU82QWZCamJ0aUZLWmpXSU1IdFA2emtjSzFDOVBCTG9DSFZKdUpNUFdGR1Z4aWlmM3hFOGhidzFIa25GZmFqX3U0MkZRdGhYMWtSRGJHOEFEYUNVX1hJUTRzZWh0dTdCM1JNVmxIYUZzNTI5Y19JY2lZT0ZJZlVZYmVnZ2JzaTkwcno0SWJEcGowcVBrOHZuNkppOTJr?oc=5"
+          "title": "Laba Pinjol Turun 2,99% Jadi Rp1,58 Triliun per Agustus 2026 - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPUXVNVVRDZ2VIT3pKSnhUWnpmd3JWd2d4bGE3NzhsQS1VMG5XLWh3ZXJEdE5CX1lTbmF6WTAwaGRsX2FHVXpVcVpLMkJ6aDN3ZUdOaUFnZThfdVVyRHlsTzVjQXcwWjh2WDF3VFJUQWNZR2JRczE2ZHNqXzVMQk5NVDB4YlljeDVhcDBBMDJvMEJRa3ZBWUM3bkxnaFJueUlMZW5ZV2dDWS1nN001WmRGSnRn?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -408,96 +228,29 @@
       }
     },
     {
-      "id": "llm-0d35fe765fe1",
+      "id": "llm-36917e36ad96",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "OJK",
+        "Pindar"
       ],
-      "headline": "OJK Akan Wajibkan Pinjaman Daring Sisihkan 5% Fee untuk Dana Perlindungan Lender - Katadata.co.id",
-      "headlineZh": "OJK拟强制网贷拨备5%",
-      "summaryZh": "OJK拟要求网贷平台拨出5%费用作为出借人保护基金，属监管政策调整。",
-      "rationale": "监管政策调整",
+      "headline": "OJK Batalkan Batas 3 Pindar — Risiko TWP90 19 Penyelenggara Mengintai - BERNAS.id",
+      "headlineZh": "OJK取消Pindar三机构上限",
+      "summaryZh": "OJK取消对Pindar三家机构的限制，同时19家机构TWP90逾期率超5%，监管调整与资产质量风险并存。",
+      "rationale": "监管政策调整，涉及行业风险指标",
       "independentSourceCount": 1,
       "domains": [
-        "katadata.co.id"
+        "bernas.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f677b016ef178e22"
+        "1981b84290db793b"
       ],
       "articles": [
         {
-          "title": "OJK Akan Wajibkan Pinjaman Daring Sisihkan 5% Fee untuk Dana Perlindungan Lender - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPTzc4S3BOajN0YmFUZXFYQjJGQUg4Y01pZ0kwcHpDdzg1QmFHdTRqTmlWVkpNcWpqdlhhT1FWUU5XdGdXbi1UQm8xM05WYV96b0JxVGtyQ29fWDZBUmpFUUY2MkdnUXV6YVpvV25BdDk3WThiWFozTExaYlNnRnlxaWY5RDl4VmtLbDZMakdnRkYydmZhS0RKa3QxZThldWF0R0JjRXdqN3gycnJGZG1QX0kwOXpTSFhoRUR2aEhHTE5tZ0JLZmFZSkZHV1PSAdIBQVVfeXFMUHM0cW93YkRMei1CMktjVEF2cWNObEw5bU45WXpTdGdPTDhpc0h0Qnd4U1NfdjJlS0hqZm9WM3l0RlVBU3FwUjBNSml3Z2h0LVN1OXpWSFNJVzBOUGpELV9zaF9TX0EtYkwxbDJUeUptOHdHWVJMWEVxRF9nVGxNS1d5ZFJxYm9SdkZDWE9aeVZiYWhKR0ZxMm9LNjZwNzNQVWZkdVVsTmdNWXlYaDdXZFpNUXZydXN6cHFOUkVTaHZQTFVIOElZSnJpMXozM1ozSVhR?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-2ec82a1f9b9f",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Pinjol Ilegal Dominasi Pengaduan Masyarakat, OJK Hentikan 951 Entitas - metrokalimantan.com",
-      "headlineZh": "OJK关停951家非法网贷",
-      "summaryZh": "OJK因非法网贷占投诉主导，已关停951家非法实体，属监管执法行动。",
-      "rationale": "监管关停执法行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "metrokalimantan.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8f7e2f4bf03b3c42"
-      ],
-      "articles": [
-        {
-          "title": "Pinjol Ilegal Dominasi Pengaduan Masyarakat, OJK Hentikan 951 Entitas - metrokalimantan.com",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOcml2VThCVmxESko3NDVMTllSQUNFTUlmNWktRzdTVHZJQVhpVEszSFZLcndwVXBuWWp1V3phR2M0ZmhKNXJjeEZOdHRiRVo3ZjdnOUYzNlhwUFVpU1BEbjM2UUtNM1NXTUZiOW4tNlhQVXlXb1NfeU5ucXhfWTMwaUNXMA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-347af38b24ca",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Skema Tadpole Pinjol Dikeluhkan, OJK Soroti Pelindungan Konsumen - Bisnis.com",
-      "headlineZh": "OJK关注Tadpole模式投诉",
-      "summaryZh": "OJK就Tadpole网贷模式投诉关注消费者保护问题，属监管关注。",
-      "rationale": "监管关注消费者保护",
-      "independentSourceCount": 1,
-      "domains": [
-        "finansial.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b001292a68db385b"
-      ],
-      "articles": [
-        {
-          "title": "Skema Tadpole Pinjol Dikeluhkan, OJK Soroti Pelindungan Konsumen - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNRkd6dDBIR1NtdzdSaGg0eGZ6Y09LZmVhanh4bW5lRHJmaFlfckJsdTZKellidmhDd281WTJDbWlER0x4SXNQdGh4eVI3VlNWeS1hTU9IVFFVQTl2N19VWnE4TVJjS1p5dENDdHExNHJfTHMwWUNiZkZET0FvMXBzMzFTc1ZTZTNJUXJJZG1hdW04aDJsbTZWTDNTb0JxVlVCWXdvQW1oTlVJZVppa2ZnWHZsUmlfSnhhZEE?oc=5"
+          "title": "OJK Batalkan Batas 3 Pindar — Risiko TWP90 19 Penyelenggara Mengintai - BERNAS.id",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSVIzcDBMSTNGMl9FNHIwaVp1cGhYZXBaalY2MVZOM0I3U21nb2pBTl9XTnNlNndpc0RZbUNVWVQtc05qUmFIazlCY2Zsb0plME9aeUgzUWV2TGJWVFdMZ2ZOMnE4ellpRmdxcWh6V21ueGNwYl8tZ3ZhdVVLR2FZd0Jta201R3RqeXpZX2hVVThSSnpfeUhlVHhTTDBVaHlmZF9LLTFxdGxlSy1tSU04?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -518,26 +271,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 27,
-    "socialItemCount48h": 4
+    "articleCount48h": 12,
+    "socialItemCount48h": 21
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 445,
-    "classifiedCount": 160,
-    "irrelevantDropped": 80,
+    "inputCount": 469,
+    "classifiedCount": 138,
+    "irrelevantDropped": 102,
     "model": "deepseek-chat",
-    "fallbackCount": 205,
+    "fallbackCount": 229,
     "labelCounts": {
-      "NEG": 95,
-      "MIX": 34,
-      "POS": 31
+      "NEG": 77,
+      "MIX": 27,
+      "POS": 34
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
