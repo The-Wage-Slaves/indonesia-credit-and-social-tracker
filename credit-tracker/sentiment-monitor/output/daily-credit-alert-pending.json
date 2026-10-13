@@ -1,59 +1,111 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-12",
-  "level": "high_pending",
+  "date": "2026-10-13",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 28.9,
-    "socialDailyVolumeRisk": 28.8,
-    "negativeSocialShare": 21.2,
+    "newsDailyVolumeRisk": 28.3,
+    "socialDailyVolumeRisk": 26.7,
+    "negativeSocialShare": 11.5,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=9; prior-7d median=34.0; robust z=-1.41",
-    "socialVolume": "today=3; prior-7d median=26.0; robust z=-1.41"
+    "newsVolume": "today=13; prior-7d median=28.0; robust z=-1.45",
+    "socialVolume": "today=3; prior-7d median=26.0; robust z=-1.55"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-d80fc04cc029",
+      "id": "llm-dd2ae28b755b",
       "eventType": "regulatory_action",
-      "severity": 0.75,
+      "severity": 0.55,
       "entities": [
-        "OJK",
-        "Kredivo",
-        "KrediFazz"
+        "OJK"
       ],
-      "headline": "OJK Awasi Penagihan Pinjol Kredivo dan KrediFazz, SOP Debt Collector Jadi Sorotan - Poros Jakarta - Poros Jakarta",
-      "headlineZh": "OJK调查Kredivo与KrediFazz催收",
-      "summaryZh": "OJK调查Kredivo和KrediFazz涉嫌恶意及恐吓性催收行为，聚焦催收SOP合规问题。",
-      "rationale": "监管对具体平台展开调查",
-      "independentSourceCount": 2,
+      "headline": "Cegah Fenomena Gali Lubang Tutup Lubang, OJK Minta Penyelenggara Pindar Perketat Analisis Kredit - IDX Channel",
+      "headlineZh": "OJK要求Pindar收紧信贷分析",
+      "summaryZh": "OJK要求Pindar机构加强信贷能力评估，防止借新还旧现象，属监管指导性动作。",
+      "rationale": "监管机构发出具体指导要求",
+      "independentSourceCount": 4,
       "domains": [
-        "porosjakarta.com",
-        "voi.id"
+        "ekbis.sindonews.com",
+        "idxchannel.com",
+        "inews.id",
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "1b3c5deadb1b147b",
-        "8285523a43215e6a",
-        "96a98a25450a3794"
+        "63ee9af60444fadb",
+        "866d040d0e2dac1b",
+        "ccdfd889e7bb2bbc",
+        "055b50a1455208a7"
       ],
       "articles": [
         {
-          "title": "OJK Awasi Penagihan Pinjol Kredivo dan KrediFazz, SOP Debt Collector Jadi Sorotan - Poros Jakarta - Poros Jakarta",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQalRWQ0NTV28zcW1CVVNpN0UxUkpZYWQxLXlTV05ncFNTTzdBeTN3eG5teUJuTTRFMTJDeW54N3pONWhCaDBTck1VSThQZUUxbm1iUU9JT1VEUTZBNlJxOTZWOXI4SV9DMV9YSENnYlR1VEFuUXpla0YtbkJ3N25qdWdaeDVDeHFSOHU5NFh5RGxiVHpQY0dLbnRwOXRqc3QxTXc5Q2h6bk9DaVhhZ3ZLUERKNFcyYWt5blNWYWhWRDdObTYwMEVnNDh30gHKAUFVX3lxTFBqVFZDQ1NXbzNxbUJVU2k3RTFSSllhZDEteVNXTmdwU1NPN0F5M3d4bm15Qm5NNEUxMkN5bng3ek41aEJoMFNyTVVJOFBlRTFubWJRT0lPVURRNkE2UnE5NlY5cjhJX0MxX1hIQ2diVHVUQW5RemVrRi1uQnc3bmp1Z1p4NUN4cVI4dTk0WHlEbGJUelBjR0tudHA5dGpzdDFNdzlDaHpuT0NpWGFndktQREo0VzJha3luU1ZhaFZEN05tNjAwRWc0OHc?oc=5"
+          "title": "Cegah Fenomena Gali Lubang Tutup Lubang, OJK Minta Penyelenggara Pindar Perketat Analisis Kredit - IDX Channel",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbVBPTjhKMnJxUG9pTmIyMUEwbzFwZXNGTWJrNUd1a255T3RYSzlqVHVRcEc2d0lzSUtqeVRIQmlyeWVRYk1oZjFpZEo4Y3FjQWttLWJ4d1VtUE9uX2JpX1E2M2J1VWlpdzhENjIwZUx6OW5DZlNlUnY4RWY0QnNmMzJiSkRBNFBMTHU1Qzd0NXZwNnFzR1VTRnRfZnd0QWZoeG1wbTE2dU91UHBmMXIzcU1sZ1ZxQm5KczRtTkU4cEpEX0k0VHl3ZTVR0gHPAUFVX3lxTE1KU2RBWVY3Z3JuRFh4ZHA4azZ2eWJ4eE04c3RsVnFzb3NaU0hDaE9jU090UDBpQk1UU3ZJT1RvOTVBWERTOGg5dkRrdmd2bC1BQ3BEMzllVjVYVk1IUjNXWjd0eHkxQ1JSelh6a1d6M0RMenFiNURuV1dBblVjQ0d4WVpDOVZEbnpIcnh0eGcwVGw5VDg1d2R5dEdjWWRwdlo5elpnbnJ4eUFXOTZ4UEVWT0hBdTRvRXp4c1JaaHE0QUdhWmVxNmxRZ2xhXzlYNA?oc=5"
         },
         {
-          "title": "OJK Investigates Alleged 'Evil' and Intimidating Schemes in the Collection of Pinjol Kredivo and Kredifazz - VOI.ID",
-          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE9fUXFnOUhvYTFNNFpCQnU3QWF4X04tb2NHSWdwaXNWRzVoNzB2YXJRM2g2WV94eTZqRmdmd1RHMTlUdVnSAUJBVV95cUxQTmF4QkVqZW9pcU5pVHlYcXdhaWxFMG1fX1lGSnpvd2ttMkpnTWFFMjZMZDViQ0NIbWxHeWVxYU9kT3c?oc=5"
+          "title": "Marak Gali Lubang Tutup Lubang, OJK Minta Pinjol Perketat Syarat Utang - SINDOnews Ekbis",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSnNDUjhIVVV6QVRvcnhIVUswSVYzQ0dCUElCaTZxeTFtODJELWx4dlFwNjYzdWE4T0Z4UjFyN1hpOEoyZmthUzhSQmdnbUpIdWIxRnVUQ21qa3FHeV9YaWhnMVJzbXRGdTZTUGd4VUZ2U3J2LVpna29XLTlaZk03Si1oLW5UVUJtd01waE9RTUFfWFV2SnBSeXItTFp0cHZlbFdXRFFwOE5INXpfLVlhNWd1N0dwcU5ITVpPRFFibFQzOEh3YTVGZ9IByAFBVV95cUxNSnNDUjhIVVV6QVRvcnhIVUswSVYzQ0dCUElCaTZxeTFtODJELWx4dlFwNjYzdWE4T0Z4UjFyN1hpOEoyZmthUzhSQmdnbUpIdWIxRnVUQ21qa3FHeV9YaWhnMVJzbXRGdTZTUGd4VUZ2U3J2LVpna29XLTlaZk03Si1oLW5UVUJtd01waE9RTUFfWFV2SnBSeXItTFp0cHZlbFdXRFFwOE5INXpfLVlhNWd1N0dwcU5ITVpPRFFibFQzOEh3YTVGZw?oc=5"
         },
         {
-          "title": "OJK Soroti Dugaan Skema 'Jahat' dan Intimidatif di Penagihan Pinjol Kredivo dan Kredifazz - VOI.ID",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONS1iUDQ1aW4xT3E4dzFOd3R5WDNOREVXYk9femMwYzJCbm00LWlnMmpzNXZCTzlnbWk1VlRhWml1cEU0cnAtdGJOZlRIcmVUYkJxS2c4dVRHUDFfamJfUk45ZU1tS1NZZ1o2MFdsa21GNDhiVVA3X0hRZGJFc2dFRXVmSFlxaWVfamFHNEp1cE9Rb3FHM3lQWFJZYS1OQWdMV21zUDI0Sm5kbDdhbU1XQ3NFSkJ4bkHSAbMBQVVfeXFMTWF6ZlZkeVA3cVhWenJiMEU0SER6Wjc1QWVGUTFIQTkxcHdUamttdy1aSDZrYXRYLUI1eDJHcXRneGNXWnU2WndHdmFEM0k2N3lNb0d3RXVvaGphQ2xBNTJ1dFVoWmJ1X1Z6azU3am5ObWloTmRYWWVDa0duQUg4ek5nUl9rVktaRVRwN0VzV1hFOG9iZ0pWVFFhdWxCYl8xYS11ZlJqZFJWUlJWWHNPak1WWXc?oc=5"
+          "title": "Waspadai Fenomena Gali Lubang Tutup Lubang, OJK Minta Pinjol Cek Kemampuan Bayar Pengguna - iNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSVJkbXJUeHBRZmJGZHFxaUstWVlYX3RFNFlFcGJkc09VRkZvb19keXNROGhscmw1Ri10WVZGTFduYkNUWjRsMmdWT3JjUEkwWjltWlhRWXBuVFNiV3RGcWJhbnRuLU1laXJzWFBXTUVucVBZN0NKUHZwRkJKc0lHSFBUTVBMaC1GX0ExOEFFbmF3RjBpbFMtMmdtQnFmZnVxWVI1RDcxSE1xd1NGUG1fdVVtN0F4Q29HT1JzMmJPWGrSAcYBQVVfeXFMUFVuR3I2RUQ2NWZRdHlPeTVacnpHQWJ3T3Uya2JsOS1pV0huck44NjZIbk1tSEF6ektQa0FPOTVrS29wVzZjcGRVZ3FwVy1sTXFIRG82MGYwVEdNS0FHVU94LWNRcDZldGgwa3o1QUlCNWVfNV9ZYmVONG8xRnY1eVZzWWNCZEtiRkVONXNqUWV4VlIzZ3I5UjJZRzh1WUJzeWRHbXhfcUZIT25SRG1qY1dJcDJaRWhWZnNDRVVrdml0ZGkxbUF3?oc=5"
+        },
+        {
+          "title": "Pinjol Dipakai UMKM untuk Modal Kerja, OJK Waspadai Gali Lubang Tutup Lubang - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTW5wcm9RNlNWd2g0MXVQME5LRzB6SWZmM0pKMEVZcUlzelQwVjVvWGJnT2FvT1RPa3daU014b1NiZGpRUENyUWY4aE5yMWV1WWtOYlNLd0xfMWJBTVFSbU4tS3duSG10U0RoZFdWVkVaOUdUS1lSYk5WVHFUUDlzMWl3QW9VWmpMU1hwMDJiXzhpMnVtMjdTa3QxT0VGa0YtUUpZX3VJNkh6bE4tTm1SdF84Q1FwOHpW0gG4AUFVX3lxTFBNbnByb1E2U1Z3aDQxdVAwTktHMHpJZmYzSkowRVlxSXN6VDBWNW9YYmdPYW9PVE9rd1pTTXhvU2JkalFQQ3JRZjhoTnIxZXVZa05iU0t3TF8xYkFNUVJtTi1Ld25IbXRTRGhkV1ZWRVo5R1RLWVJiTlZUcVRQOXMxaXdBb1VaakxTWHAwMmJfOGkydW0yN1NrdDFPRUZrRi1RSllfdUk2SHpsTi1ObVJ0XzhDUXA4elY?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 4,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-30813bb82c8f",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "LPDB Koperasi"
+      ],
+      "headline": "LPDB Dorong Koperasi Jadi Mesin Lapangan Kerja Anak Muda, Alternatif Ketergantungan Pinjol - indoposco.id",
+      "headlineZh": "LPDB推动合作社作为网贷替代",
+      "summaryZh": "LPDB合作社基金推动年轻人加入合作社，作为网贷替代方案，属行业常规动态。",
+      "rationale": "行业推广动态，影响有限",
+      "independentSourceCount": 3,
+      "domains": [
+        "indoposco.id",
+        "investortrust.id",
+        "peluangnews.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5790918f425a0cb5",
+        "67e69d4a40320db6",
+        "872b6dee9fc8256f"
+      ],
+      "articles": [
+        {
+          "title": "LPDB Dorong Koperasi Jadi Mesin Lapangan Kerja Anak Muda, Alternatif Ketergantungan Pinjol - indoposco.id",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNc0xKQVNNNzJXeTFjR1c3WWc1Tjcyb2dXaEtzMlNlZ05DclRGOHRDRkhzNnFTYjNNcjJqYjhqQzZsQ1h5V1lMWVYwOFBXdUFuaGJBMVYzcV8xZk9uZXM5Z0M0elR1ZTA0UXFTbXR6Z1dSTWlIcUFXT2NjaDBRcTZxUUM5aGlLN2lMX185Mk1lMC0xaW53djRsSExjNFhFUVRVZDRSSnI2d2gzV3JVQ3R6Ylhfcnd0S1hJUTF0QkUtcw?oc=5"
+        },
+        {
+          "title": "LPDB Koperasi Beri Tawaran Menarik untuk Gen Z Lawan Pinjol, Apa Itu? - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObnExUjhycW96UDRzbHFvY0lvTjVmLXVYcWtBaEkzbFpSb3lySkNjZUhSVWttTk5zZGhfT0VBUFhqVmNXV3hsRXhrMkJaUkJfY3VxWTlkQjlpVTNJanFhb3o5M2Q4U3NZS2tQR00xN1YzWmZac0JwcFZzLW5Ba2R5aGxnc2szRk9hZkpWTGNKa1hPRTlHcXBUOWxsbEd3NTVwQlZVeEx4bkRWQVJ1Umc?oc=5"
+        },
+        {
+          "title": "LPDB Koperasi Dorong Anak Muda Berkoperasi, Jadi Alternatif Pinjol - Peluang News",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZFphZ09tazJoX2Y4VGFVaHJNYTFTVEJ1dERIaDlXQ3dDV090UzNPb2c4SFFoYjBzb1FCbDRZb1lIa3RkODdVSE1yVWlJSU92RWFDMXIyaXB0NU5ycW15Y29uTWxjYzBzbldhMGFJR3gzT21zTFZiWFRaeGlwU3pIUUthRQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 3,
@@ -64,35 +116,387 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    }
-  ],
-  "lowEvidenceLeads": [
+    },
     {
-      "id": "llm-f77783b1df8e",
+      "id": "llm-10de607951e0",
       "eventType": "regulatory_action",
+      "severity": 0.4,
+      "entities": [
+        "Komdigi",
+        "DPR"
+      ],
+      "headline": "Marak Iklan Pinjol di Medsos, Yasonna Laoly Minta Komdigi Perketat Pengawasan - HarianSentana.com",
+      "headlineZh": "议员呼吁加强网贷广告监管",
+      "summaryZh": "国会议员Yasonna Laoly敦促Komdigi加强社交媒体网贷广告监管，属监管呼吁。",
+      "rationale": "议员公开呼吁监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "hariansentana.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f058ccbee3f19046"
+      ],
+      "articles": [
+        {
+          "title": "Marak Iklan Pinjol di Medsos, Yasonna Laoly Minta Komdigi Perketat Pengawasan - HarianSentana.com",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVEI1MlFsd2FFTWVVZmhWSDdvUVdXVHVMb1JiQWdBOGF2N1dTb0NMVU5OZHB3Wm5rWmk4d1JON2gzUFJvZF92ZHg4UTVaQUVHZXVqWEhtUzFnSHNjdXA3N0pyOXRCY2dEcV9ZQ3NGbjhPMjkyV3dCckZYUkJ6NzNObnpNRjlzcG02UW1JUEJuUFVlOHdwOVlHcVptbklwMXhnTjh2Z0tMX21NNHM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-97d6bf64ce16",
+      "eventType": "credit_quality_stress",
+      "severity": 0.75,
+      "entities": [
+        "OJK",
+        "Akseleran",
+        "Crowde",
+        "KoinP2P"
+      ],
+      "headline": "OJK Awasi Kasus Gagal Bayar 3 Pinjol, Nasib Dana Lender Jadi Perhatian - Infobanknews",
+      "headlineZh": "OJK监控3家P2P平台违约案",
+      "summaryZh": "OJK持续监控Akseleran、Crowde、KoinP2P三家平台借款人违约问题，出借人资金受关注。",
+      "rationale": "具体平台违约，监管介入",
+      "independentSourceCount": 3,
+      "domains": [
+        "infobanknews.com",
+        "liputan6.com",
+        "tirto.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ba3b81a354059824",
+        "835354e994093118",
+        "6db83289808a6542"
+      ],
+      "articles": [
+        {
+          "title": "OJK Awasi Kasus Gagal Bayar 3 Pinjol, Nasib Dana Lender Jadi Perhatian - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQXZBQk8zd2tmTVdyU0pZdndXVk9OWmxBeXpVQkk3SnZheGhWZ3llandfS0hxMnNnMEFQRFNQTjl6bVE1Q2pONGluR01aTkVWRW81ZU9NNHdpbTU5bi1pU2tjM1RsZUFMX2ZSRlN6NmdJUHI0d3RmRlQ4clBEdjVCV1dBS0JXMUtkekRpUkI5REFjZGtkR2JiTDJB?oc=5"
+        },
+        {
+          "title": "OJK Pantau Ketat 3 Perusahaan Pinjol Alami Gagal Bayar - Tirto.id",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWFE4RFVrZkZnVU5ZVS1jMXNyYnBBSXNDaW1GaFowdFZmcksxamdOWFpBVEJSbXlKZldscS1TV2NNZnJnaHJfZlJQX2E2RWdpeHZBX1M1a25zQTkzZHJNRFN1bjk3MlM1Tm9hdllKWm5aYlVXZmRKd2VzcFNJS1ZlZlh3?oc=5"
+        },
+        {
+          "title": "OJK Terus Kawal Penyelesaian Kasus Gagal Bayar di Akseleran, Crowde, dan KoinP2P - Liputan6.com",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOTBRbkhrS0xSNGFyOUo0cVVTUjN4emh3enhpNkRhTk5hdnF6LWthQ3RoZUNKNlNHWjZRb3I0eTZxanlBRmFwYllaMlRITUpxVGZfSU9LRzdjdzNwYlp4d0M5UlNvX3RXTXVIS3d3WGFfM01pUGlnbUotV2k0MlJlVlJTdkhHc29RaGdUcjZOa2RtRXNISW95d0t4TUh4a3EtRlM5Tk1jQ09vR0NSa2RlNXo2VkNrLTk0SWVqN3FiWXnSAbYBQVVfeXFMUFVQeUkxNTFNYVpIYkpZOUE1bHhKZHZkb0Y3SWgzU05OUS1MNUQ2TjUtbG1teHNPQ3hPQVgtWnQxSzVUMWpFc2F5am40Y3kyUVhZRFlvN245M05LaGJUZ3FSbmpTcGlqWWF2V1R0dXpCeTZfaElHM0RCQXNhVlNkNnZ5a0lDWXRGTGhERW1iMk9CUUt4cW5QVWRoaFNPeHExMTFKLVo3R3lxTFNvRVdOZF94RU0yelE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-2f4c06eba486",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "OJK",
+        "Nasyiatul Aisyiyah"
+      ],
+      "headline": "OJK Gandeng Kader Nasyiatul Aisyiyah Jateng Cegah Pinjol Ilegal dan Judol - Mata Semarang",
+      "headlineZh": "OJK联合组织防非法网贷",
+      "summaryZh": "OJK与Nasyiatul Aisyiyah中爪哇合作开展防非法网贷和赌博宣传，属常规监管宣传。",
+      "rationale": "监管宣传活动，影响局部",
+      "independentSourceCount": 1,
+      "domains": [
+        "matasemarang.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "c5dbba7d0c4d81a5"
+      ],
+      "articles": [
+        {
+          "title": "OJK Gandeng Kader Nasyiatul Aisyiyah Jateng Cegah Pinjol Ilegal dan Judol - Mata Semarang",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTzlZMV9nanlKdDhJQ0RvaXI4akk3S1NzeUYtbXVuRjVjU3prMXNjQURzX29Od19PbDZZSFZTQ0hnNl9tb25wRHV3MzFMYVZuMzBwTE9sRXphZGNSQ2xzRnFhTUc2bU1QMFY5Vmg4TFZ4LXA1bERRU0FwMnJjMVlPOFZIdXBkenQ0UW44Zmx5Z0dkbUhnQ1c2VlE3cVhReWdr?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-6897e1a1357b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Perketat Transparansi Pinjaman Online, Pelanggar Terancam Sanksi - RRI.co.id",
+      "headlineZh": "OJK收紧Pindar透明度规则",
+      "summaryZh": "OJK加强线上贷款透明度要求，违规者将面临处罚，属具体监管规则制定。",
+      "rationale": "监管规则制定，有具体约束力",
+      "independentSourceCount": 2,
+      "domains": [
+        "infobanknews.com",
+        "rri.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "02be5ec496709774",
+        "0b4dff5085a40ab7"
+      ],
+      "articles": [
+        {
+          "title": "OJK Perketat Transparansi Pinjaman Online, Pelanggar Terancam Sanksi - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPLVFZekhZZ3g3VW1rNF9jeHp2bV9MZFFhdnlFSXlyRWlUSnd4WTBITjI3YnV6NUhTaFhEcWZqNnJ0ZzF5amtvSi1FeGVqYlhUT0lCSkQzQzJNWUZ1TEQxbzVKelo5U0hkQ3BoYU90UUhZVTI1SFlUMmtEVE80eG8zWXh0Qlc1LTJHNUJMWTAxQXA1b1NpNjY5U0FJdkJLOGs3ckhTX3d0aFpBbC1YOXk0?oc=5"
+        },
+        {
+          "title": "Transparansi Pindar Diperketat, OJK Siapkan Sanksi bagi Pelanggar - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNDB0ZlpOZE80bmkwRHc4ZFZzcTc3bWpiM0ticjktSzgyWjRaTm0wRG5BSk9fTk5EX0k4WU5ic1FLem52Vm1zSmItMExGZVVQMkJDTTFYdUxSNWVRaXdnTWIwanZySmJOSGl4OUttb2xSajRuSkJYYmVkWllqZXVBRWI2RXI1ZGF2dzF6YzlUaXc2WGM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-d2c918e16525",
+      "eventType": "regulatory_action",
+      "severity": 0.5,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Siapkan Aturan Anyar Pindar, Lender Bakal Lebih Terlindung - InvestorTrust",
+      "headlineZh": "OJK筹备Pindar新规保护出借人",
+      "summaryZh": "OJK准备出台Pindar新规，出借人将获得更多保护，属监管规则筹备。",
+      "rationale": "监管规则筹备，具体政策动作",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5be0f296c8299075"
+      ],
+      "articles": [
+        {
+          "title": "OJK Siapkan Aturan Anyar Pindar, Lender Bakal Lebih Terlindung - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVUtqVG9RWUpteERKd2ZRQ3AycUJoSWk3Szk0RkJ0eDhwY1BmSGJmc2dKMExhMTg4WTFkSnJaLVdsUGxEcEctU3Y2NjllTDBFOF9HdThlbEhUR2VpOEJQS0FOQ3JqU1UyUldERHAtUVNZRGRvOC1VVE1PNS03RnNjMDRpaDdjR3pHUXl2YV9yVWxkM3pNOUtfbS03dEtDeGV0WXJoN2hR?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-de7c7a637864",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Anak Muda Banyak Pakai Pinjaman Online, OJK Peringatkan Sektor Pindar Soal Risiko Kredit Bermasalah - inforadar.disway.id - Inforadar.id",
+      "headlineZh": "OJK警示年轻人网贷信用风险",
+      "summaryZh": "OJK警告Pindar行业关注年轻借款人信用风险上升问题，属监管风险提示。",
+      "rationale": "监管机构发出具体风险警示",
+      "independentSourceCount": 3,
+      "domains": [
+        "inforadar.disway.id",
+        "suara.com",
+        "suaralandak.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "739de99e787c559b",
+        "7298182915c0bf13",
+        "b4796063f1e7c9af"
+      ],
+      "articles": [
+        {
+          "title": "Anak Muda Banyak Pakai Pinjaman Online, OJK Peringatkan Sektor Pindar Soal Risiko Kredit Bermasalah - inforadar.disway.id - Inforadar.id",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNQVJwSHI4cWVNUTFEZVNBcjhJUV82dEJER2FRNzRvYm1TbDVjV2tOZzRja2lkYmx6X2lvUGpRR0NydnFVRUhZWldqeXRNbkhFTEhSQTVFWFEwaVBudTZCVWVXaFN2bkczSkRoZlhTcTBxYV9qOXpmbnBQUjFRN0xRSGhvS0FLMFdFSWN6UW1OMkZjZl9Ic1ZRTFVfVGJhU0VMa1RVM3ZwZWFuZU5kdXo3cFZLei14aTBvSDVOQ2VIRksyNFE0dmNVa0RkM1E5RnYxaUo40gHTAUFVX3lxTE1BUnBIcjhxZU1RMURlU0FyOElRXzZ0QkRHYVE3NG9ibVNsNWNXa05nNGNraWRibHpfaW9QalFHQ3J2cVVFSFlaV2p5dE1uSEVMSFJBNUVYUTBpUG51NkJVZVdoU3ZuRzNKRGhmWFNxMHFhX2o5emZucFBSMVE3TFFIaG9LQUswV0VJY3pRbU4yRmNmX0hzVlFMVV9UYmFTRUxrVFUzdnBlYW5lTmR1ejdwVkt6LXhpMG9INU5DZUhGSzI0UTR2Y1VrRGQzUTlGdjFpSjg?oc=5"
+        },
+        {
+          "title": "OJK Perketat Risiko Pinjaman Daring Usai Usia Muda Mendominasi - www.suaralandak.co.id",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBzaVNDRzUzalFBeXA5NWR0amcwMzRRSFo5dG45WEdYLXNBQUV5WjNDY2tKSEJhZGphTXVLV092UkRDSW5mLXN2N2ZoOUpIRTYtT09LVTNkODJCNk9mY3NkUzhELTU1dVdnUHh1YlctcXRWSFU?oc=5"
+        },
+        {
+          "title": "OJK: Gen Z dan Milenial Problematik Kelola Uang, Paling Banyak Akses Pinjol - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMHJyNTRCZ0x4Q3RLUU5NQ1NNREZCellEM1lLTVVoeU8teUd6bjI4Ul9IalJrbnBJYWxTQUlpc3o3MzlBdHk3YjRNQkU4OHQzUWt2akZUeTgzMGc2U0tqS2Mzay0tTHFCMmRuY2tkT2Nsek91d1NTY25zVGxybzFhREJKT3EzQUpEZVJlcC1LQVBvMmpUemFxMDE1cWFrSHlCOGFzVDBWQ2ZLbC1ZUnFlSkxUSEVvRVN3NDR2LdIBvAFBVV95cUxOZGhuMkJvdWhWX0hIV2ljQ29ncjNXLWMweUp1WHpGclZFS0RtaFFVcDNHR005bVhOa1VjaEN5alMxTjZfbkxSOWh4cHZXTlI5S2RlbVBLUVdBSFZWdEJCanRWUnh1VDU0dlI1TlllYWM5ZXAzVGZ2VEJZa0NsbDRrbmxXNzRWXy0zd3dCTkpLR21lWFBrMDRuVEpjdXBVbTZ6QVBOaVB4QXlOUEg5YmJ0VlBlRzM2akpTVXhPUg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-ba19966782bc",
+      "eventType": "regulatory_action",
+      "severity": 0.4,
+      "entities": [
+        "BKPSDM",
+        "Halsel"
+      ],
+      "headline": "Bupati Halsel Instruksikan BKPSDM Sisir ASN Terindikasi Judol dan Pinjol - PotretMalut.com",
+      "headlineZh": "Halsel筛查公务员涉网贷赌博",
+      "summaryZh": "南哈马黑拉县长指示BKPSDM排查涉网贷和赌博的公务员，属地方行政动作。",
+      "rationale": "地方政府具体排查行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "potretmalut.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "4154bef42fca6e24"
+      ],
+      "articles": [
+        {
+          "title": "Bupati Halsel Instruksikan BKPSDM Sisir ASN Terindikasi Judol dan Pinjol - PotretMalut.com",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPS0ZZa2hzZ2xIQWxEaVJndDhNVkk1TUlWV0FBQlFHdmFjSFp5dWZUSUxUZGprcnBKSFA3MmRtb2RqSGtKOS00RjVHMUlRQWVvS1c4NFl2bXl0QmVyTVVHZUlpdjUyRnJYaVZqeWRjbGswR1dFYkZlUE1Vc09hMXBRTHplWUV3bDg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a58e9f82c67d",
+      "eventType": "regulatory_action",
+      "severity": 0.5,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Awasi Skema Tadpole pada Industri Pindar - SuaraGarut.ID",
+      "headlineZh": "OJK监控Pindar行业Tadpole模式",
+      "summaryZh": "OJK正在监控Pindar行业中的Tadpole（蝌蚪）资金模式，属监管关注动作。",
+      "rationale": "监管机构具体监控行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaragarut.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "86eab7422d88933d"
+      ],
+      "articles": [
+        {
+          "title": "OJK Awasi Skema Tadpole pada Industri Pindar - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9xdUgtOGgyY0tyX3BGREJvQjlNcEJjVDBoR010UEVBU3Z3MjJfUGtURlUxQTNTYVp1TFFDU1R5VWh2M3U4azlCUC1uSE1ZU1FBWHBzNXJBMG9VeE5pYVhJWGJ3?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0a542abeb82f",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Bagi Penyelenggara Pindar dalam Empat Tier Pendanaan - ChatNews.id",
+      "headlineZh": "OJK将Pindar分为四个层级",
+      "summaryZh": "OJK计划将Pindar机构按多项指标分为四个层级进行差异化管理，属具体监管规则。",
+      "rationale": "监管规则制定，有具体分类标准",
+      "independentSourceCount": 2,
+      "domains": [
+        "chatnews.id",
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "d02c7337df874db8",
+        "d8a1b7de374595ba"
+      ],
+      "articles": [
+        {
+          "title": "OJK Bagi Penyelenggara Pindar dalam Empat Tier Pendanaan - ChatNews.id",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1FX2NqMk8xZmRRVElXcUdrZmg2MkstT2tZd1NaYWhOekNwMHZGbTlGZlU0dzhMeWxtdjBZdE9XZTRsc1ZmNU00Y1NLVUNzMlM0NTZTYU5nd2c?oc=5"
+        },
+        {
+          "title": "OJK Mau Bagi Pindar Jadi 4 Tier, Pakai Sederet Indikator Ini - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUk1PNmVwQnh5XzJua1EwT2J0WE4weFB4Z0RoQjlWV3hsQkRXVGIzUm9wWjRoUXdZLUQwaUhfVTU4dFFobVBJS2lOOGRWSVRHaG85b1kwUDRtcTJLNmxxaXNqZUZEeUZILWNZYzFEd1djWGJScXEwWDczM1BvS1hWZ3FaOE03ajRNUVpSUWRVbG50czVCdnZRTVlmRURFdlRSdzdWd29XSFpTU1BvRWtSVy1mQUZPVmZwczAxSlZ30gHDAUFVX3lxTE5qMktmS3VmVHVBMjhheDhVNE52OXhmNW1Eell4QzlVaEFsNjVQNTVEaDktSkhOUmxYb1VOczZGeW5ZdUdSMjNGRFpiNHF1dlh1ZzJuXy1VQm82eWNudnI4SHRHNzkxUnUySnJnOE9oTmZyaVg5ZXY3WnY2eUNva20yOE5RNXFxLUVKQlVXdXlJTGljWDhSV3MzODBBb2kybTlHVUl6S0RLTy1DVzhFYmlxV1N3V1ZPU3hLRnhvWlpUVDQ2SQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-144942111c1d",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
         "OJK Sulselbar"
       ],
-      "headline": "OJK Sulselbar Terima 1.190 Laporan, Terbanyak Pinjaman Online Ilegal Mencapai 1.070 - Sulselsatu",
-      "headlineZh": "OJK南苏拉威西接获千余网贷投诉",
-      "summaryZh": "OJK南苏拉威西办事处收到1190起投诉，其中1070起涉及非法网贷，反映区域非法网贷投诉集中。",
-      "rationale": "监管机构披露具体投诉数据",
-      "independentSourceCount": 1,
+      "headline": "OJK Sulselbar Terima 1.190 Laporan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - Makassar Terkini",
+      "headlineZh": "南苏拉威西1190起非法金融投诉",
+      "summaryZh": "OJK南苏拉威西收到1190起非法金融活动投诉，其中1070起为非法网贷，属消费者受害记录。",
+      "rationale": "具体投诉数据，消费者受害",
+      "independentSourceCount": 2,
       "domains": [
+        "makassar.terkini.id",
         "sulselsatu.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "9ab3485f6374c933",
         "22e446a75d687548"
       ],
       "articles": [
+        {
+          "title": "OJK Sulselbar Terima 1.190 Laporan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - Makassar Terkini",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPczk1Q2h0VXE1ZEdvZy1RWmtSbkZmSlN4WE1sZjhWcUxjZVpLT0dsekRtaHVnSXRqRks1YXhMUjRyaENtZjZQZnBDT0dNZS16S0pDVFJRMUpXRjZJck81WC1WZkJzZnVlaHNsaVZkZV9MS0k3LTk2c21DNVVJNmtQekRpTlhvTTRfeUNzZ1BJRUdTLU1GdWJQdXVBcERad1BVZU1CNVhmeTkxdGxS?oc=5"
+        },
         {
           "title": "OJK Sulselbar Terima 1.190 Laporan, Terbanyak Pinjaman Online Ilegal Mencapai 1.070 - Sulselsatu",
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPVFhIbUk1SVhGUjZ3QmsxLWpSR0ZrdFloZnRRYWJnUXgwd0QwcC1IRkR3V01ORXFIRkFxaDk0Q0ttLVZ5V0d4X1dkNUplU3Jhb3lzNVZSdklXdVMwNzZUU0xaSEVkWjFDV1NEd0ZsY1p1MjlmdTR2bU9aandnLThYNkV4VjdRUzBuTmRHNVlOa0FlNFZVWXo1YV9Qb0dkUjJiR2ZSNUZLTjNuSHNPUTc2cDN3SFIxTGprc0c4S2tHN3dST2VWVzdqQ053NkF6UdIB0wFBVV95cUxOdm9uUXR5UHVBMUY4dm00cWh3WllYZ2hqOXY3VEVDdlZsR3FCbHh4bXBpbVhaRDVJZVJwRDlGVUk1eGtCaktheExrMTdoVWZIZkhXUEJDY3NmaVBTQ3d2MGMtUFlQanpnM2pta1M1WWFQTDkySDc3MGIwWWVEUzhhWWFsendGb3JtY1hHU0R1UTNMbmZmWDdGd3pwTkdfMG9BMTFkZHhubm5oTEpsVnZZTjlfVGdRYzhGX1RyZC1CMFVhUnNqRnZ4bjNQN0ZXX1lYcXJv?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -109,9 +513,9 @@
         "OJK"
       ],
       "headline": "TWP 90 Pindar Tembus 4,73%, OJK Catat 16 Penyelenggara di Atas 5% - InvestorTrust",
-      "headlineZh": "OJK记录16家Pindar不良率超5%",
-      "summaryZh": "OJK数据显示TWP90升至4.73%，16家Pindar平台不良率超5%，显示行业资产质量承压。",
-      "rationale": "监管披露行业资产质量数据",
+      "headlineZh": "Pindar行业TWP90达4.73%",
+      "summaryZh": "OJK数据显示Pindar行业90天以上逾期率达4.73%，16家机构超5%，属资产质量承压。",
+      "rationale": "具体资产质量数据，行业承压",
       "independentSourceCount": 1,
       "domains": [
         "investortrust.id"
@@ -124,85 +528,6 @@
         {
           "title": "TWP 90 Pindar Tembus 4,73%, OJK Catat 16 Penyelenggara di Atas 5% - InvestorTrust",
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOdEZWV2cybVdJQ2hfWHU0TmJHTi1vQUJxaFRKR01RekRReXJydzVyVHpNTmxvc2FfSkg4azRjMHdHdExpMGg5WE5aSkFERXRoRURyS3djazNlM1JjV1pfMm14OWd0YzRqeENIMFNaRTJwM0dFWUpoeE82STdRbFRGSUhUUXFVMGdNblFQSWdGUEEtdmJUblRxVWFPUURORjB0SnBuQks2WQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c8d41355d7a6",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Transparansi Pindar Diperketat, OJK Siapkan Sanksi bagi Pelanggar - Infobanknews",
-      "headlineZh": "OJK收紧Pindar透明度并拟处罚",
-      "summaryZh": "OJK加强Pindar费用透明度监管，关注Tadpole还款模式，并准备对违规者实施处罚。",
-      "rationale": "监管出台新规并拟处罚",
-      "independentSourceCount": 2,
-      "domains": [
-        "infobanknews.com",
-        "investortrust.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0b4dff5085a40ab7",
-        "3e08cf138bd57bde",
-        "3bb8151e5c5b797c"
-      ],
-      "articles": [
-        {
-          "title": "Transparansi Pindar Diperketat, OJK Siapkan Sanksi bagi Pelanggar - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNDB0ZlpOZE80bmkwRHc4ZFZzcTc3bWpiM0ticjktSzgyWjRaTm0wRG5BSk9fTk5EX0k4WU5ic1FLem52Vm1zSmItMExGZVVQMkJDTTFYdUxSNWVRaXdnTWIwanZySmJOSGl4OUttb2xSajRuSkJYYmVkWllqZXVBRWI2RXI1ZGF2dzF6YzlUaXc2WGM?oc=5"
-        },
-        {
-          "title": "Biaya Pindar Harus Jelas di Awal, OJK Siapkan Sanksi Tegas bagi Pelanggar - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNjVlS0EwdF9MTTQwSTFzUWFna2VPN1JxcDk5eEZDRGNhTG4xSUdZR2I1aWZLa1RpSV9jVEctcnY1b05SdWRPZHYyeHRnYldsSy1LbzdTQzNGRUlNM0hsSlpyMHZsYkJtMDNaM2xDMlFNcXBZNjl2c1NuTHlGV29BLVItSUxXRHFHWEk3S3YycjlNQmFUdXVHbks5Q09MZTRXZzV5QWlDczNvXzZiM1Bha3ZTeGs?oc=5"
-        },
-        {
-          "title": "OJK Soroti Skema “Tadpole” Pindar, Transparansi Pembayaran Jadi Perhatian - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZTZJR2ZHaU9lR19hbjc1SHBvMXhrXzAyRmNQa2V1eXFSMjRmNEFJd1EtdU11QVJBdHVJVUgwVXNSVUFkRlRPbjJpVUU5X29NMmFmcDRkb081RXNkZmRZSW9wMndtZlQ2VkY1VFhpbldjWW5jX1lTR1Y1Z2hNMzJJQkx1MUxWUFhZQVhJVjR2QllLUHZIWnMybTRhcWN3SWQtN3dpZXpxTUxNNDRYSzZZUDdR?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-f9d67b7a6a93",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.75,
-      "entities": [
-        "DC Pinjol Gresik"
-      ],
-      "headline": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
-      "headlineZh": "Gresik网贷团伙用色情照恐吓",
-      "summaryZh": "Gresik地区网贷催收团伙涉嫌以传播色情照片恐吓借款人，警方正在追捕，属刑事违法案件。",
-      "rationale": "警方追捕的刑事恐吓案件",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e3c624e6eb2e01cc"
-      ],
-      "articles": [
-        {
-          "title": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZzcmE1VWN4WkwtV1RIWGljU1dEWnpYYjBhZ2J6WDlSMnFLU3FGdnFaSV9QdmYwa0ZndTA2Y2pKd2FMZEtRVEdaNk9BZ2lONk84N0wtbDNWc1p0a051OTNva2pYdlExN0s3bzhURHNUa2dYQ0V5cHM2UV9vRjlRYUVfRkItaFA0VExYZUhnYVBtdUhzNW5oem9VMGJmRVhWdjR3LVl0ZnN2eUExdHNXeFROYkY0QWFmc2dkdW1lTkFnZG_SAcgBQVVfeXFMT2o2QTVOMXF5eFpyQXVkWVBXTzE3YUtoNmlxMDI2c2dnN0JEcWNUS0JCYUNyMjRON1hrRmFPYUIwSko0WktwUkdGZkZ5bFhxczFfWWdlT2llUkY2TDA5QmVVT1RoNGZzWW1pdmgxd2Fwa2JvbXJiLTljcEVtRG0xYnRCcmg1SmxzdDJvV0pjZHdfSkFRS1l2VFVXeVpNaHFQeUltOS1Oai10UmE4UXFXN1BXeF9fb09kMjZ5RFAtYVlNdVFlckFGck4?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -219,42 +544,494 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 20,
-    "eventGroupCount": 5,
-    "rejectedNonEvents": 4,
+    "candidateCount": 39,
+    "eventGroupCount": 13,
+    "rejectedNonEvents": 8,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 20
+      "ok": 39
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-f77783b1df8e",
+      "id": "llm-dd2ae28b755b",
       "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Cegah Fenomena Gali Lubang Tutup Lubang, OJK Minta Penyelenggara Pindar Perketat Analisis Kredit - IDX Channel",
+      "headlineZh": "OJK要求Pindar收紧信贷分析",
+      "summaryZh": "OJK要求Pindar机构加强信贷能力评估，防止借新还旧现象，属监管指导性动作。",
+      "rationale": "监管机构发出具体指导要求",
+      "independentSourceCount": 4,
+      "domains": [
+        "ekbis.sindonews.com",
+        "idxchannel.com",
+        "inews.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "63ee9af60444fadb",
+        "866d040d0e2dac1b",
+        "ccdfd889e7bb2bbc",
+        "055b50a1455208a7"
+      ],
+      "articles": [
+        {
+          "title": "Cegah Fenomena Gali Lubang Tutup Lubang, OJK Minta Penyelenggara Pindar Perketat Analisis Kredit - IDX Channel",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNbVBPTjhKMnJxUG9pTmIyMUEwbzFwZXNGTWJrNUd1a255T3RYSzlqVHVRcEc2d0lzSUtqeVRIQmlyeWVRYk1oZjFpZEo4Y3FjQWttLWJ4d1VtUE9uX2JpX1E2M2J1VWlpdzhENjIwZUx6OW5DZlNlUnY4RWY0QnNmMzJiSkRBNFBMTHU1Qzd0NXZwNnFzR1VTRnRfZnd0QWZoeG1wbTE2dU91UHBmMXIzcU1sZ1ZxQm5KczRtTkU4cEpEX0k0VHl3ZTVR0gHPAUFVX3lxTE1KU2RBWVY3Z3JuRFh4ZHA4azZ2eWJ4eE04c3RsVnFzb3NaU0hDaE9jU090UDBpQk1UU3ZJT1RvOTVBWERTOGg5dkRrdmd2bC1BQ3BEMzllVjVYVk1IUjNXWjd0eHkxQ1JSelh6a1d6M0RMenFiNURuV1dBblVjQ0d4WVpDOVZEbnpIcnh0eGcwVGw5VDg1d2R5dEdjWWRwdlo5elpnbnJ4eUFXOTZ4UEVWT0hBdTRvRXp4c1JaaHE0QUdhWmVxNmxRZ2xhXzlYNA?oc=5"
+        },
+        {
+          "title": "Marak Gali Lubang Tutup Lubang, OJK Minta Pinjol Perketat Syarat Utang - SINDOnews Ekbis",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSnNDUjhIVVV6QVRvcnhIVUswSVYzQ0dCUElCaTZxeTFtODJELWx4dlFwNjYzdWE4T0Z4UjFyN1hpOEoyZmthUzhSQmdnbUpIdWIxRnVUQ21qa3FHeV9YaWhnMVJzbXRGdTZTUGd4VUZ2U3J2LVpna29XLTlaZk03Si1oLW5UVUJtd01waE9RTUFfWFV2SnBSeXItTFp0cHZlbFdXRFFwOE5INXpfLVlhNWd1N0dwcU5ITVpPRFFibFQzOEh3YTVGZ9IByAFBVV95cUxNSnNDUjhIVVV6QVRvcnhIVUswSVYzQ0dCUElCaTZxeTFtODJELWx4dlFwNjYzdWE4T0Z4UjFyN1hpOEoyZmthUzhSQmdnbUpIdWIxRnVUQ21qa3FHeV9YaWhnMVJzbXRGdTZTUGd4VUZ2U3J2LVpna29XLTlaZk03Si1oLW5UVUJtd01waE9RTUFfWFV2SnBSeXItTFp0cHZlbFdXRFFwOE5INXpfLVlhNWd1N0dwcU5ITVpPRFFibFQzOEh3YTVGZw?oc=5"
+        },
+        {
+          "title": "Waspadai Fenomena Gali Lubang Tutup Lubang, OJK Minta Pinjol Cek Kemampuan Bayar Pengguna - iNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPSVJkbXJUeHBRZmJGZHFxaUstWVlYX3RFNFlFcGJkc09VRkZvb19keXNROGhscmw1Ri10WVZGTFduYkNUWjRsMmdWT3JjUEkwWjltWlhRWXBuVFNiV3RGcWJhbnRuLU1laXJzWFBXTUVucVBZN0NKUHZwRkJKc0lHSFBUTVBMaC1GX0ExOEFFbmF3RjBpbFMtMmdtQnFmZnVxWVI1RDcxSE1xd1NGUG1fdVVtN0F4Q29HT1JzMmJPWGrSAcYBQVVfeXFMUFVuR3I2RUQ2NWZRdHlPeTVacnpHQWJ3T3Uya2JsOS1pV0huck44NjZIbk1tSEF6ektQa0FPOTVrS29wVzZjcGRVZ3FwVy1sTXFIRG82MGYwVEdNS0FHVU94LWNRcDZldGgwa3o1QUlCNWVfNV9ZYmVONG8xRnY1eVZzWWNCZEtiRkVONXNqUWV4VlIzZ3I5UjJZRzh1WUJzeWRHbXhfcUZIT25SRG1qY1dJcDJaRWhWZnNDRVVrdml0ZGkxbUF3?oc=5"
+        },
+        {
+          "title": "Pinjol Dipakai UMKM untuk Modal Kerja, OJK Waspadai Gali Lubang Tutup Lubang - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTW5wcm9RNlNWd2g0MXVQME5LRzB6SWZmM0pKMEVZcUlzelQwVjVvWGJnT2FvT1RPa3daU014b1NiZGpRUENyUWY4aE5yMWV1WWtOYlNLd0xfMWJBTVFSbU4tS3duSG10U0RoZFdWVkVaOUdUS1lSYk5WVHFUUDlzMWl3QW9VWmpMU1hwMDJiXzhpMnVtMjdTa3QxT0VGa0YtUUpZX3VJNkh6bE4tTm1SdF84Q1FwOHpW0gG4AUFVX3lxTFBNbnByb1E2U1Z3aDQxdVAwTktHMHpJZmYzSkowRVlxSXN6VDBWNW9YYmdPYW9PVE9rd1pTTXhvU2JkalFQQ3JRZjhoTnIxZXVZa05iU0t3TF8xYkFNUVJtTi1Ld25IbXRTRGhkV1ZWRVo5R1RLWVJiTlZUcVRQOXMxaXdBb1VaakxTWHAwMmJfOGkydW0yN1NrdDFPRUZrRi1RSllfdUk2SHpsTi1ObVJ0XzhDUXA4elY?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 4,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-30813bb82c8f",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "LPDB Koperasi"
+      ],
+      "headline": "LPDB Dorong Koperasi Jadi Mesin Lapangan Kerja Anak Muda, Alternatif Ketergantungan Pinjol - indoposco.id",
+      "headlineZh": "LPDB推动合作社作为网贷替代",
+      "summaryZh": "LPDB合作社基金推动年轻人加入合作社，作为网贷替代方案，属行业常规动态。",
+      "rationale": "行业推广动态，影响有限",
+      "independentSourceCount": 3,
+      "domains": [
+        "indoposco.id",
+        "investortrust.id",
+        "peluangnews.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5790918f425a0cb5",
+        "67e69d4a40320db6",
+        "872b6dee9fc8256f"
+      ],
+      "articles": [
+        {
+          "title": "LPDB Dorong Koperasi Jadi Mesin Lapangan Kerja Anak Muda, Alternatif Ketergantungan Pinjol - indoposco.id",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNc0xKQVNNNzJXeTFjR1c3WWc1Tjcyb2dXaEtzMlNlZ05DclRGOHRDRkhzNnFTYjNNcjJqYjhqQzZsQ1h5V1lMWVYwOFBXdUFuaGJBMVYzcV8xZk9uZXM5Z0M0elR1ZTA0UXFTbXR6Z1dSTWlIcUFXT2NjaDBRcTZxUUM5aGlLN2lMX185Mk1lMC0xaW53djRsSExjNFhFUVRVZDRSSnI2d2gzV3JVQ3R6Ylhfcnd0S1hJUTF0QkUtcw?oc=5"
+        },
+        {
+          "title": "LPDB Koperasi Beri Tawaran Menarik untuk Gen Z Lawan Pinjol, Apa Itu? - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxObnExUjhycW96UDRzbHFvY0lvTjVmLXVYcWtBaEkzbFpSb3lySkNjZUhSVWttTk5zZGhfT0VBUFhqVmNXV3hsRXhrMkJaUkJfY3VxWTlkQjlpVTNJanFhb3o5M2Q4U3NZS2tQR00xN1YzWmZac0JwcFZzLW5Ba2R5aGxnc2szRk9hZkpWTGNKa1hPRTlHcXBUOWxsbEd3NTVwQlZVeEx4bkRWQVJ1Umc?oc=5"
+        },
+        {
+          "title": "LPDB Koperasi Dorong Anak Muda Berkoperasi, Jadi Alternatif Pinjol - Peluang News",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZFphZ09tazJoX2Y4VGFVaHJNYTFTVEJ1dERIaDlXQ3dDV090UzNPb2c4SFFoYjBzb1FCbDRZb1lIa3RkODdVSE1yVWlJSU92RWFDMXIyaXB0NU5ycW15Y29uTWxjYzBzbldhMGFJR3gzT21zTFZiWFRaeGlwU3pIUUthRQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-10de607951e0",
+      "eventType": "regulatory_action",
+      "severity": 0.4,
+      "entities": [
+        "Komdigi",
+        "DPR"
+      ],
+      "headline": "Marak Iklan Pinjol di Medsos, Yasonna Laoly Minta Komdigi Perketat Pengawasan - HarianSentana.com",
+      "headlineZh": "议员呼吁加强网贷广告监管",
+      "summaryZh": "国会议员Yasonna Laoly敦促Komdigi加强社交媒体网贷广告监管，属监管呼吁。",
+      "rationale": "议员公开呼吁监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "hariansentana.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f058ccbee3f19046"
+      ],
+      "articles": [
+        {
+          "title": "Marak Iklan Pinjol di Medsos, Yasonna Laoly Minta Komdigi Perketat Pengawasan - HarianSentana.com",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVEI1MlFsd2FFTWVVZmhWSDdvUVdXVHVMb1JiQWdBOGF2N1dTb0NMVU5OZHB3Wm5rWmk4d1JON2gzUFJvZF92ZHg4UTVaQUVHZXVqWEhtUzFnSHNjdXA3N0pyOXRCY2dEcV9ZQ3NGbjhPMjkyV3dCckZYUkJ6NzNObnpNRjlzcG02UW1JUEJuUFVlOHdwOVlHcVptbklwMXhnTjh2Z0tMX21NNHM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-97d6bf64ce16",
+      "eventType": "credit_quality_stress",
+      "severity": 0.75,
+      "entities": [
+        "OJK",
+        "Akseleran",
+        "Crowde",
+        "KoinP2P"
+      ],
+      "headline": "OJK Awasi Kasus Gagal Bayar 3 Pinjol, Nasib Dana Lender Jadi Perhatian - Infobanknews",
+      "headlineZh": "OJK监控3家P2P平台违约案",
+      "summaryZh": "OJK持续监控Akseleran、Crowde、KoinP2P三家平台借款人违约问题，出借人资金受关注。",
+      "rationale": "具体平台违约，监管介入",
+      "independentSourceCount": 3,
+      "domains": [
+        "infobanknews.com",
+        "liputan6.com",
+        "tirto.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ba3b81a354059824",
+        "835354e994093118",
+        "6db83289808a6542"
+      ],
+      "articles": [
+        {
+          "title": "OJK Awasi Kasus Gagal Bayar 3 Pinjol, Nasib Dana Lender Jadi Perhatian - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPQXZBQk8zd2tmTVdyU0pZdndXVk9OWmxBeXpVQkk3SnZheGhWZ3llandfS0hxMnNnMEFQRFNQTjl6bVE1Q2pONGluR01aTkVWRW81ZU9NNHdpbTU5bi1pU2tjM1RsZUFMX2ZSRlN6NmdJUHI0d3RmRlQ4clBEdjVCV1dBS0JXMUtkekRpUkI5REFjZGtkR2JiTDJB?oc=5"
+        },
+        {
+          "title": "OJK Pantau Ketat 3 Perusahaan Pinjol Alami Gagal Bayar - Tirto.id",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQWFE4RFVrZkZnVU5ZVS1jMXNyYnBBSXNDaW1GaFowdFZmcksxamdOWFpBVEJSbXlKZldscS1TV2NNZnJnaHJfZlJQX2E2RWdpeHZBX1M1a25zQTkzZHJNRFN1bjk3MlM1Tm9hdllKWm5aYlVXZmRKd2VzcFNJS1ZlZlh3?oc=5"
+        },
+        {
+          "title": "OJK Terus Kawal Penyelesaian Kasus Gagal Bayar di Akseleran, Crowde, dan KoinP2P - Liputan6.com",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPOTBRbkhrS0xSNGFyOUo0cVVTUjN4emh3enhpNkRhTk5hdnF6LWthQ3RoZUNKNlNHWjZRb3I0eTZxanlBRmFwYllaMlRITUpxVGZfSU9LRzdjdzNwYlp4d0M5UlNvX3RXTXVIS3d3WGFfM01pUGlnbUotV2k0MlJlVlJTdkhHc29RaGdUcjZOa2RtRXNISW95d0t4TUh4a3EtRlM5Tk1jQ09vR0NSa2RlNXo2VkNrLTk0SWVqN3FiWXnSAbYBQVVfeXFMUFVQeUkxNTFNYVpIYkpZOUE1bHhKZHZkb0Y3SWgzU05OUS1MNUQ2TjUtbG1teHNPQ3hPQVgtWnQxSzVUMWpFc2F5am40Y3kyUVhZRFlvN245M05LaGJUZ3FSbmpTcGlqWWF2V1R0dXpCeTZfaElHM0RCQXNhVlNkNnZ5a0lDWXRGTGhERW1iMk9CUUt4cW5QVWRoaFNPeHExMTFKLVo3R3lxTFNvRVdOZF94RU0yelE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-2f4c06eba486",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "OJK",
+        "Nasyiatul Aisyiyah"
+      ],
+      "headline": "OJK Gandeng Kader Nasyiatul Aisyiyah Jateng Cegah Pinjol Ilegal dan Judol - Mata Semarang",
+      "headlineZh": "OJK联合组织防非法网贷",
+      "summaryZh": "OJK与Nasyiatul Aisyiyah中爪哇合作开展防非法网贷和赌博宣传，属常规监管宣传。",
+      "rationale": "监管宣传活动，影响局部",
+      "independentSourceCount": 1,
+      "domains": [
+        "matasemarang.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "c5dbba7d0c4d81a5"
+      ],
+      "articles": [
+        {
+          "title": "OJK Gandeng Kader Nasyiatul Aisyiyah Jateng Cegah Pinjol Ilegal dan Judol - Mata Semarang",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTzlZMV9nanlKdDhJQ0RvaXI4akk3S1NzeUYtbXVuRjVjU3prMXNjQURzX29Od19PbDZZSFZTQ0hnNl9tb25wRHV3MzFMYVZuMzBwTE9sRXphZGNSQ2xzRnFhTUc2bU1QMFY5Vmg4TFZ4LXA1bERRU0FwMnJjMVlPOFZIdXBkenQ0UW44Zmx5Z0dkbUhnQ1c2VlE3cVhReWdr?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-6897e1a1357b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Perketat Transparansi Pinjaman Online, Pelanggar Terancam Sanksi - RRI.co.id",
+      "headlineZh": "OJK收紧Pindar透明度规则",
+      "summaryZh": "OJK加强线上贷款透明度要求，违规者将面临处罚，属具体监管规则制定。",
+      "rationale": "监管规则制定，有具体约束力",
+      "independentSourceCount": 2,
+      "domains": [
+        "infobanknews.com",
+        "rri.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "02be5ec496709774",
+        "0b4dff5085a40ab7"
+      ],
+      "articles": [
+        {
+          "title": "OJK Perketat Transparansi Pinjaman Online, Pelanggar Terancam Sanksi - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPLVFZekhZZ3g3VW1rNF9jeHp2bV9MZFFhdnlFSXlyRWlUSnd4WTBITjI3YnV6NUhTaFhEcWZqNnJ0ZzF5amtvSi1FeGVqYlhUT0lCSkQzQzJNWUZ1TEQxbzVKelo5U0hkQ3BoYU90UUhZVTI1SFlUMmtEVE80eG8zWXh0Qlc1LTJHNUJMWTAxQXA1b1NpNjY5U0FJdkJLOGs3ckhTX3d0aFpBbC1YOXk0?oc=5"
+        },
+        {
+          "title": "Transparansi Pindar Diperketat, OJK Siapkan Sanksi bagi Pelanggar - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNDB0ZlpOZE80bmkwRHc4ZFZzcTc3bWpiM0ticjktSzgyWjRaTm0wRG5BSk9fTk5EX0k4WU5ic1FLem52Vm1zSmItMExGZVVQMkJDTTFYdUxSNWVRaXdnTWIwanZySmJOSGl4OUttb2xSajRuSkJYYmVkWllqZXVBRWI2RXI1ZGF2dzF6YzlUaXc2WGM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-d2c918e16525",
+      "eventType": "regulatory_action",
+      "severity": 0.5,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Siapkan Aturan Anyar Pindar, Lender Bakal Lebih Terlindung - InvestorTrust",
+      "headlineZh": "OJK筹备Pindar新规保护出借人",
+      "summaryZh": "OJK准备出台Pindar新规，出借人将获得更多保护，属监管规则筹备。",
+      "rationale": "监管规则筹备，具体政策动作",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "5be0f296c8299075"
+      ],
+      "articles": [
+        {
+          "title": "OJK Siapkan Aturan Anyar Pindar, Lender Bakal Lebih Terlindung - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVUtqVG9RWUpteERKd2ZRQ3AycUJoSWk3Szk0RkJ0eDhwY1BmSGJmc2dKMExhMTg4WTFkSnJaLVdsUGxEcEctU3Y2NjllTDBFOF9HdThlbEhUR2VpOEJQS0FOQ3JqU1UyUldERHAtUVNZRGRvOC1VVE1PNS03RnNjMDRpaDdjR3pHUXl2YV9yVWxkM3pNOUtfbS03dEtDeGV0WXJoN2hR?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-de7c7a637864",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Anak Muda Banyak Pakai Pinjaman Online, OJK Peringatkan Sektor Pindar Soal Risiko Kredit Bermasalah - inforadar.disway.id - Inforadar.id",
+      "headlineZh": "OJK警示年轻人网贷信用风险",
+      "summaryZh": "OJK警告Pindar行业关注年轻借款人信用风险上升问题，属监管风险提示。",
+      "rationale": "监管机构发出具体风险警示",
+      "independentSourceCount": 3,
+      "domains": [
+        "inforadar.disway.id",
+        "suara.com",
+        "suaralandak.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "739de99e787c559b",
+        "7298182915c0bf13",
+        "b4796063f1e7c9af"
+      ],
+      "articles": [
+        {
+          "title": "Anak Muda Banyak Pakai Pinjaman Online, OJK Peringatkan Sektor Pindar Soal Risiko Kredit Bermasalah - inforadar.disway.id - Inforadar.id",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNQVJwSHI4cWVNUTFEZVNBcjhJUV82dEJER2FRNzRvYm1TbDVjV2tOZzRja2lkYmx6X2lvUGpRR0NydnFVRUhZWldqeXRNbkhFTEhSQTVFWFEwaVBudTZCVWVXaFN2bkczSkRoZlhTcTBxYV9qOXpmbnBQUjFRN0xRSGhvS0FLMFdFSWN6UW1OMkZjZl9Ic1ZRTFVfVGJhU0VMa1RVM3ZwZWFuZU5kdXo3cFZLei14aTBvSDVOQ2VIRksyNFE0dmNVa0RkM1E5RnYxaUo40gHTAUFVX3lxTE1BUnBIcjhxZU1RMURlU0FyOElRXzZ0QkRHYVE3NG9ibVNsNWNXa05nNGNraWRibHpfaW9QalFHQ3J2cVVFSFlaV2p5dE1uSEVMSFJBNUVYUTBpUG51NkJVZVdoU3ZuRzNKRGhmWFNxMHFhX2o5emZucFBSMVE3TFFIaG9LQUswV0VJY3pRbU4yRmNmX0hzVlFMVV9UYmFTRUxrVFUzdnBlYW5lTmR1ejdwVkt6LXhpMG9INU5DZUhGSzI0UTR2Y1VrRGQzUTlGdjFpSjg?oc=5"
+        },
+        {
+          "title": "OJK Perketat Risiko Pinjaman Daring Usai Usia Muda Mendominasi - www.suaralandak.co.id",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBzaVNDRzUzalFBeXA5NWR0amcwMzRRSFo5dG45WEdYLXNBQUV5WjNDY2tKSEJhZGphTXVLV092UkRDSW5mLXN2N2ZoOUpIRTYtT09LVTNkODJCNk9mY3NkUzhELTU1dVdnUHh1YlctcXRWSFU?oc=5"
+        },
+        {
+          "title": "OJK: Gen Z dan Milenial Problematik Kelola Uang, Paling Banyak Akses Pinjol - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNMHJyNTRCZ0x4Q3RLUU5NQ1NNREZCellEM1lLTVVoeU8teUd6bjI4Ul9IalJrbnBJYWxTQUlpc3o3MzlBdHk3YjRNQkU4OHQzUWt2akZUeTgzMGc2U0tqS2Mzay0tTHFCMmRuY2tkT2Nsek91d1NTY25zVGxybzFhREJKT3EzQUpEZVJlcC1LQVBvMmpUemFxMDE1cWFrSHlCOGFzVDBWQ2ZLbC1ZUnFlSkxUSEVvRVN3NDR2LdIBvAFBVV95cUxOZGhuMkJvdWhWX0hIV2ljQ29ncjNXLWMweUp1WHpGclZFS0RtaFFVcDNHR005bVhOa1VjaEN5alMxTjZfbkxSOWh4cHZXTlI5S2RlbVBLUVdBSFZWdEJCanRWUnh1VDU0dlI1TlllYWM5ZXAzVGZ2VEJZa0NsbDRrbmxXNzRWXy0zd3dCTkpLR21lWFBrMDRuVEpjdXBVbTZ6QVBOaVB4QXlOUEg5YmJ0VlBlRzM2akpTVXhPUg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-ba19966782bc",
+      "eventType": "regulatory_action",
+      "severity": 0.4,
+      "entities": [
+        "BKPSDM",
+        "Halsel"
+      ],
+      "headline": "Bupati Halsel Instruksikan BKPSDM Sisir ASN Terindikasi Judol dan Pinjol - PotretMalut.com",
+      "headlineZh": "Halsel筛查公务员涉网贷赌博",
+      "summaryZh": "南哈马黑拉县长指示BKPSDM排查涉网贷和赌博的公务员，属地方行政动作。",
+      "rationale": "地方政府具体排查行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "potretmalut.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "4154bef42fca6e24"
+      ],
+      "articles": [
+        {
+          "title": "Bupati Halsel Instruksikan BKPSDM Sisir ASN Terindikasi Judol dan Pinjol - PotretMalut.com",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPS0ZZa2hzZ2xIQWxEaVJndDhNVkk1TUlWV0FBQlFHdmFjSFp5dWZUSUxUZGprcnBKSFA3MmRtb2RqSGtKOS00RjVHMUlRQWVvS1c4NFl2bXl0QmVyTVVHZUlpdjUyRnJYaVZqeWRjbGswR1dFYkZlUE1Vc09hMXBRTHplWUV3bDg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a58e9f82c67d",
+      "eventType": "regulatory_action",
+      "severity": 0.5,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Awasi Skema Tadpole pada Industri Pindar - SuaraGarut.ID",
+      "headlineZh": "OJK监控Pindar行业Tadpole模式",
+      "summaryZh": "OJK正在监控Pindar行业中的Tadpole（蝌蚪）资金模式，属监管关注动作。",
+      "rationale": "监管机构具体监控行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaragarut.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "86eab7422d88933d"
+      ],
+      "articles": [
+        {
+          "title": "OJK Awasi Skema Tadpole pada Industri Pindar - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9xdUgtOGgyY0tyX3BGREJvQjlNcEJjVDBoR010UEVBU3Z3MjJfUGtURlUxQTNTYVp1TFFDU1R5VWh2M3U4azlCUC1uSE1ZU1FBWHBzNXJBMG9VeE5pYVhJWGJ3?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0a542abeb82f",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Bagi Penyelenggara Pindar dalam Empat Tier Pendanaan - ChatNews.id",
+      "headlineZh": "OJK将Pindar分为四个层级",
+      "summaryZh": "OJK计划将Pindar机构按多项指标分为四个层级进行差异化管理，属具体监管规则。",
+      "rationale": "监管规则制定，有具体分类标准",
+      "independentSourceCount": 2,
+      "domains": [
+        "chatnews.id",
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "d02c7337df874db8",
+        "d8a1b7de374595ba"
+      ],
+      "articles": [
+        {
+          "title": "OJK Bagi Penyelenggara Pindar dalam Empat Tier Pendanaan - ChatNews.id",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1FX2NqMk8xZmRRVElXcUdrZmg2MkstT2tZd1NaYWhOekNwMHZGbTlGZlU0dzhMeWxtdjBZdE9XZTRsc1ZmNU00Y1NLVUNzMlM0NTZTYU5nd2c?oc=5"
+        },
+        {
+          "title": "OJK Mau Bagi Pindar Jadi 4 Tier, Pakai Sederet Indikator Ini - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUk1PNmVwQnh5XzJua1EwT2J0WE4weFB4Z0RoQjlWV3hsQkRXVGIzUm9wWjRoUXdZLUQwaUhfVTU4dFFobVBJS2lOOGRWSVRHaG85b1kwUDRtcTJLNmxxaXNqZUZEeUZILWNZYzFEd1djWGJScXEwWDczM1BvS1hWZ3FaOE03ajRNUVpSUWRVbG50czVCdnZRTVlmRURFdlRSdzdWd29XSFpTU1BvRWtSVy1mQUZPVmZwczAxSlZ30gHDAUFVX3lxTE5qMktmS3VmVHVBMjhheDhVNE52OXhmNW1Eell4QzlVaEFsNjVQNTVEaDktSkhOUmxYb1VOczZGeW5ZdUdSMjNGRFpiNHF1dlh1ZzJuXy1VQm82eWNudnI4SHRHNzkxUnUySnJnOE9oTmZyaVg5ZXY3WnY2eUNva20yOE5RNXFxLUVKQlVXdXlJTGljWDhSV3MzODBBb2kybTlHVUl6S0RLTy1DVzhFYmlxV1N3V1ZPU3hLRnhvWlpUVDQ2SQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-144942111c1d",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
         "OJK Sulselbar"
       ],
-      "headline": "OJK Sulselbar Terima 1.190 Laporan, Terbanyak Pinjaman Online Ilegal Mencapai 1.070 - Sulselsatu",
-      "headlineZh": "OJK南苏拉威西接获千余网贷投诉",
-      "summaryZh": "OJK南苏拉威西办事处收到1190起投诉，其中1070起涉及非法网贷，反映区域非法网贷投诉集中。",
-      "rationale": "监管机构披露具体投诉数据",
-      "independentSourceCount": 1,
+      "headline": "OJK Sulselbar Terima 1.190 Laporan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - Makassar Terkini",
+      "headlineZh": "南苏拉威西1190起非法金融投诉",
+      "summaryZh": "OJK南苏拉威西收到1190起非法金融活动投诉，其中1070起为非法网贷，属消费者受害记录。",
+      "rationale": "具体投诉数据，消费者受害",
+      "independentSourceCount": 2,
       "domains": [
+        "makassar.terkini.id",
         "sulselsatu.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "9ab3485f6374c933",
         "22e446a75d687548"
       ],
       "articles": [
+        {
+          "title": "OJK Sulselbar Terima 1.190 Laporan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - Makassar Terkini",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPczk1Q2h0VXE1ZEdvZy1RWmtSbkZmSlN4WE1sZjhWcUxjZVpLT0dsekRtaHVnSXRqRks1YXhMUjRyaENtZjZQZnBDT0dNZS16S0pDVFJRMUpXRjZJck81WC1WZkJzZnVlaHNsaVZkZV9MS0k3LTk2c21DNVVJNmtQekRpTlhvTTRfeUNzZ1BJRUdTLU1GdWJQdXVBcERad1BVZU1CNVhmeTkxdGxS?oc=5"
+        },
         {
           "title": "OJK Sulselbar Terima 1.190 Laporan, Terbanyak Pinjaman Online Ilegal Mencapai 1.070 - Sulselsatu",
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPVFhIbUk1SVhGUjZ3QmsxLWpSR0ZrdFloZnRRYWJnUXgwd0QwcC1IRkR3V01ORXFIRkFxaDk0Q0ttLVZ5V0d4X1dkNUplU3Jhb3lzNVZSdklXdVMwNzZUU0xaSEVkWjFDV1NEd0ZsY1p1MjlmdTR2bU9aandnLThYNkV4VjdRUzBuTmRHNVlOa0FlNFZVWXo1YV9Qb0dkUjJiR2ZSNUZLTjNuSHNPUTc2cDN3SFIxTGprc0c4S2tHN3dST2VWVzdqQ053NkF6UdIB0wFBVV95cUxOdm9uUXR5UHVBMUY4dm00cWh3WllYZ2hqOXY3VEVDdlZsR3FCbHh4bXBpbVhaRDVJZVJwRDlGVUk1eGtCaktheExrMTdoVWZIZkhXUEJDY3NmaVBTQ3d2MGMtUFlQanpnM2pta1M1WWFQTDkySDc3MGIwWWVEUzhhWWFsendGb3JtY1hHU0R1UTNMbmZmWDdGd3pwTkdfMG9BMTFkZHhubm5oTEpsVnZZTjlfVGdRYzhGX1RyZC1CMFVhUnNqRnZ4bjNQN0ZXX1lYcXJv?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -271,9 +1048,9 @@
         "OJK"
       ],
       "headline": "TWP 90 Pindar Tembus 4,73%, OJK Catat 16 Penyelenggara di Atas 5% - InvestorTrust",
-      "headlineZh": "OJK记录16家Pindar不良率超5%",
-      "summaryZh": "OJK数据显示TWP90升至4.73%，16家Pindar平台不良率超5%，显示行业资产质量承压。",
-      "rationale": "监管披露行业资产质量数据",
+      "headlineZh": "Pindar行业TWP90达4.73%",
+      "summaryZh": "OJK数据显示Pindar行业90天以上逾期率达4.73%，16家机构超5%，属资产质量承压。",
+      "rationale": "具体资产质量数据，行业承压",
       "independentSourceCount": 1,
       "domains": [
         "investortrust.id"
@@ -296,162 +1073,36 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
-    {
-      "id": "llm-c8d41355d7a6",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Transparansi Pindar Diperketat, OJK Siapkan Sanksi bagi Pelanggar - Infobanknews",
-      "headlineZh": "OJK收紧Pindar透明度并拟处罚",
-      "summaryZh": "OJK加强Pindar费用透明度监管，关注Tadpole还款模式，并准备对违规者实施处罚。",
-      "rationale": "监管出台新规并拟处罚",
-      "independentSourceCount": 2,
-      "domains": [
-        "infobanknews.com",
-        "investortrust.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0b4dff5085a40ab7",
-        "3e08cf138bd57bde",
-        "3bb8151e5c5b797c"
-      ],
-      "articles": [
-        {
-          "title": "Transparansi Pindar Diperketat, OJK Siapkan Sanksi bagi Pelanggar - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPNDB0ZlpOZE80bmkwRHc4ZFZzcTc3bWpiM0ticjktSzgyWjRaTm0wRG5BSk9fTk5EX0k4WU5ic1FLem52Vm1zSmItMExGZVVQMkJDTTFYdUxSNWVRaXdnTWIwanZySmJOSGl4OUttb2xSajRuSkJYYmVkWllqZXVBRWI2RXI1ZGF2dzF6YzlUaXc2WGM?oc=5"
-        },
-        {
-          "title": "Biaya Pindar Harus Jelas di Awal, OJK Siapkan Sanksi Tegas bagi Pelanggar - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPNjVlS0EwdF9MTTQwSTFzUWFna2VPN1JxcDk5eEZDRGNhTG4xSUdZR2I1aWZLa1RpSV9jVEctcnY1b05SdWRPZHYyeHRnYldsSy1LbzdTQzNGRUlNM0hsSlpyMHZsYkJtMDNaM2xDMlFNcXBZNjl2c1NuTHlGV29BLVItSUxXRHFHWEk3S3YycjlNQmFUdXVHbks5Q09MZTRXZzV5QWlDczNvXzZiM1Bha3ZTeGs?oc=5"
-        },
-        {
-          "title": "OJK Soroti Skema “Tadpole” Pindar, Transparansi Pembayaran Jadi Perhatian - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNZTZJR2ZHaU9lR19hbjc1SHBvMXhrXzAyRmNQa2V1eXFSMjRmNEFJd1EtdU11QVJBdHVJVUgwVXNSVUFkRlRPbjJpVUU5X29NMmFmcDRkb081RXNkZmRZSW9wMndtZlQ2VkY1VFhpbldjWW5jX1lTR1Y1Z2hNMzJJQkx1MUxWUFhZQVhJVjR2QllLUHZIWnMybTRhcWN3SWQtN3dpZXpxTUxNNDRYSzZZUDdR?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-f9d67b7a6a93",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.75,
-      "entities": [
-        "DC Pinjol Gresik"
-      ],
-      "headline": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
-      "headlineZh": "Gresik网贷团伙用色情照恐吓",
-      "summaryZh": "Gresik地区网贷催收团伙涉嫌以传播色情照片恐吓借款人，警方正在追捕，属刑事违法案件。",
-      "rationale": "警方追捕的刑事恐吓案件",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e3c624e6eb2e01cc"
-      ],
-      "articles": [
-        {
-          "title": "Menanti Tertangkapnya Komplotan DC Pinjol Teror Foto Porno di Gresik - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUGZzcmE1VWN4WkwtV1RIWGljU1dEWnpYYjBhZ2J6WDlSMnFLU3FGdnFaSV9QdmYwa0ZndTA2Y2pKd2FMZEtRVEdaNk9BZ2lONk84N0wtbDNWc1p0a051OTNva2pYdlExN0s3bzhURHNUa2dYQ0V5cHM2UV9vRjlRYUVfRkItaFA0VExYZUhnYVBtdUhzNW5oem9VMGJmRVhWdjR3LVl0ZnN2eUExdHNXeFROYkY0QWFmc2dkdW1lTkFnZG_SAcgBQVVfeXFMT2o2QTVOMXF5eFpyQXVkWVBXTzE3YUtoNmlxMDI2c2dnN0JEcWNUS0JCYUNyMjRON1hrRmFPYUIwSko0WktwUkdGZkZ5bFhxczFfWWdlT2llUkY2TDA5QmVVT1RoNGZzWW1pdmgxd2Fwa2JvbXJiLTljcEVtRG0xYnRCcmg1SmxzdDJvV0pjZHdfSkFRS1l2VFVXeVpNaHFQeUltOS1Oai10UmE4UXFXN1BXeF9fb09kMjZ5RFAtYVlNdVFlckFGck4?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-d80fc04cc029",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK",
-        "Kredivo",
-        "KrediFazz"
-      ],
-      "headline": "OJK Awasi Penagihan Pinjol Kredivo dan KrediFazz, SOP Debt Collector Jadi Sorotan - Poros Jakarta - Poros Jakarta",
-      "headlineZh": "OJK调查Kredivo与KrediFazz催收",
-      "summaryZh": "OJK调查Kredivo和KrediFazz涉嫌恶意及恐吓性催收行为，聚焦催收SOP合规问题。",
-      "rationale": "监管对具体平台展开调查",
-      "independentSourceCount": 2,
-      "domains": [
-        "porosjakarta.com",
-        "voi.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1b3c5deadb1b147b",
-        "8285523a43215e6a",
-        "96a98a25450a3794"
-      ],
-      "articles": [
-        {
-          "title": "OJK Awasi Penagihan Pinjol Kredivo dan KrediFazz, SOP Debt Collector Jadi Sorotan - Poros Jakarta - Poros Jakarta",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQalRWQ0NTV28zcW1CVVNpN0UxUkpZYWQxLXlTV05ncFNTTzdBeTN3eG5teUJuTTRFMTJDeW54N3pONWhCaDBTck1VSThQZUUxbm1iUU9JT1VEUTZBNlJxOTZWOXI4SV9DMV9YSENnYlR1VEFuUXpla0YtbkJ3N25qdWdaeDVDeHFSOHU5NFh5RGxiVHpQY0dLbnRwOXRqc3QxTXc5Q2h6bk9DaVhhZ3ZLUERKNFcyYWt5blNWYWhWRDdObTYwMEVnNDh30gHKAUFVX3lxTFBqVFZDQ1NXbzNxbUJVU2k3RTFSSllhZDEteVNXTmdwU1NPN0F5M3d4bm15Qm5NNEUxMkN5bng3ek41aEJoMFNyTVVJOFBlRTFubWJRT0lPVURRNkE2UnE5NlY5cjhJX0MxX1hIQ2diVHVUQW5RemVrRi1uQnc3bmp1Z1p4NUN4cVI4dTk0WHlEbGJUelBjR0tudHA5dGpzdDFNdzlDaHpuT0NpWGFndktQREo0VzJha3luU1ZhaFZEN05tNjAwRWc0OHc?oc=5"
-        },
-        {
-          "title": "OJK Investigates Alleged 'Evil' and Intimidating Schemes in the Collection of Pinjol Kredivo and Kredifazz - VOI.ID",
-          "link": "https://news.google.com/rss/articles/CBMiQ0FVX3lxTE9fUXFnOUhvYTFNNFpCQnU3QWF4X04tb2NHSWdwaXNWRzVoNzB2YXJRM2g2WV94eTZqRmdmd1RHMTlUdVnSAUJBVV95cUxQTmF4QkVqZW9pcU5pVHlYcXdhaWxFMG1fX1lGSnpvd2ttMkpnTWFFMjZMZDViQ0NIbWxHeWVxYU9kT3c?oc=5"
-        },
-        {
-          "title": "OJK Soroti Dugaan Skema 'Jahat' dan Intimidatif di Penagihan Pinjol Kredivo dan Kredifazz - VOI.ID",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONS1iUDQ1aW4xT3E4dzFOd3R5WDNOREVXYk9femMwYzJCbm00LWlnMmpzNXZCTzlnbWk1VlRhWml1cEU0cnAtdGJOZlRIcmVUYkJxS2c4dVRHUDFfamJfUk45ZU1tS1NZZ1o2MFdsa21GNDhiVVA3X0hRZGJFc2dFRXVmSFlxaWVfamFHNEp1cE9Rb3FHM3lQWFJZYS1OQWdMV21zUDI0Sm5kbDdhbU1XQ3NFSkJ4bkHSAbMBQVVfeXFMTWF6ZlZkeVA3cVhWenJiMEU0SER6Wjc1QWVGUTFIQTkxcHdUamttdy1aSDZrYXRYLUI1eDJHcXRneGNXWnU2WndHdmFEM0k2N3lNb0d3RXVvaGphQ2xBNTJ1dFVoWmJ1X1Z6azU3am5ObWloTmRYWWVDa0duQUg4ek5nUl9rVktaRVRwN0VzV1hFOG9iZ0pWVFFhdWxCYl8xYS11ZlJqZFJWUlJWWHNPak1WWXc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
+      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 25,
-    "socialItemCount48h": 15
+    "articleCount48h": 46,
+    "socialItemCount48h": 18
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 470,
-    "classifiedCount": 154,
-    "irrelevantDropped": 86,
+    "inputCount": 473,
+    "classifiedCount": 140,
+    "irrelevantDropped": 100,
     "model": "deepseek-chat",
-    "fallbackCount": 230,
+    "fallbackCount": 233,
     "labelCounts": {
-      "NEG": 76,
-      "MIX": 39,
-      "POS": 39
+      "NEG": 72,
+      "MIX": 31,
+      "POS": 37
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
