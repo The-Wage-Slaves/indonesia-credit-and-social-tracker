@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>街头动员热度确认单 · 2026-10-09</title>
+<title>街头动员热度确认单 · 2026-10-13</title>
 <style>
  body{margin:0;background:#f7f8fa;color:#1f2937;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
@@ -21,43 +21,43 @@
  .next{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #2563eb;border-radius:8px;padding:12px 16px;font-size:12.5px}
 </style></head><body><div class="wrap">
 <h1>街头动员热度 · 周度确认单</h1>
-<div class="sub">采集日 2026-10-09 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
+<div class="sub">采集日 2026-10-13 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
 <div class="card hero">
-  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">31.5</div></div>
-  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">66</div></div>
-  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">50%</div></div>
+  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">27.8</div></div>
+  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">68</div></div>
+  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">55%</div></div>
   <div style="flex:1;min-width:220px"><div class="lbl">换算刻度</div><span class='band'>≤25→70分</span> <span class='band'>≤45→58分</span> <span class='band'>≤60→45分</span> <span class='band'>≤75→35分</span> <span class='band'>≤100→22分</span></div>
 </div>
-<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 250条中政治条目171条(浓度68%)，反对86/中性54/支持31 → 总反对率 50.3%（分侧: 民间YouTube 63% · 论坛Kaskus 10% · 媒体RSS 32%）</div>
-<div class="card"><h3>六源明细</h3>
+<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 250条中政治条目161条(浓度64%)，反对88/中性39/支持34 → 总反对率 54.7%（分侧: 民间YouTube 67% · 媒体RSS 39%）</div>
+<div class="card"><h3>六源明细</h3><p class='warn'>⚠ 1 个源未参与（失败/待配置），热度按剩余源权重归一化。</p>
 <table><tr><th>状态</th><th>数据源</th><th class="num">热度</th><th class="num">权重</th><th>本期读数</th></tr>
 <tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>A. Google Trends 双篮搜索热度</b><span class="grp">领先指标</span></td>
-          <td class="num">37.5</td><td class="num">25%</td>
-          <td class="detail">街头篮 0.42x + 愤怒篮 1.08x（vs 各自3个月基线），均值 0.75x</td></tr><tr>
-          <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
+          <td class="num">40.9</td><td class="num">25%</td>
+          <td class="detail">街头篮 0.43x + 愤怒篮 1.21x（vs 各自3个月基线），均值 0.82x</td></tr><tr>
+          <td><span class="badge" style="color:#D85A30;border-color:#D85A30">✗ 失败</span></td>
           <td><b>E. Kaskus 全站热帖</b><span class="grp">领先指标</span></td>
-          <td class="num">36.4</td><td class="num">20%</td>
-          <td class="detail">全站热帖25条中政治/愤怒帖 3 条，互动占比 18.2%</td></tr><tr>
+          <td class="num">—</td><td class="num">重分配</td>
+          <td class="detail">采集失败: hot_threads接口不可用: HTTPSConnectionPool(host=&#x27;www.kaskus.co.id&#x27;, port=443): Max </td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>F. YouTube 高播放政治视频</b><span class="grp">领先指标</span></td>
-          <td class="num">5.0</td><td class="num">10%</td>
-          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 2 条（检索146条）</td></tr><tr>
+          <td class="num">15.0</td><td class="num">10%</td>
+          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 6 条（检索150条）</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>B. GDELT 报道量</b><span class="grp">滞后指标</span></td>
-          <td class="num">50.7</td><td class="num">15%</td>
-          <td class="detail">近7天报道量占比均值 0.010% / 前49天基线 0.010% = 1.01x</td></tr><tr>
+          <td class="num">39.9</td><td class="num">15%</td>
+          <td class="detail">近7天报道量占比均值 0.008% / 前49天基线 0.009% = 0.80x</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>C. GDELT 媒体tone</b><span class="grp">滞后指标</span></td>
-          <td class="num">54.5</td><td class="num">10%</td>
-          <td class="detail">近7天媒体平均tone -3.45（越负越紧张）</td></tr><tr>
+          <td class="num">45.0</td><td class="num">10%</td>
+          <td class="detail">近7天媒体平均tone -2.50（越负越紧张）</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>D. 大众媒体RSS 街头标题占比</b><span class="grp">滞后指标</span></td>
-          <td class="num">6.6</td><td class="num">20%</td>
-          <td class="detail">近7天 152 条标题中 1 条街头相关（0.7%）；失效源: 3</td></tr></table></div>
-<div class="card"><h3>近7天相关标题/热帖样例</h3><ul><li>[BBC Indonesia] Aktivis Khariq Anhar dijatuhi lima bulan penjara buntut meme &#x27;timpa teks&#x27; demons</li></ul><h3>历史（共2期）</h3>
-<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-10-09</td><td class='num'>31.5</td><td class='num'><b>66</b></td></tr></table></div>
+          <td class="num">0.0</td><td class="num">20%</td>
+          <td class="detail">近7天 151 条标题中 0 条街头相关（0.0%）；失效源: 3</td></tr></table></div>
+<div class="card"><h3>历史（共2期）</h3>
+<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-10-13</td><td class='num'>27.8</td><td class='num'><b>68</b></td></tr></table></div>
 <div class="next"><b>下一步：</b>把这个建议分数发给 Claude Code 确认（说"确认本期街头热度"即可写入看板），
 或者说"这期不对，因为……"来挑战校准。</div>
 </div></body></html>

@@ -852,5 +852,82 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-10-13",
+    "version": 3,
+    "heat": 27.8,
+    "suggested_score": 68,
+    "opposition": {
+      "status": "ok",
+      "rate": 54.7,
+      "detail": "250条中政治条目161条(浓度64%)，反对88/中性39/支持34 → 总反对率 54.7%（分侧: 民间YouTube 67% · 媒体RSS 39%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 40.9,
+        "raw": {
+          "ratio_street": 0.4292379471228615,
+          "ratio_anger": 1.2086274509803923,
+          "per_kw": {
+            "demo hari ini": 1,
+            "demonstrasi": 1,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 28,
+            "kejaksaan": 20,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 18
+          }
+        }
+      },
+      "kaskus": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 15.0,
+        "raw": {
+          "n_searched": 150,
+          "n_big": 6
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 39.9,
+        "raw": {
+          "avg7": 0.007571428571428571,
+          "baseline": 0.009491176470588236,
+          "ratio": 0.7977334100668466
+        }
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 45.0,
+        "raw": {
+          "avg_tone7": -2.4984571428571427
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 0.0,
+        "raw": {
+          "total": 151,
+          "matched": 0,
+          "share": 0.0,
+          "examples": [],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
