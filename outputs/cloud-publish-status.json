@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-10-15T06:29:51.736664+00:00",
+  "generatedAt": "2026-10-16T06:24:14.884870+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-15",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-16",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **司法/执法工具化｜印尼反腐委员会就国家灾害管理局资金腐败案逮捕5名嫌疑人并追究死刑可能**\n严重度 0.75｜4个独立来源（bbc.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜印尼国民军陆军参谋长将换人，Tandyo 将军将宣誓就任**\n严重度 0.55｜1个独立来源（news.republika.co.id）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜印尼盾兑美元逼近18000，印尼央行称与亚洲货币走势一致**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency\n\n🟠 **关键官员更替/清洗｜Danantara 接管 PLN Batam 管理权，此前发生大面积停电事件**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions",
-      "**Pinjol/Pindar 舆情事件**\n\n**Gresik非法网贷催收勒索案**\nGresik警方逮捕以非法网贷名义勒索、用编辑色情照威胁受害女性的催收员，涉月入6000万盾，属警方立案的催收伤害案。\n证据：16个独立来源。",
-      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **市场失序(汇股债)｜MSCI拟将印尼降级为独立市场，IHSG暴跌逾10%触发交易暂停，外资大规模出逃**\n严重度 0.90｜2个独立来源（ekonomi.republika.co.id、katadata.co.id）｜影响支柱：currency\n\n🔴 **关键官员更替/清洗｜印尼总统普拉博沃改组内阁，新设第二国防副部长并任命多名新官员**\n严重度 0.75｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜印尼反腐败委员会在Klaten开展抓捕行动，逮捕县长及20人并查获约10亿印尼盾**\n严重度 0.75｜3个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜普拉博沃任命Kristomei Sianturi为印尼国家灾害管理局局长**\n严重度 0.55｜2个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions",
+      "**Pinjol/Pindar 舆情事件**\n\n**库杜斯催收员与居民冲突**\n中爪哇库杜斯发生债务催收员与居民肢体冲突，警方介入并逮捕24名嫌疑人，揭露佣金高达50%的催收乱象。\n证据：3个独立来源。\n\n**Gresik非法网贷催收勒索案**\nGresik非法网贷催收团伙用编辑色情照勒索受害者，月入6000万印尼盾，警方已逮捕部分嫌疑人并追捕主犯。\n证据：7个独立来源。",
+      "**已折叠的低证据线索**\n另有 9 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-15:high_pending:red:success"
+    "decisionId": "daily:2026-10-16:high_pending:red:success"
   },
   "feishu": "sent"
 }

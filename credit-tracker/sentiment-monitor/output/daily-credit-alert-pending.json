@@ -1,72 +1,105 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-15",
+  "date": "2026-10-16",
   "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 5.0,
-    "socialDailyVolumeRisk": 13.9,
-    "negativeSocialShare": 21.1,
+    "newsDailyVolumeRisk": 19.6,
+    "socialDailyVolumeRisk": 24.7,
+    "negativeSocialShare": 11.2,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=14; prior-7d median=35.0; robust z=-3.00",
-    "socialVolume": "today=1; prior-7d median=26.0; robust z=-2.41"
+    "newsVolume": "today=9; prior-7d median=30.0; robust z=-2.02",
+    "socialVolume": "today=2; prior-7d median=32.0; robust z=-1.69"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [
     {
-      "id": "llm-2b695bf6b44c",
+      "id": "llm-ee28436a3980",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "Kapolda Jateng",
+        "Debt Collector Kudus"
+      ],
+      "headline": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
+      "headlineZh": "库杜斯催收员与居民冲突",
+      "summaryZh": "中爪哇库杜斯发生债务催收员与居民肢体冲突，警方介入并逮捕24名嫌疑人，揭露佣金高达50%的催收乱象。",
+      "rationale": "警方立案的催收暴力冲突事件",
+      "independentSourceCount": 3,
+      "domains": [
+        "cirebonraya.com",
+        "penabicara.com",
+        "suaramerdeka.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e2dcdf060e49b748",
+        "e565ce419245af86",
+        "526561a1a49cf648"
+      ],
+      "articles": [
+        {
+          "title": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
+          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWatIB-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWag?oc=5"
+        },
+        {
+          "title": "Komisi Debt Collector Disebut Capai 50 Persen, 24 Orang Jadi Tersangka Bentrokan Kudus - Pena Bicara - Pena Bicara",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdkVuZl95ZmFWbE9kVjBBNmVQWmZuakhGZnRTY1lkelE2cE5KTDAwcnNydXJodnVVSmdGZ0dOUkZqQnIxOHV2OXI2akNwOEx4Y1Q0TG5EM0tpSXdrN1dqX1dRVzJWUVlieUFhWmROVW9hTE50NVh0M0ZZQ1NoazkzVXV0S1VIdGV3U2pWYjZLdUZzREI2Nm81R3R4NHNzdE1XaVRpR2NXazVxSmxxTnc3R0xuZk12RWEzbjl1SEttd1Y1blZrcnNnMWJQSkV2ZkHSAdQBQVVfeXFMUHpyOEJiTEJDWXFXeVlWTHNUTmlVaFl0RWVMODJtZFJxNENsWHdSUXV5ak5SaTFVY1ZJNzZKelFITDd0U3Zzb3Uxakd0MHNsZkhDbm9MbkVHT3JnNTVlTmZBRm1wMFNidzN6UHp2MVF0c0dQWHJMUkRZakRzWldXclZ3dURMbXlFQ2QydE5tMldnMTFUcTJaNXQ3UlU5WWhsSjJkNzdvR2V2dVJZYk40bFB0TnFNUTZfV2ZrREVFNEo4OWFyazE1YTdVU1VlcjRPc3pYcGk?oc=5"
+        },
+        {
+          "title": "Penagihan Utang Berujung Bentrok di Kudus, Kapolda Ungkap Komisi DC hingga 50 Persen - Suara Merdeka - Suara Merdeka",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcjMwM3UySXJCbzFBbUVmYjJqMUpKVV9XbElPX2dfcS05ZERZQ1VBZ1pXMkxhVkR3d2ZXZlExTXJ4X0FuaTBJcVNaNzBlajVSMFFDMnl4dXgtdHozblI0VkxZbWhRMklUTnhBcmxGZlc3WEd0d0FzTnpMVmw3d0xmVnBUMjVWTXZpbjdPVkRSeXI1d0g4Y1hJNlR3Y1pLV1dRWmtabTdSOUNkaHcwQkhLdXhFYkxPZ01sMkhLX1pFZVdSMlFfOWIyVXZHRWdzUGFQUWV5bXpxbWFXWGtja0Fr0gHfAUFVX3lxTE5yMzAzdTJJckJvMUFtRWZiMmoxSkpVX1dsSU9fZ19xLTlkRFlDVUFnWlcyTGFWRHd3ZldmUTFNcnhfQW5pMElxU1o3MGVqNVIwUUMyeXh1eC10ejNuUjRWTFltaFEySVROeEFybEZmVzdYR3R3QXNOekxWbDd3TGZWcFQyNVZNdmluN09WRFJ5cjV3SDhjWEk2VHdjWktXV1Faa1ptN1I5Q2RodzBCSEt1eEViTE9nTWwySEtfWkVlV1IyUV85YjJVdkdFZ3NQYVBRZXltenFtYVdYa2NrQWs?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-72a0d7004a48",
       "eventType": "fraud_or_illegal_practice",
       "severity": 0.75,
       "entities": [
         "Polres Gresik",
-        "Pinjol ilegal Gresik"
+        "DC Pinjol Ilegal Gresik"
       ],
       "headline": "7 Fakta Terbaru DC Pinjol Peras Wanita Gresik Pakai Foto Editan - detikcom",
       "headlineZh": "Gresik非法网贷催收勒索案",
-      "summaryZh": "Gresik警方逮捕以非法网贷名义勒索、用编辑色情照威胁受害女性的催收员，涉月入6000万盾，属警方立案的催收伤害案。",
-      "rationale": "警方立案并抓捕，属具体违法催收事件",
-      "independentSourceCount": 16,
+      "summaryZh": "Gresik非法网贷催收团伙用编辑色情照勒索受害者，月入6000万印尼盾，警方已逮捕部分嫌疑人并追捕主犯。",
+      "rationale": "警方立案的非法催收勒索案",
+      "independentSourceCount": 7,
       "domains": [
-        "1minute.id",
-        "beritajatim.com",
-        "cakrawala.co",
-        "chatnews.id",
+        "bsinews.id",
         "detik.com",
-        "informasi-realita.net"
+        "kabarbaik.co",
+        "memorandum.disway.id",
+        "sekilasmedia.com",
+        "surabaya.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
         "80c2b03089cdcfb0",
         "d9a148d7779f4137",
         "b814b418d9f3ceb2",
-        "250a08f8e6fe278f",
         "c53604f1478c4787",
-        "ef4576133165f571",
+        "e81975a73c9a38ef",
+        "ce3da7cc4f6a4109",
+        "3497cbc663725173",
         "588dc4b0314e2b09",
         "e8e839000016c801",
+        "2beb56fbeff83405",
         "950545b774ec6674",
-        "2e650888c6fb3e76",
-        "84da653dc375b8aa",
-        "ac22ce3005462383",
-        "f4cd6bfd01583604",
-        "ad79d2f3fcf7094d",
-        "553329369dc17a54",
-        "b9169efc7bdb2640",
-        "09a770bc171f0941",
-        "9725a386d769a6b3",
-        "a1fa1bbebe76a0ad",
-        "fbb99da9e66e3bda",
-        "8bb03f35edbe70e0",
-        "8382bc12588fa01a",
-        "6006c89c4837586b",
-        "8038ce3e3785ea78",
-        "96c3ba6ae89a6725",
-        "c453b565b3db394a"
+        "2e650888c6fb3e76"
       ],
       "articles": [
         {
@@ -82,15 +115,15 @@
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPT2hxWmp0RDdqUkwzMGs0T1FFOEJKRXI4enhNNkdKZjlOejRPT2J2WEtnTXVxWUZmZml2RThsQjZuM3BFdk1ic2cySGlnQjhaTGxYaXppTnE2UldPLXBHMVBTenZEVkttd0ZPSkNnZUp5NXpPX2diazNBZmNUMnRLOFB2eExGb25sU1NJOGRjbGliYlB2Sk11cHBaTzctaENBU254MEtkTlE5aG1SbGFvZWZTYlpNV2hrQUtOVnFzMUl5cWZ6MTQ00gHMAUFVX3lxTE9feVd5OUplWDRmVmkxdUtyYjlBeWh5ZWJsV25IOElYSURLTjhhb1Z3dGp6N2ZCYS1yZlcwV0FORDNIaXJzNGtJNmRSZXRVMmw4UGw0cDJXM2d0cS1zeTIyQ2JKY1VTUEVNT1VJUFhYSVc3cFUtdWF1Qndhc2l5Z0dZem9aUXJBWkV4NkdRSDE4bDNZY2c1ZUtBNEtEWHQ3QmhmZ1NOVzJLTkpPV2F1VGlxSmpzRmRRRE16UFE1SGhBVGpWOVFxLW1ncmIyRw?oc=5"
         },
         {
-          "title": "DC Pinjol Peras Wanita Gresik Pakai Foto Porno Terancam 6 Tahun Penjara - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeWNMUUhTX3RjV292WjhGWWVIVUVubjdCR0tSa1MwZUFLVFJvWkJEeG1UUHVxcl9yamZOVVZfbFZaei1UcmhGMkxWY2pYZ2VJclBtV2RLVjAyOFNUMHdRUUZ5dkFIaUlKRkxkeDFlZkdpR0xIdng5Z21lV2lNeEtTTzlveHNfZnlQY0NWRkdoMUYyaTdOSS01a1VQWHh4RXk4ZV9NSGFLX3h2dmRBb3VfOXRYQUpXTjlRLXpYMDJmT2ZwNnFyR1JF0gHMAUFVX3lxTE1NYXpEa2ctVXFBVVJlalpURUFpTjg0UHB1aF9xaVhBaG50Y3pxRTN6aDFpTDA3UzRHekxkRFROY0F6V0dSdXJ3NGlNU2lQMkIzNXRzTW1XRmoyQ052aEhMVHV0ZUlhVmYwTERhdWhmbkYtLXRWMXBiMW1Kd3duRDVZQy1qZmF5VlU0OFA5MHcxYW5rcERBYXhFQ0NGTW5OdEMxajhnMHVSNlJaelAxbUhVRTdEb0p5RTIxWG9zaFBYZXRiektrNm5QNHY5Ng?oc=5"
-        },
-        {
           "title": "Dibongkar Polres Gresik, DC Pinjol Ini Sebulan Raup Rp 60 Juta Hasil Pemerasan - kabarbaik.co",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMDFCX3N4UjRkZ09kSFBLWWFmaGxMUUstTUxLSVNrMEpqbmJOcnpiTEVaOUZzeEViUEVXVTFiUk03U3FYVkhJOG9oQmhEZF9rVkhXcllFbWw3dkdfc1J6MW16T2FONDhSNEVSVlhPSHdaWVZabW5pRFVuS3N0MWNIRTNfaUJheEktNW0ydGttTzBTVTdmNVNHVHNZSGNlRHB5?oc=5"
+        },
+        {
+          "title": "Jerat Pinjol Ilegal di Gresik, Pelaku Ancam Sebar Foto Asusila Editan, Raup Cuan Puluhan Juta sejak 2025 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUUcxVFM5b3c2WFhRb3gtZzFqdnlRMzZ0d3E1czBKOWNIQzJPRkZjYkhidEFBYTI2NTJvSDF1aU9fdU9wMVBDTnJrOUpzV1lyanJISnN5NkRjLUxaOWl2SVpQZE1IUkNFcl9VdmhJSlZMOE10UUt5Q2stdTNUZzFtenJXNGpDZHhlQVo2TjZvOENRbFVJRWpuRml2aEJIRFNlVThmcmlYcWlnVThrRm5KZmV1c2VUdVpoMmlQMUE0cGVJZjBFTWl0NEZsVjBCYjdZaWpObF9YQ3pmZVY5TGZ6bTFlamc?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 26,
+      "bodyBackedSourceCount": 12,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -102,6 +135,257 @@
   ],
   "lowEvidenceLeads": [
     {
+      "id": "llm-29b9e9fcd195",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar行业"
+      ],
+      "headline": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
+      "headlineZh": "Pindar行业利润下滑2.99%",
+      "summaryZh": "印尼Pindar行业利润下降2.99%，OJK关注不良贷款风险，反映资产质量承压。",
+      "rationale": "行业资产质量指标恶化",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "fa11c5b7ff826cf3"
+      ],
+      "articles": [
+        {
+          "title": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdFNZQ3hLVlBBcTZ5OXJCRUh5TlQycWp2MV9WcXkxMldBenJuYnhYRmctcHhqQW1RTlo4Mjg1aWF6SHRManBpT0IyZk9QempKSzNIVFpISUZIQWUyT2Q1ZnpRSGdaQVo3UWtrMEFoN0hzT040UEcxdzdybllXcWphejVEbG5GcVpuWFQ5NGF4VlgzQW9nZG1ZQlJQcUs2MGNZWU5KVGZfRQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-88cd9e824ee3",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Vicky Shu"
+      ],
+      "headline": "Vicky Shu Kesal Diteror DC Pinjol, Singgung soal Penyalahgunaan Data Pribadi - celebrity.okezone.com",
+      "headlineZh": "艺人Vicky Shu遭催收恐吓",
+      "summaryZh": "艺人Vicky Shu公开称遭网贷催收员恐吓，涉及个人数据被滥用，属消费者受害个案。",
+      "rationale": "公众人物遭催收恐吓的具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "celebrity.okezone.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ee4e0145ce7d637c"
+      ],
+      "articles": [
+        {
+          "title": "Vicky Shu Kesal Diteror DC Pinjol, Singgung soal Penyalahgunaan Data Pribadi - celebrity.okezone.com",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcDRaNGNfYkVLR2F3TENwMTNSRU40NjE4MEsxNmxhcTdIWHhIM3pBTmtvdHhLeUNOaGVEX1ZLT3NUbkdRNjF3WGhfSVU2eHFiNE02WFVtT1N5MHNXeEhHUTBxa181UjhmcU5NZlpyY1B0YlIwUlRPeWtMYkZXd0RRZ05yekU2cXhUbUdsZm9ZZmY3Q1JqbDlsUlNjUDRpOTF5dU5VenlBQXNrX3FpZjZkbHRLclB6bTJVY0thWXVraTJ6dW1oYjllQ0ZKNHDSAcsBQVVfeXFMTzZwUF9SOGllbEItakhnY1NMLXhtYTVhN21ySUxjanBKckZ0ZXdSMHJGeUNjUmFVdXlHbTRmZjlOWWNGMXVLU2hoUUlMYnd4UkcyRGVoM0FkdkxfUmVJZko3UGlJdDRlMkQyMkZsMXctUm92TXk0Wld1R2RGc2oyY3ZOZXpvZ0VKTWE5QnpqUF83T1M5ZVE0akU5MXJ0M3R1ZG5aeEw0VE5VQW82ZFZOR2UyeFM1QVdwbWJmSnFoWjRCdFRDa3VkTXNhN2s?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-311b55bd27f8",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "Baznas"
+      ],
+      "headline": "Zakat Disiapkan untuk Bantu Warga, dari Solusi Utang Pinjol hingga Biaya Berobat - Mozaik Islam",
+      "headlineZh": "Baznas用天课助网贷负债者",
+      "summaryZh": "Baznas通过天课资金帮助受网贷债务困扰的居民，属机构常规援助动态。",
+      "rationale": "机构常规援助动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "m.antaranews.com",
+        "mozaik.inilah.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "55064e492594f52a",
+        "0811b5221f145281"
+      ],
+      "articles": [
+        {
+          "title": "Zakat Disiapkan untuk Bantu Warga, dari Solusi Utang Pinjol hingga Biaya Berobat - Mozaik Islam",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQb1Z3QTk2SXhMWnFfTER1UlltTWo2M19VVkhpVHRmbVVqZk5QUnRuUXBwUlpXQVBXZ2I4Tzg3WW1VLTJ1SFgzTU1OZW1ZaHpXX090d1MtZDBQLXFyR0pVS2EyZmhoRmw3d0tpYTUzZG8xUUZvV2pmQXFTV0FXZE5wYXBpdG5KSmEtajIxRkt1eEEyUUFLVDM0WnZpVzlxOVBxMTduUEVRN2pzeEd2dmkw?oc=5"
+        },
+        {
+          "title": "Baznas beri solusi bagi warga sakit hingga terjerat pinjol lewat zakat - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaDhjOXZSV2hTM3NNY1V4dWd4MDg0T2w2NkpwWmE5d1pPbk4tV0xIa0RyZERaSkZ3eEcxbDVFVzRLdW1JQmtTRHJDOU9od1gxRFNnVTEwaW9qTjU3eW43aWg1VjJDZ0NtWHl5cTFSdUNkRTF4LThXN0ppblc0NTlQdEh4cGg0X2M4T3BGcXJWMTRfaTR2SVU4ZG1Td24td2FfaUpXb09rZHlIVkZkZ3QydUxIc0rSAbQBQVVfeXFMUGg4Yzl2UldoUzNzTWNVeHVneDA4NE9sNjZKcFphOXdaT25OLVdMSGtEcmREWkpGd3hHMWw1RVc0S3VtSUJrU0RyQzlPaHdYMURTZ1UxMGlvak41N3luN2loNVYyQ2dDbVh5eXExUnVDZEUxeC04VzdKaW5XNDU5UHRIeHBoNF9jOE9wRnFyVjE0X2k0dklVOGRtU3duLXdhX2lKV29Pa2R5SFZGZGd0MnVMSHNK?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-efb6d657c230",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "AdaKami"
+      ],
+      "headline": "Diduga Diintimidasi Penagih AdaKami, Nasabah Mengadu: Utang Belum Rp500 Ribu, Kok Mengancam Bawa-bawa Orang Terdekat - Suara Nasional",
+      "headlineZh": "AdaKami催收恐吓客户",
+      "summaryZh": "客户投诉AdaKami催收员在欠款不足50万印尼盾时威胁牵连亲友，属消费者受害个案。",
+      "rationale": "具体客户投诉催收恐吓",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaranasional.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "eb9e0a760e25d27d"
+      ],
+      "articles": [
+        {
+          "title": "Diduga Diintimidasi Penagih AdaKami, Nasabah Mengadu: Utang Belum Rp500 Ribu, Kok Mengancam Bawa-bawa Orang Terdekat - Suara Nasional",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPeGhiZzljbE1GeFcwcllKOG1HSzhtbXk5TzFiVmhLMW16MlpBOGw2Z1FrazlJQzNlTHZhWGRiVHpvQlpHcFVtTDl6c3hLajZrMl8yOWl6QU8xQ1dMRmpFTE1CVy1Dc09GZ3R3aXI5X3JaX1YyU2lxc2ZPaWFCMWptN2hBWkdacnIydU9JakFlSkFmT0NPMGRPTFlxN05hT00zby04Rm14ZTI1bTZSbnZvOHI1Q2ZUREoxZDNNcjZZR0gyNGM0SEY5NXZ6TzZSekxOX0ZhVllFMFF3TGlsQlNxa1BCUndiUQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-305bebd6a96e",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Pengadilan Majalengka"
+      ],
+      "headline": "Judol dan Pinjol Picu Perceraian di Majalengka, Ribuan Perkara Jadi Sorotan - TIMES Indonesia",
+      "headlineZh": "Majalengka网贷网赌致离婚激增",
+      "summaryZh": "Majalengka地区因网贷和网赌导致离婚案件激增，数千案件成为社会问题焦点。",
+      "rationale": "具体地区社会影响事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "timesindonesia.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "eed711e9969fc79f"
+      ],
+      "articles": [
+        {
+          "title": "Judol dan Pinjol Picu Perceraian di Majalengka, Ribuan Perkara Jadi Sorotan - TIMES Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPblNqa1VEaGpXc2xPWFFrZm1pSVhyYkpJNEwzTXZpWFhkX2RvY0ltZElYT3dzOWFBZGtSTGxnRDVBYkN3bTJ2RVRnUTBjejRTaUs1X0FkQ1Z3MXUzWDhya0VhcENTQzZXSEpYdENHU0p4bmJiUTF0TTZuUUpzRzZaZEpxVmR3d2pMS1VqV1o4UU1VVXJSUFh1Z0xHSGlua0RqcWhEcnhQX2M2ME5sOXZDd0k2eWNHc01mR1B5RQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-1c6fbb2c226a",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat 16 Pinjol dengan TWP90 di Atas 5 Persen pada Agustus 2026 - Infobanknews",
+      "headlineZh": "16家网贷TWP90超5%",
+      "summaryZh": "OJK记录2026年8月有16家网贷平台TWP90逾期率超5%，反映资产质量承压。",
+      "rationale": "监管披露的资产质量数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f3137e1b4d26148a"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat 16 Pinjol dengan TWP90 di Atas 5 Persen pada Agustus 2026 - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNY1BHWmhMT09JSGplN3Uwa1FkRFZtY0wxUlp3dHgxOXhfMExHcWt4VXQ0UGxpenNGM1Q4c1RLZ2JnZzg1QnhUeVYtLWZILW1YbnBEcVNKYXd6c2lYQXBYUUhReWM2a1k3QXF5dDd5OXFYZ2dHMXN2MW5QVGZtb1Z5dV9ZZDlNdF9LNWJDSExLelJ1cDBUQl80?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-62856a909e30",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Perketat Pengawasan Pinjaman Daring Cegah Gali Lubang Tutup Lubang - Cirebon Times",
+      "headlineZh": "OJK收紧网贷监管防以贷养贷",
+      "summaryZh": "OJK加强网贷监管，防止借款人借新还旧，属监管介入动态。",
+      "rationale": "监管机构加强监管措施",
+      "independentSourceCount": 2,
+      "domains": [
+        "cirebontimes.com",
+        "demokratis.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ac68dc8831463eb7",
+        "a4ff3dfbcc8db583"
+      ],
+      "articles": [
+        {
+          "title": "OJK Perketat Pengawasan Pinjaman Daring Cegah Gali Lubang Tutup Lubang - Cirebon Times",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBUY3VFOVhIQmp4d1k2Rm1obnFDLUJpV241dENiaVpXRlRVMWUxMFFqNlM5WV9hTGc3cjBKUTZQRm1YU212c1ZyZ0FTd2xBT3pZV09rcGRtVDJsNS02MTNZNkxRdWVWTmp1bnBN?oc=5"
+        },
+        {
+          "title": "OJK Perketat Pengawasan Risiko Gali Lubang Tutup Lubang Pindar - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE94ZTREaGpTTXVLSll3T3ZCTjI2U3JuemdfelJsYlVXUEdFMVBVMmF5NGRvNUZweHlDa3B0TEhsUHlyWk1ud09Pd3ZTVXBudWZIMndNSEwyYXlpN0ltT3QwQ1BNOXhrSlFr?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
       "id": "llm-7240ca0e19a9",
       "eventType": "regulatory_action",
       "severity": 0.55,
@@ -110,8 +394,8 @@
       ],
       "headline": "OJK Sulselbar terima 1.070 pengaduan pinjol ilegal - ANTARA News Makassar",
       "headlineZh": "OJK南苏拉威西收1070投诉",
-      "summaryZh": "OJK南苏拉威西办事处收到1070件非法网贷投诉，反映区域投诉规模，值得留痕。",
-      "rationale": "监管机构披露投诉数据，属监管动态",
+      "summaryZh": "OJK南苏拉威西办事处收到1070件非法网贷投诉，反映当地非法网贷问题严重。",
+      "rationale": "监管机构披露投诉数据",
       "independentSourceCount": 1,
       "domains": [
         "makassar.antaranews.com"
@@ -136,28 +420,125 @@
       }
     },
     {
-      "id": "llm-fff07fc3ca3b",
-      "eventType": "consumer_harm",
+      "id": "llm-c712b66efc33",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
-        "Kudus"
+        "Lampung警方"
       ],
-      "headline": "Bentrok dengan Warga di Kudus, 25 Debt Collector Dievakuasi - BeritaSatu.com",
-      "headlineZh": "Kudus催收员与居民冲突",
-      "summaryZh": "Kudus发生催收员与居民冲突，25名催收员被疏散，属局部催收冲突事件。",
-      "rationale": "具体冲突事件，局部影响",
+      "headline": "Teror Pinjol Fiktif, Debt Collector di Lampung Ditangkap - TargetNews.ID",
+      "headlineZh": "Lampung逮捕虚构网贷催收员",
+      "summaryZh": "Lampung警方逮捕虚构网贷催收员，涉及恐吓催收行为，属执法行动。",
+      "rationale": "警方逮捕非法催收人员",
       "independentSourceCount": 1,
       "domains": [
-        "beritasatu.com"
+        "targetnews.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "efd5f7eb23d997af"
+        "4d36ff234d2c93ba"
       ],
       "articles": [
         {
-          "title": "Bentrok dengan Warga di Kudus, 25 Debt Collector Dievakuasi - BeritaSatu.com",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONjJGZDMzY0xBR2xFcTNaalhidWJobDJwR3JoRVZpS3luNXhHZTZKclBtdXY4dzJIWmJoV2F1RzE3dFctUE1peUdiWVgxaXk2ZGlBVExTUGpoN19kNXZBZk5OSzdvdjhYRUtuWmJSdWVTMnNfVXBnRzhVR0s3V01DVS1RSzZndGFHVDNTZHdnbExfRXdmRENWVVdNZVk4UTJQUGc?oc=5"
+          "title": "Teror Pinjol Fiktif, Debt Collector di Lampung Ditangkap - TargetNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRkpSVndHTVFMRlRxRHVoYVZhQ00tTVNWNlJWMENjSFBFdWdEUnVEcHNmU0wwcDJ4Y2d4U3cxZjM5ZC1GQUJVSTBfekhzYUYyV2hkalpHRXdWREloLXFFM2JjakFQU3hHV2pIZFNrb0R4RWEyR0t3ZVd0d0xEV0liWHZ0a0Etd1FyMlZ2ZWl1NllpQW8?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
+  "acknowledgedSuppressedCount": 1,
+  "eventAdjudication": {
+    "method": "deepseek_credit_event_v1",
+    "status": "ok",
+    "candidateCount": 38,
+    "eventGroupCount": 11,
+    "rejectedNonEvents": 9,
+    "unassignedCount": 0,
+    "articleBodyStatus": {
+      "ok": 38
+    },
+    "socialCrossCheck": "applied"
+  },
+  "events": [
+    {
+      "id": "llm-ee28436a3980",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "Kapolda Jateng",
+        "Debt Collector Kudus"
+      ],
+      "headline": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
+      "headlineZh": "库杜斯催收员与居民冲突",
+      "summaryZh": "中爪哇库杜斯发生债务催收员与居民肢体冲突，警方介入并逮捕24名嫌疑人，揭露佣金高达50%的催收乱象。",
+      "rationale": "警方立案的催收暴力冲突事件",
+      "independentSourceCount": 3,
+      "domains": [
+        "cirebonraya.com",
+        "penabicara.com",
+        "suaramerdeka.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e2dcdf060e49b748",
+        "e565ce419245af86",
+        "526561a1a49cf648"
+      ],
+      "articles": [
+        {
+          "title": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
+          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWatIB-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWag?oc=5"
+        },
+        {
+          "title": "Komisi Debt Collector Disebut Capai 50 Persen, 24 Orang Jadi Tersangka Bentrokan Kudus - Pena Bicara - Pena Bicara",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOdkVuZl95ZmFWbE9kVjBBNmVQWmZuakhGZnRTY1lkelE2cE5KTDAwcnNydXJodnVVSmdGZ0dOUkZqQnIxOHV2OXI2akNwOEx4Y1Q0TG5EM0tpSXdrN1dqX1dRVzJWUVlieUFhWmROVW9hTE50NVh0M0ZZQ1NoazkzVXV0S1VIdGV3U2pWYjZLdUZzREI2Nm81R3R4NHNzdE1XaVRpR2NXazVxSmxxTnc3R0xuZk12RWEzbjl1SEttd1Y1blZrcnNnMWJQSkV2ZkHSAdQBQVVfeXFMUHpyOEJiTEJDWXFXeVlWTHNUTmlVaFl0RWVMODJtZFJxNENsWHdSUXV5ak5SaTFVY1ZJNzZKelFITDd0U3Zzb3Uxakd0MHNsZkhDbm9MbkVHT3JnNTVlTmZBRm1wMFNidzN6UHp2MVF0c0dQWHJMUkRZakRzWldXclZ3dURMbXlFQ2QydE5tMldnMTFUcTJaNXQ3UlU5WWhsSjJkNzdvR2V2dVJZYk40bFB0TnFNUTZfV2ZrREVFNEo4OWFyazE1YTdVU1VlcjRPc3pYcGk?oc=5"
+        },
+        {
+          "title": "Penagihan Utang Berujung Bentrok di Kudus, Kapolda Ungkap Komisi DC hingga 50 Persen - Suara Merdeka - Suara Merdeka",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOcjMwM3UySXJCbzFBbUVmYjJqMUpKVV9XbElPX2dfcS05ZERZQ1VBZ1pXMkxhVkR3d2ZXZlExTXJ4X0FuaTBJcVNaNzBlajVSMFFDMnl4dXgtdHozblI0VkxZbWhRMklUTnhBcmxGZlc3WEd0d0FzTnpMVmw3d0xmVnBUMjVWTXZpbjdPVkRSeXI1d0g4Y1hJNlR3Y1pLV1dRWmtabTdSOUNkaHcwQkhLdXhFYkxPZ01sMkhLX1pFZVdSMlFfOWIyVXZHRWdzUGFQUWV5bXpxbWFXWGtja0Fr0gHfAUFVX3lxTE5yMzAzdTJJckJvMUFtRWZiMmoxSkpVX1dsSU9fZ19xLTlkRFlDVUFnWlcyTGFWRHd3ZldmUTFNcnhfQW5pMElxU1o3MGVqNVIwUUMyeXh1eC10ejNuUjRWTFltaFEySVROeEFybEZmVzdYR3R3QXNOekxWbDd3TGZWcFQyNVZNdmluN09WRFJ5cjV3SDhjWEk2VHdjWktXV1Faa1ptN1I5Q2RodzBCSEt1eEViTE9nTWwySEtfWkVlV1IyUV85YjJVdkdFZ3NQYVBRZXltenFtYVdYa2NrQWs?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-29b9e9fcd195",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar行业"
+      ],
+      "headline": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
+      "headlineZh": "Pindar行业利润下滑2.99%",
+      "summaryZh": "印尼Pindar行业利润下降2.99%，OJK关注不良贷款风险，反映资产质量承压。",
+      "rationale": "行业资产质量指标恶化",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "fa11c5b7ff826cf3"
+      ],
+      "articles": [
+        {
+          "title": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdFNZQ3hLVlBBcTZ5OXJCRUh5TlQycWp2MV9WcXkxMldBenJuYnhYRmctcHhqQW1RTlo4Mjg1aWF6SHRManBpT0IyZk9QempKSzNIVFpISUZIQWUyT2Q1ZnpRSGdaQVo3UWtrMEFoN0hzT040UEcxdzdybllXcWphejVEbG5GcVpuWFQ5NGF4VlgzQW9nZG1ZQlJQcUs2MGNZWU5KVGZfRQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -170,141 +551,114 @@
       }
     },
     {
-      "id": "llm-d894a1864af7",
-      "eventType": "regulatory_action",
+      "id": "llm-88cd9e824ee3",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "Vicky Shu"
       ],
-      "headline": "OJK Catat Ribuan Aduan Pinjaman Online - RRI.co.id",
-      "headlineZh": "OJK记录数千网贷投诉",
-      "summaryZh": "OJK记录数千件网贷相关投诉，反映消费者投诉规模，值得留痕。",
-      "rationale": "监管机构披露投诉数据",
+      "headline": "Vicky Shu Kesal Diteror DC Pinjol, Singgung soal Penyalahgunaan Data Pribadi - celebrity.okezone.com",
+      "headlineZh": "艺人Vicky Shu遭催收恐吓",
+      "summaryZh": "艺人Vicky Shu公开称遭网贷催收员恐吓，涉及个人数据被滥用，属消费者受害个案。",
+      "rationale": "公众人物遭催收恐吓的具体事件",
       "independentSourceCount": 1,
       "domains": [
-        "rri.co.id"
+        "celebrity.okezone.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "c7c0e1ddeeb89183"
+        "ee4e0145ce7d637c"
       ],
       "articles": [
         {
-          "title": "OJK Catat Ribuan Aduan Pinjaman Online - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNV3RfcFdWaFhJa2REMDNYbS1HbVlyRXZCaEpfRHc2MXNyVncwOEdRajVfVGV6Qk1aYzB2cVgtckxXdDV6N3RnQkx2WDlIbWxqYkU2MUVmSXJ4YXhaS090eURSTkdLMjBwelVFdXRYTUlVQWVfYXVxd1N2NVVtdWQ4N3RPN19Jc1NPUEg1eExHYnM4dw?oc=5"
+          "title": "Vicky Shu Kesal Diteror DC Pinjol, Singgung soal Penyalahgunaan Data Pribadi - celebrity.okezone.com",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcDRaNGNfYkVLR2F3TENwMTNSRU40NjE4MEsxNmxhcTdIWHhIM3pBTmtvdHhLeUNOaGVEX1ZLT3NUbkdRNjF3WGhfSVU2eHFiNE02WFVtT1N5MHNXeEhHUTBxa181UjhmcU5NZlpyY1B0YlIwUlRPeWtMYkZXd0RRZ05yekU2cXhUbUdsZm9ZZmY3Q1JqbDlsUlNjUDRpOTF5dU5VenlBQXNrX3FpZjZkbHRLclB6bTJVY0thWXVraTJ6dW1oYjllQ0ZKNHDSAcsBQVVfeXFMTzZwUF9SOGllbEItakhnY1NMLXhtYTVhN21ySUxjanBKckZ0ZXdSMHJGeUNjUmFVdXlHbTRmZjlOWWNGMXVLU2hoUUlMYnd4UkcyRGVoM0FkdkxfUmVJZko3UGlJdDRlMkQyMkZsMXctUm92TXk0Wld1R2RGc2oyY3ZOZXpvZ0VKTWE5QnpqUF83T1M5ZVE0akU5MXJ0M3R1ZG5aeEw0VE5VQW82ZFZOR2UyeFM1QVdwbWJmSnFoWjRCdFRDa3VkTXNhN2s?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 1,
+        "mentionCount": 0,
         "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
+        "platforms": []
       }
     },
     {
-      "id": "llm-c4f8e853f34b",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
+      "id": "llm-311b55bd27f8",
+      "eventType": "industry_update",
+      "severity": 0.3,
       "entities": [
-        "OJK"
+        "Baznas"
       ],
-      "headline": "OJK Pantau Ketat Gagal Bayar Pinjol, Siapkan Aturan Baru hingga Dana Likuidasi - CaraPandang",
-      "headlineZh": "OJK严控网贷违约并备新规",
-      "summaryZh": "OJK表示将严控网贷违约，准备新规及清算资金安排，属监管政策动向。",
-      "rationale": "监管政策动向，值得留痕",
-      "independentSourceCount": 1,
+      "headline": "Zakat Disiapkan untuk Bantu Warga, dari Solusi Utang Pinjol hingga Biaya Berobat - Mozaik Islam",
+      "headlineZh": "Baznas用天课助网贷负债者",
+      "summaryZh": "Baznas通过天课资金帮助受网贷债务困扰的居民，属机构常规援助动态。",
+      "rationale": "机构常规援助动态",
+      "independentSourceCount": 2,
       "domains": [
-        "carapandang.com"
+        "m.antaranews.com",
+        "mozaik.inilah.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b8d2892611b3a9db"
+        "55064e492594f52a",
+        "0811b5221f145281"
       ],
       "articles": [
         {
-          "title": "OJK Pantau Ketat Gagal Bayar Pinjol, Siapkan Aturan Baru hingga Dana Likuidasi - CaraPandang",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU2lvcFVpckdpWUZ2eGlOd1BjeUxmWmdPemJfVlFwNlpud2Fpbk5udkR5c2VhRFpkeHhBRUNIQ2d6LWhnZ0gteEIzMW1aTlVZdGVJTHBJTXItS25RbUZaTDNlUVc4aUxwTVREd2NuNkQtWVFoa0VRbWtKZk5yWld4ajRJOWxuRFNKdnlrcnJMbEd5MTl2emVhX1UxTE1JUW12VHo4cXJTQUdJNEI4RS1wZA?oc=5"
+          "title": "Zakat Disiapkan untuk Bantu Warga, dari Solusi Utang Pinjol hingga Biaya Berobat - Mozaik Islam",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQb1Z3QTk2SXhMWnFfTER1UlltTWo2M19VVkhpVHRmbVVqZk5QUnRuUXBwUlpXQVBXZ2I4Tzg3WW1VLTJ1SFgzTU1OZW1ZaHpXX090d1MtZDBQLXFyR0pVS2EyZmhoRmw3d0tpYTUzZG8xUUZvV2pmQXFTV0FXZE5wYXBpdG5KSmEtajIxRkt1eEEyUUFLVDM0WnZpVzlxOVBxMTduUEVRN2pzeEd2dmkw?oc=5"
+        },
+        {
+          "title": "Baznas beri solusi bagi warga sakit hingga terjerat pinjol lewat zakat - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQaDhjOXZSV2hTM3NNY1V4dWd4MDg0T2w2NkpwWmE5d1pPbk4tV0xIa0RyZERaSkZ3eEcxbDVFVzRLdW1JQmtTRHJDOU9od1gxRFNnVTEwaW9qTjU3eW43aWg1VjJDZ0NtWHl5cTFSdUNkRTF4LThXN0ppblc0NTlQdEh4cGg0X2M4T3BGcXJWMTRfaTR2SVU4ZG1Td24td2FfaUpXb09rZHlIVkZkZ3QydUxIc0rSAbQBQVVfeXFMUGg4Yzl2UldoUzNzTWNVeHVneDA4NE9sNjZKcFphOXdaT25OLVdMSGtEcmREWkpGd3hHMWw1RVc0S3VtSUJrU0RyQzlPaHdYMURTZ1UxMGlvak41N3luN2loNVYyQ2dDbVh5eXExUnVDZEUxeC04VzdKaW5XNDU5UHRIeHBoNF9jOE9wRnFyVjE0X2k0dklVOGRtU3duLXdhX2lKV29Pa2R5SFZGZGd0MnVMSHNK?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 1,
+        "mentionCount": 0,
         "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
+        "platforms": []
       }
-    }
-  ],
-  "acknowledgedSuppressedCount": 1,
-  "eventAdjudication": {
-    "method": "deepseek_credit_event_v1",
-    "status": "ok",
-    "candidateCount": 40,
-    "eventGroupCount": 5,
-    "rejectedNonEvents": 10,
-    "unassignedCount": 0,
-    "articleBodyStatus": {
-      "ok": 40
     },
-    "socialCrossCheck": "applied"
-  },
-  "events": [
     {
-      "id": "llm-2b695bf6b44c",
+      "id": "llm-72a0d7004a48",
       "eventType": "fraud_or_illegal_practice",
       "severity": 0.75,
       "entities": [
         "Polres Gresik",
-        "Pinjol ilegal Gresik"
+        "DC Pinjol Ilegal Gresik"
       ],
       "headline": "7 Fakta Terbaru DC Pinjol Peras Wanita Gresik Pakai Foto Editan - detikcom",
       "headlineZh": "Gresik非法网贷催收勒索案",
-      "summaryZh": "Gresik警方逮捕以非法网贷名义勒索、用编辑色情照威胁受害女性的催收员，涉月入6000万盾，属警方立案的催收伤害案。",
-      "rationale": "警方立案并抓捕，属具体违法催收事件",
-      "independentSourceCount": 16,
+      "summaryZh": "Gresik非法网贷催收团伙用编辑色情照勒索受害者，月入6000万印尼盾，警方已逮捕部分嫌疑人并追捕主犯。",
+      "rationale": "警方立案的非法催收勒索案",
+      "independentSourceCount": 7,
       "domains": [
-        "1minute.id",
-        "beritajatim.com",
-        "cakrawala.co",
-        "chatnews.id",
+        "bsinews.id",
         "detik.com",
-        "informasi-realita.net"
+        "kabarbaik.co",
+        "memorandum.disway.id",
+        "sekilasmedia.com",
+        "surabaya.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
         "80c2b03089cdcfb0",
         "d9a148d7779f4137",
         "b814b418d9f3ceb2",
-        "250a08f8e6fe278f",
         "c53604f1478c4787",
-        "ef4576133165f571",
+        "e81975a73c9a38ef",
+        "ce3da7cc4f6a4109",
+        "3497cbc663725173",
         "588dc4b0314e2b09",
         "e8e839000016c801",
+        "2beb56fbeff83405",
         "950545b774ec6674",
-        "2e650888c6fb3e76",
-        "84da653dc375b8aa",
-        "ac22ce3005462383",
-        "f4cd6bfd01583604",
-        "ad79d2f3fcf7094d",
-        "553329369dc17a54",
-        "b9169efc7bdb2640",
-        "09a770bc171f0941",
-        "9725a386d769a6b3",
-        "a1fa1bbebe76a0ad",
-        "fbb99da9e66e3bda",
-        "8bb03f35edbe70e0",
-        "8382bc12588fa01a",
-        "6006c89c4837586b",
-        "8038ce3e3785ea78",
-        "96c3ba6ae89a6725",
-        "c453b565b3db394a"
+        "2e650888c6fb3e76"
       ],
       "articles": [
         {
@@ -320,15 +674,157 @@
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPT2hxWmp0RDdqUkwzMGs0T1FFOEJKRXI4enhNNkdKZjlOejRPT2J2WEtnTXVxWUZmZml2RThsQjZuM3BFdk1ic2cySGlnQjhaTGxYaXppTnE2UldPLXBHMVBTenZEVkttd0ZPSkNnZUp5NXpPX2diazNBZmNUMnRLOFB2eExGb25sU1NJOGRjbGliYlB2Sk11cHBaTzctaENBU254MEtkTlE5aG1SbGFvZWZTYlpNV2hrQUtOVnFzMUl5cWZ6MTQ00gHMAUFVX3lxTE9feVd5OUplWDRmVmkxdUtyYjlBeWh5ZWJsV25IOElYSURLTjhhb1Z3dGp6N2ZCYS1yZlcwV0FORDNIaXJzNGtJNmRSZXRVMmw4UGw0cDJXM2d0cS1zeTIyQ2JKY1VTUEVNT1VJUFhYSVc3cFUtdWF1Qndhc2l5Z0dZem9aUXJBWkV4NkdRSDE4bDNZY2c1ZUtBNEtEWHQ3QmhmZ1NOVzJLTkpPV2F1VGlxSmpzRmRRRE16UFE1SGhBVGpWOVFxLW1ncmIyRw?oc=5"
         },
         {
-          "title": "DC Pinjol Peras Wanita Gresik Pakai Foto Porno Terancam 6 Tahun Penjara - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeWNMUUhTX3RjV292WjhGWWVIVUVubjdCR0tSa1MwZUFLVFJvWkJEeG1UUHVxcl9yamZOVVZfbFZaei1UcmhGMkxWY2pYZ2VJclBtV2RLVjAyOFNUMHdRUUZ5dkFIaUlKRkxkeDFlZkdpR0xIdng5Z21lV2lNeEtTTzlveHNfZnlQY0NWRkdoMUYyaTdOSS01a1VQWHh4RXk4ZV9NSGFLX3h2dmRBb3VfOXRYQUpXTjlRLXpYMDJmT2ZwNnFyR1JF0gHMAUFVX3lxTE1NYXpEa2ctVXFBVVJlalpURUFpTjg0UHB1aF9xaVhBaG50Y3pxRTN6aDFpTDA3UzRHekxkRFROY0F6V0dSdXJ3NGlNU2lQMkIzNXRzTW1XRmoyQ052aEhMVHV0ZUlhVmYwTERhdWhmbkYtLXRWMXBiMW1Kd3duRDVZQy1qZmF5VlU0OFA5MHcxYW5rcERBYXhFQ0NGTW5OdEMxajhnMHVSNlJaelAxbUhVRTdEb0p5RTIxWG9zaFBYZXRiektrNm5QNHY5Ng?oc=5"
-        },
-        {
           "title": "Dibongkar Polres Gresik, DC Pinjol Ini Sebulan Raup Rp 60 Juta Hasil Pemerasan - kabarbaik.co",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMDFCX3N4UjRkZ09kSFBLWWFmaGxMUUstTUxLSVNrMEpqbmJOcnpiTEVaOUZzeEViUEVXVTFiUk03U3FYVkhJOG9oQmhEZF9rVkhXcllFbWw3dkdfc1J6MW16T2FONDhSNEVSVlhPSHdaWVZabW5pRFVuS3N0MWNIRTNfaUJheEktNW0ydGttTzBTVTdmNVNHVHNZSGNlRHB5?oc=5"
+        },
+        {
+          "title": "Jerat Pinjol Ilegal di Gresik, Pelaku Ancam Sebar Foto Asusila Editan, Raup Cuan Puluhan Juta sejak 2025 - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQUUcxVFM5b3c2WFhRb3gtZzFqdnlRMzZ0d3E1czBKOWNIQzJPRkZjYkhidEFBYTI2NTJvSDF1aU9fdU9wMVBDTnJrOUpzV1lyanJISnN5NkRjLUxaOWl2SVpQZE1IUkNFcl9VdmhJSlZMOE10UUt5Q2stdTNUZzFtenJXNGpDZHhlQVo2TjZvOENRbFVJRWpuRml2aEJIRFNlVThmcmlYcWlnVThrRm5KZmV1c2VUdVpoMmlQMUE0cGVJZjBFTWl0NEZsVjBCYjdZaWpObF9YQ3pmZVY5TGZ6bTFlamc?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 26,
+      "bodyBackedSourceCount": 12,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-efb6d657c230",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "AdaKami"
+      ],
+      "headline": "Diduga Diintimidasi Penagih AdaKami, Nasabah Mengadu: Utang Belum Rp500 Ribu, Kok Mengancam Bawa-bawa Orang Terdekat - Suara Nasional",
+      "headlineZh": "AdaKami催收恐吓客户",
+      "summaryZh": "客户投诉AdaKami催收员在欠款不足50万印尼盾时威胁牵连亲友，属消费者受害个案。",
+      "rationale": "具体客户投诉催收恐吓",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaranasional.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "eb9e0a760e25d27d"
+      ],
+      "articles": [
+        {
+          "title": "Diduga Diintimidasi Penagih AdaKami, Nasabah Mengadu: Utang Belum Rp500 Ribu, Kok Mengancam Bawa-bawa Orang Terdekat - Suara Nasional",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxPeGhiZzljbE1GeFcwcllKOG1HSzhtbXk5TzFiVmhLMW16MlpBOGw2Z1FrazlJQzNlTHZhWGRiVHpvQlpHcFVtTDl6c3hLajZrMl8yOWl6QU8xQ1dMRmpFTE1CVy1Dc09GZ3R3aXI5X3JaX1YyU2lxc2ZPaWFCMWptN2hBWkdacnIydU9JakFlSkFmT0NPMGRPTFlxN05hT00zby04Rm14ZTI1bTZSbnZvOHI1Q2ZUREoxZDNNcjZZR0gyNGM0SEY5NXZ6TzZSekxOX0ZhVllFMFF3TGlsQlNxa1BCUndiUQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-305bebd6a96e",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Pengadilan Majalengka"
+      ],
+      "headline": "Judol dan Pinjol Picu Perceraian di Majalengka, Ribuan Perkara Jadi Sorotan - TIMES Indonesia",
+      "headlineZh": "Majalengka网贷网赌致离婚激增",
+      "summaryZh": "Majalengka地区因网贷和网赌导致离婚案件激增，数千案件成为社会问题焦点。",
+      "rationale": "具体地区社会影响事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "timesindonesia.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "eed711e9969fc79f"
+      ],
+      "articles": [
+        {
+          "title": "Judol dan Pinjol Picu Perceraian di Majalengka, Ribuan Perkara Jadi Sorotan - TIMES Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPblNqa1VEaGpXc2xPWFFrZm1pSVhyYkpJNEwzTXZpWFhkX2RvY0ltZElYT3dzOWFBZGtSTGxnRDVBYkN3bTJ2RVRnUTBjejRTaUs1X0FkQ1Z3MXUzWDhya0VhcENTQzZXSEpYdENHU0p4bmJiUTF0TTZuUUpzRzZaZEpxVmR3d2pMS1VqV1o4UU1VVXJSUFh1Z0xHSGlua0RqcWhEcnhQX2M2ME5sOXZDd0k2eWNHc01mR1B5RQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-1c6fbb2c226a",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat 16 Pinjol dengan TWP90 di Atas 5 Persen pada Agustus 2026 - Infobanknews",
+      "headlineZh": "16家网贷TWP90超5%",
+      "summaryZh": "OJK记录2026年8月有16家网贷平台TWP90逾期率超5%，反映资产质量承压。",
+      "rationale": "监管披露的资产质量数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f3137e1b4d26148a"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat 16 Pinjol dengan TWP90 di Atas 5 Persen pada Agustus 2026 - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNY1BHWmhMT09JSGplN3Uwa1FkRFZtY0wxUlp3dHgxOXhfMExHcWt4VXQ0UGxpenNGM1Q4c1RLZ2JnZzg1QnhUeVYtLWZILW1YbnBEcVNKYXd6c2lYQXBYUUhReWM2a1k3QXF5dDd5OXFYZ2dHMXN2MW5QVGZtb1Z5dV9ZZDlNdF9LNWJDSExLelJ1cDBUQl80?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-62856a909e30",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Perketat Pengawasan Pinjaman Daring Cegah Gali Lubang Tutup Lubang - Cirebon Times",
+      "headlineZh": "OJK收紧网贷监管防以贷养贷",
+      "summaryZh": "OJK加强网贷监管，防止借款人借新还旧，属监管介入动态。",
+      "rationale": "监管机构加强监管措施",
+      "independentSourceCount": 2,
+      "domains": [
+        "cirebontimes.com",
+        "demokratis.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ac68dc8831463eb7",
+        "a4ff3dfbcc8db583"
+      ],
+      "articles": [
+        {
+          "title": "OJK Perketat Pengawasan Pinjaman Daring Cegah Gali Lubang Tutup Lubang - Cirebon Times",
+          "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBUY3VFOVhIQmp4d1k2Rm1obnFDLUJpV241dENiaVpXRlRVMWUxMFFqNlM5WV9hTGc3cjBKUTZQRm1YU212c1ZyZ0FTd2xBT3pZV09rcGRtVDJsNS02MTNZNkxRdWVWTmp1bnBN?oc=5"
+        },
+        {
+          "title": "OJK Perketat Pengawasan Risiko Gali Lubang Tutup Lubang Pindar - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE94ZTREaGpTTXVLSll3T3ZCTjI2U3JuemdfelJsYlVXUEdFMVBVMmF5NGRvNUZweHlDa3B0TEhsUHlyWk1ud09Pd3ZTVXBudWZIMndNSEwyYXlpN0ltT3QwQ1BNOXhrSlFr?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -346,8 +842,8 @@
       ],
       "headline": "OJK Sulselbar terima 1.070 pengaduan pinjol ilegal - ANTARA News Makassar",
       "headlineZh": "OJK南苏拉威西收1070投诉",
-      "summaryZh": "OJK南苏拉威西办事处收到1070件非法网贷投诉，反映区域投诉规模，值得留痕。",
-      "rationale": "监管机构披露投诉数据，属监管动态",
+      "summaryZh": "OJK南苏拉威西办事处收到1070件非法网贷投诉，反映当地非法网贷问题严重。",
+      "rationale": "监管机构披露投诉数据",
       "independentSourceCount": 1,
       "domains": [
         "makassar.antaranews.com"
@@ -372,28 +868,28 @@
       }
     },
     {
-      "id": "llm-fff07fc3ca3b",
-      "eventType": "consumer_harm",
+      "id": "llm-c712b66efc33",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
-        "Kudus"
+        "Lampung警方"
       ],
-      "headline": "Bentrok dengan Warga di Kudus, 25 Debt Collector Dievakuasi - BeritaSatu.com",
-      "headlineZh": "Kudus催收员与居民冲突",
-      "summaryZh": "Kudus发生催收员与居民冲突，25名催收员被疏散，属局部催收冲突事件。",
-      "rationale": "具体冲突事件，局部影响",
+      "headline": "Teror Pinjol Fiktif, Debt Collector di Lampung Ditangkap - TargetNews.ID",
+      "headlineZh": "Lampung逮捕虚构网贷催收员",
+      "summaryZh": "Lampung警方逮捕虚构网贷催收员，涉及恐吓催收行为，属执法行动。",
+      "rationale": "警方逮捕非法催收人员",
       "independentSourceCount": 1,
       "domains": [
-        "beritasatu.com"
+        "targetnews.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "efd5f7eb23d997af"
+        "4d36ff234d2c93ba"
       ],
       "articles": [
         {
-          "title": "Bentrok dengan Warga di Kudus, 25 Debt Collector Dievakuasi - BeritaSatu.com",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxONjJGZDMzY0xBR2xFcTNaalhidWJobDJwR3JoRVZpS3luNXhHZTZKclBtdXY4dzJIWmJoV2F1RzE3dFctUE1peUdiWVgxaXk2ZGlBVExTUGpoN19kNXZBZk5OSzdvdjhYRUtuWmJSdWVTMnNfVXBnRzhVR0s3V01DVS1RSzZndGFHVDNTZHdnbExfRXdmRENWVVdNZVk4UTJQUGc?oc=5"
+          "title": "Teror Pinjol Fiktif, Debt Collector di Lampung Ditangkap - TargetNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQRkpSVndHTVFMRlRxRHVoYVZhQ00tTVNWNlJWMENjSFBFdWdEUnVEcHNmU0wwcDJ4Y2d4U3cxZjM5ZC1GQUJVSTBfekhzYUYyV2hkalpHRXdWREloLXFFM2JjakFQU3hHV2pIZFNrb0R4RWEyR0t3ZVd0d0xEV0liWHZ0a0Etd1FyMlZ2ZWl1NllpQW8?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -404,108 +900,36 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
-    {
-      "id": "llm-d894a1864af7",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Catat Ribuan Aduan Pinjaman Online - RRI.co.id",
-      "headlineZh": "OJK记录数千网贷投诉",
-      "summaryZh": "OJK记录数千件网贷相关投诉，反映消费者投诉规模，值得留痕。",
-      "rationale": "监管机构披露投诉数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "rri.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "c7c0e1ddeeb89183"
-      ],
-      "articles": [
-        {
-          "title": "OJK Catat Ribuan Aduan Pinjaman Online - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNV3RfcFdWaFhJa2REMDNYbS1HbVlyRXZCaEpfRHc2MXNyVncwOEdRajVfVGV6Qk1aYzB2cVgtckxXdDV6N3RnQkx2WDlIbWxqYkU2MUVmSXJ4YXhaS090eURSTkdLMjBwelVFdXRYTUlVQWVfYXVxd1N2NVVtdWQ4N3RPN19Jc1NPUEg1eExHYnM4dw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-c4f8e853f34b",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Pantau Ketat Gagal Bayar Pinjol, Siapkan Aturan Baru hingga Dana Likuidasi - CaraPandang",
-      "headlineZh": "OJK严控网贷违约并备新规",
-      "summaryZh": "OJK表示将严控网贷违约，准备新规及清算资金安排，属监管政策动向。",
-      "rationale": "监管政策动向，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "carapandang.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b8d2892611b3a9db"
-      ],
-      "articles": [
-        {
-          "title": "OJK Pantau Ketat Gagal Bayar Pinjol, Siapkan Aturan Baru hingga Dana Likuidasi - CaraPandang",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNU2lvcFVpckdpWUZ2eGlOd1BjeUxmWmdPemJfVlFwNlpud2Fpbk5udkR5c2VhRFpkeHhBRUNIQ2d6LWhnZ0gteEIzMW1aTlVZdGVJTHBJTXItS25RbUZaTDNlUVc4aUxwTVREd2NuNkQtWVFoa0VRbWtKZk5yWld4ajRJOWxuRFNKdnlrcnJMbEd5MTl2emVhX1UxTE1JUW12VHo4cXJTQUdJNEI4RS1wZA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
+      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 49,
-    "socialItemCount48h": 27
+    "articleCount48h": 40,
+    "socialItemCount48h": 22
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 536,
-    "classifiedCount": 137,
-    "irrelevantDropped": 103,
+    "inputCount": 612,
+    "classifiedCount": 149,
+    "irrelevantDropped": 91,
     "model": "deepseek-chat",
-    "fallbackCount": 296,
+    "fallbackCount": 372,
     "labelCounts": {
-      "NEG": 68,
-      "MIX": 45,
-      "POS": 24
+      "NEG": 59,
+      "MIX": 48,
+      "POS": 42
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
