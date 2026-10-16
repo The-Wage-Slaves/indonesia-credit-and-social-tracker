@@ -88,38 +88,44 @@
         {
           "name": "货币政策可信度",
           "type": "quant",
-          "weight": 0.17,
-          "score": 30
+          "weight": 0.153,
+          "score": 40
         },
         {
           "name": "政策方差(翻转计数)",
           "type": "quant",
-          "weight": 0.17,
-          "score": 45
+          "weight": 0.153,
+          "score": 46
         },
         {
           "name": "国际治理评估",
           "type": "quant",
-          "weight": 0.2125,
+          "weight": 0.19125,
           "score": 42
         },
         {
           "name": "法治与执法工具化",
           "type": "ordinal",
-          "weight": 0.1275,
+          "weight": 0.11475,
           "score": 42
         },
         {
           "name": "关键机构俘获度",
           "type": "ordinal",
-          "weight": 0.17,
+          "weight": 0.153,
           "score": 30
         },
         {
           "name": "资本市场治理与国际准入",
           "type": "ordinal",
-          "weight": 0.15,
+          "weight": 0.135,
           "score": 20
+        },
+        {
+          "name": "要害岗位非例行更替",
+          "type": "quant",
+          "weight": 0.1,
+          "score": 13
         }
       ]
     },
@@ -166,32 +172,32 @@
       ]
     },
     "coercive": {
-      "score": 39,
+      "score": 36,
       "pillarAdj": 0,
       "drivers": [
         {
           "name": "军警冲突烈度(机构间)",
           "type": "quant",
           "weight": 0.2,
-          "score": 50
+          "score": 42
         },
         {
           "name": "对平民镇压强度(计数)",
           "type": "quant",
           "weight": 0.15,
-          "score": 18
+          "score": 14
         },
         {
           "name": "军队文职渗透度",
           "type": "quant",
           "weight": 0.18,
-          "score": 40
+          "score": 32
         },
         {
           "name": "精英清洗烈度(计数)",
           "type": "quant",
           "weight": 0.12,
-          "score": 45
+          "score": 57
         },
         {
           "name": "军警权力平衡",
@@ -251,5 +257,49 @@
     "institutionsTo": 35,
     "coerciveFrom": 33,
     "coerciveTo": 39
+  },
+  "methodologyRevision2": {
+    "date": "2026-10-16",
+    "why": "2026-10-16 方法论变更：计数类 driver（政策方差、精英清洗、对平民镇压、军警冲突）由硬窗口改为衰减计数（半衰期与原窗口面积相等），连续映射；制度支柱新增「要害岗位非例行更替」0.10（其余 ×0.9），以佐科维两届为基线；军队文职渗透度扣减领土建制进度（Kodam/38、营/514）；货币政策可信度撤回 Perry 提前辞任的 −15（改由要害更替计入，避免重复）。台账 data/event-ledgers.json。",
+    "institutions": {
+      "from": 35,
+      "to": 35,
+      "drivers": {
+        "货币政策可信度": [
+          30,
+          40
+        ],
+        "政策方差(翻转计数)": [
+          45,
+          46
+        ],
+        "要害岗位非例行更替": [
+          null,
+          13
+        ]
+      }
+    },
+    "coercive": {
+      "from": 39,
+      "to": 36,
+      "drivers": {
+        "军警冲突烈度(机构间)": [
+          50,
+          42
+        ],
+        "对平民镇压强度(计数)": [
+          18,
+          14
+        ],
+        "军队文职渗透度": [
+          40,
+          32
+        ],
+        "精英清洗烈度(计数)": [
+          45,
+          57
+        ]
+      }
+    }
   }
 }
