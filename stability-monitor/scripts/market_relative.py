@@ -216,7 +216,7 @@ def main(argv=None):
         OUT_DIR.mkdir(parents=True, exist_ok=True)
         path = OUT_DIR / f"{a.period}.json"
         tmp = path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+        tmp.write_text(json.dumps(res, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
         tmp.replace(path)
         print(f"✓ 写入 {path.relative_to(HERE.parent.parent)}")
     return 0
