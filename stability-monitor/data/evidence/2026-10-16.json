@@ -200,23 +200,23 @@
       "id": "fx_idr_2026_10_16",
       "date": "2026-10-16",
       "primaryOwner": "currency.fx_stress",
-      "label": "Rupiah spot stress",
-      "summary": "JISDOR 17,948 on 2026-10-15, three rupiah below the 7 percent band edge (17,951). Spot opened at 18,038 on 10-16 after MSCI's reclassification proposal - the first break of 18,000 this year - but the 10-16 JISDOR had not been published at cutoff, so the official reading stays in the 3-7 percent band.",
+      "label": "Rupiah relative to Asian EM FX",
+      "summary": "Rupiah per USD divided by the geometric mean of THB/MYR/PHP/INR/KRW per USD stood 3.1 percent above its 250-day mean at the 2026-10-15 cutoff (rupiah weaker than Asian peers by about 3 percent); previous period +2.6 percent. Methodology changed 2026-10-16 from year-to-date USD/IDR depreciation. JISDOR 17,948 on 10-15 retained as a reference only; spot broke 18,000 on 10-16, after cutoff.",
       "confidence": "high",
-      "sourceText": "Reviewed weekly market snapshot; primary quote URL not archived, so this remains an internal-review input.",
+      "sourceText": "ECB euro foreign exchange reference rates (data-api.ecb.europa.eu, EXR D.*.EUR.SP00.A), crossed through USD; computed by stability-monitor/scripts/market_relative.py, archived in data/market-relative/2026-10-16.json",
       "observedAt": "2026-10-16",
       "maxAgeDays": 14,
-      "sourceType": "internal_review",
-      "sourceFamily": "weekly_market_pack",
+      "sourceType": "primary",
+      "sourceFamily": "ecb_reference_rates",
       "underlyingEventId": "fx_idr_2026_08_31",
       "retrievedAt": "2026-10-16",
       "scoreInputs": [
         {
-          "metric": "USD_IDR_ytd_depreciation",
-          "value": "JISDOR 17,948 on 2026-10-15; about -6.98 percent year to date against the 16,777 official 2025 close",
+          "metric": "IDR_vs_Asian5_deviation_from_250d_mean",
+          "value": "+3.1 percent (cutoff 2026-10-15)",
           "unit": "percent",
-          "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
-          "score": 55,
+          "transform": "clamp(55 - 5 x deviation, 5, 75)",
+          "score": 40,
           "weight": 1
         }
       ]
@@ -336,7 +336,7 @@
       "date": "2026-10-16",
       "primaryOwner": "currency.market_access",
       "label": "Market access bridge",
-      "summary": "MSCI launched a consultation on 2026-10-15 to reclassify Indonesia from Emerging Market to Standalone, skipping Frontier, and expects to proceed unless clear evidence of material improvement emerges; consultation to 2027-04-30, decision by 2027-06-30, existing freeze continues. JCI closed 5,863.78 on 10-15 (-36.6 percent in USD) and fell 10.4 percent intraday on 10-16 with a 30-minute trading halt. Bridge = mean(equity 30, sovereign 45) = 37.5 - the V4 bridge does not see the V3 market-access driver, a gap noted for the methodology review.",
+      "summary": "Bridge = mean(V3 equity relative-to-EM 25, sovereign 45) = 35. Equity reading: MSCI Indonesia / MSCI EM 30.0 percent below its 250-day mean at the 2026-10-15 cutoff. MSCI's 2026-10-15 consultation to reclassify Indonesia to Standalone is scored in V3 under institutions (capital-market governance and index access, 20->10); the V4 bridge does not read that driver - flagged for the V4 methodology review.",
       "confidence": "medium",
       "sourceText": "Production V3 driver evidence as of 2026-07-22",
       "observedAt": "2026-10-16",
@@ -348,10 +348,10 @@
       "scoreInputs": [
         {
           "metric": "local_assets_and_market_access_composite",
-          "value": "JCI USD return approximately -36.6 percent at 10-15 close; MSCI proposes reclassification to Standalone",
+          "value": "MSCI Indonesia / MSCI EM -30.0 percent vs 250-day mean; MSCI proposes reclassification to Standalone",
           "unit": "mixed market measures",
           "transform": "migration_anchor_pending_same-window_flow_and_spread_series",
-          "score": 37.5,
+          "score": 35.0,
           "weight": 1
         }
       ]

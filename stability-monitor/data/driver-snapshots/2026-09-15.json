@@ -46,14 +46,14 @@
       ]
     },
     "currency": {
-      "score": 46,
+      "score": 43,
       "pillarAdj": 0,
       "drivers": [
         {
-          "name": "汇率水平与贬速",
+          "name": "汇率相对强弱(对亚洲五币)",
           "type": "quant",
           "weight": 0.25,
-          "score": 55
+          "score": 45
         },
         {
           "name": "防守消耗效率",
@@ -68,16 +68,10 @@
           "score": 60
         },
         {
-          "name": "股市与外资流向",
+          "name": "股市相对表现(对MSCI EM)",
           "type": "quant",
-          "weight": 0.14,
-          "score": 35
-        },
-        {
-          "name": "国际市场准入",
-          "type": "ordinal",
-          "weight": 0.06,
-          "score": 20
+          "weight": 0.2,
+          "score": 25
         },
         {
           "name": "制造业动能(PMI)",
@@ -88,38 +82,44 @@
       ]
     },
     "institutions": {
-      "score": 35,
+      "score": 33,
       "pillarAdj": 0,
       "drivers": [
         {
           "name": "货币政策可信度",
           "type": "quant",
-          "weight": 0.2,
+          "weight": 0.17,
           "score": 30
         },
         {
           "name": "政策方差(翻转计数)",
           "type": "quant",
-          "weight": 0.2,
+          "weight": 0.17,
           "score": 30
         },
         {
           "name": "国际治理评估",
           "type": "quant",
-          "weight": 0.25,
+          "weight": 0.2125,
           "score": 42
         },
         {
           "name": "法治与执法工具化",
           "type": "ordinal",
-          "weight": 0.15,
+          "weight": 0.1275,
           "score": 42
         },
         {
           "name": "关键机构俘获度",
           "type": "ordinal",
-          "weight": 0.2,
+          "weight": 0.17,
           "score": 30
+        },
+        {
+          "name": "资本市场治理与国际准入",
+          "type": "ordinal",
+          "weight": 0.15,
+          "score": 20
         }
       ]
     },
@@ -206,6 +206,19 @@
           "score": 38
         }
       ]
+    }
+  },
+  "methodologyRevision": {
+    "date": "2026-10-16",
+    "why": "2026-10-16 市场层方法论变更（逐期重算）：①汇率由「年内对美元跌幅」改为「卢比对亚洲五币、偏离 250 日均值」，股市由「JCI 美元计年内回报」改为「MSCI Indonesia ÷ MSCI EM、偏离 250 日均值」，两者改连续映射；②「国际市场准入」移出货币支柱、改名「资本市场治理与国际准入」并入制度支柱(0.15)，制度其余五项等比例 ×0.85；③股市权重 0.14→0.20。读数存档 data/market-relative/<date>.json。",
+    "currencyFrom": 46,
+    "currencyTo": 43,
+    "institutionsFrom": 35,
+    "institutionsTo": 33,
+    "replaced": {
+      "汇率水平与贬速": 55,
+      "股市与外资流向": 35,
+      "国际市场准入": 20
     }
   }
 }

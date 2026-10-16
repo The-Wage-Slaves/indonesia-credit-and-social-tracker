@@ -141,7 +141,7 @@
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 47,
+      "v3Score": 43,
       "drivers": [
         {
           "id": "inflation_expectations",
@@ -195,7 +195,7 @@
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 35,
+      "v3Score": 31,
       "drivers": [
         {
           "id": "policy_predictability",
