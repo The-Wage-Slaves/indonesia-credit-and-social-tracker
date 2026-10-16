@@ -226,6 +226,59 @@ class RegistryAnchorAgainstRealDriftTests(unittest.TestCase):
             "无关事件被已确认表吞掉了，抑制过宽")
 
 
+
+class DegradedContractTests(unittest.TestCase):
+    """裁定层跑不起来时，**不得呈现为「今天没事」**。
+
+    2026-10-07/08 DeepSeek 返回 402 Payment Required，旧代码在 except 里 return []，
+    于是连续两天写出 level=normal、eventCount=0 的证据池记录，飞书也照推「正常」——
+    而此前六天天天 red、每天 3–7 条。信贷侧早有 degraded 契约，稳定性侧一直缺这一条。
+    """
+
+    def test_classifier_failure_raises_instead_of_returning_empty(self):
+        items = [{"title": "x", "domain": "d", "link": "l", "source": "s"}]
+        with mock.patch.object(MODULE.requests, "post", side_effect=RuntimeError("402 Payment Required")):
+            with self.assertRaises(MODULE.ClassifierUnavailable) as ctx:
+                MODULE.classify_events(items, {"llm": {"api_key": "k"}}, today="2026-10-08")
+        self.assertIn("402", str(ctx.exception), "原因要带出来，否则排查时看不到是什么挂了")
+
+    def test_missing_api_key_is_also_degraded_not_silent(self):
+        items = [{"title": "x", "domain": "d", "link": "l", "source": "s"}]
+        with self.assertRaises(MODULE.ClassifierUnavailable):
+            MODULE.classify_events(items, {"llm": {"api_key": ""}}, today="2026-10-08")
+
+    def test_no_items_is_still_a_legitimate_empty_day(self):
+        """真的一条标题都没抓到，与「判不出来」不是一回事，不该降级。"""
+        self.assertEqual(MODULE.classify_events([], {"llm": {"api_key": "k"}}, today="2026-10-08"), [])
+
+    def test_grade_locks_level_to_degraded(self):
+        g = MODULE.grade([], degraded="DeepSeek 402")
+        self.assertEqual(g["level"], "degraded")
+        self.assertEqual(g["degradedReason"], "DeepSeek 402")
+        self.assertNotEqual(g["level"], "normal", "degraded 绝不能落回 normal")
+
+    def test_degraded_record_does_not_claim_zero_events(self):
+        """周更读证据池时必须能分辨「这天真没事」与「这天没判出来」。"""
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            with mock.patch.object(MODULE, "EVENTS_DIR", pathlib.Path(tmp)):
+                path = MODULE.append_events("2026-10-08", [], MODULE.grade([], degraded="DeepSeek 402"))
+                rec = json.loads(path.read_text(encoding="utf-8").strip())
+        self.assertTrue(rec["degraded"])
+        self.assertIsNone(rec["eventCount"], "降级日不得写 0 —— 0 会被读成「今天没事」")
+        self.assertIn("402", rec["degradedReason"])
+
+    def test_normal_day_is_unaffected(self):
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            with mock.patch.object(MODULE, "EVENTS_DIR", pathlib.Path(tmp)):
+                path = MODULE.append_events("2026-10-08", [], MODULE.grade([]))
+                rec = json.loads(path.read_text(encoding="utf-8").strip())
+        self.assertEqual(rec["level"], "normal")
+        self.assertEqual(rec["eventCount"], 0)
+        self.assertNotIn("degraded", rec)
+
+
 if __name__ == "__main__":
     unittest.main()
 
