@@ -195,7 +195,7 @@
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 31,
+      "v3Score": 34,
       "drivers": [
         {
           "id": "policy_predictability",
@@ -322,7 +322,7 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 33,
+      "v3Score": 39,
       "drivers": [
         {
           "id": "interagency_cohesion",

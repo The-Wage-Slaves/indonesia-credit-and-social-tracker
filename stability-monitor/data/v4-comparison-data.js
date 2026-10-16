@@ -4,8 +4,8 @@ const V4_COMPARISON = {
   "asOf": "2026-10-16",
   "official": {
     "methodology": "V3",
-    "composite": 42.0,
-    "displayScore": 42,
+    "composite": 43.8,
+    "displayScore": 44,
     "pillarWeights": {
       "fiscal": 0.2,
       "currency": 0.2,
@@ -16,14 +16,14 @@ const V4_COMPARISON = {
     "scores": {
       "fiscal": 48.0,
       "currency": 43.0,
-      "institutions": 31.0,
+      "institutions": 34.0,
       "social": 55.0,
-      "coercive": 33.0
+      "coercive": 39.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 44.4,
+    "composite": 45.5,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -35,7 +35,7 @@ const V4_COMPARISON = {
   "shadow": {
     "methodology": "V4",
     "composite": 46.1,
-    "delta": 1.6,
+    "delta": 0.6,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -359,9 +359,9 @@ const V4_COMPARISON = {
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 31.0,
+      "v3Score": 34.0,
       "v4ShadowScore": 36.9,
-      "delta": 5.9,
+      "delta": 2.9,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
@@ -595,9 +595,9 @@ const V4_COMPARISON = {
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 33.0,
+      "v3Score": 39.0,
       "v4ShadowScore": 37.3,
-      "delta": 4.3,
+      "delta": -1.7,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.3,

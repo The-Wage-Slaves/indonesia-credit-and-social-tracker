@@ -21,7 +21,7 @@ DATA_JS = HERE.parent / "dashboard" / "data.js"
 
 # 确认过的历史。最后一期之外任何一格变动都必须是有意为之，并附逐期对照表。
 #
-# 有意的历史重调共两次：
+# 有意的历史重调共三次：
 # ① 2026-09-01（逐期对照表见 PR #38）：汇率 driver 的年内基数一直用错（约 16,25x，官方为
 #    2025 年末 16,777），07-22/07-28/07-30/08-11/08-20 五期货币柱 40→44（08-20 为 42→46）。
 # ② 2026-10-16 市场层换尺子（逐期对照表见该次 PR）：股市改「MSCI Indonesia ÷ MSCI EM」、
@@ -30,16 +30,20 @@ DATA_JS = HERE.parent / "dashboard" / "data.js"
 #    git 历史中当期 data.js（汇率按 ① 更正后），08-20 起取自 driver-snapshots。
 #    货币柱 07-22 44→39、07-28 44→38、07-30 44→37、08-04 39→37、08-11 44→39、08-20 46→41；
 #    制度柱 08-20 起 35→33（08-20 之前准入未测量，权重退回，制度柱不动）。
-# 07-07/07-16 两次都不动：无 driver 级记录、不可重算，标 fxBasis="legacy"。
+# ③ 2026-10-16 数据更正（沿用现行档位规则，只改事件日期）：军警冲突把 2025-03-17 楠榜、2025-02-24 塔拉坎
+#    两起实弹误记为 2026-03（早已出 12 个月窗口，32→50）；精英清洗误计 Lembong（2025-07 判决、2025-08 获
+#    abolisi，32→45）；政策方差补日期后 B50(03-31) 于 09-30 出窗（10-09 起 30→45）。
+#    强制柱 07-22/28/30 36→43、08-04/11 36→42、08-20 35→40。
+# 07-07/07-16 三次都不动：无 driver 级记录、不可重算，标 fxBasis="legacy"。
 CONFIRMED_HISTORY = [
     ("2026-07-07", dict(fiscal=49, currency=42, institutions=45, social=59, coercive=43)),
     ("2026-07-16", dict(fiscal=49, currency=39, institutions=40, social=59, coercive=37)),
-    ("2026-07-22", dict(fiscal=48, currency=39, institutions=37, social=59, coercive=36)),
-    ("2026-07-28", dict(fiscal=48, currency=38, institutions=35, social=59, coercive=36)),
-    ("2026-07-30", dict(fiscal=48, currency=37, institutions=35, social=59, coercive=36)),
-    ("2026-08-04", dict(fiscal=48, currency=37, institutions=35, social=56, coercive=36)),
-    ("2026-08-11", dict(fiscal=48, currency=39, institutions=35, social=58, coercive=36)),
-    ("2026-08-20", dict(fiscal=48, currency=41, institutions=33, social=57, coercive=35)),
+    ("2026-07-22", dict(fiscal=48, currency=39, institutions=37, social=59, coercive=43)),
+    ("2026-07-28", dict(fiscal=48, currency=38, institutions=35, social=59, coercive=43)),
+    ("2026-07-30", dict(fiscal=48, currency=37, institutions=35, social=59, coercive=43)),
+    ("2026-08-04", dict(fiscal=48, currency=37, institutions=35, social=56, coercive=42)),
+    ("2026-08-11", dict(fiscal=48, currency=39, institutions=35, social=58, coercive=42)),
+    ("2026-08-20", dict(fiscal=48, currency=41, institutions=33, social=57, coercive=40)),
 ]
 
 # 无 driver 级记录、汇率基数不可重算的期次。**这两期不是「已核对正确」，是「查不了」。**
@@ -274,6 +278,43 @@ class NewDriverContractTests(unittest.TestCase):
                 block = self.text[start:start + 4000]
                 self.assertIn("未测量", block,
                               f"{marker} 必须写明历史期次标为未测量，而不是回填成中性值")
+
+
+class CountDriversCarryEventDatesTests(unittest.TestCase):
+    """滚动窗口计数项的每一起事件必须带完整日期。
+
+    2026-10-16 核出：军警冲突把 2025-03-17 楠榜、2025-02-24 塔拉坎写成「2026-03」，精英清洗
+    计入了 2025-07 判决、2025-08 已获 abolisi 的 Lembong。清单只列事件不记日期，「滚动 6/12 个月」
+    从来没有真正执行过——强制支柱因此连续 13 期被低估 5–7 分。没有日期，窗口就无从核对。
+    """
+
+    COUNT_DRIVERS = ("政策方差(翻转计数)", "军警冲突烈度(机构间)", "精英清洗烈度(计数)")
+
+    def setUp(self):
+        self.text = DATA_JS.read_text(encoding="utf-8")
+
+    def formula(self, name):
+        start = self.text.index(f'name: "{name}"')
+        f = self.text.index('formula: "', start) + len('formula: "')
+        return self.text[f:self.text.index('",', f)]
+
+    def test_window_is_stated_as_by_event_date(self):
+        for name in self.COUNT_DRIVERS:
+            with self.subTest(driver=name):
+                self.assertIn("按事件日期", self.formula(name))
+
+    def test_every_listed_event_has_a_full_date(self):
+        for name in self.COUNT_DRIVERS:
+            with self.subTest(driver=name):
+                f = self.formula(name)
+                items = re.split(r"[①②③④⑤⑥]", f)[1:]
+                self.assertTrue(items, f"{name} 没有事件清单")
+                for item in items:
+                    self.assertRegex(item, r"20\d\d-\d\d-\d\d", f"{name} 有事件没写完整日期：{item[:40]}")
+
+    def test_known_misdated_events_are_not_back(self):
+        self.assertNotIn("2026-03楠榜", self.text)
+        self.assertNotIn("2026-03塔拉坎", self.text)
 
 
 if __name__ == "__main__":
