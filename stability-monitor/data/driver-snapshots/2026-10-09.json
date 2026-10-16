@@ -46,7 +46,7 @@
       ]
     },
     "currency": {
-      "score": 46,
+      "score": 47,
       "pillarAdj": 0,
       "drivers": [
         {
@@ -83,7 +83,7 @@
           "name": "制造业动能(PMI)",
           "type": "quant",
           "weight": 0.15,
-          "score": 49
+          "score": 62
         }
       ]
     },
@@ -207,5 +207,14 @@
         }
       ]
     }
+  },
+  "revision": {
+    "date": "2026-10-16",
+    "field": "currency.制造业动能(PMI)",
+    "from": 49,
+    "to": 62,
+    "pillarFrom": 46,
+    "pillarTo": 47,
+    "why": "9 月 S&P Global PMI 52.4 于 2026-10-01 发布，早于本期截点，但本期评分仍沿用 8 月 49.8（→49）。漏更新，回溯更正。"
   }
 }

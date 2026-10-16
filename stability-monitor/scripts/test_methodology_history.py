@@ -218,8 +218,9 @@ class NewDriverContractTests(unittest.TestCase):
 
     # 2026-08-20 新设的两个 driver。**只在它们仍是「本期新设」时要求 prev: null**——
     # 一旦某个 driver 有了真实的上期测量值，prev 就该填那个值，否则看板显示不出变化。
-    # 「对平民镇压强度」在 2026-09-01 首次改分(30→18)，从此退出本清单。
-    STILL_UNMEASURED_BEFORE = ("国际市场准入",)
+    # 「对平民镇压强度」在 2026-09-01 首次改分(30→18)，「国际市场准入」在 2026-10-16
+    # 首次改分(20→10，MSCI 发起 Standalone 咨询)，两者都已退出本清单。
+    STILL_UNMEASURED_BEFORE = ()
 
     def test_drivers_never_measured_before_declare_no_previous_value(self):
         """从未测量过的 driver，prev 必须是 null，不能编一个上期值。
@@ -239,10 +240,11 @@ class NewDriverContractTests(unittest.TestCase):
 
     def test_a_driver_that_has_been_measured_carries_a_real_previous_value(self):
         """反过来：已经改过分的 driver 不能还挂着 prev: null，否则变化显示不出来。"""
-        start = self.text.index('name: "对平民镇压强度(计数)"')
-        head = self.text[start:self.text.index(chr(10), start)]
-        self.assertNotIn("prev: null", head,
-                         "该 driver 已于 2026-09-01 首次改分(30→18)，prev 应为 30")
+        for marker, when in (("对平民镇压强度(计数)", "2026-09-01"), ("国际市场准入", "2026-10-16")):
+            with self.subTest(driver=marker):
+                start = self.text.index(f'name: "{marker}"')
+                head = self.text[start:self.text.index(chr(10), start)]
+                self.assertNotIn("prev: null", head, f"{marker} 已于 {when} 首次改分，prev 必须是真实上期值")
 
     def test_both_new_drivers_document_the_unmeasured_history_rule(self):
         for marker in ("国际市场准入", "对平民镇压强度(计数)"):
