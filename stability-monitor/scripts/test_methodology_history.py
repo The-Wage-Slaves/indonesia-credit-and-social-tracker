@@ -21,7 +21,7 @@ DATA_JS = HERE.parent / "dashboard" / "data.js"
 
 # 确认过的历史。最后一期之外任何一格变动都必须是有意为之，并附逐期对照表。
 #
-# 有意的历史重调共三次：
+# 有意的历史重调共四次：
 # ① 2026-09-01（逐期对照表见 PR #38）：汇率 driver 的年内基数一直用错（约 16,25x，官方为
 #    2025 年末 16,777），07-22/07-28/07-30/08-11/08-20 五期货币柱 40→44（08-20 为 42→46）。
 # ② 2026-10-16 市场层换尺子（逐期对照表见该次 PR）：股市改「MSCI Indonesia ÷ MSCI EM」、
@@ -34,16 +34,19 @@ DATA_JS = HERE.parent / "dashboard" / "data.js"
 #    两起实弹误记为 2026-03（早已出 12 个月窗口，32→50）；精英清洗误计 Lembong（2025-07 判决、2025-08 获
 #    abolisi，32→45）；政策方差补日期后 B50(03-31) 于 09-30 出窗（10-09 起 30→45）。
 #    强制柱 07-22/28/30 36→43、08-04/11 36→42、08-20 35→40。
-# 07-07/07-16 三次都不动：无 driver 级记录、不可重算，标 fxBasis="legacy"。
+# ④ 2026-10-16 计数改衰减（台账 data/event-ledgers.json，scripts/event_decay.py）：政策方差、精英清洗、对平民镇压、
+#    军警冲突改衰减计数；制度支柱新设「要害岗位非例行更替」0.10（其余 ×0.9）；军队文职渗透度扣领土建制进度；
+#    货币政策可信度撤回 Perry 的 −15（改由更替项计入）。综合相对 ③ 变动 −0.8 至 0。
+# 07-07/07-16 四次都不动：无 driver 级记录、不可重算，标 fxBasis="legacy"。
 CONFIRMED_HISTORY = [
     ("2026-07-07", dict(fiscal=49, currency=42, institutions=45, social=59, coercive=43)),
     ("2026-07-16", dict(fiscal=49, currency=39, institutions=40, social=59, coercive=37)),
-    ("2026-07-22", dict(fiscal=48, currency=39, institutions=37, social=59, coercive=43)),
-    ("2026-07-28", dict(fiscal=48, currency=38, institutions=35, social=59, coercive=43)),
-    ("2026-07-30", dict(fiscal=48, currency=37, institutions=35, social=59, coercive=43)),
-    ("2026-08-04", dict(fiscal=48, currency=37, institutions=35, social=56, coercive=42)),
-    ("2026-08-11", dict(fiscal=48, currency=39, institutions=35, social=58, coercive=42)),
-    ("2026-08-20", dict(fiscal=48, currency=41, institutions=33, social=57, coercive=40)),
+    ("2026-07-22", dict(fiscal=48, currency=39, institutions=39, social=59, coercive=39)),
+    ("2026-07-28", dict(fiscal=48, currency=38, institutions=35, social=59, coercive=39)),
+    ("2026-07-30", dict(fiscal=48, currency=37, institutions=35, social=59, coercive=39)),
+    ("2026-08-04", dict(fiscal=48, currency=37, institutions=37, social=56, coercive=39)),
+    ("2026-08-11", dict(fiscal=48, currency=39, institutions=37, social=58, coercive=39)),
+    ("2026-08-20", dict(fiscal=48, currency=41, institutions=35, social=57, coercive=37)),
 ]
 
 # 无 driver 级记录、汇率基数不可重算的期次。**这两期不是「已核对正确」，是「查不了」。**
@@ -206,16 +209,16 @@ class NewDriverContractTests(unittest.TestCase):
         self.text = DATA_JS.read_text(encoding="utf-8")
 
     def test_market_access_lives_in_institutions_with_proportional_carve(self):
-        """2026-10-16 起准入迁入制度支柱 0.15，其余五项等比例 ×0.85——不从任何单项挖。
+        """2026-10-16 起准入迁入制度支柱（0.15，其余五项 ×0.85），同日又新设要害更替（0.10，其余 ×0.9）。
 
-        从高分项（国际治理 42）挖会让支柱在 MSCI 什么都没发生时先掉 0.5，
-        从底档项（政策方差 30）挖会让最差的信号算得更轻。等比例缩放的机械漂移为 0。
+        两次都等比例缩放、不从任何单项挖：从高分项（国际治理 42）挖会让支柱在什么都没发生时
+        先掉分，从底档项（政策方差）挖会让最差的信号算得更轻。等比例缩放的机械漂移为 0。
         """
         self.assertNotIn('name: "国际市场准入"', self.text, "旧名不该还留在货币支柱里")
-        self.assertIn('name: "资本市场治理与国际准入", weight: 0.15', self.text)
-        for name, w in (("货币政策可信度", "0.17"), ("政策方差(翻转计数)", "0.17"),
-                        ("国际治理评估", "0.2125"), ("法治与执法工具化", "0.1275"),
-                        ("关键机构俘获度", "0.17")):
+        for name, w in (("货币政策可信度", "0.153"), ("政策方差(翻转计数)", "0.153"),
+                        ("国际治理评估", "0.19125"), ("法治与执法工具化", "0.11475"),
+                        ("关键机构俘获度", "0.153"), ("资本市场治理与国际准入", "0.135"),
+                        ("要害岗位非例行更替", "0.10")):
             with self.subTest(driver=name):
                 self.assertIn(f'name: "{name}", weight: {w}', self.text)
         self.assertIn('name: "股市相对表现(对MSCI EM)", weight: 0.20', self.text,
@@ -228,14 +231,12 @@ class NewDriverContractTests(unittest.TestCase):
 
     def test_repression_driver_exists_and_is_calibrated_below_the_pillar_mean(self):
         self.assertIn('name: "对平民镇压强度(计数)", weight: 0.15', self.text)
-        # 各激活档都必须低于强制机构支柱的量级(约 33-36)，否则新增项反而把支柱抬上去。
-        # 不再断言「当前」标记落在哪一档——那会随每周实际计数移动。
-        for cond, score in (("0 起", 65), ("1 起", 45), ("2–3 起", 30),
-                            ("≥4 起 或出现死亡", 18)):
-            with self.subTest(band=cond):
-                self.assertRegex(self.text,
-                                 r'\{ cond: "' + cond + r'[^"]*", score: ' + str(score) + r' \}',
-                                 f"{cond} 档的分值被改动")
+        # 2026-10-16 起改衰减计数：映射必须封底在量表定义的最坏状态（=10），且新发 1 起仍低于
+        # 强制支柱的量级（约 36-40），否则新增项反而把支柱抬上去。锚点由 test_event_decay 钉住。
+        start = self.text.index('name: "对平民镇压强度(计数)"')
+        block = self.text[start:start + 3000]
+        self.assertIn("10 + 55 × 0.62^I", block)
+        self.assertRegex(block, r'\{ cond: "I = 1（新发 1 起）", score: 44 \}')
 
     def test_interagency_driver_is_renamed_to_say_what_it_actually_counts(self):
         self.assertIn('name: "军警冲突烈度(机构间)"', self.text)
@@ -288,7 +289,7 @@ class CountDriversCarryEventDatesTests(unittest.TestCase):
     从来没有真正执行过——强制支柱因此连续 13 期被低估 5–7 分。没有日期，窗口就无从核对。
     """
 
-    COUNT_DRIVERS = ("政策方差(翻转计数)", "军警冲突烈度(机构间)", "精英清洗烈度(计数)")
+    COUNT_DRIVERS = ("政策方差(翻转计数)", "军警冲突烈度(机构间)", "精英清洗烈度(计数)", "对平民镇压强度(计数)")
 
     def setUp(self):
         self.text = DATA_JS.read_text(encoding="utf-8")
@@ -298,10 +299,13 @@ class CountDriversCarryEventDatesTests(unittest.TestCase):
         f = self.text.index('formula: "', start) + len('formula: "')
         return self.text[f:self.text.index('",', f)]
 
-    def test_window_is_stated_as_by_event_date(self):
+    def test_counting_rule_is_stated(self):
+        """2026-10-16 起由「滚动窗口、按事件日期」改为衰减计数，台账在 data/event-ledgers.json。"""
         for name in self.COUNT_DRIVERS:
             with self.subTest(driver=name):
-                self.assertIn("按事件日期", self.formula(name))
+                f = self.formula(name)
+                self.assertIn("衰减计数", f)
+                self.assertIn("event-ledgers.json", f)
 
     def test_every_listed_event_has_a_full_date(self):
         for name in self.COUNT_DRIVERS:

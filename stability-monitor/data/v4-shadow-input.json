@@ -322,7 +322,7 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 39,
+      "v3Score": 37,
       "drivers": [
         {
           "id": "interagency_cohesion",
