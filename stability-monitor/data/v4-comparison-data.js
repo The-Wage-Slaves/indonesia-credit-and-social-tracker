@@ -4,8 +4,8 @@ const V4_COMPARISON = {
   "asOf": "2026-10-16",
   "official": {
     "methodology": "V3",
-    "composite": 43.6,
-    "displayScore": 44,
+    "composite": 42.0,
+    "displayScore": 42,
     "pillarWeights": {
       "fiscal": 0.2,
       "currency": 0.2,
@@ -15,15 +15,15 @@ const V4_COMPARISON = {
     },
     "scores": {
       "fiscal": 48.0,
-      "currency": 47.0,
-      "institutions": 35.0,
+      "currency": 43.0,
+      "institutions": 31.0,
       "social": 55.0,
       "coercive": 33.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 46.1,
+    "composite": 44.4,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -34,8 +34,8 @@ const V4_COMPARISON = {
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 47.6,
-    "delta": 1.5,
+    "composite": 46.1,
+    "delta": 1.6,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -46,11 +46,11 @@ const V4_COMPARISON = {
     "publicationStatus": "provisional-shadow"
   },
   "measurement": {
-    "confidence": 0.593,
+    "confidence": 0.603,
     "label": "evidence quality index; not a probability of correctness",
     "availabilityQuality": 0.741,
     "freshnessQuality": 0.774,
-    "sourceDirectness": 0.732,
+    "sourceDirectness": 0.759,
     "rawTraceabilityWeight": 0.688,
     "lowConfidenceWeight": 0.17,
     "missingWeight": 0.038,
@@ -243,16 +243,16 @@ const V4_COMPARISON = {
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 47.0,
-      "v4ShadowScore": 51.6,
-      "delta": 4.6,
+      "v3Score": 43.0,
+      "v4ShadowScore": 45.6,
+      "delta": 2.6,
       "coverage": 0.85,
       "missingWeight": 0.15,
       "lowConfidenceWeight": 0.0,
-      "measurementConfidence": 0.719,
+      "measurementConfidence": 0.761,
       "availabilityQuality": 0.787,
       "freshnessQuality": 0.85,
-      "sourceDirectness": 0.657,
+      "sourceDirectness": 0.762,
       "rawTraceabilityWeight": 0.85,
       "nonOrdinalPlannedWeight": 1.0,
       "pillarWeight": 0.25,
@@ -288,23 +288,23 @@ const V4_COMPARISON = {
           "id": "fx_stress",
           "label": "汇率压力",
           "weight": 0.3,
-          "score": 55.0,
+          "score": 40.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
-              "metric": "USD_IDR_ytd_depreciation",
-              "value": "JISDOR 17,948 on 2026-10-15; about -6.98 percent year to date against the 16,777 official 2025 close",
+              "metric": "IDR_vs_Asian5_deviation_from_250d_mean",
+              "value": "+3.1 percent (cutoff 2026-10-15)",
               "unit": "percent",
-              "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
-              "score": 55,
+              "transform": "clamp(55 - 5 x deviation, 5, 75)",
+              "score": 40,
               "weight": 1
             }
           ],
           "evidenceClass": "statistical",
           "availability": "high",
-          "evidenceQuality": 0.86,
+          "evidenceQuality": 1.0,
           "freshnessQuality": 1.0,
-          "sourceDirectness": 0.65,
+          "sourceDirectness": 1.0,
           "observationIds": [
             "fx_idr_2026_10_16"
           ],
@@ -331,15 +331,15 @@ const V4_COMPARISON = {
           "id": "market_access",
           "label": "资本流动与市场准入",
           "weight": 0.25,
-          "score": 37.5,
+          "score": 35.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "local_assets_and_market_access_composite",
-              "value": "JCI USD return approximately -36.6 percent at 10-15 close; MSCI proposes reclassification to Standalone",
+              "value": "MSCI Indonesia / MSCI EM -30.0 percent vs 250-day mean; MSCI proposes reclassification to Standalone",
               "unit": "mixed market measures",
               "transform": "migration_anchor_pending_same-window_flow_and_spread_series",
-              "score": 37.5,
+              "score": 35.0,
               "weight": 1
             }
           ],
@@ -359,9 +359,9 @@ const V4_COMPARISON = {
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 35.0,
+      "v3Score": 31.0,
       "v4ShadowScore": 36.9,
-      "delta": 1.9,
+      "delta": 5.9,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,

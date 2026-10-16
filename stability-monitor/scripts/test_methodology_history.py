@@ -21,20 +21,25 @@ DATA_JS = HERE.parent / "dashboard" / "data.js"
 
 # 确认过的历史。最后一期之外任何一格变动都必须是有意为之，并附逐期对照表。
 #
-# 2026-09-01 基线更新（唯一一次有意的历史重调，逐期对照表见 PR #38）：
-# 汇率 driver 的年内基数一直用错（约 16,25x，官方为 2025 年末 16,777），把 6.8% 的真实
-# 贬值虚增进 7–12% 档。07-22/07-28/07-30/08-11/08-20 五期货币柱 40→44（08-20 为 42→46）。
-# 08-04 不动：18,025 真实 7.4% 且破 18,000，原值本就正确。
-# 07-07/07-16 不动：无 driver 级记录、不可重算，保留旧基数并在图上标 fxBasis="legacy"。
+# 有意的历史重调共两次：
+# ① 2026-09-01（逐期对照表见 PR #38）：汇率 driver 的年内基数一直用错（约 16,25x，官方为
+#    2025 年末 16,777），07-22/07-28/07-30/08-11/08-20 五期货币柱 40→44（08-20 为 42→46）。
+# ② 2026-10-16 市场层换尺子（逐期对照表见该次 PR）：股市改「MSCI Indonesia ÷ MSCI EM」、
+#    汇率改「卢比 ÷ 亚洲五币」，均为偏离 250 日均值、连续映射；「国际市场准入」迁入制度支柱
+#    改名「资本市场治理与国际准入」(0.15)，制度其余五项 ×0.85。07-22…08-11 的 driver 取自
+#    git 历史中当期 data.js（汇率按 ① 更正后），08-20 起取自 driver-snapshots。
+#    货币柱 07-22 44→39、07-28 44→38、07-30 44→37、08-04 39→37、08-11 44→39、08-20 46→41；
+#    制度柱 08-20 起 35→33（08-20 之前准入未测量，权重退回，制度柱不动）。
+# 07-07/07-16 两次都不动：无 driver 级记录、不可重算，标 fxBasis="legacy"。
 CONFIRMED_HISTORY = [
     ("2026-07-07", dict(fiscal=49, currency=42, institutions=45, social=59, coercive=43)),
     ("2026-07-16", dict(fiscal=49, currency=39, institutions=40, social=59, coercive=37)),
-    ("2026-07-22", dict(fiscal=48, currency=44, institutions=37, social=59, coercive=36)),
-    ("2026-07-28", dict(fiscal=48, currency=44, institutions=35, social=59, coercive=36)),
-    ("2026-07-30", dict(fiscal=48, currency=44, institutions=35, social=59, coercive=36)),
-    ("2026-08-04", dict(fiscal=48, currency=39, institutions=35, social=56, coercive=36)),
-    ("2026-08-11", dict(fiscal=48, currency=44, institutions=35, social=58, coercive=36)),
-    ("2026-08-20", dict(fiscal=48, currency=46, institutions=35, social=57, coercive=35)),
+    ("2026-07-22", dict(fiscal=48, currency=39, institutions=37, social=59, coercive=36)),
+    ("2026-07-28", dict(fiscal=48, currency=38, institutions=35, social=59, coercive=36)),
+    ("2026-07-30", dict(fiscal=48, currency=37, institutions=35, social=59, coercive=36)),
+    ("2026-08-04", dict(fiscal=48, currency=37, institutions=35, social=56, coercive=36)),
+    ("2026-08-11", dict(fiscal=48, currency=39, institutions=35, social=58, coercive=36)),
+    ("2026-08-20", dict(fiscal=48, currency=41, institutions=33, social=57, coercive=35)),
 ]
 
 # 无 driver 级记录、汇率基数不可重算的期次。**这两期不是「已核对正确」，是「查不了」。**
@@ -196,10 +201,26 @@ class NewDriverContractTests(unittest.TestCase):
     def setUp(self):
         self.text = DATA_JS.read_text(encoding="utf-8")
 
-    def test_market_access_driver_exists_with_its_carved_weight(self):
-        self.assertIn('name: "国际市场准入", weight: 0.06', self.text)
-        self.assertIn('name: "股市与外资流向", weight: 0.14', self.text,
-                      "0.06 必须全部由股市项让出，否则历史期次退回权重时对不上")
+    def test_market_access_lives_in_institutions_with_proportional_carve(self):
+        """2026-10-16 起准入迁入制度支柱 0.15，其余五项等比例 ×0.85——不从任何单项挖。
+
+        从高分项（国际治理 42）挖会让支柱在 MSCI 什么都没发生时先掉 0.5，
+        从底档项（政策方差 30）挖会让最差的信号算得更轻。等比例缩放的机械漂移为 0。
+        """
+        self.assertNotIn('name: "国际市场准入"', self.text, "旧名不该还留在货币支柱里")
+        self.assertIn('name: "资本市场治理与国际准入", weight: 0.15', self.text)
+        for name, w in (("货币政策可信度", "0.17"), ("政策方差(翻转计数)", "0.17"),
+                        ("国际治理评估", "0.2125"), ("法治与执法工具化", "0.1275"),
+                        ("关键机构俘获度", "0.17")):
+            with self.subTest(driver=name):
+                self.assertIn(f'name: "{name}", weight: {w}', self.text)
+        self.assertIn('name: "股市相对表现(对MSCI EM)", weight: 0.20', self.text,
+                      "原准入让出的 0.06 必须回到股市项")
+
+    def test_market_drivers_are_relative_not_year_to_date(self):
+        self.assertNotIn('name: "汇率水平与贬速"', self.text)
+        self.assertNotIn('name: "股市与外资流向"', self.text)
+        self.assertIn('name: "汇率相对强弱(对亚洲五币)", weight: 0.25', self.text)
 
     def test_repression_driver_exists_and_is_calibrated_below_the_pillar_mean(self):
         self.assertIn('name: "对平民镇压强度(计数)", weight: 0.15', self.text)
@@ -240,14 +261,14 @@ class NewDriverContractTests(unittest.TestCase):
 
     def test_a_driver_that_has_been_measured_carries_a_real_previous_value(self):
         """反过来：已经改过分的 driver 不能还挂着 prev: null，否则变化显示不出来。"""
-        for marker, when in (("对平民镇压强度(计数)", "2026-09-01"), ("国际市场准入", "2026-10-16")):
+        for marker, when in (("对平民镇压强度(计数)", "2026-09-01"), ("资本市场治理与国际准入", "2026-10-16")):
             with self.subTest(driver=marker):
                 start = self.text.index(f'name: "{marker}"')
                 head = self.text[start:self.text.index(chr(10), start)]
                 self.assertNotIn("prev: null", head, f"{marker} 已于 {when} 首次改分，prev 必须是真实上期值")
 
     def test_both_new_drivers_document_the_unmeasured_history_rule(self):
-        for marker in ("国际市场准入", "对平民镇压强度(计数)"):
+        for marker in ("资本市场治理与国际准入", "对平民镇压强度(计数)"):
             with self.subTest(driver=marker):
                 start = self.text.index(f'name: "{marker}"')
                 block = self.text[start:start + 4000]

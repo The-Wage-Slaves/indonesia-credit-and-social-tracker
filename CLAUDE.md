@@ -106,7 +106,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 - **待校准**：红色要求的「社媒 ≥3 条提及」是拍的。若真事件长期卡在 `high_pending` 上不去红，先怀疑这个阈值或社媒覆盖率。
 
 **周更流程**：⓪ **先取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
-`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照（**会自动归档一份 driver 级快照到 `data/driver-snapshots/YYYY-MM-DD.json`**；手改评分后若没跑 append，补跑 `python scripts/apply_week.py snapshot`）→ `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
+`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化，并跑 `python scripts/market_relative.py --period YYYY-MM-DD`（股市对 MSCI EM、卢比对亚洲五币的偏离读数，2026-10-16 起是这两个 driver 的唯一出处；拒绝出数时不得手填）；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照（**会自动归档一份 driver 级快照到 `data/driver-snapshots/YYYY-MM-DD.json`**；手改评分后若没跑 append，补跑 `python scripts/apply_week.py snapshot`）→ `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
 
 ---
 

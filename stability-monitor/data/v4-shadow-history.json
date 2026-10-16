@@ -270,18 +270,23 @@
       "date": "2026-10-16",
       "scores": {
         "fiscal": 52.2,
-        "currency": 51.6,
+        "currency": 45.6,
         "institutions": 36.9,
         "social": 49.5,
         "coercive": 37.3
       },
-      "composite": 47.6,
-      "measurementConfidence": 0.593,
+      "composite": 46.1,
+      "measurementConfidence": 0.603,
       "triggerLevel": "normal",
       "activeTriggerIds": [],
       "status": "provisional-shadow",
       "confirmed": true,
-      "humanConfirmed": true
+      "humanConfirmed": true,
+      "revision": {
+        "date": "2026-10-16",
+        "fromComposite": 47.6,
+        "why": "同日方法论变更：V3 市场层换尺子（汇率对亚洲五币、股市对 MSCI EM，均为偏离 250 日均值），V4 的 fx_stress 与 market_access 桥接随之重算（汇率 55→40、市场准入桥 37.5→35）。基数口径不再是年内。"
+      }
     }
   ],
   "revisionLog": [
