@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-17T06:12:49.344556+00:00",
+  "generatedAt": "2026-10-18T06:35:58.416411+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-17",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-18",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **市场失序(汇股债)｜IHSG暴跌11.57%，警方调查疑似市场犯罪，Danantara拟入场收购国企股**\n严重度 0.90｜2个独立来源（katadata.co.id、liputan6.com）｜影响支柱：currency\n\n🔺 **关键官员更替/清洗｜印尼内政部长罢免勿加泗县长Ade Kunang**\n严重度 0.75｜1个独立来源（antaranews.com）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜KPK将Klaten县长与中爪哇BPK代表处负责人列为贪腐嫌犯并搜查BNPB办公室**\n严重度 0.75｜4个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜KPK认定BNPB灾害资金贪腐案5名嫌犯，涉挪用资金购股与收受回扣**\n严重度 0.75｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 6 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **市场失序(汇股债)｜OJK对BREN、CUAN等开出2.1万亿盾罚单，印尼股市面临降级风险**\n严重度 0.75｜2个独立来源（bbc.com、katadata.co.id）｜影响支柱：currency\n\n🟠 **关键官员更替/清洗｜Klaten县长在KPK突击逮捕行动中被捕，PDIP宣布将予以开除**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜KPK就BNPB赈灾资金采购腐败案展开突击逮捕，认定四名嫌疑人但未适用死刑条款**\n严重度 0.55｜3个独立来源（kanalindonesia.com、monitorpos）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜印尼政府将清真认证强制期限推迟至2028年10月，MUI表示不满**\n严重度 0.55｜2个独立来源（liputan6.com、news.republika.co.id）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-17:normal:red:success"
+    "decisionId": "daily:2026-10-18:normal:red:success"
   },
   "feishu": "sent"
 }

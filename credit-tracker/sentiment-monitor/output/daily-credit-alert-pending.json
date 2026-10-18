@@ -1,36 +1,78 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "level": "normal",
   "signals": {
     "newsDailyVolumeRisk": 0.0,
-    "socialDailyVolumeRisk": 30.4,
-    "negativeSocialShare": 30.2,
+    "socialDailyVolumeRisk": 35.6,
+    "negativeSocialShare": 36.3,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=1; prior-7d median=29.0; robust z=-4.83",
-    "socialVolume": "today=2; prior-7d median=31.0; robust z=-1.30"
+    "newsVolume": "today=1; prior-7d median=26.0; robust z=-4.81",
+    "socialVolume": "today=5; prior-7d median=32.0; robust z=-0.96"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-d599ff4b293c",
+      "id": "llm-cf05e8f57712",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Vicky Shu",
+        "Winda Puspita",
+        "非法催收方"
+      ],
+      "headline": "6 Artis Diteror Debt Collector Pinjol Padahal Tak Pernah Pinjam Vicky Shu dan Winda Puspita Sampai Kehilangan - Mantra Sukabumi",
+      "headlineZh": "多名艺人未借款却遭网贷催收骚扰",
+      "summaryZh": "Vicky Shu、Winda Puspita 等6名艺人称从未借款却遭网贷催收恐吓，属消费者受害事件。",
+      "rationale": "多名受害人公开指控催收骚扰",
+      "independentSourceCount": 2,
+      "domains": [
+        "hot.detik.com",
+        "mantrasukabumi.pikiran-rakyat.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "87c7456a3bec9ff3",
+        "1dbbc96df9a5c8ad"
+      ],
+      "articles": [
+        {
+          "title": "6 Artis Diteror Debt Collector Pinjol Padahal Tak Pernah Pinjam Vicky Shu dan Winda Puspita Sampai Kehilangan - Mantra Sukabumi",
+          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPN3EyaXdWUmhnZnM3OWpSSi1xSGdDMjQxN1A4S1dfeThoYVZNZWZDbldIcmZWV2hBTlpJSnN0R0c5ZzlmQmcyVkhJOEdCRUlvTDdudGJSYlZjOGtxbDNBNlc3NmJpZUlpUklOTjVFbW00aXZNNjIzQ1BFb1VSRkJFXzhUZEt0ZllVZVpCX0ZIeXJnRzVPbmR3S3B0emZGcHNVeWZKcUxjQzR0LWQ5dlE0WnZNWHBCQ3JWMEZoejQ2dEw3SXpFVDdhYmNjb2VJTVh5QTBLS1djeHZHaDBKRlhTRVR0amwxX0tnT1NYSUJpU1FMd2tTVk9GdFQ0bXFjRjVLMkdmUTlxcEpGRENTMGJzT9IBkAJBVV95cUxPN3EyaXdWUmhnZnM3OWpSSi1xSGdDMjQxN1A4S1dfeThoYVZNZWZDbldIcmZWV2hBTlpJSnN0R0c5ZzlmQmcyVkhJOEdCRUlvTDdudGJSYlZjOGtxbDNBNlc3NmJpZUlpUklOTjVFbW00aXZNNjIzQ1BFb1VSRkJFXzhUZEt0ZllVZVpCX0ZIeXJnRzVPbmR3S3B0emZGcHNVeWZKcUxjQzR0LWQ5dlE0WnZNWHBCQ3JWMEZoejQ2dEw3SXpFVDdhYmNjb2VJTVh5QTBLS1djeHZHaDBKRlhTRVR0amwxX0tnT1NYSUJpU1FMd2tTVk9GdFQ0bXFjRjVLMkdmUTlxcEpGRENTMGJzTw?oc=5"
+        },
+        {
+          "title": "Vicky Shu Resah Tiba-tiba Ditagih Pinjol - detikHOT",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRFpwLS1aMzdrM0gtM2pIOHNxVHBiRWt0a0dLNy13ZFJpS2ZZM09oRGRLMzdjMjBVMGV4dnpSeEVWSjlUd05wZGhSenhEMWI2eUFtRlh0YUlQeW05c0lDRWtzTS1rUmE3YmloNlhJeklFOEJFRHNrenVqRmpld3FnZWY3b2PSAYoBQVVfeXFMTnBoVmJ6aVIzVTd2NVl6ZlpaR1FPQ2NROS15WFJfTWZGeHlLWkdrQ1hEcjh3TmZaZHNtT1VHWFJHU2RqTjB5N251dmtOT0dNYXdwUXlWcW50OWNfTlVuaG1TMmJUYURVQ0stNXRNSEhTRzNfZmV0Zl9QMFJKZHdRb2lVM3lNWk1YRktn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a64c048436a7",
       "eventType": "fraud_or_illegal_practice",
       "severity": 0.75,
       "entities": [
         "Polres Gresik",
-        "Debt Collector Pinjol Ilegal"
+        "非法网贷催收员"
       ],
       "headline": "Debt Collector Pinjol Ilegal Dibekuk Polres Gresik, Ancam Korban Pakai Foto Rekayasa Asusila - ajttv.com",
-      "headlineZh": "格雷西克警方逮捕非法网贷催收员",
-      "summaryZh": "格雷西克警方逮捕一名非法网贷催收员，其用合成不雅照片威胁受害者，属警方立案的催收伤害案。",
-      "rationale": "警方逮捕具体嫌疑人，属已立案事件",
+      "headlineZh": "Gresik警方逮捕非法网贷催收员",
+      "summaryZh": "Gresik警方逮捕一名非法网贷催收员，其用合成不雅照威胁受害人，属警方立案的催收伤害案。",
+      "rationale": "警方立案抓捕，涉刑事威胁",
       "independentSourceCount": 1,
       "domains": [
         "ajttv.com"
@@ -55,206 +97,46 @@
       }
     },
     {
-      "id": "llm-70f6c2e8a7f9",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Debt Collector Pinjol",
-        "6 Artis"
-      ],
-      "headline": "6 Artis Diteror Debt Collector Pinjol - celebrity.okezone.com",
-      "headlineZh": "6名艺人遭网贷催收骚扰",
-      "summaryZh": "6名艺人遭网贷催收人员骚扰恐吓，属具体消费者受害事件，但影响局部。",
-      "rationale": "具体受害者遭催收骚扰，属消费者受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "celebrity.okezone.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "2ab8bc213fa7d5c8"
-      ],
-      "articles": [
-        {
-          "title": "6 Artis Diteror Debt Collector Pinjol - celebrity.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZERpelZSLWR6ZURDbDJ0al8zQUM1R3pvT292Y1lFekluZ0pTSXhxanRocV83NGMxLVlxVmZ2SW55b3VidkhiVmFhdko0b3g5dVlZWmRDMDFBU1MtWEdCN2UzLWZSaGRYVWhQcGN4T05hWlpwY2ZLaGZZdTI0QUZ2d1ZRQnBSQXJ5YV9DMGthUEw4bzJkQWI3MndB0gGYAUFVX3lxTE5SQVEzVkZpRk5qT0IxNVl6YUJhdFI0NzMtV0hFTjVLNktqLWpTUnU4Mk1jS3NLSVAzQXJzQmtabWw5NGgzTVFnX1VXYlRWUDlveENkYTBGZ2lQLU0wTkhsSE5FcS1VQWpwemFVcF81aUFiSWpzWGp6M3FKeGFNcl9QNGtZU0wwRkFSNThUWjlZRnVGQm9xa2tY?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-a0696219c647",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "Polda Jateng",
-        "Debt Collector",
-        "Warga Jepang Kudus"
-      ],
-      "headline": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
-      "headlineZh": "库杜斯催收与居民冲突，中爪哇警方查处",
-      "summaryZh": "库杜斯发生催收人员与日本居民冲突，中爪哇警长揭露以催收为名的流氓行为，属具体执法事件。",
-      "rationale": "警方介入查处具体催收冲突事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "cirebonraya.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e2dcdf060e49b748"
-      ],
-      "articles": [
-        {
-          "title": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
-          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWatIB-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWag?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-805d8be5f3a5",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Vicky Shu",
-        "Debt Collector Pinjol"
-      ],
-      "headline": "Ditagih Pinjol, Vicky Shu Curhat jadi Korban Penyalahgunaan Data Pribadi - Cumicumi",
-      "headlineZh": "艺人Vicky Shu遭网贷催收并指数据被滥用",
-      "summaryZh": "艺人Vicky Shu称未借款却遭网贷催收骚扰，指个人数据被滥用，属具体消费者受害事件。",
-      "rationale": "具体公众人物遭催收骚扰，属消费者受害",
-      "independentSourceCount": 3,
-      "domains": [
-        "adatah.com",
-        "celebrity.okezone.com",
-        "cumicumi.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "c4285be4c890837e",
-        "ee4e0145ce7d637c",
-        "9b807dfffe92938d"
-      ],
-      "articles": [
-        {
-          "title": "Ditagih Pinjol, Vicky Shu Curhat jadi Korban Penyalahgunaan Data Pribadi - Cumicumi",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUktmVEtlTkZqVG5fSjhHSUZoUkRJNGpjY0tZUnlHMTlOSl9vWGt2MExVZXJ3cG5ETUk0OFFZRDlsbk5aQ0ZXdXdlT2pLSmpNWTRvUGV0YmxoREFSOXJFaGRJT0J6NVRRUDhESDNXMHZoR2F3NWx1MGZkUG1NbHVldFBVRmx3N0QzWTRmV3lscnBCX3lrY2c4b2YxZ3cxdGQ3dlFGWEprOW41T2ttMlRDdlFzelJmMGJJNTRTWDJKZnJTMlVXMTZ4ZXd2cWxkQTdfRUU2QnBZZWg?oc=5"
-        },
-        {
-          "title": "Vicky Shu Kesal Diteror DC Pinjol, Singgung soal Penyalahgunaan Data Pribadi - celebrity.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcDRaNGNfYkVLR2F3TENwMTNSRU40NjE4MEsxNmxhcTdIWHhIM3pBTmtvdHhLeUNOaGVEX1ZLT3NUbkdRNjF3WGhfSVU2eHFiNE02WFVtT1N5MHNXeEhHUTBxa181UjhmcU5NZlpyY1B0YlIwUlRPeWtMYkZXd0RRZ05yekU2cXhUbUdsZm9ZZmY3Q1JqbDlsUlNjUDRpOTF5dU5VenlBQXNrX3FpZjZkbHRLclB6bTJVY0thWXVraTJ6dW1oYjllQ0ZKNHDSAcsBQVVfeXFMTzZwUF9SOGllbEItakhnY1NMLXhtYTVhN21ySUxjanBKckZ0ZXdSMHJGeUNjUmFVdXlHbTRmZjlOWWNGMXVLU2hoUUlMYnd4UkcyRGVoM0FkdkxfUmVJZko3UGlJdDRlMkQyMkZsMXctUm92TXk0Wld1R2RGc2oyY3ZOZXpvZ0VKTWE5QnpqUF83T1M5ZVE0akU5MXJ0M3R1ZG5aeEw0VE5VQW82ZFZOR2UyeFM1QVdwbWJmSnFoWjRCdFRDa3VkTXNhN2s?oc=5"
-        },
-        {
-          "title": "Vicky Shu Ngaku Diteror DC Pinjol Padahal Tak Pernah Pinjam Uang, Data Pribadi Diduga Disalahgunakan! - Adatah - Adatah",
-          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNUWx2RUl3dUEzX1pQNWg1UHB3TGQ2UTY4MHdUSEV4UVl3Q1RnNmwwZU4wSW00NG5FMVkzRDFEMlRVZ0Nyc3BGLUFmb2REVFVKZWx5NXBNV2VCMmVVZUVmVlpXRzdCNHBPb3lxYVZPRUttQzZJOEtRWFhSb195WEpPdmdwcEtRQXZXb1ZscndFeTFYRENzbzRqeXBxaHJtbFAyUTZqcFpGT1h0QV9EbmNvWWo3X2J5TXgwcmZOOFZBLVFBcUVYYkZxaFFvUUJzTGlxbHBJTEh3RzlTWFJp0gHiAUFVX3lxTE1VamVyWjhScW5WSGFBYlpnUDRkNGJwTlVsMHFSVVJ0S0M0dUJVVWxFN0pPcWNMUHJiUkNieE1FblBCMFhudXQzUUVTdVlwOFE2TTRmcjRsb2J4a2l6VzYyeDhNbzNxYTZ1ZExuak8xcllla2pTRWhxdms3ajhpS0JTSTJ3VlJkRUhuWTRfV2tXSXVwWDZDTTBNcGM5aEU1RXhlZy03U2l2ZmlYSEF1N2xWTm8yakt6MXkxeUFSZkhmY1J3SlRRR0lvWWpXTTdpT1Z5ZlNSVHpKcEl2bTNiZ3I5aFE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-864bd41fe10b",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Industri Pindar"
-      ],
-      "headline": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
-      "headlineZh": "Pindar行业利润降2.99%，OJK警示坏账风险",
-      "summaryZh": "Pindar行业利润下滑2.99%，OJK警示信贷坏账风险，属资产质量承压的行业动态。",
-      "rationale": "行业利润下滑与坏账风险，属资产质量承压",
-      "independentSourceCount": 1,
-      "domains": [
-        "investortrust.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "fa11c5b7ff826cf3"
-      ],
-      "articles": [
-        {
-          "title": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdFNZQ3hLVlBBcTZ5OXJCRUh5TlQycWp2MV9WcXkxMldBenJuYnhYRmctcHhqQW1RTlo4Mjg1aWF6SHRManBpT0IyZk9QempKSzNIVFpISUZIQWUyT2Q1ZnpRSGdaQVo3UWtrMEFoN0hzT040UEcxdzdybllXcWphejVEbG5GcVpuWFQ5NGF4VlgzQW9nZG1ZQlJQcUs2MGNZWU5KVGZfRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-f664cf723aaf",
+      "id": "llm-fcc4890d1aaf",
       "eventType": "regulatory_action",
-      "severity": 0.55,
+      "severity": 0.75,
       "entities": [
         "OJK",
-        "Pindar"
+        "CUAN",
+        "Petrindo Jaya Kreasi",
+        "DSSA",
+        "BREN"
       ],
-      "headline": "OJK Soroti Skema Tadpole Pindar — Transparansi Diperketat - https://feedberry.com/",
-      "headlineZh": "OJK要求Pindar支付结构透明化",
-      "summaryZh": "OJK就Pindar的Tadpole支付方案要求透明披露，属监管对具体业务模式的介入。",
-      "rationale": "监管对具体支付结构提出透明要求",
-      "independentSourceCount": 2,
+      "headline": "Denda Rp100 Miliar OJK ke CUAN, Petrindo Jaya Kreasi Buka Suara dan Pastikan Operasional Tetap Normal - Poros Jakarta - Poros Jakarta",
+      "headlineZh": "OJK对CUAN等开出2.1万亿盾罚单",
+      "summaryZh": "OJK就DSSA、BREN、CUAN相关股票问题开出合计2.1万亿盾罚款，CUAN称运营正常。",
+      "rationale": "监管处罚，属监管介入事件",
+      "independentSourceCount": 1,
       "domains": [
-        "feedberry.com",
-        "katadata.co.id"
+        "porosjakarta.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "0a7e513c1105d9a9",
-        "36c619312b84c2df",
-        "566f16680ef754bb"
+        "c16c5a4aa336599c",
+        "4794261d4f737799"
       ],
       "articles": [
         {
-          "title": "OJK Soroti Skema Tadpole Pindar — Transparansi Diperketat - https://feedberry.com/",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOXB1QVpyS3VqMnJHbGMySWpyQUJlem1MMVFvalJxV3U3YUdSNk9URXcwWFdwLUFNRWxKb1o3NkVHRkVzZ2x4SkpuSTZydy1zaVJ5RTEtOE5pSVh5YlNYd2FPMnJXYlktS2Y1SExOdXI2QkFrY1M2bHV2QWNXUXdfaU1GR2FqUEY5M1htTGZB?oc=5"
+          "title": "Denda Rp100 Miliar OJK ke CUAN, Petrindo Jaya Kreasi Buka Suara dan Pastikan Operasional Tetap Normal - Poros Jakarta - Poros Jakarta",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOQTZueDlFejJmamtEMG9qSzlDckk5dXBXeGotNTZ5dXNiSVZ5Rzd1aWRfNG5lX3huX1U4aGlZZHEtUDFSSTlocFhKbDNLVjl3N293Ym5pNTYxdTJ4a1pfX2xLQ0VXQlAwRVJNMFZlZ3ZpVFBqdTNWeGhPN0J1LXVQSER4dFN2QXoweTlQUElCMUhFNHkwa3p3NmMtbV9JMGJBQUhJbXQ4dTRZcDZ6c2FJUDYzZUpzdWgzSWlqZGRuczNlYVVOZlB1dmtpZXpDTHQzYkpLcWRESmpGN2lfYU1z0gHkAUFVX3lxTE1BTWlZZnFBd0FGVG5oaVJLRjZLdVExNXV6NE9Rc2Q1S1BaLWU3QlpMWnNZa2hWTGVKUkxpLWhoSjZoZmtsd2lFNndzbHBNMjhaajItckJCUUxvTWE1bDI1Q0pJckxGa1VXM2hDeDFZaVYtcHFnb3JYRTBCeXhNdV9ia3FKelI1SVYxZEU1WWdMVHBKamdNaDZTNmE3emJmZFVuMEgtSFdzQWR4Q09HSVRKREtsNGJjY1dOWkVQeFFxMjdfWE5vSTdLSHZycDFBOXEyOWJwZm9LWTBsc2xwbFlhaTZLbQ?oc=5"
         },
         {
-          "title": "OJK: Struktur Pembayaran Pindar perlu Disampaikan secara Transparan",
-          "link": "https://katadata.co.id/indepth/wawancara/6ad1fd8b5bc19/ojk-struktur-pembayaran-pindar-perlu-disampaikan-secara-transparan"
-        },
-        {
-          "title": "OJK: Struktur Pembayaran Pindar perlu Disampaikan secara Transparan - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPREJwcWVZOEwyaVZDMTNkbUR4eFFZbEpfX2hZYUxPWVhVUHFmOGNBREdMWl94RG9QTERCcEhfSFlsUUtIM01VUHd3QVZzbVdlNlhjbGZtbUstMnZZTXZkLWFSQzRKSFh6M2NQeXJEbGJNNEstRkhtRDNDN21hd3RWemhydHZBSFJlc2ZBUzFBUGRTZk0wdVFNajBUTV9vU0hOV1RrX09rd2hQdDVzSXE0MTZBOTdvQXNLSDJ3aG9B0gHDAUFVX3lxTFB0TFNZb2ZWeDBiR3VxdTFRa0t6aXU1QmRrdzZXQWRPd091am12SFNBM2JvX0pkeEQ0aE53aE9WZ3lTUy1zbmdjVHZIRURqYTJOMU9YRi1ULVV2SkY1cmdxbWxJRmFZY2NORkZQcTJxVzdDUW5idDRoakVLc3VJeW9TSXBTSzhNUUgwaG5XV0tFZnVRYjJ0NExka3ppNEdKUUtHZC1sUVItTjFZM2R3dTYtSjZlb1dxclU5LWNycVJDQXVyYw?oc=5"
+          "title": "OJK Jatuhkan Denda Rp2,1 Triliun Terkait Saham DSSA, BREN, dan CUAN, Ini Rinciannya - Poros Jakarta - Poros Jakarta",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbU9yNVdBZk94QlVodHJ6aEVvS1JsSVF3dndiUVpjUTlTX2F5S3p2b2VaRzlwNHVGdDh2bDBpV1ZKYzE3WlN4QXBIX2lHWGJTcFpuYVd0NVJBbnUwNFBaeUdqM2g4SlhBbUV4Z3FiZXQ2ZWpOb0xGRWpmcGIyOUV5UU05SElMUTlBdExZZDNZaVVESHo3WTdPQ1N0RUVMcWdNdGE0VUZNdG81UVVQWFc3b29sUkJZX0FPeVNnaGtNT2w3dmxKdjlLQ9IByAFBVV95cUxNbU9yNVdBZk94QlVodHJ6aEVvS1JsSVF3dndiUVpjUTlTX2F5S3p2b2VaRzlwNHVGdDh2bDBpV1ZKYzE3WlN4QXBIX2lHWGJTcFpuYVd0NVJBbnUwNFBaeUdqM2g4SlhBbUV4Z3FiZXQ2ZWpOb0xGRWpmcGIyOUV5UU05SElMUTlBdExZZDNZaVVESHo3WTdPQ1N0RUVMcWdNdGE0VUZNdG81UVVQWFc3b29sUkJZX0FPeVNnaGtNT2w3dmxKdjlLQw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
@@ -262,28 +144,70 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 28,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 15,
+    "candidateCount": 8,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 3,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 28
+      "ok": 8
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-d599ff4b293c",
+      "id": "llm-cf05e8f57712",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Vicky Shu",
+        "Winda Puspita",
+        "非法催收方"
+      ],
+      "headline": "6 Artis Diteror Debt Collector Pinjol Padahal Tak Pernah Pinjam Vicky Shu dan Winda Puspita Sampai Kehilangan - Mantra Sukabumi",
+      "headlineZh": "多名艺人未借款却遭网贷催收骚扰",
+      "summaryZh": "Vicky Shu、Winda Puspita 等6名艺人称从未借款却遭网贷催收恐吓，属消费者受害事件。",
+      "rationale": "多名受害人公开指控催收骚扰",
+      "independentSourceCount": 2,
+      "domains": [
+        "hot.detik.com",
+        "mantrasukabumi.pikiran-rakyat.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "87c7456a3bec9ff3",
+        "1dbbc96df9a5c8ad"
+      ],
+      "articles": [
+        {
+          "title": "6 Artis Diteror Debt Collector Pinjol Padahal Tak Pernah Pinjam Vicky Shu dan Winda Puspita Sampai Kehilangan - Mantra Sukabumi",
+          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxPN3EyaXdWUmhnZnM3OWpSSi1xSGdDMjQxN1A4S1dfeThoYVZNZWZDbldIcmZWV2hBTlpJSnN0R0c5ZzlmQmcyVkhJOEdCRUlvTDdudGJSYlZjOGtxbDNBNlc3NmJpZUlpUklOTjVFbW00aXZNNjIzQ1BFb1VSRkJFXzhUZEt0ZllVZVpCX0ZIeXJnRzVPbmR3S3B0emZGcHNVeWZKcUxjQzR0LWQ5dlE0WnZNWHBCQ3JWMEZoejQ2dEw3SXpFVDdhYmNjb2VJTVh5QTBLS1djeHZHaDBKRlhTRVR0amwxX0tnT1NYSUJpU1FMd2tTVk9GdFQ0bXFjRjVLMkdmUTlxcEpGRENTMGJzT9IBkAJBVV95cUxPN3EyaXdWUmhnZnM3OWpSSi1xSGdDMjQxN1A4S1dfeThoYVZNZWZDbldIcmZWV2hBTlpJSnN0R0c5ZzlmQmcyVkhJOEdCRUlvTDdudGJSYlZjOGtxbDNBNlc3NmJpZUlpUklOTjVFbW00aXZNNjIzQ1BFb1VSRkJFXzhUZEt0ZllVZVpCX0ZIeXJnRzVPbmR3S3B0emZGcHNVeWZKcUxjQzR0LWQ5dlE0WnZNWHBCQ3JWMEZoejQ2dEw3SXpFVDdhYmNjb2VJTVh5QTBLS1djeHZHaDBKRlhTRVR0amwxX0tnT1NYSUJpU1FMd2tTVk9GdFQ0bXFjRjVLMkdmUTlxcEpGRENTMGJzTw?oc=5"
+        },
+        {
+          "title": "Vicky Shu Resah Tiba-tiba Ditagih Pinjol - detikHOT",
+          "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNRFpwLS1aMzdrM0gtM2pIOHNxVHBiRWt0a0dLNy13ZFJpS2ZZM09oRGRLMzdjMjBVMGV4dnpSeEVWSjlUd05wZGhSenhEMWI2eUFtRlh0YUlQeW05c0lDRWtzTS1rUmE3YmloNlhJeklFOEJFRHNrenVqRmpld3FnZWY3b2PSAYoBQVVfeXFMTnBoVmJ6aVIzVTd2NVl6ZlpaR1FPQ2NROS15WFJfTWZGeHlLWkdrQ1hEcjh3TmZaZHNtT1VHWFJHU2RqTjB5N251dmtOT0dNYXdwUXlWcW50OWNfTlVuaG1TMmJUYURVQ0stNXRNSEhTRzNfZmV0Zl9QMFJKZHdRb2lVM3lNWk1YRktn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a64c048436a7",
       "eventType": "fraud_or_illegal_practice",
       "severity": 0.75,
       "entities": [
         "Polres Gresik",
-        "Debt Collector Pinjol Ilegal"
+        "非法网贷催收员"
       ],
       "headline": "Debt Collector Pinjol Ilegal Dibekuk Polres Gresik, Ancam Korban Pakai Foto Rekayasa Asusila - ajttv.com",
-      "headlineZh": "格雷西克警方逮捕非法网贷催收员",
-      "summaryZh": "格雷西克警方逮捕一名非法网贷催收员，其用合成不雅照片威胁受害者，属警方立案的催收伤害案。",
-      "rationale": "警方逮捕具体嫌疑人，属已立案事件",
+      "headlineZh": "Gresik警方逮捕非法网贷催收员",
+      "summaryZh": "Gresik警方逮捕一名非法网贷催收员，其用合成不雅照威胁受害人，属警方立案的催收伤害案。",
+      "rationale": "警方立案抓捕，涉刑事威胁",
       "independentSourceCount": 1,
       "domains": [
         "ajttv.com"
@@ -308,237 +232,77 @@
       }
     },
     {
-      "id": "llm-70f6c2e8a7f9",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Debt Collector Pinjol",
-        "6 Artis"
-      ],
-      "headline": "6 Artis Diteror Debt Collector Pinjol - celebrity.okezone.com",
-      "headlineZh": "6名艺人遭网贷催收骚扰",
-      "summaryZh": "6名艺人遭网贷催收人员骚扰恐吓，属具体消费者受害事件，但影响局部。",
-      "rationale": "具体受害者遭催收骚扰，属消费者受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "celebrity.okezone.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "2ab8bc213fa7d5c8"
-      ],
-      "articles": [
-        {
-          "title": "6 Artis Diteror Debt Collector Pinjol - celebrity.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNZERpelZSLWR6ZURDbDJ0al8zQUM1R3pvT292Y1lFekluZ0pTSXhxanRocV83NGMxLVlxVmZ2SW55b3VidkhiVmFhdko0b3g5dVlZWmRDMDFBU1MtWEdCN2UzLWZSaGRYVWhQcGN4T05hWlpwY2ZLaGZZdTI0QUZ2d1ZRQnBSQXJ5YV9DMGthUEw4bzJkQWI3MndB0gGYAUFVX3lxTE5SQVEzVkZpRk5qT0IxNVl6YUJhdFI0NzMtV0hFTjVLNktqLWpTUnU4Mk1jS3NLSVAzQXJzQmtabWw5NGgzTVFnX1VXYlRWUDlveENkYTBGZ2lQLU0wTkhsSE5FcS1VQWpwemFVcF81aUFiSWpzWGp6M3FKeGFNcl9QNGtZU0wwRkFSNThUWjlZRnVGQm9xa2tY?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-a0696219c647",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "Polda Jateng",
-        "Debt Collector",
-        "Warga Jepang Kudus"
-      ],
-      "headline": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
-      "headlineZh": "库杜斯催收与居民冲突，中爪哇警方查处",
-      "summaryZh": "库杜斯发生催收人员与日本居民冲突，中爪哇警长揭露以催收为名的流氓行为，属具体执法事件。",
-      "rationale": "警方介入查处具体催收冲突事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "cirebonraya.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e2dcdf060e49b748"
-      ],
-      "articles": [
-        {
-          "title": "Bentrok Debt Collector Lawan Warga Jepang di Kudus, Kapolda Jateng Bongkar Praktik Premanisme Berkedok Penagihan - Cirebon Raya - Cirebon Raya",
-          "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWatIB-AFBVV95cUxPdlZoeWtiMXEzc0xBQlNzN0d3WWxHc1o0SmlNSVp0Y3lSSE5veXF3UEVBNlFGTW81YU53cTRTajIyTkFOMDdQeThwYW5welF3c3czSzBwT1RYOXZKYUNHRWRZdjVoR3prT05IQU5LTmJ1a3o5R1pELUpvaWQ2OFVURUk0S3ZMNjBveVVNU0tvWVBhTGVuVHYyWHA3S25sbDRrdy1adk5mdEdGOTVkT1Y4ZlJick5TYzhqVTlBUVMtQmI3bHRwVVo2VHR3V0ZhNkMwcTVDbC0xS2ExMzZxQ3VzTm52TUs1Qk9DNkZtOWdaWGpSV25aVExWag?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-805d8be5f3a5",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Vicky Shu",
-        "Debt Collector Pinjol"
-      ],
-      "headline": "Ditagih Pinjol, Vicky Shu Curhat jadi Korban Penyalahgunaan Data Pribadi - Cumicumi",
-      "headlineZh": "艺人Vicky Shu遭网贷催收并指数据被滥用",
-      "summaryZh": "艺人Vicky Shu称未借款却遭网贷催收骚扰，指个人数据被滥用，属具体消费者受害事件。",
-      "rationale": "具体公众人物遭催收骚扰，属消费者受害",
-      "independentSourceCount": 3,
-      "domains": [
-        "adatah.com",
-        "celebrity.okezone.com",
-        "cumicumi.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "c4285be4c890837e",
-        "ee4e0145ce7d637c",
-        "9b807dfffe92938d"
-      ],
-      "articles": [
-        {
-          "title": "Ditagih Pinjol, Vicky Shu Curhat jadi Korban Penyalahgunaan Data Pribadi - Cumicumi",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUktmVEtlTkZqVG5fSjhHSUZoUkRJNGpjY0tZUnlHMTlOSl9vWGt2MExVZXJ3cG5ETUk0OFFZRDlsbk5aQ0ZXdXdlT2pLSmpNWTRvUGV0YmxoREFSOXJFaGRJT0J6NVRRUDhESDNXMHZoR2F3NWx1MGZkUG1NbHVldFBVRmx3N0QzWTRmV3lscnBCX3lrY2c4b2YxZ3cxdGQ3dlFGWEprOW41T2ttMlRDdlFzelJmMGJJNTRTWDJKZnJTMlVXMTZ4ZXd2cWxkQTdfRUU2QnBZZWg?oc=5"
-        },
-        {
-          "title": "Vicky Shu Kesal Diteror DC Pinjol, Singgung soal Penyalahgunaan Data Pribadi - celebrity.okezone.com",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOcDRaNGNfYkVLR2F3TENwMTNSRU40NjE4MEsxNmxhcTdIWHhIM3pBTmtvdHhLeUNOaGVEX1ZLT3NUbkdRNjF3WGhfSVU2eHFiNE02WFVtT1N5MHNXeEhHUTBxa181UjhmcU5NZlpyY1B0YlIwUlRPeWtMYkZXd0RRZ05yekU2cXhUbUdsZm9ZZmY3Q1JqbDlsUlNjUDRpOTF5dU5VenlBQXNrX3FpZjZkbHRLclB6bTJVY0thWXVraTJ6dW1oYjllQ0ZKNHDSAcsBQVVfeXFMTzZwUF9SOGllbEItakhnY1NMLXhtYTVhN21ySUxjanBKckZ0ZXdSMHJGeUNjUmFVdXlHbTRmZjlOWWNGMXVLU2hoUUlMYnd4UkcyRGVoM0FkdkxfUmVJZko3UGlJdDRlMkQyMkZsMXctUm92TXk0Wld1R2RGc2oyY3ZOZXpvZ0VKTWE5QnpqUF83T1M5ZVE0akU5MXJ0M3R1ZG5aeEw0VE5VQW82ZFZOR2UyeFM1QVdwbWJmSnFoWjRCdFRDa3VkTXNhN2s?oc=5"
-        },
-        {
-          "title": "Vicky Shu Ngaku Diteror DC Pinjol Padahal Tak Pernah Pinjam Uang, Data Pribadi Diduga Disalahgunakan! - Adatah - Adatah",
-          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNUWx2RUl3dUEzX1pQNWg1UHB3TGQ2UTY4MHdUSEV4UVl3Q1RnNmwwZU4wSW00NG5FMVkzRDFEMlRVZ0Nyc3BGLUFmb2REVFVKZWx5NXBNV2VCMmVVZUVmVlpXRzdCNHBPb3lxYVZPRUttQzZJOEtRWFhSb195WEpPdmdwcEtRQXZXb1ZscndFeTFYRENzbzRqeXBxaHJtbFAyUTZqcFpGT1h0QV9EbmNvWWo3X2J5TXgwcmZOOFZBLVFBcUVYYkZxaFFvUUJzTGlxbHBJTEh3RzlTWFJp0gHiAUFVX3lxTE1VamVyWjhScW5WSGFBYlpnUDRkNGJwTlVsMHFSVVJ0S0M0dUJVVWxFN0pPcWNMUHJiUkNieE1FblBCMFhudXQzUUVTdVlwOFE2TTRmcjRsb2J4a2l6VzYyeDhNbzNxYTZ1ZExuak8xcllla2pTRWhxdms3ajhpS0JTSTJ3VlJkRUhuWTRfV2tXSXVwWDZDTTBNcGM5aEU1RXhlZy03U2l2ZmlYSEF1N2xWTm8yakt6MXkxeUFSZkhmY1J3SlRRR0lvWWpXTTdpT1Z5ZlNSVHpKcEl2bTNiZ3I5aFE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-864bd41fe10b",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Industri Pindar"
-      ],
-      "headline": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
-      "headlineZh": "Pindar行业利润降2.99%，OJK警示坏账风险",
-      "summaryZh": "Pindar行业利润下滑2.99%，OJK警示信贷坏账风险，属资产质量承压的行业动态。",
-      "rationale": "行业利润下滑与坏账风险，属资产质量承压",
-      "independentSourceCount": 1,
-      "domains": [
-        "investortrust.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "fa11c5b7ff826cf3"
-      ],
-      "articles": [
-        {
-          "title": "Laba Industri Pindar Susut 2,99%, OJK Soroti Risiko Kredit Macet - InvestorTrust",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdFNZQ3hLVlBBcTZ5OXJCRUh5TlQycWp2MV9WcXkxMldBenJuYnhYRmctcHhqQW1RTlo4Mjg1aWF6SHRManBpT0IyZk9QempKSzNIVFpISUZIQWUyT2Q1ZnpRSGdaQVo3UWtrMEFoN0hzT040UEcxdzdybllXcWphejVEbG5GcVpuWFQ5NGF4VlgzQW9nZG1ZQlJQcUs2MGNZWU5KVGZfRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-f664cf723aaf",
+      "id": "llm-fcc4890d1aaf",
       "eventType": "regulatory_action",
-      "severity": 0.55,
+      "severity": 0.75,
       "entities": [
         "OJK",
-        "Pindar"
+        "CUAN",
+        "Petrindo Jaya Kreasi",
+        "DSSA",
+        "BREN"
       ],
-      "headline": "OJK Soroti Skema Tadpole Pindar — Transparansi Diperketat - https://feedberry.com/",
-      "headlineZh": "OJK要求Pindar支付结构透明化",
-      "summaryZh": "OJK就Pindar的Tadpole支付方案要求透明披露，属监管对具体业务模式的介入。",
-      "rationale": "监管对具体支付结构提出透明要求",
-      "independentSourceCount": 2,
+      "headline": "Denda Rp100 Miliar OJK ke CUAN, Petrindo Jaya Kreasi Buka Suara dan Pastikan Operasional Tetap Normal - Poros Jakarta - Poros Jakarta",
+      "headlineZh": "OJK对CUAN等开出2.1万亿盾罚单",
+      "summaryZh": "OJK就DSSA、BREN、CUAN相关股票问题开出合计2.1万亿盾罚款，CUAN称运营正常。",
+      "rationale": "监管处罚，属监管介入事件",
+      "independentSourceCount": 1,
       "domains": [
-        "feedberry.com",
-        "katadata.co.id"
+        "porosjakarta.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "0a7e513c1105d9a9",
-        "36c619312b84c2df",
-        "566f16680ef754bb"
+        "c16c5a4aa336599c",
+        "4794261d4f737799"
       ],
       "articles": [
         {
-          "title": "OJK Soroti Skema Tadpole Pindar — Transparansi Diperketat - https://feedberry.com/",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOXB1QVpyS3VqMnJHbGMySWpyQUJlem1MMVFvalJxV3U3YUdSNk9URXcwWFdwLUFNRWxKb1o3NkVHRkVzZ2x4SkpuSTZydy1zaVJ5RTEtOE5pSVh5YlNYd2FPMnJXYlktS2Y1SExOdXI2QkFrY1M2bHV2QWNXUXdfaU1GR2FqUEY5M1htTGZB?oc=5"
+          "title": "Denda Rp100 Miliar OJK ke CUAN, Petrindo Jaya Kreasi Buka Suara dan Pastikan Operasional Tetap Normal - Poros Jakarta - Poros Jakarta",
+          "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOQTZueDlFejJmamtEMG9qSzlDckk5dXBXeGotNTZ5dXNiSVZ5Rzd1aWRfNG5lX3huX1U4aGlZZHEtUDFSSTlocFhKbDNLVjl3N293Ym5pNTYxdTJ4a1pfX2xLQ0VXQlAwRVJNMFZlZ3ZpVFBqdTNWeGhPN0J1LXVQSER4dFN2QXoweTlQUElCMUhFNHkwa3p3NmMtbV9JMGJBQUhJbXQ4dTRZcDZ6c2FJUDYzZUpzdWgzSWlqZGRuczNlYVVOZlB1dmtpZXpDTHQzYkpLcWRESmpGN2lfYU1z0gHkAUFVX3lxTE1BTWlZZnFBd0FGVG5oaVJLRjZLdVExNXV6NE9Rc2Q1S1BaLWU3QlpMWnNZa2hWTGVKUkxpLWhoSjZoZmtsd2lFNndzbHBNMjhaajItckJCUUxvTWE1bDI1Q0pJckxGa1VXM2hDeDFZaVYtcHFnb3JYRTBCeXhNdV9ia3FKelI1SVYxZEU1WWdMVHBKamdNaDZTNmE3emJmZFVuMEgtSFdzQWR4Q09HSVRKREtsNGJjY1dOWkVQeFFxMjdfWE5vSTdLSHZycDFBOXEyOWJwZm9LWTBsc2xwbFlhaTZLbQ?oc=5"
         },
         {
-          "title": "OJK: Struktur Pembayaran Pindar perlu Disampaikan secara Transparan",
-          "link": "https://katadata.co.id/indepth/wawancara/6ad1fd8b5bc19/ojk-struktur-pembayaran-pindar-perlu-disampaikan-secara-transparan"
-        },
-        {
-          "title": "OJK: Struktur Pembayaran Pindar perlu Disampaikan secara Transparan - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPREJwcWVZOEwyaVZDMTNkbUR4eFFZbEpfX2hZYUxPWVhVUHFmOGNBREdMWl94RG9QTERCcEhfSFlsUUtIM01VUHd3QVZzbVdlNlhjbGZtbUstMnZZTXZkLWFSQzRKSFh6M2NQeXJEbGJNNEstRkhtRDNDN21hd3RWemhydHZBSFJlc2ZBUzFBUGRTZk0wdVFNajBUTV9vU0hOV1RrX09rd2hQdDVzSXE0MTZBOTdvQXNLSDJ3aG9B0gHDAUFVX3lxTFB0TFNZb2ZWeDBiR3VxdTFRa0t6aXU1QmRrdzZXQWRPd091am12SFNBM2JvX0pkeEQ0aE53aE9WZ3lTUy1zbmdjVHZIRURqYTJOMU9YRi1ULVV2SkY1cmdxbWxJRmFZY2NORkZQcTJxVzdDUW5idDRoakVLc3VJeW9TSXBTSzhNUUgwaG5XV0tFZnVRYjJ0NExka3ppNEdKUUtHZC1sUVItTjFZM2R3dTYtSjZlb1dxclU5LWNycVJDQXVyYw?oc=5"
+          "title": "OJK Jatuhkan Denda Rp2,1 Triliun Terkait Saham DSSA, BREN, dan CUAN, Ini Rinciannya - Poros Jakarta - Poros Jakarta",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbU9yNVdBZk94QlVodHJ6aEVvS1JsSVF3dndiUVpjUTlTX2F5S3p2b2VaRzlwNHVGdDh2bDBpV1ZKYzE3WlN4QXBIX2lHWGJTcFpuYVd0NVJBbnUwNFBaeUdqM2g4SlhBbUV4Z3FiZXQ2ZWpOb0xGRWpmcGIyOUV5UU05SElMUTlBdExZZDNZaVVESHo3WTdPQ1N0RUVMcWdNdGE0VUZNdG81UVVQWFc3b29sUkJZX0FPeVNnaGtNT2w3dmxKdjlLQ9IByAFBVV95cUxNbU9yNVdBZk94QlVodHJ6aEVvS1JsSVF3dndiUVpjUTlTX2F5S3p2b2VaRzlwNHVGdDh2bDBpV1ZKYzE3WlN4QXBIX2lHWGJTcFpuYVd0NVJBbnUwNFBaeUdqM2g4SlhBbUV4Z3FiZXQ2ZWpOb0xGRWpmcGIyOUV5UU05SElMUTlBdExZZDNZaVVESHo3WTdPQ1N0RUVMcWdNdGE0VUZNdG81UVVQWFc3b29sUkJZX0FPeVNnaGtNT2w3dmxKdjlLQw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
+      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 30,
+    "articleCount48h": 9,
     "socialItemCount48h": 20
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 581,
-    "classifiedCount": 130,
-    "irrelevantDropped": 110,
+    "inputCount": 578,
+    "classifiedCount": 141,
+    "irrelevantDropped": 99,
     "model": "deepseek-chat",
-    "fallbackCount": 341,
+    "fallbackCount": 338,
     "labelCounts": {
-      "NEG": 42,
-      "MIX": 34,
-      "POS": 54
+      "NEG": 38,
+      "MIX": 35,
+      "POS": 68
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
