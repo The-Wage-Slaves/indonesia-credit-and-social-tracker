@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-18T06:35:58.416411+00:00",
+  "generatedAt": "2026-10-19T06:50:01.698093+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-18",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-19",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **市场失序(汇股债)｜OJK对BREN、CUAN等开出2.1万亿盾罚单，印尼股市面临降级风险**\n严重度 0.75｜2个独立来源（bbc.com、katadata.co.id）｜影响支柱：currency\n\n🟠 **关键官员更替/清洗｜Klaten县长在KPK突击逮捕行动中被捕，PDIP宣布将予以开除**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜KPK就BNPB赈灾资金采购腐败案展开突击逮捕，认定四名嫌疑人但未适用死刑条款**\n严重度 0.55｜3个独立来源（kanalindonesia.com、monitorpos）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜印尼政府将清真认证强制期限推迟至2028年10月，MUI表示不满**\n严重度 0.55｜2个独立来源（liputan6.com、news.republika.co.id）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔺 **市场失序(汇股债)｜印尼股市连续暴跌，IHSG跌破5000点，多只蓝筹股触及跌停，市值年内缩水45.5%**\n严重度 0.90｜1个独立来源（katadata.co.id）｜影响支柱：currency\n\n🔴 **市场失序(汇股债)｜印尼盾兑美元跌破18000关口，全球局势压力推动卢比走弱**\n严重度 0.75｜2个独立来源（ekonomi.republika.co.id、katadata.co.id）｜影响支柱：currency\n\n🔺 **市场失序(汇股债)｜印尼证交所与MSCI会面澄清降级至独立市场风险，市场担忧指数被剔除**\n严重度 0.75｜1个独立来源（katadata.co.id）｜影响支柱：currency\n\n🟠 **仓促立法/政策骤变｜印尼大选候选人学历要求条款在PKPU中引发争议，国会第二委员会准备评估**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 1 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-18:normal:red:success"
+    "decisionId": "daily:2026-10-19:normal:red:success"
   },
   "feishu": "sent"
 }
