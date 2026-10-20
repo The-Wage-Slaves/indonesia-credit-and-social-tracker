@@ -929,5 +929,93 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-10-20",
+    "version": 3,
+    "heat": 70.9,
+    "suggested_score": 38,
+    "opposition": {
+      "status": "ok",
+      "rate": 40.1,
+      "detail": "250条中政治条目157条(浓度63%)，反对63/中性74/支持20 → 总反对率 40.1%（分侧: 民间YouTube 56% · 论坛Kaskus 17% · 媒体RSS 20%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "ratio_street": 9.127559055118112,
+          "ratio_anger": 1.5309033280507132,
+          "per_kw": {
+            "demo hari ini": 58,
+            "demonstrasi": 3,
+            "unjuk rasa": 2,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 38,
+            "kejaksaan": 27,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 18
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 29.1,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 3,
+          "share": 14.537546846805164,
+          "examples": [
+            "Capres Potensial 2029! Elektabilitas Gibran Diatas Prabowo",
+            "Wartawan Lagi Liput Demo Karhutla Malah Dikeroyok Ormas, Kok Bisa?",
+            "Ikan Bilih, Rekomendasi Menu MBG di Wilayah Sumatra!!"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 25.0,
+        "raw": {
+          "n_searched": 139,
+          "n_big": 10
+        }
+      },
+      "gdelt_vol": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 69.6,
+        "raw": {
+          "avg_tone7": -4.963085714285714
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "total": 152,
+          "matched": 18,
+          "share": 11.842105263157894,
+          "examples": [
+            "[ANTARA Top News] Italia kerahkan 500 tentara ke Milan di tengah kerusuhan",
+            "[ANTARA Top News] Polda Metro Jaya imbau warga hindari sejumlah lokasi unjuk rasa",
+            "[ANTARA Top News] Daftar rute alternatif di enam kawasan saat unjuk rasa",
+            "[ANTARA Top News] Polisi siapkan rekayasa lalu lintas saat unjuk rasa di Monas-DPR",
+            "[ANTARA Top News] Macron tolak pengunduran diri Mendagri Nunez usai kerusuhan Prancis"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
