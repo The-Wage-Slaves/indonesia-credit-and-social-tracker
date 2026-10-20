@@ -1,36 +1,83 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-19",
+  "date": "2026-10-20",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 5.5,
-    "socialDailyVolumeRisk": 23.5,
-    "negativeSocialShare": 26.8,
+    "newsDailyVolumeRisk": 27.2,
+    "socialDailyVolumeRisk": 17.6,
+    "negativeSocialShare": 34.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=2; prior-7d median=24.0; robust z=-2.97",
-    "socialVolume": "today=7; prior-7d median=41.0; robust z=-1.76"
+    "newsVolume": "today=4; prior-7d median=22.0; robust z=-1.52",
+    "socialVolume": "today=4; prior-7d median=36.0; robust z=-2.16"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-9cc3349be052",
+      "id": "llm-89d6cbbb6a4e",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "Pindar",
+        "Pinjol行业"
+      ],
+      "headline": "Sinyal Bahaya, Keuangan Rumah Tangga Tertekan, Risiko Gagal Bayar Pinjol Dekati Ambang 5% - BertuahPos",
+      "headlineZh": "Pindar网贷TWP90逼近5%",
+      "summaryZh": "报道称P2P网贷逾期率TWP90接近5%警戒线，家庭财务承压，资产质量风险上升。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 3,
+      "domains": [
+        "bertuahpos.com",
+        "infobanknews.com",
+        "validnews.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "d4b762b1a14655d3",
+        "2200878f12ae1916",
+        "fdc6c01f375c12d4"
+      ],
+      "articles": [
+        {
+          "title": "Sinyal Bahaya, Keuangan Rumah Tangga Tertekan, Risiko Gagal Bayar Pinjol Dekati Ambang 5% - BertuahPos",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeTcyazNuM2cydUxCRkFHd2hiNjM2TDhVQnkwYjE2NllRNU9CWmZ2TXBYbmZRU0hSOUNPeEJERDhsVFMyb1pGQWw0eDgyUUxTbkZUem1iVE9zYTdmWnM0MVR5b2NDTXZhSEhMQ2RBNnBHNTl6TEdIcS1Qb3FXV09hSGV0T1JwUW5fVXc?oc=5"
+        },
+        {
+          "title": "Awas, Angka Gagal Bayar Pinjol Meresahkan - Validnews",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSDJXa3lpUzRLY2E4bFk1VEFiQzFYbWd0Ym1TM3h3QjVaaVdzM29SYTVQamdxR211dWtzOW9leWNneFBJXzl6ZXFCaHJuc2hRcEhDdzVPc0ZoMlhKb1d0bXBjaU52N3BEak5ETFdpS2YyenhIRTdUODBsN2VscWNnMUtoWVFJT1daanFaWVVPUElHcWhN?oc=5"
+        },
+        {
+          "title": "TWP90 Pindar Dekati 5 Persen, Tekanan Keuangan Rumah Tangga Meningkat - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTm9fYjN3WmZ5ZUNSdTRrb1JrQlJtSjdVNGpBQXhLcHZjRXJ2UnZvMzRMckZTRm5pWnZBM054TnBUSHdERDJOMFQzd1llRm15M0NOSm5SMFM4QWRsdFZnaEtzWFpVTzd3Vy1LdnpMRWg2S3d3aXJRcUtKZlVPb0RQTnBRWEFGZENlcXVTYkRLV1NsMjlteDZTRg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-63ef1f48ab03",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
         "Vicky Shu",
-        "非法网贷平台"
+        "非法网贷催收方"
       ],
       "headline": "Data Pribadi Dicuri untuk Pinjol Ilegal, Vicky Shu Ngamuk Diteror dan Diintimidasi Debt Collector! - Pikiran-Rakyat.com",
       "headlineZh": "艺人Vicky Shu遭非法网贷催收恐吓",
-      "summaryZh": "艺人Vicky Shu个人数据被非法网贷盗用，遭催收人员恐吓威胁，属消费者受害个案。",
-      "rationale": "具体个人受害事件，有当事人与催收行为",
+      "summaryZh": "艺人Vicky Shu个人数据被盗用于非法网贷，遭催收恐吓与威胁，属消费者受害个案。",
+      "rationale": "公众人物遭非法催收恐吓，具体受害事件",
       "independentSourceCount": 1,
       "domains": [
         "jakartakota.pikiran-rakyat.com"
@@ -43,6 +90,41 @@
         {
           "title": "Data Pribadi Dicuri untuk Pinjol Ilegal, Vicky Shu Ngamuk Diteror dan Diintimidasi Debt Collector! - Pikiran-Rakyat.com",
           "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOZUExU01OR3Z5REhkcmVJeGpVVUVUZkNJbE5ERDFSMG0wSmZsZzE1eDBNSm11eXo4NVlSMU5oaFZxVHdQNGN0QkFRb2I4NUJCei1KUE5rdDFabTUtWnNzMHZtNDVjTThqT19EemFMMGF3b0hEcFJSRGlGWHJ0M213SE4yYUpaekh3SW5rY1o0R0k4TjdsTG5NZGpxVFlicE1ndF9ILTBHX2FuZkZGN0NLTFVoYXBsNVFGTWNUQ2ZwNzFTOXhSZWd3dnpob3BVLWRGd2hUSmQ5Y25GeElVcWEwZm1MN0RMaU1vclBNbS0tMNIB9AFBVV95cUxQXzJiX3JQR3lfUDJuMWJaNmlpUk9HT2hlbFVZNzM1aERHU0RvaUxnSVROUHNFOFpRVmF5TTJIVDlWWTBxRmMtbUc0aDRYZW1ycjdjMVY3Nk02eVdiLWVrLTdoX1RBZ3RqNW9hS3pZREluWkl1TVJ0ZnBDSk8wSXZiYmFVUTlMSVlHdS1iaVZ4Y2g0MjR1TmJldFdpTUpWcGFNYXN4ekItTEN3R3NPLUt1WVhXRzVEZ3FHckJyMFdLd3l4VnRQTFdHMVFZSmZyUXRwNFYzbEQ1V1FVanhuRzJ1S0J1LXFzWGdESTliaEJIVmI5V1dz?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-860707e13d53",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "OJK Ungkap Peran Tim Khusus Pindar dalam Upaya Pengembalian Dana Lender - InvestorTrust",
+      "headlineZh": "OJK专组追讨Pindar出借人资金",
+      "summaryZh": "OJK披露专责小组在P2P网贷领域协助出借人追回资金，属监管介入行动。",
+      "rationale": "监管专组介入资金追讨，具体行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ff2e6e9d6e9596ad"
+      ],
+      "articles": [
+        {
+          "title": "OJK Ungkap Peran Tim Khusus Pindar dalam Upaya Pengembalian Dana Lender - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeFZkUjJfNkNSZXU1eG1PNHFTSzdrQXJWTXp4bFhpejMtbFMxekNQcXFYUFlpMlJpcFF5ODdYSmNTZXVyMHZ0WW9vazE3a0tBWEk4S3JDWDI3Tmt4VVF5UFEwai1OR2ZoVHE0OXUwY21heUR4dkd5Z2FFWWJkeFZ2cXMtdGtLUjYwNmhmZEt0MGNiVXdqeFZ4UEpGemdXTmI5UnhPVGdaSVpjaWxuYUhma1lITQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -59,28 +141,75 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 12,
-    "eventGroupCount": 1,
-    "rejectedNonEvents": 3,
+    "candidateCount": 21,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 12
+      "ok": 21
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-9cc3349be052",
+      "id": "llm-89d6cbbb6a4e",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "Pindar",
+        "Pinjol行业"
+      ],
+      "headline": "Sinyal Bahaya, Keuangan Rumah Tangga Tertekan, Risiko Gagal Bayar Pinjol Dekati Ambang 5% - BertuahPos",
+      "headlineZh": "Pindar网贷TWP90逼近5%",
+      "summaryZh": "报道称P2P网贷逾期率TWP90接近5%警戒线，家庭财务承压，资产质量风险上升。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 3,
+      "domains": [
+        "bertuahpos.com",
+        "infobanknews.com",
+        "validnews.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "d4b762b1a14655d3",
+        "2200878f12ae1916",
+        "fdc6c01f375c12d4"
+      ],
+      "articles": [
+        {
+          "title": "Sinyal Bahaya, Keuangan Rumah Tangga Tertekan, Risiko Gagal Bayar Pinjol Dekati Ambang 5% - BertuahPos",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQeTcyazNuM2cydUxCRkFHd2hiNjM2TDhVQnkwYjE2NllRNU9CWmZ2TXBYbmZRU0hSOUNPeEJERDhsVFMyb1pGQWw0eDgyUUxTbkZUem1iVE9zYTdmWnM0MVR5b2NDTXZhSEhMQ2RBNnBHNTl6TEdIcS1Qb3FXV09hSGV0T1JwUW5fVXc?oc=5"
+        },
+        {
+          "title": "Awas, Angka Gagal Bayar Pinjol Meresahkan - Validnews",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSDJXa3lpUzRLY2E4bFk1VEFiQzFYbWd0Ym1TM3h3QjVaaVdzM29SYTVQamdxR211dWtzOW9leWNneFBJXzl6ZXFCaHJuc2hRcEhDdzVPc0ZoMlhKb1d0bXBjaU52N3BEak5ETFdpS2YyenhIRTdUODBsN2VscWNnMUtoWVFJT1daanFaWVVPUElHcWhN?oc=5"
+        },
+        {
+          "title": "TWP90 Pindar Dekati 5 Persen, Tekanan Keuangan Rumah Tangga Meningkat - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNTm9fYjN3WmZ5ZUNSdTRrb1JrQlJtSjdVNGpBQXhLcHZjRXJ2UnZvMzRMckZTRm5pWnZBM054TnBUSHdERDJOMFQzd1llRm15M0NOSm5SMFM4QWRsdFZnaEtzWFpVTzd3Vy1LdnpMRWg2S3d3aXJRcUtKZlVPb0RQTnBRWEFGZENlcXVTYkRLV1NsMjlteDZTRg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-63ef1f48ab03",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
         "Vicky Shu",
-        "非法网贷平台"
+        "非法网贷催收方"
       ],
       "headline": "Data Pribadi Dicuri untuk Pinjol Ilegal, Vicky Shu Ngamuk Diteror dan Diintimidasi Debt Collector! - Pikiran-Rakyat.com",
       "headlineZh": "艺人Vicky Shu遭非法网贷催收恐吓",
-      "summaryZh": "艺人Vicky Shu个人数据被非法网贷盗用，遭催收人员恐吓威胁，属消费者受害个案。",
-      "rationale": "具体个人受害事件，有当事人与催收行为",
+      "summaryZh": "艺人Vicky Shu个人数据被盗用于非法网贷，遭催收恐吓与威胁，属消费者受害个案。",
+      "rationale": "公众人物遭非法催收恐吓，具体受害事件",
       "independentSourceCount": 1,
       "domains": [
         "jakartakota.pikiran-rakyat.com"
@@ -103,36 +232,71 @@
         "negativeShare": 0.0,
         "platforms": []
       }
+    },
+    {
+      "id": "llm-860707e13d53",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "OJK Ungkap Peran Tim Khusus Pindar dalam Upaya Pengembalian Dana Lender - InvestorTrust",
+      "headlineZh": "OJK专组追讨Pindar出借人资金",
+      "summaryZh": "OJK披露专责小组在P2P网贷领域协助出借人追回资金，属监管介入行动。",
+      "rationale": "监管专组介入资金追讨，具体行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "investortrust.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ff2e6e9d6e9596ad"
+      ],
+      "articles": [
+        {
+          "title": "OJK Ungkap Peran Tim Khusus Pindar dalam Upaya Pengembalian Dana Lender - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeFZkUjJfNkNSZXU1eG1PNHFTSzdrQXJWTXp4bFhpejMtbFMxekNQcXFYUFlpMlJpcFF5ODdYSmNTZXVyMHZ0WW9vazE3a0tBWEk4S3JDWDI3Tmt4VVF5UFEwai1OR2ZoVHE0OXUwY21heUR4dkd5Z2FFWWJkeFZ2cXMtdGtLUjYwNmhmZEt0MGNiVXdqeFZ4UEpGemdXTmI5UnhPVGdaSVpjaWxuYUhma1lITQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "kaskus": "Collector ran successfully but found no relevant records.",
+      "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 12,
-    "socialItemCount48h": 29
+    "articleCount48h": 23,
+    "socialItemCount48h": 16
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 568,
-    "classifiedCount": 186,
-    "irrelevantDropped": 54,
+    "inputCount": 550,
+    "classifiedCount": 163,
+    "irrelevantDropped": 77,
     "model": "deepseek-chat",
-    "fallbackCount": 328,
+    "fallbackCount": 310,
     "labelCounts": {
-      "NEG": 52,
-      "MIX": 36,
-      "POS": 98
+      "NEG": 57,
+      "MIX": 37,
+      "POS": 69
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
