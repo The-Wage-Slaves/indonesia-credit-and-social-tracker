@@ -1,81 +1,87 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-21",
+  "date": "2026-10-22",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 29.8,
-    "socialDailyVolumeRisk": 4.5,
-    "negativeSocialShare": 22.6,
+    "newsDailyVolumeRisk": 15.6,
+    "socialDailyVolumeRisk": 0.0,
+    "negativeSocialShare": 25.9,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=10; prior-7d median=18.0; robust z=-1.35",
-    "socialVolume": "today=10; prior-7d median=37.0; robust z=-3.04"
+    "newsVolume": "today=1; prior-7d median=18.0; robust z=-2.29",
+    "socialVolume": "today=5; prior-7d median=35.0; robust z=-4.29"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-4827b207ec1d",
+      "id": "llm-d1c188ec08d7",
       "eventType": "industry_update",
       "severity": 0.3,
       "entities": [
-        "Easycash",
         "Krom Bank",
-        "BBSI"
+        "Easycash"
       ],
-      "headline": "Easycash Gandeng Krom Bank, Bidik Ekspansi Pembiayaan Digital - Pasardana",
-      "headlineZh": "Easycash与Krom Bank达成贷款通道合作",
-      "summaryZh": "Easycash与Krom Bank（BBSI）签署loan channeling合作协议以扩大信贷投放，属常规商业合作动态。",
-      "rationale": "同一合作事件的多篇报道，属常规行业动态",
-      "independentSourceCount": 9,
+      "headline": "Krom Bank Gandeng Easycash, Kredit Tembus Rp11,59 Triliun pada Agustus 2026 - Infobanknews",
+      "headlineZh": "Krom Bank与Easycash达成贷款通道合作",
+      "summaryZh": "Krom Bank与Easycash签署loan channeling合作，Krom Bank信贷同比增长50.4%至11.59万亿印尼盾，属常规业务扩张动态。",
+      "rationale": "企业合作与业绩披露，属行业常规动态",
+      "independentSourceCount": 16,
       "domains": [
+        "akurat.co",
+        "beritasatu.com",
+        "cirebontimes.com",
+        "demokratis.co.id",
         "emitennews.com",
-        "finansial.bisnis.com",
-        "fortuneidn.com",
-        "jpnn.com",
-        "koran-jakarta.com",
-        "pasardana.id"
+        "finansial.bisnis.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "ef9c612e832810b8",
+        "b35aee1751c471d6",
+        "d75797f640064cef",
         "ff53426474227f10",
+        "fdcb397ae5cfb3b6",
+        "1cb5938736430aad",
+        "ba572a854a391939",
+        "89eaa3896430f111",
         "9538587e406b76b7",
+        "9d62d9366e760a6d",
         "79642b768b7ac396",
+        "29748dd919f5e207",
         "d6dd3d26bdd002da",
         "13fbc18793378c8c",
         "5502194c96800811",
-        "5689a37dc1a6d083",
-        "664714f92536f3eb",
-        "e301bc9e5858b593"
+        "5689a37dc1a6d083"
       ],
       "articles": [
+        {
+          "title": "Krom Bank Gandeng Easycash, Kredit Tembus Rp11,59 Triliun pada Agustus 2026 - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNb19KNDRSZG9NdllTeXNNNkVzYkhCTXo3Q0lKVHItRnZoQ3czT1BVNE9lSi1tYzAzMFhRa1ZfcEFKOElWVnRmUUJHWHNRWkZ2ZTRjbi0yelpxWXBIM05NWHFOc05BOE1RVVJBeC1QRm5pbG0waTdtWndKMk1OV1VHWTlBV0ZkdzMxbGNlS3VIZ3NQQlF3QUE2ajVjbXVudzQ?oc=5"
+        },
+        {
+          "title": "Easycash Gandeng Krom Bank Perluas Penyaluran Kredit Digital - شبكة تواصل الإخبارية",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE54R3FwWVB6SFVYbjd6dUE2cXNDbnE2VkdudHM2cVJkeERScF96dmZSaDdQNFJ5SmFicWoxYklQR2hmeDhLOG5pRXdpdW50dF9JazZZ?oc=5"
+        },
+        {
+          "title": "Easycash Gandeng Krom Bank untuk Perluas Penyaluran Kredit - Cirebon Times",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAtVkRWbjEyZUhSekZ1RlFURzRnSGR5M3ZSa0xxa0x2N05HMjRYMWtHQ3hpT1lKODV5bUVXb1hvcURsZEZ5OWJkQ2hKRXZPdXhuV3dtOWJ2TVNnTV9fSWRzZEhlR2hfd3RDWnZpM1NRTnNaVG8?oc=5"
+        },
         {
           "title": "Easycash Gandeng Krom Bank, Bidik Ekspansi Pembiayaan Digital - Pasardana",
           "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQOTJJNF8wMVhVUEV2QmlNdVdZTVZTX3puNEYySTRQNDRIUGY4ZjA4aXR0U2trM3JhZ1FLTHdiN0ljUkhxci1Ceng0Y2ZGcVRTSktkeFo4dnc1U05zTGxYczF1WExYejZ4STNyRWF5LU8wUHNBbXlXS1B2UmxRMXVVV29xR0ZnYkd5dnE2SHphWWF4dFU4bHpBcFhXblNCdw?oc=5"
         },
         {
-          "title": "Gandeng Easycash, Krom Bank Perluas Jangkauan Kredit Lewat Skema Loan Channeling - StockWatch.id",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNkszdVVrNmsxV1Y1ZTlCUW9NdHNHamI0b24yNkhaOGZxdmdzVEtyaExTblZ2VEVKQVpuRjM1dEp6SkdCcE5lWHNHM2tFU0lsWkgyNUNsRFh1R1RmaktEUmNjZm1mdUV4dFl1WmFiekFwQURYRzR6a200NkJ5NTdxeDNVRmw1NkRaOFlJUHNZekJPbWdiVXoxX3lFcWVFc1dxUzdZMw?oc=5"
-        },
-        {
-          "title": "Krom Bank (BBSI) Gandeng Easycash, Kredit Tumbuh 50,4% Jadi Rp11,59 Triliun - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQaE5GYUtPMlVLOERfai1fNTFOVEdlU29KelV6b3RNUlNvbUpfWDlNSDRrU3lIQmd6LTlKNXg2MXpzRDlpbXpOMEZJMWJYdE5mYlFJS3hBVjk5dXJ6TFZoQ0NzbnZDODVtblVIRW9ILTBHa1F3QmQ0YmhmSktBeEtSeFU2MmRZdWxXb1kzOHZGTm10S2NWcDQyemo5Mi1neUhiZ3ZDS2o5aS1BZm4wTkF6VmtJVV9BOGV6azZBeTBUZXg?oc=5"
-        },
-        {
-          "title": "Perluas Kredit, Easycash dan Krom Bank Jalin Kemitraan Loan Channeling - Emitennews.com",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNQURKcVhiaWJsbzNvWFlkaGV2OHBRNWtGT2VUSElzaFFXTnhaVmV3SmRFdEgtNkNpV1VOTjlRRVVicmt1X1hLLVlNTjJxbllJT0J1ZHM5Y0pLemlFOURHVVlvYk1OVXVLTXZOUVFBMHlheFJDMGdUYi00QzdWS011Y2Q4ZC02Q2pNdWpEOFdMNzNEWWFBTVBFNjVFV2hiLUZJWmlZ?oc=5"
-        },
-        {
-          "title": "Perluas Kredit, Krom Bank Jalin Loan Channeling dengan Easycash - FORTUNE Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNU9sU1dXSEhkSlJXMzRNUmxTck8xOEFLYlZMOWNUcllsd0QtcXdDM05rNDVobXd4SjZxQW1OVjhnLWlobkJGc2JxMVNaU3pGYm5TTUVDN2RSZVR4M0R4Z05BZVlkUGo0cUlVSDNxSGJlOEhxTEU2SnFDU0cwaUpacFZramxrVXZVR1luZlM0VG9sbDdPVThvY2t0U0pFUjUzOUU3dUlEanRoZ29tWC1OV3NSMNIBuAFBVV95cUxOWEpldTg5VXZYdkE2bmVrNkdVb1pDY0haN3FBNkJKMVJVWF9ZcFVsSlJCMDZSbzZMejA5M3Mtcy1ZVXBzZGVCQnk2MW5hNHk5US1KSHBfcjJYLV9KLUZiLWFwZTBIX0gtd19NeEtxMzVsb1FZNG9KUklZMnNsWGZQeGRiaXRsMU9nOFNUNXVfRTFzdkl0ZmpsRW1GS3hvbV9yUHZhMTZMZGdmcE93UEhTejcyRDRFdWpM?oc=5"
+          "title": "Easycash dan Krom Bank Jalin Kemitraan Loan Channeling guna Perluas Penyaluran Kredit - TradingView",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9vd3BUUnVTYXpxTFJVaXh6ZmtJX3IzdWRaOHU0STR6XzdBOXZGM0RJMTJMRF9YZFRFQVRJRU5VWFlFcEFvZkVMWVJlNGVZbVVLTFpSWWk4emVCUE1VTHJBVTk2YkpCZw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 9,
+      "bodyBackedSourceCount": 16,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -89,73 +95,79 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 25,
+    "candidateCount": 35,
     "eventGroupCount": 1,
-    "rejectedNonEvents": 12,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 25
+      "ok": 35
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-4827b207ec1d",
+      "id": "llm-d1c188ec08d7",
       "eventType": "industry_update",
       "severity": 0.3,
       "entities": [
-        "Easycash",
         "Krom Bank",
-        "BBSI"
+        "Easycash"
       ],
-      "headline": "Easycash Gandeng Krom Bank, Bidik Ekspansi Pembiayaan Digital - Pasardana",
-      "headlineZh": "Easycash与Krom Bank达成贷款通道合作",
-      "summaryZh": "Easycash与Krom Bank（BBSI）签署loan channeling合作协议以扩大信贷投放，属常规商业合作动态。",
-      "rationale": "同一合作事件的多篇报道，属常规行业动态",
-      "independentSourceCount": 9,
+      "headline": "Krom Bank Gandeng Easycash, Kredit Tembus Rp11,59 Triliun pada Agustus 2026 - Infobanknews",
+      "headlineZh": "Krom Bank与Easycash达成贷款通道合作",
+      "summaryZh": "Krom Bank与Easycash签署loan channeling合作，Krom Bank信贷同比增长50.4%至11.59万亿印尼盾，属常规业务扩张动态。",
+      "rationale": "企业合作与业绩披露，属行业常规动态",
+      "independentSourceCount": 16,
       "domains": [
+        "akurat.co",
+        "beritasatu.com",
+        "cirebontimes.com",
+        "demokratis.co.id",
         "emitennews.com",
-        "finansial.bisnis.com",
-        "fortuneidn.com",
-        "jpnn.com",
-        "koran-jakarta.com",
-        "pasardana.id"
+        "finansial.bisnis.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
+        "ef9c612e832810b8",
+        "b35aee1751c471d6",
+        "d75797f640064cef",
         "ff53426474227f10",
+        "fdcb397ae5cfb3b6",
+        "1cb5938736430aad",
+        "ba572a854a391939",
+        "89eaa3896430f111",
         "9538587e406b76b7",
+        "9d62d9366e760a6d",
         "79642b768b7ac396",
+        "29748dd919f5e207",
         "d6dd3d26bdd002da",
         "13fbc18793378c8c",
         "5502194c96800811",
-        "5689a37dc1a6d083",
-        "664714f92536f3eb",
-        "e301bc9e5858b593"
+        "5689a37dc1a6d083"
       ],
       "articles": [
+        {
+          "title": "Krom Bank Gandeng Easycash, Kredit Tembus Rp11,59 Triliun pada Agustus 2026 - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNb19KNDRSZG9NdllTeXNNNkVzYkhCTXo3Q0lKVHItRnZoQ3czT1BVNE9lSi1tYzAzMFhRa1ZfcEFKOElWVnRmUUJHWHNRWkZ2ZTRjbi0yelpxWXBIM05NWHFOc05BOE1RVVJBeC1QRm5pbG0waTdtWndKMk1OV1VHWTlBV0ZkdzMxbGNlS3VIZ3NQQlF3QUE2ajVjbXVudzQ?oc=5"
+        },
+        {
+          "title": "Easycash Gandeng Krom Bank Perluas Penyaluran Kredit Digital - شبكة تواصل الإخبارية",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE54R3FwWVB6SFVYbjd6dUE2cXNDbnE2VkdudHM2cVJkeERScF96dmZSaDdQNFJ5SmFicWoxYklQR2hmeDhLOG5pRXdpdW50dF9JazZZ?oc=5"
+        },
+        {
+          "title": "Easycash Gandeng Krom Bank untuk Perluas Penyaluran Kredit - Cirebon Times",
+          "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAtVkRWbjEyZUhSekZ1RlFURzRnSGR5M3ZSa0xxa0x2N05HMjRYMWtHQ3hpT1lKODV5bUVXb1hvcURsZEZ5OWJkQ2hKRXZPdXhuV3dtOWJ2TVNnTV9fSWRzZEhlR2hfd3RDWnZpM1NRTnNaVG8?oc=5"
+        },
         {
           "title": "Easycash Gandeng Krom Bank, Bidik Ekspansi Pembiayaan Digital - Pasardana",
           "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQOTJJNF8wMVhVUEV2QmlNdVdZTVZTX3puNEYySTRQNDRIUGY4ZjA4aXR0U2trM3JhZ1FLTHdiN0ljUkhxci1Ceng0Y2ZGcVRTSktkeFo4dnc1U05zTGxYczF1WExYejZ4STNyRWF5LU8wUHNBbXlXS1B2UmxRMXVVV29xR0ZnYkd5dnE2SHphWWF4dFU4bHpBcFhXblNCdw?oc=5"
         },
         {
-          "title": "Gandeng Easycash, Krom Bank Perluas Jangkauan Kredit Lewat Skema Loan Channeling - StockWatch.id",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPNkszdVVrNmsxV1Y1ZTlCUW9NdHNHamI0b24yNkhaOGZxdmdzVEtyaExTblZ2VEVKQVpuRjM1dEp6SkdCcE5lWHNHM2tFU0lsWkgyNUNsRFh1R1RmaktEUmNjZm1mdUV4dFl1WmFiekFwQURYRzR6a200NkJ5NTdxeDNVRmw1NkRaOFlJUHNZekJPbWdiVXoxX3lFcWVFc1dxUzdZMw?oc=5"
-        },
-        {
-          "title": "Krom Bank (BBSI) Gandeng Easycash, Kredit Tumbuh 50,4% Jadi Rp11,59 Triliun - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQaE5GYUtPMlVLOERfai1fNTFOVEdlU29KelV6b3RNUlNvbUpfWDlNSDRrU3lIQmd6LTlKNXg2MXpzRDlpbXpOMEZJMWJYdE5mYlFJS3hBVjk5dXJ6TFZoQ0NzbnZDODVtblVIRW9ILTBHa1F3QmQ0YmhmSktBeEtSeFU2MmRZdWxXb1kzOHZGTm10S2NWcDQyemo5Mi1neUhiZ3ZDS2o5aS1BZm4wTkF6VmtJVV9BOGV6azZBeTBUZXg?oc=5"
-        },
-        {
-          "title": "Perluas Kredit, Easycash dan Krom Bank Jalin Kemitraan Loan Channeling - Emitennews.com",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNQURKcVhiaWJsbzNvWFlkaGV2OHBRNWtGT2VUSElzaFFXTnhaVmV3SmRFdEgtNkNpV1VOTjlRRVVicmt1X1hLLVlNTjJxbllJT0J1ZHM5Y0pLemlFOURHVVlvYk1OVXVLTXZOUVFBMHlheFJDMGdUYi00QzdWS011Y2Q4ZC02Q2pNdWpEOFdMNzNEWWFBTVBFNjVFV2hiLUZJWmlZ?oc=5"
-        },
-        {
-          "title": "Perluas Kredit, Krom Bank Jalin Loan Channeling dengan Easycash - FORTUNE Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQNU9sU1dXSEhkSlJXMzRNUmxTck8xOEFLYlZMOWNUcllsd0QtcXdDM05rNDVobXd4SjZxQW1OVjhnLWlobkJGc2JxMVNaU3pGYm5TTUVDN2RSZVR4M0R4Z05BZVlkUGo0cUlVSDNxSGJlOEhxTEU2SnFDU0cwaUpacFZramxrVXZVR1luZlM0VG9sbDdPVThvY2t0U0pFUjUzOUU3dUlEanRoZ29tWC1OV3NSMNIBuAFBVV95cUxOWEpldTg5VXZYdkE2bmVrNkdVb1pDY0haN3FBNkJKMVJVWF9ZcFVsSlJCMDZSbzZMejA5M3Mtcy1ZVXBzZGVCQnk2MW5hNHk5US1KSHBfcjJYLV9KLUZiLWFwZTBIX0gtd19NeEtxMzVsb1FZNG9KUklZMnNsWGZQeGRiaXRsMU9nOFNUNXVfRTFzdkl0ZmpsRW1GS3hvbV9yUHZhMTZMZGdmcE93UEhTejcyRDRFdWpM?oc=5"
+          "title": "Easycash dan Krom Bank Jalin Kemitraan Loan Channeling guna Perluas Penyaluran Kredit - TradingView",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9vd3BUUnVTYXpxTFJVaXh6ZmtJX3IzdWRaOHU0STR6XzdBOXZGM0RJMTJMRF9YZFRFQVRJRU5VWFlFcEFvZkVMWVJlNGVZbVVLTFpSWWk4emVCUE1VTHJBVTk2YkpCZw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 9,
+      "bodyBackedSourceCount": 16,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -168,31 +180,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "google_trends": "The request failed: Google returned a response with code 429",
-      "kaskus": "Collector ran successfully but found no relevant records.",
+      "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 503: Service Temporarily Unavailable",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 28,
-    "socialItemCount48h": 33
+    "articleCount48h": 35,
+    "socialItemCount48h": 23
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 550,
-    "classifiedCount": 190,
-    "irrelevantDropped": 50,
+    "inputCount": 552,
+    "classifiedCount": 192,
+    "irrelevantDropped": 48,
     "model": "deepseek-chat",
-    "fallbackCount": 310,
+    "fallbackCount": 312,
     "labelCounts": {
-      "NEG": 50,
-      "MIX": 71,
-      "POS": 69
+      "NEG": 52,
+      "MIX": 83,
+      "POS": 57
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
