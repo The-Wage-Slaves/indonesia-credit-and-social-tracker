@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-10-22T06:36:38.169490+00:00",
+  "generatedAt": "2026-10-23T06:30:54.681785+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-22",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-23",
     "risk": true,
-    "level": "red",
+    "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **市场失序(汇股债)｜MSCI下调威胁致印尼股市承压，IHSG剧烈波动，Danantara入场托市**\n严重度 0.75｜3个独立来源（antaranews.com、bbc.com）｜影响支柱：currency\n\n🟠 **市场失序(汇股债)｜印尼央行维持利率后印尼盾跌破18000关口**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency\n\n🟠 **仓促立法/政策骤变｜国家经济委员会建议修改腐败定义，政府高层称值得考虑**\n严重度 0.55｜4个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜KPK就BNPB灾害资金腐败案调查现役军人，并向TNI司令发函**\n严重度 0.55｜3个独立来源（katadata.co.id、liputan6.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 1 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：AMBER。",
+      "**制度/政治骤变**\n\n🟠 **大规模抗议/镇压｜印尼多城数千大学生示威，抗议森林与土地火灾雾霾**\n严重度 0.55｜1个独立来源（bbc.com）｜影响支柱：social\n\n🟠 **关键官员更替/清洗｜印尼财政部高层人事大调整，秘书长被撤换**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜雅加达中区法院撤销KPPU对97家企业的7550亿印尼盾罚款**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜印尼盾兑美元开盘走弱至18070，IHSG下挫**\n严重度 0.55｜2个独立来源（antaranews.com、katadata.co.id）｜影响支柱：currency",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-22:normal:red:success"
+    "decisionId": "daily:2026-10-23:normal:amber:success"
   },
   "feishu": "sent"
 }
