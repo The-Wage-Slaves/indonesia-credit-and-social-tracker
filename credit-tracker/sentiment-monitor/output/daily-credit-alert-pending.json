@@ -1,370 +1,149 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-24",
+  "date": "2026-10-25",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 33.1,
-    "socialDailyVolumeRisk": 21.2,
-    "negativeSocialShare": 33.8,
+    "newsDailyVolumeRisk": 42.1,
+    "socialDailyVolumeRisk": 11.0,
+    "negativeSocialShare": 22.8,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=2; prior-7d median=22.0; robust z=-1.12",
-    "socialVolume": "today=3; prior-7d median=40.0; robust z=-1.92"
+    "newsVolume": "today=13; prior-7d median=20.0; robust z=-0.52",
+    "socialVolume": "today=8; prior-7d median=35.0; robust z=-2.60"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-82bc8ce6528a",
+      "id": "llm-6f7edb2a7183",
       "eventType": "industry_update",
       "severity": 0.3,
       "entities": [
-        "Kredivo",
-        "LD FEB UI",
-        "LDUI"
+        "OJK"
       ],
-      "headline": "Studi LD FEB UI: 48% Pengakses Kredit Pertama melalui Kredivo adalah Perempuan - SWA.co.id",
-      "headlineZh": "Kredivo首贷用户48%为女性",
-      "summaryZh": "LD FEB UI/LDUI研究显示Kredivo首次信贷用户中48%为女性，属常规行业数据披露，留痕即可。",
-      "rationale": "研究数据发布，属行业常规动态",
-      "independentSourceCount": 8,
-      "domains": [
-        "idxchannel.com",
-        "mediaasuransinews.co.id",
-        "mobitekno.com",
-        "momsmoney.kontan.co.id",
-        "rctiplus.com",
-        "selular.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1583cda4c88832a2",
-        "de7c0013159250dd",
-        "86d2aec1aa021f22",
-        "54258c8bab555acf",
-        "49d1267caef3111b",
-        "80a72ad97a8fae80",
-        "b89d62d5f0d9914e",
-        "ed6164ae5865f79f"
-      ],
-      "articles": [
-        {
-          "title": "Studi LD FEB UI: 48% Pengakses Kredit Pertama melalui Kredivo adalah Perempuan - SWA.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSjlleGlwRGtKNjc5ckZsWHlpOHBJcnR2SEZOQnJLeGxIakM4ek85bTREblJ0YXdrWUZMYTRIY1NMUVJpdzdoX09NQnpFQ2o5SFN0TGVEMHhoV3NnSlpSUHhQYzg4MUFEQl93aVB6X2JxZWNfaUNTbFBJbE8zaTZpdXFZSi1NXzBkcVIxOHNHYkQzVkpQUlQ0NzlnNl9Yblh5cmk1S0ZyZDFRdw?oc=5"
-        },
-        {
-          "title": "48% Pengakses Kredit Pertama di Kredivo adalah Perempuan, Buka Peluang Ekonomi Setara - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNWR0MDM2TDZ1RnhRY3lMOGNEa2VUMkNPa3hNZHU4NTFIXzZuZlJub0J0OGhEV19TUGNuOHNpRlZSbC1WVExqWjhtSXFMYUNCQ0p4VUstelVoWE9aQzZEdzZsdUdjV3owem5TWThvT1R4WldYcTlFM0VPYjZHeVJoOTFwOUxtb1NJNXdMTTNsT084ZE8tc1dIb0REWW9zeWR1a0hsb244V0hIWllHOW0ycXVsV28xLUZtMFVF?oc=5"
-        },
-        {
-          "title": "Kredivo Catat 48% Penerima Kredit Usahanya Adalah Perempuan - youngster.id",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPU2JoNWxqYVdRX0RFdDFzRXFmVFROSGlEeVMxLXJ1dVpqVUFMVlJtNmlweUNfWEtGN0dKLWZDNWt6Zk1EOGJvR1hKR1J0LUptcm5YcmtiTUNkck5VeGpydHJVeEo2cGxJbGFNQi1tQWY0bFRmZFFMejRlanpIQXBpOFpyNGo2WUttWWktMDdLMm1nUXpHM2hvODhHY0tDX0JtMWZGOEZsZlVmQdIBqgFBVV95cUxPU2JoNWxqYVdRX0RFdDFzRXFmVFROSGlEeVMxLXJ1dVpqVUFMVlJtNmlweUNfWEtGN0dKLWZDNWt6Zk1EOGJvR1hKR1J0LUptcm5YcmtiTUNkck5VeGpydHJVeEo2cGxJbGFNQi1tQWY0bFRmZFFMejRlanpIQXBpOFpyNGo2WUttWWktMDdLMm1nUXpHM2hvODhHY0tDX0JtMWZGOEZsZlVmQQ?oc=5"
-        },
-        {
-          "title": "Kredivo Catat 48% Pengakses Kredit Pertama Berasal dari Kaum Hawa - Media Asuransi News",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObkFVRE9VN1B2cnBzU2ZpVWxubXlaVmNRVDBER1dtSC1PNm9FLXgwdnlIWk5KekFrNmttaG95OWJ3elRiQVU3c09nQ1c0ZDM2bDI1Ymc0MVpTOUV2ek1mZlAxNHNOaTVodXh0UC1kUzJjdnA3ckRLRUVNV251M0FYM1NyeFU5ZjRqQzRMQjR5aXdSajNoY1FkeG02bnY1aGM2LUdKOS1GOGlsNm1ZRzFlVThRVzFvS0Rjci1aUE5n?oc=5"
-        },
-        {
-          "title": "Studi LDUI: 48 Persen Pengakses Kredit Pertama Kredivo Perempuan, Dorong Peluang Ekonomi Setara - IDX Channel",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbWNLQXpxZWhYWHZva1RZZi1aMTFHc0tZeHJUWUxsb3k3dUF5VmwtYkZZZ2lVay1Ldy1FUEZaZGZjVjZwMzV4a202ZzItS3JSNHZNZ2JCYnB3MFBKTE02QzFWTjZDa2VXak5IdW5GOUxCeFllbk9SN0p6SElQdU5KUjRXa3EtN3JNOWxXWWVubFBPZHpwX09UbzhPbTA0bGt2VGlxV0JDOEJpblBpc3BpTHM3NVdnamptaHNJdVpwblFfc1VnZEFmMG1CUGVWUm_SAc8BQVVfeXFMT21jS0F6cWVoWFh2b2tUWWYtWjExR3NLWXhyVFlMbG95N3VBeVZsLWJGWWdpVWstS3ctRVBGWmRmY1Y2cDM1eGttNmcyLUtyUjR2TWdiQmJwdzBQSkxNNkMxVk42Q2tlV2pOSHVuRjlMQnhZZW5PUjdKekhJUHVOSlI0V2txLTdyTTlsV1llbmxQT2R6cF9PVG84T20wNGxrdlRpcVdCQzhCaW5QaXNwaUxzNzVXZ2pqbWhzSXVacG5RX3NVZ2RBZjBtQlBlVlJv?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 8,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c6cb2b9bb3ce",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK",
-        "Sragen"
-      ],
-      "headline": "BIK Solo Raya Digelar di Sragen, OJK Ingatkan Warga Waspada Pinjol Ilegal - iNews.ID",
-      "headlineZh": "OJK在Sragen办金融普惠活动",
-      "summaryZh": "OJK在Sragen举办金融普惠月活动并提醒民众警惕非法网贷，属常规宣导活动。",
-      "rationale": "监管常规宣导活动，影响有限",
-      "independentSourceCount": 2,
-      "domains": [
-        "krjogja.com",
-        "sragen.inews.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7d560cd136a4d407",
-        "f7a01e15050ceb00"
-      ],
-      "articles": [
-        {
-          "title": "BIK Solo Raya Digelar di Sragen, OJK Ingatkan Warga Waspada Pinjol Ilegal - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeWNXVTBpVjZwUVkxbG80MW8wcjNIaUZUWXlTWS1fR3dJSUgybmdZOHB4aUJONHdrNGlFWE1kemxLejgyVW56aHFaTVo4N0h1OFNGb1BsY2w2cElVLVRNVWdoTjItY2ZPWE9pWE1VamZ2OGswT3psZnZkNW1Nbjg1bEY1eVlpTml0eU54ZGVRZFptYkM1T3l5QWV2UHNCdEtnTE1kVEZLYUsyMGQ20gGrAUFVX3lxTE1JeXZEdGFNSTktbjFtM1J2WkZIUEt2Qlc3NmVzbmhUT0ZCRUxNTWRzMHRQMkV1REtrVVU2YXR3c3VDMm81RFZEZDY1N05yS3ljMTRneVVKZUcxWDd6OTgtbmhTU3dpQmkyaW9zaFloLV83RWh4bVpObFRIMWc2dDZVTEVTeUs3cFRBTktKUXd3bHZjcXkyWHhaSnBLeXRQRVFXOU5mNEVtZ2JJYw?oc=5"
-        },
-        {
-          "title": "Mencegah Pinjol Ilegal, OJK Gelar Puncak Bulan Inklusi Keuangan di Sragen - Krjogja - Kr Jogja",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOX0ROMXdOaVlwZHg4QTBici1DQUlPZ0hKRVNJVFJIQmR6eFZfbTlRNXFHbXV2eUgxRFRKY1daUlJSN1pjdnp0TTVUTm1tTGUwNDU2cmtiMnBNaFFYN3Y4YlhVMGcxZGhsVTY4LTdhMVNvQnpUVmdtLWMzV0ZRc1hnTWZlcE9keFc2RlFSdVE3TnFCV2wxb2duMjM4QllrbnlJbW9DVlBWbXlHS3JIN3ZEQWVSeV9GMEHSAbcBQVVfeXFMTl9ETjF3TmlZcGR4OEEwYnItQ0FJT2dISkVTSVRSSEJkenhWX205UTVxR211dnlIMURUSmNXWlJSUjdaY3Z6dE01VE5tbUxlMDQ1NnJrYjJwTWhRWDd2OGJYVTBnMWRobFU2OC03YTFTb0J6VFZnbS1jM1dGUXNYZ01mZXBPZHhXNkZRUnVRN05xQldsMW9nbjIzOEJZa255SW1vQ1ZQVm15R0tySDd2REFlUnlfRjBB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-10100dee1dd1",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU",
-        "PN Jakarta Pusat",
-        "Pindar",
-        "Pinjol"
-      ],
-      "headline": "Foto : Hakim Batalkan Putusan KPPU soal Bunga Pinjol, Ini Dampaknya bagi Industri Halaman 3 - Kompas.com",
-      "headlineZh": "法院撤销KPPU网贷利率裁决",
-      "summaryZh": "雅加达中区法院撤销KPPU关于网贷利率上限/卡特尔裁决，行业免罚与法律确定性受关注。",
-      "rationale": "司法裁决改变监管处罚，值得留痕",
+      "headline": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
+      "headlineZh": "OJK提示数字信贷风险",
+      "summaryZh": "OJK 提示年轻人注意 paylater 与 Pindar 风险，数字融资规模达106.94万亿盾，BNPL 增36.57%。",
+      "rationale": "监管机构公开提示，属行业常规动态",
       "independentSourceCount": 5,
       "domains": [
-        "cnbcindonesia.com",
-        "dandapala.com",
-        "money.kompas.com",
-        "nasional.kompas.com",
-        "wartaekonomi.co.id"
+        "ekonomi.rakyat.news",
+        "herald.id",
+        "inilah.com",
+        "mediaindonesia.com",
+        "newsurban.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e279492526b0bbc4",
-        "ef3716903ebe596e",
-        "49a11e34c8b7e086",
-        "cddbd7b98e977a9f",
-        "3c60a04ffcaa39d9",
-        "f08c1ad339da1a55",
-        "d5d3bb2f4da51912",
-        "0a41463f4577d6d2",
-        "88ba35c6aa0cba8e",
-        "20b88ad77b94a06e",
-        "3e76c7ef3ff681b8",
-        "772553d52a470572"
+        "69f3057ba3a1b9c2",
+        "21b9a03f3ba75871",
+        "1f6ab80b9ea2592d",
+        "b58bf2bcc536f098",
+        "3f4fdec28dff9564"
       ],
       "articles": [
         {
-          "title": "Foto : Hakim Batalkan Putusan KPPU soal Bunga Pinjol, Ini Dampaknya bagi Industri Halaman 3 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNTJZMGZsdzNmcHFiS0RFelQzaUVvd3ktTFdjUkJXTkJzNmg3dFRJYTdWbDJsMktwS2p0eHdyd0lHQmJzeFpzZWRGdlZYOXQxSzZCWEowSmEwQzFMcC1vR24xbXczSmlrbjBTNk9pbVRiOFlYc1ViZF93QTJjZGh5SDBzTW80OGFKM2JUMkdjWWoyMnNVOHM4czJoUTdBTmRNREVXR3M5VlhTd2Q3RjJ3MVlaV3NRZDgyYnozNXoyQzYwdUZEYkVOaTNmRGg?oc=5"
+          "title": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZnJnVllJV25HdlU5dG9lQ0xKWFRsS2swOWk4X0lwcHdKLS1ubERILV8yM1k1MW9LQTM2NndsOG00eW1KTWlHTmhCZFN3RVlHQ0JiNFA0cmliSDFyYlp5czJwd3ZuNU9TRGFIRm8wMjhUQlh5cXNrZ2NaUlhCaHhHTW1YdGc2bklOcE5wSE1BWW83LVY4ZGlidzRBN1FieXpuZzVYMVhNSmp5VTVQb2lZTmFqZFJDaEJoRWJIUHlB0gHDAUFVX3lxTE9BeWhfb2tQSDRaV0NBYXJGRTZ4cVhLTDl2Q1JWMlBqaTNQSXRSTVhrTXFlamp3NDJNSE0yTlpmeXNmTUpWbThYWGNXcm1mdmxmeU5ya2E5VnV4VnYwTnpmTWV0bkUzQ0tGdlpZT2hIV1N0Q2htMEh3ZE13b3lnckhDMk9FNU5iUS01Rm82cDF6T0RUU1RXMmVDRVVfbVVJRWdFM0xHanhGZmJBYW04Uzl5NlZYZ2xET1NkRzJFUVdKWXhfUQ?oc=5"
         },
         {
-          "title": "Foto : Hakim Nilai Pinjol Syariah Tak Bisa Disamakan dengan Pinjol Biasa Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWElIamVtTEtuR2c2VzZGczBZaF8tS0tGblpHWk9VQ1BRaVpKWW5rSF9FU3BLQUFYNXpVaXVkZi1GdUdxeUQ5R29zeGo0NnVrVEJzU0FZb0t0X0VPbllhcmNhb3hsbFFsaEQ1WlhzTVhMZHE4c043M2FUcEU2ek9QeFVYclNFRWRvemZGSnpPVUJEa2xTV05zSnBZUEFRVTVPNXcxZHVybzZ0NFlUZENXZk1vcVc1Q3ZDMzZaa2xfSzBkUVJx?oc=5"
+          "title": "OJK Ingatkan Risiko Pembiayaan Digital di Tengah Lonjakan Pay Later dan Pinjol - Media Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQV1pBX0llY3ktWl8yMFdPNVB2MHdQNUhqRmlsOGlaa0pZQmFMUHV1eWk4MzZjQl9zWkVDbGNDNVAwMWg4UDlnRmFraHJqVVFrT3NKZUQtQXpncDU3WGJBdUV1dVhydThCSlZkVGozQ1pjdHZFRFJjd2xISnRwclhvZ2R3eTRISXlXd0FoUnBLWkJWdmVGeEhnQVZNRUswUXJBd0lHZXk5V3g3S0hLa0tRbWJPZkNfUHBCVFBxeA?oc=5"
         },
         {
-          "title": "Foto : PN Jakpus Batalkan Putusan KPPU soal Batas Atas Bunga Pinjol - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTnEwYVZhbEtpenpHY216aWxHeW4taFMyem1LWjBzcDZPT3poalRoaUdrZjY5OEU4OTRaWWJDZk1kcnk3QmxSUlg2bmdlak82elo0eE1ybFZTOG9nVE5KTm5QTjNaalY5SXd2YXZiamNBOW02cnNPNE9HamlaNG13TU16MC1ja1dxNTNuc2dOMVVlNW1fQWVEcUdMenZFdVRjcjhRVU1DNDhUWFd0WFBLRkZyUjA?oc=5"
+          "title": "OJK Ungkap Pembiayaan Digital Makin Diminati, Pinjaman Daring Tembus Rp106,94 Triliun - Herald.ID",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbGpfend5R3dId0ZfQUh1U1lab1JIS1ROdENJRXR1SDF4d0VmQmNlOGY3aTg3dlRDZjNreldQYnFIVHpvbG9HaURnZVhhYkpSWFp0c2tDYXJIandJakk4MFRVYXF2LXdoRENiTGZUd2NpbGF0YjJVeXVoemJrNjVGSmdLVWdod3RuR3Q3NEdhbk54M2FoeUtvYlVfbDJjSDR1WThsVlIzb3NCNlJ3ZTBFbWkwWQ?oc=5"
         },
         {
-          "title": "Hakim Batalkan Putusan KPPU soal Bunga Pinjol, Ini Dampaknya bagi Industri - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQbGRrdWtRSEdlWi16ZVFCMHI0aEREWUpXOFNBZVdrOTdmT2xGNWdKcmhibWlGS2s0bnVJR1FNWXRGMS1OaF9ROGZkTnJJbmRsVjZWTER6ZGFsZmRkUGxqQmpUdGJTRmJJNkpVc3Z6dFp2ck1QcG8tZktMdFBQNXRZNmFUYXpIYVlPU3VwX0tVeTAycTRuQlV0ZFRNUjdHYjJmSkE4c1BFMVF1cktabTN6dkU4WEc3UElfQXlNWVRySE1LR09KcmxmR3lIRUtIQQ?oc=5"
+          "title": "Pinjol Tembus Rp106 Triliun, Paylater Tumbuh Rp13 Triliun, OJK Ingatkan Kemampuan Bayar - Inilah.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYkUzM2tqaVVfeVpUTGxfQWxDTUlBZmJ5VGE1UEp0Q1U3dzJINmwtUGNLTTNVN0FpWDNTSVhBX1ExRVVzN2JFei1DTkVpWlRzTGRlOEJ3dUpsVElpUko5NVF4aFhDLTZMSnhwTUdkVm5Td3FpUXJpNF9ZZ1BpM2VndGRTR2o4bFJlU09nT0FGRUNmYzREYV9UQUU5Z1ZOOUg3QUZTR1p1VFJlUDR4?oc=5"
         },
         {
-          "title": "Hakim Nilai Pinjol Syariah Tak Bisa Disamakan dengan Pinjol Biasa - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNU2Y1cjhtbFJabmpxc2Y1UF83TnZxM1BQS0NHbzFHb3hFVlpoR3RHSUx6VEZMa2o3QlA0d19pMnNIWWhlcXdoRVYwb1JFOEVIWWJBdmRsT29fOHFXQkwzZllQUjhOMW9ZNzhEVHBpWGMtYkMwUFpBcmtrR3RHWkVRZ2VOcjFnVElaOTc2RHpKT1FoazBkR3lzT29XemRqR0JmUnYzR3gxWnhHZ3dselVVTFdqdzRhZ3dBd3hsRmswbm1oNm1PaGNDRGZJMmlieUVzR3Nrbk0yWTc?oc=5"
+          "title": "OJK Ingatkan Mahasiswa soal Risiko Pembiayaan Digital, BNPL Tumbuh 36,57 Persen - Newsurban",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5maU9GNm9HMk9GZ2NhQTlvVDU1ekJZZFRqNFB6N3FCcXJSV2dJNWJRMHN1N3J2M01WNEI2LVZ5dWtFdUhLZXdQbW1oek9iMGZwdG9CN1FRYmc3ZW93djdJSExsRnhfNHU1a0FibncybjZLNW5TTzVHWUloOA?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 12,
+      "bodyBackedSourceCount": 5,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 1,
-        "negativeShare": 0.0,
+        "negativeShare": 100.0,
         "platforms": [
           "youtube"
         ]
       }
     },
     {
-      "id": "llm-bee236b9a073",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "Pindar",
-        "Perbankan"
-      ],
-      "headline": "Industri Pindar Tumbuh 22,07 Persen, Kolaborasi dengan Bank Perkuat Pembiayaan - Vibizmedia.com",
-      "headlineZh": "Pindar行业增长22%",
-      "summaryZh": "报道Pindar行业增长22.07%及与银行合作强化放贷，属行业常规动态。",
-      "rationale": "行业增长数据，常规动态",
-      "independentSourceCount": 2,
+      "id": "llm-0034d82e8dff",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [],
+      "headline": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
+      "headlineZh": "百元网贷拖累渔民KUR",
+      "summaryZh": "Tarakan 渔民因100盾网贷欠款被阻 KUR 申请，反映小额网贷影响正规信贷准入。",
+      "rationale": "具体个案影响信贷准入，值得留痕",
+      "independentSourceCount": 1,
       "domains": [
-        "vibizmedia.com",
-        "viva.co.id"
+        "korankaltara.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "39170b07b8ea4236",
-        "3ef2d41ab01a6343"
+        "6a96fbf42fb336b5"
       ],
       "articles": [
         {
-          "title": "Industri Pindar Tumbuh 22,07 Persen, Kolaborasi dengan Bank Perkuat Pembiayaan - Vibizmedia.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZjN1Q0w2aHpaZFluWF9MMXVvMnQxTlhGNk0wT1JEa0o5clhvLTI2alNsaW1QWXNmT1pUWl8zYTZFbU52WmxGOEFXVXVEdVhnTFNZQ2lNaFNHamZDOU50c1ZaczZ5XzhqRmpMOExqNWJTeFpYZ0VUQmhFenI0aWJObGMwQUlKUXFHTE51d1RYM0RKY0lDcDc3U3g5NkptZ1pRa2Q4UmpZeEs1eFVjZ1dnbTNXMzhrRUs0SlZnM3k2di1ZbVU?oc=5"
+          "title": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNWpweDdlTVN5c3ZoTzRKTEJKeWVLWHpFS0JhbGVXemUwUGZ1cFZtLXc1QVRwX2t4eTlWMnVjb1RVNFBkbzFqQnJtc0p6bTRjX0xuSGNqVmxXOV9oSm03ZW9Va0xMd09pNk92ejFhSElsbnNaUWloenJ4djVtOVcxNWFxbkNMd2Rk?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-486f46ba93d8",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "KPPU",
+        "PN Jakpus"
+      ],
+      "headline": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
+      "headlineZh": "法院撤销KPPU网贷利率卡特尔裁决",
+      "summaryZh": "雅加达中区法院商事庭撤销 KPPU 关于网贷利率卡特尔的裁决，网贷业者回应，属监管司法进展。",
+      "rationale": "具体司法裁定，涉及监管裁决",
+      "independentSourceCount": 2,
+      "domains": [
+        "antaranews.com",
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1f65fb3c1d61b623",
+        "ba3df990eda6e106"
+      ],
+      "articles": [
+        {
+          "title": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOTk5waVI5TUNiN0FkUWdhaExLdnJHY0lOanhWLUExQVdSRmJ5RVdRd0ZBV3Vrc0dVZ0ZoQ2U3MVlJd0xFSHRlbmFDdEZYbWdua1MxX1N0SGpmOVNHanRaeU9DV2pQSl9tdEJucE5LSUcydnFQcFpGZjVCTW40czVLMGxLM2lXa1NiSjBZbHBNWjhQQzNVb1B2SkJ6MW9qNElVaDZ0RXlhcXJaMkgyZzJYTkJaOUIxWVR3WmR3WFJYUlZWaGRWUkg5OFZ3a9IB0AFBVV95cUxNNmp1d3FZQ2RkdFVsT1VVT1pBaUR2RS01QmtoOWhWeWIwZ0FRVHBMMHQxNWJCR0s5MTh2TFFTRWEwN0lHRVFOMS0ycHdDT1ZfVkxwS090eFhDakNxOFl1TnczY19hOVVZd2VNTDRfOWdtWHpwbE5HTzZQY2FDX2VhWjVvQXlYX1JacUxKZmlMU1ZHWDZ1anpZZXkxVkV2cm9UbzdVYlg4MWpudVhmS0g5UFc4OVpiLTlLX0J5YVAtRGdKOEgyVENXQjRWa2k3TkR4?oc=5"
         },
         {
-          "title": "Kemitraan Perbankan dan Pindar Dorong Pertumbuhan Penyaluran Kredit dengan Lebih Selektif - VIVA.co.id",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTFhYTXlFYkVaQUllWWlQWlFzOF9abkRTaHZXQW81aUJNTzc2eFdGVENYZE5yTTh0aTFhLXFnQ1lxYjd6NGk0VWZlajVYVURqbVFkMlZGRlg3cnZmZDc2bzZUaU4xcEo2RjFNZ0R0eGZyWGY4OFhTLVFkeGJWMHFuSGxwUzE2VE5sZ2thLXRuTUo3U2FmMmYyNW1felNrZDg2d0ZtMGNzaTN5RjRtaGljYk0ydEJaUGViRWg4Y1ZOQjdWdHIybHfSAcsBQVVfeXFMT1UxTF93VF8xeWo2Y3gyZmtPbDhTR2VCdzNtdWtzenZkdEU2SmFveC1kTHR6UERyazFUWXNwNkgzVUhzN0pyUVY5QnB1TEQ5ZjU0dDkzakxGVG9xZl8yRG9ULTFGZHB6cFJLQWw2OVMwQXpIM3R2V1BUZ09TTER6T3VqUlNNQzlScV94OTNPcGJ4YlkzWE9kektZMWRUMjF4Tkg3Z3AtLWNiZ1hNb3pVY3ZPOGpXT1VxRTU5bTZ0VjVKaXp0NW1jOXN3anM?oc=5"
+          "title": "Pengadilan Niaga batalkan putusan KPPU soal bunga pinjol - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZ2Jna3A0ZzhiWlR2ZHp3TG8xNDBoY2FReHROY2FabF9tc3Fxa0FQeHVEOG9feDhzYjZrR2ZzSzJNWnl2UE4wVHFOLXd3VmRtR05YRE44dWtQTnhFTGxLbUNVRjlIX3o4QVhWcEI5TmJ3V3hjc2hZaUpvV3FXYjF1LVg5V0M4YVNaNnFTWkdONEhZUGZhRF83d1Ytd2tsQnfSAaIBQVVfeXFMTUlJRllKaTdURVlkeWpOWTFHZ1c5Z2RjalROU2tOcDhEN0o5MElFai1NdkJwTDlNc0FlZGI0RHJJQ1RuVkRieF85OWpISVc1QjBwdVRKdUFKVWM4VDVEV3dULVNhd2daMnlTNjZua1JIbVZBaHVhdktsd3ZTZTFCV0RLVXdta2dyNzdjak9OQzlyMEU4VDBtOHF2b2M2N1ZvNnJ3?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-b6d04b506ec3",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "Easycash",
-        "Krom Bank"
-      ],
-      "headline": "Kemitraan Easycash dan Krom Bank Perluas Penyaluran Kredit - Olenka",
-      "headlineZh": "Easycash与Krom Bank合作放贷",
-      "summaryZh": "Easycash与Krom Bank建立合作扩大信贷投放，属常规商业合作动态。",
-      "rationale": "常规商业合作，影响有限",
-      "independentSourceCount": 1,
-      "domains": [
-        "olenka.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3d21043af420b69c"
-      ],
-      "articles": [
-        {
-          "title": "Kemitraan Easycash dan Krom Bank Perluas Penyaluran Kredit - Olenka",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQVVQ5NzBEUmlhVVFLbWVnRWN1YWlkbUxBQUpQRVRiczJpTTdRZTlFS3NERUstbHJrMVFJWVplc21ta0cyZmlLQ2Rmb3hjYUtpc1ZFSTJzZDJoZE9zeWo2QVczWl9JUjNDRXM1MGp3VkpuSGJHSDFvVUdsWng2VUc4UVlR0gGHAUFVX3lxTE9nUTJwVTd2QTB5MldvSDhhb3luNHJYQWkydXNoaFd0Ry02dDRwTUk5QTJ5djRxcnJtMWRXR1ZxNzdWM1VSM1lyNlRnbThNaUpnWFRYSlcxeHVCSEpEa1dVT1dXUGpRc01NZWt6NTV0YkIzRUpzWFdVT2Z5cTBzV25Ld0VXOGltRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-347af38b24ca",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Marak Program Pembukaan Rekening, OJK Antisipasi Risiko Dormant yang Picu Pinjol Cs - Bisnis.com",
-      "headlineZh": "OJK防范沉睡账户被网贷利用",
-      "summaryZh": "OJK针对开户推广活动提示沉睡账户风险，防止被网贷等滥用，属常规监管提示。",
-      "rationale": "监管风险提示，影响有限",
-      "independentSourceCount": 1,
-      "domains": [
-        "finansial.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "84bb8e33370789ab"
-      ],
-      "articles": [
-        {
-          "title": "Marak Program Pembukaan Rekening, OJK Antisipasi Risiko Dormant yang Picu Pinjol Cs - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNcTNiX2NiWkFRZEk3QlI1djBpZzRtSWIwZV9LMG9EM2xPME5XN3dXVUVHRVVzUlVNR0J1ODZuZHR0ajM5TnVSS3IwQ0drSjRTalp6bUxkaHA5S3hlaVFxd0VaUHlUanpqRlMxQ3FQU1B4a1U0dC1mR3hCNVBqdEpyWEN6aVBfT3RZb24zb3dDWFYxQkpHOUhLS25iU1dMVVVSMkc0NEVMQ2NKYXJPcHg0MzZVc0FlLThHQnJRZFJUTEwxck1WbVZaSm4xbTNoR1FZbEE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-51e5f312e37b",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Catat Pembiayaan Pinjaman Daring Tembus Rp106,94 Triliun pada Agustus 2026 - Vibizmedia.com",
-      "headlineZh": "OJK：8月网贷融资106.94万亿",
-      "summaryZh": "OJK公布2026年8月网贷融资余额达106.94万亿盾，属常规行业统计数据。",
-      "rationale": "行业统计数据，常规动态",
-      "independentSourceCount": 1,
-      "domains": [
-        "vibizmedia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "dfef86e1c63d8df7"
-      ],
-      "articles": [
-        {
-          "title": "OJK Catat Pembiayaan Pinjaman Daring Tembus Rp106,94 Triliun pada Agustus 2026 - Vibizmedia.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcnRFRVVWT0FxTzBFaXhfMVZhd3N3Vi1FRUl0eEJ5SzFZY1N5dTR3NkUtOTBQd2VwcXBkeFJ4VjhBNmdzU2pldVUtdXhhY0FoMll5bzY5QlJPVnVUVHhmbGZJTWJ5X3ZnaHhCVDl4YTdFdEY0Y2tyMkNjSUtuUzdSZzd2VFpyWF93amJWX2kza0t3VDVFNm50UWNVaXBncWlzWWFZb2VwMmpSQmx3NWdiYXFfczhxUUczY3h4NkoySnFrV3JV?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c3a50b06dfc7",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "KDEI",
-        "PMI Taiwan"
-      ],
-      "headline": "Ratusan PMI di Taiwan terjerat pinjol, KDEI pastikan fungsi pendampingan - Focus Taiwan",
-      "headlineZh": "数百印尼移工在台陷网贷",
-      "summaryZh": "数百名在台印尼移工陷入网贷，KDEI确认提供协助，属跨境消费者受害事件。",
-      "rationale": "群体性消费者受害，机构介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "indonesia.focustaiwan.tw"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8cfa0fa335930c3d"
-      ],
-      "articles": [
-        {
-          "title": "Ratusan PMI di Taiwan terjerat pinjol, KDEI pastikan fungsi pendampingan - Focus Taiwan",
-          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5GVE16VTNPeXJqNGtoazhMNl9qYjhwUzhVY0tRaXlJaUlhYnpPVzk3NnMzY1ByYjBZS2tNLVFkVFFZQ2lvbDA1a1d3WWVWM2Znd1ZMX0t1X2FFNE5pVGZ0aHk4OA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -378,362 +157,141 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 38,
-    "eventGroupCount": 8,
-    "rejectedNonEvents": 5,
+    "candidateCount": 19,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 38
+      "ok": 19
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-82bc8ce6528a",
+      "id": "llm-6f7edb2a7183",
       "eventType": "industry_update",
       "severity": 0.3,
       "entities": [
-        "Kredivo",
-        "LD FEB UI",
-        "LDUI"
+        "OJK"
       ],
-      "headline": "Studi LD FEB UI: 48% Pengakses Kredit Pertama melalui Kredivo adalah Perempuan - SWA.co.id",
-      "headlineZh": "Kredivo首贷用户48%为女性",
-      "summaryZh": "LD FEB UI/LDUI研究显示Kredivo首次信贷用户中48%为女性，属常规行业数据披露，留痕即可。",
-      "rationale": "研究数据发布，属行业常规动态",
-      "independentSourceCount": 8,
-      "domains": [
-        "idxchannel.com",
-        "mediaasuransinews.co.id",
-        "mobitekno.com",
-        "momsmoney.kontan.co.id",
-        "rctiplus.com",
-        "selular.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1583cda4c88832a2",
-        "de7c0013159250dd",
-        "86d2aec1aa021f22",
-        "54258c8bab555acf",
-        "49d1267caef3111b",
-        "80a72ad97a8fae80",
-        "b89d62d5f0d9914e",
-        "ed6164ae5865f79f"
-      ],
-      "articles": [
-        {
-          "title": "Studi LD FEB UI: 48% Pengakses Kredit Pertama melalui Kredivo adalah Perempuan - SWA.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSjlleGlwRGtKNjc5ckZsWHlpOHBJcnR2SEZOQnJLeGxIakM4ek85bTREblJ0YXdrWUZMYTRIY1NMUVJpdzdoX09NQnpFQ2o5SFN0TGVEMHhoV3NnSlpSUHhQYzg4MUFEQl93aVB6X2JxZWNfaUNTbFBJbE8zaTZpdXFZSi1NXzBkcVIxOHNHYkQzVkpQUlQ0NzlnNl9Yblh5cmk1S0ZyZDFRdw?oc=5"
-        },
-        {
-          "title": "48% Pengakses Kredit Pertama di Kredivo adalah Perempuan, Buka Peluang Ekonomi Setara - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNNWR0MDM2TDZ1RnhRY3lMOGNEa2VUMkNPa3hNZHU4NTFIXzZuZlJub0J0OGhEV19TUGNuOHNpRlZSbC1WVExqWjhtSXFMYUNCQ0p4VUstelVoWE9aQzZEdzZsdUdjV3owem5TWThvT1R4WldYcTlFM0VPYjZHeVJoOTFwOUxtb1NJNXdMTTNsT084ZE8tc1dIb0REWW9zeWR1a0hsb244V0hIWllHOW0ycXVsV28xLUZtMFVF?oc=5"
-        },
-        {
-          "title": "Kredivo Catat 48% Penerima Kredit Usahanya Adalah Perempuan - youngster.id",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPU2JoNWxqYVdRX0RFdDFzRXFmVFROSGlEeVMxLXJ1dVpqVUFMVlJtNmlweUNfWEtGN0dKLWZDNWt6Zk1EOGJvR1hKR1J0LUptcm5YcmtiTUNkck5VeGpydHJVeEo2cGxJbGFNQi1tQWY0bFRmZFFMejRlanpIQXBpOFpyNGo2WUttWWktMDdLMm1nUXpHM2hvODhHY0tDX0JtMWZGOEZsZlVmQdIBqgFBVV95cUxPU2JoNWxqYVdRX0RFdDFzRXFmVFROSGlEeVMxLXJ1dVpqVUFMVlJtNmlweUNfWEtGN0dKLWZDNWt6Zk1EOGJvR1hKR1J0LUptcm5YcmtiTUNkck5VeGpydHJVeEo2cGxJbGFNQi1tQWY0bFRmZFFMejRlanpIQXBpOFpyNGo2WUttWWktMDdLMm1nUXpHM2hvODhHY0tDX0JtMWZGOEZsZlVmQQ?oc=5"
-        },
-        {
-          "title": "Kredivo Catat 48% Pengakses Kredit Pertama Berasal dari Kaum Hawa - Media Asuransi News",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxObkFVRE9VN1B2cnBzU2ZpVWxubXlaVmNRVDBER1dtSC1PNm9FLXgwdnlIWk5KekFrNmttaG95OWJ3elRiQVU3c09nQ1c0ZDM2bDI1Ymc0MVpTOUV2ek1mZlAxNHNOaTVodXh0UC1kUzJjdnA3ckRLRUVNV251M0FYM1NyeFU5ZjRqQzRMQjR5aXdSajNoY1FkeG02bnY1aGM2LUdKOS1GOGlsNm1ZRzFlVThRVzFvS0Rjci1aUE5n?oc=5"
-        },
-        {
-          "title": "Studi LDUI: 48 Persen Pengakses Kredit Pertama Kredivo Perempuan, Dorong Peluang Ekonomi Setara - IDX Channel",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbWNLQXpxZWhYWHZva1RZZi1aMTFHc0tZeHJUWUxsb3k3dUF5VmwtYkZZZ2lVay1Ldy1FUEZaZGZjVjZwMzV4a202ZzItS3JSNHZNZ2JCYnB3MFBKTE02QzFWTjZDa2VXak5IdW5GOUxCeFllbk9SN0p6SElQdU5KUjRXa3EtN3JNOWxXWWVubFBPZHpwX09UbzhPbTA0bGt2VGlxV0JDOEJpblBpc3BpTHM3NVdnamptaHNJdVpwblFfc1VnZEFmMG1CUGVWUm_SAc8BQVVfeXFMT21jS0F6cWVoWFh2b2tUWWYtWjExR3NLWXhyVFlMbG95N3VBeVZsLWJGWWdpVWstS3ctRVBGWmRmY1Y2cDM1eGttNmcyLUtyUjR2TWdiQmJwdzBQSkxNNkMxVk42Q2tlV2pOSHVuRjlMQnhZZW5PUjdKekhJUHVOSlI0V2txLTdyTTlsV1llbmxQT2R6cF9PVG84T20wNGxrdlRpcVdCQzhCaW5QaXNwaUxzNzVXZ2pqbWhzSXVacG5RX3NVZ2RBZjBtQlBlVlJv?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 8,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c6cb2b9bb3ce",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK",
-        "Sragen"
-      ],
-      "headline": "BIK Solo Raya Digelar di Sragen, OJK Ingatkan Warga Waspada Pinjol Ilegal - iNews.ID",
-      "headlineZh": "OJK在Sragen办金融普惠活动",
-      "summaryZh": "OJK在Sragen举办金融普惠月活动并提醒民众警惕非法网贷，属常规宣导活动。",
-      "rationale": "监管常规宣导活动，影响有限",
-      "independentSourceCount": 2,
-      "domains": [
-        "krjogja.com",
-        "sragen.inews.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7d560cd136a4d407",
-        "f7a01e15050ceb00"
-      ],
-      "articles": [
-        {
-          "title": "BIK Solo Raya Digelar di Sragen, OJK Ingatkan Warga Waspada Pinjol Ilegal - iNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNeWNXVTBpVjZwUVkxbG80MW8wcjNIaUZUWXlTWS1fR3dJSUgybmdZOHB4aUJONHdrNGlFWE1kemxLejgyVW56aHFaTVo4N0h1OFNGb1BsY2w2cElVLVRNVWdoTjItY2ZPWE9pWE1VamZ2OGswT3psZnZkNW1Nbjg1bEY1eVlpTml0eU54ZGVRZFptYkM1T3l5QWV2UHNCdEtnTE1kVEZLYUsyMGQ20gGrAUFVX3lxTE1JeXZEdGFNSTktbjFtM1J2WkZIUEt2Qlc3NmVzbmhUT0ZCRUxNTWRzMHRQMkV1REtrVVU2YXR3c3VDMm81RFZEZDY1N05yS3ljMTRneVVKZUcxWDd6OTgtbmhTU3dpQmkyaW9zaFloLV83RWh4bVpObFRIMWc2dDZVTEVTeUs3cFRBTktKUXd3bHZjcXkyWHhaSnBLeXRQRVFXOU5mNEVtZ2JJYw?oc=5"
-        },
-        {
-          "title": "Mencegah Pinjol Ilegal, OJK Gelar Puncak Bulan Inklusi Keuangan di Sragen - Krjogja - Kr Jogja",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOX0ROMXdOaVlwZHg4QTBici1DQUlPZ0hKRVNJVFJIQmR6eFZfbTlRNXFHbXV2eUgxRFRKY1daUlJSN1pjdnp0TTVUTm1tTGUwNDU2cmtiMnBNaFFYN3Y4YlhVMGcxZGhsVTY4LTdhMVNvQnpUVmdtLWMzV0ZRc1hnTWZlcE9keFc2RlFSdVE3TnFCV2wxb2duMjM4QllrbnlJbW9DVlBWbXlHS3JIN3ZEQWVSeV9GMEHSAbcBQVVfeXFMTl9ETjF3TmlZcGR4OEEwYnItQ0FJT2dISkVTSVRSSEJkenhWX205UTVxR211dnlIMURUSmNXWlJSUjdaY3Z6dE01VE5tbUxlMDQ1NnJrYjJwTWhRWDd2OGJYVTBnMWRobFU2OC03YTFTb0J6VFZnbS1jM1dGUXNYZ01mZXBPZHhXNkZRUnVRN05xQldsMW9nbjIzOEJZa255SW1vQ1ZQVm15R0tySDd2REFlUnlfRjBB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-10100dee1dd1",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU",
-        "PN Jakarta Pusat",
-        "Pindar",
-        "Pinjol"
-      ],
-      "headline": "Foto : Hakim Batalkan Putusan KPPU soal Bunga Pinjol, Ini Dampaknya bagi Industri Halaman 3 - Kompas.com",
-      "headlineZh": "法院撤销KPPU网贷利率裁决",
-      "summaryZh": "雅加达中区法院撤销KPPU关于网贷利率上限/卡特尔裁决，行业免罚与法律确定性受关注。",
-      "rationale": "司法裁决改变监管处罚，值得留痕",
+      "headline": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
+      "headlineZh": "OJK提示数字信贷风险",
+      "summaryZh": "OJK 提示年轻人注意 paylater 与 Pindar 风险，数字融资规模达106.94万亿盾，BNPL 增36.57%。",
+      "rationale": "监管机构公开提示，属行业常规动态",
       "independentSourceCount": 5,
       "domains": [
-        "cnbcindonesia.com",
-        "dandapala.com",
-        "money.kompas.com",
-        "nasional.kompas.com",
-        "wartaekonomi.co.id"
+        "ekonomi.rakyat.news",
+        "herald.id",
+        "inilah.com",
+        "mediaindonesia.com",
+        "newsurban.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e279492526b0bbc4",
-        "ef3716903ebe596e",
-        "49a11e34c8b7e086",
-        "cddbd7b98e977a9f",
-        "3c60a04ffcaa39d9",
-        "f08c1ad339da1a55",
-        "d5d3bb2f4da51912",
-        "0a41463f4577d6d2",
-        "88ba35c6aa0cba8e",
-        "20b88ad77b94a06e",
-        "3e76c7ef3ff681b8",
-        "772553d52a470572"
+        "69f3057ba3a1b9c2",
+        "21b9a03f3ba75871",
+        "1f6ab80b9ea2592d",
+        "b58bf2bcc536f098",
+        "3f4fdec28dff9564"
       ],
       "articles": [
         {
-          "title": "Foto : Hakim Batalkan Putusan KPPU soal Bunga Pinjol, Ini Dampaknya bagi Industri Halaman 3 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNTJZMGZsdzNmcHFiS0RFelQzaUVvd3ktTFdjUkJXTkJzNmg3dFRJYTdWbDJsMktwS2p0eHdyd0lHQmJzeFpzZWRGdlZYOXQxSzZCWEowSmEwQzFMcC1vR24xbXczSmlrbjBTNk9pbVRiOFlYc1ViZF93QTJjZGh5SDBzTW80OGFKM2JUMkdjWWoyMnNVOHM4czJoUTdBTmRNREVXR3M5VlhTd2Q3RjJ3MVlaV3NRZDgyYnozNXoyQzYwdUZEYkVOaTNmRGg?oc=5"
+          "title": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZnJnVllJV25HdlU5dG9lQ0xKWFRsS2swOWk4X0lwcHdKLS1ubERILV8yM1k1MW9LQTM2NndsOG00eW1KTWlHTmhCZFN3RVlHQ0JiNFA0cmliSDFyYlp5czJwd3ZuNU9TRGFIRm8wMjhUQlh5cXNrZ2NaUlhCaHhHTW1YdGc2bklOcE5wSE1BWW83LVY4ZGlidzRBN1FieXpuZzVYMVhNSmp5VTVQb2lZTmFqZFJDaEJoRWJIUHlB0gHDAUFVX3lxTE9BeWhfb2tQSDRaV0NBYXJGRTZ4cVhLTDl2Q1JWMlBqaTNQSXRSTVhrTXFlamp3NDJNSE0yTlpmeXNmTUpWbThYWGNXcm1mdmxmeU5ya2E5VnV4VnYwTnpmTWV0bkUzQ0tGdlpZT2hIV1N0Q2htMEh3ZE13b3lnckhDMk9FNU5iUS01Rm82cDF6T0RUU1RXMmVDRVVfbVVJRWdFM0xHanhGZmJBYW04Uzl5NlZYZ2xET1NkRzJFUVdKWXhfUQ?oc=5"
         },
         {
-          "title": "Foto : Hakim Nilai Pinjol Syariah Tak Bisa Disamakan dengan Pinjol Biasa Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQWElIamVtTEtuR2c2VzZGczBZaF8tS0tGblpHWk9VQ1BRaVpKWW5rSF9FU3BLQUFYNXpVaXVkZi1GdUdxeUQ5R29zeGo0NnVrVEJzU0FZb0t0X0VPbllhcmNhb3hsbFFsaEQ1WlhzTVhMZHE4c043M2FUcEU2ek9QeFVYclNFRWRvemZGSnpPVUJEa2xTV05zSnBZUEFRVTVPNXcxZHVybzZ0NFlUZENXZk1vcVc1Q3ZDMzZaa2xfSzBkUVJx?oc=5"
+          "title": "OJK Ingatkan Risiko Pembiayaan Digital di Tengah Lonjakan Pay Later dan Pinjol - Media Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQV1pBX0llY3ktWl8yMFdPNVB2MHdQNUhqRmlsOGlaa0pZQmFMUHV1eWk4MzZjQl9zWkVDbGNDNVAwMWg4UDlnRmFraHJqVVFrT3NKZUQtQXpncDU3WGJBdUV1dVhydThCSlZkVGozQ1pjdHZFRFJjd2xISnRwclhvZ2R3eTRISXlXd0FoUnBLWkJWdmVGeEhnQVZNRUswUXJBd0lHZXk5V3g3S0hLa0tRbWJPZkNfUHBCVFBxeA?oc=5"
         },
         {
-          "title": "Foto : PN Jakpus Batalkan Putusan KPPU soal Batas Atas Bunga Pinjol - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOTnEwYVZhbEtpenpHY216aWxHeW4taFMyem1LWjBzcDZPT3poalRoaUdrZjY5OEU4OTRaWWJDZk1kcnk3QmxSUlg2bmdlak82elo0eE1ybFZTOG9nVE5KTm5QTjNaalY5SXd2YXZiamNBOW02cnNPNE9HamlaNG13TU16MC1ja1dxNTNuc2dOMVVlNW1fQWVEcUdMenZFdVRjcjhRVU1DNDhUWFd0WFBLRkZyUjA?oc=5"
+          "title": "OJK Ungkap Pembiayaan Digital Makin Diminati, Pinjaman Daring Tembus Rp106,94 Triliun - Herald.ID",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbGpfend5R3dId0ZfQUh1U1lab1JIS1ROdENJRXR1SDF4d0VmQmNlOGY3aTg3dlRDZjNreldQYnFIVHpvbG9HaURnZVhhYkpSWFp0c2tDYXJIandJakk4MFRVYXF2LXdoRENiTGZUd2NpbGF0YjJVeXVoemJrNjVGSmdLVWdod3RuR3Q3NEdhbk54M2FoeUtvYlVfbDJjSDR1WThsVlIzb3NCNlJ3ZTBFbWkwWQ?oc=5"
         },
         {
-          "title": "Hakim Batalkan Putusan KPPU soal Bunga Pinjol, Ini Dampaknya bagi Industri - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQbGRrdWtRSEdlWi16ZVFCMHI0aEREWUpXOFNBZVdrOTdmT2xGNWdKcmhibWlGS2s0bnVJR1FNWXRGMS1OaF9ROGZkTnJJbmRsVjZWTER6ZGFsZmRkUGxqQmpUdGJTRmJJNkpVc3Z6dFp2ck1QcG8tZktMdFBQNXRZNmFUYXpIYVlPU3VwX0tVeTAycTRuQlV0ZFRNUjdHYjJmSkE4c1BFMVF1cktabTN6dkU4WEc3UElfQXlNWVRySE1LR09KcmxmR3lIRUtIQQ?oc=5"
+          "title": "Pinjol Tembus Rp106 Triliun, Paylater Tumbuh Rp13 Triliun, OJK Ingatkan Kemampuan Bayar - Inilah.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYkUzM2tqaVVfeVpUTGxfQWxDTUlBZmJ5VGE1UEp0Q1U3dzJINmwtUGNLTTNVN0FpWDNTSVhBX1ExRVVzN2JFei1DTkVpWlRzTGRlOEJ3dUpsVElpUko5NVF4aFhDLTZMSnhwTUdkVm5Td3FpUXJpNF9ZZ1BpM2VndGRTR2o4bFJlU09nT0FGRUNmYzREYV9UQUU5Z1ZOOUg3QUZTR1p1VFJlUDR4?oc=5"
         },
         {
-          "title": "Hakim Nilai Pinjol Syariah Tak Bisa Disamakan dengan Pinjol Biasa - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNU2Y1cjhtbFJabmpxc2Y1UF83TnZxM1BQS0NHbzFHb3hFVlpoR3RHSUx6VEZMa2o3QlA0d19pMnNIWWhlcXdoRVYwb1JFOEVIWWJBdmRsT29fOHFXQkwzZllQUjhOMW9ZNzhEVHBpWGMtYkMwUFpBcmtrR3RHWkVRZ2VOcjFnVElaOTc2RHpKT1FoazBkR3lzT29XemRqR0JmUnYzR3gxWnhHZ3dselVVTFdqdzRhZ3dBd3hsRmswbm1oNm1PaGNDRGZJMmlieUVzR3Nrbk0yWTc?oc=5"
+          "title": "OJK Ingatkan Mahasiswa soal Risiko Pembiayaan Digital, BNPL Tumbuh 36,57 Persen - Newsurban",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5maU9GNm9HMk9GZ2NhQTlvVDU1ekJZZFRqNFB6N3FCcXJSV2dJNWJRMHN1N3J2M01WNEI2LVZ5dWtFdUhLZXdQbW1oek9iMGZwdG9CN1FRYmc3ZW93djdJSExsRnhfNHU1a0FibncybjZLNW5TTzVHWUloOA?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 12,
+      "bodyBackedSourceCount": 5,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 1,
-        "negativeShare": 0.0,
+        "negativeShare": 100.0,
         "platforms": [
           "youtube"
         ]
       }
     },
     {
-      "id": "llm-bee236b9a073",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "Pindar",
-        "Perbankan"
-      ],
-      "headline": "Industri Pindar Tumbuh 22,07 Persen, Kolaborasi dengan Bank Perkuat Pembiayaan - Vibizmedia.com",
-      "headlineZh": "Pindar行业增长22%",
-      "summaryZh": "报道Pindar行业增长22.07%及与银行合作强化放贷，属行业常规动态。",
-      "rationale": "行业增长数据，常规动态",
-      "independentSourceCount": 2,
+      "id": "llm-0034d82e8dff",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [],
+      "headline": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
+      "headlineZh": "百元网贷拖累渔民KUR",
+      "summaryZh": "Tarakan 渔民因100盾网贷欠款被阻 KUR 申请，反映小额网贷影响正规信贷准入。",
+      "rationale": "具体个案影响信贷准入，值得留痕",
+      "independentSourceCount": 1,
       "domains": [
-        "vibizmedia.com",
-        "viva.co.id"
+        "korankaltara.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "39170b07b8ea4236",
-        "3ef2d41ab01a6343"
+        "6a96fbf42fb336b5"
       ],
       "articles": [
         {
-          "title": "Industri Pindar Tumbuh 22,07 Persen, Kolaborasi dengan Bank Perkuat Pembiayaan - Vibizmedia.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZjN1Q0w2aHpaZFluWF9MMXVvMnQxTlhGNk0wT1JEa0o5clhvLTI2alNsaW1QWXNmT1pUWl8zYTZFbU52WmxGOEFXVXVEdVhnTFNZQ2lNaFNHamZDOU50c1ZaczZ5XzhqRmpMOExqNWJTeFpYZ0VUQmhFenI0aWJObGMwQUlKUXFHTE51d1RYM0RKY0lDcDc3U3g5NkptZ1pRa2Q4UmpZeEs1eFVjZ1dnbTNXMzhrRUs0SlZnM3k2di1ZbVU?oc=5"
+          "title": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNWpweDdlTVN5c3ZoTzRKTEJKeWVLWHpFS0JhbGVXemUwUGZ1cFZtLXc1QVRwX2t4eTlWMnVjb1RVNFBkbzFqQnJtc0p6bTRjX0xuSGNqVmxXOV9oSm03ZW9Va0xMd09pNk92ejFhSElsbnNaUWloenJ4djVtOVcxNWFxbkNMd2Rk?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-486f46ba93d8",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "KPPU",
+        "PN Jakpus"
+      ],
+      "headline": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
+      "headlineZh": "法院撤销KPPU网贷利率卡特尔裁决",
+      "summaryZh": "雅加达中区法院商事庭撤销 KPPU 关于网贷利率卡特尔的裁决，网贷业者回应，属监管司法进展。",
+      "rationale": "具体司法裁定，涉及监管裁决",
+      "independentSourceCount": 2,
+      "domains": [
+        "antaranews.com",
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1f65fb3c1d61b623",
+        "ba3df990eda6e106"
+      ],
+      "articles": [
+        {
+          "title": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOTk5waVI5TUNiN0FkUWdhaExLdnJHY0lOanhWLUExQVdSRmJ5RVdRd0ZBV3Vrc0dVZ0ZoQ2U3MVlJd0xFSHRlbmFDdEZYbWdua1MxX1N0SGpmOVNHanRaeU9DV2pQSl9tdEJucE5LSUcydnFQcFpGZjVCTW40czVLMGxLM2lXa1NiSjBZbHBNWjhQQzNVb1B2SkJ6MW9qNElVaDZ0RXlhcXJaMkgyZzJYTkJaOUIxWVR3WmR3WFJYUlZWaGRWUkg5OFZ3a9IB0AFBVV95cUxNNmp1d3FZQ2RkdFVsT1VVT1pBaUR2RS01QmtoOWhWeWIwZ0FRVHBMMHQxNWJCR0s5MTh2TFFTRWEwN0lHRVFOMS0ycHdDT1ZfVkxwS090eFhDakNxOFl1TnczY19hOVVZd2VNTDRfOWdtWHpwbE5HTzZQY2FDX2VhWjVvQXlYX1JacUxKZmlMU1ZHWDZ1anpZZXkxVkV2cm9UbzdVYlg4MWpudVhmS0g5UFc4OVpiLTlLX0J5YVAtRGdKOEgyVENXQjRWa2k3TkR4?oc=5"
         },
         {
-          "title": "Kemitraan Perbankan dan Pindar Dorong Pertumbuhan Penyaluran Kredit dengan Lebih Selektif - VIVA.co.id",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPTFhYTXlFYkVaQUllWWlQWlFzOF9abkRTaHZXQW81aUJNTzc2eFdGVENYZE5yTTh0aTFhLXFnQ1lxYjd6NGk0VWZlajVYVURqbVFkMlZGRlg3cnZmZDc2bzZUaU4xcEo2RjFNZ0R0eGZyWGY4OFhTLVFkeGJWMHFuSGxwUzE2VE5sZ2thLXRuTUo3U2FmMmYyNW1felNrZDg2d0ZtMGNzaTN5RjRtaGljYk0ydEJaUGViRWg4Y1ZOQjdWdHIybHfSAcsBQVVfeXFMT1UxTF93VF8xeWo2Y3gyZmtPbDhTR2VCdzNtdWtzenZkdEU2SmFveC1kTHR6UERyazFUWXNwNkgzVUhzN0pyUVY5QnB1TEQ5ZjU0dDkzakxGVG9xZl8yRG9ULTFGZHB6cFJLQWw2OVMwQXpIM3R2V1BUZ09TTER6T3VqUlNNQzlScV94OTNPcGJ4YlkzWE9kektZMWRUMjF4Tkg3Z3AtLWNiZ1hNb3pVY3ZPOGpXT1VxRTU5bTZ0VjVKaXp0NW1jOXN3anM?oc=5"
+          "title": "Pengadilan Niaga batalkan putusan KPPU soal bunga pinjol - ANTARA News",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZ2Jna3A0ZzhiWlR2ZHp3TG8xNDBoY2FReHROY2FabF9tc3Fxa0FQeHVEOG9feDhzYjZrR2ZzSzJNWnl2UE4wVHFOLXd3VmRtR05YRE44dWtQTnhFTGxLbUNVRjlIX3o4QVhWcEI5TmJ3V3hjc2hZaUpvV3FXYjF1LVg5V0M4YVNaNnFTWkdONEhZUGZhRF83d1Ytd2tsQnfSAaIBQVVfeXFMTUlJRllKaTdURVlkeWpOWTFHZ1c5Z2RjalROU2tOcDhEN0o5MElFai1NdkJwTDlNc0FlZGI0RHJJQ1RuVkRieF85OWpISVc1QjBwdVRKdUFKVWM4VDVEV3dULVNhd2daMnlTNjZua1JIbVZBaHVhdktsd3ZTZTFCV0RLVXdta2dyNzdjak9OQzlyMEU4VDBtOHF2b2M2N1ZvNnJ3?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-b6d04b506ec3",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "Easycash",
-        "Krom Bank"
-      ],
-      "headline": "Kemitraan Easycash dan Krom Bank Perluas Penyaluran Kredit - Olenka",
-      "headlineZh": "Easycash与Krom Bank合作放贷",
-      "summaryZh": "Easycash与Krom Bank建立合作扩大信贷投放，属常规商业合作动态。",
-      "rationale": "常规商业合作，影响有限",
-      "independentSourceCount": 1,
-      "domains": [
-        "olenka.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "3d21043af420b69c"
-      ],
-      "articles": [
-        {
-          "title": "Kemitraan Easycash dan Krom Bank Perluas Penyaluran Kredit - Olenka",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQVVQ5NzBEUmlhVVFLbWVnRWN1YWlkbUxBQUpQRVRiczJpTTdRZTlFS3NERUstbHJrMVFJWVplc21ta0cyZmlLQ2Rmb3hjYUtpc1ZFSTJzZDJoZE9zeWo2QVczWl9JUjNDRXM1MGp3VkpuSGJHSDFvVUdsWng2VUc4UVlR0gGHAUFVX3lxTE9nUTJwVTd2QTB5MldvSDhhb3luNHJYQWkydXNoaFd0Ry02dDRwTUk5QTJ5djRxcnJtMWRXR1ZxNzdWM1VSM1lyNlRnbThNaUpnWFRYSlcxeHVCSEpEa1dVT1dXUGpRc01NZWt6NTV0YkIzRUpzWFdVT2Z5cTBzV25Ld0VXOGltRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-347af38b24ca",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "Marak Program Pembukaan Rekening, OJK Antisipasi Risiko Dormant yang Picu Pinjol Cs - Bisnis.com",
-      "headlineZh": "OJK防范沉睡账户被网贷利用",
-      "summaryZh": "OJK针对开户推广活动提示沉睡账户风险，防止被网贷等滥用，属常规监管提示。",
-      "rationale": "监管风险提示，影响有限",
-      "independentSourceCount": 1,
-      "domains": [
-        "finansial.bisnis.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "84bb8e33370789ab"
-      ],
-      "articles": [
-        {
-          "title": "Marak Program Pembukaan Rekening, OJK Antisipasi Risiko Dormant yang Picu Pinjol Cs - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNcTNiX2NiWkFRZEk3QlI1djBpZzRtSWIwZV9LMG9EM2xPME5XN3dXVUVHRVVzUlVNR0J1ODZuZHR0ajM5TnVSS3IwQ0drSjRTalp6bUxkaHA5S3hlaVFxd0VaUHlUanpqRlMxQ3FQU1B4a1U0dC1mR3hCNVBqdEpyWEN6aVBfT3RZb24zb3dDWFYxQkpHOUhLS25iU1dMVVVSMkc0NEVMQ2NKYXJPcHg0MzZVc0FlLThHQnJRZFJUTEwxck1WbVZaSm4xbTNoR1FZbEE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-51e5f312e37b",
-      "eventType": "industry_update",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Catat Pembiayaan Pinjaman Daring Tembus Rp106,94 Triliun pada Agustus 2026 - Vibizmedia.com",
-      "headlineZh": "OJK：8月网贷融资106.94万亿",
-      "summaryZh": "OJK公布2026年8月网贷融资余额达106.94万亿盾，属常规行业统计数据。",
-      "rationale": "行业统计数据，常规动态",
-      "independentSourceCount": 1,
-      "domains": [
-        "vibizmedia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "dfef86e1c63d8df7"
-      ],
-      "articles": [
-        {
-          "title": "OJK Catat Pembiayaan Pinjaman Daring Tembus Rp106,94 Triliun pada Agustus 2026 - Vibizmedia.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcnRFRVVWT0FxTzBFaXhfMVZhd3N3Vi1FRUl0eEJ5SzFZY1N5dTR3NkUtOTBQd2VwcXBkeFJ4VjhBNmdzU2pldVUtdXhhY0FoMll5bzY5QlJPVnVUVHhmbGZJTWJ5X3ZnaHhCVDl4YTdFdEY0Y2tyMkNjSUtuUzdSZzd2VFpyWF93amJWX2kza0t3VDVFNm50UWNVaXBncWlzWWFZb2VwMmpSQmx3NWdiYXFfczhxUUczY3h4NkoySnFrV3JV?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c3a50b06dfc7",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "KDEI",
-        "PMI Taiwan"
-      ],
-      "headline": "Ratusan PMI di Taiwan terjerat pinjol, KDEI pastikan fungsi pendampingan - Focus Taiwan",
-      "headlineZh": "数百印尼移工在台陷网贷",
-      "summaryZh": "数百名在台印尼移工陷入网贷，KDEI确认提供协助，属跨境消费者受害事件。",
-      "rationale": "群体性消费者受害，机构介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "indonesia.focustaiwan.tw"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8cfa0fa335930c3d"
-      ],
-      "articles": [
-        {
-          "title": "Ratusan PMI di Taiwan terjerat pinjol, KDEI pastikan fungsi pendampingan - Focus Taiwan",
-          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5GVE16VTNPeXJqNGtoazhMNl9qYjhwUzhVY0tRaXlJaUlhYnpPVzk3NnMzY1ByYjBZS2tNLVFkVFFZQ2lvbDA1a1d3WWVWM2Znd1ZMX0t1X2FFNE5pVGZ0aHk4OA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -756,21 +314,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 39,
-    "socialItemCount48h": 23
+    "articleCount48h": 24,
+    "socialItemCount48h": 36
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 576,
-    "classifiedCount": 194,
-    "irrelevantDropped": 46,
+    "inputCount": 567,
+    "classifiedCount": 188,
+    "irrelevantDropped": 52,
     "model": "deepseek-chat",
-    "fallbackCount": 336,
+    "fallbackCount": 327,
     "labelCounts": {
-      "NEG": 54,
-      "MIX": 64,
-      "POS": 76
+      "NEG": 59,
+      "MIX": 59,
+      "POS": 70
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
