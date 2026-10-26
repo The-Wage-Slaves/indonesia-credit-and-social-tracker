@@ -1,154 +1,121 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-25",
+  "date": "2026-10-26",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 42.1,
-    "socialDailyVolumeRisk": 11.0,
-    "negativeSocialShare": 22.8,
+    "newsDailyVolumeRisk": 32.3,
+    "socialDailyVolumeRisk": 10.5,
+    "negativeSocialShare": 17.4,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=13; prior-7d median=20.0; robust z=-0.52",
-    "socialVolume": "today=8; prior-7d median=35.0; robust z=-2.60"
+    "newsVolume": "today=12; prior-7d median=26.0; robust z=-1.18",
+    "socialVolume": "today=3; prior-7d median=42.0; robust z=-2.63"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-6f7edb2a7183",
+      "id": "llm-40e15316a875",
       "eventType": "industry_update",
       "severity": 0.3,
       "entities": [
-        "OJK"
+        "Easycash",
+        "Krom Bank"
       ],
-      "headline": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
-      "headlineZh": "OJK提示数字信贷风险",
-      "summaryZh": "OJK 提示年轻人注意 paylater 与 Pindar 风险，数字融资规模达106.94万亿盾，BNPL 增36.57%。",
-      "rationale": "监管机构公开提示，属行业常规动态",
-      "independentSourceCount": 5,
+      "headline": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
+      "headlineZh": "Easycash与Krom Bank合作放贷",
+      "summaryZh": "Easycash与Krom Bank建立合作扩大数字信贷投放，属行业常规合作动态。",
+      "rationale": "企业合作常规动态",
+      "independentSourceCount": 6,
       "domains": [
-        "ekonomi.rakyat.news",
-        "herald.id",
-        "inilah.com",
-        "mediaindonesia.com",
-        "newsurban.id"
+        "demokratis.co.id",
+        "katadata.co.id",
+        "lensahukum.co.id",
+        "peradaban.id",
+        "suaragarut.id",
+        "twaslnews1.twaslnews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "69f3057ba3a1b9c2",
-        "21b9a03f3ba75871",
-        "1f6ab80b9ea2592d",
-        "b58bf2bcc536f098",
-        "3f4fdec28dff9564"
+        "10cce18ce0a38799",
+        "edcc2b347e990ee3",
+        "e4d07fbb61c262b2",
+        "3b9f0a95ba5cdea1",
+        "9c36cb3bb8316c9c",
+        "c5239224381c94fb",
+        "e49a81d08505b111"
       ],
       "articles": [
         {
-          "title": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZnJnVllJV25HdlU5dG9lQ0xKWFRsS2swOWk4X0lwcHdKLS1ubERILV8yM1k1MW9LQTM2NndsOG00eW1KTWlHTmhCZFN3RVlHQ0JiNFA0cmliSDFyYlp5czJwd3ZuNU9TRGFIRm8wMjhUQlh5cXNrZ2NaUlhCaHhHTW1YdGc2bklOcE5wSE1BWW83LVY4ZGlidzRBN1FieXpuZzVYMVhNSmp5VTVQb2lZTmFqZFJDaEJoRWJIUHlB0gHDAUFVX3lxTE9BeWhfb2tQSDRaV0NBYXJGRTZ4cVhLTDl2Q1JWMlBqaTNQSXRSTVhrTXFlamp3NDJNSE0yTlpmeXNmTUpWbThYWGNXcm1mdmxmeU5ya2E5VnV4VnYwTnpmTWV0bkUzQ0tGdlpZT2hIV1N0Q2htMEh3ZE13b3lnckhDMk9FNU5iUS01Rm82cDF6T0RUU1RXMmVDRVVfbVVJRWdFM0xHanhGZmJBYW04Uzl5NlZYZ2xET1NkRzJFUVdKWXhfUQ?oc=5"
+          "title": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNandtRzYxS3VlRUhLck9PbG1SYzFKd3lKVm1oaGE1dlo3c19zZ0lpX3ZxYS1ScUxHVHp3V0p4QXlDc1Y3LWtvRkNyU1dJdjB2SWlQYmlmU2x6T2JDenpSYTB6cFU2SHV3RjZYLW9SLVp0VDhqNHBkcTBpUDVnWEJqYVJpSTQ5TUFJOElkN1RzMVI2RGlJbmw3SDNfTkpYclpoV1pLQXFmYUNfaknSAbABQVVfeXFMUDV4a0o0bERLSGJaaWJaMHpwN29KZE1xR01qR3U2a0RYNlIxX2dMQzBZbTJsYTZDb09WSTNJc3RqWWhJX0VTTDR0VldhRUI2NEJnSlBlMlpIMmpod2g4enpQSGZONWtnbXcwNmFNdFhPVWZOVzBqRmNjQTRaUk9yd2RnY3ZjUlA5T3YxWFJBUDZUbW9yMzg4RjdwcnNGM2lMMnJJbWpXaEEwNXd3RkYtdzY?oc=5"
         },
         {
-          "title": "OJK Ingatkan Risiko Pembiayaan Digital di Tengah Lonjakan Pay Later dan Pinjol - Media Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQV1pBX0llY3ktWl8yMFdPNVB2MHdQNUhqRmlsOGlaa0pZQmFMUHV1eWk4MzZjQl9zWkVDbGNDNVAwMWg4UDlnRmFraHJqVVFrT3NKZUQtQXpncDU3WGJBdUV1dVhydThCSlZkVGozQ1pjdHZFRFJjd2xISnRwclhvZ2R3eTRISXlXd0FoUnBLWkJWdmVGeEhnQVZNRUswUXJBd0lHZXk5V3g3S0hLa0tRbWJPZkNfUHBCVFBxeA?oc=5"
+          "title": "Krom Bank Perluas Kredit Digital Lewat Kemitraan Easycash - Peradaban.id",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1Cd3RMRGRjODVnd0NKY1MtX0VRQndfMlhfdENpWFRCV0Z4andEMFBCd2FpY2tkbGtwN3BuOHAzY3p2ejc0S0UzTXRYczBWUzZDNWVZc3pwS19ZRlA1UFE?oc=5"
         },
         {
-          "title": "OJK Ungkap Pembiayaan Digital Makin Diminati, Pinjaman Daring Tembus Rp106,94 Triliun - Herald.ID",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbGpfend5R3dId0ZfQUh1U1lab1JIS1ROdENJRXR1SDF4d0VmQmNlOGY3aTg3dlRDZjNreldQYnFIVHpvbG9HaURnZVhhYkpSWFp0c2tDYXJIandJakk4MFRVYXF2LXdoRENiTGZUd2NpbGF0YjJVeXVoemJrNjVGSmdLVWdod3RuR3Q3NEdhbk54M2FoeUtvYlVfbDJjSDR1WThsVlIzb3NCNlJ3ZTBFbWkwWQ?oc=5"
+          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0wQi1iLUoybGJWZlR0MGlmM1NnTjZTdjNBQ0s5cE5LNndGcV84a2NIc3kxUFRsTkZZOWpNRWM1Y3lFZFZhaGlvRmpHNFZpbUxENGl0VjB2R3RrUUMyaHJSaTlGVDBrNEZRUGF5Rg?oc=5"
         },
         {
-          "title": "Pinjol Tembus Rp106 Triliun, Paylater Tumbuh Rp13 Triliun, OJK Ingatkan Kemampuan Bayar - Inilah.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYkUzM2tqaVVfeVpUTGxfQWxDTUlBZmJ5VGE1UEp0Q1U3dzJINmwtUGNLTTNVN0FpWDNTSVhBX1ExRVVzN2JFei1DTkVpWlRzTGRlOEJ3dUpsVElpUko5NVF4aFhDLTZMSnhwTUdkVm5Td3FpUXJpNF9ZZ1BpM2VndGRTR2o4bFJlU09nT0FGRUNmYzREYV9UQUU5Z1ZOOUg3QUZTR1p1VFJlUDR4?oc=5"
+          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE15ZHFFVVdiX1Z6TTIzcld6TkluR2JRYVBwZnhPTi1IenlmYzdWVlVaNUZ0dlN3c2xpd0w0ck1lRjk5VHRMR21tUzc5a2lVaU5ZeWN1N1AwQWowb1Npc21z?oc=5"
         },
         {
-          "title": "OJK Ingatkan Mahasiswa soal Risiko Pembiayaan Digital, BNPL Tumbuh 36,57 Persen - Newsurban",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5maU9GNm9HMk9GZ2NhQTlvVDU1ekJZZFRqNFB6N3FCcXJSV2dJNWJRMHN1N3J2M01WNEI2LVZ5dWtFdUhLZXdQbW1oek9iMGZwdG9CN1FRYmc3ZW93djdJSExsRnhfNHU1a0FibncybjZLNW5TTzVHWUloOA?oc=5"
+          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - شبكة تواصل الإخبارية",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tTGJIRnY2NWxtNHR3bEgzb2xrSG41ZDFzRk9QN0pnYlRBZnRVakxjRWU5bWc3QUd6X2w2eXlKYXpQXzJlUDZTSld1c1doaWcwS3RJ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 5,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-0034d82e8dff",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
-      "headlineZh": "百元网贷拖累渔民KUR",
-      "summaryZh": "Tarakan 渔民因100盾网贷欠款被阻 KUR 申请，反映小额网贷影响正规信贷准入。",
-      "rationale": "具体个案影响信贷准入，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "korankaltara.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "6a96fbf42fb336b5"
-      ],
-      "articles": [
-        {
-          "title": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNWpweDdlTVN5c3ZoTzRKTEJKeWVLWHpFS0JhbGVXemUwUGZ1cFZtLXc1QVRwX2t4eTlWMnVjb1RVNFBkbzFqQnJtc0p6bTRjX0xuSGNqVmxXOV9oSm03ZW9Va0xMd09pNk92ejFhSElsbnNaUWloenJ4djVtOVcxNWFxbkNMd2Rk?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-486f46ba93d8",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU",
-        "PN Jakpus"
-      ],
-      "headline": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
-      "headlineZh": "法院撤销KPPU网贷利率卡特尔裁决",
-      "summaryZh": "雅加达中区法院商事庭撤销 KPPU 关于网贷利率卡特尔的裁决，网贷业者回应，属监管司法进展。",
-      "rationale": "具体司法裁定，涉及监管裁决",
-      "independentSourceCount": 2,
-      "domains": [
-        "antaranews.com",
-        "cnbcindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1f65fb3c1d61b623",
-        "ba3df990eda6e106"
-      ],
-      "articles": [
-        {
-          "title": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOTk5waVI5TUNiN0FkUWdhaExLdnJHY0lOanhWLUExQVdSRmJ5RVdRd0ZBV3Vrc0dVZ0ZoQ2U3MVlJd0xFSHRlbmFDdEZYbWdua1MxX1N0SGpmOVNHanRaeU9DV2pQSl9tdEJucE5LSUcydnFQcFpGZjVCTW40czVLMGxLM2lXa1NiSjBZbHBNWjhQQzNVb1B2SkJ6MW9qNElVaDZ0RXlhcXJaMkgyZzJYTkJaOUIxWVR3WmR3WFJYUlZWaGRWUkg5OFZ3a9IB0AFBVV95cUxNNmp1d3FZQ2RkdFVsT1VVT1pBaUR2RS01QmtoOWhWeWIwZ0FRVHBMMHQxNWJCR0s5MTh2TFFTRWEwN0lHRVFOMS0ycHdDT1ZfVkxwS090eFhDakNxOFl1TnczY19hOVVZd2VNTDRfOWdtWHpwbE5HTzZQY2FDX2VhWjVvQXlYX1JacUxKZmlMU1ZHWDZ1anpZZXkxVkV2cm9UbzdVYlg4MWpudVhmS0g5UFc4OVpiLTlLX0J5YVAtRGdKOEgyVENXQjRWa2k3TkR4?oc=5"
-        },
-        {
-          "title": "Pengadilan Niaga batalkan putusan KPPU soal bunga pinjol - ANTARA News",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZ2Jna3A0ZzhiWlR2ZHp3TG8xNDBoY2FReHROY2FabF9tc3Fxa0FQeHVEOG9feDhzYjZrR2ZzSzJNWnl2UE4wVHFOLXd3VmRtR05YRE44dWtQTnhFTGxLbUNVRjlIX3o4QVhWcEI5TmJ3V3hjc2hZaUpvV3FXYjF1LVg5V0M4YVNaNnFTWkdONEhZUGZhRF83d1Ytd2tsQnfSAaIBQVVfeXFMTUlJRllKaTdURVlkeWpOWTFHZ1c5Z2RjalROU2tOcDhEN0o5MElFai1NdkJwTDlNc0FlZGI0RHJJQ1RuVkRieF85OWpISVc1QjBwdVRKdUFKVWM4VDVEV3dULVNhd2daMnlTNjZua1JIbVZBaHVhdktsd3ZTZTFCV0RLVXdta2dyNzdjak9OQzlyMEU4VDBtOHF2b2M2N1ZvNnJ3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 7,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 0,
         "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-4f47ab42405f",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [],
+      "headline": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
+      "headlineZh": "网贷逾期率升至4.73%",
+      "summaryZh": "网贷逾期率升至4.73%，受购买力压力推动，反映资产质量承压。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 2,
+      "domains": [
+        "riauonline.co.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "8e290ec0a126700b",
+        "bf6fcfb53c5c71cd"
+      ],
+      "articles": [
+        {
+          "title": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVHFFcElaZVhEZFZqYVY1QzJNSVMxMHRuN090TG41MG0xRjVkaERmSjZoaFFXLWU4aW9VRERqVU5zRnQ4cmtZcUNCeGVQWHZSZjVabXZJWmlHZkJYaXBPMllaQXRkeUFxSFpvUVBrTEFmQTViRl9LQ08yZ2xHeVhGb0dINTB4cUlGOUpMTnZqOHRwUldHWE41NDl3Tm1GTjBFTHFRb3piTFZZWjQ2Q2VSOTU4WkhaU1B5ZUNj?oc=5"
+        },
+        {
+          "title": "Rasio Gagal Bayar Pinjol Nyaris Tembus 5 Persen, Ekonom: Warga Terpaksa Ngutang Buat Beli Beras - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdE9nZGNYeW5JSHVTdV9xd01DUVNYa2paY2xXR1JwU1NfbnV0akJ4dGt1bnJNaGVTM0dQeUhFMXlaQ3pJWVlPd1JRc0RrVWkzOG55SWVldjhCbmc4M1J4dWlVQWJ3dEllTDkwWFBVdGRMYW5iZWlJdWlnNFA2R2JvanJPNnc0bXVxclNfU1NIT3hyZjNUVTBXZ0lEajVuN3FPQ1hwVEt3OFplTmVCbk90X1pNZkRaNTNQNm0yV0tPdlZoaXpCd0NDVE1SNNIB0AFBVV95cUxPQ0NIZ1N5ckxoTEhrN0pHSUVyQTFMS0JPaEE0R25uX0RFOE94YXNNQzRhUUNUSUdiT2VfUmt6eEhLRGNib194T1hmdzRnYjI1U3Zjd29qdEs3QlYzektIdkRWQnVDRXBsYzh6MjhYWlM4ckg0Y1hLSzBVN1c5MVRRcDhyT3RwN3VqdnAyNTFnZE9ISzRRWlNwSTdDRFJpV3NBVkN0VDNycHduWHJaT1JDc3BESEpxNkRqdlVKTjBuQkZDd2dmVlYyaU9oVGVKS1Jl?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
         "platforms": []
       }
     }
@@ -157,146 +124,113 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 19,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 10,
+    "candidateCount": 40,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 18,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 19
+      "ok": 40
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-6f7edb2a7183",
+      "id": "llm-40e15316a875",
       "eventType": "industry_update",
       "severity": 0.3,
       "entities": [
-        "OJK"
+        "Easycash",
+        "Krom Bank"
       ],
-      "headline": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
-      "headlineZh": "OJK提示数字信贷风险",
-      "summaryZh": "OJK 提示年轻人注意 paylater 与 Pindar 风险，数字融资规模达106.94万亿盾，BNPL 增36.57%。",
-      "rationale": "监管机构公开提示，属行业常规动态",
-      "independentSourceCount": 5,
+      "headline": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
+      "headlineZh": "Easycash与Krom Bank合作放贷",
+      "summaryZh": "Easycash与Krom Bank建立合作扩大数字信贷投放，属行业常规合作动态。",
+      "rationale": "企业合作常规动态",
+      "independentSourceCount": 6,
       "domains": [
-        "ekonomi.rakyat.news",
-        "herald.id",
-        "inilah.com",
-        "mediaindonesia.com",
-        "newsurban.id"
+        "demokratis.co.id",
+        "katadata.co.id",
+        "lensahukum.co.id",
+        "peradaban.id",
+        "suaragarut.id",
+        "twaslnews1.twaslnews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "69f3057ba3a1b9c2",
-        "21b9a03f3ba75871",
-        "1f6ab80b9ea2592d",
-        "b58bf2bcc536f098",
-        "3f4fdec28dff9564"
+        "10cce18ce0a38799",
+        "edcc2b347e990ee3",
+        "e4d07fbb61c262b2",
+        "3b9f0a95ba5cdea1",
+        "9c36cb3bb8316c9c",
+        "c5239224381c94fb",
+        "e49a81d08505b111"
       ],
       "articles": [
         {
-          "title": "OJK Ingatkan Risiko Paylater dan Pindar, Pembiayaan Digital Tembus Rp106,94 Triliun - ekonomi.rakyat.news",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPZnJnVllJV25HdlU5dG9lQ0xKWFRsS2swOWk4X0lwcHdKLS1ubERILV8yM1k1MW9LQTM2NndsOG00eW1KTWlHTmhCZFN3RVlHQ0JiNFA0cmliSDFyYlp5czJwd3ZuNU9TRGFIRm8wMjhUQlh5cXNrZ2NaUlhCaHhHTW1YdGc2bklOcE5wSE1BWW83LVY4ZGlidzRBN1FieXpuZzVYMVhNSmp5VTVQb2lZTmFqZFJDaEJoRWJIUHlB0gHDAUFVX3lxTE9BeWhfb2tQSDRaV0NBYXJGRTZ4cVhLTDl2Q1JWMlBqaTNQSXRSTVhrTXFlamp3NDJNSE0yTlpmeXNmTUpWbThYWGNXcm1mdmxmeU5ya2E5VnV4VnYwTnpmTWV0bkUzQ0tGdlpZT2hIV1N0Q2htMEh3ZE13b3lnckhDMk9FNU5iUS01Rm82cDF6T0RUU1RXMmVDRVVfbVVJRWdFM0xHanhGZmJBYW04Uzl5NlZYZ2xET1NkRzJFUVdKWXhfUQ?oc=5"
+          "title": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNandtRzYxS3VlRUhLck9PbG1SYzFKd3lKVm1oaGE1dlo3c19zZ0lpX3ZxYS1ScUxHVHp3V0p4QXlDc1Y3LWtvRkNyU1dJdjB2SWlQYmlmU2x6T2JDenpSYTB6cFU2SHV3RjZYLW9SLVp0VDhqNHBkcTBpUDVnWEJqYVJpSTQ5TUFJOElkN1RzMVI2RGlJbmw3SDNfTkpYclpoV1pLQXFmYUNfaknSAbABQVVfeXFMUDV4a0o0bERLSGJaaWJaMHpwN29KZE1xR01qR3U2a0RYNlIxX2dMQzBZbTJsYTZDb09WSTNJc3RqWWhJX0VTTDR0VldhRUI2NEJnSlBlMlpIMmpod2g4enpQSGZONWtnbXcwNmFNdFhPVWZOVzBqRmNjQTRaUk9yd2RnY3ZjUlA5T3YxWFJBUDZUbW9yMzg4RjdwcnNGM2lMMnJJbWpXaEEwNXd3RkYtdzY?oc=5"
         },
         {
-          "title": "OJK Ingatkan Risiko Pembiayaan Digital di Tengah Lonjakan Pay Later dan Pinjol - Media Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQV1pBX0llY3ktWl8yMFdPNVB2MHdQNUhqRmlsOGlaa0pZQmFMUHV1eWk4MzZjQl9zWkVDbGNDNVAwMWg4UDlnRmFraHJqVVFrT3NKZUQtQXpncDU3WGJBdUV1dVhydThCSlZkVGozQ1pjdHZFRFJjd2xISnRwclhvZ2R3eTRISXlXd0FoUnBLWkJWdmVGeEhnQVZNRUswUXJBd0lHZXk5V3g3S0hLa0tRbWJPZkNfUHBCVFBxeA?oc=5"
+          "title": "Krom Bank Perluas Kredit Digital Lewat Kemitraan Easycash - Peradaban.id",
+          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1Cd3RMRGRjODVnd0NKY1MtX0VRQndfMlhfdENpWFRCV0Z4andEMFBCd2FpY2tkbGtwN3BuOHAzY3p2ejc0S0UzTXRYczBWUzZDNWVZc3pwS19ZRlA1UFE?oc=5"
         },
         {
-          "title": "OJK Ungkap Pembiayaan Digital Makin Diminati, Pinjaman Daring Tembus Rp106,94 Triliun - Herald.ID",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQbGpfend5R3dId0ZfQUh1U1lab1JIS1ROdENJRXR1SDF4d0VmQmNlOGY3aTg3dlRDZjNreldQYnFIVHpvbG9HaURnZVhhYkpSWFp0c2tDYXJIandJakk4MFRVYXF2LXdoRENiTGZUd2NpbGF0YjJVeXVoemJrNjVGSmdLVWdod3RuR3Q3NEdhbk54M2FoeUtvYlVfbDJjSDR1WThsVlIzb3NCNlJ3ZTBFbWkwWQ?oc=5"
+          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0wQi1iLUoybGJWZlR0MGlmM1NnTjZTdjNBQ0s5cE5LNndGcV84a2NIc3kxUFRsTkZZOWpNRWM1Y3lFZFZhaGlvRmpHNFZpbUxENGl0VjB2R3RrUUMyaHJSaTlGVDBrNEZRUGF5Rg?oc=5"
         },
         {
-          "title": "Pinjol Tembus Rp106 Triliun, Paylater Tumbuh Rp13 Triliun, OJK Ingatkan Kemampuan Bayar - Inilah.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYkUzM2tqaVVfeVpUTGxfQWxDTUlBZmJ5VGE1UEp0Q1U3dzJINmwtUGNLTTNVN0FpWDNTSVhBX1ExRVVzN2JFei1DTkVpWlRzTGRlOEJ3dUpsVElpUko5NVF4aFhDLTZMSnhwTUdkVm5Td3FpUXJpNF9ZZ1BpM2VndGRTR2o4bFJlU09nT0FGRUNmYzREYV9UQUU5Z1ZOOUg3QUZTR1p1VFJlUDR4?oc=5"
+          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE15ZHFFVVdiX1Z6TTIzcld6TkluR2JRYVBwZnhPTi1IenlmYzdWVlVaNUZ0dlN3c2xpd0w0ck1lRjk5VHRMR21tUzc5a2lVaU5ZeWN1N1AwQWowb1Npc21z?oc=5"
         },
         {
-          "title": "OJK Ingatkan Mahasiswa soal Risiko Pembiayaan Digital, BNPL Tumbuh 36,57 Persen - Newsurban",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5maU9GNm9HMk9GZ2NhQTlvVDU1ekJZZFRqNFB6N3FCcXJSV2dJNWJRMHN1N3J2M01WNEI2LVZ5dWtFdUhLZXdQbW1oek9iMGZwdG9CN1FRYmc3ZW93djdJSExsRnhfNHU1a0FibncybjZLNW5TTzVHWUloOA?oc=5"
+          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - شبكة تواصل الإخبارية",
+          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tTGJIRnY2NWxtNHR3bEgzb2xrSG41ZDFzRk9QN0pnYlRBZnRVakxjRWU5bWc3QUd6X2w2eXlKYXpQXzJlUDZTSld1c1doaWcwS3RJ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 5,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-0034d82e8dff",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
-      "headlineZh": "百元网贷拖累渔民KUR",
-      "summaryZh": "Tarakan 渔民因100盾网贷欠款被阻 KUR 申请，反映小额网贷影响正规信贷准入。",
-      "rationale": "具体个案影响信贷准入，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "korankaltara.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "6a96fbf42fb336b5"
-      ],
-      "articles": [
-        {
-          "title": "Utang Pinjol Rp100 Ribu Bisa Ganjal KUR Nelayan Tarakan - KoranKaltara.com",
-          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNWpweDdlTVN5c3ZoTzRKTEJKeWVLWHpFS0JhbGVXemUwUGZ1cFZtLXc1QVRwX2t4eTlWMnVjb1RVNFBkbzFqQnJtc0p6bTRjX0xuSGNqVmxXOV9oSm03ZW9Va0xMd09pNk92ejFhSElsbnNaUWloenJ4djVtOVcxNWFxbkNMd2Rk?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-486f46ba93d8",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU",
-        "PN Jakpus"
-      ],
-      "headline": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
-      "headlineZh": "法院撤销KPPU网贷利率卡特尔裁决",
-      "summaryZh": "雅加达中区法院商事庭撤销 KPPU 关于网贷利率卡特尔的裁决，网贷业者回应，属监管司法进展。",
-      "rationale": "具体司法裁定，涉及监管裁决",
-      "independentSourceCount": 2,
-      "domains": [
-        "antaranews.com",
-        "cnbcindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1f65fb3c1d61b623",
-        "ba3df990eda6e106"
-      ],
-      "articles": [
-        {
-          "title": "Bos Pinjol Respons Hakim PN Jakpus Batalkan Putusan Kartel Bunga KPPU - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOTk5waVI5TUNiN0FkUWdhaExLdnJHY0lOanhWLUExQVdSRmJ5RVdRd0ZBV3Vrc0dVZ0ZoQ2U3MVlJd0xFSHRlbmFDdEZYbWdua1MxX1N0SGpmOVNHanRaeU9DV2pQSl9tdEJucE5LSUcydnFQcFpGZjVCTW40czVLMGxLM2lXa1NiSjBZbHBNWjhQQzNVb1B2SkJ6MW9qNElVaDZ0RXlhcXJaMkgyZzJYTkJaOUIxWVR3WmR3WFJYUlZWaGRWUkg5OFZ3a9IB0AFBVV95cUxNNmp1d3FZQ2RkdFVsT1VVT1pBaUR2RS01QmtoOWhWeWIwZ0FRVHBMMHQxNWJCR0s5MTh2TFFTRWEwN0lHRVFOMS0ycHdDT1ZfVkxwS090eFhDakNxOFl1TnczY19hOVVZd2VNTDRfOWdtWHpwbE5HTzZQY2FDX2VhWjVvQXlYX1JacUxKZmlMU1ZHWDZ1anpZZXkxVkV2cm9UbzdVYlg4MWpudVhmS0g5UFc4OVpiLTlLX0J5YVAtRGdKOEgyVENXQjRWa2k3TkR4?oc=5"
-        },
-        {
-          "title": "Pengadilan Niaga batalkan putusan KPPU soal bunga pinjol - ANTARA News",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPZ2Jna3A0ZzhiWlR2ZHp3TG8xNDBoY2FReHROY2FabF9tc3Fxa0FQeHVEOG9feDhzYjZrR2ZzSzJNWnl2UE4wVHFOLXd3VmRtR05YRE44dWtQTnhFTGxLbUNVRjlIX3o4QVhWcEI5TmJ3V3hjc2hZaUpvV3FXYjF1LVg5V0M4YVNaNnFTWkdONEhZUGZhRF83d1Ytd2tsQnfSAaIBQVVfeXFMTUlJRllKaTdURVlkeWpOWTFHZ1c5Z2RjalROU2tOcDhEN0o5MElFai1NdkJwTDlNc0FlZGI0RHJJQ1RuVkRieF85OWpISVc1QjBwdVRKdUFKVWM4VDVEV3dULVNhd2daMnlTNjZua1JIbVZBaHVhdktsd3ZTZTFCV0RLVXdta2dyNzdjak9OQzlyMEU4VDBtOHF2b2M2N1ZvNnJ3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 7,
       "machineClassified": true,
       "social": {
         "status": "ok",
         "mentionCount": 0,
         "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-4f47ab42405f",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [],
+      "headline": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
+      "headlineZh": "网贷逾期率升至4.73%",
+      "summaryZh": "网贷逾期率升至4.73%，受购买力压力推动，反映资产质量承压。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 2,
+      "domains": [
+        "riauonline.co.id",
+        "wartaekonomi.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "8e290ec0a126700b",
+        "bf6fcfb53c5c71cd"
+      ],
+      "articles": [
+        {
+          "title": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVHFFcElaZVhEZFZqYVY1QzJNSVMxMHRuN090TG41MG0xRjVkaERmSjZoaFFXLWU4aW9VRERqVU5zRnQ4cmtZcUNCeGVQWHZSZjVabXZJWmlHZkJYaXBPMllaQXRkeUFxSFpvUVBrTEFmQTViRl9LQ08yZ2xHeVhGb0dINTB4cUlGOUpMTnZqOHRwUldHWE41NDl3Tm1GTjBFTHFRb3piTFZZWjQ2Q2VSOTU4WkhaU1B5ZUNj?oc=5"
+        },
+        {
+          "title": "Rasio Gagal Bayar Pinjol Nyaris Tembus 5 Persen, Ekonom: Warga Terpaksa Ngutang Buat Beli Beras - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdE9nZGNYeW5JSHVTdV9xd01DUVNYa2paY2xXR1JwU1NfbnV0akJ4dGt1bnJNaGVTM0dQeUhFMXlaQ3pJWVlPd1JRc0RrVWkzOG55SWVldjhCbmc4M1J4dWlVQWJ3dEllTDkwWFBVdGRMYW5iZWlJdWlnNFA2R2JvanJPNnc0bXVxclNfU1NIT3hyZjNUVTBXZ0lEajVuN3FPQ1hwVEt3OFplTmVCbk90X1pNZkRaNTNQNm0yV0tPdlZoaXpCd0NDVE1SNNIB0AFBVV95cUxPQ0NIZ1N5ckxoTEhrN0pHSUVyQTFMS0JPaEE0R25uX0RFOE94YXNNQzRhUUNUSUdiT2VfUmt6eEhLRGNib194T1hmdzRnYjI1U3Zjd29qdEs3QlYzektIdkRWQnVDRXBsYzh6MjhYWlM4ckg0Y1hLSzBVN1c5MVRRcDhyT3RwN3VqdnAyNTFnZE9ISzRRWlNwSTdDRFJpV3NBVkN0VDNycHduWHJaT1JDc3BESEpxNkRqdlVKTjBuQkZDd2dmVlYyaU9oVGVKS1Jl?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
         "platforms": []
       }
     }
@@ -309,26 +243,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 24,
-    "socialItemCount48h": 36
+    "articleCount48h": 50,
+    "socialItemCount48h": 25
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 567,
-    "classifiedCount": 188,
-    "irrelevantDropped": 52,
+    "inputCount": 561,
+    "classifiedCount": 204,
+    "irrelevantDropped": 36,
     "model": "deepseek-chat",
-    "fallbackCount": 327,
+    "fallbackCount": 321,
     "labelCounts": {
-      "NEG": 59,
-      "MIX": 59,
-      "POS": 70
+      "NEG": 62,
+      "MIX": 55,
+      "POS": 87
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
