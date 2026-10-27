@@ -121,3 +121,45 @@ assert.equal(composite(), expected,
 
 assert.ok(driverCount >= 25, `driver 数量异常: ${driverCount}`);
 console.log(`Dashboard render: OK (${driverCount} drivers, ${newDriverCount} newly introduced)`);
+
+// ── 观察时点区块必须真的渲染出来，而且"过期未复核"要看得见 ──────────────
+// 表在 data.js 的 watchlist；看板相对 DATA.asOf 算天数（读者可能在任何一天打开离线 ZIP）。
+// 这里不改 DATA，而是用一份临时表跑同一个渲染函数：真实表里 open 项在 asOf 时都还没到期，
+// 只靠它验不到 overdue 分支。
+{
+  const { watchlistBlock, watchlistRows } = vm.runInContext('({ watchlistBlock, watchlistRows })', context);
+  let html;
+  assert.doesNotThrow(() => { html = watchlistBlock(); }, '观察时点区块渲染抛错');
+  assert.ok(html.includes('后续观察时点'), '观察时点区块没有渲染出标题');
+  assert.ok(!html.includes('undefined') && !html.includes('NaN'), '观察时点区块渲染出 undefined/NaN');
+  for (const w of DATA.watchlist) {
+    assert.ok(html.includes(w.title), `观察时点 ${w.date} ${w.title} 没渲染出来`);
+  }
+  const rows = watchlistRows();
+  for (let i = 1; i < rows.length; i += 1) {
+    assert.ok(rows[i - 1].date <= rows[i].date, '观察时点没有按日期排序');
+  }
+
+  const saved = DATA.watchlist;
+  try {
+    DATA.watchlist = [
+      { date: '2026-09-01', approx: false, title: 'T-overdue', pillar: 'social', why: 'w', watch: 'x', added: '2026-08-01', status: 'open', outcome: '' },
+      { date: '2026-09-18', approx: false, title: 'T-soon', pillar: 'currency', why: 'w', watch: 'x', added: '2026-09-01', status: 'open', outcome: '' },
+      { date: '2026-11-01', approx: true, title: 'T-later', pillar: 'fiscal', why: 'w', watch: 'x', added: '2026-09-01', status: 'open', outcome: '' },
+      { date: '2026-09-10', approx: false, title: 'T-done', pillar: 'institutions', why: 'w', watch: 'x', added: '2026-08-01', status: 'resolved', outcome: '已入账' },
+    ];
+    // DATA.asOf 是 2026-09-15 这一类日期；断言按相对天数写，不写死具体数字。
+    const byTitle = Object.fromEntries(watchlistRows().map((r) => [r.title, r]));
+    assert.ok(byTitle['T-overdue'].days < 0 && byTitle['T-overdue'].cls === 'wOverdue',
+      'open 且已过期的时点必须标为 wOverdue');
+    assert.ok(/已过 \d+ 天·待复核/.test(byTitle['T-overdue'].state), '过期项的状态文字必须写明"待复核"');
+    assert.equal(byTitle['T-done'].cls, 'wResolved', 'resolved 项不得被当成过期');
+    assert.ok(byTitle['T-later'].days > 7 && byTitle['T-later'].cls === '', '远期项不该带任何提示色');
+    const h = watchlistBlock();
+    assert.ok(h.includes('项已过期未复核'), '区块头部必须点出过期未复核的数量');
+    assert.ok(h.includes('约 2026-11-01'), 'approx 项必须显示"约"');
+    assert.ok(h.includes('核对结论:') && h.includes('已入账'), 'resolved 项必须把 outcome 渲染出来');
+  } finally {
+    DATA.watchlist = saved;
+  }
+}

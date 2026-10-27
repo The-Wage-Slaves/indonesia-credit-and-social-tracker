@@ -12,6 +12,7 @@
   python apply_week.py append 2026-07-21 fiscal=50 currency=37 institutions=33 social=54 coercive=39
   python apply_week.py export
   python apply_week.py snapshot [YYYY-MM-DD]
+  python apply_week.py watch [YYYY-MM-DD]     —— 列出观察时点：已过期未复核 / 30 天内到期（append 后自动打印）
 
 **为什么要归档 driver 级快照**（2026-08-20 新增，勿删）：
 data.js 的 weekly 只存支柱分，不存每期的 driver 组合与权重。后果是**方法论变更无法重放**——
@@ -103,6 +104,40 @@ def export_json():
     print(f"✓ 已导出 {OUT_JSON}（{len(text):,} 字节）")
 
 
+
+# ---- 观察时点提醒 -----------------------------------------------------------
+# data.js 的 watchlist 是周更人维护的「有日期的外部事件」表。append 之后立刻把
+# 已过期未复核和 30 天内到期的项打出来，是为了让"核对时点→写 outcome→改 driver"
+# 这一步发生在周更当下，而不是等 validate_repo 在 14 天后报错。
+WATCH_AHEAD_DAYS = 30
+PILLAR_ZH = {"fiscal": "财政", "currency": "货币", "institutions": "制度",
+             "social": "社会", "coercive": "强制机构", "cross": "跨支柱"}
+
+
+def print_watchlist(asof=None):
+    data = eval_data_js()
+    asof = datetime.date.fromisoformat(asof or data.get("asOf"))
+    rows = sorted((data.get("watchlist") or []), key=lambda w: w.get("date", ""))
+    overdue, soon = [], []
+    for w in rows:
+        if w.get("status", "open") != "open":
+            continue
+        days = (datetime.date.fromisoformat(w["date"]) - asof).days
+        (overdue if days < 0 else soon if days <= WATCH_AHEAD_DAYS else []).append((days, w))
+    print("\n观察时点（相对 %s）：" % asof)
+    if overdue:
+        print("  ⚠ 已过期未复核——先核对结果、写 outcome、改 status，再决定是否改 driver：")
+        for days, w in overdue:
+            print(f"    · {w['date']}（已过 {-days} 天）[{PILLAR_ZH.get(w['pillar'], w['pillar'])}] {w['title']}")
+    if soon:
+        print(f"  未来 {WATCH_AHEAD_DAYS} 天：")
+        for days, w in soon:
+            print(f"    · {'约 ' if w.get('approx') else ''}{w['date']}（{days} 天后）[{PILLAR_ZH.get(w['pillar'], w['pillar'])}] {w['title']}")
+            print(f"      到时看：{w.get('watch', '—')}")
+    if not overdue and not soon:
+        print("  （30 天内无登记时点；如有新的法定期限/议息/复审日，请补进 data.js 的 watchlist）")
+
+
 def write_driver_snapshot(date=None):
     """归档当前 data.js 的 driver 级快照，供日后重放方法论变更。
 
@@ -147,8 +182,10 @@ def write_driver_snapshot(date=None):
 
 
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in ("append", "export", "snapshot"):
+    if len(sys.argv) < 2 or sys.argv[1] not in ("append", "export", "snapshot", "watch"):
         print(__doc__); sys.exit(1)
+    if sys.argv[1] == "watch":
+        print_watchlist(sys.argv[2] if len(sys.argv) > 2 else None); return
     if sys.argv[1] == "export":
         export_json(); return
     if sys.argv[1] == "snapshot":
@@ -165,6 +202,7 @@ def main():
     if missing:
         sys.exit(f"× 缺支柱分: {', '.join(missing)}")
     append_week(date, scores)
+    print_watchlist(date)
 
 
 if __name__ == "__main__":

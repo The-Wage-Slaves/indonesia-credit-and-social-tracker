@@ -122,6 +122,48 @@ for (const pillar of stabilityContext.__DATA.pillars) {
   }
 }
 
+// 观察时点表（watchlist）必须是"有日期、会过期、被复核"的。
+// 存在意义：周二飞书卡与看板都从它取"接下来几周看什么"；一张没人清理的表会在两周内
+// 退化成永远不过期的愿望清单，读者会把 open 当成"还没到"。所以 open 项过期 14 天仍未
+// 标 resolved/lapsed 直接报错——清表是周更的第一步，不是可选项。
+{
+  const live = stabilityContext.__DATA;
+  const rows = live.watchlist || [];
+  assert(Array.isArray(rows), 'watchlist must be an array');
+  const PILLARS = new Set(['fiscal', 'currency', 'institutions', 'social', 'coercive', 'cross']);
+  const STATUS = new Set(['open', 'resolved', 'lapsed']);
+  const seen = new Set();
+  const asOf = Date.parse(live.asOf);
+  const GRACE_DAYS = 14;
+  rows.forEach((w, i) => {
+    const where = `watchlist[${i}] (${w.date} ${w.title || ''})`;
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(w.date) && !Number.isNaN(Date.parse(w.date)), `${where}: date must be ISO YYYY-MM-DD`);
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(w.added), `${where}: added must be ISO YYYY-MM-DD`);
+    for (const f of ['title', 'why', 'watch']) {
+      assert(typeof w[f] === 'string' && w[f].trim(), `${where}: ${f} is required`);
+    }
+    assert(PILLARS.has(w.pillar), `${where}: pillar ${w.pillar} is not one of ${[...PILLARS].join('/')}`);
+    assert(STATUS.has(w.status), `${where}: status ${w.status} is not open/resolved/lapsed`);
+    assert(typeof w.approx === 'boolean', `${where}: approx must be true/false`);
+    const key = `${w.date}|${w.title}`;
+    assert(!seen.has(key), `${where}: duplicate date+title`);
+    seen.add(key);
+    if (w.status !== 'open') {
+      assert(typeof w.outcome === 'string' && w.outcome.trim(),
+        `${where}: ${w.status} items must record an outcome — "已核对" without a conclusion is just a deleted row with extra steps`);
+    } else {
+      const overdueDays = Math.round((asOf - Date.parse(w.date)) / 86400000);
+      assert(overdueDays <= GRACE_DAYS,
+        `${where}: still open ${overdueDays} days after its date (asOf ${live.asOf}); ` +
+        'mark it resolved/lapsed with an outcome, or fix the date');
+    }
+  });
+  // 导出文件里的 watchlist 也必须同步，周二飞书卡读的是它。
+  const exported = JSON.parse(read('stability-monitor/data/dashboard-data.json'));
+  assert(JSON.stringify(exported.watchlist || []) === JSON.stringify(rows),
+    'dashboard-data.json watchlist differs from data.js (run apply_week.py export)');
+}
+
 // 导出文件必须与 data.js 同步。它由 apply_week.py export 生成、供「接入自动更新」
 // 那条路径使用；2026-08-20 复核时它停在 07-30、落后 5 期，而没有任何东西报错。
 {
