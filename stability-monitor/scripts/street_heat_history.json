@@ -1017,5 +1017,91 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-10-27",
+    "version": 3,
+    "heat": 37.2,
+    "suggested_score": 63,
+    "opposition": {
+      "status": "ok",
+      "rate": 58.0,
+      "detail": "250条中政治条目176条(浓度70%)，反对102/中性46/支持28 → 总反对率 58.0%（分侧: 民间YouTube 75% · 论坛Kaskus 40% · 媒体RSS 30%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 51.8,
+        "raw": {
+          "ratio_street": 0.7896995708154505,
+          "ratio_anger": 1.2838050314465408,
+          "per_kw": {
+            "demo hari ini": 2,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 1,
+            "aksi massa": 0,
+            "korupsi": 36,
+            "kejaksaan": 22,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 12
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 19.0,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 1,
+          "share": 9.509029345372461,
+          "examples": [
+            "Food Estate Gagal dan Jejak Kebakaran Hutan dari Rezim Orba Hingga Prabowo"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 62.5,
+        "raw": {
+          "n_searched": 116,
+          "n_big": 25
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 54.4,
+        "raw": {
+          "avg7": 0.008228571428571429,
+          "baseline": 0.007557575757575758,
+          "ratio": 1.0887845113987857
+        }
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 47.7,
+        "raw": {
+          "avg_tone7": -2.771057142857143
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 6.6,
+        "raw": {
+          "total": 152,
+          "matched": 1,
+          "share": 0.6578947368421052,
+          "examples": [
+            "[BBC Indonesia] 'Kami sangat frustasi, kami benar-benar ingin perubahan' – Kemarahan kaum muda P"
+          ],
+          "dead_feeds": [
+            "CNN Indonesia Nasional",
+            "CNN Indonesia Ekonomi",
+            "CNBC Indonesia - Market"
+          ]
+        }
+      }
+    }
   }
 ]
