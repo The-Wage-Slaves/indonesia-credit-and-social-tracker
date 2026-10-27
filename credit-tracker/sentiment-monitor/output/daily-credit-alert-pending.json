@@ -1,78 +1,157 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-26",
-  "level": "normal",
+  "date": "2026-10-27",
+  "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 32.3,
-    "socialDailyVolumeRisk": 10.5,
-    "negativeSocialShare": 17.4,
+    "newsDailyVolumeRisk": 56.3,
+    "socialDailyVolumeRisk": 5.7,
+    "negativeSocialShare": 24.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=12; prior-7d median=26.0; robust z=-1.18",
-    "socialVolume": "today=3; prior-7d median=42.0; robust z=-2.63"
+    "newsVolume": "today=27; prior-7d median=22.0; robust z=0.42",
+    "socialVolume": "today=0; prior-7d median=35.0; robust z=-2.95"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
+  "highRiskPendingEvents": [
     {
-      "id": "llm-40e15316a875",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-80eacec289ec",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
       "entities": [
-        "Easycash",
-        "Krom Bank"
+        "OJK",
+        "Satgas PASTI"
       ],
-      "headline": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
-      "headlineZh": "Easycash与Krom Bank合作放贷",
-      "summaryZh": "Easycash与Krom Bank建立合作扩大数字信贷投放，属行业常规合作动态。",
-      "rationale": "企业合作常规动态",
-      "independentSourceCount": 6,
+      "headline": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
+      "headlineZh": "OJK取缔1199家非法网贷并封锁账户",
+      "summaryZh": "OJK与Satgas PASTI截至2026年9月取缔1199家非法网贷，封锁702833个账户，涉资8252亿印尼盾，处理330起案件。",
+      "rationale": "监管机构大规模执法行动",
+      "independentSourceCount": 16,
       "domains": [
+        "cnbcindonesia.com",
         "demokratis.co.id",
-        "katadata.co.id",
-        "lensahukum.co.id",
-        "peradaban.id",
-        "suaragarut.id",
-        "twaslnews1.twaslnews.com"
+        "economy.okezone.com",
+        "id.headtopics.com",
+        "idxchannel.com",
+        "lensahukum.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "10cce18ce0a38799",
-        "edcc2b347e990ee3",
-        "e4d07fbb61c262b2",
-        "3b9f0a95ba5cdea1",
-        "9c36cb3bb8316c9c",
-        "c5239224381c94fb",
-        "e49a81d08505b111"
+        "45b79ef3f01ad8fe",
+        "61d79d1ad5e829d7",
+        "8d5fbf20256db829",
+        "8ea01168da7044b0",
+        "e1fda482982017ef",
+        "a5cb4beccae466f1",
+        "9fb23c7d69433c6c",
+        "50b9ce8e259febaa",
+        "15e0cedabc8b01e3",
+        "503022397bc3c3a6",
+        "d98c0c9067d12de2",
+        "20f2f5b1bb3025dd",
+        "4b62ee48fe99a8f5",
+        "d2812b2d56ee3fa9",
+        "b144af75531aac4a",
+        "e3d24a0974a5b49a"
       ],
       "articles": [
         {
-          "title": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNandtRzYxS3VlRUhLck9PbG1SYzFKd3lKVm1oaGE1dlo3c19zZ0lpX3ZxYS1ScUxHVHp3V0p4QXlDc1Y3LWtvRkNyU1dJdjB2SWlQYmlmU2x6T2JDenpSYTB6cFU2SHV3RjZYLW9SLVp0VDhqNHBkcTBpUDVnWEJqYVJpSTQ5TUFJOElkN1RzMVI2RGlJbmw3SDNfTkpYclpoV1pLQXFmYUNfaknSAbABQVVfeXFMUDV4a0o0bERLSGJaaWJaMHpwN29KZE1xR01qR3U2a0RYNlIxX2dMQzBZbTJsYTZDb09WSTNJc3RqWWhJX0VTTDR0VldhRUI2NEJnSlBlMlpIMmpod2g4enpQSGZONWtnbXcwNmFNdFhPVWZOVzBqRmNjQTRaUk9yd2RnY3ZjUlA5T3YxWFJBUDZUbW9yMzg4RjdwcnNGM2lMMnJJbWpXaEEwNXd3RkYtdzY?oc=5"
+          "title": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMDRUOWkyeTdMVFo1WnY4UzBZTDFicE02eXEwRGgtN0tfZUwzcXBoTVM1NUp1eHNPNldTeElkMENQbjh5R2dJeUlQVGNuX3pZVVFFSzhnVFhSYjRrcFFQVnI3UDBrUlNoWGtNWnRvTHhvSzk2aW1VQ3JLNnlkWXVIRGItcGhYWWlOcVdSdHh6ZGJBc3QzdDlZ?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Digital Lewat Kemitraan Easycash - Peradaban.id",
-          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1Cd3RMRGRjODVnd0NKY1MtX0VRQndfMlhfdENpWFRCV0Z4andEMFBCd2FpY2tkbGtwN3BuOHAzY3p2ejc0S0UzTXRYczBWUzZDNWVZc3pwS19ZRlA1UFE?oc=5"
+          "title": "1.199 Pinjol Ilegal Telah Ditutup hingga September 2026, Ini Modusnya - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOaHppajY3UXk1YWtWRlhyZHY1VnJBek5nQ3psdDRoN2RtSXRENEQ5RFE5Ul9VTzV1Q1N4M2lsZzQ2d29KTTMtLWM5dDdTNmNSdGc2MXUyZ0FSdklMblhnRVJsN2FKS29KUHoxakptVnVkMTNMZXZsUnFHb1VGcHM5TWtFaTd1X3hEVUtwWVB1MkoxeGJDU3dmVHR0QjAwRHBNblJXTmZrRngzTVI0S2dpQ0stSEnSAbQBQVVfeXFMTVRHRndCLXFmVGpQcG9MRGQxdVg2ZnAtRTdwVi1EaGRWZ0ktT2hWVllYTG8xcm1MVXRjSmdkZE1IaWx3WkUwYWw0SEhlUS00R3JUbFlzYUxqNm1rdTZ4NXZrRnNvbmZsdnVwQUEtUTZZZll3dk90MV9lMnZWQUw3UTRLSmVIVXZzdngxZWROMmwzaUNzQUdoVUtkZzNCR3hxWUhlWVNJVFZVYWtvMEVCRHdhQmE1?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - Demokratis.co.id",
-          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0wQi1iLUoybGJWZlR0MGlmM1NnTjZTdjNBQ0s5cE5LNndGcV84a2NIc3kxUFRsTkZZOWpNRWM1Y3lFZFZhaGlvRmpHNFZpbUxENGl0VjB2R3RrUUMyaHJSaTlGVDBrNEZRUGF5Rg?oc=5"
+          "title": "OJK Berantas Ribuan Pinjol Ilegal, 702 Ribu Rekening Scam Diblokir dan Rp207 Miliar Dikembalikan - VIVA.co.id",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNTk5VS3ZVR3BnYWlvNGFRVlhUd2oxeXJueDRWenhyU1IwWjM3RkR0QnEwVW5UbEo2bFJmdWVLMTRfa1VzUFlCR3VxSDgxUktmdEpyMjNtN29RMjJMcC1RZGNkaWt5QzdmeE4tdk55MmVtVHNxd09IZGp6UldvQlFUSTAzdUc0M2IyQXl5a1p1RlJPUXRlYkY4a3diN3ZOTU9lUHhXWENhcWg1bElOVXFkWnZ2VjREMVZoZTJjNVduTzlhbFJYN0QwUGdFOTM5Zm1Ja0E4OFU2TzZ2Z9IB3wFBVV95cUxQZzZFOFVoUnZQTTQzR25NclFXLVFYYV84dFRZZmNWRnlzaVNLSHg0c3dHbjhmZTRPUVlvUGdaNXJrUVZ1a1VnbTRTMjVoYXB4UHdrbVl5ZzB4WEhuVlZoN0x3WDBJYjdfSkpGVWJHUW4xdGZJY0hvYnhKa25BazlfbEZVNkQtZUZPcXlXSk1Xdml3MEN0T1RVc0JkY0E2cFhETFFJNWpvTDFSRm5xV0NtaERlVEF6V1NnMld5emxPcXFFSGhSZ1ZHSUpLTzFaUE5UM1Z4VjhWZzZlcmZnclh3?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - SuaraGarut.ID",
-          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE15ZHFFVVdiX1Z6TTIzcld6TkluR2JRYVBwZnhPTi1IenlmYzdWVlVaNUZ0dlN3c2xpd0w0ck1lRjk5VHRMR21tUzc5a2lVaU5ZeWN1N1AwQWowb1Npc21z?oc=5"
+          "title": "OJK Berantas Ribuan Pinjol Ilegal, Dana Korban Penipuan yang Dikembalikan Capai Rp207 Miliar - Tutur.co.id",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFZXckFJZDduTnFEeUc5SmI0U2NYX3pvb3RjSW5ycVltT2NwZUhXMzVIdGE0aVVRUldaVlhqV3dtc1VWSTJxZkdFLTZwOHVPM0hsQkFSR2VjV1lDUGFfczJ2V3ZQbURjOGNhQzF1RUFvVnR6akVBOXpYajVUOU0yUENWUVNYd0ZGQlRqVmNTTFdqQkltdzFrZ3BibzJJM0kwUjFHenoySktsUHpEd1lZc1pn?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - شبكة تواصل الإخبارية",
-          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tTGJIRnY2NWxtNHR3bEgzb2xrSG41ZDFzRk9QN0pnYlRBZnRVakxjRWU5bWc3QUd6X2w2eXlKYXpQXzJlUDZTSld1c1doaWcwS3RJ?oc=5"
+          "title": "OJK Blokir 702 Ribu Rekening Terkait Penipuan, Dana Rp825,2 Miliar Diamankan - masakini.co",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc2pfcEVBaXRtODJPMGx3a0w4MmdPaFZ3TlNQRTM3TEJxRmt0SVlQYUYzNE5LcG1zOTdZVHlJc09GOTg2MUp4bTE4RVZNYWhkMy1HWVBtTTgxZ0J5TzBNaG9PdmphZURuckMteUU2dDlDNUdWRHpwT0R5dXN3QUxlQTB5cmtzUTM1TFp2NC1tRWVhVE9YbWZmOVg0aEN5YXc4M2dOSXBLLWFkUQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 7,
+      "bodyBackedSourceCount": 16,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-e20cc42274db",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.75,
+      "entities": [
+        "Imigrasi Ngurah Rai",
+        "17名马来西亚和新加坡籍外国人"
+      ],
+      "headline": "17 Warga Malaysia-Singapura Bikin Markas Pinjol Ilegal di Vila Bali - CNN Indonesia",
+      "headlineZh": "巴厘岛17名外国人经营非法网贷被捕",
+      "summaryZh": "巴厘岛Dalung一别墅被捣毁，17名马来西亚和新加坡籍外国人涉嫌经营面向境外的非法网贷，被移民局逮捕。",
+      "rationale": "执法抓捕非法网贷团伙",
+      "independentSourceCount": 13,
+      "domains": [
+        "antaranews.com",
+        "bali.bisnis.com",
+        "balinews.id",
+        "balipost.com",
+        "barometerbali.com",
+        "beritabali.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "409c0e7098b0d29a",
+        "df3e583f84f83562",
+        "6bd60c19581d0f33",
+        "488ffacc7d3a752b",
+        "6d9da7be61c2b646",
+        "d2869abc315dae6a",
+        "9965aa9942fd21df",
+        "284f69b01f5e67cd",
+        "bd7c3c6fdfac7f66",
+        "7e0c83b09b7f6c10",
+        "4510d3ceedc0609b",
+        "994121fe9eb9f3b7",
+        "5a525ec249126a28",
+        "7a9c77b3348c5ed6"
+      ],
+      "articles": [
+        {
+          "title": "17 Warga Malaysia-Singapura Bikin Markas Pinjol Ilegal di Vila Bali - CNN Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQOFpKbkpNMjhTVUtidm5GOUxxX2tQQktKVEY1MWZuMF9zUWFYWUFzMlNicDQwWi1EZER6VWN1QmV0eHRMbW50Nk9pWlZUa3pnY3FxaFp0dDZ6Zmljc0NScTZ2ZGVBU1hGU2RkNERFY2g2YmdUTmVXNGxqbEk5U1VKc0llRVduUDNSWHkyOEo4ckc1MUpmdGU2bHVpMDg0NlNrZTk5cjlmUXNhUDhIeWVCY1EwOUs5RU1yeWR4cERzd3J4eGtTZkNMUE1lONIB0AFBVV95cUxQS2tWTWM0S0dLSlBxb0M2YkFtUGphbGJPenUzRVVmZWVKRmJtcGtLZ0hTV1lhRUIwSEdtdm1VelNiMWxxa0RlalRhT1k5YXpyMll2VUVuRC1CUmlNaTMzNDB6a3RaTHU4Slk4clJjWDEzVWgxVEhvUGNFY0NuMWxuMFFQOGxUbURSdFR5d3gzN1hrbUdMWVpPOWxiUnVfVTVIMV9uYUhnb1lieVR3aFlpMHRPa0FFcnVmWVdkakY4RlJVS1FNNGRzNkppODJLTE5k?oc=5"
+        },
+        {
+          "title": "Berbisnis Pinjol, Belasan WNA Diamankan Imigrasi - Bali Post",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQklhbEhsRzh5bDItNGlUeklqYWFYQnF1UUp3QXhzdEloeWR1RTFIV0ZqR0JXYmk3NkthMkhCdHJCU3VVc3RrTmwwTnJVTWlOeFkwcUdhODRiZEF5Tlp5Q3VWM1hfeUlZc2pZYlZLa09rTWRpNW0yeV9DZnlNdXJWUEFCdmNQR1dRNUZORElFOTNrZE40REpBaw?oc=5"
+        },
+        {
+          "title": "Diduga Jalankan Bisnis Pinjol Ilegal, 17 WNA Ditangkap Imigrasi di Bali - news.okezone.com",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd3VrV1VKOUMxX1VwaFc2ZmpDN2RrWDhOakhqT2RPVHYxV3EybWtPWTdUSTZ6MHBwUUdmTUpUdmxfZWlxNEEyZGR5Sk5GdGZBcGVESUMxdVc3VElEdUZaLUZCbTdIVkpCOGdBUzlBRFFqdWUwMkJVOVY0TVlFYU1fcl9TelFtYUQxdWZ2OUZrN2Q0NVlTRDhrOW03WGl2TGdWNnFKT213d1NGUFAxSDlHbS1aYWc5cjRUelo3U0ZNZ0rSAb8BQVVfeXFMT1d4bVBBaVVjdmNJU3J0SjBCX0pkaVFsX3Yya1pObTl5MS1PcHlzUTNpbmxyb1FiTGd0NXZ4a3ByWDloaWxJYktsbS1vUnNpaVA2anA5Mnljelh5OWtxWHVpMkdJT2VfVFBPRVJwUUYtMlRGVFZILUotQTAyOHdKZVlKM0xDWHVCRlVZdVFpcjJ0NWUtVl82bkxtYXBoSkR6bEVzSFk5bUpKb0NSYTFuT2JacDlGUzNYbG42ekViMEU?oc=5"
+        },
+        {
+          "title": "Imigrasi Amankan 17 Warga Malaysia dan Singapura Jalankan Bisnis Pinjol Khusus WNA di Bali - Informasi.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS3BHbWlGT2JZdXdGSDZUT0lzTGdqdmpzNkJEQWd6YlpfUXNHLTRfSE1WZDlBTlJDN05sWXg4UGh3eUJsY3lwYkhFUG5Pb28tOHdlWWd4MkoxMExhdUJkZHpnQXpKc2cwNzVBYlNGMnMzWHQxR3RHZ243NVNWSzhmUHlCYjRvaVJVblQ5em1YMU1SYmtnXzdDbmhoWHk2VTlNNHlYVFItbTJVVWRmSmx2VnpzcnBYa013bnhrcl9sY3BIWnVIVHlGc2tsZw?oc=5"
+        },
+        {
+          "title": "Imigrasi Ngurah Rai Amankan 17 WNA Diduga Jalankan Pinjol Ilegal di Bali - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVXJrd2Q5LV9tMk13UENmc3F1XzdSNER2NDhVcEotSVNWenVaZlhfS3hXLWRQWXVfMGhaWmxYWGNlZ2l0ZFdjXzFmTUR2R3JXbTVHOTFjUDdVd2pjWWRmZVJ1SVh3VmFmRnkzT0lpMkRYcTFBbWFEaUxXUkxRNVRqSW1uM2p3d05OWTNMUC1nMFdXc3NtUWZqQnBGdTlJNjZVWnloT1R3SHRLR2JlQmloS29mb29ycl9NdmhMN3JvZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 14,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -80,43 +159,44 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
+    }
+  ],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-4f47ab42405f",
-      "eventType": "credit_quality_stress",
+      "id": "llm-07cd6c388bde",
+      "eventType": "regulatory_action",
       "severity": 0.55,
-      "entities": [],
-      "headline": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
-      "headlineZh": "网贷逾期率升至4.73%",
-      "summaryZh": "网贷逾期率升至4.73%，受购买力压力推动，反映资产质量承压。",
-      "rationale": "行业资产质量指标恶化，值得留痕",
-      "independentSourceCount": 2,
+      "entities": [
+        "OJK",
+        "Satgas PASTI"
+      ],
+      "headline": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
+      "headlineZh": "OJK取缔11家非法典当和数百家诈骗网贷",
+      "summaryZh": "OJK与Satgas PASTI取缔11家无牌典当业务及数百家诈骗网贷平台，属监管执法行动。",
+      "rationale": "监管执法行动",
+      "independentSourceCount": 1,
       "domains": [
-        "riauonline.co.id",
-        "wartaekonomi.co.id"
+        "gokepri.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "8e290ec0a126700b",
-        "bf6fcfb53c5c71cd"
+        "03f4b3a2937fc4aa"
       ],
       "articles": [
         {
-          "title": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVHFFcElaZVhEZFZqYVY1QzJNSVMxMHRuN090TG41MG0xRjVkaERmSjZoaFFXLWU4aW9VRERqVU5zRnQ4cmtZcUNCeGVQWHZSZjVabXZJWmlHZkJYaXBPMllaQXRkeUFxSFpvUVBrTEFmQTViRl9LQ08yZ2xHeVhGb0dINTB4cUlGOUpMTnZqOHRwUldHWE41NDl3Tm1GTjBFTHFRb3piTFZZWjQ2Q2VSOTU4WkhaU1B5ZUNj?oc=5"
-        },
-        {
-          "title": "Rasio Gagal Bayar Pinjol Nyaris Tembus 5 Persen, Ekonom: Warga Terpaksa Ngutang Buat Beli Beras - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdE9nZGNYeW5JSHVTdV9xd01DUVNYa2paY2xXR1JwU1NfbnV0akJ4dGt1bnJNaGVTM0dQeUhFMXlaQ3pJWVlPd1JRc0RrVWkzOG55SWVldjhCbmc4M1J4dWlVQWJ3dEllTDkwWFBVdGRMYW5iZWlJdWlnNFA2R2JvanJPNnc0bXVxclNfU1NIT3hyZjNUVTBXZ0lEajVuN3FPQ1hwVEt3OFplTmVCbk90X1pNZkRaNTNQNm0yV0tPdlZoaXpCd0NDVE1SNNIB0AFBVV95cUxPQ0NIZ1N5ckxoTEhrN0pHSUVyQTFMS0JPaEE0R25uX0RFOE94YXNNQzRhUUNUSUdiT2VfUmt6eEhLRGNib194T1hmdzRnYjI1U3Zjd29qdEs3QlYzektIdkRWQnVDRXBsYzh6MjhYWlM4ckg0Y1hLSzBVN1c5MVRRcDhyT3RwN3VqdnAyNTFnZE9ISzRRWlNwSTdDRFJpV3NBVkN0VDNycHduWHJaT1JDc3BESEpxNkRqdlVKTjBuQkZDd2dmVlYyaU9oVGVKS1Jl?oc=5"
+          "title": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96QzhoOEdPZXR0Wm5oNDI5bVdyVC1aTzA4cXhGZC1RLXN2b3A5Q0Y0dlZOVGs3WExOdnZDMTlLdmxHeVJxSXFNYU1jWjJKNDBicTB3VnR5Vi0xQmlvT2xwOTFteTQzT1pFb1VOeUVIeEE2MGRLOXRfTTlvbnI?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -125,8 +205,8 @@
     "method": "deepseek_credit_event_v1",
     "status": "ok",
     "candidateCount": 40,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 18,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 6,
     "unassignedCount": 0,
     "articleBodyStatus": {
       "ok": 40
@@ -135,59 +215,139 @@
   },
   "events": [
     {
-      "id": "llm-40e15316a875",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-80eacec289ec",
+      "eventType": "regulatory_action",
+      "severity": 0.75,
       "entities": [
-        "Easycash",
-        "Krom Bank"
+        "OJK",
+        "Satgas PASTI"
       ],
-      "headline": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
-      "headlineZh": "Easycash与Krom Bank合作放贷",
-      "summaryZh": "Easycash与Krom Bank建立合作扩大数字信贷投放，属行业常规合作动态。",
-      "rationale": "企业合作常规动态",
-      "independentSourceCount": 6,
+      "headline": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
+      "headlineZh": "OJK取缔1199家非法网贷并封锁账户",
+      "summaryZh": "OJK与Satgas PASTI截至2026年9月取缔1199家非法网贷，封锁702833个账户，涉资8252亿印尼盾，处理330起案件。",
+      "rationale": "监管机构大规模执法行动",
+      "independentSourceCount": 16,
       "domains": [
+        "cnbcindonesia.com",
         "demokratis.co.id",
-        "katadata.co.id",
-        "lensahukum.co.id",
-        "peradaban.id",
-        "suaragarut.id",
-        "twaslnews1.twaslnews.com"
+        "economy.okezone.com",
+        "id.headtopics.com",
+        "idxchannel.com",
+        "lensahukum.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "10cce18ce0a38799",
-        "edcc2b347e990ee3",
-        "e4d07fbb61c262b2",
-        "3b9f0a95ba5cdea1",
-        "9c36cb3bb8316c9c",
-        "c5239224381c94fb",
-        "e49a81d08505b111"
+        "45b79ef3f01ad8fe",
+        "61d79d1ad5e829d7",
+        "8d5fbf20256db829",
+        "8ea01168da7044b0",
+        "e1fda482982017ef",
+        "a5cb4beccae466f1",
+        "9fb23c7d69433c6c",
+        "50b9ce8e259febaa",
+        "15e0cedabc8b01e3",
+        "503022397bc3c3a6",
+        "d98c0c9067d12de2",
+        "20f2f5b1bb3025dd",
+        "4b62ee48fe99a8f5",
+        "d2812b2d56ee3fa9",
+        "b144af75531aac4a",
+        "e3d24a0974a5b49a"
       ],
       "articles": [
         {
-          "title": "Perluas Penyaluran Kredit, Easycash dan Krom Bank Jalin Kolaborasi - Katadata.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNandtRzYxS3VlRUhLck9PbG1SYzFKd3lKVm1oaGE1dlo3c19zZ0lpX3ZxYS1ScUxHVHp3V0p4QXlDc1Y3LWtvRkNyU1dJdjB2SWlQYmlmU2x6T2JDenpSYTB6cFU2SHV3RjZYLW9SLVp0VDhqNHBkcTBpUDVnWEJqYVJpSTQ5TUFJOElkN1RzMVI2RGlJbmw3SDNfTkpYclpoV1pLQXFmYUNfaknSAbABQVVfeXFMUDV4a0o0bERLSGJaaWJaMHpwN29KZE1xR01qR3U2a0RYNlIxX2dMQzBZbTJsYTZDb09WSTNJc3RqWWhJX0VTTDR0VldhRUI2NEJnSlBlMlpIMmpod2g4enpQSGZONWtnbXcwNmFNdFhPVWZOVzBqRmNjQTRaUk9yd2RnY3ZjUlA5T3YxWFJBUDZUbW9yMzg4RjdwcnNGM2lMMnJJbWpXaEEwNXd3RkYtdzY?oc=5"
+          "title": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMDRUOWkyeTdMVFo1WnY4UzBZTDFicE02eXEwRGgtN0tfZUwzcXBoTVM1NUp1eHNPNldTeElkMENQbjh5R2dJeUlQVGNuX3pZVVFFSzhnVFhSYjRrcFFQVnI3UDBrUlNoWGtNWnRvTHhvSzk2aW1VQ3JLNnlkWXVIRGItcGhYWWlOcVdSdHh6ZGJBc3QzdDlZ?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Digital Lewat Kemitraan Easycash - Peradaban.id",
-          "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1Cd3RMRGRjODVnd0NKY1MtX0VRQndfMlhfdENpWFRCV0Z4andEMFBCd2FpY2tkbGtwN3BuOHAzY3p2ejc0S0UzTXRYczBWUzZDNWVZc3pwS19ZRlA1UFE?oc=5"
+          "title": "1.199 Pinjol Ilegal Telah Ditutup hingga September 2026, Ini Modusnya - Suara.com",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOaHppajY3UXk1YWtWRlhyZHY1VnJBek5nQ3psdDRoN2RtSXRENEQ5RFE5Ul9VTzV1Q1N4M2lsZzQ2d29KTTMtLWM5dDdTNmNSdGc2MXUyZ0FSdklMblhnRVJsN2FKS29KUHoxakptVnVkMTNMZXZsUnFHb1VGcHM5TWtFaTd1X3hEVUtwWVB1MkoxeGJDU3dmVHR0QjAwRHBNblJXTmZrRngzTVI0S2dpQ0stSEnSAbQBQVVfeXFMTVRHRndCLXFmVGpQcG9MRGQxdVg2ZnAtRTdwVi1EaGRWZ0ktT2hWVllYTG8xcm1MVXRjSmdkZE1IaWx3WkUwYWw0SEhlUS00R3JUbFlzYUxqNm1rdTZ4NXZrRnNvbmZsdnVwQUEtUTZZZll3dk90MV9lMnZWQUw3UTRLSmVIVXZzdngxZWROMmwzaUNzQUdoVUtkZzNCR3hxWUhlWVNJVFZVYWtvMEVCRHdhQmE1?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - Demokratis.co.id",
-          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE0wQi1iLUoybGJWZlR0MGlmM1NnTjZTdjNBQ0s5cE5LNndGcV84a2NIc3kxUFRsTkZZOWpNRWM1Y3lFZFZhaGlvRmpHNFZpbUxENGl0VjB2R3RrUUMyaHJSaTlGVDBrNEZRUGF5Rg?oc=5"
+          "title": "OJK Berantas Ribuan Pinjol Ilegal, 702 Ribu Rekening Scam Diblokir dan Rp207 Miliar Dikembalikan - VIVA.co.id",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNTk5VS3ZVR3BnYWlvNGFRVlhUd2oxeXJueDRWenhyU1IwWjM3RkR0QnEwVW5UbEo2bFJmdWVLMTRfa1VzUFlCR3VxSDgxUktmdEpyMjNtN29RMjJMcC1RZGNkaWt5QzdmeE4tdk55MmVtVHNxd09IZGp6UldvQlFUSTAzdUc0M2IyQXl5a1p1RlJPUXRlYkY4a3diN3ZOTU9lUHhXWENhcWg1bElOVXFkWnZ2VjREMVZoZTJjNVduTzlhbFJYN0QwUGdFOTM5Zm1Ja0E4OFU2TzZ2Z9IB3wFBVV95cUxQZzZFOFVoUnZQTTQzR25NclFXLVFYYV84dFRZZmNWRnlzaVNLSHg0c3dHbjhmZTRPUVlvUGdaNXJrUVZ1a1VnbTRTMjVoYXB4UHdrbVl5ZzB4WEhuVlZoN0x3WDBJYjdfSkpGVWJHUW4xdGZJY0hvYnhKa25BazlfbEZVNkQtZUZPcXlXSk1Xdml3MEN0T1RVc0JkY0E2cFhETFFJNWpvTDFSRm5xV0NtaERlVEF6V1NnMld5emxPcXFFSGhSZ1ZHSUpLTzFaUE5UM1Z4VjhWZzZlcmZnclh3?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - SuaraGarut.ID",
-          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE15ZHFFVVdiX1Z6TTIzcld6TkluR2JRYVBwZnhPTi1IenlmYzdWVlVaNUZ0dlN3c2xpd0w0ck1lRjk5VHRMR21tUzc5a2lVaU5ZeWN1N1AwQWowb1Npc21z?oc=5"
+          "title": "OJK Berantas Ribuan Pinjol Ilegal, Dana Korban Penipuan yang Dikembalikan Capai Rp207 Miliar - Tutur.co.id",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFZXckFJZDduTnFEeUc5SmI0U2NYX3pvb3RjSW5ycVltT2NwZUhXMzVIdGE0aVVRUldaVlhqV3dtc1VWSTJxZkdFLTZwOHVPM0hsQkFSR2VjV1lDUGFfczJ2V3ZQbURjOGNhQzF1RUFvVnR6akVBOXpYajVUOU0yUENWUVNYd0ZGQlRqVmNTTFdqQkltdzFrZ3BibzJJM0kwUjFHenoySktsUHpEd1lZc1pn?oc=5"
         },
         {
-          "title": "Krom Bank Perluas Kredit Lewat Kemitraan dengan Easycash - شبكة تواصل الإخبارية",
-          "link": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5tTGJIRnY2NWxtNHR3bEgzb2xrSG41ZDFzRk9QN0pnYlRBZnRVakxjRWU5bWc3QUd6X2w2eXlKYXpQXzJlUDZTSld1c1doaWcwS3RJ?oc=5"
+          "title": "OJK Blokir 702 Ribu Rekening Terkait Penipuan, Dana Rp825,2 Miliar Diamankan - masakini.co",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc2pfcEVBaXRtODJPMGx3a0w4MmdPaFZ3TlNQRTM3TEJxRmt0SVlQYUYzNE5LcG1zOTdZVHlJc09GOTg2MUp4bTE4RVZNYWhkMy1HWVBtTTgxZ0J5TzBNaG9PdmphZURuckMteUU2dDlDNUdWRHpwT0R5dXN3QUxlQTB5cmtzUTM1TFp2NC1tRWVhVE9YbWZmOVg0aEN5YXc4M2dOSXBLLWFkUQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 7,
+      "bodyBackedSourceCount": 16,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-e20cc42274db",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.75,
+      "entities": [
+        "Imigrasi Ngurah Rai",
+        "17名马来西亚和新加坡籍外国人"
+      ],
+      "headline": "17 Warga Malaysia-Singapura Bikin Markas Pinjol Ilegal di Vila Bali - CNN Indonesia",
+      "headlineZh": "巴厘岛17名外国人经营非法网贷被捕",
+      "summaryZh": "巴厘岛Dalung一别墅被捣毁，17名马来西亚和新加坡籍外国人涉嫌经营面向境外的非法网贷，被移民局逮捕。",
+      "rationale": "执法抓捕非法网贷团伙",
+      "independentSourceCount": 13,
+      "domains": [
+        "antaranews.com",
+        "bali.bisnis.com",
+        "balinews.id",
+        "balipost.com",
+        "barometerbali.com",
+        "beritabali.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "409c0e7098b0d29a",
+        "df3e583f84f83562",
+        "6bd60c19581d0f33",
+        "488ffacc7d3a752b",
+        "6d9da7be61c2b646",
+        "d2869abc315dae6a",
+        "9965aa9942fd21df",
+        "284f69b01f5e67cd",
+        "bd7c3c6fdfac7f66",
+        "7e0c83b09b7f6c10",
+        "4510d3ceedc0609b",
+        "994121fe9eb9f3b7",
+        "5a525ec249126a28",
+        "7a9c77b3348c5ed6"
+      ],
+      "articles": [
+        {
+          "title": "17 Warga Malaysia-Singapura Bikin Markas Pinjol Ilegal di Vila Bali - CNN Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQOFpKbkpNMjhTVUtidm5GOUxxX2tQQktKVEY1MWZuMF9zUWFYWUFzMlNicDQwWi1EZER6VWN1QmV0eHRMbW50Nk9pWlZUa3pnY3FxaFp0dDZ6Zmljc0NScTZ2ZGVBU1hGU2RkNERFY2g2YmdUTmVXNGxqbEk5U1VKc0llRVduUDNSWHkyOEo4ckc1MUpmdGU2bHVpMDg0NlNrZTk5cjlmUXNhUDhIeWVCY1EwOUs5RU1yeWR4cERzd3J4eGtTZkNMUE1lONIB0AFBVV95cUxQS2tWTWM0S0dLSlBxb0M2YkFtUGphbGJPenUzRVVmZWVKRmJtcGtLZ0hTV1lhRUIwSEdtdm1VelNiMWxxa0RlalRhT1k5YXpyMll2VUVuRC1CUmlNaTMzNDB6a3RaTHU4Slk4clJjWDEzVWgxVEhvUGNFY0NuMWxuMFFQOGxUbURSdFR5d3gzN1hrbUdMWVpPOWxiUnVfVTVIMV9uYUhnb1lieVR3aFlpMHRPa0FFcnVmWVdkakY4RlJVS1FNNGRzNkppODJLTE5k?oc=5"
+        },
+        {
+          "title": "Berbisnis Pinjol, Belasan WNA Diamankan Imigrasi - Bali Post",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQklhbEhsRzh5bDItNGlUeklqYWFYQnF1UUp3QXhzdEloeWR1RTFIV0ZqR0JXYmk3NkthMkhCdHJCU3VVc3RrTmwwTnJVTWlOeFkwcUdhODRiZEF5Tlp5Q3VWM1hfeUlZc2pZYlZLa09rTWRpNW0yeV9DZnlNdXJWUEFCdmNQR1dRNUZORElFOTNrZE40REpBaw?oc=5"
+        },
+        {
+          "title": "Diduga Jalankan Bisnis Pinjol Ilegal, 17 WNA Ditangkap Imigrasi di Bali - news.okezone.com",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd3VrV1VKOUMxX1VwaFc2ZmpDN2RrWDhOakhqT2RPVHYxV3EybWtPWTdUSTZ6MHBwUUdmTUpUdmxfZWlxNEEyZGR5Sk5GdGZBcGVESUMxdVc3VElEdUZaLUZCbTdIVkpCOGdBUzlBRFFqdWUwMkJVOVY0TVlFYU1fcl9TelFtYUQxdWZ2OUZrN2Q0NVlTRDhrOW03WGl2TGdWNnFKT213d1NGUFAxSDlHbS1aYWc5cjRUelo3U0ZNZ0rSAb8BQVVfeXFMT1d4bVBBaVVjdmNJU3J0SjBCX0pkaVFsX3Yya1pObTl5MS1PcHlzUTNpbmxyb1FiTGd0NXZ4a3ByWDloaWxJYktsbS1vUnNpaVA2anA5Mnljelh5OWtxWHVpMkdJT2VfVFBPRVJwUUYtMlRGVFZILUotQTAyOHdKZVlKM0xDWHVCRlVZdVFpcjJ0NWUtVl82bkxtYXBoSkR6bEVzSFk5bUpKb0NSYTFuT2JacDlGUzNYbG42ekViMEU?oc=5"
+        },
+        {
+          "title": "Imigrasi Amankan 17 Warga Malaysia dan Singapura Jalankan Bisnis Pinjol Khusus WNA di Bali - Informasi.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS3BHbWlGT2JZdXdGSDZUT0lzTGdqdmpzNkJEQWd6YlpfUXNHLTRfSE1WZDlBTlJDN05sWXg4UGh3eUJsY3lwYkhFUG5Pb28tOHdlWWd4MkoxMExhdUJkZHpnQXpKc2cwNzVBYlNGMnMzWHQxR3RHZ243NVNWSzhmUHlCYjRvaVJVblQ5em1YMU1SYmtnXzdDbmhoWHk2VTlNNHlYVFItbTJVVWRmSmx2VnpzcnBYa013bnhrcl9sY3BIWnVIVHlGc2tsZw?oc=5"
+        },
+        {
+          "title": "Imigrasi Ngurah Rai Amankan 17 WNA Diduga Jalankan Pinjol Ilegal di Bali - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVXJrd2Q5LV9tMk13UENmc3F1XzdSNER2NDhVcEotSVNWenVaZlhfS3hXLWRQWXVfMGhaWmxYWGNlZ2l0ZFdjXzFmTUR2R3JXbTVHOTFjUDdVd2pjWWRmZVJ1SVh3VmFmRnkzT0lpMkRYcTFBbWFEaUxXUkxRNVRqSW1uM2p3d05OWTNMUC1nMFdXc3NtUWZqQnBGdTlJNjZVWnloT1R3SHRLR2JlQmloS29mb29ycl9NdmhMN3JvZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 14,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -197,41 +357,40 @@
       }
     },
     {
-      "id": "llm-4f47ab42405f",
-      "eventType": "credit_quality_stress",
+      "id": "llm-07cd6c388bde",
+      "eventType": "regulatory_action",
       "severity": 0.55,
-      "entities": [],
-      "headline": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
-      "headlineZh": "网贷逾期率升至4.73%",
-      "summaryZh": "网贷逾期率升至4.73%，受购买力压力推动，反映资产质量承压。",
-      "rationale": "行业资产质量指标恶化，值得留痕",
-      "independentSourceCount": 2,
+      "entities": [
+        "OJK",
+        "Satgas PASTI"
+      ],
+      "headline": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
+      "headlineZh": "OJK取缔11家非法典当和数百家诈骗网贷",
+      "summaryZh": "OJK与Satgas PASTI取缔11家无牌典当业务及数百家诈骗网贷平台，属监管执法行动。",
+      "rationale": "监管执法行动",
+      "independentSourceCount": 1,
       "domains": [
-        "riauonline.co.id",
-        "wartaekonomi.co.id"
+        "gokepri.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "8e290ec0a126700b",
-        "bf6fcfb53c5c71cd"
+        "03f4b3a2937fc4aa"
       ],
       "articles": [
         {
-          "title": "Gagal Bayar Pinjol Naik ke 4,73 Persen di Tengah Tekanan Daya Beli - Riau Online",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQVHFFcElaZVhEZFZqYVY1QzJNSVMxMHRuN090TG41MG0xRjVkaERmSjZoaFFXLWU4aW9VRERqVU5zRnQ4cmtZcUNCeGVQWHZSZjVabXZJWmlHZkJYaXBPMllaQXRkeUFxSFpvUVBrTEFmQTViRl9LQ08yZ2xHeVhGb0dINTB4cUlGOUpMTnZqOHRwUldHWE41NDl3Tm1GTjBFTHFRb3piTFZZWjQ2Q2VSOTU4WkhaU1B5ZUNj?oc=5"
-        },
-        {
-          "title": "Rasio Gagal Bayar Pinjol Nyaris Tembus 5 Persen, Ekonom: Warga Terpaksa Ngutang Buat Beli Beras - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPdE9nZGNYeW5JSHVTdV9xd01DUVNYa2paY2xXR1JwU1NfbnV0akJ4dGt1bnJNaGVTM0dQeUhFMXlaQ3pJWVlPd1JRc0RrVWkzOG55SWVldjhCbmc4M1J4dWlVQWJ3dEllTDkwWFBVdGRMYW5iZWlJdWlnNFA2R2JvanJPNnc0bXVxclNfU1NIT3hyZjNUVTBXZ0lEajVuN3FPQ1hwVEt3OFplTmVCbk90X1pNZkRaNTNQNm0yV0tPdlZoaXpCd0NDVE1SNNIB0AFBVV95cUxPQ0NIZ1N5ckxoTEhrN0pHSUVyQTFMS0JPaEE0R25uX0RFOE94YXNNQzRhUUNUSUdiT2VfUmt6eEhLRGNib194T1hmdzRnYjI1U3Zjd29qdEs3QlYzektIdkRWQnVDRXBsYzh6MjhYWlM4ckg0Y1hLSzBVN1c5MVRRcDhyT3RwN3VqdnAyNTFnZE9ISzRRWlNwSTdDRFJpV3NBVkN0VDNycHduWHJaT1JDc3BESEpxNkRqdlVKTjBuQkZDd2dmVlYyaU9oVGVKS1Jl?oc=5"
+          "title": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
+          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96QzhoOEdPZXR0Wm5oNDI5bVdyVC1aTzA4cXhGZC1RLXN2b3A5Q0Y0dlZOVGs3WExOdnZDMTlLdmxHeVJxSXFNYU1jWjJKNDBicTB3VnR5Vi0xQmlvT2xwOTFteTQzT1pFb1VOeUVIeEE2MGRLOXRfTTlvbnI?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -243,26 +402,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
+      "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 50,
-    "socialItemCount48h": 25
+    "articleCount48h": 61,
+    "socialItemCount48h": 27
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 561,
-    "classifiedCount": 204,
-    "irrelevantDropped": 36,
+    "inputCount": 534,
+    "classifiedCount": 184,
+    "irrelevantDropped": 56,
     "model": "deepseek-chat",
-    "fallbackCount": 321,
+    "fallbackCount": 294,
     "labelCounts": {
-      "NEG": 62,
-      "MIX": 55,
-      "POS": 87
+      "NEG": 81,
+      "MIX": 53,
+      "POS": 50
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
