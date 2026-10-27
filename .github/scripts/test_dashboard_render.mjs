@@ -142,13 +142,15 @@ console.log(`Dashboard render: OK (${driverCount} drivers, ${newDriverCount} new
 
   const saved = DATA.watchlist;
   try {
+    // 测试日期一律相对 DATA.asOf 生成：写死成 9 月的日期，asOf 一往后走（2026-10-27 那期）
+    // 「远期」项就掉进 7 天窗口、「7 天内」项变成过期，测试随日历自己坏掉。
+    const shift = (days) => new Date(Date.parse(DATA.asOf) + days * 86400000).toISOString().slice(0, 10);
     DATA.watchlist = [
-      { date: '2026-09-01', approx: false, title: 'T-overdue', pillar: 'social', why: 'w', watch: 'x', added: '2026-08-01', status: 'open', outcome: '' },
-      { date: '2026-09-18', approx: false, title: 'T-soon', pillar: 'currency', why: 'w', watch: 'x', added: '2026-09-01', status: 'open', outcome: '' },
-      { date: '2026-11-01', approx: true, title: 'T-later', pillar: 'fiscal', why: 'w', watch: 'x', added: '2026-09-01', status: 'open', outcome: '' },
-      { date: '2026-09-10', approx: false, title: 'T-done', pillar: 'institutions', why: 'w', watch: 'x', added: '2026-08-01', status: 'resolved', outcome: '已入账' },
+      { date: shift(-14), approx: false, title: 'T-overdue', pillar: 'social', why: 'w', watch: 'x', added: shift(-45), status: 'open', outcome: '' },
+      { date: shift(3), approx: false, title: 'T-soon', pillar: 'currency', why: 'w', watch: 'x', added: shift(-14), status: 'open', outcome: '' },
+      { date: shift(47), approx: true, title: 'T-later', pillar: 'fiscal', why: 'w', watch: 'x', added: shift(-14), status: 'open', outcome: '' },
+      { date: shift(-5), approx: false, title: 'T-done', pillar: 'institutions', why: 'w', watch: 'x', added: shift(-45), status: 'resolved', outcome: '已入账' },
     ];
-    // DATA.asOf 是 2026-09-15 这一类日期；断言按相对天数写，不写死具体数字。
     const byTitle = Object.fromEntries(watchlistRows().map((r) => [r.title, r]));
     assert.ok(byTitle['T-overdue'].days < 0 && byTitle['T-overdue'].cls === 'wOverdue',
       'open 且已过期的时点必须标为 wOverdue');
@@ -157,7 +159,8 @@ console.log(`Dashboard render: OK (${driverCount} drivers, ${newDriverCount} new
     assert.ok(byTitle['T-later'].days > 7 && byTitle['T-later'].cls === '', '远期项不该带任何提示色');
     const h = watchlistBlock();
     assert.ok(h.includes('项已过期未复核'), '区块头部必须点出过期未复核的数量');
-    assert.ok(h.includes('约 2026-11-01'), 'approx 项必须显示"约"');
+    assert.ok(h.includes(`约 ${shift(47)}`), 'approx 项必须显示"约"');
+    assert.equal(byTitle['T-soon'].cls, 'wSoon', '7 天内到期的时点必须标为 wSoon');
     assert.ok(h.includes('核对结论:') && h.includes('已入账'), 'resolved 项必须把 outcome 渲染出来');
   } finally {
     DATA.watchlist = saved;
