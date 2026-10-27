@@ -122,6 +122,48 @@ for (const pillar of stabilityContext.__DATA.pillars) {
   }
 }
 
+// 观察时点表（watchlist）必须是"有日期、会过期、被复核"的。
+// 存在意义：周二飞书卡与看板都从它取"接下来几周看什么"；一张没人清理的表会在两周内
+// 退化成永远不过期的愿望清单，读者会把 open 当成"还没到"。所以 open 项过期 14 天仍未
+// 标 resolved/lapsed 直接报错——清表是周更的第一步，不是可选项。
+{
+  const live = stabilityContext.__DATA;
+  const rows = live.watchlist || [];
+  assert(Array.isArray(rows), 'watchlist must be an array');
+  const PILLARS = new Set(['fiscal', 'currency', 'institutions', 'social', 'coercive', 'cross']);
+  const STATUS = new Set(['open', 'resolved', 'lapsed']);
+  const seen = new Set();
+  const asOf = Date.parse(live.asOf);
+  const GRACE_DAYS = 14;
+  rows.forEach((w, i) => {
+    const where = `watchlist[${i}] (${w.date} ${w.title || ''})`;
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(w.date) && !Number.isNaN(Date.parse(w.date)), `${where}: date must be ISO YYYY-MM-DD`);
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(w.added), `${where}: added must be ISO YYYY-MM-DD`);
+    for (const f of ['title', 'why', 'watch']) {
+      assert(typeof w[f] === 'string' && w[f].trim(), `${where}: ${f} is required`);
+    }
+    assert(PILLARS.has(w.pillar), `${where}: pillar ${w.pillar} is not one of ${[...PILLARS].join('/')}`);
+    assert(STATUS.has(w.status), `${where}: status ${w.status} is not open/resolved/lapsed`);
+    assert(typeof w.approx === 'boolean', `${where}: approx must be true/false`);
+    const key = `${w.date}|${w.title}`;
+    assert(!seen.has(key), `${where}: duplicate date+title`);
+    seen.add(key);
+    if (w.status !== 'open') {
+      assert(typeof w.outcome === 'string' && w.outcome.trim(),
+        `${where}: ${w.status} items must record an outcome — "已核对" without a conclusion is just a deleted row with extra steps`);
+    } else {
+      const overdueDays = Math.round((asOf - Date.parse(w.date)) / 86400000);
+      assert(overdueDays <= GRACE_DAYS,
+        `${where}: still open ${overdueDays} days after its date (asOf ${live.asOf}); ` +
+        'mark it resolved/lapsed with an outcome, or fix the date');
+    }
+  });
+  // 导出文件里的 watchlist 也必须同步，周二飞书卡读的是它。
+  const exported = JSON.parse(read('stability-monitor/data/dashboard-data.json'));
+  assert(JSON.stringify(exported.watchlist || []) === JSON.stringify(rows),
+    'dashboard-data.json watchlist differs from data.js (run apply_week.py export)');
+}
+
 // 导出文件必须与 data.js 同步。它由 apply_week.py export 生成、供「接入自动更新」
 // 那条路径使用；2026-08-20 复核时它停在 07-30、落后 5 期，而没有任何东西报错。
 {
@@ -144,6 +186,63 @@ assert(v4Input.asOf === evidence.asOf, 'V4 input and evidence cutoff dates diffe
 const latestWeekly = [...stabilityContext.__DATA.weekly].sort((a, b) => a.date.localeCompare(b.date)).at(-1);
 assert(latestWeekly && latestWeekly.date === v4Input.asOf, 'V3 production and V4 shadow cutoff dates differ');
 assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and V4 shadow cutoff dates differ');
+
+// V3 与 V4 必须对同一个汇率读数出同一个分。
+//
+// 2026-09-01 周更把 V3 的汇率 driver 由 38 改成 55（基数口径纠错），但 V4 证据档里的
+// currency.fx_stress 仍写着 38 / "-10.2 percent"。两边同一天、同一个汇率、两个分数，
+// CI 全绿、单测全绿、影子指数照常出 46.1 —— 没有任何东西发现。这是本项目第 N 次
+// 「一边修了、另一边忘了」，所以把它钉成不变量。
+{
+  // 每一对都是「同一份原始读数，两边各记一个分」的地方。
+  // 2026-09-08 又抓到一个：social.online_grievance 记的还是 08-11 的 heat 32.6 / 57 分，
+  // 比当期落后两期，而 V3 的网络政治情绪早已改分。所以这里按对儿枚举，不是只钉汇率。
+  const BRIDGED = [
+    { name: '汇率相对强弱(对亚洲五币)', owner: 'currency.fx_stress' },
+    { name: '网络政治情绪', owner: 'social.online_grievance' },
+    { name: '通胀锚定与实际利率', owner: 'currency.inflation_expectations' },
+    { name: '消费者信心', owner: 'social.subjective_confidence' },
+    { name: '外部流动性缓冲', owner: 'fiscal.external_liquidity' },
+    { name: '赤字与债务轨迹', owner: 'fiscal.public_finance' },
+    { name: '融资结构脆弱性', owner: 'fiscal.funding_mismatch' },
+    { name: '劳动力市场压力', owner: 'social.livelihood_stress' },
+    { name: '国际治理评估', owner: 'institutions.implementation_capacity' },
+  ];
+  const allDrivers = new Map(stabilityContext.__DATA.pillars
+    .flatMap((pillar) => pillar.drivers).map((driver) => [driver.name, driver]));
+  const observations = Array.isArray(evidence.observations)
+    ? evidence.observations : Object.values(evidence.observations ?? {});
+  for (const pair of BRIDGED) {
+    const driver = allDrivers.get(pair.name);
+    assert(driver, `data.js has no driver named ${pair.name} (bridged to ${pair.owner})`);
+    const observation = observations.find((o) => o.primaryOwner === pair.owner);
+    assert(observation, `V4 evidence has no ${pair.owner} observation`);
+    const inputs = observation.scoreInputs ?? [];
+    assert(inputs.length > 0, `${pair.owner} observation has no scoreInputs`);
+    for (const input of inputs) {
+      assert(input.score === driver.score,
+        `V3 ${driver.name} = ${driver.score} but V4 ${pair.owner} scoreInput = ${input.score} ` +
+        '— 同一天同一份读数不能有两个分。改了一边就要改另一边。');
+    }
+  }
+
+  // market_access 不是 1:1，它的桥接规则写在 v4-shadow-input 里：
+  // 「V3股市/外资流向与主权风险定价的迁移均值」。2026-09-08 发现它还停在 37.5——
+  // 那是股市 driver 还读 30 时的均值，股市 30→35 之后没人更新它。规则可算，就该由机器算。
+  {
+    const equity = allDrivers.get('股市相对表现(对MSCI EM)');
+    const sovereign = allDrivers.get('主权风险定价');
+    assert(equity && sovereign, 'market_access bridge needs 股市相对表现(对MSCI EM) and 主权风险定价');
+    const expected = (equity.score + sovereign.score) / 2;
+    const observation = observations.find((o) => o.primaryOwner === 'currency.market_access');
+    assert(observation, 'V4 evidence has no currency.market_access observation');
+    for (const input of observation.scoreInputs ?? []) {
+      assert(input.score === expected,
+        `currency.market_access should be mean(股市 ${equity.score}, 主权风险定价 ${sovereign.score}) ` +
+        `= ${expected} but reads ${input.score}`);
+    }
+  }
+}
 assert(Math.abs(Object.values(v4Input.officialPillarWeights).reduce((sum, value) => sum + value, 0) - 1) < 1e-9, 'V4 official baseline weights do not sum to 1');
 assert(Object.values(v4Input.officialPillarWeights).every((value) => value === 0.2), 'V3 official baseline must remain equal weighted');
 assert(JSON.stringify(v4Input.pillarWeights) === JSON.stringify({

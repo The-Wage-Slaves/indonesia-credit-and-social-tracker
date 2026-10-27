@@ -34,8 +34,8 @@
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 46.3,
-    "delta": 1.0,
+    "composite": 47.8,
+    "delta": 2.5,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -244,8 +244,8 @@
       "id": "currency",
       "label": "货币与市场信心",
       "v3Score": 40.0,
-      "v4ShadowScore": 45.6,
-      "delta": 5.6,
+      "v4ShadowScore": 51.6,
+      "delta": 11.6,
       "coverage": 0.85,
       "missingWeight": 0.15,
       "lowConfidenceWeight": 0.0,
@@ -288,15 +288,15 @@
           "id": "fx_stress",
           "label": "汇率压力",
           "weight": 0.3,
-          "score": 38.0,
+          "score": 55.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "USD_IDR_ytd_depreciation",
-              "value": "17,923 IDR/USD; about -10.2 percent year to date",
+              "value": "17,923 IDR/USD; about -6.8 percent year to date against the 16,777 official 2025 close",
               "unit": "percent",
               "transform": "migration_anchor_pending_1m_3m_12m_and_volatility_history",
-              "score": 38,
+              "score": 55,
               "weight": 1
             }
           ],

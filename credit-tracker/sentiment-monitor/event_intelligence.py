@@ -25,6 +25,7 @@ import json
 import os
 import re
 import urllib.error
+import http.client
 import urllib.request
 from typing import Any
 
@@ -85,7 +86,10 @@ def fetch_article_text(url: str, timeout: int = FETCH_TIMEOUT) -> tuple[str, str
             if response.status != 200:
                 return "", f"http_{response.status}"
             raw = response.read(400_000).decode("utf-8", errors="replace")
-    except (urllib.error.URLError, OSError, ValueError) as exc:
+    except (urllib.error.URLError, OSError, ValueError, http.client.HTTPException) as exc:
+        # HTTPException 不是 OSError：分块响应被服务器截断时 http.client 抛
+        # IncompleteRead，2026-09-02 它穿透到这里、把整轮日频采集杀掉了。
+        # 本函数的契约是「抓不到不是错误」，所以它必须被接住并留痕。
         return "", f"fetch_failed:{type(exc).__name__}"
     text = strip_html(raw)
     if len(text) < 200:

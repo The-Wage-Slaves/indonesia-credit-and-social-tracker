@@ -12,6 +12,7 @@
   python apply_week.py append 2026-07-21 fiscal=50 currency=37 institutions=33 social=54 coercive=39
   python apply_week.py export
   python apply_week.py snapshot [YYYY-MM-DD]
+  python apply_week.py watch [YYYY-MM-DD]     —— 列出观察时点：已过期未复核 / 30 天内到期（append 后自动打印）
 
 **为什么要归档 driver 级快照**（2026-08-20 新增，勿删）：
 data.js 的 weekly 只存支柱分，不存每期的 driver 组合与权重。后果是**方法论变更无法重放**——
@@ -22,7 +23,7 @@ data.js 的 weekly 只存支柱分，不存每期的 driver 组合与权重。�
 
 说明：评分本身仍是"人在环"——本脚本只做机械写入，分数由分析确认后给出。
 """
-import json, re, shutil, subprocess, sys, datetime, pathlib
+import json, math, re, shutil, subprocess, sys, datetime, pathlib
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -71,6 +72,17 @@ def append_week(date, scores):
     write_driver_snapshot(date)
 
 
+def half_up(value: float) -> int:
+    """半数进位取整，与看板/CI 保持一致。
+
+    **不能用内建 round()**：Python 用银行家舍入（round(46.5)==46 取偶数），而
+    dashboard 的 engine.js 与 validate_repo.mjs 用的是 JS Math.round（46.5→47）。
+    支柱分正好落在 .5 上时两者会给出不同答案，于是 CI 通过、归档却拒绝——
+    2026-09-01 货币支柱算出 46.50，就撞上了这个分歧。
+    """
+    return math.floor(value + 0.5)
+
+
 def eval_data_js():
     """data.js 是JS对象字面量（含注释、键不带引号），用 Node 求值最稳。"""
     script = ("const fs=require('fs');"
@@ -92,6 +104,40 @@ def export_json():
     print(f"✓ 已导出 {OUT_JSON}（{len(text):,} 字节）")
 
 
+
+# ---- 观察时点提醒 -----------------------------------------------------------
+# data.js 的 watchlist 是周更人维护的「有日期的外部事件」表。append 之后立刻把
+# 已过期未复核和 30 天内到期的项打出来，是为了让"核对时点→写 outcome→改 driver"
+# 这一步发生在周更当下，而不是等 validate_repo 在 14 天后报错。
+WATCH_AHEAD_DAYS = 30
+PILLAR_ZH = {"fiscal": "财政", "currency": "货币", "institutions": "制度",
+             "social": "社会", "coercive": "强制机构", "cross": "跨支柱"}
+
+
+def print_watchlist(asof=None):
+    data = eval_data_js()
+    asof = datetime.date.fromisoformat(asof or data.get("asOf"))
+    rows = sorted((data.get("watchlist") or []), key=lambda w: w.get("date", ""))
+    overdue, soon = [], []
+    for w in rows:
+        if w.get("status", "open") != "open":
+            continue
+        days = (datetime.date.fromisoformat(w["date"]) - asof).days
+        (overdue if days < 0 else soon if days <= WATCH_AHEAD_DAYS else []).append((days, w))
+    print("\n观察时点（相对 %s）：" % asof)
+    if overdue:
+        print("  ⚠ 已过期未复核——先核对结果、写 outcome、改 status，再决定是否改 driver：")
+        for days, w in overdue:
+            print(f"    · {w['date']}（已过 {-days} 天）[{PILLAR_ZH.get(w['pillar'], w['pillar'])}] {w['title']}")
+    if soon:
+        print(f"  未来 {WATCH_AHEAD_DAYS} 天：")
+        for days, w in soon:
+            print(f"    · {'约 ' if w.get('approx') else ''}{w['date']}（{days} 天后）[{PILLAR_ZH.get(w['pillar'], w['pillar'])}] {w['title']}")
+            print(f"      到时看：{w.get('watch', '—')}")
+    if not overdue and not soon:
+        print("  （30 天内无登记时点；如有新的法定期限/议息/复审日，请补进 data.js 的 watchlist）")
+
+
 def write_driver_snapshot(date=None):
     """归档当前 data.js 的 driver 级快照，供日后重放方法论变更。
 
@@ -109,8 +155,8 @@ def write_driver_snapshot(date=None):
                     "weight": d["weight"], "score": d["score"]}
                    for d in pillar["drivers"]]
         weight_sum = round(sum(d["weight"] for d in drivers), 10)
-        computed = round(sum(d["weight"] * d["score"] for d in drivers)
-                         + (pillar.get("pillarAdj") or 0))
+        computed = half_up(sum(d["weight"] * d["score"] for d in drivers)
+                           + (pillar.get("pillarAdj") or 0))
         if weight_sum != 1:
             sys.exit(f"× {pillar['id']} 权重和为 {weight_sum}，拒绝归档自相矛盾的快照")
         if computed != pillar["score"]:
@@ -136,8 +182,10 @@ def write_driver_snapshot(date=None):
 
 
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in ("append", "export", "snapshot"):
+    if len(sys.argv) < 2 or sys.argv[1] not in ("append", "export", "snapshot", "watch"):
         print(__doc__); sys.exit(1)
+    if sys.argv[1] == "watch":
+        print_watchlist(sys.argv[2] if len(sys.argv) > 2 else None); return
     if sys.argv[1] == "export":
         export_json(); return
     if sys.argv[1] == "snapshot":
@@ -154,6 +202,7 @@ def main():
     if missing:
         sys.exit(f"× 缺支柱分: {', '.join(missing)}")
     append_week(date, scores)
+    print_watchlist(date)
 
 
 if __name__ == "__main__":

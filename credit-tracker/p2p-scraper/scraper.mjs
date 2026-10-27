@@ -101,7 +101,12 @@ const EXTRACTORS = {
       return m ? m.slice(1).map((x) => parseFloat(x.replace(/,/g, ''))) : null;
     };
     const d = grab('Nilai Pendanaan yang Disalurkan');
-    if (d) { out.disbCumul = d[0]; out.disbYTD = d[1]; out.outstanding = d[2]; }
+    // 三值块是「累计 / 年内 / 本月至今」，第三格 Posisi akhir **不是在贷余额**。
+    // 2026-10-08 判定（三条独立证据）：①同月两点的 Posisi 增量与年内放款增量逐卢比相等
+    // （08-17→08-24 +2.010T=+2.010T；08-24→08-31 +2.190T=+2.190T）②跨月清零重爬
+    // ③2026-01-14 读数 Posisi == 年内放款（一月份 MTD 就是 YTD）。
+    // LDN 官网不披露在贷余额，故 outstanding 恒为 null；第三格另记为 disbMTD（仅后台留存）。
+    if (d) { out.disbCumul = d[0]; out.disbYTD = d[1]; out.disbMTD = d[2]; out.outstanding = null; }
     const b = grab('Jumlah Penerima Dana');
     if (b) { out.totalBorrowers = b[0]; out.activeBorrowersYTD = b[1]; }
     const dm = text.match(/Data pada (\d+ \w+ \d{4})/); if (dm) out.dataDate = dm[1];
@@ -278,6 +283,8 @@ async function main() {
       const raw = (EXTRACTORS[p.name] || (() => ({})))(lines, text);
       const parsed = {
         disbCumul_usd: usdBn(raw.disbCumul), disbYTD_usd: usdBn(raw.disbYTD),
+        // 仅 LDN 有：官网三值块第三格 = 本月至今成交额。只留后台，不进看板（别家无此字段）。
+        disbMTD_usd: usdBn(raw.disbMTD),
         outstanding_usd: usdBn(raw.outstanding),
         totalBorrowers: raw.totalBorrowers != null ? Math.round(raw.totalBorrowers) : null,
         activeBorrowersYTD: raw.activeBorrowersYTD != null ? Math.round(raw.activeBorrowersYTD) : null,
