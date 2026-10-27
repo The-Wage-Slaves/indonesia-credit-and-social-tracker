@@ -1,11 +1,11 @@
 {
   "schemaVersion": 3,
   "status": "shadow-same-date",
-  "asOf": "2026-09-15",
+  "asOf": "2026-10-16",
   "purpose": "Compare the production V3 and a confidence-aware MECE V4 shadow structure on the same evidence cutoff without changing the official dashboard.",
   "warning": "V3 remains official. V4 scores are a migration experiment with explicit raw-input traceability, freshness and source-quality disclosure; they do not create a replacement time series.",
   "productionData": "../dashboard/data.js",
-  "evidenceFile": "evidence/2026-09-15.json",
+  "evidenceFile": "evidence/2026-10-16.json",
   "historyFile": "v4-shadow-history.json",
   "redTriggers": {
     "coerciveScoreFloor": 25,
@@ -141,7 +141,7 @@
     {
       "id": "currency",
       "label": "货币与市场信心",
-      "v3Score": 46,
+      "v3Score": 43,
       "drivers": [
         {
           "id": "inflation_expectations",
@@ -162,7 +162,7 @@
           "evidenceClass": "statistical",
           "availability": "high",
           "observationIds": [
-            "fx_idr_2026_09_15"
+            "fx_idr_2026_10_16"
           ],
           "bridgeBasis": "使用同日汇率读数，未来改为自身历史分位与波动率；不重复计入外储。",
           "scoreMethod": "evidence_weighted"
@@ -185,7 +185,7 @@
           "evidenceClass": "statistical",
           "availability": "medium",
           "observationIds": [
-            "market_access_2026_09_15"
+            "market_access_2026_10_16"
           ],
           "bridgeBasis": "V3股市/外资流向与主权风险定价的迁移均值；外储不进入本项。",
           "scoreMethod": "evidence_weighted"
@@ -195,7 +195,7 @@
     {
       "id": "institutions",
       "label": "制度与政策可预见性",
-      "v3Score": 35,
+      "v3Score": 34,
       "drivers": [
         {
           "id": "policy_predictability",
@@ -243,7 +243,7 @@
           "evidenceClass": "event_count",
           "availability": "medium",
           "observationIds": [
-            "institutional_checks_2026_07"
+            "institutional_checks_2026_09"
           ],
           "bridgeBasis": "只测制衡事件，不使用通胀、汇率或外储结果。",
           "scoreMethod": "bridge"
@@ -256,7 +256,7 @@
           "evidenceClass": "ordinal",
           "availability": "low",
           "observationIds": [
-            "elite_continuity_2026_09"
+            "elite_continuity_2026_10"
           ],
           "bridgeBasis": "只记录公开退出、倒戈、罢免与联盟破裂，不重复使用选择性执法案件。",
           "scoreMethod": "bridge"
@@ -266,7 +266,7 @@
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 54,
+      "v3Score": 55,
       "drivers": [
         {
           "id": "livelihood_stress",
@@ -299,7 +299,7 @@
           "evidenceClass": "automated_proxy",
           "availability": "low",
           "observationIds": [
-            "online_grievance_2026_09_15"
+            "online_grievance_2026_10_16"
           ],
           "bridgeBasis": "2026-08-11云端实采：热度稳定分65、反对率分55，60/40合成61；覆盖缺口与crawler低置信标签保留。",
           "scoreMethod": "evidence_weighted"
@@ -322,7 +322,7 @@
     {
       "id": "coercive",
       "label": "强制机构内聚性",
-      "v3Score": 33,
+      "v3Score": 37,
       "drivers": [
         {
           "id": "interagency_cohesion",
@@ -345,7 +345,7 @@
           "evidenceClass": "event_count",
           "availability": "medium",
           "observationIds": [
-            "military_role_boundary_2026_07"
+            "military_role_boundary_2026_10"
           ],
           "bridgeBasis": "只测文职渗透和正式角色扩张。",
           "scoreMethod": "bridge"

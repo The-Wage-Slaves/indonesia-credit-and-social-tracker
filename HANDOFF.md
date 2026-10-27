@@ -1,6 +1,30 @@
 # Agent Handoff
 
-Last updated: 2026-08-20
+Last updated: 2026-10-16
+
+## 2026-10-16 — market layer re-based (read first; supersedes the scores below)
+
+- Stability `asOf 2026-10-16`: composite **42.0**, pillars 48 / 43 / 31 / 55 / 33 (V3, restated).
+  V4 shadow 46.1.
+- Equity and FX drivers are now **relative and base-free**: MSCI Indonesia ÷ MSCI EM and
+  IDR ÷ Asian-5 FX basket, each as deviation from its own 250-day mean, continuous mapping.
+  Run `python stability-monitor/scripts/market_relative.py --period YYYY-MM-DD` in every weekly
+  update; it writes `stability-monitor/data/market-relative/<period>.json`, which is the source
+  for both drivers. Sources are MSCI's own index levels and ECB reference rates (both primary).
+- 国际市场准入 moved from currency (0.06) to institutions as 资本市场治理与国际准入 (0.15); the
+  other five institutions drivers were scaled ×0.85. History from 07-22 restated; 07-07/07-16 stay
+  `fxBasis: "legacy"`. Full rationale: `stability-monitor/docs/METHODOLOGY.md` (市场层 section).
+- Driver renames: 汇率水平与贬速 → 汇率相对强弱(对亚洲五币); 股市与外资流向 → 股市相对表现(对MSCI EM).
+  The V3/V4 bridge in `validate_repo.mjs` follows the new names.
+
+## 2026-10-16 — count drivers: dated ledger + decay (PR #58 data fix, then this method PR)
+
+- Composite **43.4** (48 / 43 / 34 / 55 / 37). Count drivers (政策方差, 精英清洗, 对平民镇压, 军警冲突) now use a
+  decayed index over `stability-monitor/data/event-ledgers.json`; new institutions driver 要害岗位非例行更替 (0.10);
+  军队文职渗透度 now subtracts territorial build-out (Kodam/38, battalions/514). Weekly: add events to the ledger with
+  dates + sources, then `python stability-monitor/scripts/event_decay.py --date <period>`.
+- PR #58 corrected misdated events (2025 shootings logged as 2026-03; Lembong pardoned in 2025). Undated events
+  are now a test failure.
 
 ## Current state (2026-08-20)
 

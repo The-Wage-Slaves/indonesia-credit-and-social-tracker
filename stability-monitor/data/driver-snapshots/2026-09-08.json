@@ -46,14 +46,14 @@
       ]
     },
     "currency": {
-      "score": 46,
+      "score": 41,
       "pillarAdj": 0,
       "drivers": [
         {
-          "name": "汇率水平与贬速",
+          "name": "汇率相对强弱(对亚洲五币)",
           "type": "quant",
           "weight": 0.25,
-          "score": 55
+          "score": 42
         },
         {
           "name": "防守消耗效率",
@@ -68,16 +68,10 @@
           "score": 60
         },
         {
-          "name": "股市与外资流向",
+          "name": "股市相对表现(对MSCI EM)",
           "type": "quant",
-          "weight": 0.14,
-          "score": 35
-        },
-        {
-          "name": "国际市场准入",
-          "type": "ordinal",
-          "weight": 0.06,
-          "score": 20
+          "weight": 0.2,
+          "score": 22
         },
         {
           "name": "制造业动能(PMI)",
@@ -88,38 +82,50 @@
       ]
     },
     "institutions": {
-      "score": 35,
+      "score": 36,
       "pillarAdj": 0,
       "drivers": [
         {
           "name": "货币政策可信度",
           "type": "quant",
-          "weight": 0.2,
-          "score": 30
+          "weight": 0.153,
+          "score": 40
         },
         {
           "name": "政策方差(翻转计数)",
           "type": "quant",
-          "weight": 0.2,
-          "score": 30
+          "weight": 0.153,
+          "score": 41
         },
         {
           "name": "国际治理评估",
           "type": "quant",
-          "weight": 0.25,
+          "weight": 0.19125,
           "score": 42
         },
         {
           "name": "法治与执法工具化",
           "type": "ordinal",
-          "weight": 0.15,
+          "weight": 0.11475,
           "score": 42
         },
         {
           "name": "关键机构俘获度",
           "type": "ordinal",
-          "weight": 0.2,
+          "weight": 0.153,
           "score": 30
+        },
+        {
+          "name": "资本市场治理与国际准入",
+          "type": "ordinal",
+          "weight": 0.135,
+          "score": 20
+        },
+        {
+          "name": "要害岗位非例行更替",
+          "type": "quant",
+          "weight": 0.1,
+          "score": 33
         }
       ]
     },
@@ -166,32 +172,32 @@
       ]
     },
     "coercive": {
-      "score": 33,
+      "score": 36,
       "pillarAdj": 0,
       "drivers": [
         {
           "name": "军警冲突烈度(机构间)",
           "type": "quant",
           "weight": 0.2,
-          "score": 32
+          "score": 40
         },
         {
           "name": "对平民镇压强度(计数)",
           "type": "quant",
           "weight": 0.15,
-          "score": 18
+          "score": 13
         },
         {
           "name": "军队文职渗透度",
           "type": "quant",
           "weight": 0.18,
-          "score": 40
+          "score": 36
         },
         {
           "name": "精英清洗烈度(计数)",
           "type": "quant",
           "weight": 0.12,
-          "score": 32
+          "score": 53
         },
         {
           "name": "军警权力平衡",
@@ -206,6 +212,81 @@
           "score": 38
         }
       ]
+    }
+  },
+  "methodologyRevision": {
+    "date": "2026-10-16",
+    "why": "2026-10-16 市场层方法论变更（逐期重算）：①汇率由「年内对美元跌幅」改为「卢比对亚洲五币、偏离 250 日均值」，股市由「JCI 美元计年内回报」改为「MSCI Indonesia ÷ MSCI EM、偏离 250 日均值」，两者改连续映射；②「国际市场准入」移出货币支柱、改名「资本市场治理与国际准入」并入制度支柱(0.15)，制度其余五项等比例 ×0.85；③股市权重 0.14→0.20。读数存档 data/market-relative/<date>.json。",
+    "currencyFrom": 46,
+    "currencyTo": 41,
+    "institutionsFrom": 35,
+    "institutionsTo": 33,
+    "replaced": {
+      "汇率水平与贬速": 55,
+      "股市与外资流向": 35,
+      "国际市场准入": 20
+    }
+  },
+  "dataCorrection": {
+    "date": "2026-10-16",
+    "why": "2026-10-16 数据更正（沿用现行档位规则）：①军警冲突——楠榜(2025-03-17)、塔拉坎(2025-02-24)两起实弹原误记为 2026-03，已在 12 个月窗口外；②精英清洗——Lembong 食糖案 2025-07-18 判决、2025-08-01 获 abolisi，不在 6 个月窗口内且非清除，移除；③政策方差——补齐事件日期，B50 翻转(2026-03-31)于 09-30 起移出 6 个月窗口。",
+    "drivers": {
+      "军警冲突烈度(机构间)": [
+        32,
+        50
+      ],
+      "精英清洗烈度(计数)": [
+        32,
+        45
+      ]
+    },
+    "institutionsFrom": 33,
+    "institutionsTo": 33,
+    "coerciveFrom": 33,
+    "coerciveTo": 39
+  },
+  "methodologyRevision2": {
+    "date": "2026-10-16",
+    "why": "2026-10-16 方法论变更：计数类 driver（政策方差、精英清洗、对平民镇压、军警冲突）由硬窗口改为衰减计数（半衰期与原窗口面积相等），连续映射；制度支柱新增「要害岗位非例行更替」0.10（其余 ×0.9），以佐科维两届为基线；军队文职渗透度扣减领土建制进度（Kodam/38、营/514）；货币政策可信度撤回 Perry 提前辞任的 −15（改由要害更替计入，避免重复）。台账 data/event-ledgers.json。",
+    "institutions": {
+      "from": 33,
+      "to": 36,
+      "drivers": {
+        "货币政策可信度": [
+          30,
+          40
+        ],
+        "政策方差(翻转计数)": [
+          30,
+          41
+        ],
+        "要害岗位非例行更替": [
+          null,
+          33
+        ]
+      }
+    },
+    "coercive": {
+      "from": 39,
+      "to": 36,
+      "drivers": {
+        "军警冲突烈度(机构间)": [
+          50,
+          40
+        ],
+        "对平民镇压强度(计数)": [
+          18,
+          13
+        ],
+        "军队文职渗透度": [
+          40,
+          36
+        ],
+        "精英清洗烈度(计数)": [
+          45,
+          53
+        ]
+      }
     }
   }
 }

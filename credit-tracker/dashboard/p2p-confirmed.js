@@ -9,7 +9,7 @@ window.P2P_CONFIRMED = {
     decidedAt: "2026-09-15",
     rows: [
       {name:"AdaKami",dataDate:null,note:null,disb:0.932,out:0.264,tot:7580000,act:2210000},
-      {name:"Lentera Dana (Shopee Loan)",dataDate:"14 September 2026",note:null,disb:5.068,out:0.298,tot:18577736,act:8137132},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"14 September 2026",note:"官网「Posisi akhir」= 本月至今成交额，非在贷余额（2026-10-08 判定）；LDN 不披露余额，out 置 null。disbMTD 为该格原值，仅后台留存。",disb:5.068,out:null,tot:18577736,act:8137132,disbMTD:0.298},
       {name:"Kredifazz",dataDate:null,note:null,disb:0.946,out:0.609,tot:8920000,act:2430000},
       {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径(无YTD/outstanding)",disb:null,out:null,tot:25540919,act:null},
       {name:"Kredit Pintar",dataDate:"10/9/2026",note:null,disb:0.48,out:0.22,tot:9500000,act:638000},
@@ -25,7 +25,7 @@ window.P2P_CONFIRMED = {
     decidedAt: "2026-09-15",
     rows: [
       {name:"AdaKami",dataDate:null,note:null,disb:0.877,out:0.267,tot:7520000,act:2130000},
-      {name:"Lentera Dana (Shopee Loan)",dataDate:"31 Agustus 2026",note:"该格云端抓取值与前后本机值及官网原文不符，作废（out 原值 0.66）",disb:4.743,out:null,tot:18379142,act:7871638},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"31 Agustus 2026",note:"官网「Posisi akhir」= 本月至今成交额，非在贷余额（2026-10-08 判定）；LDN 不披露余额，out 置 null。disbMTD 为该格原值，仅后台留存。",disb:4.743,out:null,tot:18379142,act:7871638,disbMTD:0.66},
       {name:"Kredifazz",dataDate:null,note:null,disb:0.824,out:0.601,tot:8820000,act:2210000},
       {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径(无YTD/outstanding)",disb:null,out:null,tot:25412202,act:null},
       {name:"Kredit Pintar",dataDate:"10/8/2026",note:null,disb:0.413,out:0.22,tot:9400000,act:658000},
@@ -41,7 +41,7 @@ window.P2P_CONFIRMED = {
     decidedAt: "2026-08-31",
     rows: [
       {name:"AdaKami",dataDate:null,note:null,disb:0.851,out:0.266,tot:7470000,act:2080000},
-      {name:"Lentera Dana (Shopee Loan)",dataDate:"24 Agustus 2026",note:"该格云端抓取值与前后本机值及官网原文不符，作废（out 原值 0.514）",disb:4.597,out:null,tot:18283811,act:7739602},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"24 Agustus 2026",note:"官网「Posisi akhir」= 本月至今成交额，非在贷余额（2026-10-08 判定）；LDN 不披露余额，out 置 null。disbMTD 为该格原值，仅后台留存。",disb:4.597,out:null,tot:18283811,act:7739602,disbMTD:0.514},
       {name:"Kredifazz",dataDate:null,note:null,disb:0.824,out:0.601,tot:8820000,act:2210000},
       {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径(无YTD/outstanding)",disb:null,out:null,tot:25363510,act:null},
       {name:"Kredit Pintar",dataDate:"10/8/2026",note:null,disb:0.413,out:0.22,tot:9400000,act:658000},
@@ -57,7 +57,7 @@ window.P2P_CONFIRMED = {
     decidedAt: "2026-07-30",
     rows: [
       {name:"AdaKami",dataDate:null,note:null,disb:0.66,out:0.253,tot:7150000,act:1680000},
-      {name:"Lentera Dana (Shopee Loan)",dataDate:"13 Juli 2026",note:null,disb:3.695,out:0.285,tot:17655546,act:6838280},
+      {name:"Lentera Dana (Shopee Loan)",dataDate:"13 Juli 2026",note:"官网「Posisi akhir」= 本月至今成交额，非在贷余额（2026-10-08 判定）；LDN 不披露余额，out 置 null。disbMTD 为该格原值，仅后台留存。",disb:3.695,out:null,tot:17655546,act:6838280,disbMTD:0.285},
       {name:"Kredifazz",dataDate:null,note:null,disb:0.697,out:0.589,tot:8720000,act:1970000},
       {name:"Akulaku (Asetku)",dataDate:null,note:"官网仅披露累计口径（无YTD/outstanding）",disb:null,out:null,tot:25168640,act:null},
       {name:"Kredit Pintar",dataDate:"10/7/2026",note:null,disb:0.353,out:0.213,tot:9300000,act:650000},

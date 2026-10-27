@@ -85,12 +85,19 @@ def load_confirmed(path: pathlib.Path = CONFIRMED_JS) -> dict:
     return json.loads(r.stdout)
 
 
+# 固定字段之外、需要原样保留的可选字段。
+# 没有这张表时 js_row 会把它们静默吃掉——2026-10-08 给 LDN 加 disbMTD 时就这么丢过一次，
+# 写进去、渲染完就没了，而 render_file 的往返测试只比固定字段，发现不了。
+OPTIONAL_FIELDS = ("disbMTD",)
+
+
 def js_row(row: dict) -> str:
     """按文件里既有的一行一家风格序列化，diff 才可读。"""
     def v(x):
         return "null" if x is None else json.dumps(x, ensure_ascii=False)
-    return ("{name:%s,dataDate:%s,note:%s,disb:%s,out:%s,tot:%s,act:%s}" %
-            tuple(v(row[k]) for k in ("name", "dataDate", "note", "disb", "out", "tot", "act")))
+    parts = ["%s:%s" % (k, v(row[k])) for k in ("name", "dataDate", "note", "disb", "out", "tot", "act")]
+    parts += ["%s:%s" % (k, v(row[k])) for k in OPTIONAL_FIELDS if k in row]
+    return "{%s}" % ",".join(parts)
 
 
 def render_batch(batch: dict) -> str:

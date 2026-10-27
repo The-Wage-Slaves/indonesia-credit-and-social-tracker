@@ -462,10 +462,14 @@ def daily_summary() -> dict[str, Any]:
         if stability_fresh
         else "unavailable"
     )
+    # degraded = 裁定层没跑起来。**必须当成风险推送**，否则卡片会把「没判出来」写成「正常」——
+    # 2026-10-07/08 DeepSeek 402 时就连推了两天假的「正常」。
+    stability_degraded = bool(stability_fresh and stability.get("degraded"))
     risk = (
         credit_level not in {"normal", "none"}
-        or stability_level in {"red", "amber", "orange", "high_pending"}
+        or stability_level in {"red", "amber", "orange", "high_pending", "degraded"}
         or stability_operational_issue
+        or stability_degraded
     )
     lines = [
         "**为什么收到**\n"
@@ -474,6 +478,14 @@ def daily_summary() -> dict[str, Any]:
         f"Pinjol/Pindar 舆情：{str(credit_level).upper()}；"
         f"制度/政治骤变：{str(stability_level).upper()}。",
     ]
+
+    if stability_degraded:
+        lines.append(
+            "**稳定性裁定层不可用（degraded）**\n"
+            f"{stability.get('degradedReason') or '裁定层调用失败'}。"
+            "**今天的「无事件」是没判出来，不是没有风险**——当日证据池记 degraded、不产出 0 事件结论；"
+            "修复后请手动重跑当日，再按周更流程复核。"
+        )
 
     if stability_operational_issue:
         if stability_status != "success":
@@ -574,15 +586,18 @@ def monthly_summary() -> dict[str, Any]:
     pending = read_json("pending.json", {"boards": {}})
     items = [
         item for item in (pending.get("boards") or {}).get("credit", [])
-        if item.get("source") in {"credit-update", "p2p-scraper", "macro-monitor"}
+        if item.get("source") in {"credit-update", "p2p-scraper", "macro-monitor", "industry-auto"}
     ]
     source_zh = {
         "credit-update": "BI/OJK 行业数据",
         "p2p-scraper": "P2P 竞对官网",
         "macro-monitor": "国家宏观指标",
+        "industry-auto": "行业数据自动包(SEKI+RDKB)",
     }
     collector_statuses = {
         "BI/OJK 行业数据": os.getenv("INDUSTRY_STATUS", "").strip().lower(),
+        # RDKB 步骤 2026-09-22 才加入；旧工作流/测试没有这个变量，缺省时不算「未完成」。
+        **({"OJK RDKB 新闻稿": os.getenv("RDKB_STATUS", "").strip().lower()} if os.getenv("RDKB_STATUS") else {}),
         "国家宏观指标": os.getenv("MACRO_STATUS", "").strip().lower(),
         "P2P 竞对官网": os.getenv("COMPETITOR_STATUS", "").strip().lower(),
     }

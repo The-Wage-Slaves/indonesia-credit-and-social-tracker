@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "purpose": "计数/状态类 driver 的事件台账（2026-10-16 起）。每起事件必须带完整日期与来源；分数由 scripts/event_decay.py 按衰减计数计算，不再用硬窗口。人在环：台账由人维护，脚本只读。",
+  "halfLifeYears": {
+    "6m": 0.3466,
+    "12m": 0.6931
+  },
+  "halfLifeNote": "半衰期取与原硬窗口「面积相等」的值：W 个月窗口 ⇔ 半衰期 W×ln2 个月（6 个月 → 约 4.2 个月，12 个月 → 约 8.3 个月）。不是按结果拟合的。",
+  "ledgers": {
+    "policy_reversal": {
+      "driver": "政策方差(翻转计数)",
+      "halfLife": "6m",
+      "mapping": "80 × 0.75^I，下限 5（沿用旧档锚点：1 起=60、2 起=45）",
+      "events": [
+        {"date": "2026-03-31", "weight": 1, "label": "B50 生物柴油：推翻 1/14 的推迟决定，宣布年内强制（7/9 正式发布）", "sources": ["TIMELINE 2026-03-31 / 2026-07-09"]},
+        {"date": "2026-05-20", "weight": 1, "label": "DSI 出口统管：PP 24/2026 签署，全面实施由 2027 提前至 2026-09-01", "sources": ["Investortrust 2026-05-31", "IDNFinancials #63979"]},
+        {"date": "2026-05-28", "weight": 1, "label": "DSI 出口统管：全面实施再推回 2027-01-01（签署后 8 天）", "sources": ["KabarBursa 2026-05-28", "Kontan：Airlangga 2026-05-31 记者会", "IDNFinancials #64188"]},
+        {"date": "2026-07-21", "weight": 1, "label": "IIFC/PFII：4/8「选址未定」→ 不足 1 个月立法（73 条）", "sources": ["Jakarta Post / Tempo 2026-07-21"]}
+      ]
+    },
+    "elite_purge": {
+      "driver": "精英清洗烈度(计数)",
+      "halfLife": "6m",
+      "mapping": "80 × 0.75^I，下限 5（沿用旧档锚点：1 起=60、2 起=45）",
+      "events": [
+        {"date": "2026-06-30", "weight": 1, "label": "Nadiem（前教育部长）Chromebook 案一审判 10 年", "sources": ["Bisnis 2026-07-01", "hukumonline"]},
+        {"date": "2026-07-10", "weight": 1, "label": "Febrie（前 JAM-Pidsus）辞职并被列为腐败洗钱嫌疑人", "sources": ["TIMELINE 2026-07-10"]}
+      ],
+      "excluded": [
+        {"date": "2025-07-18", "label": "Lembong 食糖案一审 4.5 年；2025-08-01 获 abolisi", "why": "结局为赦免而非清除", "sources": ["CNBC Indonesia 2025-08-01", "Kompas TV"]}
+      ]
+    },
+    "repression": {
+      "driver": "对平民镇压强度(计数)",
+      "halfLife": "6m",
+      "mapping": "10 + 55 × 0.62^I（趋近「多地同步+致命武力常态化」=10；1 起≈44、2 起≈31、4 起≈18，与旧锚一致）；致死事件权重 2",
+      "events": [
+        {"date": "2026-07-18", "weight": 1, "label": "泗水约 100 人抗议、24 人被捕", "sources": ["data.js 2026-08-20 清单"]},
+        {"date": "2026-08-16", "weight": 1, "label": "亚齐和平纪念活动骚乱（08-16、08-18），群众与军警冲突", "sources": ["data.js 2026-08-20 清单（2 源）"]},
+        {"date": "2026-08-19", "weight": 1, "label": "雅加达大学生示威遭警方拦截、收缴利器", "sources": ["data.js 2026-08-20 清单"]},
+        {"date": "2026-08-27", "weight": 1, "label": "国会前示威，警方部署 18,500 人，会前拘留 65 人", "sources": ["data.js 2026-09-08 清单"]},
+        {"date": "2026-08-28", "weight": 2, "label": "逮捕 322 人、1 人死亡", "sources": ["data.js 2026-09-08 清单"]},
+        {"date": "2026-08-29", "weight": 1, "label": "国会大厦前骚乱，再逮捕数百人", "sources": ["data.js 2026-09-08 清单"]}
+      ]
+    },
+    "interagency": {
+      "driver": "军警冲突烈度(机构间)",
+      "halfLife": "12m",
+      "mapping": "15 + 70 × 0.5^I（趋近「系统性交火」=15；对峙 1 起=50）；对峙权重 1、实弹权重 1.5",
+      "events": [
+        {"date": "2025-02-24", "weight": 1.5, "label": "塔拉坎：陆军士兵冲击警察局，5 名警员受伤（实弹/冲击）", "sources": ["Antara 2025-02-25~27", "Metro TV"]},
+        {"date": "2025-03-17", "weight": 1.5, "label": "楠榜 Way Kanan：3 名警察被士兵枪杀（实弹）", "sources": ["detik 2025-03-18", "Republika 2025-03-19"]},
+        {"date": "2026-07-08", "weight": 1, "label": "Febrie 案：TNI 武装守卫检察官办公室，警方为进攻方（对峙）", "sources": ["TIMELINE 2026-07-08"]}
+      ]
+    },
+    "key_turnover": {
+      "driver": "要害岗位非例行更替",
+      "halfLife": "6m",
+      "definition": "总统撤换≥1 名部长的改组记 1；若同时（或单独）非例行撤换央行行长/财长/警察总长/TNI 司令/总检察长之一，再 +1。新政府组阁、任满、法定退休不计。只换副部长与机构首长的不计。",
+      "mapping": "55 × 0.75^(I − I_base)，上限 75、下限 5；I_base = 基线年率 × 半衰期 / ln2",
+      "baseline": {
+        "period": ["2014-10-20", "2024-10-20"],
+        "weightedEventsPerYear": 1.5,
+        "detail": "佐科维两届共 10 次改组（Infobanknews 统计），其中 2016-07-27 含财长 +1；另有警察总长非例行更替 2 起（2015-01 Sutarman 撤换、2019-10 Tito 离任入阁）各记 2。合计 15/10 年。",
+        "robustness": "基线在 1.2–1.8/年之间变动，本期分数变动约 ±2。",
+        "sources": ["Infobanknews：Jokowi 10 kali reshuffle sejak 2014", "Setkab 2015-08-12", "Katadata/Databoks reshuffle chronicle"]
+      },
+      "events": [
+        {"date": "2025-02-19", "weight": 1, "label": "改组 1：高教科技部长 Satryo → Brian Yuliarto", "sources": ["Katadata 2026-10-03"]},
+        {"date": "2025-09-08", "weight": 2, "label": "改组 2：财长 Sri Mulyani → Purbaya 等 4 名部长（八月骚乱后）", "sources": ["Katadata 2026-10-03"]},
+        {"date": "2025-09-17", "weight": 1, "label": "改组 3：政安统筹部长、青体部长等", "sources": ["Katadata 2026-10-03"]},
+        {"date": "2026-04-27", "weight": 1, "label": "改组 5：环境部长 Hanif → Jumhur Hidayat", "sources": ["Bisnis 2026-04-27", "Antara"]},
+        {"date": "2026-07-26", "weight": 2, "label": "BI 行长 Perry Warjiyo 提前约两年辞任", "sources": ["data.js 货币政策可信度 2026-07-28"]},
+        {"date": "2026-09-14", "weight": 2, "label": "改组 6：财长 Purbaya → Suahasil Nazara", "sources": ["Katadata 2026-10-03", "Wantimpres"]},
+        {"date": "2026-10-01", "weight": 2, "label": "改组 7：外长、政安/人发统筹部长、工业部长等；警察总长 Listyo → Suyudi（提前约 7 个月）", "sources": ["Kompas 2026-10-16", "Katadata 2026-10-03", "CNN Indonesia 2026-10-01"]}
+      ],
+      "excluded": [
+        {"date": "2025-10-08", "label": "改组 4：只换副部长与 BP BUMN 首长", "why": "未撤换部长"},
+        {"date": "2026-10-15", "label": "改组 8：副部长、BNPB 首长；KSAD 与 TNI 副司令互换", "why": "未撤换部长；KSAD 不在五个要害岗位内，记入强制支柱证据"}
+      ]
+    }
+  },
+  "territorial": {
+    "driver": "军队文职渗透度",
+    "mapping": "文职渗透序数分 − 15 × 建制进度；进度 = (Kodam 进度 + 领土建设营进度)/2；全部完成时恰落「广泛嵌入民事官僚+预算」=25 档",
+    "baseline": {"kodam": 15, "battalions": 0},
+    "targets": {"kodam": 38, "battalions": 514, "sources": ["Kodam：一省一 Kodam，38 省（部分来源称 37）", "营：Menhan Sjafrie 2026-06-09 国会第一委员会——每年 150 个、覆盖 514 个县市"]},
+    "timeline": [
+      {"date": "2025-08-10", "kodam": 21, "battalions": 100, "sources": ["Perpres 84/2025", "detik / JawaPos 2025-08-10"]},
+      {"date": "2025-11-24", "kodam": 21, "battalions": 150, "sources": ["Menhan Sjafrie 2025-11-24：已有 150 个领土建设营"]},
+      {"date": "2026-10-05", "kodam": 27, "battalions": 300, "sources": ["TNI 81 周年：6 个新 Kodam、30 旅、150 营（RCTI+/JawaPos/detik 2026-10-05）"]}
+    ]
+  }
+}

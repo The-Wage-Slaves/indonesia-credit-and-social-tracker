@@ -198,7 +198,7 @@ assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and 
   // 2026-09-08 又抓到一个：social.online_grievance 记的还是 08-11 的 heat 32.6 / 57 分，
   // 比当期落后两期，而 V3 的网络政治情绪早已改分。所以这里按对儿枚举，不是只钉汇率。
   const BRIDGED = [
-    { name: '汇率水平与贬速', owner: 'currency.fx_stress' },
+    { name: '汇率相对强弱(对亚洲五币)', owner: 'currency.fx_stress' },
     { name: '网络政治情绪', owner: 'social.online_grievance' },
     { name: '通胀锚定与实际利率', owner: 'currency.inflation_expectations' },
     { name: '消费者信心', owner: 'social.subjective_confidence' },
@@ -230,9 +230,9 @@ assert(stabilityContext.__DATA.asOf === v4Input.asOf, 'Production DATA.asOf and 
   // 「V3股市/外资流向与主权风险定价的迁移均值」。2026-09-08 发现它还停在 37.5——
   // 那是股市 driver 还读 30 时的均值，股市 30→35 之后没人更新它。规则可算，就该由机器算。
   {
-    const equity = allDrivers.get('股市与外资流向');
+    const equity = allDrivers.get('股市相对表现(对MSCI EM)');
     const sovereign = allDrivers.get('主权风险定价');
-    assert(equity && sovereign, 'market_access bridge needs 股市与外资流向 and 主权风险定价');
+    assert(equity && sovereign, 'market_access bridge needs 股市相对表现(对MSCI EM) and 主权风险定价');
     const expected = (equity.score + sovereign.score) / 2;
     const observation = observations.find((o) => o.primaryOwner === 'currency.market_access');
     assert(observation, 'V4 evidence has no currency.market_access observation');
