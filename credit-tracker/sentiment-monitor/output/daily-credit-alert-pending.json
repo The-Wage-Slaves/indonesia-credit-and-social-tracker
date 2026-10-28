@@ -1,67 +1,72 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-27",
+  "date": "2026-10-28",
   "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 56.3,
-    "socialDailyVolumeRisk": 5.7,
-    "negativeSocialShare": 24.6,
+    "newsDailyVolumeRisk": 0.0,
+    "socialDailyVolumeRisk": 26.7,
+    "negativeSocialShare": 69.0,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=27; prior-7d median=22.0; robust z=0.42",
-    "socialVolume": "today=0; prior-7d median=35.0; robust z=-2.95"
+    "newsVolume": "today=4; prior-7d median=25.0; robust z=-3.54",
+    "socialVolume": "today=9; prior-7d median=39.0; robust z=-1.56"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [
     {
-      "id": "llm-80eacec289ec",
+      "id": "llm-00d6a1f5f932",
       "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
         "OJK",
         "Satgas PASTI"
       ],
-      "headline": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
-      "headlineZh": "OJK取缔1199家非法网贷并封锁账户",
-      "summaryZh": "OJK与Satgas PASTI截至2026年9月取缔1199家非法网贷，封锁702833个账户，涉资8252亿印尼盾，处理330起案件。",
-      "rationale": "监管机构大规模执法行动",
-      "independentSourceCount": 16,
+      "headline": "Satgas PASTI Sikat 330 Entitas dan Aktivitas Keuangan Ilegal, Paling Banyak Pinjol Ilegal - Iconomics",
+      "headlineZh": "OJK关停1199家非法网贷并冻结8.25亿盾",
+      "summaryZh": "OJK/Satgas PASTI截至2026年9月关停1199家非法网贷，封堵702万诈骗账户并追回资金，属监管执法。",
+      "rationale": "监管机构具体执法行动，多篇同源报道",
+      "independentSourceCount": 14,
       "domains": [
-        "cnbcindonesia.com",
+        "centralbatam.co.id",
         "demokratis.co.id",
-        "economy.okezone.com",
-        "id.headtopics.com",
-        "idxchannel.com",
-        "lensahukum.co.id"
+        "limapagi.id",
+        "masakini.co",
+        "nl.headtopics.com",
+        "peradaban.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "45b79ef3f01ad8fe",
+        "aad47f5673f9f3ee",
+        "6c69292bcb11b040",
         "61d79d1ad5e829d7",
         "8d5fbf20256db829",
         "8ea01168da7044b0",
         "e1fda482982017ef",
-        "a5cb4beccae466f1",
+        "caa4b29c3d0e6bb4",
+        "6b1935e6c2c2efb9",
+        "9f5924aba34bb1bb",
+        "7980d53774bd9ddd",
+        "d2607703719140a3",
+        "87f743211b277735",
+        "f73ec4569d558514",
         "9fb23c7d69433c6c",
         "50b9ce8e259febaa",
-        "15e0cedabc8b01e3",
         "503022397bc3c3a6",
-        "d98c0c9067d12de2",
-        "20f2f5b1bb3025dd",
-        "4b62ee48fe99a8f5",
-        "d2812b2d56ee3fa9",
-        "b144af75531aac4a",
-        "e3d24a0974a5b49a"
+        "d98c0c9067d12de2"
       ],
       "articles": [
         {
-          "title": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMDRUOWkyeTdMVFo1WnY4UzBZTDFicE02eXEwRGgtN0tfZUwzcXBoTVM1NUp1eHNPNldTeElkMENQbjh5R2dJeUlQVGNuX3pZVVFFSzhnVFhSYjRrcFFQVnI3UDBrUlNoWGtNWnRvTHhvSzk2aW1VQ3JLNnlkWXVIRGItcGhYWWlOcVdSdHh6ZGJBc3QzdDlZ?oc=5"
+          "title": "Satgas PASTI Sikat 330 Entitas dan Aktivitas Keuangan Ilegal, Paling Banyak Pinjol Ilegal - Iconomics",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdHZ4ZVVWTzJmamZMckVLMTZrWmtYMGhnUWxPZ1NUOGQyWlNsdXNHQVZzQ2k1Nll1dkF4Zl9RSnd4WkcxdUc2WTFoMkZIcDA3dDJjUTJXcXVBeURqeG1lYzZ2eTZmMGhnZ192MG13OVpyVlpPME5wR0hTcC1JcERsZk5DUW1wYW43NUthU3BxVjVaa2NsZFRUM1NnSmRoV3BaTnFTb3psSFlXV3BHZXY2Tmc1SnpROHVLbVFsWDdodUhtWEg4RU94MVpJZ3NqcGZ0?oc=5"
+        },
+        {
+          "title": "1.199 Pinjol Ilegal Telah Ditutup hingga September 2026, Ini Modusnya - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZEs3MnozYjNYbl93WU8xamJsQ1JBV0k3NW1CbGpwQWFJaXNBMWtlLUVLbVdGV0QxMkVZUlB5M1RJaUx6MFFXNkZLbVZqNF9KSUJ3NU5BVUxNaGQtX0o4QkdOUHVJSUxWSEpmNzdaTGhLRkFNWWluRWlORUZEcURKUHF4TVJwT05Dc2F0aGRjLUhXb1J5eUdIcWVraw?oc=5"
         },
         {
           "title": "1.199 Pinjol Ilegal Telah Ditutup hingga September 2026, Ini Modusnya - Suara.com",
@@ -72,15 +77,11 @@
           "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNTk5VS3ZVR3BnYWlvNGFRVlhUd2oxeXJueDRWenhyU1IwWjM3RkR0QnEwVW5UbEo2bFJmdWVLMTRfa1VzUFlCR3VxSDgxUktmdEpyMjNtN29RMjJMcC1RZGNkaWt5QzdmeE4tdk55MmVtVHNxd09IZGp6UldvQlFUSTAzdUc0M2IyQXl5a1p1RlJPUXRlYkY4a3diN3ZOTU9lUHhXWENhcWg1bElOVXFkWnZ2VjREMVZoZTJjNVduTzlhbFJYN0QwUGdFOTM5Zm1Ja0E4OFU2TzZ2Z9IB3wFBVV95cUxQZzZFOFVoUnZQTTQzR25NclFXLVFYYV84dFRZZmNWRnlzaVNLSHg0c3dHbjhmZTRPUVlvUGdaNXJrUVZ1a1VnbTRTMjVoYXB4UHdrbVl5ZzB4WEhuVlZoN0x3WDBJYjdfSkpGVWJHUW4xdGZJY0hvYnhKa25BazlfbEZVNkQtZUZPcXlXSk1Xdml3MEN0T1RVc0JkY0E2cFhETFFJNWpvTDFSRm5xV0NtaERlVEF6V1NnMld5emxPcXFFSGhSZ1ZHSUpLTzFaUE5UM1Z4VjhWZzZlcmZnclh3?oc=5"
         },
         {
-          "title": "OJK Berantas Ribuan Pinjol Ilegal, Dana Korban Penipuan yang Dikembalikan Capai Rp207 Miliar - Tutur.co.id",
+          "title": "OJK Berantas Ribuan Pinjol Ilegal, Dana Korban Penipuan yang Dikembalikan Capai Rp207 Miliar - tutur.co.id",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFZXckFJZDduTnFEeUc5SmI0U2NYX3pvb3RjSW5ycVltT2NwZUhXMzVIdGE0aVVRUldaVlhqV3dtc1VWSTJxZkdFLTZwOHVPM0hsQkFSR2VjV1lDUGFfczJ2V3ZQbURjOGNhQzF1RUFvVnR6akVBOXpYajVUOU0yUENWUVNYd0ZGQlRqVmNTTFdqQkltdzFrZ3BibzJJM0kwUjFHenoySktsUHpEd1lZc1pn?oc=5"
-        },
-        {
-          "title": "OJK Blokir 702 Ribu Rekening Terkait Penipuan, Dana Rp825,2 Miliar Diamankan - masakini.co",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc2pfcEVBaXRtODJPMGx3a0w4MmdPaFZ3TlNQRTM3TEJxRmt0SVlQYUYzNE5LcG1zOTdZVHlJc09GOTg2MUp4bTE4RVZNYWhkMy1HWVBtTTgxZ0J5TzBNaG9PdmphZURuckMteUU2dDlDNUdWRHpwT0R5dXN3QUxlQTB5cmtzUTM1TFp2NC1tRWVhVE9YbWZmOVg0aEN5YXc4M2dOSXBLLWFkUQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 16,
+      "bodyBackedSourceCount": 17,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -92,42 +93,77 @@
       }
     },
     {
-      "id": "llm-e20cc42274db",
+      "id": "llm-78f941f29a19",
+      "eventType": "consumer_harm",
+      "severity": 0.9,
+      "entities": [
+        "网约车司机",
+        "两名嫌犯"
+      ],
+      "headline": "Terungkap, Utang Pinjol Jadi Pemicu Dua Pria Bunuh Driver Taksi Online - iNews.ID",
+      "headlineZh": "网贷债务成两名男子杀害网约车司机诱因",
+      "summaryZh": "警方披露两名嫌犯因网贷债务杀害网约车司机，属致死案件，需重点留痕。",
+      "rationale": "警方立案的致死案件，与网贷债务相关",
+      "independentSourceCount": 2,
+      "domains": [
+        "medan.inews.id",
+        "waspada.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "b64f3b1a1ac63aa6",
+        "13aa02c8ab819c34"
+      ],
+      "articles": [
+        {
+          "title": "Terungkap, Utang Pinjol Jadi Pemicu Dua Pria Bunuh Driver Taksi Online - iNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMi1GSy1yY3h2R3loVm5NU2gtblgzbEkwSDJvVE9KMC1GYVpTT2tlNmVEVmNOaWdtTE13Y0NSYlRPa3ZYVS1TQlUzS3poYThDNktoMkpqNWg3cV8tUDRuT085OTJ6dURKX0dPeVV4eEhPeG80cVA3bElES1d0d19xS1k4NjRmSE53Ti1WNmttUmFTV1lFdmVGNW9BaUJnNTBUcnFvOXA5SdIBpgFBVV95cUxPSjI2OWJFbXh2alRpVVROaTEtZHNxNkdIbGNMSXBTTmxGT29BWVFmVzVCeG1QemQtSTZsRjdYa1VsRU44UmRCTE1TRVozYTVOOVZpZ05tMmRFUHRVM1hTbExRQU9WQXVCdnZuQUNtVUdCR2FieFdvaWlDS3VOVTR4cjF0YWxsckZhS3VQRXZmeFFZM0hTME1lLUw4UW1GNURIQ2JPc25n?oc=5"
+        },
+        {
+          "title": "Dua Tersangka Pembunuh Driver Online Mengaku Terlilit Utang Pinjol - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQlRRSHk2ZXZra0JSSzdiczBkNE1SSUZtUHpzVmVIU1JsYlFvLWFDYjNrOTVDcmhzM3NfblpQbElqX1U3NlNzSlpqcTJGNHI1TEM4aEF6YVJ3dUY4ZU4zRDhlN1lDSWo2R2xKeDcxbk1VS0tuOHItcUJaUHN3Q25LTGRTR2Fja3NUTU5CNGZQMDFyazg5SmpaMm53cEY?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-5227c722d54b",
       "eventType": "fraud_or_illegal_practice",
       "severity": 0.75,
       "entities": [
-        "Imigrasi Ngurah Rai",
-        "17名马来西亚和新加坡籍外国人"
+        "巴厘岛移民局",
+        "17名马来西亚和新加坡籍人员"
       ],
       "headline": "17 Warga Malaysia-Singapura Bikin Markas Pinjol Ilegal di Vila Bali - CNN Indonesia",
-      "headlineZh": "巴厘岛17名外国人经营非法网贷被捕",
-      "summaryZh": "巴厘岛Dalung一别墅被捣毁，17名马来西亚和新加坡籍外国人涉嫌经营面向境外的非法网贷，被移民局逮捕。",
-      "rationale": "执法抓捕非法网贷团伙",
-      "independentSourceCount": 13,
+      "headlineZh": "巴厘岛移民局查获17名外籍人员经营非法网贷",
+      "summaryZh": "移民局在巴厘岛Dalung突袭非法网贷窝点，抓获17名马来西亚和新加坡籍人员，属执法打击。",
+      "rationale": "执法机构突袭抓捕，具体事件",
+      "independentSourceCount": 8,
       "domains": [
-        "antaranews.com",
         "bali.bisnis.com",
-        "balinews.id",
         "balipost.com",
-        "barometerbali.com",
-        "beritabali.com"
+        "cnnindonesia.com",
+        "forumkeadilan.com",
+        "idnfinancials.com",
+        "informasi.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
         "409c0e7098b0d29a",
         "df3e583f84f83562",
         "6bd60c19581d0f33",
+        "85a73fb055dce4a0",
         "488ffacc7d3a752b",
+        "c5d6c4abb4379b2f",
         "6d9da7be61c2b646",
-        "d2869abc315dae6a",
-        "9965aa9942fd21df",
-        "284f69b01f5e67cd",
-        "bd7c3c6fdfac7f66",
-        "7e0c83b09b7f6c10",
-        "4510d3ceedc0609b",
-        "994121fe9eb9f3b7",
-        "5a525ec249126a28",
-        "7a9c77b3348c5ed6"
+        "d91f585709e1c766"
       ],
       "articles": [
         {
@@ -143,15 +179,15 @@
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd3VrV1VKOUMxX1VwaFc2ZmpDN2RrWDhOakhqT2RPVHYxV3EybWtPWTdUSTZ6MHBwUUdmTUpUdmxfZWlxNEEyZGR5Sk5GdGZBcGVESUMxdVc3VElEdUZaLUZCbTdIVkpCOGdBUzlBRFFqdWUwMkJVOVY0TVlFYU1fcl9TelFtYUQxdWZ2OUZrN2Q0NVlTRDhrOW03WGl2TGdWNnFKT213d1NGUFAxSDlHbS1aYWc5cjRUelo3U0ZNZ0rSAb8BQVVfeXFMT1d4bVBBaVVjdmNJU3J0SjBCX0pkaVFsX3Yya1pObTl5MS1PcHlzUTNpbmxyb1FiTGd0NXZ4a3ByWDloaWxJYktsbS1vUnNpaVA2anA5Mnljelh5OWtxWHVpMkdJT2VfVFBPRVJwUUYtMlRGVFZILUotQTAyOHdKZVlKM0xDWHVCRlVZdVFpcjJ0NWUtVl82bkxtYXBoSkR6bEVzSFk5bUpKb0NSYTFuT2JacDlGUzNYbG42ekViMEU?oc=5"
         },
         {
-          "title": "Imigrasi Amankan 17 Warga Malaysia dan Singapura Jalankan Bisnis Pinjol Khusus WNA di Bali - Informasi.com",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS3BHbWlGT2JZdXdGSDZUT0lzTGdqdmpzNkJEQWd6YlpfUXNHLTRfSE1WZDlBTlJDN05sWXg4UGh3eUJsY3lwYkhFUG5Pb28tOHdlWWd4MkoxMExhdUJkZHpnQXpKc2cwNzVBYlNGMnMzWHQxR3RHZ243NVNWSzhmUHlCYjRvaVJVblQ5em1YMU1SYmtnXzdDbmhoWHk2VTlNNHlYVFItbTJVVWRmSmx2VnpzcnBYa013bnhrcl9sY3BIWnVIVHlGc2tsZw?oc=5"
+          "title": "Imigrasi Amankan 17 WNA di Kasus Dugaan Pinjol Ilegal di Bali - Forum Keadilan",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTi1ud0F4N1ltQVhvb0hiTWhGcGFHOHM2YTZQaVRlLWI5RjREY0RBU3FOOXFfME55WktUblU4WnV0cnRaZ3MxcG1NNFQ5cDhsT3ZkOWRXS2RwWkZ3VDVOSTE0ZFlXajYyUFhoZk9IWTFVWGlvUE1hVWZBTHg0MnVGRm83OHQ1OGJaOC1lVmU5cTZEY0dSdVZkbzZwaHhYeURH?oc=5"
         },
         {
-          "title": "Imigrasi Ngurah Rai Amankan 17 WNA Diduga Jalankan Pinjol Ilegal di Bali - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVXJrd2Q5LV9tMk13UENmc3F1XzdSNER2NDhVcEotSVNWenVaZlhfS3hXLWRQWXVfMGhaWmxYWGNlZ2l0ZFdjXzFmTUR2R3JXbTVHOTFjUDdVd2pjWWRmZVJ1SVh3VmFmRnkzT0lpMkRYcTFBbWFEaUxXUkxRNVRqSW1uM2p3d05OWTNMUC1nMFdXc3NtUWZqQnBGdTlJNjZVWnloT1R3SHRLR2JlQmloS29mb29ycl9NdmhMN3JvZw?oc=5"
+          "title": "Imigrasi Amankan 17 Warga Malaysia dan Singapura Jalankan Bisnis Pinjol Khusus WNA di Bali - Informasi.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS3BHbWlGT2JZdXdGSDZUT0lzTGdqdmpzNkJEQWd6YlpfUXNHLTRfSE1WZDlBTlJDN05sWXg4UGh3eUJsY3lwYkhFUG5Pb28tOHdlWWd4MkoxMExhdUJkZHpnQXpKc2cwNzVBYlNGMnMzWHQxR3RHZ243NVNWSzhmUHlCYjRvaVJVblQ5em1YMU1SYmtnXzdDbmhoWHk2VTlNNHlYVFItbTJVVWRmSmx2VnpzcnBYa013bnhrcl9sY3BIWnVIVHlGc2tsZw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 14,
+      "bodyBackedSourceCount": 8,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -163,40 +199,117 @@
   ],
   "lowEvidenceLeads": [
     {
-      "id": "llm-07cd6c388bde",
-      "eventType": "regulatory_action",
+      "id": "llm-d51fea57814c",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "Satgas PASTI"
+        "Vicky Shu"
       ],
-      "headline": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
-      "headlineZh": "OJK取缔11家非法典当和数百家诈骗网贷",
-      "summaryZh": "OJK与Satgas PASTI取缔11家无牌典当业务及数百家诈骗网贷平台，属监管执法行动。",
-      "rationale": "监管执法行动",
+      "headline": "Cerita Vicky Shu Diteror Debt Collector, Dituduh Punya Pinjol, KTP Tersebar, Klaim Korban Penipuan - TribunStyle.com",
+      "headlineZh": "艺人Vicky Shu遭催收恐吓并指控身份盗用",
+      "summaryZh": "艺人Vicky Shu称遭催收恐吓、被指有网贷且KTP外泄，自称身份盗用受害者，值得留痕。",
+      "rationale": "具体个人受害事件，有当事人陈述",
       "independentSourceCount": 1,
       "domains": [
-        "gokepri.com"
+        "style.tribunnews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "03f4b3a2937fc4aa"
+        "80cdad941da43407"
       ],
       "articles": [
         {
-          "title": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96QzhoOEdPZXR0Wm5oNDI5bVdyVC1aTzA4cXhGZC1RLXN2b3A5Q0Y0dlZOVGs3WExOdnZDMTlLdmxHeVJxSXFNYU1jWjJKNDBicTB3VnR5Vi0xQmlvT2xwOTFteTQzT1pFb1VOeUVIeEE2MGRLOXRfTTlvbnI?oc=5"
+          "title": "Cerita Vicky Shu Diteror Debt Collector, Dituduh Punya Pinjol, KTP Tersebar, Klaim Korban Penipuan - TribunStyle.com",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRDlZdHJzWkRXTm5PajhGNkUtWE12OHZSNkhTVjlWZU9UNGpNZHBXVlF5NlpBQXRXRWQyWlp0RFdyWVdTVGd0SmowVXZGc0FEQzhZTEpwTDQ4Y1B3S2R6Wl9sMFUxYUlfa2JaVUpxNW9Gd25HWnh6MFBJbk1IRHZSS2FYY3BrMG1DN3pFQ0JKNm1DZWNxdUpKWnVBR0ppTGt1d2ZtVjJ1RkxsczJfZ282VWliT1Q1MTdkSVJQVElXWlFtZUFtUnN1YkJTMWxhV1lfSkFn?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-8b4a9cc92a9a",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK Jatim"
+      ],
+      "headline": "Jatim Juara 3 Kasus Pinjol Ilegal Nasional, OJK Beri Peringatan Keras - Radar Surabaya Bisnis",
+      "headlineZh": "东爪哇OJK接获3244起非法网贷投诉",
+      "summaryZh": "OJK东爪哇分局收到3244起非法网贷投诉，居全国第二，并发出严厉警告，属监管数据披露。",
+      "rationale": "监管机构披露投诉数据并警告",
+      "independentSourceCount": 3,
+      "domains": [
+        "adatah.com",
+        "detiknews.id",
+        "radarsurabayabisnis.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e412f503e1754ff0",
+        "9d6d64257b927cc0",
+        "2c0237eba6ff6625"
+      ],
+      "articles": [
+        {
+          "title": "Jatim Juara 3 Kasus Pinjol Ilegal Nasional, OJK Beri Peringatan Keras - Radar Surabaya Bisnis",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdTF1ZGc4T29EdDdkVjdWN3lZQ1hQVW9fbGRmQWh2VWlhQnNqcUVjUUdUTEJiUHZfWmpvTjFOQmJjb0ZFRE9fMXpkNXpCaTFyQ2hMTmVEb1dkdXR0ZUlyWUgzaEdkOTd4bnJvMDZKdldiOUpwZlVYUVQxcnFld0N1NTNJdFNBM3g2YmlLZ3Zkd2ZPSGxicElFbXRiOWVXSnpSTnVHWTM4azM3VWpTdWh1OVphWTNzeVdFZW9HdkFNdGczTUl2VGFsMDFwZ29ER1JuZFkxQdIB2gFBVV95cUxNcFhMTm9oU0owZWRUUlNNQ2hKb19zelNTT2FETERJZXVjQzYyRWg1R1pzejNvczVYdVZSd0swT3BKa0hjQmxpdnd4Vm1xUG1WN2pPRHFoekY3c3puQzJwYWZvVkN3alB2V2NhWklUdUozcmhlaEhQUDRTWTVIeHVJYUNNTTBzNmZRUWpxUzhfaWlzVHNRT3IxMGF5SHFkaHRiNEswcEY0Ti1MZzlfdGhrNFNyU0NPaVlhWFRIN0JRdk81WHRIM29PWERPanhXaGFPS2thTkx6QW1HUQ?oc=5"
+        },
+        {
+          "title": "Kasus Pinjol Ilegal Marak, OJK Jatim Terima 3.244 Aduan - Adatah - Adatah",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVXlIZWRkTXVkY184WWc4d2NBbWo3d1VZV05fb1Z2SWotaFNzcTdZVTg1NGdxWm1lZW85QUFGSFBfSFJrYmN6Zi00allXS1Q1RER2cGRuNUxtSzBQelNoNlc5SXNJYTRoTWVMaGcxUWRKa0RDajJvUjc1N3dhSVpQNVF6WGpwd3pmMWRXbk81TFZVNzJ1bm51SHRQWks0R1nSAaQBQVVfeXFMTWJtU1V5LUVjX2Z3YjZOdEZvOVYwdkh0ajA4blBhQmdDZW5TYVdEVW9ubEtpVUxYc0VRcm9haVMxVjJud0kxaFJrYUtfMEZOZWFpUTRiRW0wRzYzRjVTX091dm1sSXNfcVNiMm5KaUswSmNxU255YzFaMDI1XzdNTnBWc21yM0cwSktWVXlKc19RbVdyb1JkQ3F6b1o2TExiSHRLWDE?oc=5"
+        },
+        {
+          "title": "OJK Jatim Terima 3.244 Laporan Pinjol Ilegal, Tertinggi Kedua Nasional - DetikNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSlpNMWQ3cG9rd1htcUpLWkJ1OW9GemFfMTRadjBvTURHQVZkRkV3cXZjdlk3SGtPM0ZTS19PTWZZdHI4ZExFWWFueWNBMFFxMnJaV29BVlA2ZTJtQ2hVdTF6N18wN3c1ZkM0dDBDTTZNLXVZRmVKaFd4VzZNdzJoV0lPR1FHMWlzSTM2Vko5ajl5SW1Ybi05SVA1RmhPeGM4LVZwbXRzcnh0UQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-029ba12003e2",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "OJK Lampung"
+      ],
+      "headline": "OJK Lampung Catat 511 Laporan Pinjol Ilegal, Warga Diminta Waspada - Kupas Tuntas",
+      "headlineZh": "楠榜OJK记录511起非法网贷投诉",
+      "summaryZh": "OJK楠榜分局记录511起非法网贷投诉并提醒民众警惕，属地方监管数据披露。",
+      "rationale": "监管机构披露地方投诉数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "kupastuntas.co"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "c9610fc23a595f5b"
+      ],
+      "articles": [
+        {
+          "title": "OJK Lampung Catat 511 Laporan Pinjol Ilegal, Warga Diminta Waspada - Kupas Tuntas",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZE1EWmJPaWJnZUw3SGNFNlBxUUw0X0hQRUJYQnl6ZGZ2d2NWRnRGaXd2c3YxYjJqRi1MaVVnWXQtUVdFb0R5NTRPamtiZ05SanNTZlVZWno1WTNJUnp2MzN2RjBncEVsWGxfMl9OZFp2VWRNWmRHX2ZIeVdNQmJJZW5EcVBWUmxFSXBPdTdJRC0zZjFZTGlXREd6QnpTUzNZ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
@@ -205,8 +318,8 @@
     "method": "deepseek_credit_event_v1",
     "status": "ok",
     "candidateCount": 40,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 6,
+    "eventGroupCount": 6,
+    "rejectedNonEvents": 8,
     "unassignedCount": 0,
     "articleBodyStatus": {
       "ok": 40
@@ -215,49 +328,88 @@
   },
   "events": [
     {
-      "id": "llm-80eacec289ec",
+      "id": "llm-d51fea57814c",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Vicky Shu"
+      ],
+      "headline": "Cerita Vicky Shu Diteror Debt Collector, Dituduh Punya Pinjol, KTP Tersebar, Klaim Korban Penipuan - TribunStyle.com",
+      "headlineZh": "艺人Vicky Shu遭催收恐吓并指控身份盗用",
+      "summaryZh": "艺人Vicky Shu称遭催收恐吓、被指有网贷且KTP外泄，自称身份盗用受害者，值得留痕。",
+      "rationale": "具体个人受害事件，有当事人陈述",
+      "independentSourceCount": 1,
+      "domains": [
+        "style.tribunnews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "80cdad941da43407"
+      ],
+      "articles": [
+        {
+          "title": "Cerita Vicky Shu Diteror Debt Collector, Dituduh Punya Pinjol, KTP Tersebar, Klaim Korban Penipuan - TribunStyle.com",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRDlZdHJzWkRXTm5PajhGNkUtWE12OHZSNkhTVjlWZU9UNGpNZHBXVlF5NlpBQXRXRWQyWlp0RFdyWVdTVGd0SmowVXZGc0FEQzhZTEpwTDQ4Y1B3S2R6Wl9sMFUxYUlfa2JaVUpxNW9Gd25HWnh6MFBJbk1IRHZSS2FYY3BrMG1DN3pFQ0JKNm1DZWNxdUpKWnVBR0ppTGt1d2ZtVjJ1RkxsczJfZ282VWliT1Q1MTdkSVJQVElXWlFtZUFtUnN1YkJTMWxhV1lfSkFn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-00d6a1f5f932",
       "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
         "OJK",
         "Satgas PASTI"
       ],
-      "headline": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
-      "headlineZh": "OJK取缔1199家非法网贷并封锁账户",
-      "summaryZh": "OJK与Satgas PASTI截至2026年9月取缔1199家非法网贷，封锁702833个账户，涉资8252亿印尼盾，处理330起案件。",
-      "rationale": "监管机构大规模执法行动",
-      "independentSourceCount": 16,
+      "headline": "Satgas PASTI Sikat 330 Entitas dan Aktivitas Keuangan Ilegal, Paling Banyak Pinjol Ilegal - Iconomics",
+      "headlineZh": "OJK关停1199家非法网贷并冻结8.25亿盾",
+      "summaryZh": "OJK/Satgas PASTI截至2026年9月关停1199家非法网贷，封堵702万诈骗账户并追回资金，属监管执法。",
+      "rationale": "监管机构具体执法行动，多篇同源报道",
+      "independentSourceCount": 14,
       "domains": [
-        "cnbcindonesia.com",
+        "centralbatam.co.id",
         "demokratis.co.id",
-        "economy.okezone.com",
-        "id.headtopics.com",
-        "idxchannel.com",
-        "lensahukum.co.id"
+        "limapagi.id",
+        "masakini.co",
+        "nl.headtopics.com",
+        "peradaban.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "45b79ef3f01ad8fe",
+        "aad47f5673f9f3ee",
+        "6c69292bcb11b040",
         "61d79d1ad5e829d7",
         "8d5fbf20256db829",
         "8ea01168da7044b0",
         "e1fda482982017ef",
-        "a5cb4beccae466f1",
+        "caa4b29c3d0e6bb4",
+        "6b1935e6c2c2efb9",
+        "9f5924aba34bb1bb",
+        "7980d53774bd9ddd",
+        "d2607703719140a3",
+        "87f743211b277735",
+        "f73ec4569d558514",
         "9fb23c7d69433c6c",
         "50b9ce8e259febaa",
-        "15e0cedabc8b01e3",
         "503022397bc3c3a6",
-        "d98c0c9067d12de2",
-        "20f2f5b1bb3025dd",
-        "4b62ee48fe99a8f5",
-        "d2812b2d56ee3fa9",
-        "b144af75531aac4a",
-        "e3d24a0974a5b49a"
+        "d98c0c9067d12de2"
       ],
       "articles": [
         {
-          "title": "1.199 Pinjol Ilegal Ditutup, Dana Rp 825,2 M Diblokir! - Head Topics",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMDRUOWkyeTdMVFo1WnY4UzBZTDFicE02eXEwRGgtN0tfZUwzcXBoTVM1NUp1eHNPNldTeElkMENQbjh5R2dJeUlQVGNuX3pZVVFFSzhnVFhSYjRrcFFQVnI3UDBrUlNoWGtNWnRvTHhvSzk2aW1VQ3JLNnlkWXVIRGItcGhYWWlOcVdSdHh6ZGJBc3QzdDlZ?oc=5"
+          "title": "Satgas PASTI Sikat 330 Entitas dan Aktivitas Keuangan Ilegal, Paling Banyak Pinjol Ilegal - Iconomics",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdHZ4ZVVWTzJmamZMckVLMTZrWmtYMGhnUWxPZ1NUOGQyWlNsdXNHQVZzQ2k1Nll1dkF4Zl9RSnd4WkcxdUc2WTFoMkZIcDA3dDJjUTJXcXVBeURqeG1lYzZ2eTZmMGhnZ192MG13OVpyVlpPME5wR0hTcC1JcERsZk5DUW1wYW43NUthU3BxVjVaa2NsZFRUM1NnSmRoV3BaTnFTb3psSFlXV3BHZXY2Tmc1SnpROHVLbVFsWDdodUhtWEg4RU94MVpJZ3NqcGZ0?oc=5"
+        },
+        {
+          "title": "1.199 Pinjol Ilegal Telah Ditutup hingga September 2026, Ini Modusnya - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNZEs3MnozYjNYbl93WU8xamJsQ1JBV0k3NW1CbGpwQWFJaXNBMWtlLUVLbVdGV0QxMkVZUlB5M1RJaUx6MFFXNkZLbVZqNF9KSUJ3NU5BVUxNaGQtX0o4QkdOUHVJSUxWSEpmNzdaTGhLRkFNWWluRWlORUZEcURKUHF4TVJwT05Dc2F0aGRjLUhXb1J5eUdIcWVraw?oc=5"
         },
         {
           "title": "1.199 Pinjol Ilegal Telah Ditutup hingga September 2026, Ini Modusnya - Suara.com",
@@ -268,15 +420,11 @@
           "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNTk5VS3ZVR3BnYWlvNGFRVlhUd2oxeXJueDRWenhyU1IwWjM3RkR0QnEwVW5UbEo2bFJmdWVLMTRfa1VzUFlCR3VxSDgxUktmdEpyMjNtN29RMjJMcC1RZGNkaWt5QzdmeE4tdk55MmVtVHNxd09IZGp6UldvQlFUSTAzdUc0M2IyQXl5a1p1RlJPUXRlYkY4a3diN3ZOTU9lUHhXWENhcWg1bElOVXFkWnZ2VjREMVZoZTJjNVduTzlhbFJYN0QwUGdFOTM5Zm1Ja0E4OFU2TzZ2Z9IB3wFBVV95cUxQZzZFOFVoUnZQTTQzR25NclFXLVFYYV84dFRZZmNWRnlzaVNLSHg0c3dHbjhmZTRPUVlvUGdaNXJrUVZ1a1VnbTRTMjVoYXB4UHdrbVl5ZzB4WEhuVlZoN0x3WDBJYjdfSkpGVWJHUW4xdGZJY0hvYnhKa25BazlfbEZVNkQtZUZPcXlXSk1Xdml3MEN0T1RVc0JkY0E2cFhETFFJNWpvTDFSRm5xV0NtaERlVEF6V1NnMld5emxPcXFFSGhSZ1ZHSUpLTzFaUE5UM1Z4VjhWZzZlcmZnclh3?oc=5"
         },
         {
-          "title": "OJK Berantas Ribuan Pinjol Ilegal, Dana Korban Penipuan yang Dikembalikan Capai Rp207 Miliar - Tutur.co.id",
+          "title": "OJK Berantas Ribuan Pinjol Ilegal, Dana Korban Penipuan yang Dikembalikan Capai Rp207 Miliar - tutur.co.id",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZFZXckFJZDduTnFEeUc5SmI0U2NYX3pvb3RjSW5ycVltT2NwZUhXMzVIdGE0aVVRUldaVlhqV3dtc1VWSTJxZkdFLTZwOHVPM0hsQkFSR2VjV1lDUGFfczJ2V3ZQbURjOGNhQzF1RUFvVnR6akVBOXpYajVUOU0yUENWUVNYd0ZGQlRqVmNTTFdqQkltdzFrZ3BibzJJM0kwUjFHenoySktsUHpEd1lZc1pn?oc=5"
-        },
-        {
-          "title": "OJK Blokir 702 Ribu Rekening Terkait Penipuan, Dana Rp825,2 Miliar Diamankan - masakini.co",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQc2pfcEVBaXRtODJPMGx3a0w4MmdPaFZ3TlNQRTM3TEJxRmt0SVlQYUYzNE5LcG1zOTdZVHlJc09GOTg2MUp4bTE4RVZNYWhkMy1HWVBtTTgxZ0J5TzBNaG9PdmphZURuckMteUU2dDlDNUdWRHpwT0R5dXN3QUxlQTB5cmtzUTM1TFp2NC1tRWVhVE9YbWZmOVg0aEN5YXc4M2dOSXBLLWFkUQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 16,
+      "bodyBackedSourceCount": 17,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -288,42 +436,77 @@
       }
     },
     {
-      "id": "llm-e20cc42274db",
+      "id": "llm-78f941f29a19",
+      "eventType": "consumer_harm",
+      "severity": 0.9,
+      "entities": [
+        "网约车司机",
+        "两名嫌犯"
+      ],
+      "headline": "Terungkap, Utang Pinjol Jadi Pemicu Dua Pria Bunuh Driver Taksi Online - iNews.ID",
+      "headlineZh": "网贷债务成两名男子杀害网约车司机诱因",
+      "summaryZh": "警方披露两名嫌犯因网贷债务杀害网约车司机，属致死案件，需重点留痕。",
+      "rationale": "警方立案的致死案件，与网贷债务相关",
+      "independentSourceCount": 2,
+      "domains": [
+        "medan.inews.id",
+        "waspada.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "b64f3b1a1ac63aa6",
+        "13aa02c8ab819c34"
+      ],
+      "articles": [
+        {
+          "title": "Terungkap, Utang Pinjol Jadi Pemicu Dua Pria Bunuh Driver Taksi Online - iNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNMi1GSy1yY3h2R3loVm5NU2gtblgzbEkwSDJvVE9KMC1GYVpTT2tlNmVEVmNOaWdtTE13Y0NSYlRPa3ZYVS1TQlUzS3poYThDNktoMkpqNWg3cV8tUDRuT085OTJ6dURKX0dPeVV4eEhPeG80cVA3bElES1d0d19xS1k4NjRmSE53Ti1WNmttUmFTV1lFdmVGNW9BaUJnNTBUcnFvOXA5SdIBpgFBVV95cUxPSjI2OWJFbXh2alRpVVROaTEtZHNxNkdIbGNMSXBTTmxGT29BWVFmVzVCeG1QemQtSTZsRjdYa1VsRU44UmRCTE1TRVozYTVOOVZpZ05tMmRFUHRVM1hTbExRQU9WQXVCdnZuQUNtVUdCR2FieFdvaWlDS3VOVTR4cjF0YWxsckZhS3VQRXZmeFFZM0hTME1lLUw4UW1GNURIQ2JPc25n?oc=5"
+        },
+        {
+          "title": "Dua Tersangka Pembunuh Driver Online Mengaku Terlilit Utang Pinjol - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQlRRSHk2ZXZra0JSSzdiczBkNE1SSUZtUHpzVmVIU1JsYlFvLWFDYjNrOTVDcmhzM3NfblpQbElqX1U3NlNzSlpqcTJGNHI1TEM4aEF6YVJ3dUY4ZU4zRDhlN1lDSWo2R2xKeDcxbk1VS0tuOHItcUJaUHN3Q25LTGRTR2Fja3NUTU5CNGZQMDFyazg5SmpaMm53cEY?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-5227c722d54b",
       "eventType": "fraud_or_illegal_practice",
       "severity": 0.75,
       "entities": [
-        "Imigrasi Ngurah Rai",
-        "17名马来西亚和新加坡籍外国人"
+        "巴厘岛移民局",
+        "17名马来西亚和新加坡籍人员"
       ],
       "headline": "17 Warga Malaysia-Singapura Bikin Markas Pinjol Ilegal di Vila Bali - CNN Indonesia",
-      "headlineZh": "巴厘岛17名外国人经营非法网贷被捕",
-      "summaryZh": "巴厘岛Dalung一别墅被捣毁，17名马来西亚和新加坡籍外国人涉嫌经营面向境外的非法网贷，被移民局逮捕。",
-      "rationale": "执法抓捕非法网贷团伙",
-      "independentSourceCount": 13,
+      "headlineZh": "巴厘岛移民局查获17名外籍人员经营非法网贷",
+      "summaryZh": "移民局在巴厘岛Dalung突袭非法网贷窝点，抓获17名马来西亚和新加坡籍人员，属执法打击。",
+      "rationale": "执法机构突袭抓捕，具体事件",
+      "independentSourceCount": 8,
       "domains": [
-        "antaranews.com",
         "bali.bisnis.com",
-        "balinews.id",
         "balipost.com",
-        "barometerbali.com",
-        "beritabali.com"
+        "cnnindonesia.com",
+        "forumkeadilan.com",
+        "idnfinancials.com",
+        "informasi.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
         "409c0e7098b0d29a",
         "df3e583f84f83562",
         "6bd60c19581d0f33",
+        "85a73fb055dce4a0",
         "488ffacc7d3a752b",
+        "c5d6c4abb4379b2f",
         "6d9da7be61c2b646",
-        "d2869abc315dae6a",
-        "9965aa9942fd21df",
-        "284f69b01f5e67cd",
-        "bd7c3c6fdfac7f66",
-        "7e0c83b09b7f6c10",
-        "4510d3ceedc0609b",
-        "994121fe9eb9f3b7",
-        "5a525ec249126a28",
-        "7a9c77b3348c5ed6"
+        "d91f585709e1c766"
       ],
       "articles": [
         {
@@ -339,15 +522,15 @@
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPd3VrV1VKOUMxX1VwaFc2ZmpDN2RrWDhOakhqT2RPVHYxV3EybWtPWTdUSTZ6MHBwUUdmTUpUdmxfZWlxNEEyZGR5Sk5GdGZBcGVESUMxdVc3VElEdUZaLUZCbTdIVkpCOGdBUzlBRFFqdWUwMkJVOVY0TVlFYU1fcl9TelFtYUQxdWZ2OUZrN2Q0NVlTRDhrOW03WGl2TGdWNnFKT213d1NGUFAxSDlHbS1aYWc5cjRUelo3U0ZNZ0rSAb8BQVVfeXFMT1d4bVBBaVVjdmNJU3J0SjBCX0pkaVFsX3Yya1pObTl5MS1PcHlzUTNpbmxyb1FiTGd0NXZ4a3ByWDloaWxJYktsbS1vUnNpaVA2anA5Mnljelh5OWtxWHVpMkdJT2VfVFBPRVJwUUYtMlRGVFZILUotQTAyOHdKZVlKM0xDWHVCRlVZdVFpcjJ0NWUtVl82bkxtYXBoSkR6bEVzSFk5bUpKb0NSYTFuT2JacDlGUzNYbG42ekViMEU?oc=5"
         },
         {
-          "title": "Imigrasi Amankan 17 Warga Malaysia dan Singapura Jalankan Bisnis Pinjol Khusus WNA di Bali - Informasi.com",
-          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS3BHbWlGT2JZdXdGSDZUT0lzTGdqdmpzNkJEQWd6YlpfUXNHLTRfSE1WZDlBTlJDN05sWXg4UGh3eUJsY3lwYkhFUG5Pb28tOHdlWWd4MkoxMExhdUJkZHpnQXpKc2cwNzVBYlNGMnMzWHQxR3RHZ243NVNWSzhmUHlCYjRvaVJVblQ5em1YMU1SYmtnXzdDbmhoWHk2VTlNNHlYVFItbTJVVWRmSmx2VnpzcnBYa013bnhrcl9sY3BIWnVIVHlGc2tsZw?oc=5"
+          "title": "Imigrasi Amankan 17 WNA di Kasus Dugaan Pinjol Ilegal di Bali - Forum Keadilan",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTi1ud0F4N1ltQVhvb0hiTWhGcGFHOHM2YTZQaVRlLWI5RjREY0RBU3FOOXFfME55WktUblU4WnV0cnRaZ3MxcG1NNFQ5cDhsT3ZkOWRXS2RwWkZ3VDVOSTE0ZFlXajYyUFhoZk9IWTFVWGlvUE1hVWZBTHg0MnVGRm83OHQ1OGJaOC1lVmU5cTZEY0dSdVZkbzZwaHhYeURH?oc=5"
         },
         {
-          "title": "Imigrasi Ngurah Rai Amankan 17 WNA Diduga Jalankan Pinjol Ilegal di Bali - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVXJrd2Q5LV9tMk13UENmc3F1XzdSNER2NDhVcEotSVNWenVaZlhfS3hXLWRQWXVfMGhaWmxYWGNlZ2l0ZFdjXzFmTUR2R3JXbTVHOTFjUDdVd2pjWWRmZVJ1SVh3VmFmRnkzT0lpMkRYcTFBbWFEaUxXUkxRNVRqSW1uM2p3d05OWTNMUC1nMFdXc3NtUWZqQnBGdTlJNjZVWnloT1R3SHRLR2JlQmloS29mb29ycl9NdmhMN3JvZw?oc=5"
+          "title": "Imigrasi Amankan 17 Warga Malaysia dan Singapura Jalankan Bisnis Pinjol Khusus WNA di Bali - Informasi.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPS3BHbWlGT2JZdXdGSDZUT0lzTGdqdmpzNkJEQWd6YlpfUXNHLTRfSE1WZDlBTlJDN05sWXg4UGh3eUJsY3lwYkhFUG5Pb28tOHdlWWd4MkoxMExhdUJkZHpnQXpKc2cwNzVBYlNGMnMzWHQxR3RHZ243NVNWSzhmUHlCYjRvaVJVblQ5em1YMU1SYmtnXzdDbmhoWHk2VTlNNHlYVFItbTJVVWRmSmx2VnpzcnBYa013bnhrcl9sY3BIWnVIVHlGc2tsZw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 14,
+      "bodyBackedSourceCount": 8,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -357,40 +540,83 @@
       }
     },
     {
-      "id": "llm-07cd6c388bde",
+      "id": "llm-8b4a9cc92a9a",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "Satgas PASTI"
+        "OJK Jatim"
       ],
-      "headline": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
-      "headlineZh": "OJK取缔11家非法典当和数百家诈骗网贷",
-      "summaryZh": "OJK与Satgas PASTI取缔11家无牌典当业务及数百家诈骗网贷平台，属监管执法行动。",
-      "rationale": "监管执法行动",
-      "independentSourceCount": 1,
+      "headline": "Jatim Juara 3 Kasus Pinjol Ilegal Nasional, OJK Beri Peringatan Keras - Radar Surabaya Bisnis",
+      "headlineZh": "东爪哇OJK接获3244起非法网贷投诉",
+      "summaryZh": "OJK东爪哇分局收到3244起非法网贷投诉，居全国第二，并发出严厉警告，属监管数据披露。",
+      "rationale": "监管机构披露投诉数据并警告",
+      "independentSourceCount": 3,
       "domains": [
-        "gokepri.com"
+        "adatah.com",
+        "detiknews.id",
+        "radarsurabayabisnis.jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "03f4b3a2937fc4aa"
+        "e412f503e1754ff0",
+        "9d6d64257b927cc0",
+        "2c0237eba6ff6625"
       ],
       "articles": [
         {
-          "title": "OJK Sikat 11 Gadai Ilegal dan Ratusan Pinjol Penipu - gokepri",
-          "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE96QzhoOEdPZXR0Wm5oNDI5bVdyVC1aTzA4cXhGZC1RLXN2b3A5Q0Y0dlZOVGs3WExOdnZDMTlLdmxHeVJxSXFNYU1jWjJKNDBicTB3VnR5Vi0xQmlvT2xwOTFteTQzT1pFb1VOeUVIeEE2MGRLOXRfTTlvbnI?oc=5"
+          "title": "Jatim Juara 3 Kasus Pinjol Ilegal Nasional, OJK Beri Peringatan Keras - Radar Surabaya Bisnis",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQdTF1ZGc4T29EdDdkVjdWN3lZQ1hQVW9fbGRmQWh2VWlhQnNqcUVjUUdUTEJiUHZfWmpvTjFOQmJjb0ZFRE9fMXpkNXpCaTFyQ2hMTmVEb1dkdXR0ZUlyWUgzaEdkOTd4bnJvMDZKdldiOUpwZlVYUVQxcnFld0N1NTNJdFNBM3g2YmlLZ3Zkd2ZPSGxicElFbXRiOWVXSnpSTnVHWTM4azM3VWpTdWh1OVphWTNzeVdFZW9HdkFNdGczTUl2VGFsMDFwZ29ER1JuZFkxQdIB2gFBVV95cUxNcFhMTm9oU0owZWRUUlNNQ2hKb19zelNTT2FETERJZXVjQzYyRWg1R1pzejNvczVYdVZSd0swT3BKa0hjQmxpdnd4Vm1xUG1WN2pPRHFoekY3c3puQzJwYWZvVkN3alB2V2NhWklUdUozcmhlaEhQUDRTWTVIeHVJYUNNTTBzNmZRUWpxUzhfaWlzVHNRT3IxMGF5SHFkaHRiNEswcEY0Ti1MZzlfdGhrNFNyU0NPaVlhWFRIN0JRdk81WHRIM29PWERPanhXaGFPS2thTkx6QW1HUQ?oc=5"
+        },
+        {
+          "title": "Kasus Pinjol Ilegal Marak, OJK Jatim Terima 3.244 Aduan - Adatah - Adatah",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPVXlIZWRkTXVkY184WWc4d2NBbWo3d1VZV05fb1Z2SWotaFNzcTdZVTg1NGdxWm1lZW85QUFGSFBfSFJrYmN6Zi00allXS1Q1RER2cGRuNUxtSzBQelNoNlc5SXNJYTRoTWVMaGcxUWRKa0RDajJvUjc1N3dhSVpQNVF6WGpwd3pmMWRXbk81TFZVNzJ1bm51SHRQWks0R1nSAaQBQVVfeXFMTWJtU1V5LUVjX2Z3YjZOdEZvOVYwdkh0ajA4blBhQmdDZW5TYVdEVW9ubEtpVUxYc0VRcm9haVMxVjJud0kxaFJrYUtfMEZOZWFpUTRiRW0wRzYzRjVTX091dm1sSXNfcVNiMm5KaUswSmNxU255YzFaMDI1XzdNTnBWc21yM0cwSktWVXlKc19RbVdyb1JkQ3F6b1o2TExiSHRLWDE?oc=5"
+        },
+        {
+          "title": "OJK Jatim Terima 3.244 Laporan Pinjol Ilegal, Tertinggi Kedua Nasional - DetikNews.ID",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSlpNMWQ3cG9rd1htcUpLWkJ1OW9GemFfMTRadjBvTURHQVZkRkV3cXZjdlk3SGtPM0ZTS19PTWZZdHI4ZExFWWFueWNBMFFxMnJaV29BVlA2ZTJtQ2hVdTF6N18wN3c1ZkM0dDBDTTZNLXVZRmVKaFd4VzZNdzJoV0lPR1FHMWlzSTM2Vko5ajl5SW1Ybi05SVA1RmhPeGM4LVZwbXRzcnh0UQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-029ba12003e2",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "OJK Lampung"
+      ],
+      "headline": "OJK Lampung Catat 511 Laporan Pinjol Ilegal, Warga Diminta Waspada - Kupas Tuntas",
+      "headlineZh": "楠榜OJK记录511起非法网贷投诉",
+      "summaryZh": "OJK楠榜分局记录511起非法网贷投诉并提醒民众警惕，属地方监管数据披露。",
+      "rationale": "监管机构披露地方投诉数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "kupastuntas.co"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "c9610fc23a595f5b"
+      ],
+      "articles": [
+        {
+          "title": "OJK Lampung Catat 511 Laporan Pinjol Ilegal, Warga Diminta Waspada - Kupas Tuntas",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZE1EWmJPaWJnZUw3SGNFNlBxUUw0X0hQRUJYQnl6ZGZ2d2NWRnRGaXd2c3YxYjJqRi1MaVVnWXQtUVdFb0R5NTRPamtiZ05SanNTZlVZWno1WTNJUnp2MzN2RjBncEVsWGxfMl9OZFp2VWRNWmRHX2ZIeVdNQmJJZW5EcVBWUmxFSXBPdTdJRC0zZjFZTGlXREd6QnpTUzNZ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
@@ -402,26 +628,26 @@
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 61,
-    "socialItemCount48h": 27
+    "articleCount48h": 62,
+    "socialItemCount48h": 33
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 534,
-    "classifiedCount": 184,
-    "irrelevantDropped": 56,
+    "inputCount": 538,
+    "classifiedCount": 170,
+    "irrelevantDropped": 70,
     "model": "deepseek-chat",
-    "fallbackCount": 294,
+    "fallbackCount": 298,
     "labelCounts": {
-      "NEG": 81,
-      "MIX": 53,
-      "POS": 50
+      "NEG": 91,
+      "MIX": 38,
+      "POS": 41
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
