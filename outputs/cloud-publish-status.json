@@ -1,20 +1,19 @@
 {
-  "generatedAt": "2026-10-29T07:41:45.592740+00:00",
+  "generatedAt": "2026-10-30T07:44:55.203248+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-10-29",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-10-30",
     "risk": true,
     "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：AMBER。",
-      "**制度/政治骤变**\n\n🟠 **市场失序(汇股债)｜印尼股市重挫2.64%，外资净卖出9120亿盾，卢比承压**\n严重度 0.55｜2个独立来源（antaranews.com、katadata.co.id）｜影响支柱：currency\n\n🟠 **大规模抗议/镇压｜雅加达及日惹多地爆发示威并出现警民冲突，多人被捕**\n严重度 0.55｜3个独立来源（bbc.com、liputan6.com）｜影响支柱：social\n\n🟠 **司法/执法工具化｜KPK就海关与Djarum消费税案展开调查并搜查Djarum办公室**\n严重度 0.55｜3个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜前移民部副部长Silmy Karim涉贪案首次开庭**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：institutions",
-      "**Pinjol/Pindar 舆情事件**\n\n**巴厘岛17名马新籍人员经营非法网贷被捕**\n巴厘岛移民局在出租别墅抓获17名马来西亚与新加坡籍人员，涉嫌经营非法网贷，属具体执法案件。\n证据：2个独立来源。",
-      "**已折叠的低证据线索**\n另有 4 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：AMBER。",
+      "**制度/政治骤变**\n\n🟠 **司法/执法工具化｜前移民部副部长Silmy Karim被控敲诈外国人担保中介1689亿盾并收受贿赂**\n严重度 0.60｜3个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **大规模抗议/镇压｜雅加达学生示威持续，警方驱散并逮捕示威者**\n严重度 0.55｜3个独立来源（antaranews.com、bbc.com）｜影响支柱：social\n\n🟠 **司法/执法工具化｜KPK搜查Djarum关联六家公司并认定国家因烟草税案损失数万亿盾**\n严重度 0.55｜3个独立来源（antaranews.com、katadata.co.id）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜印尼综指上午跌1.30%，卢比承压，央行不排除加息**\n严重度 0.55｜1个独立来源（katadata.co.id）｜影响支柱：currency",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-10-29:high_pending:amber:success"
+    "decisionId": "daily:2026-10-30:normal:amber:success"
   },
   "feishu": "sent"
 }
