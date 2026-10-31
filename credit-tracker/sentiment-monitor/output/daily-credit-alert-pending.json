@@ -1,123 +1,92 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-30",
+  "date": "2026-10-31",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 24.7,
+    "newsDailyVolumeRisk": 35.4,
     "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 40.1,
+    "negativeSocialShare": 57.4,
     "negativeSocialPlatforms": [
+      "kaskus",
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=24.0; robust z=-1.69",
-    "socialVolume": "today=3; prior-7d median=40.0; robust z=-4.62"
+    "newsVolume": "today=4; prior-7d median=17.0; robust z=-0.97",
+    "socialVolume": "today=2; prior-7d median=32.0; robust z=-3.37"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-e2cc2a2ded6f",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-0efcd03b761c",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
       "entities": [
-        "Pemprov Jawa Barat",
-        "ITB"
+        "OJK",
+        "Jawa Barat",
+        "Bogor"
       ],
-      "headline": "Gubernur Jabar siapkan beasiswa ITB dan asuransi warga cegah pinjol - ANTARA News Megapolitan",
-      "headlineZh": "西爪哇推奖学金与保险防网贷",
-      "summaryZh": "西爪哇省长宣布筹备ITB奖学金与居民保险以防范网贷，属地方政策动态。",
-      "rationale": "地方政策动态，值得留痕",
+      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
+      "headlineZh": "西爪哇非法网贷投诉全国最高",
+      "summaryZh": "OJK数据显示西爪哇非法网贷投诉居全国之首，茂物最多，反映区域性消费者受害集中。",
+      "rationale": "监管披露的具体投诉数据事件",
       "independentSourceCount": 2,
       "domains": [
-        "antaranews.com",
-        "megapolitan.antaranews.com"
+        "bandungoke.com",
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "081d3cd49a304d3f",
-        "d833373f07a6659d"
+        "085153de15abf4a6",
+        "fb36ca83ca15f9ac"
       ],
       "articles": [
         {
-          "title": "Gubernur Jabar siapkan beasiswa ITB dan asuransi warga cegah pinjol - ANTARA News Megapolitan",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdjRtSHN6SGpodm9kOWF4OHdUcDhUeW5wT1BhT1oyZXp6T01tVy1GTXcxVTRvR3RPM25ZZjNsX2dhQWJ6VUJfTE8yTjZJUGVJLUtYQU1JVjBId1R4VTJUZkgwUnJ0QkwwRlpjMVFxaFpDdUh2Mk5tOVhSNTI0bTZmZTBNbU9oS3JnYVRlNkNPcjU0XzI4MEFMcjZJQkhDcmY3bmJ2S3FLanNjeUpKR2l0X3hlWEtqZGRIbFNkOdIBvAFBVV95cUxNdjRtSHN6SGpodm9kOWF4OHdUcDhUeW5wT1BhT1oyZXp6T01tVy1GTXcxVTRvR3RPM25ZZjNsX2dhQWJ6VUJfTE8yTjZJUGVJLUtYQU1JVjBId1R4VTJUZkgwUnJ0QkwwRlpjMVFxaFpDdUh2Mk5tOVhSNTI0bTZmZTBNbU9oS3JnYVRlNkNPcjU0XzI4MEFMcjZJQkhDcmY3bmJ2S3FLanNjeUpKR2l0X3hlWEtqZGRIbFNkOQ?oc=5"
+          "title": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSN2FmTzBRZUdqaXl0b0sxN0ktREJZTDJObUpkVUFVTXc3VUdTWl9VVXlWdEpPR01LSklNalpOczdEQ2VFOVdqam00S09CQnAzUWkzdm9Tc29UQldvQUtoTVNSR0pxUE5kS3BKS2NGQjNUUll2TVMyNA?oc=5"
         },
         {
-          "title": "Jabar siapkan beasiswa ITB dan asuransi warga cegah pinjol - ANTARA News",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTZCcE1BUjdfRS1QT3Y2UGs2ZjBubnRkNUlXM2UwUURXcDVPTWFWV1kzanF6MmZEYlB1aURVUEYwZV9RTV9IeDZVaGMwVVdOcnJEWEFialVkUUpTc3VJSDRjWjNpMGVoY1dicHBnd1dyVmh3Zy0yUXpqR0VVNUd2OHF6YjRCczdvNUNldUVZLUVlU2wtOGptVU1WNzJKQWVjbXfSAaQBQVVfeXFMTXNRSTYzdnczdnZJQkFCRmdrMjVJOFdrOGI5MW9lWHQxLTc4c0dhT0pCZnFRa3N3eHEyTkZhMTVYRDV4ZDE2QTMwLV9SOG50TkllSWJLSnltVFR5NUVHbzJ4NnBCSUppeF9iWE1PRXYweFNNMzdPemdNYzBpZVQ1MDFqUEJpd1NkSzE0VFF5MEVXMTRfYkdOdUU4T1dscUhRai00QTU?oc=5"
+          "title": "Pinjol Ilegal Ancam Ekonomi Keluarga, Kabupaten Bogor Tertinggi di Jawa Barat - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOEJBS2RVTzhEc1NfT0lRYVRGYXVqOWljMnI4Wm54S0VCc3czMld0d2hwaW1HZlZpOHI4R1d6N1JWdUhtZUJMTHdPem9ITWMzNDdTSEFWWFJUeXg2SGZyUnYxNFd0eUN1ZDg3SERZOExxSzJDVkN3Q29qR09QeTQzRUpoTURQZW5zRHVtUks3bnFzTnJyNkxhT3o5SWhZR2l1S19BQk5SOG9mTFRvOS1FanNWTXA0NS13YlHSAboBQVVfeXFMTThCQUtkVU84RHNTX09JUWFURmF1ajlpYzJyOFpueEtFQnN3MzJXdHdocGltR2ZWaThyOEdXejdSVnVIbWVCTEx3T3pvSE1jMzQ3U0hBVlhSVHl4NkhmclJ2MTRXdHlDdWQ4N0hEWThMcUsyQ1ZDd0NvakdPUHk0M0VKaE1EUGVuc0R1bVJLN25xc05ycjZMYU96OUloWUdpdUtfQUJOUjhvZkxUbzktRWpzVk1wNDUtd2JR?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "mentionCount": 1,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-3786e608274a",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Jatim"
-      ],
-      "headline": "OJK Jatim Terima 3.244 Laporan Pinjol Ilegal, Tertinggi Kedua Nasional - DetikNews.ID",
-      "headlineZh": "东爪哇OJK接3244起非法网贷举报",
-      "summaryZh": "OJK东爪哇分局收到3244起非法网贷举报，居全国第二，反映区域性消费者受害规模。",
-      "rationale": "机构披露的举报数据，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "detiknews.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "2c0237eba6ff6625"
-      ],
-      "articles": [
-        {
-          "title": "OJK Jatim Terima 3.244 Laporan Pinjol Ilegal, Tertinggi Kedua Nasional - DetikNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSlpNMWQ3cG9rd1htcUpLWkJ1OW9GemFfMTRadjBvTURHQVZkRkV3cXZjdlk3SGtPM0ZTS19PTWZZdHI4ZExFWWFueWNBMFFxMnJaV29BVlA2ZTJtQ2hVdTF6N18wN3c1ZkM0dDBDTTZNLXVZRmVKaFd4VzZNdzJoV0lPR1FHMWlzSTM2Vko5ajl5SW1Ybi05SVA1RmhPeGM4LVZwbXRzcnh0UQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-a0b884969fb9",
+      "id": "llm-c779256026de",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "KPPU",
-        "PN Jakpus"
+        "KPPU"
       ],
-      "headline": "Putusan Bunga Pinjol Denda Rp755 Miliar Dibatalkan PN Jakpus, KPPU Siapkan Kasasi - Hukumonline",
-      "headlineZh": "网贷利率罚款7550亿判决被撤销",
-      "summaryZh": "雅加达中区法院撤销KPPU对网贷利率7550亿盾罚款判决，KPPU准备上诉至最高法院。",
-      "rationale": "监管处罚司法进展，属事件",
+      "headline": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
+      "headlineZh": "KPPU就网贷利率卡特尔案提上诉",
+      "summaryZh": "印尼竞争委员会KPPU就涉嫌网贷（pindar）利率卡特尔案判决向最高法院提出上诉，属监管法律行动。",
+      "rationale": "监管机构具体法律行动",
       "independentSourceCount": 1,
       "domains": [
-        "hukumonline.com"
+        "infobanknews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5decbdfc2b89b32b"
+        "f20891698f0001b6"
       ],
       "articles": [
         {
-          "title": "Putusan Bunga Pinjol Denda Rp755 Miliar Dibatalkan PN Jakpus, KPPU Siapkan Kasasi - Hukumonline",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUVRjR0NpaUxHVlg2OEZiV1g3anBxanlPZURwWEY5NFo0MDI0VzVsVTZIT3BrYWZweERnWTEtNFhfOXJ5anJpLXZZQTE2dHlHS3ZfUEUtZGc2Q1Z0cGI1Zzd0R2R6YlhBbXdSeHVVYXZZT18yMW52dzlQWXFLcVIycDFqUy1vWU9oLVA5cTE0YmZXQU1oemhObkYyY0psRGZGYkJBTXNHR1M5MU9XZ2ROeEw5NzFxWGd1VnpfR0FYNU44YXY4VHJxYmpSdVB2RE0?oc=5"
+          "title": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVVIyXzJZVDRMclM1UWl1cDNuNFMyWkNxMDUtS0x5M0xfQkdxSEdjN244ZkVGenFvLWxPQkVFM0RSTms3WkFNR0I5aFNmX19IV1hJd0dKNEVidjhVeC1MUGpQTF9pMzdwbmVVNlI1Q190bGFxVV9nU1N5YmJCNndGdUFVU1lHUjVIdVJadGRwd1k3d2c4WlE?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -134,115 +103,83 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 21,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 11,
+    "candidateCount": 16,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 9,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 21
+      "ok": 16
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-e2cc2a2ded6f",
-      "eventType": "industry_update",
-      "severity": 0.3,
+      "id": "llm-0efcd03b761c",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
       "entities": [
-        "Pemprov Jawa Barat",
-        "ITB"
+        "OJK",
+        "Jawa Barat",
+        "Bogor"
       ],
-      "headline": "Gubernur Jabar siapkan beasiswa ITB dan asuransi warga cegah pinjol - ANTARA News Megapolitan",
-      "headlineZh": "西爪哇推奖学金与保险防网贷",
-      "summaryZh": "西爪哇省长宣布筹备ITB奖学金与居民保险以防范网贷，属地方政策动态。",
-      "rationale": "地方政策动态，值得留痕",
+      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
+      "headlineZh": "西爪哇非法网贷投诉全国最高",
+      "summaryZh": "OJK数据显示西爪哇非法网贷投诉居全国之首，茂物最多，反映区域性消费者受害集中。",
+      "rationale": "监管披露的具体投诉数据事件",
       "independentSourceCount": 2,
       "domains": [
-        "antaranews.com",
-        "megapolitan.antaranews.com"
+        "bandungoke.com",
+        "wartaekonomi.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "081d3cd49a304d3f",
-        "d833373f07a6659d"
+        "085153de15abf4a6",
+        "fb36ca83ca15f9ac"
       ],
       "articles": [
         {
-          "title": "Gubernur Jabar siapkan beasiswa ITB dan asuransi warga cegah pinjol - ANTARA News Megapolitan",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdjRtSHN6SGpodm9kOWF4OHdUcDhUeW5wT1BhT1oyZXp6T01tVy1GTXcxVTRvR3RPM25ZZjNsX2dhQWJ6VUJfTE8yTjZJUGVJLUtYQU1JVjBId1R4VTJUZkgwUnJ0QkwwRlpjMVFxaFpDdUh2Mk5tOVhSNTI0bTZmZTBNbU9oS3JnYVRlNkNPcjU0XzI4MEFMcjZJQkhDcmY3bmJ2S3FLanNjeUpKR2l0X3hlWEtqZGRIbFNkOdIBvAFBVV95cUxNdjRtSHN6SGpodm9kOWF4OHdUcDhUeW5wT1BhT1oyZXp6T01tVy1GTXcxVTRvR3RPM25ZZjNsX2dhQWJ6VUJfTE8yTjZJUGVJLUtYQU1JVjBId1R4VTJUZkgwUnJ0QkwwRlpjMVFxaFpDdUh2Mk5tOVhSNTI0bTZmZTBNbU9oS3JnYVRlNkNPcjU0XzI4MEFMcjZJQkhDcmY3bmJ2S3FLanNjeUpKR2l0X3hlWEtqZGRIbFNkOQ?oc=5"
+          "title": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
+          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSN2FmTzBRZUdqaXl0b0sxN0ktREJZTDJObUpkVUFVTXc3VUdTWl9VVXlWdEpPR01LSklNalpOczdEQ2VFOVdqam00S09CQnAzUWkzdm9Tc29UQldvQUtoTVNSR0pxUE5kS3BKS2NGQjNUUll2TVMyNA?oc=5"
         },
         {
-          "title": "Jabar siapkan beasiswa ITB dan asuransi warga cegah pinjol - ANTARA News",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOeTZCcE1BUjdfRS1QT3Y2UGs2ZjBubnRkNUlXM2UwUURXcDVPTWFWV1kzanF6MmZEYlB1aURVUEYwZV9RTV9IeDZVaGMwVVdOcnJEWEFialVkUUpTc3VJSDRjWjNpMGVoY1dicHBnd1dyVmh3Zy0yUXpqR0VVNUd2OHF6YjRCczdvNUNldUVZLUVlU2wtOGptVU1WNzJKQWVjbXfSAaQBQVVfeXFMTXNRSTYzdnczdnZJQkFCRmdrMjVJOFdrOGI5MW9lWHQxLTc4c0dhT0pCZnFRa3N3eHEyTkZhMTVYRDV4ZDE2QTMwLV9SOG50TkllSWJLSnltVFR5NUVHbzJ4NnBCSUppeF9iWE1PRXYweFNNMzdPemdNYzBpZVQ1MDFqUEJpd1NkSzE0VFF5MEVXMTRfYkdOdUU4T1dscUhRai00QTU?oc=5"
+          "title": "Pinjol Ilegal Ancam Ekonomi Keluarga, Kabupaten Bogor Tertinggi di Jawa Barat - Warta Ekonomi",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOEJBS2RVTzhEc1NfT0lRYVRGYXVqOWljMnI4Wm54S0VCc3czMld0d2hwaW1HZlZpOHI4R1d6N1JWdUhtZUJMTHdPem9ITWMzNDdTSEFWWFJUeXg2SGZyUnYxNFd0eUN1ZDg3SERZOExxSzJDVkN3Q29qR09QeTQzRUpoTURQZW5zRHVtUks3bnFzTnJyNkxhT3o5SWhZR2l1S19BQk5SOG9mTFRvOS1FanNWTXA0NS13YlHSAboBQVVfeXFMTThCQUtkVU84RHNTX09JUWFURmF1ajlpYzJyOFpueEtFQnN3MzJXdHdocGltR2ZWaThyOEdXejdSVnVIbWVCTEx3T3pvSE1jMzQ3U0hBVlhSVHl4NkhmclJ2MTRXdHlDdWQ4N0hEWThMcUsyQ1ZDd0NvakdPUHk0M0VKaE1EUGVuc0R1bVJLN25xc05ycjZMYU96OUloWUdpdUtfQUJOUjhvZkxUbzktRWpzVk1wNDUtd2JR?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "mentionCount": 1,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     },
     {
-      "id": "llm-3786e608274a",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Jatim"
-      ],
-      "headline": "OJK Jatim Terima 3.244 Laporan Pinjol Ilegal, Tertinggi Kedua Nasional - DetikNews.ID",
-      "headlineZh": "东爪哇OJK接3244起非法网贷举报",
-      "summaryZh": "OJK东爪哇分局收到3244起非法网贷举报，居全国第二，反映区域性消费者受害规模。",
-      "rationale": "机构披露的举报数据，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "detiknews.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "2c0237eba6ff6625"
-      ],
-      "articles": [
-        {
-          "title": "OJK Jatim Terima 3.244 Laporan Pinjol Ilegal, Tertinggi Kedua Nasional - DetikNews.ID",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQSlpNMWQ3cG9rd1htcUpLWkJ1OW9GemFfMTRadjBvTURHQVZkRkV3cXZjdlk3SGtPM0ZTS19PTWZZdHI4ZExFWWFueWNBMFFxMnJaV29BVlA2ZTJtQ2hVdTF6N18wN3c1ZkM0dDBDTTZNLXVZRmVKaFd4VzZNdzJoV0lPR1FHMWlzSTM2Vko5ajl5SW1Ybi05SVA1RmhPeGM4LVZwbXRzcnh0UQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-a0b884969fb9",
+      "id": "llm-c779256026de",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "KPPU",
-        "PN Jakpus"
+        "KPPU"
       ],
-      "headline": "Putusan Bunga Pinjol Denda Rp755 Miliar Dibatalkan PN Jakpus, KPPU Siapkan Kasasi - Hukumonline",
-      "headlineZh": "网贷利率罚款7550亿判决被撤销",
-      "summaryZh": "雅加达中区法院撤销KPPU对网贷利率7550亿盾罚款判决，KPPU准备上诉至最高法院。",
-      "rationale": "监管处罚司法进展，属事件",
+      "headline": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
+      "headlineZh": "KPPU就网贷利率卡特尔案提上诉",
+      "summaryZh": "印尼竞争委员会KPPU就涉嫌网贷（pindar）利率卡特尔案判决向最高法院提出上诉，属监管法律行动。",
+      "rationale": "监管机构具体法律行动",
       "independentSourceCount": 1,
       "domains": [
-        "hukumonline.com"
+        "infobanknews.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "5decbdfc2b89b32b"
+        "f20891698f0001b6"
       ],
       "articles": [
         {
-          "title": "Putusan Bunga Pinjol Denda Rp755 Miliar Dibatalkan PN Jakpus, KPPU Siapkan Kasasi - Hukumonline",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNUVRjR0NpaUxHVlg2OEZiV1g3anBxanlPZURwWEY5NFo0MDI0VzVsVTZIT3BrYWZweERnWTEtNFhfOXJ5anJpLXZZQTE2dHlHS3ZfUEUtZGc2Q1Z0cGI1Zzd0R2R6YlhBbXdSeHVVYXZZT18yMW52dzlQWXFLcVIycDFqUy1vWU9oLVA5cTE0YmZXQU1oemhObkYyY0psRGZGYkJBTXNHR1M5MU9XZ2ROeEw5NzFxWGd1VnpfR0FYNU44YXY4VHJxYmpSdVB2RE0?oc=5"
+          "title": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVVIyXzJZVDRMclM1UWl1cDNuNFMyWkNxMDUtS0x5M0xfQkdxSEdjN244ZkVGenFvLWxPQkVFM0RSTms3WkFNR0I5aFNmX19IV1hJd0dKNEVidjhVeC1MUGpQTF9pMzdwbmVVNlI1Q190bGFxVV9nU1N5YmJCNndGdUFVU1lHUjVIdVJadGRwd1k3d2c4WlE?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -259,30 +196,30 @@
     "successfulChannels": [
       "google_news",
       "google_trends",
+      "kaskus",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 22,
-    "socialItemCount48h": 22
+    "articleCount48h": 16,
+    "socialItemCount48h": 20
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 554,
-    "classifiedCount": 173,
-    "irrelevantDropped": 67,
+    "inputCount": 535,
+    "classifiedCount": 116,
+    "irrelevantDropped": 124,
     "model": "deepseek-chat",
-    "fallbackCount": 314,
+    "fallbackCount": 295,
     "labelCounts": {
-      "NEG": 88,
-      "MIX": 29,
-      "POS": 56
+      "NEG": 60,
+      "MIX": 27,
+      "POS": 29
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
