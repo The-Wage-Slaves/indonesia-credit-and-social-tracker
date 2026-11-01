@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 35.4,
+    "newsDailyVolumeRisk": 19.6,
     "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 57.4,
+    "negativeSocialShare": 64.0,
     "negativeSocialPlatforms": [
       "kaskus",
       "youtube"
@@ -14,79 +14,101 @@
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=17.0; robust z=-0.97",
-    "socialVolume": "today=2; prior-7d median=32.0; robust z=-3.37"
+    "newsVolume": "today=4; prior-7d median=16.0; robust z=-2.02",
+    "socialVolume": "today=7; prior-7d median=33.0; robust z=-3.51"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-0efcd03b761c",
+      "id": "llm-72dc2bf84b46",
       "eventType": "consumer_harm",
       "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Jawa Barat",
-        "Bogor"
-      ],
-      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
-      "headlineZh": "西爪哇非法网贷投诉全国最高",
-      "summaryZh": "OJK数据显示西爪哇非法网贷投诉居全国之首，茂物最多，反映区域性消费者受害集中。",
-      "rationale": "监管披露的具体投诉数据事件",
-      "independentSourceCount": 2,
+      "entities": [],
+      "headline": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
+      "headlineZh": "网贷受害者遭人肉与恐吓",
+      "summaryZh": "报道消费者因网贷陷入抑郁，遭人肉搜索与恐吓催收，属局部消费者受害案例。",
+      "rationale": "具体消费者受害报道",
+      "independentSourceCount": 1,
       "domains": [
-        "bandungoke.com",
-        "wartaekonomi.co.id"
+        "bisnis.espos.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "085153de15abf4a6",
-        "fb36ca83ca15f9ac"
+        "0eafb1983efe32e5"
+      ],
+      "articles": [
+        {
+          "title": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQXzRnYTl1VUFPZnhPaUR5WElWR09SeWRnMFZtV05vTUw2dHgwUXFpWVBETk5iajFGLUxkY21CelpYMWJ5d2YzVU1DVjRhNkt0dlNJVFMweXl0ZTlTblBpZ3lWOHd6MnlCdUl6VWhaMlBVR0p0T2V5Vk1oRHh5bzlzLUk2TGN0S3hDTTJ0SmtfdHZGLWRwZjROQVdUVzc4WmhGM1l1WWtYR2pTZjlUU0c5cGxR0gGyAUFVX3lxTFBfNGdhOXVVQU9meE9pRHlYSVZHT1J5ZGcwVm1XTm9NTDZ0eDBRcWlZUEROTmJqMUYtTGRjbUJ6WlgxYnl3ZjNVTUNWNGE2S3R2U0lUUzB5eXRlOVNuUGlneVY4d3oyeUJ1SXpVaFoyUFVHSnRPZXlWTWhEeHlvOXMtSTZMY3RLeENNMnRKa190dkYtZHBmNE5BV1RXNzhaaEYzWXVZa1hHalNmOVRTRzlwbFE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0a685976b51b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
+      "headlineZh": "OJK称西爪哇270万人涉网赌",
+      "summaryZh": "OJK披露西爪哇约270万居民被指涉网赌，属监管机构数据披露。",
+      "rationale": "监管机构披露数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "elshinta.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "37f4c1540d7cd584"
+      ],
+      "articles": [
+        {
+          "title": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc0M2ZXd2YndvbjJoNkQwRTlvUnJZY1J0WWtJbW5fNEk0V2Z3ZTdUU0RRZEpOaUI3dlZ6WVJ4akdpZnphcHZQRUpURnpfTVRuNjIzMVZia1FTMjdtcWRpZklSVG16M0JrTTVKaGJCOHpfNWV4YURfWjVBRzhRQVRHNko0bVctLWVCWFo3bnh3cWtobDhQMGVQTW82SmNiSkRORnc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-675c65dbdd3d",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
+      "headlineZh": "西爪哇非法网贷投诉全国最高",
+      "summaryZh": "OJK称西爪哇非法网贷投诉居全国之首，茂物最多，属监管数据披露。",
+      "rationale": "监管机构披露投诉数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "bandungoke.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "085153de15abf4a6"
       ],
       "articles": [
         {
           "title": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
           "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSN2FmTzBRZUdqaXl0b0sxN0ktREJZTDJObUpkVUFVTXc3VUdTWl9VVXlWdEpPR01LSklNalpOczdEQ2VFOVdqam00S09CQnAzUWkzdm9Tc29UQldvQUtoTVNSR0pxUE5kS3BKS2NGQjNUUll2TVMyNA?oc=5"
-        },
-        {
-          "title": "Pinjol Ilegal Ancam Ekonomi Keluarga, Kabupaten Bogor Tertinggi di Jawa Barat - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOEJBS2RVTzhEc1NfT0lRYVRGYXVqOWljMnI4Wm54S0VCc3czMld0d2hwaW1HZlZpOHI4R1d6N1JWdUhtZUJMTHdPem9ITWMzNDdTSEFWWFJUeXg2SGZyUnYxNFd0eUN1ZDg3SERZOExxSzJDVkN3Q29qR09QeTQzRUpoTURQZW5zRHVtUks3bnFzTnJyNkxhT3o5SWhZR2l1S19BQk5SOG9mTFRvOS1FanNWTXA0NS13YlHSAboBQVVfeXFMTThCQUtkVU84RHNTX09JUWFURmF1ajlpYzJyOFpueEtFQnN3MzJXdHdocGltR2ZWaThyOEdXejdSVnVIbWVCTEx3T3pvSE1jMzQ3U0hBVlhSVHl4NkhmclJ2MTRXdHlDdWQ4N0hEWThMcUsyQ1ZDd0NvakdPUHk0M0VKaE1EUGVuc0R1bVJLN25xc05ycjZMYU96OUloWUdpdUtfQUJOUjhvZkxUbzktRWpzVk1wNDUtd2JR?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-c779256026de",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU"
-      ],
-      "headline": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
-      "headlineZh": "KPPU就网贷利率卡特尔案提上诉",
-      "summaryZh": "印尼竞争委员会KPPU就涉嫌网贷（pindar）利率卡特尔案判决向最高法院提出上诉，属监管法律行动。",
-      "rationale": "监管机构具体法律行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "f20891698f0001b6"
-      ],
-      "articles": [
-        {
-          "title": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVVIyXzJZVDRMclM1UWl1cDNuNFMyWkNxMDUtS0x5M0xfQkdxSEdjN244ZkVGenFvLWxPQkVFM0RSTms3WkFNR0I5aFNmX19IV1hJd0dKNEVidjhVeC1MUGpQTF9pMzdwbmVVNlI1Q190bGFxVV9nU1N5YmJCNndGdUFVU1lHUjVIdVJadGRwd1k3d2c4WlE?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -103,83 +125,105 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 16,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 9,
+    "candidateCount": 24,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 16,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 16
+      "ok": 24
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-0efcd03b761c",
+      "id": "llm-72dc2bf84b46",
       "eventType": "consumer_harm",
       "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Jawa Barat",
-        "Bogor"
-      ],
-      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
-      "headlineZh": "西爪哇非法网贷投诉全国最高",
-      "summaryZh": "OJK数据显示西爪哇非法网贷投诉居全国之首，茂物最多，反映区域性消费者受害集中。",
-      "rationale": "监管披露的具体投诉数据事件",
-      "independentSourceCount": 2,
+      "entities": [],
+      "headline": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
+      "headlineZh": "网贷受害者遭人肉与恐吓",
+      "summaryZh": "报道消费者因网贷陷入抑郁，遭人肉搜索与恐吓催收，属局部消费者受害案例。",
+      "rationale": "具体消费者受害报道",
+      "independentSourceCount": 1,
       "domains": [
-        "bandungoke.com",
-        "wartaekonomi.co.id"
+        "bisnis.espos.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "085153de15abf4a6",
-        "fb36ca83ca15f9ac"
+        "0eafb1983efe32e5"
+      ],
+      "articles": [
+        {
+          "title": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQXzRnYTl1VUFPZnhPaUR5WElWR09SeWRnMFZtV05vTUw2dHgwUXFpWVBETk5iajFGLUxkY21CelpYMWJ5d2YzVU1DVjRhNkt0dlNJVFMweXl0ZTlTblBpZ3lWOHd6MnlCdUl6VWhaMlBVR0p0T2V5Vk1oRHh5bzlzLUk2TGN0S3hDTTJ0SmtfdHZGLWRwZjROQVdUVzc4WmhGM1l1WWtYR2pTZjlUU0c5cGxR0gGyAUFVX3lxTFBfNGdhOXVVQU9meE9pRHlYSVZHT1J5ZGcwVm1XTm9NTDZ0eDBRcWlZUEROTmJqMUYtTGRjbUJ6WlgxYnl3ZjNVTUNWNGE2S3R2U0lUUzB5eXRlOVNuUGlneVY4d3oyeUJ1SXpVaFoyUFVHSnRPZXlWTWhEeHlvOXMtSTZMY3RLeENNMnRKa190dkYtZHBmNE5BV1RXNzhaaEYzWXVZa1hHalNmOVRTRzlwbFE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "no_entities",
+        "mentionCount": null,
+        "negativeShare": null,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0a685976b51b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
+      "headlineZh": "OJK称西爪哇270万人涉网赌",
+      "summaryZh": "OJK披露西爪哇约270万居民被指涉网赌，属监管机构数据披露。",
+      "rationale": "监管机构披露数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "elshinta.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "37f4c1540d7cd584"
+      ],
+      "articles": [
+        {
+          "title": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc0M2ZXd2YndvbjJoNkQwRTlvUnJZY1J0WWtJbW5fNEk0V2Z3ZTdUU0RRZEpOaUI3dlZ6WVJ4akdpZnphcHZQRUpURnpfTVRuNjIzMVZia1FTMjdtcWRpZklSVG16M0JrTTVKaGJCOHpfNWV4YURfWjVBRzhRQVRHNko0bVctLWVCWFo3bnh3cWtobDhQMGVQTW82SmNiSkRORnc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-675c65dbdd3d",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
+      "headlineZh": "西爪哇非法网贷投诉全国最高",
+      "summaryZh": "OJK称西爪哇非法网贷投诉居全国之首，茂物最多，属监管数据披露。",
+      "rationale": "监管机构披露投诉数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "bandungoke.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "085153de15abf4a6"
       ],
       "articles": [
         {
           "title": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
           "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSN2FmTzBRZUdqaXl0b0sxN0ktREJZTDJObUpkVUFVTXc3VUdTWl9VVXlWdEpPR01LSklNalpOczdEQ2VFOVdqam00S09CQnAzUWkzdm9Tc29UQldvQUtoTVNSR0pxUE5kS3BKS2NGQjNUUll2TVMyNA?oc=5"
-        },
-        {
-          "title": "Pinjol Ilegal Ancam Ekonomi Keluarga, Kabupaten Bogor Tertinggi di Jawa Barat - Warta Ekonomi",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOEJBS2RVTzhEc1NfT0lRYVRGYXVqOWljMnI4Wm54S0VCc3czMld0d2hwaW1HZlZpOHI4R1d6N1JWdUhtZUJMTHdPem9ITWMzNDdTSEFWWFJUeXg2SGZyUnYxNFd0eUN1ZDg3SERZOExxSzJDVkN3Q29qR09QeTQzRUpoTURQZW5zRHVtUks3bnFzTnJyNkxhT3o5SWhZR2l1S19BQk5SOG9mTFRvOS1FanNWTXA0NS13YlHSAboBQVVfeXFMTThCQUtkVU84RHNTX09JUWFURmF1ajlpYzJyOFpueEtFQnN3MzJXdHdocGltR2ZWaThyOEdXejdSVnVIbWVCTEx3T3pvSE1jMzQ3U0hBVlhSVHl4NkhmclJ2MTRXdHlDdWQ4N0hEWThMcUsyQ1ZDd0NvakdPUHk0M0VKaE1EUGVuc0R1bVJLN25xc05ycjZMYU96OUloWUdpdUtfQUJOUjhvZkxUbzktRWpzVk1wNDUtd2JR?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-c779256026de",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU"
-      ],
-      "headline": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
-      "headlineZh": "KPPU就网贷利率卡特尔案提上诉",
-      "summaryZh": "印尼竞争委员会KPPU就涉嫌网贷（pindar）利率卡特尔案判决向最高法院提出上诉，属监管法律行动。",
-      "rationale": "监管机构具体法律行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "infobanknews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "f20891698f0001b6"
-      ],
-      "articles": [
-        {
-          "title": "KPPU Ajukan Kasasi atas Putusan Perkara Dugaan Kartel Bunga Pindar - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOVVIyXzJZVDRMclM1UWl1cDNuNFMyWkNxMDUtS0x5M0xfQkdxSEdjN244ZkVGenFvLWxPQkVFM0RSTms3WkFNR0I5aFNmX19IV1hJd0dKNEVidjhVeC1MUGpQTF9pMzdwbmVVNlI1Q190bGFxVV9nU1N5YmJCNndGdUFVU1lHUjVIdVJadGRwd1k3d2c4WlE?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -205,21 +249,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 16,
-    "socialItemCount48h": 20
+    "articleCount48h": 24,
+    "socialItemCount48h": 22
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 535,
-    "classifiedCount": 116,
-    "irrelevantDropped": 124,
+    "inputCount": 523,
+    "classifiedCount": 142,
+    "irrelevantDropped": 98,
     "model": "deepseek-chat",
-    "fallbackCount": 295,
+    "fallbackCount": 283,
     "labelCounts": {
-      "NEG": 60,
-      "MIX": 27,
-      "POS": 29
+      "NEG": 71,
+      "MIX": 38,
+      "POS": 33
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
