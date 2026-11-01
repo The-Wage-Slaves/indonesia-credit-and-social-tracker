@@ -1,32 +1,32 @@
 const P2P_PENDING = {
-  "date": "2026-10-01",
+  "date": "2026-11-01",
   "players": [
     {
       "name": "AdaKami",
       "dataDate": null,
       "note": null,
-      "disb": 1.003,
-      "out": 0.259,
-      "tot": 7680000,
-      "act": 2330000
+      "disb": 1.1,
+      "out": 0.254,
+      "tot": 7810000,
+      "act": 2490000
     },
     {
       "name": "Lentera Dana (Shopee Loan)",
-      "dataDate": "28 September 2026",
+      "dataDate": "26 Oktober 2026",
       "note": null,
-      "disb": 5.341,
-      "out": 0.57,
-      "tot": 18778717,
-      "act": 8398069
+      "disb": 5.971,
+      "out": null,
+      "tot": 19190505,
+      "act": 8913031
     },
     {
       "name": "Kredifazz",
       "dataDate": null,
       "note": null,
-      "disb": 0.946,
-      "out": 0.609,
-      "tot": 8920000,
-      "act": 2430000
+      "disb": 1.061,
+      "out": 0.611,
+      "tot": 9010000,
+      "act": 2620000
     },
     {
       "name": "Akulaku (Asetku)",
@@ -34,44 +34,44 @@ const P2P_PENDING = {
       "note": "官网仅披露累计口径(无YTD/outstanding)",
       "disb": null,
       "out": null,
-      "tot": 25571751,
+      "tot": 25722104,
       "act": null
     },
     {
       "name": "Kredit Pintar",
-      "dataDate": "10/9/2026",
+      "dataDate": "10/10/2026",
       "note": null,
-      "disb": 0.48,
+      "disb": 0.533,
       "out": 0.22,
       "tot": 9500000,
-      "act": 638000
+      "act": 663000
     },
     {
       "name": "Easycash",
       "dataDate": null,
       "note": null,
-      "disb": 1.012,
+      "disb": 1.115,
       "out": 0.377,
-      "tot": 10693980,
-      "act": 2190841
+      "tot": 10841692,
+      "act": 2351375
     },
     {
       "name": "Julo",
       "dataDate": null,
       "note": "官网未披露outstanding",
-      "disb": 0.08,
+      "disb": null,
       "out": null,
-      "tot": 3372499,
-      "act": 187132
+      "tot": null,
+      "act": null
     },
     {
       "name": "ADA Pundi",
       "dataDate": null,
       "note": null,
-      "disb": 0.519,
-      "out": 0.232,
-      "tot": 5800000,
-      "act": 1890000
+      "disb": 0.57,
+      "out": 0.222,
+      "tot": 5870000,
+      "act": 1650000
     },
     {
       "name": "KrediOne",

@@ -2,22 +2,32 @@ const PENDING = {
   "boards": {
     "credit": [
       {
-        "title": "国家宏观指标月度批次：2 项候选更新",
-        "detail": "BI 基准利率 26.08 5.75 → 2026.09 5.75；USD/IDR（JISDOR） 26.08 17703 → 2026.10 17937；采集异常/待配置：BPS WebAPI",
+        "id": "industry-auto:2026-11-01",
+        "source": "industry-auto",
+        "level": "review",
+        "title": "行业数据自动采集待确认：2026.08（SEKI 银行侧 + OJK RDKB）",
+        "detail": "看板 rawData 末期 2026.07，本包含其后 1 期。 本月缺源：RDKB。 逐字段口径见包内 fieldProvenance。",
+        "action": "本机运行 python credit-tracker/apply_industry_pending.py --pending credit-tracker/data/industry-pending-auto.json --dry-run 审对照表，再 --write 并开 PR",
+        "link": "credit-tracker/data/industry-pending-auto.json",
+        "date": "2026-11-01"
+      },
+      {
+        "title": "国家宏观指标月度批次：5 项候选更新",
+        "detail": "BI 基准利率 26.08 5.75 → 2026.10 5.75；USD/IDR（JISDOR） 26.08 17703 → 2026.10 18138；CPI 通胀 26.06 3.34 → 2026.09 3.28；GDP 增速 2026Q1 5.61 → 2026Q2 5.29；失业率 2026.02 4.68 → 2026.05 4.65",
         "link": "credit-tracker/dashboard/credit-dashboard.html#sec1",
         "action": "核对期间、单位和官方原文；确认后才把候选值写入正式宏观序列。",
         "source": "macro-monitor"
       },
       {
-        "title": "P2P竞对批量抓取 2026-10-01: 9/9 家成功",
+        "title": "P2P竞对批量抓取 2026-11-01: 8/9 家成功",
         "detail": "结构化明细已送入信贷看板\"✎ 数据管理\"暗门——分指标呈现、可逐格修改、一键写入",
         "link": "credit-tracker/dashboard/credit-dashboard.html",
         "action": "打开看板→页脚\"✎ 数据管理\"→核对/修改→点\"确认写入\"；要永久固化再回来说一声",
         "source": "p2p-scraper",
-        "id": "p2p-scraper:2026-10-01:0"
+        "id": "p2p-scraper:2026-11-01:0"
       }
     ],
     "stability": []
   },
-  "updated": "2026-10-01 09:28"
+  "updated": "2026-11-01 09:44"
 };

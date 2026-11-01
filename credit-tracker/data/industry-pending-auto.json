@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "preparedAt": "2026-10-01",
+ "preparedAt": "2026-11-01",
  "status": "pending-owner-review",
  "generatedBy": "credit-tracker/build_industry_pending.py（云端月度）",
  "dashboardLastPeriod": "2026.07",
@@ -9,7 +9,7 @@
   "seki": {
    "source": "BI SEKI I.4",
    "sourceUrl": "https://www.bi.go.id/SEKI/tabel/TABEL1_4.xls",
-   "latest": "2026.07",
+   "latest": "2026.08",
    "calibratedAgainst": {
     "period": "2026.05",
     "bankVeh": 128846,
@@ -27,5 +27,11 @@
   "mfBNPL": "OJK RDKB · pembiayaan BNPL oleh Perusahaan Pembiayaan (SLIK)",
   "mf2W/mf4W/mfMP": "RDKB 不拆，留 null 待补（OJK SLP Excel 冻结于 2025.12）"
  },
- "rows": {}
+ "rows": {
+  "2026.08": {
+   "bankVeh": 125464,
+   "bankOth": 1430258,
+   "bankMP": null
+  }
+ }
 }
