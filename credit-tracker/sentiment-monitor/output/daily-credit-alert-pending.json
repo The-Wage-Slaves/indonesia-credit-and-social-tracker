@@ -1,80 +1,47 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-01",
+  "date": "2026-11-02",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 19.6,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 64.0,
+    "newsDailyVolumeRisk": 35.8,
+    "socialDailyVolumeRisk": 24.2,
+    "negativeSocialShare": 30.7,
     "negativeSocialPlatforms": [
-      "kaskus",
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=4; prior-7d median=16.0; robust z=-2.02",
-    "socialVolume": "today=7; prior-7d median=33.0; robust z=-3.51"
+    "newsVolume": "today=7; prior-7d median=14.0; robust z=-0.94",
+    "socialVolume": "today=21; prior-7d median=32.0; robust z=-1.72"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-72dc2bf84b46",
+      "id": "llm-968f0ecb1016",
       "eventType": "consumer_harm",
       "severity": 0.55,
-      "entities": [],
-      "headline": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
-      "headlineZh": "网贷受害者遭人肉与恐吓",
-      "summaryZh": "报道消费者因网贷陷入抑郁，遭人肉搜索与恐吓催收，属局部消费者受害案例。",
-      "rationale": "具体消费者受害报道",
-      "independentSourceCount": 1,
-      "domains": [
-        "bisnis.espos.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0eafb1983efe32e5"
-      ],
-      "articles": [
-        {
-          "title": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQXzRnYTl1VUFPZnhPaUR5WElWR09SeWRnMFZtV05vTUw2dHgwUXFpWVBETk5iajFGLUxkY21CelpYMWJ5d2YzVU1DVjRhNkt0dlNJVFMweXl0ZTlTblBpZ3lWOHd6MnlCdUl6VWhaMlBVR0p0T2V5Vk1oRHh5bzlzLUk2TGN0S3hDTTJ0SmtfdHZGLWRwZjROQVdUVzc4WmhGM1l1WWtYR2pTZjlUU0c5cGxR0gGyAUFVX3lxTFBfNGdhOXVVQU9meE9pRHlYSVZHT1J5ZGcwVm1XTm9NTDZ0eDBRcWlZUEROTmJqMUYtTGRjbUJ6WlgxYnl3ZjNVTUNWNGE2S3R2U0lUUzB5eXRlOVNuUGlneVY4d3oyeUJ1SXpVaFoyUFVHSnRPZXlWTWhEeHlvOXMtSTZMY3RLeENNMnRKa190dkYtZHBmNE5BV1RXNzhaaEYzWXVZa1hHalNmOVRTRzlwbFE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-0a685976b51b",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
       "entities": [
-        "OJK"
+        "LBH ICMI"
       ],
-      "headline": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
-      "headlineZh": "OJK称西爪哇270万人涉网赌",
-      "summaryZh": "OJK披露西爪哇约270万居民被指涉网赌，属监管机构数据披露。",
-      "rationale": "监管机构披露数据",
+      "headline": "Dua Korban Pinjol Tertekan, Diteror Nomor Tak Dikenal, LBH ICMI: Korban Harus Dilindungi - Riau Online",
+      "headlineZh": "两名网贷受害者遭恐吓求助法律援助",
+      "summaryZh": "两名网贷受害者遭不明号码恐吓，LBH ICMI呼吁保护受害者，属局部消费者受害事件。",
+      "rationale": "有机构介入的催收恐吓个案",
       "independentSourceCount": 1,
       "domains": [
-        "elshinta.com"
+        "riauonline.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "37f4c1540d7cd584"
+        "8e2293ef3de14f8c"
       ],
       "articles": [
         {
-          "title": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc0M2ZXd2YndvbjJoNkQwRTlvUnJZY1J0WWtJbW5fNEk0V2Z3ZTdUU0RRZEpOaUI3dlZ6WVJ4akdpZnphcHZQRUpURnpfTVRuNjIzMVZia1FTMjdtcWRpZklSVG16M0JrTTVKaGJCOHpfNWV4YURfWjVBRzhRQVRHNko0bVctLWVCWFo3bnh3cWtobDhQMGVQTW82SmNiSkRORnc?oc=5"
+          "title": "Dua Korban Pinjol Tertekan, Diteror Nomor Tak Dikenal, LBH ICMI: Korban Harus Dilindungi - Riau Online",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQQWgtZE5WclJrUldRelhPckVFaXVhOW11eVBxMXdpbU5xN1JvQTlhcWVKWlJMdHczWmZPTE1UME1kZVNvalN3ODhESDdKNW9JWHdrSzNhcWdweTNrUmJCR3gtN3RWcDdnRU1tMjUyeTBTTlJzTXBpQWp1M2czZld6M1FwRmNYU1ZnSW1aVWxRcW9hVXMxWTNHeUZnN0xqb1JiZmplNkpUNGU5RTB1bVFDaWNXZGVteDVtdllUMmo1M1h2dnlLbE14NEJIS2RhRzlp?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -87,28 +54,28 @@
       }
     },
     {
-      "id": "llm-675c65dbdd3d",
-      "eventType": "regulatory_action",
+      "id": "llm-3fd62be333c8",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "Pemprov Maluku Utara"
       ],
-      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
-      "headlineZh": "西爪哇非法网贷投诉全国最高",
-      "summaryZh": "OJK称西爪哇非法网贷投诉居全国之首，茂物最多，属监管数据披露。",
-      "rationale": "监管机构披露投诉数据",
+      "headline": "Tutup Puncak Bulan Inklusi Keuangan 2026, Asisten I: 4.000 Mengantre KUR, Banyak Tak Lolos Karena Terjerat Pinjol - Pemprov Maluku Utara",
+      "headlineZh": "北马鲁古4000人申KUR因涉网贷被拒",
+      "summaryZh": "北马鲁古金融普惠月活动上约4000人申请KUR，多人因涉网贷征信问题未通过，反映资产质量压力。",
+      "rationale": "官方披露的信贷质量信号",
       "independentSourceCount": 1,
       "domains": [
-        "bandungoke.com"
+        "malutprov.go.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "085153de15abf4a6"
+        "0af1774a25b6090f"
       ],
       "articles": [
         {
-          "title": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSN2FmTzBRZUdqaXl0b0sxN0ktREJZTDJObUpkVUFVTXc3VUdTWl9VVXlWdEpPR01LSklNalpOczdEQ2VFOVdqam00S09CQnAzUWkzdm9Tc29UQldvQUtoTVNSR0pxUE5kS3BKS2NGQjNUUll2TVMyNA?oc=5"
+          "title": "Tutup Puncak Bulan Inklusi Keuangan 2026, Asisten I: 4.000 Mengantre KUR, Banyak Tak Lolos Karena Terjerat Pinjol - Pemprov Maluku Utara",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOGJ3aGlweHQwUXlfdXVwRU9vcUpRR196dm1PZzl0NEdadndObEN2MUFvNEx1eWhjVWZHSEN0UDBNWnZhLVZoS0VrZnp3UmJlbWpHTng0aVQwZHowb3VxNENJTlZWd1hDVVE1TnJldmtxQW4wdHh0N3Y5TUdzQ2ZIZlMtamgzVEFMT19qb1ItRXVzekJKTlBHTi1fanJVV08xNTlSanVXalJyMGg5Ynd0WVN1N0xCQ04zUzVGa2tjVFNiWTF2N0dERU43eGJKZw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -125,71 +92,39 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 24,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 16,
+    "candidateCount": 12,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 24
+      "ok": 12
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-72dc2bf84b46",
+      "id": "llm-968f0ecb1016",
       "eventType": "consumer_harm",
       "severity": 0.55,
-      "entities": [],
-      "headline": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
-      "headlineZh": "网贷受害者遭人肉与恐吓",
-      "summaryZh": "报道消费者因网贷陷入抑郁，遭人肉搜索与恐吓催收，属局部消费者受害案例。",
-      "rationale": "具体消费者受害报道",
-      "independentSourceCount": 1,
-      "domains": [
-        "bisnis.espos.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0eafb1983efe32e5"
-      ],
-      "articles": [
-        {
-          "title": "Benang Kusut Jeratan Pinjol, Konsumen Depresi Hadapi Doxing hingga Intimidasi - Espos.id",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQXzRnYTl1VUFPZnhPaUR5WElWR09SeWRnMFZtV05vTUw2dHgwUXFpWVBETk5iajFGLUxkY21CelpYMWJ5d2YzVU1DVjRhNkt0dlNJVFMweXl0ZTlTblBpZ3lWOHd6MnlCdUl6VWhaMlBVR0p0T2V5Vk1oRHh5bzlzLUk2TGN0S3hDTTJ0SmtfdHZGLWRwZjROQVdUVzc4WmhGM1l1WWtYR2pTZjlUU0c5cGxR0gGyAUFVX3lxTFBfNGdhOXVVQU9meE9pRHlYSVZHT1J5ZGcwVm1XTm9NTDZ0eDBRcWlZUEROTmJqMUYtTGRjbUJ6WlgxYnl3ZjNVTUNWNGE2S3R2U0lUUzB5eXRlOVNuUGlneVY4d3oyeUJ1SXpVaFoyUFVHSnRPZXlWTWhEeHlvOXMtSTZMY3RLeENNMnRKa190dkYtZHBmNE5BV1RXNzhaaEYzWXVZa1hHalNmOVRTRzlwbFE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-0a685976b51b",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
       "entities": [
-        "OJK"
+        "LBH ICMI"
       ],
-      "headline": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
-      "headlineZh": "OJK称西爪哇270万人涉网赌",
-      "summaryZh": "OJK披露西爪哇约270万居民被指涉网赌，属监管机构数据披露。",
-      "rationale": "监管机构披露数据",
+      "headline": "Dua Korban Pinjol Tertekan, Diteror Nomor Tak Dikenal, LBH ICMI: Korban Harus Dilindungi - Riau Online",
+      "headlineZh": "两名网贷受害者遭恐吓求助法律援助",
+      "summaryZh": "两名网贷受害者遭不明号码恐吓，LBH ICMI呼吁保护受害者，属局部消费者受害事件。",
+      "rationale": "有机构介入的催收恐吓个案",
       "independentSourceCount": 1,
       "domains": [
-        "elshinta.com"
+        "riauonline.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "37f4c1540d7cd584"
+        "8e2293ef3de14f8c"
       ],
       "articles": [
         {
-          "title": "OJK: 2,7 juta warga Jabar terindikasi main judi online - Elshinta",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOc0M2ZXd2YndvbjJoNkQwRTlvUnJZY1J0WWtJbW5fNEk0V2Z3ZTdUU0RRZEpOaUI3dlZ6WVJ4akdpZnphcHZQRUpURnpfTVRuNjIzMVZia1FTMjdtcWRpZklSVG16M0JrTTVKaGJCOHpfNWV4YURfWjVBRzhRQVRHNko0bVctLWVCWFo3bnh3cWtobDhQMGVQTW82SmNiSkRORnc?oc=5"
+          "title": "Dua Korban Pinjol Tertekan, Diteror Nomor Tak Dikenal, LBH ICMI: Korban Harus Dilindungi - Riau Online",
+          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQQWgtZE5WclJrUldRelhPckVFaXVhOW11eVBxMXdpbU5xN1JvQTlhcWVKWlJMdHczWmZPTE1UME1kZVNvalN3ODhESDdKNW9JWHdrSzNhcWdweTNrUmJCR3gtN3RWcDdnRU1tMjUyeTBTTlJzTXBpQWp1M2czZld6M1FwRmNYU1ZnSW1aVWxRcW9hVXMxWTNHeUZnN0xqb1JiZmplNkpUNGU5RTB1bVFDaWNXZGVteDVtdllUMmo1M1h2dnlLbE14NEJIS2RhRzlp?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -202,28 +137,28 @@
       }
     },
     {
-      "id": "llm-675c65dbdd3d",
-      "eventType": "regulatory_action",
+      "id": "llm-3fd62be333c8",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "Pemprov Maluku Utara"
       ],
-      "headline": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
-      "headlineZh": "西爪哇非法网贷投诉全国最高",
-      "summaryZh": "OJK称西爪哇非法网贷投诉居全国之首，茂物最多，属监管数据披露。",
-      "rationale": "监管机构披露投诉数据",
+      "headline": "Tutup Puncak Bulan Inklusi Keuangan 2026, Asisten I: 4.000 Mengantre KUR, Banyak Tak Lolos Karena Terjerat Pinjol - Pemprov Maluku Utara",
+      "headlineZh": "北马鲁古4000人申KUR因涉网贷被拒",
+      "summaryZh": "北马鲁古金融普惠月活动上约4000人申请KUR，多人因涉网贷征信问题未通过，反映资产质量压力。",
+      "rationale": "官方披露的信贷质量信号",
       "independentSourceCount": 1,
       "domains": [
-        "bandungoke.com"
+        "malutprov.go.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "085153de15abf4a6"
+        "0af1774a25b6090f"
       ],
       "articles": [
         {
-          "title": "OJK: Pengaduan Pinjol Ilegal di Jawa Barat Tertinggi Nasional, Bogor Terbanyak - BandungOKE",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBSN2FmTzBRZUdqaXl0b0sxN0ktREJZTDJObUpkVUFVTXc3VUdTWl9VVXlWdEpPR01LSklNalpOczdEQ2VFOVdqam00S09CQnAzUWkzdm9Tc29UQldvQUtoTVNSR0pxUE5kS3BKS2NGQjNUUll2TVMyNA?oc=5"
+          "title": "Tutup Puncak Bulan Inklusi Keuangan 2026, Asisten I: 4.000 Mengantre KUR, Banyak Tak Lolos Karena Terjerat Pinjol - Pemprov Maluku Utara",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNOGJ3aGlweHQwUXlfdXVwRU9vcUpRR196dm1PZzl0NEdadndObEN2MUFvNEx1eWhjVWZHSEN0UDBNWnZhLVZoS0VrZnp3UmJlbWpHTng0aVQwZHowb3VxNENJTlZWd1hDVVE1TnJldmtxQW4wdHh0N3Y5TUdzQ2ZIZlMtamgzVEFMT19qb1ItRXVzekJKTlBHTi1fanJVV08xNTlSanVXalJyMGg5Ynd0WVN1N0xCQ04zUzVGa2tjVFNiWTF2N0dERU43eGJKZw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -239,31 +174,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
-      "kaskus",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
+      "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 24,
-    "socialItemCount48h": 22
+    "articleCount48h": 16,
+    "socialItemCount48h": 65
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 523,
-    "classifiedCount": 142,
-    "irrelevantDropped": 98,
+    "inputCount": 513,
+    "classifiedCount": 154,
+    "irrelevantDropped": 86,
     "model": "deepseek-chat",
-    "fallbackCount": 283,
+    "fallbackCount": 273,
     "labelCounts": {
-      "NEG": 71,
-      "MIX": 38,
-      "POS": 33
+      "NEG": 74,
+      "MIX": 35,
+      "POS": 45
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
