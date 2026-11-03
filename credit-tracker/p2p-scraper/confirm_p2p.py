@@ -63,9 +63,16 @@ def batch_rows(scrape: dict) -> list[dict]:
             note = f"抓取失败: {str(r['error'])[:60]}"
         else:
             note = "本期未抓到，可手工补录" if empty else None
-        rows.append({"name": r["name"], "dataDate": r.get("dataDate") or None, "note": note,
-                     "disb": p.get("disbYTD_usd"), "out": p.get("outstanding_usd"),
-                     "tot": p.get("totalBorrowers"), "act": p.get("activeBorrowersYTD")})
+        row = {"name": r["name"], "dataDate": r.get("dataDate") or None, "note": note,
+               "disb": p.get("disbYTD_usd"), "out": p.get("outstanding_usd"),
+               "tot": p.get("totalBorrowers"), "act": p.get("activeBorrowersYTD")}
+        # scraper 2026-10-08 起单独输出 disbMTD_usd（LDN 的「Posisi akhir」= 本月至今成交额）。
+        # 这里漏映射过：2026-11-03 确认 10-01/11-01 批时 disbMTD 被静默丢掉，由 LDN 不变量测试拦下。
+        if p.get("disbMTD_usd") is not None:
+            row["disbMTD"] = p["disbMTD_usd"]
+            if "lentera" in r["name"].lower() and row["out"] is None:
+                row["note"] = LENTERA_NOTE
+        rows.append(row)
     return rows
 
 
@@ -89,6 +96,8 @@ def load_confirmed(path: pathlib.Path = CONFIRMED_JS) -> dict:
 # 没有这张表时 js_row 会把它们静默吃掉——2026-10-08 给 LDN 加 disbMTD 时就这么丢过一次，
 # 写进去、渲染完就没了，而 render_file 的往返测试只比固定字段，发现不了。
 OPTIONAL_FIELDS = ("disbMTD",)
+LENTERA_NOTE = ("官网「Posisi akhir」= 本月至今成交额，非在贷余额（2026-10-08 判定）；LDN 不披露余额，out 置 null。"
+                "disbMTD 为该格原值，仅后台留存。")
 
 
 def js_row(row: dict) -> str:
@@ -150,6 +159,11 @@ def void_cell(rows: list[dict], name_key: str, field: str) -> str | None:
             old = r[field]
             r[field] = None
             tag = VOID_NOTE.format(field=field, old=old)
+            if field == "out" and "lentera" in key(r["name"]) and old is not None:
+                # 旧版 scraper（2026-10-08 前）把 LDN 的「Posisi akhir」写进 out：它是本月至今成交额，
+                # 不是错值，作废余额的同时要把原值留到 disbMTD，不能无痕丢掉。
+                r.setdefault("disbMTD", old)
+                tag = f"{LENTERA_NOTE}{tag}"
             r["note"] = f"{r['note']}；{tag}" if r.get("note") else tag
             return str(old)
     return None
