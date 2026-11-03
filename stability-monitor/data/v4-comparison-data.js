@@ -1,10 +1,10 @@
 const V4_COMPARISON = {
   "schemaVersion": 1,
   "status": "review-only-shadow",
-  "asOf": "2026-10-27",
+  "asOf": "2026-11-03",
   "official": {
     "methodology": "V3",
-    "composite": 42.8,
+    "composite": 43.2,
     "displayScore": 43,
     "pillarWeights": {
       "fiscal": 0.2,
@@ -17,13 +17,13 @@ const V4_COMPARISON = {
       "fiscal": 48.0,
       "currency": 42.0,
       "institutions": 34.0,
-      "social": 53.0,
+      "social": 55.0,
       "coercive": 37.0
     }
   },
   "reweightedBaseline": {
     "methodology": "V3 scores with proposed V4 pillar weights",
-    "composite": 44.6,
+    "composite": 45.1,
     "pillarWeights": {
       "fiscal": 0.25,
       "currency": 0.25,
@@ -34,7 +34,7 @@ const V4_COMPARISON = {
   },
   "shadow": {
     "methodology": "V4",
-    "composite": 44.9,
+    "composite": 45.4,
     "delta": 0.3,
     "pillarWeights": {
       "fiscal": 0.25,
@@ -46,10 +46,10 @@ const V4_COMPARISON = {
     "publicationStatus": "provisional-shadow"
   },
   "measurement": {
-    "confidence": 0.599,
+    "confidence": 0.592,
     "label": "evidence quality index; not a probability of correctness",
     "availabilityQuality": 0.741,
-    "freshnessQuality": 0.758,
+    "freshnessQuality": 0.739,
     "sourceDirectness": 0.759,
     "rawTraceabilityWeight": 0.688,
     "lowConfidenceWeight": 0.17,
@@ -111,9 +111,9 @@ const V4_COMPARISON = {
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
-      "measurementConfidence": 0.674,
+      "measurementConfidence": 0.665,
       "availabilityQuality": 0.815,
-      "freshnessQuality": 0.812,
+      "freshnessQuality": 0.785,
       "sourceDirectness": 0.79,
       "rawTraceabilityWeight": 0.9,
       "nonOrdinalPlannedWeight": 0.9,
@@ -137,8 +137,8 @@ const V4_COMPARISON = {
           ],
           "evidenceClass": "statistical",
           "availability": "medium",
-          "evidenceQuality": 0.476,
-          "freshnessQuality": 0.625,
+          "evidenceQuality": 0.463,
+          "freshnessQuality": 0.596,
           "sourceDirectness": 0.65,
           "observationIds": [
             "fiscal_public_finance_2026q1"
@@ -191,8 +191,8 @@ const V4_COMPARISON = {
           ],
           "evidenceClass": "statistical",
           "availability": "medium",
-          "evidenceQuality": 0.497,
-          "freshnessQuality": 0.672,
+          "evidenceQuality": 0.48,
+          "freshnessQuality": 0.633,
           "sourceDirectness": 0.65,
           "observationIds": [
             "funding_mismatch_2026_05"
@@ -209,8 +209,8 @@ const V4_COMPARISON = {
           "scoreInputs": [],
           "evidenceClass": "ordinal",
           "availability": "low",
-          "evidenceQuality": 0.32,
-          "freshnessQuality": 0.9,
+          "evidenceQuality": 0.296,
+          "freshnessQuality": 0.8,
           "sourceDirectness": 0.65,
           "observationIds": [
             "contingent_liabilities_2026_09"
@@ -244,8 +244,8 @@ const V4_COMPARISON = {
       "id": "currency",
       "label": "货币与市场信心",
       "v3Score": 42.0,
-      "v4ShadowScore": 43.0,
-      "delta": 1.0,
+      "v4ShadowScore": 43.1,
+      "delta": 1.1,
       "coverage": 0.85,
       "missingWeight": 0.15,
       "lowConfidenceWeight": 0.0,
@@ -288,15 +288,15 @@ const V4_COMPARISON = {
           "id": "fx_stress",
           "label": "汇率压力",
           "weight": 0.3,
-          "score": 36.0,
+          "score": 37.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "IDR_vs_Asian5_deviation_from_250d_mean",
-              "value": "+3.9 percent (cutoff 2026-10-26)",
+              "value": "+3.7 percent (cutoff 2026-11-02)",
               "unit": "percent",
               "transform": "clamp(55 - 5 x deviation, 5, 75)",
-              "score": 36,
+              "score": 37,
               "weight": 1
             }
           ],
@@ -306,7 +306,7 @@ const V4_COMPARISON = {
           "freshnessQuality": 1.0,
           "sourceDirectness": 1.0,
           "observationIds": [
-            "fx_idr_2026_10_27"
+            "fx_idr_2026_11_03"
           ],
           "basis": "使用同日汇率读数，未来改为自身历史分位与波动率；不重复计入外储。",
           "missingReason": null
@@ -331,15 +331,15 @@ const V4_COMPARISON = {
           "id": "market_access",
           "label": "资本流动与市场准入",
           "weight": 0.25,
-          "score": 31.0,
+          "score": 30.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
               "metric": "local_assets_and_market_access_composite",
-              "value": "MSCI Indonesia / MSCI EM -33.2 percent vs 250-day mean; 10Y SUN 7.42 percent at cutoff; CDS 99.7bp",
+              "value": "MSCI Indonesia / MSCI EM -35.3 percent vs 250-day mean; 10Y SUN above 7.3 percent",
               "unit": "mixed market measures",
               "transform": "migration_anchor_pending_same-window_flow_and_spread_series",
-              "score": 31.0,
+              "score": 30.0,
               "weight": 1
             }
           ],
@@ -349,7 +349,7 @@ const V4_COMPARISON = {
           "freshnessQuality": 1.0,
           "sourceDirectness": 0.65,
           "observationIds": [
-            "market_access_2026_10_27"
+            "market_access_2026_11_03"
           ],
           "basis": "V3股市/外资流向与主权风险定价的迁移均值；外储不进入本项。",
           "missingReason": null
@@ -365,9 +365,9 @@ const V4_COMPARISON = {
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.1,
-      "measurementConfidence": 0.502,
+      "measurementConfidence": 0.493,
       "availabilityQuality": 0.715,
-      "freshnessQuality": 0.662,
+      "freshnessQuality": 0.642,
       "sourceDirectness": 0.79,
       "rawTraceabilityWeight": 0.25,
       "nonOrdinalPlannedWeight": 0.9,
@@ -445,8 +445,8 @@ const V4_COMPARISON = {
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "medium",
-          "evidenceQuality": 0.75,
-          "freshnessQuality": 1.0,
+          "evidenceQuality": 0.705,
+          "freshnessQuality": 0.9,
           "sourceDirectness": 1.0,
           "observationIds": [
             "institutional_checks_2026_09"
@@ -477,15 +477,15 @@ const V4_COMPARISON = {
     {
       "id": "social",
       "label": "社会与街头",
-      "v3Score": 53.0,
-      "v4ShadowScore": 47.2,
+      "v3Score": 55.0,
+      "v4ShadowScore": 49.2,
       "delta": -5.8,
       "coverage": 1.0,
       "missingWeight": 0.0,
       "lowConfidenceWeight": 0.4,
-      "measurementConfidence": 0.496,
+      "measurementConfidence": 0.484,
       "availabilityQuality": 0.672,
-      "freshnessQuality": 0.781,
+      "freshnessQuality": 0.745,
       "sourceDirectness": 0.692,
       "rawTraceabilityWeight": 0.85,
       "nonOrdinalPlannedWeight": 1.0,
@@ -509,8 +509,8 @@ const V4_COMPARISON = {
           ],
           "evidenceClass": "statistical",
           "availability": "medium",
-          "evidenceQuality": 0.424,
-          "freshnessQuality": 0.508,
+          "evidenceQuality": 0.398,
+          "freshnessQuality": 0.45,
           "sourceDirectness": 0.65,
           "observationIds": [
             "labour_stress_2026_05"
@@ -549,7 +549,7 @@ const V4_COMPARISON = {
           "id": "online_grievance",
           "label": "线上不满与议题关注",
           "weight": 0.25,
-          "score": 48.0,
+          "score": 56.0,
           "scoreMethod": "evidence_weighted",
           "scoreInputs": [
             {
@@ -557,7 +557,7 @@ const V4_COMPARISON = {
               "value": "heat 27.8; opposition 54.7 percent (public 67 / media 39; forum missing)",
               "unit": "crawler composite",
               "transform": "60pct_heat_score_plus_40pct_opposition_score",
-              "score": 48,
+              "score": 56,
               "weight": 1
             }
           ],
@@ -567,7 +567,7 @@ const V4_COMPARISON = {
           "freshnessQuality": 1.0,
           "sourceDirectness": 0.7,
           "observationIds": [
-            "online_grievance_2026_10_27"
+            "online_grievance_2026_11_03"
           ],
           "basis": "2026-08-11云端实采：热度稳定分65、反对率分55，60/40合成61；覆盖缺口与crawler低置信标签保留。",
           "missingReason": null
@@ -581,8 +581,8 @@ const V4_COMPARISON = {
           "scoreInputs": [],
           "evidenceClass": "event_count",
           "availability": "low",
-          "evidenceQuality": 0.301,
-          "freshnessQuality": 0.686,
+          "evidenceQuality": 0.277,
+          "freshnessQuality": 0.586,
           "sourceDirectness": 0.85,
           "observationIds": [
             "offline_mobilization_2026_09_01"
@@ -684,7 +684,7 @@ const V4_COMPARISON = {
       ]
     }
   ],
-  "evidenceFile": "evidence/2026-10-27.json",
+  "evidenceFile": "evidence/2026-11-03.json",
   "caveats": [
     "V3 remains the official production methodology; V4 is a same-date shadow comparison only.",
     "The V4 methodology delta compares V4 with the same V3 pillar scores under the proposed V4 pillar weights; the official equal-weight V3 composite is shown separately.",
