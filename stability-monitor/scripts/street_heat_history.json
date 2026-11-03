@@ -1103,5 +1103,83 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-11-03",
+    "version": 3,
+    "heat": 46.0,
+    "suggested_score": 57,
+    "opposition": {
+      "status": "ok",
+      "rate": 33.5,
+      "detail": "250条中政治条目215条(浓度86%)，反对72/中性98/支持45 → 总反对率 33.5%（分侧: 民间YouTube 35% · 媒体RSS 32%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 51.7,
+        "raw": {
+          "ratio_street": 0.7990074441687345,
+          "ratio_anger": 1.2695821185617102,
+          "per_kw": {
+            "demo hari ini": 4,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 33,
+            "kejaksaan": 24,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 13
+          }
+        }
+      },
+      "kaskus": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "n_searched": 120,
+          "n_big": 66
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 49.2,
+        "raw": {
+          "avg7": 0.008228571428571429,
+          "baseline": 0.008365384615384615,
+          "ratio": 0.9836453201970444
+        }
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 47.7,
+        "raw": {
+          "avg_tone7": -2.771057142857143
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 8.8,
+        "raw": {
+          "total": 452,
+          "matched": 4,
+          "share": 0.8849557522123894,
+          "examples": [
+            "[BBC Indonesia] Kelompok preman diduga jadi provokator saat demo Oktober 2026 di Yogyakarta – 'M",
+            "[BBC Indonesia] Mengapa Gen Z menjadi motor gerakan protes di Indonesia? – 'Bencana dibiarkan, a",
+            "[BBC Indonesia] 'Kami bicara atas nama masyarakat' – Ribuan mahasiswa di berbagai kota demo karh",
+            "[BBC Indonesia] Demo berlanjut di Jakarta – 'Ketika kekuasaan gagal jalankan tanggung jawab, mah"
+          ],
+          "dead_feeds": []
+        }
+      }
+    }
   }
 ]
