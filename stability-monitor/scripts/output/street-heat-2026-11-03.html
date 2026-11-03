@@ -23,19 +23,19 @@
 <h1>街头动员热度 · 周度确认单</h1>
 <div class="sub">采集日 2026-11-03 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
 <div class="card hero">
-  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">46.0</div></div>
+  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">46.4</div></div>
   <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">57</div></div>
-  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">34%</div></div>
+  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">—</div></div>
   <div style="flex:1;min-width:220px"><div class="lbl">换算刻度</div><span class='band'>≤25→70分</span> <span class='band'>≤45→58分</span> <span class='band'>≤60→45分</span> <span class='band'>≤75→35分</span> <span class='band'>≤100→22分</span></div>
 </div>
-<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 250条中政治条目215条(浓度86%)，反对72/中性98/支持45 → 总反对率 33.5%（分侧: 民间YouTube 35% · 媒体RSS 32%）</div>
+<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 分类失败: 503 Server Error: Service Unavailable for url: https://api.deepseek.com/chat/com</div>
 <div class="card"><h3>六源明细</h3><p class='warn'>⚠ 1 个源未参与（失败/待配置），热度按剩余源权重归一化。</p>
 <table><tr><th>状态</th><th>数据源</th><th class="num">热度</th><th class="num">权重</th><th>本期读数</th></tr>
 <tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>A. Google Trends 双篮搜索热度</b><span class="grp">领先指标</span></td>
-          <td class="num">51.7</td><td class="num">25%</td>
-          <td class="detail">街头篮 0.80x + 愤怒篮 1.27x（vs 各自3个月基线），均值 1.03x</td></tr><tr>
+          <td class="num">52.8</td><td class="num">25%</td>
+          <td class="detail">街头篮 0.86x + 愤怒篮 1.25x（vs 各自3个月基线），均值 1.06x</td></tr><tr>
           <td><span class="badge" style="color:#D85A30;border-color:#D85A30">✗ 失败</span></td>
           <td><b>E. Kaskus 全站热帖</b><span class="grp">领先指标</span></td>
           <td class="num">—</td><td class="num">重分配</td>
@@ -43,7 +43,7 @@
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>F. YouTube 高播放政治视频</b><span class="grp">领先指标</span></td>
           <td class="num">100.0</td><td class="num">10%</td>
-          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 66 条（检索120条）</td></tr><tr>
+          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 65 条（检索120条）</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>B. GDELT 报道量</b><span class="grp">滞后指标</span></td>
           <td class="num">49.2</td><td class="num">15%</td>
@@ -57,7 +57,7 @@
           <td class="num">8.8</td><td class="num">20%</td>
           <td class="detail">近7天 452 条标题中 4 条街头相关（0.9%）；失效源: 0</td></tr></table></div>
 <div class="card"><h3>近7天相关标题/热帖样例</h3><ul><li>[BBC Indonesia] Kelompok preman diduga jadi provokator saat demo Oktober 2026 di Yogyakarta – &#x27;M</li><li>[BBC Indonesia] Mengapa Gen Z menjadi motor gerakan protes di Indonesia? – &#x27;Bencana dibiarkan, a</li><li>[BBC Indonesia] &#x27;Kami bicara atas nama masyarakat&#x27; – Ribuan mahasiswa di berbagai kota demo karh</li><li>[BBC Indonesia] Demo berlanjut di Jakarta – &#x27;Ketika kekuasaan gagal jalankan tanggung jawab, mah</li></ul><h3>历史（共2期）</h3>
-<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-11-03</td><td class='num'>46.0</td><td class='num'><b>57</b></td></tr></table></div>
+<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-11-03</td><td class='num'>46.4</td><td class='num'><b>57</b></td></tr></table></div>
 <div class="next"><b>下一步：</b>把这个建议分数发给 Claude Code 确认（说"确认本期街头热度"即可写入看板），
 或者说"这期不对，因为……"来挑战校准。</div>
 </div></body></html>
