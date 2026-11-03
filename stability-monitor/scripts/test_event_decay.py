@@ -59,15 +59,20 @@ class AnchorTests(unittest.TestCase):
 
 class NoCliffTests(unittest.TestCase):
     def test_no_day_to_day_jump_through_early_2027(self):
-        """旧规则下 2027-02 底镇压两周内 18→65。衰减计数下任何相邻两天变动 ≤2 分。"""
+        """旧规则下 2027-02 底镇压两周内 18→65。衰减计数下，没有新事件的日子相邻两天变动 ≤2 分。
+
+        有新事件的当天分数下跌是本意（2026-10-28 三起镇压事件让本项 16→11）；
+        要防的是**无事件时**因日历到期而突然回升的悬崖。
+        """
         start = dt.date(2026, 10, 16)
         for key in ED.MAPPINGS:
+            event_days = {e["date"] for e in L["ledgers"][key]["events"]}
             prev = None
             for i in range(240):
                 d = (start + dt.timedelta(days=i)).isoformat()
                 s = ED.score(L, key, d)[1]
-                if prev is not None:
-                    self.assertLessEqual(abs(s - prev), 2, f"{key} 在 {d} 跳了 {prev}→{s}")
+                if prev is not None and d not in event_days:
+                    self.assertLessEqual(abs(s - prev), 2, f"{key} 在 {d}（无新事件）跳了 {prev}→{s}")
                 prev = s
 
     def test_recovery_is_monotonic_without_new_events(self):
