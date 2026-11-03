@@ -49,6 +49,36 @@ class ParseTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             R.parse(page)
 
+    def test_september_2026_release_new_mf_wording(self):
+        """2026-09 起多元金融 BNPL 句改成『NPF gross tercatat sebesar』，旧正则漏掉 tercatat 就整份拒绝出数。"""
+        d = R.parse((FIX / "rdkb-september-2026.html").read_text(encoding="utf-8"))
+        self.assertEqual(d["dataMonth"], "2026.08")
+        self.assertEqual((d["p2p"], d["bankBNPL"], d["mfBNPL"]), (106940, 31410, 13610))
+        self.assertEqual((d["lpbbtiTWP90"], d["mfBnplNPF"], d["bankBNPLYoY"], d["mfBNPLYoY"]), (4.73, 3.03, 29.10, 36.57))
+
+    def test_falls_back_to_constructed_urls_when_listing_has_no_rdkb(self):
+        """列表页只显示 10 条，RDKB 被挤出首页时要按月份拼地址去探；未发布的 404 跳过。"""
+        import datetime as dt
+        good = "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-September-2026.aspx"
+        calls = []
+        def fake(url):
+            calls.append(url)
+            if url == R.LISTING:
+                return '<a href="/id/x/Some-Other-Release.aspx">x</a>'
+            if url == good:
+                return "<p>page</p>"
+            raise RuntimeError("404")
+        url, page = R.find_latest(fake, dt.date(2026, 11, 3))
+        self.assertEqual(url, good)
+        self.assertTrue(any("RDKB-November-2026" in c for c in calls), "应先探本月")
+        self.assertTrue(any("RDKB-Oktober-2026" in c for c in calls), "再探上月")
+
+    def test_candidate_urls_cross_year_boundary(self):
+        import datetime as dt
+        urls = R.candidate_urls(dt.date(2027, 1, 5))
+        self.assertTrue(urls[0].endswith("RDKB-Januari-2027.aspx"))
+        self.assertTrue(any(u.endswith("RDKB-Desember-2026.aspx") for u in urls))
+
     def test_latest_rdkb_url_picks_the_newest_month(self):
         listing = ('<a href="/id/x/RDKB-Feb-2026.aspx">a</a> <a href="/id/x/RDKB-Agustus-2026.aspx">b</a> '
                    '<a href="/id/x/RDKB-Des-2025.aspx">c</a>')

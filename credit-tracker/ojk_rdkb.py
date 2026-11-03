@@ -72,6 +72,41 @@ def latest_rdkb_url(listing_html: str) -> str | None:
     return href if href.startswith("http") else BASE + href
 
 
+# 列表页只显示最新 10 条新闻稿。RDKB 每月一次，月中再发十几条别的稿子就会把它挤出首页——
+# 2026-11-01 云端运行就是这样失败的（RDKB-September-2026 在站上，但不在列表里）。
+# 所以列表里找不到时，按「本月、上月、上上月」直接拼 URL 去探。
+MONTH_NAMES = {1: ("Januari", "Jan"), 2: ("Februari", "Feb"), 3: ("Maret", "Mar"), 4: ("April", "Apr"),
+               5: ("Mei",), 6: ("Juni", "Jun"), 7: ("Juli", "Jul"), 8: ("Agustus", "Agu"),
+               9: ("September", "Sep"), 10: ("Oktober", "Okt"), 11: ("November", "Nov"),
+               12: ("Desember", "Des")}
+
+
+def candidate_urls(today) -> list[str]:
+    """从本月往前 3 个月拼出可能的 RDKB 页面地址，新的在前。"""
+    out = []
+    y, m = today.year, today.month
+    for _ in range(4):
+        for name in MONTH_NAMES[m]:
+            out.append(f"{BASE}/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-{name}-{y}.aspx")
+        y, m = (y, m - 1) if m > 1 else (y - 1, 12)
+    return out
+
+
+def find_latest(fetcher=None, today=None) -> tuple[str, str] | None:
+    """返回 (url, html)。先看列表页，找不到再逐个探拼出来的地址；404 视为未发布。"""
+    import datetime as dt
+    fetcher = fetcher or fetch
+    url = latest_rdkb_url(fetcher(LISTING))
+    if url:
+        return url, fetcher(url)
+    for url in candidate_urls(today or dt.date.today()):
+        try:
+            return url, fetcher(url)
+        except Exception:  # 404 / 网络错误：这个月的还没发，继续往前
+            continue
+    return None
+
+
 def parse(page: str) -> dict:
     """三项都必须解析成功且数据月一致，否则抛错——宁可不出数。"""
     t = strip(page)
@@ -97,7 +132,7 @@ def parse(page: str) -> dict:
     out["bankBNPLYoY"] = idr_number(yoy.group(1)) if yoy else None
 
     m = re.search(r"BNPL\) oleh [Pp]erusahaan [Pp]embiayaan tumbuh ([\d,\.]+) persen yoy.*?"
-                  r"menjadi Rp\s?([\d,\.]+) triliun dengan NPF gross (?:turun ke |naik ke |sebesar )?([\d,\.]+) persen", t)
+                  r"menjadi Rp\s?([\d,\.]+) triliun dengan NPF gross (?:tercatat )?(?:turun ke |naik ke |sebesar )?([\d,\.]+) persen", t)
     if not m:
         raise ValueError("多元金融 BNPL 句子没解析到")
     out["mfBNPL"] = round(idr_number(m.group(2)) * 1000)
@@ -114,11 +149,14 @@ def main() -> int:
     if args.page and pathlib.Path(args.page).exists():
         page, url = pathlib.Path(args.page).read_text(encoding="utf-8"), args.page
     else:
-        url = args.page or latest_rdkb_url(fetch(LISTING))
-        if not url:
-            print("× 新闻稿列表里没找到 RDKB 页面", file=sys.stderr)
-            return 2
-        page = fetch(url)
+        if args.page:
+            url, page = args.page, fetch(args.page)
+        else:
+            found = find_latest()
+            if not found:
+                print("× 列表页与近 4 个月的拼接地址都没找到 RDKB 页面", file=sys.stderr)
+                return 2
+            url, page = found
     data = parse(page)
     data.update({"source": "OJK RDKB 月度新闻稿", "sourceUrl": url, "unit": "Rp Miliar（原文 Rp triliun ×1000）"})
     if args.json:
