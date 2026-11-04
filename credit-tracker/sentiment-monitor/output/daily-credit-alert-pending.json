@@ -1,24 +1,87 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 54.3,
-    "socialDailyVolumeRisk": 29.0,
-    "negativeSocialShare": 37.4,
+    "newsDailyVolumeRisk": 55.1,
+    "socialDailyVolumeRisk": 26.9,
+    "negativeSocialShare": 7.9,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=20; prior-7d median=17.0; robust z=0.29",
-    "socialVolume": "today=5; prior-7d median=32.0; robust z=-1.40"
+    "newsVolume": "today=16; prior-7d median=12.0; robust z=0.34",
+    "socialVolume": "today=2; prior-7d median=34.0; robust z=-1.54"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
+    {
+      "id": "llm-5c425b115efd",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
+      "headlineZh": "网贷余额106万亿坏账率5.36%",
+      "summaryZh": "OJK数据显示2026年9月网贷融资余额达106.46万亿印尼盾，同比增长17.02%，不良率5.36%，资产质量承压值得留痕。",
+      "rationale": "官方数据揭示坏账率上升",
+      "independentSourceCount": 8,
+      "domains": [
+        "centralbatam.co.id",
+        "cnnindonesia.com",
+        "feedberry.com",
+        "lensahukum.co.id",
+        "money.kompas.com",
+        "suaragarut.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "b4000c13c51f5a69",
+        "23aff80db5ec5278",
+        "ccadfa81a18e08e5",
+        "6123a08c3563f713",
+        "3d77b0c807641d1c",
+        "177ede12c69986ff",
+        "fc03480e86b76a69",
+        "60bb95e39f80e3c0",
+        "fb7e0a449af31629"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53RW15d3k4LUZuUklMbVlkczgweW0yckxSZFkxejliM3FRdC1xanFLbEl1V1V1S0duYTdvM0gydG9PSjA4a2dwSndlb2pZQkN4VVZsUlEwcUtPWHdKSWFsUjBrcUI1bFNZ?oc=5"
+        },
+        {
+          "title": "OJK Catat Pembiayaan Pinjol Rp106,46 Triliun pada 2026 - Lensa Hukum",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBWZ3l0T01fbXdDVGp5a3phclBQOC11RHRHZlpSbTYxXy1IUnVudTYzZ2RJaWp1SEhlbjByTnlxUU12bUhHb1Uyb1kwWUJNRXk5MDZhQXh6Um9paEdHMXJabg?oc=5"
+        },
+        {
+          "title": "Pembiayaan Pinjol Tembus Rp106,46 Triliun, OJK Waspadai Kredit Macet 5,36% - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSFhxU0s1S1phOU44UlpWdXJjMUxLX2FBc3ZGcUJoU1lHNG5RUG1jLWxWcHNaRkY4TUI1bWhLbWRXVzhVYXJES3VEQXo0LXlpdGRxQmFBUENjRWlleFhiWGxBZEVfc2pJT1RPT3kyaVFqdGFxRFhhR2NOOVNhaHlBNVJWVkVVMVpDYllrb3FMamo0ZERvWWRoNGZ2aVpCNVN6czhQTg?oc=5"
+        },
+        {
+          "title": "Utang Pinjol Tembus Rp 106,46 Triliun, Tumbuh 17,02 Persen - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUW41ajdCSWcxVVoyUWFhZFBJQVhsMUlSV25tZjJQdlk0eE45VzFKZXZNNVh2dWdGSDVUblB0blJUSGUxblo0SjlOQ25oaEFJSHpHUjRQaVNGcmNPOS1uM0VxaURwNkdJZEx4aTNnSHJIdnE3S0RDTlF3X1VxNTY0VmY1WXZyVS16X1p4aFdXMF9haGJ4eXJOV3B2MmlaRGNfTk5VdlR4c1NrRHJ0?oc=5"
+        },
+        {
+          "title": "Utang Pinjol Tembus Rp106,46 T, Risiko Kredit 5,36% - feedberry.com",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ19qQkpmWGZOajhOQUx1VnFpOXNBekRNLXJPOGpmajRtX05scGNUdVNTWlh3cXY3cGZJN0JTXzlLMGgyY2ZMYTlwZExQMjktS0ZkZGp6cUtQaWpNN3NSSzVFcEozelJ4V0JRanhhVUlMMTdENWV4a29vaW1HRURDZzFDUQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 9,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
     {
       "id": "llm-f506c42f5dc5",
       "eventType": "regulatory_action",
@@ -27,9 +90,9 @@
         "OJK"
       ],
       "headline": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
-      "headlineZh": "OJK推出PELITA伊斯兰项目打击非法网贷",
-      "summaryZh": "OJK联合传教士与清真寺启动PELITA Syariah项目，动员宗教渠道打击非法网贷，属监管新举措。",
-      "rationale": "监管机构启动新项目",
+      "headlineZh": "OJK推出PELITA Syariah打击非法网贷",
+      "summaryZh": "OJK联合传教士和清真寺推出PELITA Syariah项目以打击非法网贷，属监管机构发起的专项行动，值得留痕。",
+      "rationale": "监管机构发起专项行动",
       "independentSourceCount": 1,
       "domains": [
         "suarapemerintah.id"
@@ -42,225 +105,6 @@
         {
           "title": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
           "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOSUVXRGxZdGZ1VHpKRlZ4UFp4Z2U2OFZSbTZBc3RPTzFiY09pdGsyUW9uQ0pMM3A2YWJFWklZMFJnTUdJZm05T2hWdld3S0xiUUdFNXJTeFZiQlRiWWhPVndndjNxWmw4b2x2amszV0ZHQzJCcWtmQlB0SVhzS3hUTmtKNG9KNHRqdDQtU3JOcENWM2JvYllVcVpNTUhObkpZUWFMb2xTOVF2R293QnE3UmF5Z19ub1Q4UHlCNkI3WQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-29d17de25579",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Pemprov NTB",
-        "Kemenkum NTB"
-      ],
-      "headline": "Pinjol Ilegal dan Judi Online Mengancam NTB, Pemprov Siapkan Langkah Terpadu - RRI.co.id",
-      "headlineZh": "西努省推综合措施打击非法网贷赌博",
-      "summaryZh": "西努沙登加拉省政府筹备跨部门综合措施并推动地方条例草案，防范非法网贷与网络赌博。",
-      "rationale": "地方政府监管行动",
-      "independentSourceCount": 3,
-      "domains": [
-        "ntbprov.go.id",
-        "radarmandalika.id",
-        "rri.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a37b996aa188d253",
-        "5a82b9788f432618",
-        "de639d117673ffd9"
-      ],
-      "articles": [
-        {
-          "title": "Pinjol Ilegal dan Judi Online Mengancam NTB, Pemprov Siapkan Langkah Terpadu - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNXzRYRS0yeHlGMXp6enctb1BUOFVDOFNUSjQ0M0xoNGx4MU0yTnVvWlQxT1hXR2xPcUhGTWFPRm9XQk03eVljU2w5YkFIeVRTdmI4WGw1bUxZN29rY1RpdHY3U0N3OHRuSjhRNDJFZ05rS24yR0JMQUJ1VENlWEl0a0FVaVZyeWVFZUhWNlg2Vk0yQ2o5em1UeGdOYjZPQ0JtUWJJdy13ekpHa3N3TDk5ZTR4MnZ4SDFta2c?oc=5"
-        },
-        {
-          "title": "Provinsi NTB | Cegah Pinjol Ilegal dan Judi Online, Pemprov NTB Siapkan Langkah Terintegrasi - Pemprov NTB",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbzZ2cmdDTWx4U04yQWpZMUZ1c25xNS1zamF0QmFvaTFfRkFGXzBNTS1yb0xBREY4WTVqUTZwZXB6Y1B2X2VRN3hvaVNXeGppRDNBdWdaWTNuZ25JRGJFQ2psNll2dGd1R2lwZ1hSMTZSUU1OT3VrdFRoVC1hS0lRUFVNVGd2OTE5UmR4QkNMQWhWeTVZU2dYLWZuM09CT3d0Rkw5UGpB?oc=5"
-        },
-        {
-          "title": "Kanwil Kemenkum NTB Sosialisasikan Raperda Pencegahan Pinjol Ilegal dan Judi Online - - Radar Mandalika",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRzhqWDFlbXBkek5YOTZteUFCcERqUmVjZEd2ZGtQemlMTjYwU2M3Z1RQa2p1Y0M3bXBJMjRMam1vSzFFSHVrVmhmemEzd2Rad2g2RktJSHdDUWxQbUxDQVZLbnNKR2RpcDAzX0FneUNYczROUmUxRmRQaW85dS13VEloc25NdnNYbGdFZC1oTEFxdF9ybEYwQ09oUzRnSDU2VjI2NnJyeUh6S1duRzlj?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-12bb4458c380",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Pemkab Kuningan"
-      ],
-      "headline": "42 Persen Guru di Kuningan Disebut Hadapi Masalah Pinjol, Bupati Minta Disdikbud Bertindak - radarcirebon.disway.id - Radar Cirebon",
-      "headlineZh": "库宁安42%教师陷网贷问题",
-      "summaryZh": "报道称库宁安42%教师面临网贷问题，县长要求教育局介入处理，反映群体性债务压力。",
-      "rationale": "群体债务困境，官方介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarcirebon.disway.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "6cc9cfc580c93cce"
-      ],
-      "articles": [
-        {
-          "title": "42 Persen Guru di Kuningan Disebut Hadapi Masalah Pinjol, Bupati Minta Disdikbud Bertindak - radarcirebon.disway.id - Radar Cirebon",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUDVWN3Q2dUtmUjd1SGpwSEwxQnFhV3dOdmZfRmp3dl9jNXNKaFZQU1dVeHBOQ2lVYnRlLTJiV1ZqSmtvTjJyclJWTFJtLU52OVlMMWl0XzNfQXRCYTBiZ2FvSGhTcXNTOWl6ZW9oUVdGbU9IbF93MXR6SmViQ09wNHRkX3pUeUN5N2RieVRfWVk4Vkptc0xzbEtyMGVSYVhPSlJyeElPakZqcGNsd2tXTDdVQmhydjhyYmhzMUFDQUlSRWJUOFJBOGtuWG9wVk91QXdmRHY5ZC3SAcsBQVVfeXFMTk5TVWlBaWtWc3dyVk50bGRhUWpkcHotTHF3eldhMC02ZmdEMmZPcGw5M09pS09wLVN5cEVtVXpQSTl4dU9udVc4S1dHcGs3VU8tQWdkZnBYenV6cG43c2JsMkVJOWNXNl90SGJYcWI2OVEwWGJLUFQyekU3a0syNi1Xb3BsRDFhckdBYUU0ZkZmWGZuSVBKeDRIaU92NGRYYWJKWExQZDBjRGgtazVBTEJEdmVrOWY0Mng2eGloeWJuT2gyS2txSk5KLVE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9d4c1f222f48",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "GKE",
-        "Pdt Memey"
-      ],
-      "headline": "GKE Bereaksi! Fitnah Keji Arisan Bodong dan Pinjol Serang Pdt Memey, Tokoh Gereja Desak Polisi Tangkap Pelaku - Tabengan Online",
-      "headlineZh": "教会人士遭虚假理财与网贷诽谤",
-      "summaryZh": "福音教会称牧师Memey遭虚假互助会与网贷谣言诽谤，教会要求警方抓捕造谣者。",
-      "rationale": "诽谤指控，教会要求警方介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "tabengan.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "14bbbab3509490fb"
-      ],
-      "articles": [
-        {
-          "title": "GKE Bereaksi! Fitnah Keji Arisan Bodong dan Pinjol Serang Pdt Memey, Tokoh Gereja Desak Polisi Tangkap Pelaku - Tabengan Online",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxON0dYTDBBWmdsa2Y3eVVVaUpwMGFxZUdsd1BvUVdaemdON3RieW1IZHFMMi1HQkJPSjFPT0Z4cHFxZGJwYklreTd5bHhXZEcxTEJVcU1MLU44QTk3eENCUXF5MTdzNkg3LS1fYUZWQkJ6eGl3RXVQcnNJTUNsZGNhTEJGZEFMRGU2MTBYVXJvaDNYdE8wNVZqaHpVRm9XMTNHeG5oZjVLMmcwdk5Rc3U4S25xWDlOU0M3a2ZsRGxmMnJyWHI4UTNPWHctS0NvcTVhR2c0OEtvQmZBUThiXzA0b2tXdGlrM3Rt?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9d0a4776e6a1",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU"
-      ],
-      "headline": "KPPU Ajukan Kasasi atas Putusan Pembatalan Dugaan Kartel Bunga Pindar - Integritas News",
-      "headlineZh": "KPPU就网贷利率卡特尔案上诉",
-      "summaryZh": "印尼竞争委员会KPPU就法院撤销网贷利率卡特尔指控的判决向最高法院提出上诉。",
-      "rationale": "监管机构司法行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "integritasnews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0d1db11d64bd63cb"
-      ],
-      "articles": [
-        {
-          "title": "KPPU Ajukan Kasasi atas Putusan Pembatalan Dugaan Kartel Bunga Pindar - Integritas News",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNeTI1dHVqSFJpMFFVSkszemFIMnFaMXRSQ0thb3JqWmtvazAtOTg3aGVFa1VQRlVqN1dOM09uaGRfNUZVZEdpT0pjcXhTWjlTVll0UjRnQ1h3WlBNd2pBelNCVnhRTVVZc3VwRUJYS2kxYlF4ZDZuRHVMZnVLOF9uT1RnZVh6Q29Ucnd4TC1iWEFkM1RGTXlYOFBsVFZEZw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-de65cfee28c4",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Ungkap Pengaduan Pinjol Ilegal di Jabar Tertinggi Nasional, Bogor Jadi Sorotan - Radar Bandung",
-      "headlineZh": "西爪哇非法网贷投诉全国最高",
-      "summaryZh": "OJK披露西爪哇非法网贷投诉量居全国之首，茂物成焦点，反映区域性消费者受害集中。",
-      "rationale": "监管披露投诉数据，区域性受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarbandung.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d827d22ea6501715"
-      ],
-      "articles": [
-        {
-          "title": "OJK Ungkap Pengaduan Pinjol Ilegal di Jabar Tertinggi Nasional, Bogor Jadi Sorotan - Radar Bandung",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbC1WZ19yOVpUUG1sWF9lQnd3SjhiMUVIbkk1czhRR3l5RXJidEJRYnVUSWl5dmpfOFkxcm5kWUt0QTZxVUZ1X2hUYXdVaTU3OUJ4bzZRUzREZXJ6SWUwRXcyY25BclpkVVNoOWMzS1ZPZU1OMzE0WlVYOUdnZW9zcVRHLXZxazBLWFBULS13TmZtMHZoZi1ySllUZ255MmdMQVlKU3FjNFJiTEpUQlFJODBKVVpybTNUbzVrX2p3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-749636fd901c",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "Satgas PASTI",
-        "OJK"
-      ],
-      "headline": "Ratusan Pinjol Ditindak, 702 Ribu Rekening Penipuan Diblokir Satgas PASTI - BITHE.co",
-      "headlineZh": "PASTI工作组取缔数百非法网贷并封70万账户",
-      "summaryZh": "Satgas PASTI打击数百家非法网贷，封堵70.2万个诈骗账户，属大规模监管执法行动。",
-      "rationale": "大规模执法，封禁账户",
-      "independentSourceCount": 1,
-      "domains": [
-        "bithe.co"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d858551d78dca270"
-      ],
-      "articles": [
-        {
-          "title": "Ratusan Pinjol Ditindak, 702 Ribu Rekening Penipuan Diblokir Satgas PASTI - BITHE.co",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR3ZQTktFdm8yb182bzd3dmJSdmpjUjVmNnZObzFoUWNCV0REeE4yZDRYWWVlYjVCdU9oR0M0RDdlcC0zVW15eThWNjVrUXpsZHNRSzNjdlEyNlpJTDE1Yl9Tc2o5Q3AzSlpEcUtseDY4WGxDMTZzemxOdXJOSWJQbldRQm5MMXJXTDc0UTNicGplOHhaa3RVcmtsVmVxWElLekNhamxlMnRQUXJMYnfSAasBQVVfeXFMTXpKQWZNLXZuS19CcEtlX0pFNXlOS3hVd0hQQVNwLUJNZzBCcHptV0lOOFlFczZkbkpiYkt3MTRtWE44RGJUcjRBVWQyLUdTcC1xOXYxbjRuUmRwUGV0WDV6Q0lpdGY5ZmgtZ1V3S3l1V3JuWWI4dTF2bkxWNlVYTEdsSl9ncEpFajJybWFZLV91WDB0SE9qV1ZRcGloczJjYzB3di15RnQyY1g0?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -277,16 +121,79 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 37,
-    "eventGroupCount": 7,
-    "rejectedNonEvents": 20,
+    "candidateCount": 40,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 19,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 37
+      "ok": 40
     },
     "socialCrossCheck": "applied"
   },
   "events": [
+    {
+      "id": "llm-5c425b115efd",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
+      "headlineZh": "网贷余额106万亿坏账率5.36%",
+      "summaryZh": "OJK数据显示2026年9月网贷融资余额达106.46万亿印尼盾，同比增长17.02%，不良率5.36%，资产质量承压值得留痕。",
+      "rationale": "官方数据揭示坏账率上升",
+      "independentSourceCount": 8,
+      "domains": [
+        "centralbatam.co.id",
+        "cnnindonesia.com",
+        "feedberry.com",
+        "lensahukum.co.id",
+        "money.kompas.com",
+        "suaragarut.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "b4000c13c51f5a69",
+        "23aff80db5ec5278",
+        "ccadfa81a18e08e5",
+        "6123a08c3563f713",
+        "3d77b0c807641d1c",
+        "177ede12c69986ff",
+        "fc03480e86b76a69",
+        "60bb95e39f80e3c0",
+        "fb7e0a449af31629"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53RW15d3k4LUZuUklMbVlkczgweW0yckxSZFkxejliM3FRdC1xanFLbEl1V1V1S0duYTdvM0gydG9PSjA4a2dwSndlb2pZQkN4VVZsUlEwcUtPWHdKSWFsUjBrcUI1bFNZ?oc=5"
+        },
+        {
+          "title": "OJK Catat Pembiayaan Pinjol Rp106,46 Triliun pada 2026 - Lensa Hukum",
+          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBWZ3l0T01fbXdDVGp5a3phclBQOC11RHRHZlpSbTYxXy1IUnVudTYzZ2RJaWp1SEhlbjByTnlxUU12bUhHb1Uyb1kwWUJNRXk5MDZhQXh6Um9paEdHMXJabg?oc=5"
+        },
+        {
+          "title": "Pembiayaan Pinjol Tembus Rp106,46 Triliun, OJK Waspadai Kredit Macet 5,36% - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSFhxU0s1S1phOU44UlpWdXJjMUxLX2FBc3ZGcUJoU1lHNG5RUG1jLWxWcHNaRkY4TUI1bWhLbWRXVzhVYXJES3VEQXo0LXlpdGRxQmFBUENjRWlleFhiWGxBZEVfc2pJT1RPT3kyaVFqdGFxRFhhR2NOOVNhaHlBNVJWVkVVMVpDYllrb3FMamo0ZERvWWRoNGZ2aVpCNVN6czhQTg?oc=5"
+        },
+        {
+          "title": "Utang Pinjol Tembus Rp 106,46 Triliun, Tumbuh 17,02 Persen - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUW41ajdCSWcxVVoyUWFhZFBJQVhsMUlSV25tZjJQdlk0eE45VzFKZXZNNVh2dWdGSDVUblB0blJUSGUxblo0SjlOQ25oaEFJSHpHUjRQaVNGcmNPOS1uM0VxaURwNkdJZEx4aTNnSHJIdnE3S0RDTlF3X1VxNTY0VmY1WXZyVS16X1p4aFdXMF9haGJ4eXJOV3B2MmlaRGNfTk5VdlR4c1NrRHJ0?oc=5"
+        },
+        {
+          "title": "Utang Pinjol Tembus Rp106,46 T, Risiko Kredit 5,36% - feedberry.com",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ19qQkpmWGZOajhOQUx1VnFpOXNBekRNLXJPOGpmajRtX05scGNUdVNTWlh3cXY3cGZJN0JTXzlLMGgyY2ZMYTlwZExQMjktS0ZkZGp6cUtQaWpNN3NSSzVFcEozelJ4V0JRanhhVUlMMTdENWV4a29vaW1HRURDZzFDUQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 9,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
     {
       "id": "llm-f506c42f5dc5",
       "eventType": "regulatory_action",
@@ -295,9 +202,9 @@
         "OJK"
       ],
       "headline": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
-      "headlineZh": "OJK推出PELITA伊斯兰项目打击非法网贷",
-      "summaryZh": "OJK联合传教士与清真寺启动PELITA Syariah项目，动员宗教渠道打击非法网贷，属监管新举措。",
-      "rationale": "监管机构启动新项目",
+      "headlineZh": "OJK推出PELITA Syariah打击非法网贷",
+      "summaryZh": "OJK联合传教士和清真寺推出PELITA Syariah项目以打击非法网贷，属监管机构发起的专项行动，值得留痕。",
+      "rationale": "监管机构发起专项行动",
       "independentSourceCount": 1,
       "domains": [
         "suarapemerintah.id"
@@ -320,255 +227,36 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
-    {
-      "id": "llm-29d17de25579",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Pemprov NTB",
-        "Kemenkum NTB"
-      ],
-      "headline": "Pinjol Ilegal dan Judi Online Mengancam NTB, Pemprov Siapkan Langkah Terpadu - RRI.co.id",
-      "headlineZh": "西努省推综合措施打击非法网贷赌博",
-      "summaryZh": "西努沙登加拉省政府筹备跨部门综合措施并推动地方条例草案，防范非法网贷与网络赌博。",
-      "rationale": "地方政府监管行动",
-      "independentSourceCount": 3,
-      "domains": [
-        "ntbprov.go.id",
-        "radarmandalika.id",
-        "rri.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a37b996aa188d253",
-        "5a82b9788f432618",
-        "de639d117673ffd9"
-      ],
-      "articles": [
-        {
-          "title": "Pinjol Ilegal dan Judi Online Mengancam NTB, Pemprov Siapkan Langkah Terpadu - RRI.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNXzRYRS0yeHlGMXp6enctb1BUOFVDOFNUSjQ0M0xoNGx4MU0yTnVvWlQxT1hXR2xPcUhGTWFPRm9XQk03eVljU2w5YkFIeVRTdmI4WGw1bUxZN29rY1RpdHY3U0N3OHRuSjhRNDJFZ05rS24yR0JMQUJ1VENlWEl0a0FVaVZyeWVFZUhWNlg2Vk0yQ2o5em1UeGdOYjZPQ0JtUWJJdy13ekpHa3N3TDk5ZTR4MnZ4SDFta2c?oc=5"
-        },
-        {
-          "title": "Provinsi NTB | Cegah Pinjol Ilegal dan Judi Online, Pemprov NTB Siapkan Langkah Terintegrasi - Pemprov NTB",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbzZ2cmdDTWx4U04yQWpZMUZ1c25xNS1zamF0QmFvaTFfRkFGXzBNTS1yb0xBREY4WTVqUTZwZXB6Y1B2X2VRN3hvaVNXeGppRDNBdWdaWTNuZ25JRGJFQ2psNll2dGd1R2lwZ1hSMTZSUU1OT3VrdFRoVC1hS0lRUFVNVGd2OTE5UmR4QkNMQWhWeTVZU2dYLWZuM09CT3d0Rkw5UGpB?oc=5"
-        },
-        {
-          "title": "Kanwil Kemenkum NTB Sosialisasikan Raperda Pencegahan Pinjol Ilegal dan Judi Online - - Radar Mandalika",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPRzhqWDFlbXBkek5YOTZteUFCcERqUmVjZEd2ZGtQemlMTjYwU2M3Z1RQa2p1Y0M3bXBJMjRMam1vSzFFSHVrVmhmemEzd2Rad2g2RktJSHdDUWxQbUxDQVZLbnNKR2RpcDAzX0FneUNYczROUmUxRmRQaW85dS13VEloc25NdnNYbGdFZC1oTEFxdF9ybEYwQ09oUzRnSDU2VjI2NnJyeUh6S1duRzlj?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-12bb4458c380",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Pemkab Kuningan"
-      ],
-      "headline": "42 Persen Guru di Kuningan Disebut Hadapi Masalah Pinjol, Bupati Minta Disdikbud Bertindak - radarcirebon.disway.id - Radar Cirebon",
-      "headlineZh": "库宁安42%教师陷网贷问题",
-      "summaryZh": "报道称库宁安42%教师面临网贷问题，县长要求教育局介入处理，反映群体性债务压力。",
-      "rationale": "群体债务困境，官方介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarcirebon.disway.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "6cc9cfc580c93cce"
-      ],
-      "articles": [
-        {
-          "title": "42 Persen Guru di Kuningan Disebut Hadapi Masalah Pinjol, Bupati Minta Disdikbud Bertindak - radarcirebon.disway.id - Radar Cirebon",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQUDVWN3Q2dUtmUjd1SGpwSEwxQnFhV3dOdmZfRmp3dl9jNXNKaFZQU1dVeHBOQ2lVYnRlLTJiV1ZqSmtvTjJyclJWTFJtLU52OVlMMWl0XzNfQXRCYTBiZ2FvSGhTcXNTOWl6ZW9oUVdGbU9IbF93MXR6SmViQ09wNHRkX3pUeUN5N2RieVRfWVk4Vkptc0xzbEtyMGVSYVhPSlJyeElPakZqcGNsd2tXTDdVQmhydjhyYmhzMUFDQUlSRWJUOFJBOGtuWG9wVk91QXdmRHY5ZC3SAcsBQVVfeXFMTk5TVWlBaWtWc3dyVk50bGRhUWpkcHotTHF3eldhMC02ZmdEMmZPcGw5M09pS09wLVN5cEVtVXpQSTl4dU9udVc4S1dHcGs3VU8tQWdkZnBYenV6cG43c2JsMkVJOWNXNl90SGJYcWI2OVEwWGJLUFQyekU3a0syNi1Xb3BsRDFhckdBYUU0ZkZmWGZuSVBKeDRIaU92NGRYYWJKWExQZDBjRGgtazVBTEJEdmVrOWY0Mng2eGloeWJuT2gyS2txSk5KLVE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9d4c1f222f48",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "GKE",
-        "Pdt Memey"
-      ],
-      "headline": "GKE Bereaksi! Fitnah Keji Arisan Bodong dan Pinjol Serang Pdt Memey, Tokoh Gereja Desak Polisi Tangkap Pelaku - Tabengan Online",
-      "headlineZh": "教会人士遭虚假理财与网贷诽谤",
-      "summaryZh": "福音教会称牧师Memey遭虚假互助会与网贷谣言诽谤，教会要求警方抓捕造谣者。",
-      "rationale": "诽谤指控，教会要求警方介入",
-      "independentSourceCount": 1,
-      "domains": [
-        "tabengan.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "14bbbab3509490fb"
-      ],
-      "articles": [
-        {
-          "title": "GKE Bereaksi! Fitnah Keji Arisan Bodong dan Pinjol Serang Pdt Memey, Tokoh Gereja Desak Polisi Tangkap Pelaku - Tabengan Online",
-          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxON0dYTDBBWmdsa2Y3eVVVaUpwMGFxZUdsd1BvUVdaemdON3RieW1IZHFMMi1HQkJPSjFPT0Z4cHFxZGJwYklreTd5bHhXZEcxTEJVcU1MLU44QTk3eENCUXF5MTdzNkg3LS1fYUZWQkJ6eGl3RXVQcnNJTUNsZGNhTEJGZEFMRGU2MTBYVXJvaDNYdE8wNVZqaHpVRm9XMTNHeG5oZjVLMmcwdk5Rc3U4S25xWDlOU0M3a2ZsRGxmMnJyWHI4UTNPWHctS0NvcTVhR2c0OEtvQmZBUThiXzA0b2tXdGlrM3Rt?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9d0a4776e6a1",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU"
-      ],
-      "headline": "KPPU Ajukan Kasasi atas Putusan Pembatalan Dugaan Kartel Bunga Pindar - Integritas News",
-      "headlineZh": "KPPU就网贷利率卡特尔案上诉",
-      "summaryZh": "印尼竞争委员会KPPU就法院撤销网贷利率卡特尔指控的判决向最高法院提出上诉。",
-      "rationale": "监管机构司法行动",
-      "independentSourceCount": 1,
-      "domains": [
-        "integritasnews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0d1db11d64bd63cb"
-      ],
-      "articles": [
-        {
-          "title": "KPPU Ajukan Kasasi atas Putusan Pembatalan Dugaan Kartel Bunga Pindar - Integritas News",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNeTI1dHVqSFJpMFFVSkszemFIMnFaMXRSQ0thb3JqWmtvazAtOTg3aGVFa1VQRlVqN1dOM09uaGRfNUZVZEdpT0pjcXhTWjlTVll0UjRnQ1h3WlBNd2pBelNCVnhRTVVZc3VwRUJYS2kxYlF4ZDZuRHVMZnVLOF9uT1RnZVh6Q29Ucnd4TC1iWEFkM1RGTXlYOFBsVFZEZw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-de65cfee28c4",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Ungkap Pengaduan Pinjol Ilegal di Jabar Tertinggi Nasional, Bogor Jadi Sorotan - Radar Bandung",
-      "headlineZh": "西爪哇非法网贷投诉全国最高",
-      "summaryZh": "OJK披露西爪哇非法网贷投诉量居全国之首，茂物成焦点，反映区域性消费者受害集中。",
-      "rationale": "监管披露投诉数据，区域性受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarbandung.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d827d22ea6501715"
-      ],
-      "articles": [
-        {
-          "title": "OJK Ungkap Pengaduan Pinjol Ilegal di Jabar Tertinggi Nasional, Bogor Jadi Sorotan - Radar Bandung",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNbC1WZ19yOVpUUG1sWF9lQnd3SjhiMUVIbkk1czhRR3l5RXJidEJRYnVUSWl5dmpfOFkxcm5kWUt0QTZxVUZ1X2hUYXdVaTU3OUJ4bzZRUzREZXJ6SWUwRXcyY25BclpkVVNoOWMzS1ZPZU1OMzE0WlVYOUdnZW9zcVRHLXZxazBLWFBULS13TmZtMHZoZi1ySllUZ255MmdMQVlKU3FjNFJiTEpUQlFJODBKVVpybTNUbzVrX2p3?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-749636fd901c",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "Satgas PASTI",
-        "OJK"
-      ],
-      "headline": "Ratusan Pinjol Ditindak, 702 Ribu Rekening Penipuan Diblokir Satgas PASTI - BITHE.co",
-      "headlineZh": "PASTI工作组取缔数百非法网贷并封70万账户",
-      "summaryZh": "Satgas PASTI打击数百家非法网贷，封堵70.2万个诈骗账户，属大规模监管执法行动。",
-      "rationale": "大规模执法，封禁账户",
-      "independentSourceCount": 1,
-      "domains": [
-        "bithe.co"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "d858551d78dca270"
-      ],
-      "articles": [
-        {
-          "title": "Ratusan Pinjol Ditindak, 702 Ribu Rekening Penipuan Diblokir Satgas PASTI - BITHE.co",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR3ZQTktFdm8yb182bzd3dmJSdmpjUjVmNnZObzFoUWNCV0REeE4yZDRYWWVlYjVCdU9oR0M0RDdlcC0zVW15eThWNjVrUXpsZHNRSzNjdlEyNlpJTDE1Yl9Tc2o5Q3AzSlpEcUtseDY4WGxDMTZzemxOdXJOSWJQbldRQm5MMXJXTDc0UTNicGplOHhaa3RVcmtsVmVxWElLekNhamxlMnRQUXJMYnfSAasBQVVfeXFMTXpKQWZNLXZuS19CcEtlX0pFNXlOS3hVd0hQQVNwLUJNZzBCcHptV0lOOFlFczZkbkpiYkt3MTRtWE44RGJUcjRBVWQyLUdTcC1xOXYxbjRuUmRwUGV0WDV6Q0lpdGY5ZmgtZ1V3S3l1V3JuWWI4dTF2bkxWNlVYTEdsSl9ncEpFajJybWFZLV91WDB0SE9qV1ZRcGloczJjYzB3di15RnQyY1g0?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 47,
-    "socialItemCount48h": 13
+    "articleCount48h": 53,
+    "socialItemCount48h": 8
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 497,
-    "classifiedCount": 138,
-    "irrelevantDropped": 102,
+    "inputCount": 481,
+    "classifiedCount": 137,
+    "irrelevantDropped": 103,
     "model": "deepseek-chat",
-    "fallbackCount": 257,
+    "fallbackCount": 241,
     "labelCounts": {
-      "NEG": 86,
-      "MIX": 28,
-      "POS": 24
+      "NEG": 67,
+      "MIX": 38,
+      "POS": 32
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
