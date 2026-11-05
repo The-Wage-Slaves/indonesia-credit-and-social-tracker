@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-11-04T08:03:20.078753+00:00",
+  "generatedAt": "2026-11-05T08:33:45.294024+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-04",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-05",
     "risk": true,
-    "level": "red",
+    "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜总统罢免Listyo Sigit并任命Ariyo Windutomo为总统办公厅代理主任**\n严重度 0.75｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜前警察总长Listyo Sigit等被列为窃听总统嫌疑人，当局称涉叛国**\n严重度 0.75｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **军警冲突/安全事件｜大规模TNI部队在窃听案发酵之际被调往雅加达**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：coercive\n\n🟠 **市场失序(汇股债)｜IHSG开盘大跌1.34%至4838点，市场担忧持续走弱**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：currency",
-      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：HIGH_PENDING。",
+      "**制度/政治骤变**\n\n🔺 **仓促立法/政策骤变｜国会临近截止期限收到政府《资产剥夺法案》问题清单，法案含死刑条款**\n严重度 0.75｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **军警冲突/安全事件｜亚齐皮迪民众在纪念活动中降下星月旗遭枪击身亡，省政府要求彻查**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：coercive\n\n🟠 **司法/执法工具化｜前监察专员Hery Susanto因腐败案被判5年监禁**\n严重度 0.55｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 7 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-04:normal:red:success"
+    "decisionId": "daily:2026-11-05:normal:high_pending:success"
   },
   "feishu": "sent"
 }

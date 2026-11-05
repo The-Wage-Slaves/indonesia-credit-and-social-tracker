@@ -1,79 +1,124 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 55.1,
-    "socialDailyVolumeRisk": 26.9,
-    "negativeSocialShare": 7.9,
+    "newsDailyVolumeRisk": 58.7,
+    "socialDailyVolumeRisk": 63.5,
+    "negativeSocialShare": 2.4,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=16; prior-7d median=12.0; robust z=0.34",
-    "socialVolume": "today=2; prior-7d median=34.0; robust z=-1.54"
+    "newsVolume": "today=20; prior-7d median=14.0; robust z=0.58",
+    "socialVolume": "today=28; prior-7d median=16.0; robust z=0.90"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-5c425b115efd",
-      "eventType": "credit_quality_stress",
+      "id": "llm-37cb69357683",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "KPPU",
+        "Pinjol"
       ],
-      "headline": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
-      "headlineZh": "网贷余额106万亿坏账率5.36%",
-      "summaryZh": "OJK数据显示2026年9月网贷融资余额达106.46万亿印尼盾，同比增长17.02%，不良率5.36%，资产质量承压值得留痕。",
-      "rationale": "官方数据揭示坏账率上升",
-      "independentSourceCount": 8,
+      "headline": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
+      "headlineZh": "法院撤销KPPU网贷利率裁定",
+      "summaryZh": "法官基于四项考量撤销KPPU关于网贷利率设定的裁决，涉及竞争监管机构对pinjol利率的干预被司法推翻，值得留痕。",
+      "rationale": "司法对监管裁定的具体撤销裁定",
+      "independentSourceCount": 1,
       "domains": [
-        "centralbatam.co.id",
-        "cnnindonesia.com",
-        "feedberry.com",
-        "lensahukum.co.id",
-        "money.kompas.com",
-        "suaragarut.id"
+        "hukumonline.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b4000c13c51f5a69",
-        "23aff80db5ec5278",
-        "ccadfa81a18e08e5",
-        "6123a08c3563f713",
-        "3d77b0c807641d1c",
-        "177ede12c69986ff",
-        "fc03480e86b76a69",
-        "60bb95e39f80e3c0",
-        "fb7e0a449af31629"
+        "d8a89ea430c66300"
       ],
       "articles": [
         {
-          "title": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
-          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53RW15d3k4LUZuUklMbVlkczgweW0yckxSZFkxejliM3FRdC1xanFLbEl1V1V1S0duYTdvM0gydG9PSjA4a2dwSndlb2pZQkN4VVZsUlEwcUtPWHdKSWFsUjBrcUI1bFNZ?oc=5"
-        },
-        {
-          "title": "OJK Catat Pembiayaan Pinjol Rp106,46 Triliun pada 2026 - Lensa Hukum",
-          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBWZ3l0T01fbXdDVGp5a3phclBQOC11RHRHZlpSbTYxXy1IUnVudTYzZ2RJaWp1SEhlbjByTnlxUU12bUhHb1Uyb1kwWUJNRXk5MDZhQXh6Um9paEdHMXJabg?oc=5"
-        },
-        {
-          "title": "Pembiayaan Pinjol Tembus Rp106,46 Triliun, OJK Waspadai Kredit Macet 5,36% - Waspada.id",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSFhxU0s1S1phOU44UlpWdXJjMUxLX2FBc3ZGcUJoU1lHNG5RUG1jLWxWcHNaRkY4TUI1bWhLbWRXVzhVYXJES3VEQXo0LXlpdGRxQmFBUENjRWlleFhiWGxBZEVfc2pJT1RPT3kyaVFqdGFxRFhhR2NOOVNhaHlBNVJWVkVVMVpDYllrb3FMamo0ZERvWWRoNGZ2aVpCNVN6czhQTg?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Tembus Rp 106,46 Triliun, Tumbuh 17,02 Persen - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUW41ajdCSWcxVVoyUWFhZFBJQVhsMUlSV25tZjJQdlk0eE45VzFKZXZNNVh2dWdGSDVUblB0blJUSGUxblo0SjlOQ25oaEFJSHpHUjRQaVNGcmNPOS1uM0VxaURwNkdJZEx4aTNnSHJIdnE3S0RDTlF3X1VxNTY0VmY1WXZyVS16X1p4aFdXMF9haGJ4eXJOV3B2MmlaRGNfTk5VdlR4c1NrRHJ0?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Tembus Rp106,46 T, Risiko Kredit 5,36% - feedberry.com",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ19qQkpmWGZOajhOQUx1VnFpOXNBekRNLXJPOGpmajRtX05scGNUdVNTWlh3cXY3cGZJN0JTXzlLMGgyY2ZMYTlwZExQMjktS0ZkZGp6cUtQaWpNN3NSSzVFcEozelJ4V0JRanhhVUlMMTdENWV4a29vaW1HRURDZzFDUQ?oc=5"
+          "title": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNHNDdHNrdnJJakdDRHhjdkVTNE55V1BMLV96S0RHY0VDWmQ5ZHNsUHh3a1BocVFOd1VzRDNsUDBEMVJxVG55NVVxOTE2VkJZR0E1WlhTbGdLOXNmeXNfY29QVWlnNG42RU9MVFVfeFdQOUZNSjVjWkVhYlZObGl6dlY0ZENpVERyWHRLQkJidWlPYkNGck12OTgwTzlSYVdDblZidmgySXZ3dWNqX2YyYzJzRGVEZTBRMGtFcEFSYVdVQQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 9,
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 12,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-4ba8b0fdd743",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Daftar Pinjol Legal per November 2026, Tersisa 94 Perusahaan Terdaftar di OJK - rbtv.disway.id - RBTV Disway",
+      "headlineZh": "OJK登记合法网贷剩94家",
+      "summaryZh": "截至2026年11月OJK登记合法网贷平台剩94家，属行业常规名录更新。",
+      "rationale": "行业常规名录动态",
+      "independentSourceCount": 1,
+      "domains": [
+        "rbtv.disway.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1a532a8a417a056b"
+      ],
+      "articles": [
+        {
+          "title": "Daftar Pinjol Legal per November 2026, Tersisa 94 Perusahaan Terdaftar di OJK - rbtv.disway.id - RBTV Disway",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMHZ0Z0o2TERpdjlNTk9VbU12V1hUa3RpU0lTdVFDVTdwZlJiUEJpNnZoaEo0ZGxrTlktel9iQmVOTFlKQlF4UHJtQXdxTE8zLVF2UUVKYWFGUmlOZFRKRHRMRDVfSHFSelFUMGJnZVVFTFhUdG1OcVZEQVhzaFN5NTF4UHgzNTlYRU5Jc2hFNVV1b0lLMmtZMzI5VU1KeXFwVEI3SExMZld1cGF3Q0xPcnB0Sm8zOVJjRkNrNdIBrwFBVV95cUxPdVpRWlRvRUc3SHJXSDQwSGxlaDFFaTlXNURabkhfMVNDX01qOWFzQ1hfcUdCLXhTUU1Nbmw4MVgydkwtTUdJXzB0Z041NHc3Q244X05lUi1ueHE5Tkl5WFNRaURuZEZFOXdGU19Rc0FCdk02WXJ1M2lieG4tTW93dEh5ajJ5c3ZaN0hRc2NiRlViZWx1QnVKZkpxX1hjSHZBeVB2N0kzcjU4Uzkzck1B?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-82c3bcd83e5b",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "Debt Collector",
+        "Boalemo警方"
+      ],
+      "headline": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
+      "headlineZh": "Boalemo三催收员成嫌犯",
+      "summaryZh": "Boalemo三名催收员涉嫌索要1000万盾并抢夺皮卡，已被列为嫌犯，属警方立案的催收伤害案。",
+      "rationale": "警方立案的催收伤害案",
+      "independentSourceCount": 1,
+      "domains": [
+        "penabicara.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e219ffaa4e4ac0e3"
+      ],
+      "articles": [
+        {
+          "title": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVHRFN29PblB3MEdJRTZuQkJUd0k1b0xWVHJLVDVOenVyQ2UtM3RlT0U4NkdZVEtzTUNseUZFVUR1cXptNDU0UzVUdTkyOEFEa3E4MWtoT2ZJeVA3M3hRTkVpSF9jdmdSN1cxdncxRy14bEZvZVl6QktBaG50NmV4bWs5Uy1ndGQ0eGN4R0FVU3NabHQ1S3ZTbDdNaWhJdlVrOFBpc0xXMTRtVVlLVTI5Sy1LWi1sd2lVeTAyQXp2U2ZFNV96czZJUVpLS19fWndNUlNvdGd2OUt3d9IB3wFBVV95cUxOMmI2UmNyMUk0LWNZcEdraVU5Z1BteFF6aExzc2N4UGRMR0JTWTNsM0dfMXNjNS1reDlWNHNQNU1Bel9NNmZaQU54VkhrYVFHZlBVNW84Qk9IQXdZSUd4WG11TS1CNGJSZVB0UWN3QmQ0WFl3dlNHMmt2SF9YSXVXeE5SOUlCUmpPSUFKOGJZd2ROeEZPTVdOclp0NEVTa3NCYWNlM2xWTVo4aExRYVRsNEp6UzdTRDRZblhQblpyQXdCSkVWTzRrWDlwYXVmaGUyQ29ESEo0Z2s5Uk9MWGlJ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -83,28 +128,185 @@
       }
     },
     {
-      "id": "llm-f506c42f5dc5",
-      "eventType": "regulatory_action",
+      "id": "llm-92b4eacc88ef",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
         "OJK"
       ],
-      "headline": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
-      "headlineZh": "OJK推出PELITA Syariah打击非法网贷",
-      "summaryZh": "OJK联合传教士和清真寺推出PELITA Syariah项目以打击非法网贷，属监管机构发起的专项行动，值得留痕。",
-      "rationale": "监管机构发起专项行动",
-      "independentSourceCount": 1,
+      "headline": "OJK Catat Utang Pinjol Capai Rp 106,48 Triliun pada September 2026 - Lensa Hukum",
+      "headlineZh": "OJK：网贷余额106.46万亿盾",
+      "summaryZh": "OJK公布2026年9月网贷未偿余额约106.46万亿盾，同比增长17.02%，属资产质量与规模监测数据。",
+      "rationale": "监管披露的行业规模数据",
+      "independentSourceCount": 11,
       "domains": [
-        "suarapemerintah.id"
+        "bloombergtechnoz.com",
+        "centralbatam.co.id",
+        "cirebontimes.com",
+        "demokratis.co.id",
+        "id.headtopics.com",
+        "lensahukum.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "578b92ad70014e8c"
+        "2748fd1e99dd3096",
+        "176f63b2413d0e83",
+        "1dbf2de9fe7cc28f",
+        "82ef42977ac45f37",
+        "1809b743148755bd",
+        "4809ede299edcf19",
+        "b4000c13c51f5a69",
+        "23aff80db5ec5278",
+        "000408c2c1670d7b",
+        "9532e2a0190511b8",
+        "5a246945e81071a9",
+        "d69e309c67e5cc76",
+        "3cec4a9d365e7535",
+        "67e883e3066434d3",
+        "d0cad03f0f2a34eb",
+        "6123a08c3563f713"
       ],
       "articles": [
         {
-          "title": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOSUVXRGxZdGZ1VHpKRlZ4UFp4Z2U2OFZSbTZBc3RPTzFiY09pdGsyUW9uQ0pMM3A2YWJFWklZMFJnTUdJZm05T2hWdld3S0xiUUdFNXJTeFZiQlRiWWhPVndndjNxWmw4b2x2amszV0ZHQzJCcWtmQlB0SVhzS3hUTmtKNG9KNHRqdDQtU3JOcENWM2JvYllVcVpNTUhObkpZUWFMb2xTOVF2R293QnE3UmF5Z19ub1Q4UHlCNkI3WQ?oc=5"
+          "title": "OJK Catat Utang Pinjol Capai Rp 106,48 Triliun pada September 2026 - Lensa Hukum",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBPZm4xVFFqaDRUN1lFRUgyNjJkenhmMjV0aG9hZC1PQVVNdUprX0JaQjNlMGZDR3ZxN0dkVG1Edk5SMVlNYWNhTWMwZzJyYTk2Z0pPTDFJc05ReVgydXNjcnln?oc=5"
+        },
+        {
+          "title": "OJK Catat Utang Pinjol Masyarakat Tembus Rp 106,48 Triliun - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8wbS1ORUZsc244MnA5VHp4NXNReXpYSExHQkdUN1E4VElicXNBbS1wT2lpdTE4ZXlhS2liRG1nMmFtUVlMQV9qUGpVUTZFZlk4SWp3WUxRVDN1eUFHZXdvelVxQQ?oc=5"
+        },
+        {
+          "title": "OJK Catat Utang Pinjol Tembus Rp 106,48 Triliun - Peradaban.id",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBIV1BGUHFobGpLcW8xZVhWajJxdi1QVnRSenQ4MjZodW9tR20yWlRSZDhsTW0zOFAzWng3WW5yT1ZHTlBvUE8zS1ZHR05MdTVnbFdLUEhmWUhHc3IyTmRranNR?oc=5"
+        },
+        {
+          "title": "OJK: Outstanding Pinjol Pencapai Rp106,48 Triliun September 2026 - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNMGI0OTBiT0lmUG5qMXJtMVlUX1VrbWNSSU83WGk0TFdqUnVySTB5VTNmX0luVF9jbTZtbHE2M3VnUFJFdW4xcTdVX3piWHlBcVdaX3Z0RF9nTFlEdTRfMlZzalM5OExUcFMzSFk0NUFVZHQ2c3hHUjl2VnhmaEJrTkxzV3NpNUNRcmtNMEZQTzZwRHdfdm1HbEJtT1hVblE?oc=5"
+        },
+        {
+          "title": "Oustanding Pinjol Turun Tipis per September 2026 Jadi Rp106,48T - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQm1UZHpYazdtWkJSc0pnTm1NY2pGcEh4c0dSemNNaUU5YURBVm05MWU2X0llV19RdlZLcG50ZjNGMGxJMngtZVZjSTNkeUJyYVFCUDBla1RYckozRnVYZVRiRUlxc2xHQ1ZsNGMtYl84WDFLMlpKY3BfYk5qVEZTR0RkSWd2TUdfY0lXektUTlRMNjU4MUVvREFGajQ2V0NsWmZ3bjdqX1drc3JVRmw0VTZDRVhIQQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 16,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-e388c3959140",
+      "eventType": "systemic_platform_stress",
+      "severity": 0.55,
+      "entities": [
+        "MNC Bank",
+        "OJK"
+      ],
+      "headline": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
+      "headlineZh": "MNC银行数字服务恢复中",
+      "summaryZh": "OJK要求MNC银行客户保持冷静，其数字服务恢复仍在进行，属平台服务中断事件。",
+      "rationale": "平台数字服务中断",
+      "independentSourceCount": 1,
+      "domains": [
+        "topik.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "7859316e19b9019d"
+      ],
+      "articles": [
+        {
+          "title": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOExjamc1UGpmdFFKVm5UU3ZHV0ZrOFZ2bVlOcUFsYnlpOWVQLTB4eDZsNzliUC1qRk4ybmlBSDBkNkR6dmc0UDlYWnl3UERibDFVMWVBRjNHYXpjVHJaUzhqVE9OY0NJV0FVR1RQdklTZS1TRHFfdUtPSjlYb1owWTFSeEx1ZWJxalg3R2VOWWJUelJ0ZEVIUWFpM1E1bW4xSUROSjBxaw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-82dea476d598",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Utang Pinjol Capai Rp106,48 T, Kredit Macet Tembus 5%",
+      "headlineZh": "网贷余额106.48万亿坏账破5%",
+      "summaryZh": "CNBC等报道网贷未偿余额达106.48万亿盾，不良率升至5.36%，OJK关注坏账风险，属资产质量承压。",
+      "rationale": "不良率上升的资产质量信号",
+      "independentSourceCount": 2,
+      "domains": [
+        "cnbcindonesia.com",
+        "waspada.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f2715eb96fe901ef",
+        "b3276b3aaf0dd446",
+        "ccadfa81a18e08e5"
+      ],
+      "articles": [
+        {
+          "title": "Utang Pinjol Capai Rp106,48 T, Kredit Macet Tembus 5%",
+          "link": "https://www.cnbcindonesia.com/market/20261105145356-17-782659/utang-pinjol-capai-rp10648-t-kredit-macet-tembus-5"
+        },
+        {
+          "title": "Utang Pinjol Capai Rp106,48 T, Kredit Macet Tembus 5% - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaFlYblRFbnl3UWVnX1h0VmI3UUNWY1ppanY1Tm1zOTM4LXFlMmF4a0h2aWF1WmFfTmg3S2UwSU83YWFvenltQmMwMjl1ZDk1bHJlYlpaVExIUmFscXh0UUMtdnE0SnE4QlpMTjNJaWdJaGdLLU5tb0taRF9oMUZrY2ZuMWk1OUc4YVdBckZzR055S3poYnJPcXJ0SXk4cFl1dVZZZktsVXBscnQtQmFIUlhB0gG3AUFVX3lxTE5Ya0J1aF84WGdkOWVFUnF5WVlyNWlpSnVaV2RmdGVDcTQ3eFNFZF9YOUIxY2tYNmlwdnBFUi0wMkN0Mlo0Z3lTNjJKNDRuMFE3eVRLR3lZVEpuUno3a0VKTFJuQzFPOFE3SU53UlloQld6SDY5cnhzSU5MMG54UHRUdTh1eXlhaHdlaXhMWnBlMFFrMFBBZF9iUjZiOEx2T3pNajVpeGNoaUZsanFTZnpaZUp6UFBPMA?oc=5"
+        },
+        {
+          "title": "Pembiayaan Pinjol Tembus Rp106,46 Triliun, OJK Waspadai Kredit Macet 5,36% - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSFhxU0s1S1phOU44UlpWdXJjMUxLX2FBc3ZGcUJoU1lHNG5RUG1jLWxWcHNaRkY4TUI1bWhLbWRXVzhVYXJES3VEQXo0LXlpdGRxQmFBUENjRWlleFhiWGxBZEVfc2pJT1RPT3kyaVFqdGFxRFhhR2NOOVNhaHlBNVJWVkVVMVpDYllrb3FMamo0ZERvWWRoNGZ2aVpCNVN6czhQTg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-61ed3ea35a18",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "UATAS",
+        "Jabar"
+      ],
+      "headline": "Jabar Jadi Provinsi dengan Utang Pindar Terbesar, Ini Pesan UATAS - Infobanknews",
+      "headlineZh": "西爪哇成Pindar债务最大省",
+      "summaryZh": "UATAS就西爪哇成为Pindar债务最大省份发出提示，属行业动态信息。",
+      "rationale": "行业动态信息",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "eaa72aace393af19"
+      ],
+      "articles": [
+        {
+          "title": "Jabar Jadi Provinsi dengan Utang Pindar Terbesar, Ini Pesan UATAS - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdEdlVnhqcWpJUkRQMXdmc2NsTnR2U1hjWUJmSGloMFNKS3p3TnZ4aDNISmNtcjRkZlU4WDNLNFRCeDJPdlJ6cUhieGxXSkwtSXR6Y2tSbWluajdnZlpWLTFOQ3hCNkxISTlKRVpkTU4ybHRTX2JUV3BtU2JaYXc5NVZTMzJKOXJ3cWNITDlsOEoxaGs?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -122,8 +324,8 @@
     "method": "deepseek_credit_event_v1",
     "status": "ok",
     "candidateCount": 40,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 19,
+    "eventGroupCount": 7,
+    "rejectedNonEvents": 15,
     "unassignedCount": 0,
     "articleBodyStatus": {
       "ok": 40
@@ -132,60 +334,105 @@
   },
   "events": [
     {
-      "id": "llm-5c425b115efd",
-      "eventType": "credit_quality_stress",
+      "id": "llm-37cb69357683",
+      "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
-        "OJK"
+        "KPPU",
+        "Pinjol"
       ],
-      "headline": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
-      "headlineZh": "网贷余额106万亿坏账率5.36%",
-      "summaryZh": "OJK数据显示2026年9月网贷融资余额达106.46万亿印尼盾，同比增长17.02%，不良率5.36%，资产质量承压值得留痕。",
-      "rationale": "官方数据揭示坏账率上升",
-      "independentSourceCount": 8,
+      "headline": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
+      "headlineZh": "法院撤销KPPU网贷利率裁定",
+      "summaryZh": "法官基于四项考量撤销KPPU关于网贷利率设定的裁决，涉及竞争监管机构对pinjol利率的干预被司法推翻，值得留痕。",
+      "rationale": "司法对监管裁定的具体撤销裁定",
+      "independentSourceCount": 1,
       "domains": [
-        "centralbatam.co.id",
-        "cnnindonesia.com",
-        "feedberry.com",
-        "lensahukum.co.id",
-        "money.kompas.com",
-        "suaragarut.id"
+        "hukumonline.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "b4000c13c51f5a69",
-        "23aff80db5ec5278",
-        "ccadfa81a18e08e5",
-        "6123a08c3563f713",
-        "3d77b0c807641d1c",
-        "177ede12c69986ff",
-        "fc03480e86b76a69",
-        "60bb95e39f80e3c0",
-        "fb7e0a449af31629"
+        "d8a89ea430c66300"
       ],
       "articles": [
         {
-          "title": "OJK Catat Pembiayaan Pinjol Capai Rp106,46 Triliun - SuaraGarut.ID",
-          "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53RW15d3k4LUZuUklMbVlkczgweW0yckxSZFkxejliM3FRdC1xanFLbEl1V1V1S0duYTdvM0gydG9PSjA4a2dwSndlb2pZQkN4VVZsUlEwcUtPWHdKSWFsUjBrcUI1bFNZ?oc=5"
-        },
-        {
-          "title": "OJK Catat Pembiayaan Pinjol Rp106,46 Triliun pada 2026 - Lensa Hukum",
-          "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBWZ3l0T01fbXdDVGp5a3phclBQOC11RHRHZlpSbTYxXy1IUnVudTYzZ2RJaWp1SEhlbjByTnlxUU12bUhHb1Uyb1kwWUJNRXk5MDZhQXh6Um9paEdHMXJabg?oc=5"
-        },
-        {
-          "title": "Pembiayaan Pinjol Tembus Rp106,46 Triliun, OJK Waspadai Kredit Macet 5,36% - Waspada.id",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSFhxU0s1S1phOU44UlpWdXJjMUxLX2FBc3ZGcUJoU1lHNG5RUG1jLWxWcHNaRkY4TUI1bWhLbWRXVzhVYXJES3VEQXo0LXlpdGRxQmFBUENjRWlleFhiWGxBZEVfc2pJT1RPT3kyaVFqdGFxRFhhR2NOOVNhaHlBNVJWVkVVMVpDYllrb3FMamo0ZERvWWRoNGZ2aVpCNVN6czhQTg?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Tembus Rp 106,46 Triliun, Tumbuh 17,02 Persen - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPUW41ajdCSWcxVVoyUWFhZFBJQVhsMUlSV25tZjJQdlk0eE45VzFKZXZNNVh2dWdGSDVUblB0blJUSGUxblo0SjlOQ25oaEFJSHpHUjRQaVNGcmNPOS1uM0VxaURwNkdJZEx4aTNnSHJIdnE3S0RDTlF3X1VxNTY0VmY1WXZyVS16X1p4aFdXMF9haGJ4eXJOV3B2MmlaRGNfTk5VdlR4c1NrRHJ0?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Tembus Rp106,46 T, Risiko Kredit 5,36% - feedberry.com",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNZ19qQkpmWGZOajhOQUx1VnFpOXNBekRNLXJPOGpmajRtX05scGNUdVNTWlh3cXY3cGZJN0JTXzlLMGgyY2ZMYTlwZExQMjktS0ZkZGp6cUtQaWpNN3NSSzVFcEozelJ4V0JRanhhVUlMMTdENWV4a29vaW1HRURDZzFDUQ?oc=5"
+          "title": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNHNDdHNrdnJJakdDRHhjdkVTNE55V1BMLV96S0RHY0VDWmQ5ZHNsUHh3a1BocVFOd1VzRDNsUDBEMVJxVG55NVVxOTE2VkJZR0E1WlhTbGdLOXNmeXNfY29QVWlnNG42RU9MVFVfeFdQOUZNSjVjWkVhYlZObGl6dlY0ZENpVERyWHRLQkJidWlPYkNGck12OTgwTzlSYVdDblZidmgySXZ3dWNqX2YyYzJzRGVEZTBRMGtFcEFSYVdVQQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 9,
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 12,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-4ba8b0fdd743",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Daftar Pinjol Legal per November 2026, Tersisa 94 Perusahaan Terdaftar di OJK - rbtv.disway.id - RBTV Disway",
+      "headlineZh": "OJK登记合法网贷剩94家",
+      "summaryZh": "截至2026年11月OJK登记合法网贷平台剩94家，属行业常规名录更新。",
+      "rationale": "行业常规名录动态",
+      "independentSourceCount": 1,
+      "domains": [
+        "rbtv.disway.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1a532a8a417a056b"
+      ],
+      "articles": [
+        {
+          "title": "Daftar Pinjol Legal per November 2026, Tersisa 94 Perusahaan Terdaftar di OJK - rbtv.disway.id - RBTV Disway",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMHZ0Z0o2TERpdjlNTk9VbU12V1hUa3RpU0lTdVFDVTdwZlJiUEJpNnZoaEo0ZGxrTlktel9iQmVOTFlKQlF4UHJtQXdxTE8zLVF2UUVKYWFGUmlOZFRKRHRMRDVfSHFSelFUMGJnZVVFTFhUdG1OcVZEQVhzaFN5NTF4UHgzNTlYRU5Jc2hFNVV1b0lLMmtZMzI5VU1KeXFwVEI3SExMZld1cGF3Q0xPcnB0Sm8zOVJjRkNrNdIBrwFBVV95cUxPdVpRWlRvRUc3SHJXSDQwSGxlaDFFaTlXNURabkhfMVNDX01qOWFzQ1hfcUdCLXhTUU1Nbmw4MVgydkwtTUdJXzB0Z041NHc3Q244X05lUi1ueHE5Tkl5WFNRaURuZEZFOXdGU19Rc0FCdk02WXJ1M2lieG4tTW93dEh5ajJ5c3ZaN0hRc2NiRlViZWx1QnVKZkpxX1hjSHZBeVB2N0kzcjU4Uzkzck1B?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-82c3bcd83e5b",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "Debt Collector",
+        "Boalemo警方"
+      ],
+      "headline": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
+      "headlineZh": "Boalemo三催收员成嫌犯",
+      "summaryZh": "Boalemo三名催收员涉嫌索要1000万盾并抢夺皮卡，已被列为嫌犯，属警方立案的催收伤害案。",
+      "rationale": "警方立案的催收伤害案",
+      "independentSourceCount": 1,
+      "domains": [
+        "penabicara.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e219ffaa4e4ac0e3"
+      ],
+      "articles": [
+        {
+          "title": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
+          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVHRFN29PblB3MEdJRTZuQkJUd0k1b0xWVHJLVDVOenVyQ2UtM3RlT0U4NkdZVEtzTUNseUZFVUR1cXptNDU0UzVUdTkyOEFEa3E4MWtoT2ZJeVA3M3hRTkVpSF9jdmdSN1cxdncxRy14bEZvZVl6QktBaG50NmV4bWs5Uy1ndGQ0eGN4R0FVU3NabHQ1S3ZTbDdNaWhJdlVrOFBpc0xXMTRtVVlLVTI5Sy1LWi1sd2lVeTAyQXp2U2ZFNV96czZJUVpLS19fWndNUlNvdGd2OUt3d9IB3wFBVV95cUxOMmI2UmNyMUk0LWNZcEdraVU5Z1BteFF6aExzc2N4UGRMR0JTWTNsM0dfMXNjNS1reDlWNHNQNU1Bel9NNmZaQU54VkhrYVFHZlBVNW84Qk9IQXdZSUd4WG11TS1CNGJSZVB0UWN3QmQ0WFl3dlNHMmt2SF9YSXVXeE5SOUlCUmpPSUFKOGJZd2ROeEZPTVdOclp0NEVTa3NCYWNlM2xWTVo4aExRYVRsNEp6UzdTRDRZblhQblpyQXdCSkVWTzRrWDlwYXVmaGUyQ29ESEo0Z2s5Uk9MWGlJ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -195,28 +442,185 @@
       }
     },
     {
-      "id": "llm-f506c42f5dc5",
-      "eventType": "regulatory_action",
+      "id": "llm-92b4eacc88ef",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
         "OJK"
       ],
-      "headline": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
-      "headlineZh": "OJK推出PELITA Syariah打击非法网贷",
-      "summaryZh": "OJK联合传教士和清真寺推出PELITA Syariah项目以打击非法网贷，属监管机构发起的专项行动，值得留痕。",
-      "rationale": "监管机构发起专项行动",
-      "independentSourceCount": 1,
+      "headline": "OJK Catat Utang Pinjol Capai Rp 106,48 Triliun pada September 2026 - Lensa Hukum",
+      "headlineZh": "OJK：网贷余额106.46万亿盾",
+      "summaryZh": "OJK公布2026年9月网贷未偿余额约106.46万亿盾，同比增长17.02%，属资产质量与规模监测数据。",
+      "rationale": "监管披露的行业规模数据",
+      "independentSourceCount": 11,
       "domains": [
-        "suarapemerintah.id"
+        "bloombergtechnoz.com",
+        "centralbatam.co.id",
+        "cirebontimes.com",
+        "demokratis.co.id",
+        "id.headtopics.com",
+        "lensahukum.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "578b92ad70014e8c"
+        "2748fd1e99dd3096",
+        "176f63b2413d0e83",
+        "1dbf2de9fe7cc28f",
+        "82ef42977ac45f37",
+        "1809b743148755bd",
+        "4809ede299edcf19",
+        "b4000c13c51f5a69",
+        "23aff80db5ec5278",
+        "000408c2c1670d7b",
+        "9532e2a0190511b8",
+        "5a246945e81071a9",
+        "d69e309c67e5cc76",
+        "3cec4a9d365e7535",
+        "67e883e3066434d3",
+        "d0cad03f0f2a34eb",
+        "6123a08c3563f713"
       ],
       "articles": [
         {
-          "title": "OJK Luncurkan PELITA Syariah: Gandeng Pendakwah dan Masjid untuk Berantas Pinjol Ilegal - Suara Pemerintah",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOSUVXRGxZdGZ1VHpKRlZ4UFp4Z2U2OFZSbTZBc3RPTzFiY09pdGsyUW9uQ0pMM3A2YWJFWklZMFJnTUdJZm05T2hWdld3S0xiUUdFNXJTeFZiQlRiWWhPVndndjNxWmw4b2x2amszV0ZHQzJCcWtmQlB0SVhzS3hUTmtKNG9KNHRqdDQtU3JOcENWM2JvYllVcVpNTUhObkpZUWFMb2xTOVF2R293QnE3UmF5Z19ub1Q4UHlCNkI3WQ?oc=5"
+          "title": "OJK Catat Utang Pinjol Capai Rp 106,48 Triliun pada September 2026 - Lensa Hukum",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBPZm4xVFFqaDRUN1lFRUgyNjJkenhmMjV0aG9hZC1PQVVNdUprX0JaQjNlMGZDR3ZxN0dkVG1Edk5SMVlNYWNhTWMwZzJyYTk2Z0pPTDFJc05ReVgydXNjcnln?oc=5"
+        },
+        {
+          "title": "OJK Catat Utang Pinjol Masyarakat Tembus Rp 106,48 Triliun - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE8wbS1ORUZsc244MnA5VHp4NXNReXpYSExHQkdUN1E4VElicXNBbS1wT2lpdTE4ZXlhS2liRG1nMmFtUVlMQV9qUGpVUTZFZlk4SWp3WUxRVDN1eUFHZXdvelVxQQ?oc=5"
+        },
+        {
+          "title": "OJK Catat Utang Pinjol Tembus Rp 106,48 Triliun - Peradaban.id",
+          "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBIV1BGUHFobGpLcW8xZVhWajJxdi1QVnRSenQ4MjZodW9tR20yWlRSZDhsTW0zOFAzWng3WW5yT1ZHTlBvUE8zS1ZHR05MdTVnbFdLUEhmWUhHc3IyTmRranNR?oc=5"
+        },
+        {
+          "title": "OJK: Outstanding Pinjol Pencapai Rp106,48 Triliun September 2026 - Head Topics",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNMGI0OTBiT0lmUG5qMXJtMVlUX1VrbWNSSU83WGk0TFdqUnVySTB5VTNmX0luVF9jbTZtbHE2M3VnUFJFdW4xcTdVX3piWHlBcVdaX3Z0RF9nTFlEdTRfMlZzalM5OExUcFMzSFk0NUFVZHQ2c3hHUjl2VnhmaEJrTkxzV3NpNUNRcmtNMEZQTzZwRHdfdm1HbEJtT1hVblE?oc=5"
+        },
+        {
+          "title": "Oustanding Pinjol Turun Tipis per September 2026 Jadi Rp106,48T - Bloomberg Technoz",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQm1UZHpYazdtWkJSc0pnTm1NY2pGcEh4c0dSemNNaUU5YURBVm05MWU2X0llV19RdlZLcG50ZjNGMGxJMngtZVZjSTNkeUJyYVFCUDBla1RYckozRnVYZVRiRUlxc2xHQ1ZsNGMtYl84WDFLMlpKY3BfYk5qVEZTR0RkSWd2TUdfY0lXektUTlRMNjU4MUVvREFGajQ2V0NsWmZ3bjdqX1drc3JVRmw0VTZDRVhIQQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 16,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-e388c3959140",
+      "eventType": "systemic_platform_stress",
+      "severity": 0.55,
+      "entities": [
+        "MNC Bank",
+        "OJK"
+      ],
+      "headline": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
+      "headlineZh": "MNC银行数字服务恢复中",
+      "summaryZh": "OJK要求MNC银行客户保持冷静，其数字服务恢复仍在进行，属平台服务中断事件。",
+      "rationale": "平台数字服务中断",
+      "independentSourceCount": 1,
+      "domains": [
+        "topik.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "7859316e19b9019d"
+      ],
+      "articles": [
+        {
+          "title": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOExjamc1UGpmdFFKVm5UU3ZHV0ZrOFZ2bVlOcUFsYnlpOWVQLTB4eDZsNzliUC1qRk4ybmlBSDBkNkR6dmc0UDlYWnl3UERibDFVMWVBRjNHYXpjVHJaUzhqVE9OY0NJV0FVR1RQdklTZS1TRHFfdUtPSjlYb1owWTFSeEx1ZWJxalg3R2VOWWJUelJ0ZEVIUWFpM1E1bW4xSUROSjBxaw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-82dea476d598",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Utang Pinjol Capai Rp106,48 T, Kredit Macet Tembus 5%",
+      "headlineZh": "网贷余额106.48万亿坏账破5%",
+      "summaryZh": "CNBC等报道网贷未偿余额达106.48万亿盾，不良率升至5.36%，OJK关注坏账风险，属资产质量承压。",
+      "rationale": "不良率上升的资产质量信号",
+      "independentSourceCount": 2,
+      "domains": [
+        "cnbcindonesia.com",
+        "waspada.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f2715eb96fe901ef",
+        "b3276b3aaf0dd446",
+        "ccadfa81a18e08e5"
+      ],
+      "articles": [
+        {
+          "title": "Utang Pinjol Capai Rp106,48 T, Kredit Macet Tembus 5%",
+          "link": "https://www.cnbcindonesia.com/market/20261105145356-17-782659/utang-pinjol-capai-rp10648-t-kredit-macet-tembus-5"
+        },
+        {
+          "title": "Utang Pinjol Capai Rp106,48 T, Kredit Macet Tembus 5% - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaFlYblRFbnl3UWVnX1h0VmI3UUNWY1ppanY1Tm1zOTM4LXFlMmF4a0h2aWF1WmFfTmg3S2UwSU83YWFvenltQmMwMjl1ZDk1bHJlYlpaVExIUmFscXh0UUMtdnE0SnE4QlpMTjNJaWdJaGdLLU5tb0taRF9oMUZrY2ZuMWk1OUc4YVdBckZzR055S3poYnJPcXJ0SXk4cFl1dVZZZktsVXBscnQtQmFIUlhB0gG3AUFVX3lxTE5Ya0J1aF84WGdkOWVFUnF5WVlyNWlpSnVaV2RmdGVDcTQ3eFNFZF9YOUIxY2tYNmlwdnBFUi0wMkN0Mlo0Z3lTNjJKNDRuMFE3eVRLR3lZVEpuUno3a0VKTFJuQzFPOFE3SU53UlloQld6SDY5cnhzSU5MMG54UHRUdTh1eXlhaHdlaXhMWnBlMFFrMFBBZF9iUjZiOEx2T3pNajVpeGNoaUZsanFTZnpaZUp6UFBPMA?oc=5"
+        },
+        {
+          "title": "Pembiayaan Pinjol Tembus Rp106,46 Triliun, OJK Waspadai Kredit Macet 5,36% - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPSFhxU0s1S1phOU44UlpWdXJjMUxLX2FBc3ZGcUJoU1lHNG5RUG1jLWxWcHNaRkY4TUI1bWhLbWRXVzhVYXJES3VEQXo0LXlpdGRxQmFBUENjRWlleFhiWGxBZEVfc2pJT1RPT3kyaVFqdGFxRFhhR2NOOVNhaHlBNVJWVkVVMVpDYllrb3FMamo0ZERvWWRoNGZ2aVpCNVN6czhQTg?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-61ed3ea35a18",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "UATAS",
+        "Jabar"
+      ],
+      "headline": "Jabar Jadi Provinsi dengan Utang Pindar Terbesar, Ini Pesan UATAS - Infobanknews",
+      "headlineZh": "西爪哇成Pindar债务最大省",
+      "summaryZh": "UATAS就西爪哇成为Pindar债务最大省份发出提示，属行业动态信息。",
+      "rationale": "行业动态信息",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "eaa72aace393af19"
+      ],
+      "articles": [
+        {
+          "title": "Jabar Jadi Provinsi dengan Utang Pindar Terbesar, Ini Pesan UATAS - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdEdlVnhqcWpJUkRQMXdmc2NsTnR2U1hjWUJmSGloMFNKS3p3TnZ4aDNISmNtcjRkZlU4WDNLNFRCeDJPdlJ6cUhieGxXSkwtSXR6Y2tSbWluajdnZlpWLTFOQ3hCNkxISTlKRVpkTU4ybHRTX2JUV3BtU2JaYXc5NVZTMzJKOXJ3cWNITDlsOEoxaGs?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -242,21 +646,21 @@
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 53,
-    "socialItemCount48h": 8
+    "articleCount48h": 47,
+    "socialItemCount48h": 35
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 481,
-    "classifiedCount": 137,
-    "irrelevantDropped": 103,
+    "inputCount": 517,
+    "classifiedCount": 107,
+    "irrelevantDropped": 133,
     "model": "deepseek-chat",
-    "fallbackCount": 241,
+    "fallbackCount": 277,
     "labelCounts": {
-      "NEG": 67,
-      "MIX": 38,
-      "POS": 32
+      "NEG": 60,
+      "MIX": 30,
+      "POS": 17
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
