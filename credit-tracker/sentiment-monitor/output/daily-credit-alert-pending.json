@@ -1,556 +1,1396 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-06",
-  "level": "normal",
+  "date": "2026-11-07",
+  "level": "degraded",
   "signals": {
-    "newsDailyVolumeRisk": 42.1,
-    "socialDailyVolumeRisk": 30.9,
-    "negativeSocialShare": 7.4,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 32.3,
+    "socialDailyVolumeRisk": 27.2,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=8; prior-7d median=15.0; robust z=-0.52",
-    "socialVolume": "today=3; prior-7d median=20.0; robust z=-1.27"
+    "newsVolume": "today=7; prior-7d median=21.0; robust z=-1.18",
+    "socialVolume": "today=6; prior-7d median=24.0; robust z=-1.52"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-c39f91618509",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Pindar",
-        "Pinjol"
-      ],
-      "headline": "Kesulitan Bayar Pinjol? OJK Catat Risiko Keterlambatan Meningkat - Berita Manado",
-      "headlineZh": "OJK数据：Pindar不良率达5.36%超安全线",
-      "summaryZh": "OJK披露线上借贷余额106.48万亿印尼盾，TWP90不良率升至5.36%超过安全阈值，反映行业资产质量承压。",
-      "rationale": "监管机构发布的具体统计数据，属资产质量事件",
-      "independentSourceCount": 14,
-      "domains": [
-        "amp.suara.com",
-        "bantentv.com",
-        "beritamanado.com",
-        "centralbatam.co.id",
-        "cirebontimes.com",
-        "demokratis.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "efaeda088ee334f1",
-        "5ccb564eb1e83787",
-        "2d073e6156660513",
-        "14d6e070dc4a291c",
-        "6eb9657503f72fd4",
-        "3a698b20e46c606e",
-        "0c965aaaa3e77db1",
-        "441ba4cac0d53cdf",
-        "da54aa70a6415e7f",
-        "b1702a08f3f9f7bf",
-        "52bc6ed77cb2830a",
-        "73d3962213d1fe5e",
-        "f0fa41aea0b069f6",
-        "4924d25cea54f71d",
-        "05b6f9aa75b7f1bd",
-        "176f63b2413d0e83",
-        "89120e9589b2f53c",
-        "1dbf2de9fe7cc28f"
-      ],
-      "articles": [
-        {
-          "title": "Kesulitan Bayar Pinjol? OJK Catat Risiko Keterlambatan Meningkat - Berita Manado",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ldEZpUGF1YlZvTHVqT2ZpY3g5UG1kOEh1U2JSY2pMM1lRbXc3VzN0cUVJT2FTci1UbVFMNzJaOFhXOUFFTUJaQ0M4U204Uk9SUG82YUxiVm1rYlhnTHEtOFY3MjNTM2gyVWIyTElnZw?oc=5"
-        },
-        {
-          "title": "Kredit Macet Pinjol Tembus 5,36 Persen, Lampaui Batas Aman OJK - bantentv.com",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcXFnS1hJLW9TN0NCN2xwTkJpcUxFY0UteFVkZGtOV3BteG9HX0Z0WFZQTXQ5RnRLN2gydDVHWFYzOEtkTC1FRHNLSnF1MDRveEJUcHJORjBpMUpRVFNPb3RJeEVnVkZwcUtTRjJfV3BsZDJtdWJvWFNLX0hSUGhfaFFjRGo1N3ZTaV9YaHBjM2w4b1N1Q19ZeDZBTk9laTA?oc=5"
-        },
-        {
-          "title": "OJK Perhatikan Pinjol: Pembiayaan Tembus Rp106 Triliun, tapi Kredit Macet Naik - Inilah.com",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbjdNc1ctSUdNU0hseEkzZXU5Y2JXTnlqbkxjVXEtMTBNanZBM1BHZ0w4WTN2VkhWaWlFZFdPZDJQWVd5Mkd2OHExLUZKelU3d3l0YmtaeUstcWtMMFB6bEUzR3djWU5HR3MtbWJjVW5RaEFlYjd4Tld4N1hJbmNUaFdJNXo4NDF4NnQ2RDROMkJGbkF4SDFBb2dITGMtLXQx?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Masyarakat Indonesia Tembus Rp106,48 Triliun, Rasio Gagal Bayar Makin Tinggi - Suara.com",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQeWtVcjJyMmF2WVBJZTZzZjNFTDhCN0hFUjFrbk1PeVhJS001YktIZDVQelZkWVV5dFVQR21BcW5iLWxlZ3hTN2dTSHEzRi1FTUlDVE5NeE1Eb20xNUpWRk9zVE9ZWnplRzZEMThIV3BMbmYxZzBKS25OcndUYnBZQjNaT09MYjNIQ2NXOER4SE1QanVpNXRuUXlobWFLNXdUeXJqd05sZm1LWXpvWEJOUldLcFpyRmRxUmlTVng5aVNIQVp6bFRwTjhsclJzOTTSAc8BQVVfeXFMUHlrVXIycjJhdllQSWU2c2YzRUw4QjdIRVIxa25NT3lYSUtNNWJLSGQ1UHpWZFlVeXRVUEdtQXFuYi1sZWd4UzdnU0hxM0YtRU1JQ1ROTXhNRG9tMTVKVkZPc1RPWVp6ZUc2RDE4SFdwTG5mMWcwSktuTnJ3VGJwWUIzWk9PTGIzSENjVzhEeEhNUGp1aTV0blF5aG1hSzV3VHlyandObGZtS1l6b1hCTlJXS3BackZkcVJpU1Z4OWlTSEFaemxUcE44bHJSczk0?oc=5"
-        },
-        {
-          "title": "Foto : Kredit Macet Pinjaman Online Terus Naik, Kini Tembus 5,36 Persen Halaman 3 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcWpLel85UGFiQjc3ZU9qY2xIeE5tNHVTekFMMFh5ZVhBaHhvWjRPLWJfM0pUXy03dE9mOURURlpRRnhNN2laY01DWTdwWkJfWWtxcmlLNTN2Q2U3NGpoN2hfYWxGVjFaZlNzODJhMU1GMEIwWWQwcVlWR0VudDZKS1luc0xKYUh3aHVERkNMRlVkdkxNeV82LXZfajFYeVVRMjRRU0lZSUlKTUlBWllzM3BKZ2c3SURzckhvTlUwRQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 18,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 14,
-        "negativeShare": 7.1,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-0f7e5eda87d7",
+      "id": "auto-9448f9504e37106a",
       "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK",
-        "Multifinance",
-        "Fintech Lending"
+      "severity": 0.92,
+      "articleIds": [
+        "474535bf6141d50a"
       ],
-      "headline": "11 Multifinance dan 11 Fintech Lending dapat Sanksi OJK pada Oktober 2026 - kontan.co.id",
-      "headlineZh": "OJK对11家多金融与11家P2P实施处罚",
-      "summaryZh": "OJK于2026年10月对11家多金融公司和11家金融科技借贷平台作出行政处罚，属监管执法动作。",
-      "rationale": "监管机构对具体机构作出处罚，属监管介入",
+      "socialItemIds": [],
       "independentSourceCount": 1,
       "domains": [
-        "keuangan.kontan.co.id"
+        "dataindonesia.id"
       ],
+      "platforms": [],
       "hasPrimarySource": false,
-      "articleIds": [
-        "f0bb5479d8c8e848"
-      ],
-      "articles": [
-        {
-          "title": "11 Multifinance dan 11 Fintech Lending dapat Sanksi OJK pada Oktober 2026 - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNR3AxNVhoekVoNzVCeDMyUktxTkN6NkVEQktBTjRESGN2c0pEM3YySG51MldLcjM3amdDS3JaYXN5YUJZV2lGb29hamlBcUpTVzNFREJIUExnZ0xOdllVUHY5VDFkX1VTaC00VERydWpaTnVDREdnWHd1dEQ1MGNvQnU0T0VMWk9HMmpCSHJJQkJFR2pBV0NCYUdnWnBxc0NXWjd5ZWNRVjJRdnc30gGmAUFVX3lxTE9qczBBOWJRTmJOdDMyRWd6eEdCNWZlUDJ5MUxIOHZFV19YNmxIY21HWTFieUxEckZDWGY5VDItSXZzZmszUG9rTndJeGhJMGI4bnUxV0l0Wk1jcV9Yd19OUFhuaFl2WlVBMFZHZnhJSlZsbmpLNFlBNXptN0R2MGVaYkhGblVPRnhINkVRNC1uUG9jSmhZN1lFNkhBMFMxWHFvUWM5REE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "headline": "OJK Hentikan 1.489 Entitas Keuangan Ilegal Sepanjang Januari-Oktober 2026, Aduan Pinjol Tertinggi - DataIndonesia",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-84eead9b16b8",
+      "id": "auto-bbbb69398786864f",
       "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK"
+      "severity": 0.92,
+      "articleIds": [
+        "237752f0e5f74fac"
       ],
-      "headline": "OJK Hentikan 1.489 Pinjol dan Investasi Ilegal Sepanjang 2026 - Newsurban",
-      "headlineZh": "OJK 2026年关停1489家非法网贷与投资",
-      "summaryZh": "OJK全年关停1489家非法网贷及非法投资平台，属监管取缔执法行动。",
-      "rationale": "监管机构具体取缔行动，属监管介入",
+      "socialItemIds": [],
       "independentSourceCount": 1,
       "domains": [
-        "newsurban.id"
+        "suaragarut.id"
       ],
+      "platforms": [],
       "hasPrimarySource": false,
-      "articleIds": [
-        "22830db616bb174b"
-      ],
-      "articles": [
-        {
-          "title": "OJK Hentikan 1.489 Pinjol dan Investasi Ilegal Sepanjang 2026 - Newsurban",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVnhLVUVfcDBJaXZvcVEtN3ZtLVZseUM2LW9CVlBDWjhOR2NMc2Q3WDhSd20tMWYxWTFISjNZSTcyWS1zWHVmQzloX3hTQnczaTJjNEpBMC1jRDRaY1dPUE9rdlBJSDlIR0pXVnFOZ3Z3NUtBX2NZX05SdmgzVlNmWFNwclE5REZKaE9rWWRXRVB3TnhRZWVXNm9B?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "headline": "OJK Hentikan 1.489 Entitas Keuangan Ilegal Sepanjang 2026 - SuaraGarut.ID",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-82c3bcd83e5b",
+      "id": "auto-35932e8d11230e67",
       "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [
-        "Debt Collector",
-        "Boalemo警方"
-      ],
-      "headline": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
-      "headlineZh": "Boalemo三名催收员索要千万并扣车成嫌犯",
-      "summaryZh": "Boalemo三名催收人员涉嫌索要1000万盾并扣押皮卡，已被警方列为嫌疑人，属催收伤害立案。",
-      "rationale": "警方立案的催收伤害案，属消费者受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "penabicara.com"
-      ],
-      "hasPrimarySource": false,
+      "severity": 0.86,
       "articleIds": [
-        "e219ffaa4e4ac0e3"
+        "7926750a79fad5c9",
+        "17f4252e25a1e924"
       ],
-      "articles": [
-        {
-          "title": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVHRFN29PblB3MEdJRTZuQkJUd0k1b0xWVHJLVDVOenVyQ2UtM3RlT0U4NkdZVEtzTUNseUZFVUR1cXptNDU0UzVUdTkyOEFEa3E4MWtoT2ZJeVA3M3hRTkVpSF9jdmdSN1cxdncxRy14bEZvZVl6QktBaG50NmV4bWs5Uy1ndGQ0eGN4R0FVU3NabHQ1S3ZTbDdNaWhJdlVrOFBpc0xXMTRtVVlLVTI5Sy1LWi1sd2lVeTAyQXp2U2ZFNV96czZJUVpLS19fWndNUlNvdGd2OUt3d9IB3wFBVV95cUxOMmI2UmNyMUk0LWNZcEdraVU5Z1BteFF6aExzc2N4UGRMR0JTWTNsM0dfMXNjNS1reDlWNHNQNU1Bel9NNmZaQU54VkhrYVFHZlBVNW84Qk9IQXdZSUd4WG11TS1CNGJSZVB0UWN3QmQ0WFl3dlNHMmt2SF9YSXVXeE5SOUlCUmpPSUFKOGJZd2ROeEZPTVdOclp0NEVTa3NCYWNlM2xWTVo4aExRYVRsNEp6UzdTRDRZblhQblpyQXdCSkVWTzRrWDlwYXVmaGUyQ29ESEo0Z2s5Uk9MWGlJ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-37cb69357683",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU",
-        "Pinjol"
-      ],
-      "headline": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
-      "headlineZh": "法院撤销KPPU网贷利率裁定",
-      "summaryZh": "法院基于四项理由撤销KPPU关于网贷利率定价的裁决，涉及竞争监管机构与网贷行业。",
-      "rationale": "司法对监管裁定的具体判决，属监管相关事件",
-      "independentSourceCount": 1,
+      "socialItemIds": [],
+      "independentSourceCount": 2,
       "domains": [
-        "hukumonline.com"
+        "jakarta.suaramerdeka.com",
+        "suaraglobal.id"
       ],
+      "platforms": [],
       "hasPrimarySource": false,
-      "articleIds": [
-        "d8a89ea430c66300"
-      ],
-      "articles": [
-        {
-          "title": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNHNDdHNrdnJJakdDRHhjdkVTNE55V1BMLV96S0RHY0VDWmQ5ZHNsUHh3a1BocVFOd1VzRDNsUDBEMVJxVG55NVVxOTE2VkJZR0E1WlhTbGdLOXNmeXNfY29QVWlnNG42RU9MVFVfeFdQOUZNSjVjWkVhYlZObGl6dlY0ZENpVERyWHRLQkJidWlPYkNGck12OTgwTzlSYVdDblZidmgySXZ3dWNqX2YyYzJzRGVEZTBRMGtFcEFSYVdVQQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 14,
-        "negativeShare": 7.1,
-        "platforms": [
-          "youtube"
-        ]
-      }
-    },
-    {
-      "id": "llm-e388c3959140",
-      "eventType": "systemic_platform_stress",
-      "severity": 0.55,
-      "entities": [
-        "MNC Bank",
-        "OJK"
-      ],
-      "headline": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
-      "headlineZh": "MNC银行数字服务故障OJK呼吁冷静",
-      "summaryZh": "MNC银行数字服务中断、客户难以提款，OJK介入并要求客户保持冷静，恢复仍在进行。",
-      "rationale": "具体平台服务中断事件，属系统性平台压力",
-      "independentSourceCount": 1,
-      "domains": [
-        "topik.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7859316e19b9019d"
-      ],
-      "articles": [
-        {
-          "title": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOExjamc1UGpmdFFKVm5UU3ZHV0ZrOFZ2bVlOcUFsYnlpOWVQLTB4eDZsNzliUC1qRk4ybmlBSDBkNkR6dmc0UDlYWnl3UERibDFVMWVBRjNHYXpjVHJaUzhqVE9OY0NJV0FVR1RQdklTZS1TRHFfdUtPSjlYb1owWTFSeEx1ZWJxalg3R2VOWWJUelJ0ZEVIUWFpM1E1bW4xSUROSjBxaw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "headline": "KTP Dicatut Orang Lain untuk Pinjol? Jangan Panik, Ini 7 Langkah untuk Melawan Teror Penagih - Suara Merdeka Jakarta - Suara Merdeka Jakarta",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     }
   ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
-    "status": "ok",
-    "candidateCount": 40,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 11,
-    "unassignedCount": 0,
+    "status": "failed",
+    "candidateCount": 29,
+    "eventGroupCount": 0,
+    "rejectedNonEvents": 0,
+    "detail": "HTTPError: HTTP Error 503: Service Unavailable",
     "articleBodyStatus": {
-      "ok": 40
+      "ok": 29
     },
-    "socialCrossCheck": "applied"
+    "socialCrossCheck": "skipped"
   },
   "events": [
     {
-      "id": "llm-c39f91618509",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Pindar",
-        "Pinjol"
-      ],
-      "headline": "Kesulitan Bayar Pinjol? OJK Catat Risiko Keterlambatan Meningkat - Berita Manado",
-      "headlineZh": "OJK数据：Pindar不良率达5.36%超安全线",
-      "summaryZh": "OJK披露线上借贷余额106.48万亿印尼盾，TWP90不良率升至5.36%超过安全阈值，反映行业资产质量承压。",
-      "rationale": "监管机构发布的具体统计数据，属资产质量事件",
-      "independentSourceCount": 14,
-      "domains": [
-        "amp.suara.com",
-        "bantentv.com",
-        "beritamanado.com",
-        "centralbatam.co.id",
-        "cirebontimes.com",
-        "demokratis.co.id"
-      ],
-      "hasPrimarySource": false,
+      "id": "auto-9448f9504e37106a",
+      "eventType": "regulatory_action",
+      "severity": 0.92,
       "articleIds": [
-        "efaeda088ee334f1",
-        "5ccb564eb1e83787",
-        "2d073e6156660513",
-        "14d6e070dc4a291c",
-        "6eb9657503f72fd4",
-        "3a698b20e46c606e",
-        "0c965aaaa3e77db1",
-        "441ba4cac0d53cdf",
-        "da54aa70a6415e7f",
-        "b1702a08f3f9f7bf",
-        "52bc6ed77cb2830a",
-        "73d3962213d1fe5e",
-        "f0fa41aea0b069f6",
-        "4924d25cea54f71d",
-        "05b6f9aa75b7f1bd",
-        "176f63b2413d0e83",
-        "89120e9589b2f53c",
-        "1dbf2de9fe7cc28f"
+        "474535bf6141d50a"
       ],
-      "articles": [
-        {
-          "title": "Kesulitan Bayar Pinjol? OJK Catat Risiko Keterlambatan Meningkat - Berita Manado",
-          "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ldEZpUGF1YlZvTHVqT2ZpY3g5UG1kOEh1U2JSY2pMM1lRbXc3VzN0cUVJT2FTci1UbVFMNzJaOFhXOUFFTUJaQ0M4U204Uk9SUG82YUxiVm1rYlhnTHEtOFY3MjNTM2gyVWIyTElnZw?oc=5"
-        },
-        {
-          "title": "Kredit Macet Pinjol Tembus 5,36 Persen, Lampaui Batas Aman OJK - bantentv.com",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPcXFnS1hJLW9TN0NCN2xwTkJpcUxFY0UteFVkZGtOV3BteG9HX0Z0WFZQTXQ5RnRLN2gydDVHWFYzOEtkTC1FRHNLSnF1MDRveEJUcHJORjBpMUpRVFNPb3RJeEVnVkZwcUtTRjJfV3BsZDJtdWJvWFNLX0hSUGhfaFFjRGo1N3ZTaV9YaHBjM2w4b1N1Q19ZeDZBTk9laTA?oc=5"
-        },
-        {
-          "title": "OJK Perhatikan Pinjol: Pembiayaan Tembus Rp106 Triliun, tapi Kredit Macet Naik - Inilah.com",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPbjdNc1ctSUdNU0hseEkzZXU5Y2JXTnlqbkxjVXEtMTBNanZBM1BHZ0w4WTN2VkhWaWlFZFdPZDJQWVd5Mkd2OHExLUZKelU3d3l0YmtaeUstcWtMMFB6bEUzR3djWU5HR3MtbWJjVW5RaEFlYjd4Tld4N1hJbmNUaFdJNXo4NDF4NnQ2RDROMkJGbkF4SDFBb2dITGMtLXQx?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Masyarakat Indonesia Tembus Rp106,48 Triliun, Rasio Gagal Bayar Makin Tinggi - Suara.com",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQeWtVcjJyMmF2WVBJZTZzZjNFTDhCN0hFUjFrbk1PeVhJS001YktIZDVQelZkWVV5dFVQR21BcW5iLWxlZ3hTN2dTSHEzRi1FTUlDVE5NeE1Eb20xNUpWRk9zVE9ZWnplRzZEMThIV3BMbmYxZzBKS25OcndUYnBZQjNaT09MYjNIQ2NXOER4SE1QanVpNXRuUXlobWFLNXdUeXJqd05sZm1LWXpvWEJOUldLcFpyRmRxUmlTVng5aVNIQVp6bFRwTjhsclJzOTTSAc8BQVVfeXFMUHlrVXIycjJhdllQSWU2c2YzRUw4QjdIRVIxa25NT3lYSUtNNWJLSGQ1UHpWZFlVeXRVUEdtQXFuYi1sZWd4UzdnU0hxM0YtRU1JQ1ROTXhNRG9tMTVKVkZPc1RPWVp6ZUc2RDE4SFdwTG5mMWcwSktuTnJ3VGJwWUIzWk9PTGIzSENjVzhEeEhNUGp1aTV0blF5aG1hSzV3VHlyandObGZtS1l6b1hCTlJXS3BackZkcVJpU1Z4OWlTSEFaemxUcE44bHJSczk0?oc=5"
-        },
-        {
-          "title": "Foto : Kredit Macet Pinjaman Online Terus Naik, Kini Tembus 5,36 Persen Halaman 3 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOcWpLel85UGFiQjc3ZU9qY2xIeE5tNHVTekFMMFh5ZVhBaHhvWjRPLWJfM0pUXy03dE9mOURURlpRRnhNN2laY01DWTdwWkJfWWtxcmlLNTN2Q2U3NGpoN2hfYWxGVjFaZlNzODJhMU1GMEIwWWQwcVlWR0VudDZKS1luc0xKYUh3aHVERkNMRlVkdkxNeV82LXZfajFYeVVRMjRRU0lZSUlKTUlBWllzM3BKZ2c3SURzckhvTlUwRQ?oc=5"
-        }
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "dataindonesia.id"
       ],
-      "bodyBackedSourceCount": 18,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 14,
-        "negativeShare": 7.1,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Hentikan 1.489 Entitas Keuangan Ilegal Sepanjang Januari-Oktober 2026, Aduan Pinjol Tertinggi - DataIndonesia",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-0f7e5eda87d7",
+      "id": "auto-bbbb69398786864f",
       "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK",
-        "Multifinance",
-        "Fintech Lending"
+      "severity": 0.92,
+      "articleIds": [
+        "237752f0e5f74fac"
       ],
-      "headline": "11 Multifinance dan 11 Fintech Lending dapat Sanksi OJK pada Oktober 2026 - kontan.co.id",
-      "headlineZh": "OJK对11家多金融与11家P2P实施处罚",
-      "summaryZh": "OJK于2026年10月对11家多金融公司和11家金融科技借贷平台作出行政处罚，属监管执法动作。",
-      "rationale": "监管机构对具体机构作出处罚，属监管介入",
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "suaragarut.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Hentikan 1.489 Entitas Keuangan Ilegal Sepanjang 2026 - SuaraGarut.ID",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-35932e8d11230e67",
+      "eventType": "consumer_harm",
+      "severity": 0.86,
+      "articleIds": [
+        "7926750a79fad5c9",
+        "17f4252e25a1e924"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 2,
+      "domains": [
+        "jakarta.suaramerdeka.com",
+        "suaraglobal.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "KTP Dicatut Orang Lain untuk Pinjol? Jangan Panik, Ini 7 Langkah untuk Melawan Teror Penagih - Suara Merdeka Jakarta - Suara Merdeka Jakarta",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-4673f5cc52e95bf2",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "80f657becc0ceb50"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "goriau.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pemkab Meranti Tagih Gebrakan OJK Riau Berantas Pinjol Ilegal dan Perluas Akses Modal UMKM - GoRiau.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-4b1d00e267b5aad5",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "ab0aa212835be371"
+      ],
+      "socialItemIds": [],
       "independentSourceCount": 1,
       "domains": [
         "keuangan.kontan.co.id"
       ],
+      "platforms": [],
       "hasPrimarySource": false,
-      "articleIds": [
-        "f0bb5479d8c8e848"
-      ],
-      "articles": [
-        {
-          "title": "11 Multifinance dan 11 Fintech Lending dapat Sanksi OJK pada Oktober 2026 - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNR3AxNVhoekVoNzVCeDMyUktxTkN6NkVEQktBTjRESGN2c0pEM3YySG51MldLcjM3amdDS3JaYXN5YUJZV2lGb29hamlBcUpTVzNFREJIUExnZ0xOdllVUHY5VDFkX1VTaC00VERydWpaTnVDREdnWHd1dEQ1MGNvQnU0T0VMWk9HMmpCSHJJQkJFR2pBV0NCYUdnWnBxc0NXWjd5ZWNRVjJRdnc30gGmAUFVX3lxTE9qczBBOWJRTmJOdDMyRWd6eEdCNWZlUDJ5MUxIOHZFV19YNmxIY21HWTFieUxEckZDWGY5VDItSXZzZmszUG9rTndJeGhJMGI4bnUxV0l0Wk1jcV9Yd19OUFhuaFl2WlVBMFZHZnhJSlZsbmpLNFlBNXptN0R2MGVaYkhGblVPRnhINkVRNC1uUG9jSmhZN1lFNkhBMFMxWHFvUWM5REE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "headline": "Satgas PASTI Hentikan 1.199 Pinjol Ilegal dan 250 Investasi Ilegal per Oktober 2026 - kontan.co.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-84eead9b16b8",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK"
+      "id": "auto-4ce3101535335f1d",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "8f3fe9ae9f076950"
       ],
-      "headline": "OJK Hentikan 1.489 Pinjol dan Investasi Ilegal Sepanjang 2026 - Newsurban",
-      "headlineZh": "OJK 2026年关停1489家非法网贷与投资",
-      "summaryZh": "OJK全年关停1489家非法网贷及非法投资平台，属监管取缔执法行动。",
-      "rationale": "监管机构具体取缔行动，属监管介入",
+      "socialItemIds": [],
       "independentSourceCount": 1,
       "domains": [
-        "newsurban.id"
+        "tribratanews.babel.polri.go.id"
       ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "22830db616bb174b"
-      ],
-      "articles": [
-        {
-          "title": "OJK Hentikan 1.489 Pinjol dan Investasi Ilegal Sepanjang 2026 - Newsurban",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPVnhLVUVfcDBJaXZvcVEtN3ZtLVZseUM2LW9CVlBDWjhOR2NMc2Q3WDhSd20tMWYxWTFISjNZSTcyWS1zWHVmQzloX3hTQnczaTJjNEpBMC1jRDRaY1dPUE9rdlBJSDlIR0pXVnFOZ3Z3NUtBX2NZX05SdmgzVlNmWFNwclE5REZKaE9rWWRXRVB3TnhRZWVXNm9B?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "platforms": [],
+      "hasPrimarySource": true,
+      "headline": "\"Stop Judi Online dan Pinjol Ilegal!\", Jangan Tergiur Kemudahan Sesaat Berujung Masalah Besar - Tribratanews Polda Babel",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-82c3bcd83e5b",
-      "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [
-        "Debt Collector",
-        "Boalemo警方"
+      "id": "auto-668f46bbaea80ad2",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [
+        "bca96d89d8b4e7e7"
       ],
-      "headline": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
-      "headlineZh": "Boalemo三名催收员索要千万并扣车成嫌犯",
-      "summaryZh": "Boalemo三名催收人员涉嫌索要1000万盾并扣押皮卡，已被警方列为嫌疑人，属催收伤害立案。",
-      "rationale": "警方立案的催收伤害案，属消费者受害",
+      "socialItemIds": [],
       "independentSourceCount": 1,
       "domains": [
-        "penabicara.com"
+        "inforiau.co"
       ],
+      "platforms": [],
       "hasPrimarySource": false,
-      "articleIds": [
-        "e219ffaa4e4ac0e3"
-      ],
-      "articles": [
-        {
-          "title": "Diduga Minta Rp10 Juta dan Rampas Mobil Pick Up, Tiga Debt Collector Jadi Tersangka di Boalemo - Pena Bicara - Pena Bicara",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPVHRFN29PblB3MEdJRTZuQkJUd0k1b0xWVHJLVDVOenVyQ2UtM3RlT0U4NkdZVEtzTUNseUZFVUR1cXptNDU0UzVUdTkyOEFEa3E4MWtoT2ZJeVA3M3hRTkVpSF9jdmdSN1cxdncxRy14bEZvZVl6QktBaG50NmV4bWs5Uy1ndGQ0eGN4R0FVU3NabHQ1S3ZTbDdNaWhJdlVrOFBpc0xXMTRtVVlLVTI5Sy1LWi1sd2lVeTAyQXp2U2ZFNV96czZJUVpLS19fWndNUlNvdGd2OUt3d9IB3wFBVV95cUxOMmI2UmNyMUk0LWNZcEdraVU5Z1BteFF6aExzc2N4UGRMR0JTWTNsM0dfMXNjNS1reDlWNHNQNU1Bel9NNmZaQU54VkhrYVFHZlBVNW84Qk9IQXdZSUd4WG11TS1CNGJSZVB0UWN3QmQ0WFl3dlNHMmt2SF9YSXVXeE5SOUlCUmpPSUFKOGJZd2ROeEZPTVdOclp0NEVTa3NCYWNlM2xWTVo4aExRYVRsNEp6UzdTRDRZblhQblpyQXdCSkVWTzRrWDlwYXVmaGUyQ29ESEo0Z2s5Uk9MWGlJ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
+      "headline": "OJK Riau Dituntut Berantas Pinjol Ilegal, Pemkab Meranti Soroti Akses Modal UMKM - Inforiau",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-37cb69357683",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "KPPU",
-        "Pinjol"
+      "id": "auto-90c6deff09cb3623",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.74,
+      "articleIds": [],
+      "socialItemIds": [
+        "de4865c494eb39d0"
       ],
-      "headline": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
-      "headlineZh": "法院撤销KPPU网贷利率裁定",
-      "summaryZh": "法院基于四项理由撤销KPPU关于网贷利率定价的裁决，涉及竞争监管机构与网贷行业。",
-      "rationale": "司法对监管裁定的具体判决，属监管相关事件",
       "independentSourceCount": 1,
       "domains": [
-        "hukumonline.com"
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
       ],
       "hasPrimarySource": false,
-      "articleIds": [
-        "d8a89ea430c66300"
-      ],
-      "articles": [
-        {
-          "title": "4 Pertimbangan Hakim Batalkan Putusan KPPU Soal Penetapan Bunga Pinjol - Hukumonline",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNHNDdHNrdnJJakdDRHhjdkVTNE55V1BMLV96S0RHY0VDWmQ5ZHNsUHh3a1BocVFOd1VzRDNsUDBEMVJxVG55NVVxOTE2VkJZR0E1WlhTbGdLOXNmeXNfY29QVWlnNG42RU9MVFVfeFdQOUZNSjVjWkVhYlZObGl6dlY0ZENpVERyWHRLQkJidWlPYkNGck12OTgwTzlSYVdDblZidmgySXZ3dWNqX2YyYzJzRGVEZTBRMGtFcEFSYVdVQQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 14,
-        "negativeShare": 7.1,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "headline": "TERBAIK ITU KAMU EPS 20: BOOM 💥 LARASATI BERHASIL GREBEK MARKAS PINJOL ILEGAL PRAYOGA? -Jefri Nichol",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     },
     {
-      "id": "llm-e388c3959140",
-      "eventType": "systemic_platform_stress",
-      "severity": 0.55,
-      "entities": [
-        "MNC Bank",
-        "OJK"
+      "id": "auto-126a406bcdf547f2",
+      "eventType": "credit_quality_stress",
+      "severity": 0.58,
+      "articleIds": [
+        "f84f612b8fddad0f"
       ],
-      "headline": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
-      "headlineZh": "MNC银行数字服务故障OJK呼吁冷静",
-      "summaryZh": "MNC银行数字服务中断、客户难以提款，OJK介入并要求客户保持冷静，恢复仍在进行。",
-      "rationale": "具体平台服务中断事件，属系统性平台压力",
+      "socialItemIds": [],
       "independentSourceCount": 1,
       "domains": [
-        "topik.id"
+        "mistar.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pengamat Soroti Bahaya Pinjol, Beban Bunga Tinggi Berisiko Picu Gagal Bayar - HARIAN MISTAR",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-561e8ca284c11e14",
+      "eventType": "credit_quality_stress",
+      "severity": 0.58,
+      "articleIds": [
+        "31cbaba8a000117e"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "inews.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Utang Pinjol Masyarakat Tembus Rp106 Triliun, OJK Catat Risiko Gagal Bayar Naik - iNews.ID",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d018cd87341931d4",
+      "eventType": "credit_quality_stress",
+      "severity": 0.58,
+      "articleIds": [
+        "14d6e070dc4a291c"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "amp.suara.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Utang Pinjol Masyarakat Indonesia Tembus Rp106,48 Triliun, Rasio Gagal Bayar Makin Tinggi - Suara.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-00d5a5b19c5354ae",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "2967166e7ce722c7"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "demokratis.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Risiko Kredit Pindar Tembus Batas Aman OJK - Demokratis.co.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-04ff256941b599e4",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "cf69282fdde62098"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "ekbis.sindonews.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Utang Pinjol Warga RI Tembus Rp106,48 Triliun, Risiko Kredit Macet Meningkat - SINDOnews Ekbis",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-0a86172f1ea6ad0d",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "d9576db8709ffe62"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "rri.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Easycash Perkenalkan Modul Bijak Keuangan pada Mahasiswa dan UMKM di Padang - RRI.co.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-0dc8a271562cec66",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "607ccb21e5192132"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "inews.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Utang Pinjol Warga RI Menggunung hingga Rp106 Triliun, Kredit Macet Naik Jadi 5,36 Persen - iNews.ID",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-0f96e6e44103cf98",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "702b70c154474e0d"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
       ],
       "hasPrimarySource": false,
+      "headline": "Pantes Sera pinte ibunya aja pinter gt",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-13ee8d8d9855c2e0",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "93c80ec98fe798c6"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Sebel sma si lita udh mah sok sokan okb pke brg2 sera jd d rampok cowok gk bnr , skrg pinjol pke data s sera ,kt gw mah ",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-14190211dd6d4e85",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
       "articleIds": [
-        "7859316e19b9019d"
+        "9212373a727ffb61"
       ],
-      "articles": [
-        {
-          "title": "OJK Minta Nasabah MNC Bank Tetap Tenang, Pemulihan Layanan Digital Masih Berlangsung - TOPIK.ID",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQOExjamc1UGpmdFFKVm5UU3ZHV0ZrOFZ2bVlOcUFsYnlpOWVQLTB4eDZsNzliUC1qRk4ybmlBSDBkNkR6dmc0UDlYWnl3UERibDFVMWVBRjNHYXpjVHJaUzhqVE9OY0NJV0FVR1RQdklTZS1TRHFfdUtPSjlYb1owWTFSeEx1ZWJxalg3R2VOWWJUelJ0ZEVIUWFpM1E1bW4xSUROSjBxaw?oc=5"
-        }
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "money.kompas.com"
       ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 1,
-        "negativeShare": 0.0,
-        "platforms": [
-          "youtube"
-        ]
-      }
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pindar RupiahCepat Bantu UMKM Perempuan Kembangkan Bisnis Digital - Kompas.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-19271a2bedebb7b5",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "d650159a9981013b"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Lita2 lu bilang lu mau Nebus kesalahan lu karna uang Serra di rampok gara2 lu, tp yg bikin geram adalah lu pinjol pakai ",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-243218790be096ad",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "87b3104e7a234e4b"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Sarkas",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-3b11a1403ca22f51",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "d5bd4dc798c6e446"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "bloombergtechnoz.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Indonesia Raih Dua Perak di Kejuaraan Angkat Besi Dunia 2026 - Bloomberg Technoz",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-3e8a3bda5007826b",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "e394b4d1d322dd53"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "kreditpintar.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pengumuman Pemenang UJIAN, Ubah Jadi Cuan! - KreditPintar",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-460ecda231699075",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "53f3f3ac48a5ea64"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Bismillah semoga dapat buat modal usaha pop ice🤲",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-473dbbbc84789bd0",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "e6d0deadf7138eb2"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "finansial.bisnis.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Stop 15.495 Aktivitas Keuangan Ilegal Sejak 2017, Tengok Trennya - Bisnis.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-4da7b7fbf15cf178",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "3d2b62b3c5d9df40"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "keuangan.kontan.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Terima 94.363 Pengaduan Konsumen, Pinjol dan Perbankan Mendominasi - kontan.co.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-5bb06fad998f3515",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "5e01d275f2bc3686"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Lita suruh pergi dr rumah aja gak ush berteman",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-5f142905df2b24d7",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "53f2328e6378fbdc"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "sumbar.antaranews.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Tingkatkan literasi, Easycash kenalkan modul MOJANG di Padang - ANTARA News Sumbar",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-679d90620a826114",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "dbb86fc43ed06247"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "hariansinggalang.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Easycash Perkenalkan Modul Bijak Keuangan kepada Mahasiswa dan UMKM di Padang - Harian Singgalang",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-6d6cbf9028db5ed2",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "1aad501cf8688d80"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Zara... ibu laras uda ada di depan ibu ngapain di cari ibu... Itu sera (zara) anak ibu....",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-73411c866d0e9b40",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "3b713b849c212f89"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Di aku kok gada dana darurat premium bang",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-75d9a3f3d418501e",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "43e3cf901d10f535"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Blokir seluruh judi online\nJudi apapun bentuknya bikin resah\nMasyarakat\nJudi bikin dosa",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-7b35c91d07967fae",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "ba65e6f55d5d64d5"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "GAK SUKA SAMA SIKAP LITA",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-7f4485edb2cd2b06",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "c5e5eaf8cbb559bf"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "suaragarut.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Risiko Kredit Macet Pinjol Melampaui Batas Aman OJK - SuaraGarut.ID",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-801fea63969b8e04",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "ac0d938649d19d2a"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "cyber88.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Didik Haryadi Gandeng OJK Edukasi Warga Boyolali Waspada Investasi Ilegal dan Pinjol - CYBER88",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-81438015095edbb7",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "37df1983a9132157"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "*Gw suka dengan yg ginian*",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-84564c302af50719",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "3cd52de1df52b5dc"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "lita usir aja sera \nngeselin banget",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-8e0561f8444439c8",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "d709bc71883bdf3a"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Pas nulis di pencarian fitur dana darurat premium ko ga muncul.?",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-94df2438ed3bc9ce",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "bdd04fe4057ad1b7"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "idxchannel.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Total Utang Pinjol di Indonesia Tembus Rp106,48 Triliun, Risiko Kredit Macet Meningkat - IDX Channel",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-95f6c81700ff6171",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "2d073e6156660513"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "inilah.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Perhatikan Pinjol: Pembiayaan Tembus Rp106 Triliun, tapi Kredit Macet Naik - Inilah.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-995d1b1dfabc101e",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "db3e98806df7680b"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Gue kan pinjam 1,2 jt dan udah gue setorin dan sekarang tagihan sisa 900 rb, apakah termasuk kecil belum bisa bayar kare",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-9d34024fab13395d",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "e1551f0b550b1122"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Hancur ekonomi saya karena pinjol rumah kejual usaha kejual biadab pinjol2 ini dan pemerintah memilih bungkam dengan kea",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a1072163383ebd93",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "5906ad06b6455606"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "daerah depok. saya kemarin hari Jumat dapet kunjungan mas dari oren spinjam sama paylater-_-",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a4143fd6fc3c918c",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "dae88fb5174ac316"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Lite beloon bgt pinjol pinjol bae😂",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a6bb74b6840afcb1",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "0db4af47cd4b56cf"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "limapagi.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "OJK Catat Aset Industri Asuransi Rp1.192,84 Triliun - Limapagi",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-a796398de27b2c70",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "88e72b43022a4056"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Ternyata semuanya tergantung pemilik akun nya,meskipun sering bangat ak ih n DANA di gunakan setiap hari dr tf maupun me",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-aa30de991f5e0526",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "cd0859c361b98a17"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "radarkepahiang.disway.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Wajib Tahu! Daftar Terbaru 94 Pinjol Resmi OJK Per November 2026 dan Cara Aman Mengecek Legalitasnya - Radar Kepahiang",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-b0244fec1c89cb02",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "c4c8f189c06b8871"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "finansial.bisnis.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Cara Pinjam Uang Aman, Cek Daftar Pinjol Legal OJK: Amartha, RupiahCepat hingga Easycash - Bisnis.com",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-b3de04c5fe7827e8",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "540e534434b9dfc4"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Bu Larasati orang baeee",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d85ecc27e5852bab",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "68695391b94f99a1"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "GK ada pitur kaya gituh di apk dana mah, kalian mau aja di bodohi...",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-d9bd7a765f36e09e",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "1e28c3e562d40bd9"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Udah lah Sera GK usah punya kawan kyak Lita ada nya ngrugikin Mulu...",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-da100cc817cb8718",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "efaeda088ee334f1"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "beritamanado.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Kesulitan Bayar Pinjol? OJK Catat Risiko Keterlambatan Meningkat - Berita Manado",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-dc8eee692a6deb06",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "dd9b7b4654d570e9"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Ditagih Debt Collector Online #meme #shorts",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e0158ecbda15531c",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "3c25d6cbe86ba6be"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "bismillah bang butuh banget buat bayar utang 1,5 jt hari ini jatuh tempo cape banget galob tulob 😿",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e6201d95879ce9f1",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "6c4c3b63da8e1317"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "mediakonsumen.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Bayar Rp5 Juta untuk Batalkan Transaksi Sesuai Instruksi Kredivo, Pembayaran Justru Masuk ke Cicilan Reguler - Media Konsumen",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e963693356dc0741",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "a2ab33ae06813d33"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "mu4.co.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Pinjaman Online Tembus Rp106 Triliun, OJK Waspadai Kenaikan Kredit Macet - Mu4.co.id",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-e98371533fc5ae72",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "d2c7b6f87727ff7f"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "tribratanews.restakediri.jatim.polri.go.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": true,
+      "headline": "Polisi Sosialisasikan Bahaya Judi Online dan Pinjol kepada Warga di Tiga Wilayah Kediri - Website Resmi Polri",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-ea80ac7dad477b2d",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "89be415c21a9dcae"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "aamiiin",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-ed41349738b6ccc2",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "fd65629384093a11"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "nga Suka dengan Lita..sok sok Pintar dan sok tau.\nGanti aja peran Lita.",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-ed83113fb52f1a3a",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "bab2397a389f6af4"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "rbtv.disway.id"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Simulasi Cicilan EasyCash 2026: Syarat, Tenor, Bunga dan Tabel Angsuran - rbtv.disway.id - RBTV Disway",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-f22d5ccd64d79d54",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [
+        "58af3ef555fc9b86"
+      ],
+      "socialItemIds": [],
+      "independentSourceCount": 1,
+      "domains": [
+        "padek.jawapos.com"
+      ],
+      "platforms": [],
+      "hasPrimarySource": false,
+      "headline": "Dari Dana Darurat hingga Modal Usaha, Easycash Edukasi Mahasiswa dan UMKM di Padang - Padang Ekspres",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-f361c27b059d8e7e",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "d8c1a95731b61be3"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Bp bp dulu cukup hidup dari pertanian, dan perdagangan. Tp banyak anaknya berhasil",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
+    },
+    {
+      "id": "auto-f4949a7125f6dc0d",
+      "eventType": "general_sentiment",
+      "severity": 0.35,
+      "articleIds": [],
+      "socialItemIds": [
+        "08b5f68b3cc1c5ec"
+      ],
+      "independentSourceCount": 1,
+      "domains": [
+        "youtube.social"
+      ],
+      "platforms": [
+        "youtube"
+      ],
+      "hasPrimarySource": false,
+      "headline": "Gaji aku 13jt,, suami mokondo. Nikah 15 thn semua aku yg penuhi. Aku carikan kerja dia ngx betah. 3x aku buatkan usaha, ",
+      "headlineZh": null,
+      "summaryZh": null,
+      "reviewQuestionZh": null,
+      "reviewedSourceCount": null
     }
   ],
   "coverage": {
@@ -561,27 +1401,21 @@
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 66,
-    "socialItemCount48h": 32
+    "articleCount48h": 35,
+    "socialItemCount48h": 28
   },
   "socialClassifier": {
-    "method": "deepseek_credit_social_v1",
-    "status": "ok",
-    "inputCount": 492,
-    "classifiedCount": 147,
-    "irrelevantDropped": 93,
-    "model": "deepseek-chat",
-    "fallbackCount": 252,
-    "labelCounts": {
-      "NEG": 85,
-      "MIX": 42,
-      "POS": 20
-    }
+    "method": "deterministic_id_lexicon_v2",
+    "status": "failed",
+    "inputCount": 479,
+    "classifiedCount": 0,
+    "irrelevantDropped": 0,
+    "detail": "HTTP Error 503: Service Unavailable"
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
   "reviewRequired": true

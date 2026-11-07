@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-11-06T08:32:38.240292+00:00",
+  "generatedAt": "2026-11-07T07:49:07.180418+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-06",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-07",
     "risk": true,
-    "level": "red",
+    "level": "orange",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **军警冲突/安全事件｜印尼国民军士兵在亚齐皮迪行动中致平民死亡，引发独立调查诉求**\n严重度 0.75｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：coercive\n\n🔴 **司法/执法工具化｜前警察总长Listyo Sigit等因涉嫌窃听总统Prabowo被列为嫌疑人并面临伦理审判**\n严重度 0.75｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🔺 **市场失序(汇股债)｜IHSG十月暴跌16.7%，外资净流出16.88万亿盾，印尼盾开盘走弱至18,105**\n严重度 0.75｜1个独立来源（cnnindonesia.com）｜影响支柱：currency\n\n🟠 **关键官员更替/清洗｜KPK任命Achmad Taufik Husein为调查主任并宣誓就职6名新官员**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 6 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：DEGRADED；制度/政治骤变：AMBER。",
+      "**制度/政治骤变**\n\n🟠 **军警冲突/安全事件｜亚齐Pidie发生升旗后枪击事件，民众要求独立调查军方暴力**\n严重度 0.70｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：coercive\n\n🟠 **司法/执法工具化｜Bahlil否认参与对Prabowo的窃听，并称自己也被监听，事件持续发酵**\n严重度 0.60｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜政府放宽自然资源外汇规则，允许100%结汇**\n严重度 0.60｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜BPK全会改选主席、副主席及成员**\n严重度 0.55｜1个独立来源（antaranews.com）｜影响支柱：institutions",
+      "**信贷事件裁定未完成**\n本次事件裁定状态为 FAILED（候选 29 条）。**今天的「无事件」是「没判出来」，不是「没有风险」**——请检查 DEEPSEEK_API_KEY 与工作流后重跑。",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-06:normal:red:success"
+    "decisionId": "daily:2026-11-07:degraded:amber:success"
   },
   "feishu": "sent"
 }
