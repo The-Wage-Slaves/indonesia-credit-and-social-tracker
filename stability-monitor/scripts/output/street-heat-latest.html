@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>街头动员热度确认单 · 2026-11-03</title>
+<title>街头动员热度确认单 · 2026-11-10</title>
 <style>
  body{margin:0;background:#f7f8fa;color:#1f2937;font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
  .wrap{max-width:860px;margin:0 auto;padding:32px 20px 60px}
@@ -21,43 +21,43 @@
  .next{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #2563eb;border-radius:8px;padding:12px 16px;font-size:12.5px}
 </style></head><body><div class="wrap">
 <h1>街头动员热度 · 周度确认单</h1>
-<div class="sub">采集日 2026-11-03 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
+<div class="sub">采集日 2026-11-10 · 人在环：你确认后分数才会写入稳定性看板 · 词篮/刻度定义见 street_heat.py 头部注释</div>
 <div class="card hero">
-  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">46.4</div></div>
-  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">57</div></div>
-  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">—</div></div>
+  <div><div class="lbl">合成热度（越高越热；与基线持平≈41）</div><div class="big">54.1</div></div>
+  <div><div class="lbl">建议分数（越高越稳）</div><div class="big" style="color:#2563eb">50</div></div>
+  <div><div class="lbl">反对率（政治条目中，独立分量）</div><div class="big" style="color:#b8542a">48%</div></div>
   <div style="flex:1;min-width:220px"><div class="lbl">换算刻度</div><span class='band'>≤25→70分</span> <span class='band'>≤45→58分</span> <span class='band'>≤60→45分</span> <span class='band'>≤75→35分</span> <span class='band'>≤100→22分</span></div>
 </div>
-<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 分类失败: 503 Server Error: Service Unavailable for url: https://api.deepseek.com/chat/com</div>
+<div class="card" style="font-size:12px;color:#6b7280">G. 反对率(DeepSeek分类·不计入热度权重): 250条中政治条目207条(浓度83%)，反对99/中性82/支持26 → 总反对率 47.8%（分侧: 民间YouTube 55% · 媒体RSS 34%）</div>
 <div class="card"><h3>六源明细</h3><p class='warn'>⚠ 1 个源未参与（失败/待配置），热度按剩余源权重归一化。</p>
 <table><tr><th>状态</th><th>数据源</th><th class="num">热度</th><th class="num">权重</th><th>本期读数</th></tr>
 <tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>A. Google Trends 双篮搜索热度</b><span class="grp">领先指标</span></td>
-          <td class="num">52.8</td><td class="num">25%</td>
-          <td class="detail">街头篮 0.86x + 愤怒篮 1.25x（vs 各自3个月基线），均值 1.06x</td></tr><tr>
+          <td class="num">100.0</td><td class="num">25%</td>
+          <td class="detail">街头篮 9.11x + 愤怒篮 1.10x（vs 各自3个月基线），均值 5.11x</td></tr><tr>
           <td><span class="badge" style="color:#D85A30;border-color:#D85A30">✗ 失败</span></td>
           <td><b>E. Kaskus 全站热帖</b><span class="grp">领先指标</span></td>
           <td class="num">—</td><td class="num">重分配</td>
           <td class="detail">采集失败: hot_threads接口不可用: HTTP 504</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>F. YouTube 高播放政治视频</b><span class="grp">领先指标</span></td>
-          <td class="num">100.0</td><td class="num">10%</td>
-          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 65 条（检索120条）</td></tr><tr>
+          <td class="num">35.0</td><td class="num">10%</td>
+          <td class="detail">近7天抗议/腐败主题视频中播放≥10万的有 14 条（检索147条）</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>B. GDELT 报道量</b><span class="grp">滞后指标</span></td>
-          <td class="num">49.2</td><td class="num">15%</td>
-          <td class="detail">近7天报道量占比均值 0.008% / 前49天基线 0.008% = 0.98x</td></tr><tr>
+          <td class="num">34.0</td><td class="num">15%</td>
+          <td class="detail">近7天报道量占比均值 0.006% / 前49天基线 0.009% = 0.68x</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>C. GDELT 媒体tone</b><span class="grp">滞后指标</span></td>
-          <td class="num">47.7</td><td class="num">10%</td>
-          <td class="detail">近7天媒体平均tone -2.77（越负越紧张）</td></tr><tr>
+          <td class="num">29.9</td><td class="num">10%</td>
+          <td class="detail">近7天媒体平均tone -0.99（越负越紧张）</td></tr><tr>
           <td><span class="badge" style="color:#639922;border-color:#639922">✓ 正常</span></td>
           <td><b>D. 大众媒体RSS 街头标题占比</b><span class="grp">滞后指标</span></td>
-          <td class="num">8.8</td><td class="num">20%</td>
-          <td class="detail">近7天 452 条标题中 4 条街头相关（0.9%）；失效源: 0</td></tr></table></div>
-<div class="card"><h3>近7天相关标题/热帖样例</h3><ul><li>[BBC Indonesia] Kelompok preman diduga jadi provokator saat demo Oktober 2026 di Yogyakarta – &#x27;M</li><li>[BBC Indonesia] Mengapa Gen Z menjadi motor gerakan protes di Indonesia? – &#x27;Bencana dibiarkan, a</li><li>[BBC Indonesia] &#x27;Kami bicara atas nama masyarakat&#x27; – Ribuan mahasiswa di berbagai kota demo karh</li><li>[BBC Indonesia] Demo berlanjut di Jakarta – &#x27;Ketika kekuasaan gagal jalankan tanggung jawab, mah</li></ul><h3>历史（共2期）</h3>
-<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-11-03</td><td class='num'>46.4</td><td class='num'><b>57</b></td></tr></table></div>
+          <td class="num">33.3</td><td class="num">20%</td>
+          <td class="detail">近7天 451 条标题中 15 条街头相关（3.3%）；失效源: 0</td></tr></table></div>
+<div class="card"><h3>近7天相关标题/热帖样例</h3><ul><li>[BBC Indonesia] Mahasiswa dan masyarakat akan gelar demo pada Hari Pahlawan di berbagai kota – A</li><li>[CNN Indonesia Nasional] Polda Jatim Kerahkan 3.000 Personel Amankan 2 Demo Besar di Surabaya</li><li>[CNN Indonesia Nasional] 74 Aksi Unjuk Rasa di Jakarta Hari Ini, dari Bundaran HI hingga DPR</li><li>[CNN Indonesia Nasional] Demonstrasi 10 November, Masyarakat Diimbau Hindari Kawasan DPR</li><li>[CNN Indonesia Nasional] Demo di Kantor Wapres, Massa Desak Gibran Keluar Istana</li></ul><h3>历史（共2期）</h3>
+<table><tr><th>采集日</th><th class="num">合成热度</th><th class="num">建议分数</th></tr><tr><td>2026-07-16</td><td class='num'>29.6</td><td class='num'><b>67</b></td></tr><tr><td>2026-11-10</td><td class='num'>54.1</td><td class='num'><b>50</b></td></tr></table></div>
 <div class="next"><b>下一步：</b>把这个建议分数发给 Claude Code 确认（说"确认本期街头热度"即可写入看板），
 或者说"这期不对，因为……"来挑战校准。</div>
 </div></body></html>

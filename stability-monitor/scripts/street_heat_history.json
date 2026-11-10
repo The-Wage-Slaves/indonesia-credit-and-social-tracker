@@ -1181,5 +1181,84 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-11-10",
+    "version": 3,
+    "heat": 54.1,
+    "suggested_score": 50,
+    "opposition": {
+      "status": "ok",
+      "rate": 47.8,
+      "detail": "250条中政治条目207条(浓度83%)，反对99/中性82/支持26 → 总反对率 47.8%（分侧: 民间YouTube 55% · 媒体RSS 34%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 100.0,
+        "raw": {
+          "ratio_street": 9.112171837708832,
+          "ratio_anger": 1.102435253189022,
+          "per_kw": {
+            "demo hari ini": 79,
+            "demonstrasi": 2,
+            "unjuk rasa": 2,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 29,
+            "kejaksaan": 22,
+            "Indonesia gelap": 0,
+            "turunkan presiden": 0,
+            "krisis": 11
+          }
+        }
+      },
+      "kaskus": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 35.0,
+        "raw": {
+          "n_searched": 147,
+          "n_big": 14
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 34.0,
+        "raw": {
+          "avg7": 0.005957142857142857,
+          "baseline": 0.008772413793103449,
+          "ratio": 0.679076819407008
+        }
+      },
+      "gdelt_tone": {
+        "status": "ok",
+        "heat": 29.9,
+        "raw": {
+          "avg_tone7": -0.9892285714285715
+        }
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 33.3,
+        "raw": {
+          "total": 451,
+          "matched": 15,
+          "share": 3.325942350332594,
+          "examples": [
+            "[BBC Indonesia] Mahasiswa dan masyarakat akan gelar demo pada Hari Pahlawan di berbagai kota – A",
+            "[CNN Indonesia Nasional] Polda Jatim Kerahkan 3.000 Personel Amankan 2 Demo Besar di Surabaya",
+            "[CNN Indonesia Nasional] 74 Aksi Unjuk Rasa di Jakarta Hari Ini, dari Bundaran HI hingga DPR",
+            "[CNN Indonesia Nasional] Demonstrasi 10 November, Masyarakat Diimbau Hindari Kawasan DPR",
+            "[CNN Indonesia Nasional] Demo di Kantor Wapres, Massa Desak Gibran Keluar Istana"
+          ],
+          "dead_feeds": []
+        }
+      }
+    }
   }
 ]

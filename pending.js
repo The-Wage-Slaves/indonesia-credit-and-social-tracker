@@ -3,14 +3,14 @@ const PENDING = {
     "credit": [],
     "stability": [
       {
-        "title": "街头热度周报 2026-11-03: 建议分数 57/100",
-        "detail": "合成热度 46.4（5/6 源成功）",
+        "title": "街头热度周报 2026-11-10: 建议分数 50/100",
+        "detail": "合成热度 54.1 · 反对率 47.8%（5/6 源成功）",
         "link": "stability-monitor/scripts/output/street-heat-latest.html",
         "action": "看确认单后对Claude Code说\"确认本期街头热度\"或提出质疑",
         "source": "street-heat",
-        "id": "street-heat:7e47071451ec"
+        "id": "street-heat:710d040a661d"
       }
     ]
   },
-  "updated": "2026-11-03 08:53"
+  "updated": "2026-11-10 08:54"
 };
