@@ -1185,31 +1185,31 @@
   {
     "date": "2026-11-10",
     "version": 3,
-    "heat": 54.1,
-    "suggested_score": 50,
+    "heat": 57.5,
+    "suggested_score": 47,
     "opposition": {
       "status": "ok",
-      "rate": 47.8,
-      "detail": "250条中政治条目207条(浓度83%)，反对99/中性82/支持26 → 总反对率 47.8%（分侧: 民间YouTube 55% · 媒体RSS 34%）"
+      "rate": 48.8,
+      "detail": "250条中政治条目201条(浓度80%)，反对98/中性75/支持28 → 总反对率 48.8%（分侧: 民间YouTube 56% · 媒体RSS 35%）"
     },
     "sources": {
       "trends": {
         "status": "ok",
         "heat": 100.0,
         "raw": {
-          "ratio_street": 9.112171837708832,
-          "ratio_anger": 1.102435253189022,
+          "ratio_street": 8.591016548463354,
+          "ratio_anger": 1.1114575214341387,
           "per_kw": {
-            "demo hari ini": 79,
+            "demo hari ini": 75,
             "demonstrasi": 2,
             "unjuk rasa": 2,
             "BBM naik": 0,
             "aksi massa": 0,
-            "korupsi": 29,
-            "kejaksaan": 22,
-            "Indonesia gelap": 0,
+            "korupsi": 30,
+            "kejaksaan": 21,
+            "Indonesia gelap": 1,
             "turunkan presiden": 0,
-            "krisis": 11
+            "krisis": 10
           }
         }
       },
@@ -1236,11 +1236,9 @@
         }
       },
       "gdelt_tone": {
-        "status": "ok",
-        "heat": 29.9,
-        "raw": {
-          "avg_tone7": -0.9892285714285715
-        }
+        "status": "fail",
+        "heat": null,
+        "raw": {}
       },
       "rss": {
         "status": "ok",
