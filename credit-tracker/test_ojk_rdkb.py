@@ -56,6 +56,14 @@ class ParseTests(unittest.TestCase):
         self.assertEqual((d["p2p"], d["bankBNPL"], d["mfBNPL"]), (106940, 31410, 13610))
         self.assertEqual((d["lpbbtiTWP90"], d["mfBnplNPF"], d["bankBNPLYoY"], d["mfBNPLYoY"]), (4.73, 3.03, 29.10, 36.57))
 
+    def test_oktober_2026_release_twp90_with_industry_name(self):
+        """2026-10 起 TWP90 句里多了「industri LPBBTI」；旧正则把它读成 null，而这一期恰是 5,36% 越线。"""
+        d = R.parse((FIX / "rdkb-oktober-2026.html").read_text(encoding="utf-8"))
+        self.assertEqual(d["dataMonth"], "2026.09")
+        self.assertEqual((d["p2p"], d["bankBNPL"], d["mfBNPL"]), (106480, 31500, 13540))
+        self.assertEqual(d["lpbbtiTWP90"], 5.36)
+        self.assertEqual(d["mfBnplNPF"], 3.12)
+
     def test_falls_back_to_constructed_urls_when_listing_has_no_rdkb(self):
         """列表页只显示 10 条，RDKB 被挤出首页时要按月份拼地址去探；未发布的 404 跳过。"""
         import datetime as dt

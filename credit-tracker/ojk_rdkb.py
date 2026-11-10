@@ -119,7 +119,9 @@ def parse(page: str) -> dict:
     out["dataMonth"] = month_key(m.group(1), m.group(2))
     out["p2p"] = round(idr_number(m.group(4)) * 1000)
     out["p2pYoY"] = idr_number(m.group(3))
-    twp = re.search(r"TWP90\)? (?:tercatat |dalam kondisi terjaga )?di posisi ([\d,\.]+) persen", t)
+    # 2026-10 起句式变成「(TWP90) industri LPBBTI tercatat di posisi」，旧正则漏掉中间的行业名，
+    # TWP90 静默变 null——偏偏是首次越过 5% 红线（5,36%）的那一期。
+    twp = re.search(r"TWP90\)? (?:industri (?:LPBBTI|Pindar) )?(?:tercatat |dalam kondisi terjaga )?di posisi ([\d,\.]+) persen", t)
     out["lpbbtiTWP90"] = idr_number(twp.group(1)) if twp else None
 
     m = re.search(r"Per ([A-Za-z]+) (\d{4}), baki debe?t kredit BNPL.*?(?:sebesar|menjadi) Rp\s?([\d,\.]+) triliun", t)
