@@ -433,6 +433,26 @@ function IndustrySection({chartData,fx}) {
           <Area type="monotone" dataKey="p2p" name="P2P Outstanding" stroke="#ef4444" fill="rgba(239,68,68,0.10)" strokeWidth={2} />
         </ComposedChart>
       </ResponsiveContainer>
+      {/* TWP90 口径注记（2026-11-10）：2025-11 的跳升是单一平台 DSI 违约集中确认，不是统计口径变更 */}
+      <div style={{marginTop:12,padding:"10px 12px",background:"#fffbeb",border:"1px solid #fde68a",borderRadius:6,fontSize:11,color:"#4b5563",lineHeight:1.7}}>
+        <b style={{color:"#b45309"}}>⚠ TWP90 注记：2025-11 的跳升来自单一平台 DSI，不是口径变更</b><br/>
+        行业 TWP90 由 2025-10 的 2.76% 单月跳到 2025-11 的 4.33%（新增 90 天以上逾期约 Rp1.54 万亿）。OJK LPBBTI 统计：
+        <b>伊斯兰（syariah）分部</b> TWP90 9.30%→<b>74.79%</b>（新增约 Rp1.22 万亿，占 79%），按地区看 <b>DKI Jakarta</b> 3.61%→11.56%（新增约 Rp1.23 万亿），两者是同一批贷款。
+        时间、规模、类型都对应 <b>PT Dana Syariah Indonesia（DSI）</b>：2025-10-15 被 OJK 限制业务、出借人资金约 Rp1.2–1.4 万亿受困、做房地产项目融资（OJK 称越线平台「以生产性分部为主」）。
+        剔除后其余行业 2025-10→11 为 2.62%→2.91%。
+        <div style={{overflowX:"auto",marginTop:6}}>
+          <table style={{borderCollapse:"collapse",fontSize:10,whiteSpace:"nowrap",fontVariantNumeric:"tabular-nums"}}>
+            <thead><tr>{["","2025.09","2025.12","2026.06","2026.08","2026.09"].map((h,i)=>(<th key={i} style={{padding:"2px 8px",textAlign:i?"right":"left",color:"#6b7280",fontWeight:600}}>{h}</th>))}</tr></thead>
+            <tbody>
+              <tr><td style={{padding:"2px 8px"}}>官方 TWP90（OJK RDKB）</td>{["2.82%","4.32%","4.26%","4.73%","5.36%"].map((v,i)=>(<td key={i} style={{padding:"2px 8px",textAlign:"right"}}>{v}</td>))}</tr>
+              <tr><td style={{padding:"2px 8px"}}>剔除 DSI（估算）</td>{["2.69%","2.93%","~2.99%","~3.49%","~4.12%"].map((v,i)=>(<td key={i} style={{padding:"2px 8px",textAlign:"right",fontWeight:i===4?700:400}}>{v}</td>))}</tr>
+            </tbody>
+          </table>
+        </div>
+        <span style={{color:"#6b7280"}}>2026 年剔除值是估算：假设 DSI 约 Rp1.39 万亿不良未核销、syariah 余额约 Rp1.85 万亿不变（OJK 分部统计停在 2025.12）。若 DSI 在 2026 年部分核销，剔除值会更高。
+        读法：官方序列自 2025-11 起被单一平台抬高约 1.2–1.4pp；行业真实恶化集中在 2026 年 7–9 月（约 3.0%→4.1%）。
+        来源：OJK STATISTIK_LPBBTI_Desember_2025 表 4/表 9/Ikhtisar Syariah；Kompas 2026-01-11（Agusman）；Kompas、Suara、Tempo 关于 DSI 的报道。</span>
+      </div>
     </div>)}
 
     {activeTab==="detail" && (<div style={cardS}>
