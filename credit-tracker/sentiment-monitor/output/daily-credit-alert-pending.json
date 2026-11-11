@@ -1,52 +1,136 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-10",
-  "level": "high_pending",
+  "date": "2026-11-11",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 31.8,
-    "socialDailyVolumeRisk": 11.2,
-    "negativeSocialShare": 6.9,
+    "newsDailyVolumeRisk": 5.7,
+    "socialDailyVolumeRisk": 0.0,
+    "negativeSocialShare": 9.8,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=11; prior-7d median=20.0; robust z=-1.21",
-    "socialVolume": "today=1; prior-7d median=24.0; robust z=-2.59"
+    "newsVolume": "today=9; prior-7d median=22.0; robust z=-2.95",
+    "socialVolume": "today=1; prior-7d median=36.0; robust z=-4.72"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-6be78655ae0c",
+      "id": "llm-b93c640d7adb",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "Imigrasi Bali",
+        "Imigrasi Ngurah Rai",
+        "WN Malaysia"
+      ],
+      "headline": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
+      "headlineZh": "巴厘岛驱逐15名马来西亚籍网贷管理员",
+      "summaryZh": "巴厘岛移民局一周内对26名外国人采取行动，其中15名马来西亚籍人员涉嫌滥用居留许可从事线上贷款业务被驱逐，属跨境违规经营个案。",
+      "rationale": "移民局实际执法驱逐，属具体事件",
+      "independentSourceCount": 3,
+      "domains": [
+        "denpasar.kompas.com",
+        "kumparan.com",
+        "lenteraesai.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e6948062ec3326ac",
+        "0c2070b5fc69ee40",
+        "74c779fe72c02f43"
+      ],
+      "articles": [
+        {
+          "title": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPM0RDT2RwakhWTEUwS0ZSYUZJZXpKNlk5WmJmXzZKaHVfRl9BYkVpRmNSM0NMVnJZVG1ka0JUY0ozS3gwTmJPZ25XenpKemIxQ1hIWTM2RXBVWDRDbU15RTY4QzQ0dzJfdjN2Y1BYX0Z0WjlicU5IM0ZLZmhlR1J6SUVNdDh2bVdOTGZNM2dDTHJPbjZ2bDdidHprZzU0SEN3SWd2emlPS3dHRHM3bzltX0Rfb0M?oc=5"
+        },
+        {
+          "title": "Imigrasi Ngurah Rai Deportasi 15 WN Malaysia yang Jadi Admin Pinjol - kumparan.com - kumparan",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOWpMc1F1MW1zMVEwaDJQeHVpbnNhYzM1ck5uMUdpeDFXQVNvSEJLOUFtQUxWNEJHLVYzVXE5eURMVlpFdWNmNlJLbDI2YkNRWUpIeUYzU25hSy1KQURHUnV1YXpGUnB1ZDVCa25USjU2NDRINzVkWDN2NXVjdW5rUGtjb1AxaU8zR29OM29NN2xLeV9OUUg3bFM3WFFYT0Z4SkowTTE0ZGpLRWZLeW5Icks5NNIBuwFBVV95cUxPQ3poSERMS1gydXkyOFRjVXh4c0RobXIxNk5NZzNWMnUyQkw1SE1QN3pFdDRYQzRkT0QwRDAzSzVybWdDQWxnazg2S2gwLTFhaFpjZlJieFQ4TWd0STVTQ281UWRaTGd4a3ZEcGc2eC05NFNOTTdDR0x5Zjlsb0ZfSm1seHhFdzV3a2w5SHRGenptWHV4OUotOGNYcUcyd25Hc3RuekhnTE10dHRSQ29wS0wwdXB5SUQzQUMw?oc=5"
+        },
+        {
+          "title": "15 WN Malaysia Dideportasi dari Bali, Diduga Salahgunakan Izin Tinggal untuk Bisnis Pinjol - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT1kzdEZLeXNqcEZYSG1zd0tORURrWHVJYXktdW9GcGxob3M1RGtyZ3dFcWVRTVAwZXNaaS0zRzdJeE92dndOQW9PM1FTLWx5MmdYQXVWM2N2NUZVMGFoVDltYjZYdllnb2p4SmdYUnJWVUVRUXZzTTVDaTBJSlNmSGlqMGs3MWFsR05HcTZqcTdUWkcxc1hHWFg5cTdOVDRoWjZyeDFHTVR3YzFQeGlSTkNZdkJGSmYzRTVKcld3T3ZqcXJ5ekRjYw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 3,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-3a73c2a48b20",
       "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
         "OJK"
       ],
       "headline": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
-      "headlineZh": "OJK取缔非法金融实体",
-      "summaryZh": "OJK截至2026年10月已封堵1489个非法金融实体，其中多为非法网贷，属监管执法行动。",
-      "rationale": "监管取缔行动，属事件",
-      "independentSourceCount": 2,
+      "headlineZh": "OJK取缔16家非法金融实体",
+      "summaryZh": "OJK关停16家涉嫌诈骗公众的非法金融实体，属监管执法行动，对非法网贷与投资骗局有直接震慑意义。",
+      "rationale": "监管机构实际取缔执法，属事件",
+      "independentSourceCount": 1,
       "domains": [
-        "databoks.katadata.co.id",
         "koridor.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "64358639c2fb94c7",
-        "d8b33d8b8f95fe6e"
+        "64358639c2fb94c7"
       ],
       "articles": [
         {
           "title": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
           "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0xVzN6NHh3a2UtNHYxUDdUY2lMdVl6QnZJUEdKLWVaQjROdDhkNXN5SGM5N190Z1g0bHZDejVnanFySlhiSTJ6OE5sWjNMMDdIRjZ2S1FGMkFnaC04TTItVHRqUVBRemd4blE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0e3a3dcb0bbb",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "银行",
+        "fintech pinjol"
+      ],
+      "headline": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
+      "headlineZh": "OJK警示银行慎选网贷合作方",
+      "summaryZh": "OJK公开提醒银行不要随意与网贷金融科技平台合作，属监管表态与风险提示，涉及银行与网贷合作渠道风险。",
+      "rationale": "监管机构公开警示表态，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f0177444fff5ac67",
+        "e0990866c2f6d5a8"
+      ],
+      "articles": [
+        {
+          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
+          "link": "https://www.cnbcindonesia.com/market/20261110154120-17-783946/ojk-wanti-wanti-bank-tak-asal-gandeng-fintech-pinjol"
         },
         {
-          "title": "OJK Blokir 1.489 Entitas Keuangan Ilegal sampai Oktober 2026, Terbanyak Pinjol - Databoks",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPQml3d1JybURuSFRTeHlmUTZON0pNOTgzWE5lOE9fY2Z4V0tfNnh0NUlqM0JRRVRhTTF3LUg3X2hvcENhNkxpX2tHaU5SUXVDRzk5SGZuUHE0V29HSHAta3Jka2x6WFR5dDJYekFZZUdoQ2c4dXJmNkstNnhCOWxRbGhIZ3k2US1WU3BrN0FQai1WdF9VTHN4VG1ZeFVsUmhKUFI1S0tfa2pfcGxFOS1XRjBsN203MjNDMUVXTDBqejNYbkdtMWVBRkstTGlvVVVPcXVHWE1SYVA?oc=5"
+          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNa3FvMkVfaWM0ME5kLUs3QXNSZ3ZnSlRUcDZrRTZXSHlVbld5TGxXMl92djJpczlCTDdRUFZzRDEtQjRob1dQOEt2eUoya19KZGdnWVpxT2VWUHlDaVlOZ1F2cDRZVjBXTVhvU296UV9kcGp5bTdjc2tFY0J0aC1PQllkdHBKcm5zUHBreFU5Sjl4X3plaXpaNEk4MHVwY0d0QjVkUlRYYl8zWGhSUUdlR2ZsRlHSAboBQVVfeXFMTjFBYWRVdXlJMzRReTA1OTVKUW50Y3g3WmtsdTlNd29XVFlEWDNzaWxzLTNDWkdFOHVlemRpVGpUZkI1eW1JbWw0ckpyQms5YkJrSHRqazlxbTcyRThGZFNuX1JQSVNra3JLMU9sSHJoOTBLVnZ0MGJqNmhtV21jenZiUndRQTcxMHFMRUVwY20xT2o2ajJ2M3FtSDZzdGlJRzk0alY3Y2t2YVRMUWF3eDViX0I1UG5vRFRB?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
@@ -57,163 +141,34 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    }
-  ],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-a0f270f62d12",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "TNI AU",
-        "Satpomau",
-        "Lanud ASH"
-      ],
-      "headline": "Cegah Judi Online dan Pinjaman Online Ilegal, Satpomau dan Intel Lanud ASH Gelar Razia Handphone Personel - TNI AU",
-      "headlineZh": "空军突击检查人员手机防网贷赌博",
-      "summaryZh": "印尼空军宪兵与情报部门对人员开展手机突击检查，防范网络赌博和非法网贷，属内部执法行动。",
-      "rationale": "机构内部执法检查，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "tni-au.mil.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a69ad286b2defedb"
-      ],
-      "articles": [
-        {
-          "title": "Cegah Judi Online dan Pinjaman Online Ilegal, Satpomau dan Intel Lanud ASH Gelar Razia Handphone Personel - TNI AU",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNOGJXZnJHNzNGWHFWUHJQa0dVbDVpLXBwV2xaNWd6Y0tpWHJPa2JPcm9Ic0ZCckJmby01SXhQMVpyZzkxVjlkaUM1VDc0YWlVeXUydGNGU3IyNENSUWJkMUxyNFBYSjJLamtEdktSdzhack9wdDc0dGZPSmJQSVkybkRTbDU3Y1lNQWxRWFNBTEFyTU1rV0pNdC1oejVxQkw5QlpRd3ZGdENyMUQ3aDJQYVU3a056aWpKU2dDMUNBNWhzQUtvcmg5ZmRybU9vUFRydWdvakJ0MA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
     },
     {
-      "id": "llm-d89acd5180c2",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "AFPI",
-        "Pindar"
-      ],
-      "headline": "Macet di Atas Batas: Kredit Bermasalah Pinjaman Daring 5,36% dan Hak Peminjam yang Kesulitan - Gaza Media",
-      "headlineZh": "Pindar不良率TWP90升至5.36%",
-      "summaryZh": "Pindar平台90天以上逾期率升至5.36%超安全阈值，AFPI呼吁平台收紧信用评分，反映资产质量承压。",
-      "rationale": "行业资产质量指标恶化，属事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "finansial.bisnis.com",
-        "gazamedia.net"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "f2ca25291549d0e8",
-        "e6eccaa4be1f5fe9",
-        "609a48995f9149ee"
-      ],
-      "articles": [
-        {
-          "title": "Macet di Atas Batas: Kredit Bermasalah Pinjaman Daring 5,36% dan Hak Peminjam yang Kesulitan - Gaza Media",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUzVqTU5Yc0hPelprdzFnTmdRRWV1Z0paUXhTUERncXdzSHoteWEyQThjV01qZ19NRXp6SWVuSXZUdjd3MmhjdmZOakdDV1RMaGI4U2NXWllOOC1qbTJDZmtNQjBrZWw3V1BCSW03ZllZMGxFMTVlTGZ2TUxhbXhpMm1QczV3aXdheUVfU1lSdWhUMjdXYnltYUhVT3dsSUthVUtxcnJMd1lsR2FuOV9pZEV3?oc=5"
-        },
-        {
-          "title": "TWP90 Pindar Tembus 5,36%, AFPI Dorong Platform Perketat Credit Scoring - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNanZRNmp2WjBJZ0tSZ0drTEdqcXRxd29oYXdCMldldkMxeVh0Q3pfSnl4YkF1MmI4VTVfRTR0bFowb0VyUWpNSE1MN1JHUFgwY2twRnBqT2NTZjRaTm43S1FqNm1Wb21nTExOTzJvb0M2eFdLQWJ2SHJzdXc0V0VLSXEyR0VQWmJuYWpLdENvRzJoSE90WlpZOUV1bm9sVEpYRE5vaHVlWHdEQVd0c2p3ZUhlb2Ywb3h6TVJ1UnRidFY?oc=5"
-        },
-        {
-          "title": "TWP90 Pindar Tembus 5,36%, Lampaui Ambang Batas Aman dan Jadi Alarm bagi Industri - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQUUlqSkNWbjFFZGN4RHhwcHhfVnVVZklYUzAtWDFaeDlQUzdJWXAySjM1dV9fZFdSTUpRS19rTTQwUnVNNjNvQmdxSGNQTlZPYUdGREFyRHZJWVBwRjZzWWdvcF9RY3pSbXJOMklMVGN4UUd1SE5SbXZvRHprMHZKNW5rSzFtUlNRQzhWaFJhczBVR2ZRZV9LZ2VCRzZLLTFlZkUwcERWQk02clpjb1o5Tktla2kwNkU1eWdkWGc0NFpQel9ZNlFRdE9iMjF0UQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-08945120f039",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "Polsek Mentebah"
-      ],
-      "headline": "Cegah Judi Online dan Pinjaman Online Ilegal, Polsek Mentebah Laksanakan Pengecekan Handphone Anggota - https://www.humaspolreskh.com/",
-      "headlineZh": "Mentebah警局检查警员手机",
-      "summaryZh": "Kapuas Hulu的Mentebah警局对警员手机进行检查，防范网络赌博和非法网贷，属内部执法行动。",
-      "rationale": "机构内部检查，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "humaspolreskh.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "0bab542659c679b8"
-      ],
-      "articles": [
-        {
-          "title": "Cegah Judi Online dan Pinjaman Online Ilegal, Polsek Mentebah Laksanakan Pengecekan Handphone Anggota - https://www.humaspolreskh.com/",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZTVYaEo0OXByODVDYVJRaVF5WGVzU0RGWWVLUHNQdm5VRkhiSHRsMGlhS3l2UnVhRU5mcTktMDYzRGw2Z1JIelU0M05NemtzbC0xcUpiNjQ5RGFnSHlqYnRhQXlzNkVwMEhXaHVJb21fZGtPcEJMZmJ1OGVya01hNWlUUHFkcFE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-bcbf42251133",
-      "eventType": "regulatory_action",
+      "id": "llm-969c6593c232",
+      "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "OJK",
-        "Bareskrim",
-        "Pindar DSI"
+        "Palembang",
+        "借款人家属"
       ],
-      "headline": "Foto : OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya Halaman 1 - Kompas.com",
-      "headlineZh": "OJK向刑侦局移交Pindar资产线索",
-      "summaryZh": "OJK将Pindar DSI资产追查结果移交警方刑侦局，案件进入刑事调查阶段，属监管与执法介入。",
-      "rationale": "监管移交刑事调查，属事件",
+      "headline": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
+      "headlineZh": "巨港男子因网贷逼债卖妻",
+      "summaryZh": "巨港一名男子因陷入网贷债务，以30万印尼盾一次的价格让妻子卖淫，属网贷引发的严重人身伤害个案。",
+      "rationale": "具体人身伤害案件，属消费者受害",
       "independentSourceCount": 1,
       "domains": [
-        "money.kompas.com"
+        "regional.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "07239916de1d61da",
-        "633cebbe302699a3",
-        "3bddf8a6dae9e505"
+        "05d9a893fd66271c"
       ],
       "articles": [
         {
-          "title": "Foto : OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTXdDb0RBc0RUaGFhenJMUHRkam5mZEFHdUFUTFVQZHl6REFsNmRYLWswdE1ZSXg4TjRoLUh4ZG93QW0yVFF5c1FLbkNhQVNCekEtNUNvZDkxMGtKdEp6Um9ZcWR2Z2Y5OUNpNTh2cXhBejZCeWx0V1JhOFo0WE80bFhIaGNjWXgwOERBS0lzT3VtOV8tSzJGQmhvSXFnZVQyLVdLRnZXRFVaUlh0bm9tX0hIT1VhR2RYU2RkbGlnTQ?oc=5"
-        },
-        {
-          "title": "Foto : OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya Halaman 2 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc0tZdzl5Nnp6ZXpNSzFXeXVreGFkbXNBX2h2Nzl0dUEtbTU0d3lNekM2SVhVRXFTQmMweUt6U3p5cjJyMUlZdk1kQU5HRGstMXZnYzQ1T1g4NF9TWklMOE40Yzl3UTNGRVVLMS00QmlLUVlWdVNiTmtJaXRkYUFMcG5kWUQxLWU0XzdrcmExT2I5UlBLNWl0eVBtbmFnQVZ3OEJBeHFjZWZ4ZjJRLUp3NXdJNHJIRll5cDlaT1hTTQ?oc=5"
-        },
-        {
-          "title": "OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdjhPQ3U5SFNqLVgyZFpjOVpodmVYbVd0VGNKTUp2Yy1oYUJraVR6SWJHNjdsZ2ozN0h4WlZtRENZSFg2Z3hrMzZNeG1rV0t4dHZtTFJZZ05hWXJtSGhaZ2VfZE55OU5jTmFEV0pYdUVubmNJNEExbUJ0Q1EycEJRQ3NQVllYREloWEZ5bGZ2SjJxSTZtd0xhNDJhdUI3UlBqWmVCRks0VjZtMkVnVHh4dGpMQVA?oc=5"
+          "title": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTnRNMGRYQ0s0NkNfbmtILVZwaDRlamRhNUxXVUFPQk0zRF9nT1ZoQzA1clhIWWViYko5SVo2U1FyR29sN3plWWhtY005Z3B5NFBBWW5NaURfNzd1TW84TU9DNC1PNU9USTdWRU4tQVlLUl9CXzRvMGdYSEpNRjhyRmdid0NMaHhUSWVsWFN3NlpqSHdtSUV4djVjSUNhQnp0NnVwU2JOUmJIekVEWjY4aFFid3lBUmNTY0NQMGJFY0g5TG8?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -223,28 +178,29 @@
       }
     },
     {
-      "id": "llm-9a72d6e90955",
-      "eventType": "consumer_harm",
+      "id": "llm-fd40dfd4db3c",
+      "eventType": "general_sentiment",
       "severity": 0.55,
       "entities": [
-        "Aceh"
+        "反催收群众",
+        "OJK"
       ],
-      "headline": "VIDEO - Aceh Catat 151 Aduan Pinjol dan 38 Laporan Investasi Ilegal - Serambinews.com",
-      "headlineZh": "亚齐记录151起网贷投诉",
-      "summaryZh": "亚齐记录151起网贷投诉和38起非法投资举报，反映当地消费者受害规模，值得留痕。",
-      "rationale": "消费者投诉数据，属事件",
+      "headline": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
+      "headlineZh": "反催收团体要求解散网贷并评估OJK",
+      "summaryZh": "约4600万人负债106万亿印尼盾背景下，反催收群众集会要求取缔网贷并评估OJK，属群体性诉求表达。",
+      "rationale": "有具体集会诉求，属事件性舆情",
       "independentSourceCount": 1,
       "domains": [
-        "aceh.tribunnews.com"
+        "radarbromo.jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "9960b2763220483f"
+        "ffff898647d45aa8"
       ],
       "articles": [
         {
-          "title": "VIDEO - Aceh Catat 151 Aduan Pinjol dan 38 Laporan Investasi Ilegal - Serambinews.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcTJhb21EUWwyeDJtR29vNWVYM1lVZl9UZk5uSnEteE1PSHhVT25fQkR0RFFEZVdtd0FZX0FsTTI5SGtNa2l1SkNuYTRiaVgzeklYQktmdFpTbUZfMkowYTBNekZQeGJKUzR6TU5hRmNPaUMzODBBR2Z1ekVFajl6QTRSWS1TZng2Vmd1QXZyQmRFY2MybUt4SUlIdlA3NnktQUNmQVR1c0xhQU0?oc=5"
+          "title": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVW96NmU3MHU1ek03NUNzRzFSa2hVdjFna2t6NFJPUUNGRHYwdlVPOGVBTzdTLXZQakFxV2FmNVNmRU16VEVXNkZ6MTRCdi1QWmM3VS10NXU0MWNqSHlqa0M2a1Q3eHg1VTRRZ0NFT3o5R3F5elFnWlg5RVowTEt4RlZsTWU4REk4X19qOFU5NGZ3akNXbHVmcDBOYWFEVXZKakRXOWlKV0gtQmQydXUyNXBlUHpLbzZNdEIyM1dsNXhQOG9QcW5KdHpkTlNrdGJpOU9oY1Fn0gHbAUFVX3lxTE9LSTE5eG5YZTE1bmtxTXFsZXpwWW0wMGhvMUROT1F5SkVIZkRldk0xYnB4Qmw2RXp3c1l1ZklaV1RHMElsQ0doS1ZsanIwNDdIVjZVSHNIOFk2WGROTVBXeFB4UGtLLUJodzN4Vll6cEUyVEg2ZlFfS0Ixd2c5UlNhZlhha2VVdGdUNTM5ZGFnUHAyVjM0T2lyTWtMV3dubnh3dmdKM0tTc2JDYTFOd1FPRUJPYTZqdmRUaHlTWTJOZTVlYS1JSEE4dllmalpNeDFmUE44RW50TVNoNA?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -261,87 +217,53 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 36,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 18,
+    "candidateCount": 29,
+    "eventGroupCount": 5,
+    "rejectedNonEvents": 6,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 36
+      "ok": 29
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-a0f270f62d12",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "TNI AU",
-        "Satpomau",
-        "Lanud ASH"
-      ],
-      "headline": "Cegah Judi Online dan Pinjaman Online Ilegal, Satpomau dan Intel Lanud ASH Gelar Razia Handphone Personel - TNI AU",
-      "headlineZh": "空军突击检查人员手机防网贷赌博",
-      "summaryZh": "印尼空军宪兵与情报部门对人员开展手机突击检查，防范网络赌博和非法网贷，属内部执法行动。",
-      "rationale": "机构内部执法检查，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "tni-au.mil.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a69ad286b2defedb"
-      ],
-      "articles": [
-        {
-          "title": "Cegah Judi Online dan Pinjaman Online Ilegal, Satpomau dan Intel Lanud ASH Gelar Razia Handphone Personel - TNI AU",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNOGJXZnJHNzNGWHFWUHJQa0dVbDVpLXBwV2xaNWd6Y0tpWHJPa2JPcm9Ic0ZCckJmby01SXhQMVpyZzkxVjlkaUM1VDc0YWlVeXUydGNGU3IyNENSUWJkMUxyNFBYSjJLamtEdktSdzhack9wdDc0dGZPSmJQSVkybkRTbDU3Y1lNQWxRWFNBTEFyTU1rV0pNdC1oejVxQkw5QlpRd3ZGdENyMUQ3aDJQYVU3a056aWpKU2dDMUNBNWhzQUtvcmg5ZmRybU9vUFRydWdvakJ0MA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-d89acd5180c2",
-      "eventType": "credit_quality_stress",
+      "id": "llm-b93c640d7adb",
+      "eventType": "fraud_or_illegal_practice",
       "severity": 0.55,
       "entities": [
-        "AFPI",
-        "Pindar"
+        "Imigrasi Bali",
+        "Imigrasi Ngurah Rai",
+        "WN Malaysia"
       ],
-      "headline": "Macet di Atas Batas: Kredit Bermasalah Pinjaman Daring 5,36% dan Hak Peminjam yang Kesulitan - Gaza Media",
-      "headlineZh": "Pindar不良率TWP90升至5.36%",
-      "summaryZh": "Pindar平台90天以上逾期率升至5.36%超安全阈值，AFPI呼吁平台收紧信用评分，反映资产质量承压。",
-      "rationale": "行业资产质量指标恶化，属事件",
-      "independentSourceCount": 2,
+      "headline": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
+      "headlineZh": "巴厘岛驱逐15名马来西亚籍网贷管理员",
+      "summaryZh": "巴厘岛移民局一周内对26名外国人采取行动，其中15名马来西亚籍人员涉嫌滥用居留许可从事线上贷款业务被驱逐，属跨境违规经营个案。",
+      "rationale": "移民局实际执法驱逐，属具体事件",
+      "independentSourceCount": 3,
       "domains": [
-        "finansial.bisnis.com",
-        "gazamedia.net"
+        "denpasar.kompas.com",
+        "kumparan.com",
+        "lenteraesai.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f2ca25291549d0e8",
-        "e6eccaa4be1f5fe9",
-        "609a48995f9149ee"
+        "e6948062ec3326ac",
+        "0c2070b5fc69ee40",
+        "74c779fe72c02f43"
       ],
       "articles": [
         {
-          "title": "Macet di Atas Batas: Kredit Bermasalah Pinjaman Daring 5,36% dan Hak Peminjam yang Kesulitan - Gaza Media",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOUzVqTU5Yc0hPelprdzFnTmdRRWV1Z0paUXhTUERncXdzSHoteWEyQThjV01qZ19NRXp6SWVuSXZUdjd3MmhjdmZOakdDV1RMaGI4U2NXWllOOC1qbTJDZmtNQjBrZWw3V1BCSW03ZllZMGxFMTVlTGZ2TUxhbXhpMm1QczV3aXdheUVfU1lSdWhUMjdXYnltYUhVT3dsSUthVUtxcnJMd1lsR2FuOV9pZEV3?oc=5"
+          "title": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPM0RDT2RwakhWTEUwS0ZSYUZJZXpKNlk5WmJmXzZKaHVfRl9BYkVpRmNSM0NMVnJZVG1ka0JUY0ozS3gwTmJPZ25XenpKemIxQ1hIWTM2RXBVWDRDbU15RTY4QzQ0dzJfdjN2Y1BYX0Z0WjlicU5IM0ZLZmhlR1J6SUVNdDh2bVdOTGZNM2dDTHJPbjZ2bDdidHprZzU0SEN3SWd2emlPS3dHRHM3bzltX0Rfb0M?oc=5"
         },
         {
-          "title": "TWP90 Pindar Tembus 5,36%, AFPI Dorong Platform Perketat Credit Scoring - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNanZRNmp2WjBJZ0tSZ0drTEdqcXRxd29oYXdCMldldkMxeVh0Q3pfSnl4YkF1MmI4VTVfRTR0bFowb0VyUWpNSE1MN1JHUFgwY2twRnBqT2NTZjRaTm43S1FqNm1Wb21nTExOTzJvb0M2eFdLQWJ2SHJzdXc0V0VLSXEyR0VQWmJuYWpLdENvRzJoSE90WlpZOUV1bm9sVEpYRE5vaHVlWHdEQVd0c2p3ZUhlb2Ywb3h6TVJ1UnRidFY?oc=5"
+          "title": "Imigrasi Ngurah Rai Deportasi 15 WN Malaysia yang Jadi Admin Pinjol - kumparan.com - kumparan",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOWpMc1F1MW1zMVEwaDJQeHVpbnNhYzM1ck5uMUdpeDFXQVNvSEJLOUFtQUxWNEJHLVYzVXE5eURMVlpFdWNmNlJLbDI2YkNRWUpIeUYzU25hSy1KQURHUnV1YXpGUnB1ZDVCa25USjU2NDRINzVkWDN2NXVjdW5rUGtjb1AxaU8zR29OM29NN2xLeV9OUUg3bFM3WFFYT0Z4SkowTTE0ZGpLRWZLeW5Icks5NNIBuwFBVV95cUxPQ3poSERMS1gydXkyOFRjVXh4c0RobXIxNk5NZzNWMnUyQkw1SE1QN3pFdDRYQzRkT0QwRDAzSzVybWdDQWxnazg2S2gwLTFhaFpjZlJieFQ4TWd0STVTQ281UWRaTGd4a3ZEcGc2eC05NFNOTTdDR0x5Zjlsb0ZfSm1seHhFdzV3a2w5SHRGenptWHV4OUotOGNYcUcyd25Hc3RuekhnTE10dHRSQ29wS0wwdXB5SUQzQUMw?oc=5"
         },
         {
-          "title": "TWP90 Pindar Tembus 5,36%, Lampaui Ambang Batas Aman dan Jadi Alarm bagi Industri - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQUUlqSkNWbjFFZGN4RHhwcHhfVnVVZklYUzAtWDFaeDlQUzdJWXAySjM1dV9fZFdSTUpRS19rTTQwUnVNNjNvQmdxSGNQTlZPYUdGREFyRHZJWVBwRjZzWWdvcF9RY3pSbXJOMklMVGN4UUd1SE5SbXZvRHprMHZKNW5rSzFtUlNRQzhWaFJhczBVR2ZRZV9LZ2VCRzZLLTFlZkUwcERWQk02clpjb1o5Tktla2kwNkU1eWdkWGc0NFpQel9ZNlFRdE9iMjF0UQ?oc=5"
+          "title": "15 WN Malaysia Dideportasi dari Bali, Diduga Salahgunakan Izin Tinggal untuk Bisnis Pinjol - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT1kzdEZLeXNqcEZYSG1zd0tORURrWHVJYXktdW9GcGxob3M1RGtyZ3dFcWVRTVAwZXNaaS0zRzdJeE92dndOQW9PM1FTLWx5MmdYQXVWM2N2NUZVMGFoVDltYjZYdllnb2p4SmdYUnJWVUVRUXZzTTVDaTBJSlNmSGlqMGs3MWFsR05HcTZqcTdUWkcxc1hHWFg5cTdOVDRoWjZyeDFHTVR3YzFQeGlSTkNZdkJGSmYzRTVKcld3T3ZqcXJ5ekRjYw?oc=5"
         }
       ],
       "bodyBackedSourceCount": 3,
@@ -354,34 +276,69 @@
       }
     },
     {
-      "id": "llm-6be78655ae0c",
+      "id": "llm-3a73c2a48b20",
       "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
         "OJK"
       ],
       "headline": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
-      "headlineZh": "OJK取缔非法金融实体",
-      "summaryZh": "OJK截至2026年10月已封堵1489个非法金融实体，其中多为非法网贷，属监管执法行动。",
-      "rationale": "监管取缔行动，属事件",
-      "independentSourceCount": 2,
+      "headlineZh": "OJK取缔16家非法金融实体",
+      "summaryZh": "OJK关停16家涉嫌诈骗公众的非法金融实体，属监管执法行动，对非法网贷与投资骗局有直接震慑意义。",
+      "rationale": "监管机构实际取缔执法，属事件",
+      "independentSourceCount": 1,
       "domains": [
-        "databoks.katadata.co.id",
         "koridor.co.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "64358639c2fb94c7",
-        "d8b33d8b8f95fe6e"
+        "64358639c2fb94c7"
       ],
       "articles": [
         {
           "title": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
           "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0xVzN6NHh3a2UtNHYxUDdUY2lMdVl6QnZJUEdKLWVaQjROdDhkNXN5SGM5N190Z1g0bHZDejVnanFySlhiSTJ6OE5sWjNMMDdIRjZ2S1FGMkFnaC04TTItVHRqUVBRemd4blE?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0e3a3dcb0bbb",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "银行",
+        "fintech pinjol"
+      ],
+      "headline": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
+      "headlineZh": "OJK警示银行慎选网贷合作方",
+      "summaryZh": "OJK公开提醒银行不要随意与网贷金融科技平台合作，属监管表态与风险提示，涉及银行与网贷合作渠道风险。",
+      "rationale": "监管机构公开警示表态，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "f0177444fff5ac67",
+        "e0990866c2f6d5a8"
+      ],
+      "articles": [
+        {
+          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
+          "link": "https://www.cnbcindonesia.com/market/20261110154120-17-783946/ojk-wanti-wanti-bank-tak-asal-gandeng-fintech-pinjol"
         },
         {
-          "title": "OJK Blokir 1.489 Entitas Keuangan Ilegal sampai Oktober 2026, Terbanyak Pinjol - Databoks",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPQml3d1JybURuSFRTeHlmUTZON0pNOTgzWE5lOE9fY2Z4V0tfNnh0NUlqM0JRRVRhTTF3LUg3X2hvcENhNkxpX2tHaU5SUXVDRzk5SGZuUHE0V29HSHAta3Jka2x6WFR5dDJYekFZZUdoQ2c4dXJmNkstNnhCOWxRbGhIZ3k2US1WU3BrN0FQai1WdF9VTHN4VG1ZeFVsUmhKUFI1S0tfa2pfcGxFOS1XRjBsN203MjNDMUVXTDBqejNYbkdtMWVBRkstTGlvVVVPcXVHWE1SYVA?oc=5"
+          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNa3FvMkVfaWM0ME5kLUs3QXNSZ3ZnSlRUcDZrRTZXSHlVbld5TGxXMl92djJpczlCTDdRUFZzRDEtQjRob1dQOEt2eUoya19KZGdnWVpxT2VWUHlDaVlOZ1F2cDRZVjBXTVhvU296UV9kcGp5bTdjc2tFY0J0aC1PQllkdHBKcm5zUHBreFU5Sjl4X3plaXpaNEk4MHVwY0d0QjVkUlRYYl8zWGhSUUdlR2ZsRlHSAboBQVVfeXFMTjFBYWRVdXlJMzRReTA1OTVKUW50Y3g3WmtsdTlNd29XVFlEWDNzaWxzLTNDWkdFOHVlemRpVGpUZkI1eW1JbWw0ckpyQms5YkJrSHRqazlxbTcyRThGZFNuX1JQSVNra3JLMU9sSHJoOTBLVnZ0MGJqNmhtV21jenZiUndRQTcxMHFMRUVwY20xT2o2ajJ2M3FtSDZzdGlJRzk0alY3Y2t2YVRMUWF3eDViX0I1UG5vRFRB?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
@@ -394,28 +351,29 @@
       }
     },
     {
-      "id": "llm-08945120f039",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
+      "id": "llm-969c6593c232",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
       "entities": [
-        "Polsek Mentebah"
+        "Palembang",
+        "借款人家属"
       ],
-      "headline": "Cegah Judi Online dan Pinjaman Online Ilegal, Polsek Mentebah Laksanakan Pengecekan Handphone Anggota - https://www.humaspolreskh.com/",
-      "headlineZh": "Mentebah警局检查警员手机",
-      "summaryZh": "Kapuas Hulu的Mentebah警局对警员手机进行检查，防范网络赌博和非法网贷，属内部执法行动。",
-      "rationale": "机构内部检查，属事件",
+      "headline": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
+      "headlineZh": "巨港男子因网贷逼债卖妻",
+      "summaryZh": "巨港一名男子因陷入网贷债务，以30万印尼盾一次的价格让妻子卖淫，属网贷引发的严重人身伤害个案。",
+      "rationale": "具体人身伤害案件，属消费者受害",
       "independentSourceCount": 1,
       "domains": [
-        "humaspolreskh.com"
+        "regional.kompas.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "0bab542659c679b8"
+        "05d9a893fd66271c"
       ],
       "articles": [
         {
-          "title": "Cegah Judi Online dan Pinjaman Online Ilegal, Polsek Mentebah Laksanakan Pengecekan Handphone Anggota - https://www.humaspolreskh.com/",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQZTVYaEo0OXByODVDYVJRaVF5WGVzU0RGWWVLUHNQdm5VRkhiSHRsMGlhS3l2UnVhRU5mcTktMDYzRGw2Z1JIelU0M05NemtzbC0xcUpiNjQ5RGFnSHlqYnRhQXlzNkVwMEhXaHVJb21fZGtPcEJMZmJ1OGVya01hNWlUUHFkcFE?oc=5"
+          "title": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTnRNMGRYQ0s0NkNfbmtILVZwaDRlamRhNUxXVUFPQk0zRF9nT1ZoQzA1clhIWWViYko5SVo2U1FyR29sN3plWWhtY005Z3B5NFBBWW5NaURfNzd1TW84TU9DNC1PNU9USTdWRU4tQVlLUl9CXzRvMGdYSEpNRjhyRmdid0NMaHhUSWVsWFN3NlpqSHdtSUV4djVjSUNhQnp0NnVwU2JOUmJIekVEWjY4aFFid3lBUmNTY0NQMGJFY0g5TG8?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -428,74 +386,29 @@
       }
     },
     {
-      "id": "llm-bcbf42251133",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
-      "entities": [
-        "OJK",
-        "Bareskrim",
-        "Pindar DSI"
-      ],
-      "headline": "Foto : OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya Halaman 1 - Kompas.com",
-      "headlineZh": "OJK向刑侦局移交Pindar资产线索",
-      "summaryZh": "OJK将Pindar DSI资产追查结果移交警方刑侦局，案件进入刑事调查阶段，属监管与执法介入。",
-      "rationale": "监管移交刑事调查，属事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "money.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "07239916de1d61da",
-        "633cebbe302699a3",
-        "3bddf8a6dae9e505"
-      ],
-      "articles": [
-        {
-          "title": "Foto : OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya Halaman 1 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOTXdDb0RBc0RUaGFhenJMUHRkam5mZEFHdUFUTFVQZHl6REFsNmRYLWswdE1ZSXg4TjRoLUh4ZG93QW0yVFF5c1FLbkNhQVNCekEtNUNvZDkxMGtKdEp6Um9ZcWR2Z2Y5OUNpNTh2cXhBejZCeWx0V1JhOFo0WE80bFhIaGNjWXgwOERBS0lzT3VtOV8tSzJGQmhvSXFnZVQyLVdLRnZXRFVaUlh0bm9tX0hIT1VhR2RYU2RkbGlnTQ?oc=5"
-        },
-        {
-          "title": "Foto : OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya Halaman 2 - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQc0tZdzl5Nnp6ZXpNSzFXeXVreGFkbXNBX2h2Nzl0dUEtbTU0d3lNekM2SVhVRXFTQmMweUt6U3p5cjJyMUlZdk1kQU5HRGstMXZnYzQ1T1g4NF9TWklMOE40Yzl3UTNGRVVLMS00QmlLUVlWdVNiTmtJaXRkYUFMcG5kWUQxLWU0XzdrcmExT2I5UlBLNWl0eVBtbmFnQVZ3OEJBeHFjZWZ4ZjJRLUp3NXdJNHJIRll5cDlaT1hTTQ?oc=5"
-        },
-        {
-          "title": "OJK Serahkan Hasil Penelusuran Aset Pindar DSI ke Bareskrim, Ini Perkembangannya - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdjhPQ3U5SFNqLVgyZFpjOVpodmVYbVd0VGNKTUp2Yy1oYUJraVR6SWJHNjdsZ2ozN0h4WlZtRENZSFg2Z3hrMzZNeG1rV0t4dHZtTFJZZ05hWXJtSGhaZ2VfZE55OU5jTmFEV0pYdUVubmNJNEExbUJ0Q1EycEJRQ3NQVllYREloWEZ5bGZ2SjJxSTZtd0xhNDJhdUI3UlBqWmVCRks0VjZtMkVnVHh4dGpMQVA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-9a72d6e90955",
-      "eventType": "consumer_harm",
+      "id": "llm-fd40dfd4db3c",
+      "eventType": "general_sentiment",
       "severity": 0.55,
       "entities": [
-        "Aceh"
+        "反催收群众",
+        "OJK"
       ],
-      "headline": "VIDEO - Aceh Catat 151 Aduan Pinjol dan 38 Laporan Investasi Ilegal - Serambinews.com",
-      "headlineZh": "亚齐记录151起网贷投诉",
-      "summaryZh": "亚齐记录151起网贷投诉和38起非法投资举报，反映当地消费者受害规模，值得留痕。",
-      "rationale": "消费者投诉数据，属事件",
+      "headline": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
+      "headlineZh": "反催收团体要求解散网贷并评估OJK",
+      "summaryZh": "约4600万人负债106万亿印尼盾背景下，反催收群众集会要求取缔网贷并评估OJK，属群体性诉求表达。",
+      "rationale": "有具体集会诉求，属事件性舆情",
       "independentSourceCount": 1,
       "domains": [
-        "aceh.tribunnews.com"
+        "radarbromo.jawapos.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "9960b2763220483f"
+        "ffff898647d45aa8"
       ],
       "articles": [
         {
-          "title": "VIDEO - Aceh Catat 151 Aduan Pinjol dan 38 Laporan Investasi Ilegal - Serambinews.com",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQcTJhb21EUWwyeDJtR29vNWVYM1lVZl9UZk5uSnEteE1PSHhVT25fQkR0RFFEZVdtd0FZX0FsTTI5SGtNa2l1SkNuYTRiaVgzeklYQktmdFpTbUZfMkowYTBNekZQeGJKUzR6TU5hRmNPaUMzODBBR2Z1ekVFajl6QTRSWS1TZng2Vmd1QXZyQmRFY2MybUt4SUlIdlA3NnktQUNmQVR1c0xhQU0?oc=5"
+          "title": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVW96NmU3MHU1ek03NUNzRzFSa2hVdjFna2t6NFJPUUNGRHYwdlVPOGVBTzdTLXZQakFxV2FmNVNmRU16VEVXNkZ6MTRCdi1QWmM3VS10NXU0MWNqSHlqa0M2a1Q3eHg1VTRRZ0NFT3o5R3F5elFnWlg5RVowTEt4RlZsTWU4REk4X19qOFU5NGZ3akNXbHVmcDBOYWFEVXZKakRXOWlKV0gtQmQydXUyNXBlUHpLbzZNdEIyM1dsNXhQOG9QcW5KdHpkTlNrdGJpOU9oY1Fn0gHbAUFVX3lxTE9LSTE5eG5YZTE1bmtxTXFsZXpwWW0wMGhvMUROT1F5SkVIZkRldk0xYnB4Qmw2RXp3c1l1ZklaV1RHMElsQ0doS1ZsanIwNDdIVjZVSHNIOFk2WGROTVBXeFB4UGtLLUJodzN4Vll6cEUyVEg2ZlFfS0Ixd2c5UlNhZlhha2VVdGdUNTM5ZGFnUHAyVjM0T2lyTWtMV3dubnh3dmdKM0tTc2JDYTFOd1FPRUJPYTZqdmRUaHlTWTJOZTVlYS1JSEE4dllmalpNeDFmUE44RW50TVNoNA?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
@@ -511,31 +424,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 36,
-    "socialItemCount48h": 19
+    "articleCount48h": 29,
+    "socialItemCount48h": 7
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 486,
-    "classifiedCount": 142,
-    "irrelevantDropped": 98,
+    "inputCount": 473,
+    "classifiedCount": 146,
+    "irrelevantDropped": 94,
     "model": "deepseek-chat",
-    "fallbackCount": 246,
+    "fallbackCount": 233,
     "labelCounts": {
-      "NEG": 55,
-      "MIX": 39,
-      "POS": 48
+      "NEG": 57,
+      "MIX": 36,
+      "POS": 53
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

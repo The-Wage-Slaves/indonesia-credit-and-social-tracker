@@ -1,20 +1,19 @@
 {
-  "generatedAt": "2026-11-10T08:52:09.503036+00:00",
+  "generatedAt": "2026-11-11T08:25:30.807450+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-10",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-11",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜副总统吉布兰向总统普拉博沃提出辞职意向**\n严重度 0.90｜3个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **仓促立法/政策骤变｜国会启动对吉布兰的罢免程序，50名议员签署行使表态权**\n严重度 0.75｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜警方监听案发酵：Bahlil与Tito被关联，Propam举行伦理听证**\n严重度 0.75｜3个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🔺 **军警冲突/安全事件｜亚齐Pidie暴力事件致人死亡，据称死于弹丸，Komnas HAM要求尸检**\n严重度 0.75｜1个独立来源（bbc.com）｜影响支柱：coercive",
-      "**Pinjol/Pindar 舆情事件**\n\n**OJK取缔非法金融实体**\nOJK截至2026年10月已封堵1489个非法金融实体，其中多为非法网贷，属监管执法行动。\n证据：2个独立来源。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼副总统吉布兰向总统提交辞职意向，引发政坛震荡**\n严重度 0.90｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **仓促立法/政策骤变｜120名国会议员联署行使表达意见权，推动弹劾副总统吉布兰**\n严重度 0.85｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **大规模抗议/镇压｜日惹示威演变为骚乱，154人被捕，UGM谴责警方暴力**\n严重度 0.75｜3个独立来源（antaranews.com、bbc.com）｜影响支柱：social\n\n🟠 **市场失序(汇股债)｜印尼证交所警告政治压力笼罩下IHSG承压，并计划剔除约300只HSC股票**\n严重度 0.60｜1个独立来源（cnnindonesia.com）｜影响支柱：currency",
       "**已折叠的低证据线索**\n另有 5 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-10:high_pending:red:success"
+    "decisionId": "daily:2026-11-11:normal:red:success"
   },
   "feishu": "sent"
 }
