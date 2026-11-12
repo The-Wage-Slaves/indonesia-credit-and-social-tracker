@@ -44,8 +44,6 @@ def backup():
 
 def append_week(date, scores):
     txt = DATA_JS.read_text(encoding="utf-8")
-    if f'date: "{date}"' in txt:
-        sys.exit(f"× weekly 里已有 {date}，不重复写入。")
     # 定位 weekly 数组的右括号（从 "weekly: [" 起数括号配平）
     m = re.search(r"weekly:\s*\[", txt)
     if not m:
@@ -56,6 +54,10 @@ def append_week(date, scores):
         elif txt[i] == "]": depth -= 1
         i += 1
     close = i - 1                      # "]" 的位置
+    # 只在 weekly 数组内查重：watchlist 等别处也有 date 字段，
+    # 2026-11-10 两条同日观察时点曾让全文查重误判「已有该周」。
+    if f'date: "{date}"' in txt[m.end():close]:
+        sys.exit(f"× weekly 里已有 {date}，不重复写入。")
     entry = ('    { date: "%s", scores: { %s } }\n  '
              % (date, ", ".join(f"{p}: {scores[p]}" for p in PILLARS)))
     # 上一条目后补逗号
