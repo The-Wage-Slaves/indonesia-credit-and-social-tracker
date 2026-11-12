@@ -1,98 +1,78 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-11",
-  "level": "normal",
+  "date": "2026-11-12",
+  "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 5.7,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 9.8,
+    "newsDailyVolumeRisk": 12.9,
+    "socialDailyVolumeRisk": 11.8,
+    "negativeSocialShare": 15.4,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=9; prior-7d median=22.0; robust z=-2.95",
-    "socialVolume": "today=1; prior-7d median=36.0; robust z=-4.72"
+    "newsVolume": "today=10; prior-7d median=21.0; robust z=-2.47",
+    "socialVolume": "today=0; prior-7d median=34.0; robust z=-2.55"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [
+  "highRiskPendingEvents": [
     {
-      "id": "llm-b93c640d7adb",
+      "id": "llm-85c7858aa2cb",
       "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "Imigrasi Bali",
-        "Imigrasi Ngurah Rai",
-        "WN Malaysia"
-      ],
-      "headline": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
-      "headlineZh": "巴厘岛驱逐15名马来西亚籍网贷管理员",
-      "summaryZh": "巴厘岛移民局一周内对26名外国人采取行动，其中15名马来西亚籍人员涉嫌滥用居留许可从事线上贷款业务被驱逐，属跨境违规经营个案。",
-      "rationale": "移民局实际执法驱逐，属具体事件",
-      "independentSourceCount": 3,
-      "domains": [
-        "denpasar.kompas.com",
-        "kumparan.com",
-        "lenteraesai.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e6948062ec3326ac",
-        "0c2070b5fc69ee40",
-        "74c779fe72c02f43"
-      ],
-      "articles": [
-        {
-          "title": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPM0RDT2RwakhWTEUwS0ZSYUZJZXpKNlk5WmJmXzZKaHVfRl9BYkVpRmNSM0NMVnJZVG1ka0JUY0ozS3gwTmJPZ25XenpKemIxQ1hIWTM2RXBVWDRDbU15RTY4QzQ0dzJfdjN2Y1BYX0Z0WjlicU5IM0ZLZmhlR1J6SUVNdDh2bVdOTGZNM2dDTHJPbjZ2bDdidHprZzU0SEN3SWd2emlPS3dHRHM3bzltX0Rfb0M?oc=5"
-        },
-        {
-          "title": "Imigrasi Ngurah Rai Deportasi 15 WN Malaysia yang Jadi Admin Pinjol - kumparan.com - kumparan",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOWpMc1F1MW1zMVEwaDJQeHVpbnNhYzM1ck5uMUdpeDFXQVNvSEJLOUFtQUxWNEJHLVYzVXE5eURMVlpFdWNmNlJLbDI2YkNRWUpIeUYzU25hSy1KQURHUnV1YXpGUnB1ZDVCa25USjU2NDRINzVkWDN2NXVjdW5rUGtjb1AxaU8zR29OM29NN2xLeV9OUUg3bFM3WFFYT0Z4SkowTTE0ZGpLRWZLeW5Icks5NNIBuwFBVV95cUxPQ3poSERMS1gydXkyOFRjVXh4c0RobXIxNk5NZzNWMnUyQkw1SE1QN3pFdDRYQzRkT0QwRDAzSzVybWdDQWxnazg2S2gwLTFhaFpjZlJieFQ4TWd0STVTQ281UWRaTGd4a3ZEcGc2eC05NFNOTTdDR0x5Zjlsb0ZfSm1seHhFdzV3a2w5SHRGenptWHV4OUotOGNYcUcyd25Hc3RuekhnTE10dHRSQ29wS0wwdXB5SUQzQUMw?oc=5"
-        },
-        {
-          "title": "15 WN Malaysia Dideportasi dari Bali, Diduga Salahgunakan Izin Tinggal untuk Bisnis Pinjol - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT1kzdEZLeXNqcEZYSG1zd0tORURrWHVJYXktdW9GcGxob3M1RGtyZ3dFcWVRTVAwZXNaaS0zRzdJeE92dndOQW9PM1FTLWx5MmdYQXVWM2N2NUZVMGFoVDltYjZYdllnb2p4SmdYUnJWVUVRUXZzTTVDaTBJSlNmSGlqMGs3MWFsR05HcTZqcTdUWkcxc1hHWFg5cTdOVDRoWjZyeDFHTVR3YzFQeGlSTkNZdkJGSmYzRTVKcld3T3ZqcXJ5ekRjYw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-3a73c2a48b20",
-      "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
-        "OJK"
+        "Imigrasi Bali",
+        "WNA Malaysia",
+        "pinjol ilegal"
       ],
-      "headline": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
-      "headlineZh": "OJK取缔16家非法金融实体",
-      "summaryZh": "OJK关停16家涉嫌诈骗公众的非法金融实体，属监管执法行动，对非法网贷与投资骗局有直接震慑意义。",
-      "rationale": "监管机构实际取缔执法，属事件",
-      "independentSourceCount": 1,
+      "headline": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
+      "headlineZh": "巴厘岛移民局驱逐15名涉非法网贷马来西亚人",
+      "summaryZh": "巴厘岛移民局一周内对26名外国人采取行动，其中15名马来西亚公民因参与非法网贷业务被驱逐，值得留痕。",
+      "rationale": "移民局对涉非法网贷外国人采取驱逐执法行动",
+      "independentSourceCount": 6,
       "domains": [
-        "koridor.co.id"
+        "cnbcindonesia.com",
+        "cnnindonesia.com",
+        "kumparan.com",
+        "lenteraesai.id",
+        "lintascakrawalanews.com",
+        "news.detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "64358639c2fb94c7"
+        "8a5ee1fbcee1f128",
+        "5623de0e1324e1cf",
+        "d6ef2d3d96fd96cd",
+        "738ed3ee9e3c6430",
+        "08377342bd401b69",
+        "e6948062ec3326ac",
+        "0c2070b5fc69ee40"
       ],
       "articles": [
         {
-          "title": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0xVzN6NHh3a2UtNHYxUDdUY2lMdVl6QnZJUEdKLWVaQjROdDhkNXN5SGM5N190Z1g0bHZDejVnanFySlhiSTJ6OE5sWjNMMDdIRjZ2S1FGMkFnaC04TTItVHRqUVBRemd4blE?oc=5"
+          "title": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeGQ4UU1KdWV2UXhSYU9PR3RYa19ubXR6c0dFWEY3UWRwMzlIY0txRksyZHMwcGNzamhWYUhxYTFBWWVRRDh6QkUya1R1dW9CR2RqcVRyYVFfTGEwOVVBZ1gwSk9iVXhwanRSSmp4NW5mekZBNW9mUENHb21Fb1dORm94QjZldVZPOVFOeFl4WXNOQ1hXWnItcW1rdWJnZzhTUGw1MENmS1A5cjExdzBkX1RLb2FSNUU?oc=5"
+        },
+        {
+          "title": "Imigrasi Bali Deportasi 15 WNA Malaysia yang Jadi Admin Pinjol",
+          "link": "https://www.cnnindonesia.com/nasional/20260930172602-12-1410103/imigrasi-bali-deportasi-15-wna-malaysia-yang-jadi-admin-pinjol"
+        },
+        {
+          "title": "Imigrasi Bali Deportasi 15 WNA Malaysia yang Jadi Admin Pinjol - CNN Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQenBCQm52cWtRYzRzWjRrOGZUMGl0dlJsTUZJS3ZqUVhxRDh2REU4eTViTEswam1HdmpVM0FjclFRTFpjbE1YbF9DT2EwMGhicjFpNkpIdjZPNWxZeTl2VDNONEZwRlQwdExWQV9VZTNodnBZNGNqMmZRVVQ2Q29Ob2pSaWJsdXNVVlI1aUhkNGdGbVp4dzUxQzA2NkEySElYVFpPOFRnVlgxOTdOd19ydjA4NEVveEprcmlQdXVxbThnLTkx0gHKAUFVX3lxTE0xUkRuWXhBeGNSQWJqdVFXSW8xSTdmaGFxQkJSaFNtQUJRVlhjaXFEVEhRSGU4ekFmc0dQR1JqaFhaT2o4R0taUE9jQTVMUTh4RlBRd3ptek1aWGUyRjA3ZzRoN1hHdDFsOVdZdlRIeXVnQXZBSEZ4UjVVTVBmbi1IbDdKLW82YjBILUkzVVFfRGlyVVlVb0h0U1hJUktZQU9lWTRMUEFyQ0wtSGJ5NmlRN3g4bUZQSlN6UmlSVG1JaHdJdGFEc0E5LXc?oc=5"
+        },
+        {
+          "title": "26 WNA Dideportasi dari Bali Usai Terlibat Bisnis Pinjol Ilegal-Prostitusi - detikNews",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUlNrN3Y1RklfLUdmcEFscVNtNDcwTFNMb3dNUnQ0Y0tqYXBoRTRLZWpDd1FVM0VNVjRvSXJROUpEZzdISzFJeHZTWjZ2cnZIWGsyXzk1UUtTVUxWNFZxT0NXaXM3cEFUSW05d1hRZ1JaOUI3TEVUWG5tcWFuei1RQWJYajQtZFZUYmNkS1lQZzNUNXI2bER5aXl0VVlYV09xUkxPaE9Iblk4Zlhvb09abV9sMU_SAboBQVVfeXFMTk50aEd3NWpVLUY2Vm11UE1xeTFHUzQ1UUxHSmlIdTRRZWY0NEw1dkIzb2h3akR3Rjk0R1h3RmpoTlZMN0l2TEtMX2pERmY0c2FoOFZRa2t5OW1uMWJrOXRoM3FkNmFLWlNkbUhxaTdhMDBfQ1VYOTFjdDZObDF2anIyQmRHWFM4TUlMLXhkRnhKdEdlN0wwZG43dFdSR21Tb0RzXzFOZ042b3pYaGEwRVMzaWpDT3c0SWJn?oc=5"
+        },
+        {
+          "title": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 Di Antaranya Terlibat Bisnis Pinjaman Online - Lintas Cakrawala News",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNl9udVQ1SnUzVm5lNHFsVVpVeGtvS2ZTNXA2NG5weDJwOTRIeWRLSi1nVnBhQlZIUzFoMWhtQ1RZakt0M1JmSy1pbTYwVk5HSWV2a0J6bDdvQ0RGSXJINXBqVkJtVldQaTlNd2xJZUQwZDRWVWZWS0JiNzhnT0ZpcWx5UUxkamMxMW54NHUxbWxMNUZKNWFEYUVWQW0zaXhmZi1ZV0ZfVENOTVhjS0FjUlJHclp0cHVqQ01vRGcyVU1oTnVKQ2JqakxvZU9FQQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 7,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -100,110 +80,70 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
+    }
+  ],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-0e3a3dcb0bbb",
+      "id": "llm-cab21b51a26d",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
         "OJK",
-        "银行",
-        "fintech pinjol"
+        "LPBBTI",
+        "pinjol/pindar"
       ],
-      "headline": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
-      "headlineZh": "OJK警示银行慎选网贷合作方",
-      "summaryZh": "OJK公开提醒银行不要随意与网贷金融科技平台合作，属监管表态与风险提示，涉及银行与网贷合作渠道风险。",
-      "rationale": "监管机构公开警示表态，属监管介入",
-      "independentSourceCount": 1,
+      "headline": "OJK Perketat Keamanan Data dan Penagihan Pinjol - Radio Idola Semarang",
+      "headlineZh": "OJK发布网贷网络安全与催收道德准则",
+      "summaryZh": "OJK出台LPBBTI网络安全指南及催收诚信公约，禁止恐吓与暴力催收，属监管规范动作。",
+      "rationale": "监管机构发布新规，属监管介入",
+      "independentSourceCount": 12,
       "domains": [
-        "cnbcindonesia.com"
+        "berita.news",
+        "cnbcindonesia.com",
+        "finansial.bisnis.com",
+        "indonesians.id",
+        "kayonews.co.id",
+        "newsurban.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f0177444fff5ac67",
-        "e0990866c2f6d5a8"
+        "5869944dc30c7593",
+        "506d894f860a91fa",
+        "7429d24b54deaa13",
+        "bf2a3fd5b07a412c",
+        "5d070de8b5e61c8d",
+        "272be6e8e2c3e2ea",
+        "ed568f0337f5be25",
+        "360cfcd1c9a79c15",
+        "0710cac2de9ec6ad",
+        "978b0937652a647c",
+        "ad9d948ca247c903",
+        "8cb8e7940c7e6993",
+        "34ce926e8bb5b7fd"
       ],
       "articles": [
         {
-          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
-          "link": "https://www.cnbcindonesia.com/market/20261110154120-17-783946/ojk-wanti-wanti-bank-tak-asal-gandeng-fintech-pinjol"
+          "title": "OJK Perketat Keamanan Data dan Penagihan Pinjol - Radio Idola Semarang",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPb3pRSkk5Y3FhUkZIUzJaMkhsMUU5WVkxbE1HR21qT2ZjalBvM1RzeXpjS2w2M2NnaEZDNkhaMm1WZzU2UkpBY1BiRHZaX0ZnMWtxZHFycnI0N2JNamE3djNIaDNNUXR4bERGaEhEa1hBS2RpVGxCSXlzbkE4ZHExV0hB?oc=5"
         },
         {
-          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNa3FvMkVfaWM0ME5kLUs3QXNSZ3ZnSlRUcDZrRTZXSHlVbld5TGxXMl92djJpczlCTDdRUFZzRDEtQjRob1dQOEt2eUoya19KZGdnWVpxT2VWUHlDaVlOZ1F2cDRZVjBXTVhvU296UV9kcGp5bTdjc2tFY0J0aC1PQllkdHBKcm5zUHBreFU5Sjl4X3plaXpaNEk4MHVwY0d0QjVkUlRYYl8zWGhSUUdlR2ZsRlHSAboBQVVfeXFMTjFBYWRVdXlJMzRReTA1OTVKUW50Y3g3WmtsdTlNd29XVFlEWDNzaWxzLTNDWkdFOHVlemRpVGpUZkI1eW1JbWw0ckpyQms5YkJrSHRqazlxbTcyRThGZFNuX1JQSVNra3JLMU9sSHJoOTBLVnZ0MGJqNmhtV21jenZiUndRQTcxMHFMRUVwY20xT2o2ajJ2M3FtSDZzdGlJRzk0alY3Y2t2YVRMUWF3eDViX0I1UG5vRFRB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-969c6593c232",
-      "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [
-        "Palembang",
-        "借款人家属"
-      ],
-      "headline": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
-      "headlineZh": "巨港男子因网贷逼债卖妻",
-      "summaryZh": "巨港一名男子因陷入网贷债务，以30万印尼盾一次的价格让妻子卖淫，属网贷引发的严重人身伤害个案。",
-      "rationale": "具体人身伤害案件，属消费者受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "05d9a893fd66271c"
-      ],
-      "articles": [
+          "title": "OJK Perkuat Keamanan Siber dan Etika Penagihan Fintech - Sulselsatu",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNGktM3FqMDFfMXFRcU5RdTBfU3lrbHplcmtiRzdTREFtcXlXaVA0cWZiZ1I3VkVsQ1JxNjR2WWdiMi1RT09LZHJGR0Frc0ItWjM2VC11YTNmS2xzdGVQUTI2Mi03WE5XcGhqV2xVRUp1NVdmVzcwTmJER1ctZW1CVHA1Y01BNEs4OFd2U0Ntd3FxWmdxMEVnbGFOX2hiVFdIWmZkcE85N1LSAa4BQVVfeXFMTUhTN3RLTE9FVVpwbXYtNnF3eFFLQ1dWOEpoUWtjVHg4elJUbWp2R3VQYjdNV1AteHI3bG4zYXI2YzVLS3lKY3NmdG9iVmNiX2p5cksxOGlFc1YwdWc4WmxwN0hxdUNaWWtxbnVsUFBtQnJqZ1k1eDVSQmx2aXZRLVR4MGFYQi01NDdzX3oxRTNQMG9HU1hOV0h2NkhwbUVLdTNwSEJQb2tuQnc5MHNR?oc=5"
+        },
         {
-          "title": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTnRNMGRYQ0s0NkNfbmtILVZwaDRlamRhNUxXVUFPQk0zRF9nT1ZoQzA1clhIWWViYko5SVo2U1FyR29sN3plWWhtY005Z3B5NFBBWW5NaURfNzd1TW84TU9DNC1PNU9USTdWRU4tQVlLUl9CXzRvMGdYSEpNRjhyRmdid0NMaHhUSWVsWFN3NlpqSHdtSUV4djVjSUNhQnp0NnVwU2JOUmJIekVEWjY4aFFid3lBUmNTY0NQMGJFY0g5TG8?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-fd40dfd4db3c",
-      "eventType": "general_sentiment",
-      "severity": 0.55,
-      "entities": [
-        "反催收群众",
-        "OJK"
-      ],
-      "headline": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
-      "headlineZh": "反催收团体要求解散网贷并评估OJK",
-      "summaryZh": "约4600万人负债106万亿印尼盾背景下，反催收群众集会要求取缔网贷并评估OJK，属群体性诉求表达。",
-      "rationale": "有具体集会诉求，属事件性舆情",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarbromo.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "ffff898647d45aa8"
-      ],
-      "articles": [
+          "title": "OJK Wajibkan Industri Pinjol Terapkan Etika Penagihan Tanpa Kekerasan - Stabilitas.id",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNaGdXRDJ4V3RfanB1emRHX2JGZFRIb3Y4dk9YZW1kWEdTb2hXRllUU2ZnM3cta21oakVycW40RmxfUXRNc2RSdVBGQzR5XzgxTDFlU1I4SUpGOVV6bjEzMWt4NUljb0k4TkJpVzJBbzdhNGgzcGpvWTRvSGVTVUFNcHQxdHF1N1FvZWVjOUpzcmRyWVNtdlY3ZGVocE0?oc=5"
+        },
         {
-          "title": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVW96NmU3MHU1ek03NUNzRzFSa2hVdjFna2t6NFJPUUNGRHYwdlVPOGVBTzdTLXZQakFxV2FmNVNmRU16VEVXNkZ6MTRCdi1QWmM3VS10NXU0MWNqSHlqa0M2a1Q3eHg1VTRRZ0NFT3o5R3F5elFnWlg5RVowTEt4RlZsTWU4REk4X19qOFU5NGZ3akNXbHVmcDBOYWFEVXZKakRXOWlKV0gtQmQydXUyNXBlUHpLbzZNdEIyM1dsNXhQOG9QcW5KdHpkTlNrdGJpOU9oY1Fn0gHbAUFVX3lxTE9LSTE5eG5YZTE1bmtxTXFsZXpwWW0wMGhvMUROT1F5SkVIZkRldk0xYnB4Qmw2RXp3c1l1ZklaV1RHMElsQ0doS1ZsanIwNDdIVjZVSHNIOFk2WGROTVBXeFB4UGtLLUJodzN4Vll6cEUyVEg2ZlFfS0Ixd2c5UlNhZlhha2VVdGdUNTM5ZGFnUHAyVjM0T2lyTWtMV3dubnh3dmdKM0tTc2JDYTFOd1FPRUJPYTZqdmRUaHlTWTJOZTVlYS1JSEE4dllmalpNeDFmUE44RW50TVNoNA?oc=5"
+          "title": "Begini Siasat OJK Perkuat Ketahanan Siber & Etika Penagihan Pinjol - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQREdMNjBXaE92c2F1RjRmcmNKS1lEYUhZYk91M1NOMTJaNTNfNHhsSGVIWUxQbmhyclpBUTB2eUJYOFFFVERlcmltVVRvbmczMnpBc0hxTmVVMEVnMGlPZTByVTZoVDBlVFpNV1htTjRZM1FZLTdKRGVYWnRCTnkwdjdYdHJiWldnTWs3NkFqeUVXbXZnYmpFNmFnNFBzcmxKNVRFRExhMUxhblRHaG5fRnRsdTV0OUQ3Rm9LUDA2OHo5N2Zz0gHKAUFVX3lxTE9uN3NqenR0X2tVd2VvRF9NaTNfQ3FrdG1LU1V5emgtNmx2Sm4zZVlJbERvdDJDalp6QzhUWDh5cjhjM0x1MVp1QUltNlBoQjdvdEhNQjNzZDZLOXY0WldOdEcxaGpNajF2WGl1VnA3SkpqM3UyX0s0OEt0RGtKaWpQSFlRamVaeEh1M3k1WWRfeUdzUHlFRDBFUmJ0VjY4Skpnb29INFVaRDkxNGlDMmx0N0lYLVQyUzhWMV9ibExiNXlzRFhvRUNCS0E?oc=5"
+        },
+        {
+          "title": "Begini Siasat OJK Perkuat Ketahanan Siber dan Etika Penagihan Pinjol",
+          "link": "https://www.cnbcindonesia.com/market/20261111152925-17-784315/begini-siasat-ojk-perkuat-ketahanan-siber-etika-penagihan-pinjol"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 13,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -217,90 +157,71 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 29,
-    "eventGroupCount": 5,
-    "rejectedNonEvents": 6,
+    "candidateCount": 39,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 15,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 29
+      "ok": 39
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-b93c640d7adb",
+      "id": "llm-85c7858aa2cb",
       "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "Imigrasi Bali",
-        "Imigrasi Ngurah Rai",
-        "WN Malaysia"
-      ],
-      "headline": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
-      "headlineZh": "巴厘岛驱逐15名马来西亚籍网贷管理员",
-      "summaryZh": "巴厘岛移民局一周内对26名外国人采取行动，其中15名马来西亚籍人员涉嫌滥用居留许可从事线上贷款业务被驱逐，属跨境违规经营个案。",
-      "rationale": "移民局实际执法驱逐，属具体事件",
-      "independentSourceCount": 3,
-      "domains": [
-        "denpasar.kompas.com",
-        "kumparan.com",
-        "lenteraesai.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "e6948062ec3326ac",
-        "0c2070b5fc69ee40",
-        "74c779fe72c02f43"
-      ],
-      "articles": [
-        {
-          "title": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 WN Malaysia Terlibat Bisnis Pinjol - Lenteraesai.id",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPM0RDT2RwakhWTEUwS0ZSYUZJZXpKNlk5WmJmXzZKaHVfRl9BYkVpRmNSM0NMVnJZVG1ka0JUY0ozS3gwTmJPZ25XenpKemIxQ1hIWTM2RXBVWDRDbU15RTY4QzQ0dzJfdjN2Y1BYX0Z0WjlicU5IM0ZLZmhlR1J6SUVNdDh2bVdOTGZNM2dDTHJPbjZ2bDdidHprZzU0SEN3SWd2emlPS3dHRHM3bzltX0Rfb0M?oc=5"
-        },
-        {
-          "title": "Imigrasi Ngurah Rai Deportasi 15 WN Malaysia yang Jadi Admin Pinjol - kumparan.com - kumparan",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOWpMc1F1MW1zMVEwaDJQeHVpbnNhYzM1ck5uMUdpeDFXQVNvSEJLOUFtQUxWNEJHLVYzVXE5eURMVlpFdWNmNlJLbDI2YkNRWUpIeUYzU25hSy1KQURHUnV1YXpGUnB1ZDVCa25USjU2NDRINzVkWDN2NXVjdW5rUGtjb1AxaU8zR29OM29NN2xLeV9OUUg3bFM3WFFYT0Z4SkowTTE0ZGpLRWZLeW5Icks5NNIBuwFBVV95cUxPQ3poSERMS1gydXkyOFRjVXh4c0RobXIxNk5NZzNWMnUyQkw1SE1QN3pFdDRYQzRkT0QwRDAzSzVybWdDQWxnazg2S2gwLTFhaFpjZlJieFQ4TWd0STVTQ281UWRaTGd4a3ZEcGc2eC05NFNOTTdDR0x5Zjlsb0ZfSm1seHhFdzV3a2w5SHRGenptWHV4OUotOGNYcUcyd25Hc3RuekhnTE10dHRSQ29wS0wwdXB5SUQzQUMw?oc=5"
-        },
-        {
-          "title": "15 WN Malaysia Dideportasi dari Bali, Diduga Salahgunakan Izin Tinggal untuk Bisnis Pinjol - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOT1kzdEZLeXNqcEZYSG1zd0tORURrWHVJYXktdW9GcGxob3M1RGtyZ3dFcWVRTVAwZXNaaS0zRzdJeE92dndOQW9PM1FTLWx5MmdYQXVWM2N2NUZVMGFoVDltYjZYdllnb2p4SmdYUnJWVUVRUXZzTTVDaTBJSlNmSGlqMGs3MWFsR05HcTZqcTdUWkcxc1hHWFg5cTdOVDRoWjZyeDFHTVR3YzFQeGlSTkNZdkJGSmYzRTVKcld3T3ZqcXJ5ekRjYw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 3,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-3a73c2a48b20",
-      "eventType": "regulatory_action",
       "severity": 0.75,
       "entities": [
-        "OJK"
+        "Imigrasi Bali",
+        "WNA Malaysia",
+        "pinjol ilegal"
       ],
-      "headline": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
-      "headlineZh": "OJK取缔16家非法金融实体",
-      "summaryZh": "OJK关停16家涉嫌诈骗公众的非法金融实体，属监管执法行动，对非法网贷与投资骗局有直接震慑意义。",
-      "rationale": "监管机构实际取缔执法，属事件",
-      "independentSourceCount": 1,
+      "headline": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
+      "headlineZh": "巴厘岛移民局驱逐15名涉非法网贷马来西亚人",
+      "summaryZh": "巴厘岛移民局一周内对26名外国人采取行动，其中15名马来西亚公民因参与非法网贷业务被驱逐，值得留痕。",
+      "rationale": "移民局对涉非法网贷外国人采取驱逐执法行动",
+      "independentSourceCount": 6,
       "domains": [
-        "koridor.co.id"
+        "cnbcindonesia.com",
+        "cnnindonesia.com",
+        "kumparan.com",
+        "lenteraesai.id",
+        "lintascakrawalanews.com",
+        "news.detik.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "64358639c2fb94c7"
+        "8a5ee1fbcee1f128",
+        "5623de0e1324e1cf",
+        "d6ef2d3d96fd96cd",
+        "738ed3ee9e3c6430",
+        "08377342bd401b69",
+        "e6948062ec3326ac",
+        "0c2070b5fc69ee40"
       ],
       "articles": [
         {
-          "title": "OJK Hentikan 16 Entitas Keuangan Ilegal yang Tipu Masyarakat - Koridor.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0xVzN6NHh3a2UtNHYxUDdUY2lMdVl6QnZJUEdKLWVaQjROdDhkNXN5SGM5N190Z1g0bHZDejVnanFySlhiSTJ6OE5sWjNMMDdIRjZ2S1FGMkFnaC04TTItVHRqUVBRemd4blE?oc=5"
+          "title": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeGQ4UU1KdWV2UXhSYU9PR3RYa19ubXR6c0dFWEY3UWRwMzlIY0txRksyZHMwcGNzamhWYUhxYTFBWWVRRDh6QkUya1R1dW9CR2RqcVRyYVFfTGEwOVVBZ1gwSk9iVXhwanRSSmp4NW5mekZBNW9mUENHb21Fb1dORm94QjZldVZPOVFOeFl4WXNOQ1hXWnItcW1rdWJnZzhTUGw1MENmS1A5cjExdzBkX1RLb2FSNUU?oc=5"
+        },
+        {
+          "title": "Imigrasi Bali Deportasi 15 WNA Malaysia yang Jadi Admin Pinjol",
+          "link": "https://www.cnnindonesia.com/nasional/20260930172602-12-1410103/imigrasi-bali-deportasi-15-wna-malaysia-yang-jadi-admin-pinjol"
+        },
+        {
+          "title": "Imigrasi Bali Deportasi 15 WNA Malaysia yang Jadi Admin Pinjol - CNN Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQenBCQm52cWtRYzRzWjRrOGZUMGl0dlJsTUZJS3ZqUVhxRDh2REU4eTViTEswam1HdmpVM0FjclFRTFpjbE1YbF9DT2EwMGhicjFpNkpIdjZPNWxZeTl2VDNONEZwRlQwdExWQV9VZTNodnBZNGNqMmZRVVQ2Q29Ob2pSaWJsdXNVVlI1aUhkNGdGbVp4dzUxQzA2NkEySElYVFpPOFRnVlgxOTdOd19ydjA4NEVveEprcmlQdXVxbThnLTkx0gHKAUFVX3lxTE0xUkRuWXhBeGNSQWJqdVFXSW8xSTdmaGFxQkJSaFNtQUJRVlhjaXFEVEhRSGU4ekFmc0dQR1JqaFhaT2o4R0taUE9jQTVMUTh4RlBRd3ptek1aWGUyRjA3ZzRoN1hHdDFsOVdZdlRIeXVnQXZBSEZ4UjVVTVBmbi1IbDdKLW82YjBILUkzVVFfRGlyVVlVb0h0U1hJUktZQU9lWTRMUEFyQ0wtSGJ5NmlRN3g4bUZQSlN6UmlSVG1JaHdJdGFEc0E5LXc?oc=5"
+        },
+        {
+          "title": "26 WNA Dideportasi dari Bali Usai Terlibat Bisnis Pinjol Ilegal-Prostitusi - detikNews",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOUlNrN3Y1RklfLUdmcEFscVNtNDcwTFNMb3dNUnQ0Y0tqYXBoRTRLZWpDd1FVM0VNVjRvSXJROUpEZzdISzFJeHZTWjZ2cnZIWGsyXzk1UUtTVUxWNFZxT0NXaXM3cEFUSW05d1hRZ1JaOUI3TEVUWG5tcWFuei1RQWJYajQtZFZUYmNkS1lQZzNUNXI2bER5aXl0VVlYV09xUkxPaE9Iblk4Zlhvb09abV9sMU_SAboBQVVfeXFMTk50aEd3NWpVLUY2Vm11UE1xeTFHUzQ1UUxHSmlIdTRRZWY0NEw1dkIzb2h3akR3Rjk0R1h3RmpoTlZMN0l2TEtMX2pERmY0c2FoOFZRa2t5OW1uMWJrOXRoM3FkNmFLWlNkbUhxaTdhMDBfQ1VYOTFjdDZObDF2anIyQmRHWFM4TUlMLXhkRnhKdEdlN0wwZG43dFdSR21Tb0RzXzFOZ042b3pYaGEwRVMzaWpDT3c0SWJn?oc=5"
+        },
+        {
+          "title": "Imigrasi Bali Tindak 26 WNA dalam Sepekan, 15 Di Antaranya Terlibat Bisnis Pinjaman Online - Lintas Cakrawala News",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNNl9udVQ1SnUzVm5lNHFsVVpVeGtvS2ZTNXA2NG5weDJwOTRIeWRLSi1nVnBhQlZIUzFoMWhtQ1RZakt0M1JmSy1pbTYwVk5HSWV2a0J6bDdvQ0RGSXJINXBqVkJtVldQaTlNd2xJZUQwZDRWVWZWS0JiNzhnT0ZpcWx5UUxkamMxMW54NHUxbWxMNUZKNWFEYUVWQW0zaXhmZi1ZV0ZfVENOTVhjS0FjUlJHclp0cHVqQ01vRGcyVU1oTnVKQ2JqakxvZU9FQQ?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 7,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -310,108 +231,66 @@
       }
     },
     {
-      "id": "llm-0e3a3dcb0bbb",
+      "id": "llm-cab21b51a26d",
       "eventType": "regulatory_action",
       "severity": 0.55,
       "entities": [
         "OJK",
-        "银行",
-        "fintech pinjol"
+        "LPBBTI",
+        "pinjol/pindar"
       ],
-      "headline": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
-      "headlineZh": "OJK警示银行慎选网贷合作方",
-      "summaryZh": "OJK公开提醒银行不要随意与网贷金融科技平台合作，属监管表态与风险提示，涉及银行与网贷合作渠道风险。",
-      "rationale": "监管机构公开警示表态，属监管介入",
-      "independentSourceCount": 1,
+      "headline": "OJK Perketat Keamanan Data dan Penagihan Pinjol - Radio Idola Semarang",
+      "headlineZh": "OJK发布网贷网络安全与催收道德准则",
+      "summaryZh": "OJK出台LPBBTI网络安全指南及催收诚信公约，禁止恐吓与暴力催收，属监管规范动作。",
+      "rationale": "监管机构发布新规，属监管介入",
+      "independentSourceCount": 12,
       "domains": [
-        "cnbcindonesia.com"
+        "berita.news",
+        "cnbcindonesia.com",
+        "finansial.bisnis.com",
+        "indonesians.id",
+        "kayonews.co.id",
+        "newsurban.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "f0177444fff5ac67",
-        "e0990866c2f6d5a8"
+        "5869944dc30c7593",
+        "506d894f860a91fa",
+        "7429d24b54deaa13",
+        "bf2a3fd5b07a412c",
+        "5d070de8b5e61c8d",
+        "272be6e8e2c3e2ea",
+        "ed568f0337f5be25",
+        "360cfcd1c9a79c15",
+        "0710cac2de9ec6ad",
+        "978b0937652a647c",
+        "ad9d948ca247c903",
+        "8cb8e7940c7e6993",
+        "34ce926e8bb5b7fd"
       ],
       "articles": [
         {
-          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol",
-          "link": "https://www.cnbcindonesia.com/market/20261110154120-17-783946/ojk-wanti-wanti-bank-tak-asal-gandeng-fintech-pinjol"
+          "title": "OJK Perketat Keamanan Data dan Penagihan Pinjol - Radio Idola Semarang",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPb3pRSkk5Y3FhUkZIUzJaMkhsMUU5WVkxbE1HR21qT2ZjalBvM1RzeXpjS2w2M2NnaEZDNkhaMm1WZzU2UkpBY1BiRHZaX0ZnMWtxZHFycnI0N2JNamE3djNIaDNNUXR4bERGaEhEa1hBS2RpVGxCSXlzbkE4ZHExV0hB?oc=5"
         },
         {
-          "title": "OJK Wanti-Wanti Bank, Tak Asal Gandeng Fintech Pinjol - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNa3FvMkVfaWM0ME5kLUs3QXNSZ3ZnSlRUcDZrRTZXSHlVbld5TGxXMl92djJpczlCTDdRUFZzRDEtQjRob1dQOEt2eUoya19KZGdnWVpxT2VWUHlDaVlOZ1F2cDRZVjBXTVhvU296UV9kcGp5bTdjc2tFY0J0aC1PQllkdHBKcm5zUHBreFU5Sjl4X3plaXpaNEk4MHVwY0d0QjVkUlRYYl8zWGhSUUdlR2ZsRlHSAboBQVVfeXFMTjFBYWRVdXlJMzRReTA1OTVKUW50Y3g3WmtsdTlNd29XVFlEWDNzaWxzLTNDWkdFOHVlemRpVGpUZkI1eW1JbWw0ckpyQms5YkJrSHRqazlxbTcyRThGZFNuX1JQSVNra3JLMU9sSHJoOTBLVnZ0MGJqNmhtV21jenZiUndRQTcxMHFMRUVwY20xT2o2ajJ2M3FtSDZzdGlJRzk0alY3Y2t2YVRMUWF3eDViX0I1UG5vRFRB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-969c6593c232",
-      "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [
-        "Palembang",
-        "借款人家属"
-      ],
-      "headline": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
-      "headlineZh": "巨港男子因网贷逼债卖妻",
-      "summaryZh": "巨港一名男子因陷入网贷债务，以30万印尼盾一次的价格让妻子卖淫，属网贷引发的严重人身伤害个案。",
-      "rationale": "具体人身伤害案件，属消费者受害",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "05d9a893fd66271c"
-      ],
-      "articles": [
+          "title": "OJK Perkuat Keamanan Siber dan Etika Penagihan Fintech - Sulselsatu",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNGktM3FqMDFfMXFRcU5RdTBfU3lrbHplcmtiRzdTREFtcXlXaVA0cWZiZ1I3VkVsQ1JxNjR2WWdiMi1RT09LZHJGR0Frc0ItWjM2VC11YTNmS2xzdGVQUTI2Mi03WE5XcGhqV2xVRUp1NVdmVzcwTmJER1ctZW1CVHA1Y01BNEs4OFd2U0Ntd3FxWmdxMEVnbGFOX2hiVFdIWmZkcE85N1LSAa4BQVVfeXFMTUhTN3RLTE9FVVpwbXYtNnF3eFFLQ1dWOEpoUWtjVHg4elJUbWp2R3VQYjdNV1AteHI3bG4zYXI2YzVLS3lKY3NmdG9iVmNiX2p5cksxOGlFc1YwdWc4WmxwN0hxdUNaWWtxbnVsUFBtQnJqZ1k1eDVSQmx2aXZRLVR4MGFYQi01NDdzX3oxRTNQMG9HU1hOV0h2NkhwbUVLdTNwSEJQb2tuQnc5MHNR?oc=5"
+        },
         {
-          "title": "Terjerat Pinjol, Suami di Palembang Jual Istri R p300 Ribu Sekali Kencan - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOTnRNMGRYQ0s0NkNfbmtILVZwaDRlamRhNUxXVUFPQk0zRF9nT1ZoQzA1clhIWWViYko5SVo2U1FyR29sN3plWWhtY005Z3B5NFBBWW5NaURfNzd1TW84TU9DNC1PNU9USTdWRU4tQVlLUl9CXzRvMGdYSEpNRjhyRmdid0NMaHhUSWVsWFN3NlpqSHdtSUV4djVjSUNhQnp0NnVwU2JOUmJIekVEWjY4aFFid3lBUmNTY0NQMGJFY0g5TG8?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-fd40dfd4db3c",
-      "eventType": "general_sentiment",
-      "severity": 0.55,
-      "entities": [
-        "反催收群众",
-        "OJK"
-      ],
-      "headline": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
-      "headlineZh": "反催收团体要求解散网贷并评估OJK",
-      "summaryZh": "约4600万人负债106万亿印尼盾背景下，反催收群众集会要求取缔网贷并评估OJK，属群体性诉求表达。",
-      "rationale": "有具体集会诉求，属事件性舆情",
-      "independentSourceCount": 1,
-      "domains": [
-        "radarbromo.jawapos.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "ffff898647d45aa8"
-      ],
-      "articles": [
+          "title": "OJK Wajibkan Industri Pinjol Terapkan Etika Penagihan Tanpa Kekerasan - Stabilitas.id",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNaGdXRDJ4V3RfanB1emRHX2JGZFRIb3Y4dk9YZW1kWEdTb2hXRllUU2ZnM3cta21oakVycW40RmxfUXRNc2RSdVBGQzR5XzgxTDFlU1I4SUpGOVV6bjEzMWt4NUljb0k4TkJpVzJBbzdhNGgzcGpvWTRvSGVTVUFNcHQxdHF1N1FvZWVjOUpzcmRyWVNtdlY3ZGVocE0?oc=5"
+        },
         {
-          "title": "46 Juta Jiwa Terjerat Utang Rp 106 T, Massa Anti-DC Pinjol Tuntut Pembubaran dan Evaluasi OJK - Radar Bromo",
-          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPVW96NmU3MHU1ek03NUNzRzFSa2hVdjFna2t6NFJPUUNGRHYwdlVPOGVBTzdTLXZQakFxV2FmNVNmRU16VEVXNkZ6MTRCdi1QWmM3VS10NXU0MWNqSHlqa0M2a1Q3eHg1VTRRZ0NFT3o5R3F5elFnWlg5RVowTEt4RlZsTWU4REk4X19qOFU5NGZ3akNXbHVmcDBOYWFEVXZKakRXOWlKV0gtQmQydXUyNXBlUHpLbzZNdEIyM1dsNXhQOG9QcW5KdHpkTlNrdGJpOU9oY1Fn0gHbAUFVX3lxTE9LSTE5eG5YZTE1bmtxTXFsZXpwWW0wMGhvMUROT1F5SkVIZkRldk0xYnB4Qmw2RXp3c1l1ZklaV1RHMElsQ0doS1ZsanIwNDdIVjZVSHNIOFk2WGROTVBXeFB4UGtLLUJodzN4Vll6cEUyVEg2ZlFfS0Ixd2c5UlNhZlhha2VVdGdUNTM5ZGFnUHAyVjM0T2lyTWtMV3dubnh3dmdKM0tTc2JDYTFOd1FPRUJPYTZqdmRUaHlTWTJOZTVlYS1JSEE4dllmalpNeDFmUE44RW50TVNoNA?oc=5"
+          "title": "Begini Siasat OJK Perkuat Ketahanan Siber & Etika Penagihan Pinjol - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQREdMNjBXaE92c2F1RjRmcmNKS1lEYUhZYk91M1NOMTJaNTNfNHhsSGVIWUxQbmhyclpBUTB2eUJYOFFFVERlcmltVVRvbmczMnpBc0hxTmVVMEVnMGlPZTByVTZoVDBlVFpNV1htTjRZM1FZLTdKRGVYWnRCTnkwdjdYdHJiWldnTWs3NkFqeUVXbXZnYmpFNmFnNFBzcmxKNVRFRExhMUxhblRHaG5fRnRsdTV0OUQ3Rm9LUDA2OHo5N2Zz0gHKAUFVX3lxTE9uN3NqenR0X2tVd2VvRF9NaTNfQ3FrdG1LU1V5emgtNmx2Sm4zZVlJbERvdDJDalp6QzhUWDh5cjhjM0x1MVp1QUltNlBoQjdvdEhNQjNzZDZLOXY0WldOdEcxaGpNajF2WGl1VnA3SkpqM3UyX0s0OEt0RGtKaWpQSFlRamVaeEh1M3k1WWRfeUdzUHlFRDBFUmJ0VjY4Skpnb29INFVaRDkxNGlDMmx0N0lYLVQyUzhWMV9ibExiNXlzRFhvRUNCS0E?oc=5"
+        },
+        {
+          "title": "Begini Siasat OJK Perkuat Ketahanan Siber dan Etika Penagihan Pinjol",
+          "link": "https://www.cnbcindonesia.com/market/20261111152925-17-784315/begini-siasat-ojk-perkuat-ketahanan-siber-etika-penagihan-pinjol"
         }
       ],
-      "bodyBackedSourceCount": 1,
+      "bodyBackedSourceCount": 13,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -429,26 +308,26 @@
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "gdelt": "HTTP Error 429: Too Many Requests",
+      "gdelt": "'timeline'",
       "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 504: Gateway Time-out",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 29,
-    "socialItemCount48h": 7
+    "articleCount48h": 39,
+    "socialItemCount48h": 4
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 473,
-    "classifiedCount": 146,
-    "irrelevantDropped": 94,
+    "inputCount": 488,
+    "classifiedCount": 101,
+    "irrelevantDropped": 139,
     "model": "deepseek-chat",
-    "fallbackCount": 233,
+    "fallbackCount": 248,
     "labelCounts": {
-      "NEG": 57,
-      "MIX": 36,
-      "POS": 53
+      "NEG": 54,
+      "MIX": 23,
+      "POS": 24
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
