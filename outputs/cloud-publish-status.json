@@ -1,20 +1,19 @@
 {
-  "generatedAt": "2026-11-13T08:49:07.812440+00:00",
+  "generatedAt": "2026-11-14T08:02:19.490372+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-13",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-14",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜副总统吉布兰辞职，印尼启动副总统补选程序**\n严重度 0.85｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜资产没收法案在国会遭大幅删减，犯罪认定标准从13项压缩至6项**\n严重度 0.60｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜反腐委员会称现役军人因涉国家灾害管理局腐败案接受调查**\n严重度 0.55｜2个独立来源（antaranews.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **市场失序(汇股债)｜政治动荡中雅加达综指反弹2.66%，卢比走强**\n严重度 0.50｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：currency",
-      "**Pinjol/Pindar 舆情事件**\n\n**巴厘岛驱逐15名马籍网贷管理员**\n巴厘岛移民局将15名充当非法网贷管理员的马来西亚人驱逐出境，涉跨境违规经营。\n证据：2个独立来源。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜吉布兰辞去副总统职务，印尼启动副总统补选程序**\n严重度 0.85｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔺 **市场失序(汇股债)｜FTSE Russell将14只印尼股票剔除全球指数，印尼市场承压、卢比跌破18000**\n严重度 0.80｜1个独立来源（cnnindonesia.com）｜影响支柱：currency\n\n🟠 **大规模抗议/镇压｜日惹示威爆发警民冲突，11名警察被查、学生受伤住院**\n严重度 0.60｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：social\n\n🟠 **关键官员更替/清洗｜新任警察总长获总统公开赞扬，警队高层人事落定**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions",
       "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-13:high_pending:red:success"
+    "decisionId": "daily:2026-11-14:normal:red:success"
   },
   "feishu": "sent"
 }

@@ -1,54 +1,74 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-13",
-  "level": "high_pending",
+  "date": "2026-11-14",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 0.0,
-    "socialDailyVolumeRisk": 29.0,
+    "newsDailyVolumeRisk": 19.6,
+    "socialDailyVolumeRisk": 16.6,
     "negativeSocialShare": 0.0,
     "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=6; prior-7d median=18.0; robust z=-3.33",
-    "socialVolume": "today=2; prior-7d median=29.0; robust z=-1.40"
+    "newsVolume": "today=6; prior-7d median=15.0; robust z=-2.02",
+    "socialVolume": "today=4; prior-7d median=37.0; robust z=-2.23"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-a60c1b4f0647",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.75,
+      "id": "llm-e5777f1f82dd",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
       "entities": [
-        "巴厘岛移民局",
-        "马来西亚籍网贷管理员"
+        "AFTECH",
+        "Pindar"
       ],
-      "headline": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
-      "headlineZh": "巴厘岛驱逐15名马籍网贷管理员",
-      "summaryZh": "巴厘岛移民局将15名充当非法网贷管理员的马来西亚人驱逐出境，涉跨境违规经营。",
-      "rationale": "具体执法驱逐事件",
-      "independentSourceCount": 2,
+      "headline": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
+      "headlineZh": "网贷TWP90坏账率升至5.36%",
+      "summaryZh": "印尼网贷余额达106.48万亿盾，90天以上逾期率TWP90升至5.36%，AFTECH呼吁收紧放贷并强化风控。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 5,
       "domains": [
-        "cnbcindonesia.com",
-        "cnnindonesia.com"
+        "centralbatam.co.id",
+        "cwibc.co.id",
+        "investortrust.id",
+        "republika.co.id",
+        "waspada.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "8a5ee1fbcee1f128",
-        "d6ef2d3d96fd96cd"
+        "e1b2c1f9f1913b1a",
+        "c68b766588a713b5",
+        "3a765212781ced3c",
+        "0f54ec63228187d9",
+        "7360ff82eab5a855",
+        "023bebb23ed07872"
       ],
       "articles": [
         {
-          "title": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeGQ4UU1KdWV2UXhSYU9PR3RYa19ubXR6c0dFWEY3UWRwMzlIY0txRksyZHMwcGNzamhWYUhxYTFBWWVRRDh6QkUya1R1dW9CR2RqcVRyYVFfTGEwOVVBZ1gwSk9iVXhwanRSSmp4NW5mekZBNW9mUENHb21Fb1dORm94QjZldVZPOVFOeFl4WXNOQ1hXWnItcW1rdWJnZzhTUGw1MENmS1A5cjExdzBkX1RLb2FSNUU?oc=5"
+          "title": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQczB5eENVdXZmZHhHTk1HTG1JSnBNUGQ3LVBORXphZHFKTUhZbFhORDdmb0xFbFA0NHp0cjV1bUJneGJTYUhWb0sxVldPclhBU3d1UG9hWE1BYzRkaUw3MUJQcWpxdVBab00weVBxX1pJaC1FOVIzZVVXb0hMWEo4Vmlwa2E2UF9mZ3JQZ0NMVmdxZUdoaG1KY0NRd0E3eWM?oc=5"
         },
         {
-          "title": "Imigrasi Bali Deportasi 15 WNA Malaysia yang Jadi Admin Pinjol - CNN Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQenBCQm52cWtRYzRzWjRrOGZUMGl0dlJsTUZJS3ZqUVhxRDh2REU4eTViTEswam1HdmpVM0FjclFRTFpjbE1YbF9DT2EwMGhicjFpNkpIdjZPNWxZeTl2VDNONEZwRlQwdExWQV9VZTNodnBZNGNqMmZRVVQ2Q29Ob2pSaWJsdXNVVlI1aUhkNGdGbVp4dzUxQzA2NkEySElYVFpPOFRnVlgxOTdOd19ydjA4NEVveEprcmlQdXVxbThnLTkx0gHKAUFVX3lxTE0xUkRuWXhBeGNSQWJqdVFXSW8xSTdmaGFxQkJSaFNtQUJRVlhjaXFEVEhRSGU4ekFmc0dQR1JqaFhaT2o4R0taUE9jQTVMUTh4RlBRd3ptek1aWGUyRjA3ZzRoN1hHdDFsOVdZdlRIeXVnQXZBSEZ4UjVVTVBmbi1IbDdKLW82YjBILUkzVVFfRGlyVVlVb0h0U1hJUktZQU9lWTRMUEFyQ0wtSGJ5NmlRN3g4bUZQSlN6UmlSVG1JaHdJdGFEc0E5LXc?oc=5"
+          "title": "Pinjaman Daring Capai Rp106,48 Triliun, AFTECH Soroti Kualitas Kredit",
+          "link": "https://ekonomi.republika.co.id/berita/tohe7u370/pinjaman-daring-capai-rp10648-triliun-aftech-soroti-kualitas-kredit"
+        },
+        {
+          "title": "Utang Pindar Tembus Rp 106,48 Triliun, AFTECH Soroti TWP90 5,36% - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSGtNNkhQRm5ObjFlZFFURVpMMG51QmJKbFVFcUFJM0FYbm1oeU1KSjB2QTJaQ1RUbmJIS0p4ZGQxSnd1S0hpQkRiTkhYUklpSW00bW44eTI5Ykd2VVV4YUowNlNUVUo1M2VBbFRocmlyWFcyekZ4YTM4bFVpOVFwbURyMFMwZWJfVW9XbXJqeGhONWFQT2tWYWRkN1F5REx3b3dScXBjbw?oc=5"
+        },
+        {
+          "title": "AFTECH Perkuat Manajemen Risiko Usai TWP90 Pindar Tembus 5,36 Persen - cwibc.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5OY1ZHeVAzSHRHVGpxTGYwYTlsZE5NYUNVMFdudUl6MV9MdDQxRGdNS0l6czczak5aMklqUlFJZWxiQUh5cnZ4eDhFMG1IMG1VSm5xYUc4a1pXcmZBY1JNdWJvbGQwOEE?oc=5"
+        },
+        {
+          "title": "Aftech Perketat Penyaluran Kredit Usai Kredit Macet Pindar Naik - CentralBatam",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ZNFNZRFVwQXQxejZTdk9vVzRsZkM5WnZOeWlNQllyWW1GRkRpSTFhSzlVVzZ2bmRad3RpQTdwRllQR0Z0QTZkc1hkTFJ5TUIzOEZIMktVTTU1S3hLMmNhUGZzSlZ5S1JfSTM0cHZILUw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 2,
+      "bodyBackedSourceCount": 6,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -56,9 +76,41 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    }
-  ],
-  "lowEvidenceLeads": [
+    },
+    {
+      "id": "llm-a30b914847cd",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "未具名嫌疑人"
+      ],
+      "headline": "Bikin Perusahaan Property Fiktif, Diduga Tipu Karyawan dengan Modus Pinjol dan Kredit iPhone, Wanita ini Rauf Rp250 juta - Pulau Sumbawa News",
+      "headlineZh": "女子设空壳公司以网贷名义诈骗员工",
+      "summaryZh": "龙目岛北部一名女子设虚假房产公司，以网贷和iPhone分期名义诈骗员工约2.5亿盾，警方介入调查。",
+      "rationale": "具体诈骗案件，警方介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "pulausumbawanews.net"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "a20fe7b16e10f671"
+      ],
+      "articles": [
+        {
+          "title": "Bikin Perusahaan Property Fiktif, Diduga Tipu Karyawan dengan Modus Pinjol dan Kredit iPhone, Wanita ini Rauf Rp250 juta - Pulau Sumbawa News",
+          "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQUzNLS0ZIaEFUMGJqc2VXSl81ejU4M1hhbmNtU1NhS0cxSFhZb19vMURSMnV6NXBmOTgyaXJnZld3REFtdWYxd2l6bHJWSlZmQV8ydHVCSk5HUzR5TFVZd0FaUGZJS0JCRTFHTmN3RERfTlBKemdFVDNTeXV3S1dQV1k1SXU3eENkTFRzX0N1cXRmNnkwUXZQcFJmc3h5SUNhV2hkX0FYLXYwRDNySXpXWTc0NUItQkxLNDJlay03NW01cVpkVVlTM2ZHWUNqU2RIMVpxOVZ1cnlfU3BBYi1JSTEzSGM5NUtucF9JN1FJZ18?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
     {
       "id": "llm-ea4ec19bf412",
       "eventType": "consumer_harm",
@@ -67,9 +119,9 @@
         "未具名催收人员"
       ],
       "headline": "Tiga Orang Diduga Debt Collector Babak Belur dihajar Massa di Boyolali - Gotvnews",
-      "headlineZh": "博约拉利三名催收人员遭群众殴打",
-      "summaryZh": "博约拉利三名疑似催收人员被群众围殴，反映催收冲突激化，值得留痕。",
-      "rationale": "具体催收暴力冲突事件",
+      "headlineZh": "博约拉利三名疑似催收人员遭群众殴打",
+      "summaryZh": "博约拉利三名疑似债务催收人员被群众殴打受伤，涉及催收冲突，值得留痕。",
+      "rationale": "具体催收冲突事件",
       "independentSourceCount": 1,
       "domains": [
         "gotvnews.co.id"
@@ -85,92 +137,6 @@
         }
       ],
       "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-18881613f76c",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "北龙目空壳公司"
-      ],
-      "headline": "Modus Penipuan Perusahaan Fiktif di Lombok Utara, 28 Karyawan Diminta Pinjol dan Kredit iPhone - Kompas.com",
-      "headlineZh": "北龙目空壳公司骗28员工网贷",
-      "summaryZh": "北龙目一空壳公司诱骗28名员工办理网贷及iPhone分期，属具体诈骗案件。",
-      "rationale": "具体诈骗案件报道",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "5394411c1ba40feb"
-      ],
-      "articles": [
-        {
-          "title": "Modus Penipuan Perusahaan Fiktif di Lombok Utara, 28 Karyawan Diminta Pinjol dan Kredit iPhone - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNOWR1bmFfbk54dERWQzBDRV9aUy1ndmlBYlNzc2FLS0J5NDBGTkdUT1lRMmZDNHE3MEJNTTFtMGhubl9KeDkxMHM2aHV6cmJPdFZIUjdHbTZ5N3NXLUZicTJySldoVnVwRnZpUWdOTFZrOEJRNUx4czBMaUpfRWR6RUNoUVU5WEZRby1Zbk5mLWxWbEZfdzVwOW5LbjJwY2xKdmZvcmRzSkNVVGg4QmtsZzZaT3ZSWkY1ZmtrMmk1b3Y2TWtJV2FkXw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-be10442ac62b",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Luncurkan Pedoman LPBBTI, Penagihan Pinjol Wajib Bebas Intimidasi - CaraPandang",
-      "headlineZh": "OJK发布网贷催收与数据安全指引",
-      "summaryZh": "OJK发布LPBBTI指引，要求催收不得恐吓并强化数据安全，属监管新规出台。",
-      "rationale": "监管发布新指引，属监管动作",
-      "independentSourceCount": 4,
-      "domains": [
-        "akurat.co",
-        "carapandang.com",
-        "radioidola.com",
-        "sulselsatu.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1ab4d73eeab2fdbe",
-        "5869944dc30c7593",
-        "506d894f860a91fa",
-        "cb3ea3d999cca60f"
-      ],
-      "articles": [
-        {
-          "title": "OJK Luncurkan Pedoman LPBBTI, Penagihan Pinjol Wajib Bebas Intimidasi - CaraPandang",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaDRfX2dMOXl4ME5xbTFrNVFLTXRYVnltOExTbzllTkpPbEM5dE5laHRmRTRkOVBaMk5VTE9MOFNqSmtQd2tiY1VhcmxmMWprZkZjS0Y3Z2p5QTJIZUZSbWxCdjE2b1Nsb0JFTFpRYUdnTGhKek81SUF2YkVzZnU1ZVprQWtOdXQ2b3dqNTk5UGZLLTh3Rmc4LWtGdmFmaWEyX2hOaTY0ckFEdw?oc=5"
-        },
-        {
-          "title": "OJK Perketat Keamanan Data dan Penagihan Pinjol - Radio Idola Semarang",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPb3pRSkk5Y3FhUkZIUzJaMkhsMUU5WVkxbE1HR21qT2ZjalBvM1RzeXpjS2w2M2NnaEZDNkhaMm1WZzU2UkpBY1BiRHZaX0ZnMWtxZHFycnI0N2JNamE3djNIaDNNUXR4bERGaEhEa1hBS2RpVGxCSXlzbkE4ZHExV0hB?oc=5"
-        },
-        {
-          "title": "OJK Perkuat Keamanan Siber dan Etika Penagihan Fintech - Sulselsatu",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNGktM3FqMDFfMXFRcU5RdTBfU3lrbHplcmtiRzdTREFtcXlXaVA0cWZiZ1I3VkVsQ1JxNjR2WWdiMi1RT09LZHJGR0Frc0ItWjM2VC11YTNmS2xzdGVQUTI2Mi03WE5XcGhqV2xVRUp1NVdmVzcwTmJER1ctZW1CVHA1Y01BNEs4OFd2U0Ntd3FxWmdxMEVnbGFOX2hiVFdIWmZkcE85N1LSAa4BQVVfeXFMTUhTN3RLTE9FVVpwbXYtNnF3eFFLQ1dWOEpoUWtjVHg4elJUbWp2R3VQYjdNV1AteHI3bG4zYXI2YzVLS3lKY3NmdG9iVmNiX2p5cksxOGlFc1YwdWc4WmxwN0hxdUNaWWtxbnVsUFBtQnJqZ1k1eDVSQmx2aXZRLVR4MGFYQi01NDdzX3oxRTNQMG9HU1hOV0h2NkhwbUVLdTNwSEJQb2tuQnc5MHNR?oc=5"
-        },
-        {
-          "title": "OJK Tegaskan Penagihan Pinjol Tak Boleh Pakai Intimidasi - Akurat.co",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSnlzbFRWUFVJYXNZSzBSVFExMERKSnJvN1dTVDdEblZVOWcxVUhwM2pvMW9MdXFPbWo0QnlSelNuSDlJQ2hUX1BlZDFuLVZQX3Q5ZUVNRE5GdHkyYkxhd0tnZnV0WUJxSWdjU1d1djQ0dkRnZFdlNWhMRDNVa0YwM2I2WV8yckVYal9wLVk0Q2FtS0tVNzRZT2JB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 4,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -184,16 +150,110 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 24,
-    "eventGroupCount": 4,
-    "rejectedNonEvents": 13,
+    "candidateCount": 28,
+    "eventGroupCount": 3,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 24
+      "ok": 28
     },
     "socialCrossCheck": "applied"
   },
   "events": [
+    {
+      "id": "llm-e5777f1f82dd",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "AFTECH",
+        "Pindar"
+      ],
+      "headline": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
+      "headlineZh": "网贷TWP90坏账率升至5.36%",
+      "summaryZh": "印尼网贷余额达106.48万亿盾，90天以上逾期率TWP90升至5.36%，AFTECH呼吁收紧放贷并强化风控。",
+      "rationale": "行业资产质量指标恶化，值得留痕",
+      "independentSourceCount": 5,
+      "domains": [
+        "centralbatam.co.id",
+        "cwibc.co.id",
+        "investortrust.id",
+        "republika.co.id",
+        "waspada.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "e1b2c1f9f1913b1a",
+        "c68b766588a713b5",
+        "3a765212781ced3c",
+        "0f54ec63228187d9",
+        "7360ff82eab5a855",
+        "023bebb23ed07872"
+      ],
+      "articles": [
+        {
+          "title": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQczB5eENVdXZmZHhHTk1HTG1JSnBNUGQ3LVBORXphZHFKTUhZbFhORDdmb0xFbFA0NHp0cjV1bUJneGJTYUhWb0sxVldPclhBU3d1UG9hWE1BYzRkaUw3MUJQcWpxdVBab00weVBxX1pJaC1FOVIzZVVXb0hMWEo4Vmlwa2E2UF9mZ3JQZ0NMVmdxZUdoaG1KY0NRd0E3eWM?oc=5"
+        },
+        {
+          "title": "Pinjaman Daring Capai Rp106,48 Triliun, AFTECH Soroti Kualitas Kredit",
+          "link": "https://ekonomi.republika.co.id/berita/tohe7u370/pinjaman-daring-capai-rp10648-triliun-aftech-soroti-kualitas-kredit"
+        },
+        {
+          "title": "Utang Pindar Tembus Rp 106,48 Triliun, AFTECH Soroti TWP90 5,36% - InvestorTrust",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOSGtNNkhQRm5ObjFlZFFURVpMMG51QmJKbFVFcUFJM0FYbm1oeU1KSjB2QTJaQ1RUbmJIS0p4ZGQxSnd1S0hpQkRiTkhYUklpSW00bW44eTI5Ykd2VVV4YUowNlNUVUo1M2VBbFRocmlyWFcyekZ4YTM4bFVpOVFwbURyMFMwZWJfVW9XbXJqeGhONWFQT2tWYWRkN1F5REx3b3dScXBjbw?oc=5"
+        },
+        {
+          "title": "AFTECH Perkuat Manajemen Risiko Usai TWP90 Pindar Tembus 5,36 Persen - cwibc.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5OY1ZHeVAzSHRHVGpxTGYwYTlsZE5NYUNVMFdudUl6MV9MdDQxRGdNS0l6czczak5aMklqUlFJZWxiQUh5cnZ4eDhFMG1IMG1VSm5xYUc4a1pXcmZBY1JNdWJvbGQwOEE?oc=5"
+        },
+        {
+          "title": "Aftech Perketat Penyaluran Kredit Usai Kredit Macet Pindar Naik - CentralBatam",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ZNFNZRFVwQXQxejZTdk9vVzRsZkM5WnZOeWlNQllyWW1GRkRpSTFhSzlVVzZ2bmRad3RpQTdwRllQR0Z0QTZkc1hkTFJ5TUIzOEZIMktVTTU1S3hLMmNhUGZzSlZ5S1JfSTM0cHZILUw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 6,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-a30b914847cd",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "未具名嫌疑人"
+      ],
+      "headline": "Bikin Perusahaan Property Fiktif, Diduga Tipu Karyawan dengan Modus Pinjol dan Kredit iPhone, Wanita ini Rauf Rp250 juta - Pulau Sumbawa News",
+      "headlineZh": "女子设空壳公司以网贷名义诈骗员工",
+      "summaryZh": "龙目岛北部一名女子设虚假房产公司，以网贷和iPhone分期名义诈骗员工约2.5亿盾，警方介入调查。",
+      "rationale": "具体诈骗案件，警方介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "pulausumbawanews.net"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "a20fe7b16e10f671"
+      ],
+      "articles": [
+        {
+          "title": "Bikin Perusahaan Property Fiktif, Diduga Tipu Karyawan dengan Modus Pinjol dan Kredit iPhone, Wanita ini Rauf Rp250 juta - Pulau Sumbawa News",
+          "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxQUzNLS0ZIaEFUMGJqc2VXSl81ejU4M1hhbmNtU1NhS0cxSFhZb19vMURSMnV6NXBmOTgyaXJnZld3REFtdWYxd2l6bHJWSlZmQV8ydHVCSk5HUzR5TFVZd0FaUGZJS0JCRTFHTmN3RERfTlBKemdFVDNTeXV3S1dQV1k1SXU3eENkTFRzX0N1cXRmNnkwUXZQcFJmc3h5SUNhV2hkX0FYLXYwRDNySXpXWTc0NUItQkxLNDJlay03NW01cVpkVVlTM2ZHWUNqU2RIMVpxOVZ1cnlfU3BBYi1JSTEzSGM5NUtucF9JN1FJZ18?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
     {
       "id": "llm-ea4ec19bf412",
       "eventType": "consumer_harm",
@@ -202,9 +262,9 @@
         "未具名催收人员"
       ],
       "headline": "Tiga Orang Diduga Debt Collector Babak Belur dihajar Massa di Boyolali - Gotvnews",
-      "headlineZh": "博约拉利三名催收人员遭群众殴打",
-      "summaryZh": "博约拉利三名疑似催收人员被群众围殴，反映催收冲突激化，值得留痕。",
-      "rationale": "具体催收暴力冲突事件",
+      "headlineZh": "博约拉利三名疑似催收人员遭群众殴打",
+      "summaryZh": "博约拉利三名疑似债务催收人员被群众殴打受伤，涉及催收冲突，值得留痕。",
+      "rationale": "具体催收冲突事件",
       "independentSourceCount": 1,
       "domains": [
         "gotvnews.co.id"
@@ -227,163 +287,36 @@
         "negativeShare": 0.0,
         "platforms": []
       }
-    },
-    {
-      "id": "llm-a60c1b4f0647",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.75,
-      "entities": [
-        "巴厘岛移民局",
-        "马来西亚籍网贷管理员"
-      ],
-      "headline": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
-      "headlineZh": "巴厘岛驱逐15名马籍网贷管理员",
-      "summaryZh": "巴厘岛移民局将15名充当非法网贷管理员的马来西亚人驱逐出境，涉跨境违规经营。",
-      "rationale": "具体执法驱逐事件",
-      "independentSourceCount": 2,
-      "domains": [
-        "cnbcindonesia.com",
-        "cnnindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "8a5ee1fbcee1f128",
-        "d6ef2d3d96fd96cd"
-      ],
-      "articles": [
-        {
-          "title": "15 Warga Malaysia Admin Pinjol Dideportasi Imigrasi Bali - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOeGQ4UU1KdWV2UXhSYU9PR3RYa19ubXR6c0dFWEY3UWRwMzlIY0txRksyZHMwcGNzamhWYUhxYTFBWWVRRDh6QkUya1R1dW9CR2RqcVRyYVFfTGEwOVVBZ1gwSk9iVXhwanRSSmp4NW5mekZBNW9mUENHb21Fb1dORm94QjZldVZPOVFOeFl4WXNOQ1hXWnItcW1rdWJnZzhTUGw1MENmS1A5cjExdzBkX1RLb2FSNUU?oc=5"
-        },
-        {
-          "title": "Imigrasi Bali Deportasi 15 WNA Malaysia yang Jadi Admin Pinjol - CNN Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQenBCQm52cWtRYzRzWjRrOGZUMGl0dlJsTUZJS3ZqUVhxRDh2REU4eTViTEswam1HdmpVM0FjclFRTFpjbE1YbF9DT2EwMGhicjFpNkpIdjZPNWxZeTl2VDNONEZwRlQwdExWQV9VZTNodnBZNGNqMmZRVVQ2Q29Ob2pSaWJsdXNVVlI1aUhkNGdGbVp4dzUxQzA2NkEySElYVFpPOFRnVlgxOTdOd19ydjA4NEVveEprcmlQdXVxbThnLTkx0gHKAUFVX3lxTE0xUkRuWXhBeGNSQWJqdVFXSW8xSTdmaGFxQkJSaFNtQUJRVlhjaXFEVEhRSGU4ekFmc0dQR1JqaFhaT2o4R0taUE9jQTVMUTh4RlBRd3ptek1aWGUyRjA3ZzRoN1hHdDFsOVdZdlRIeXVnQXZBSEZ4UjVVTVBmbi1IbDdKLW82YjBILUkzVVFfRGlyVVlVb0h0U1hJUktZQU9lWTRMUEFyQ0wtSGJ5NmlRN3g4bUZQSlN6UmlSVG1JaHdJdGFEc0E5LXc?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-18881613f76c",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "北龙目空壳公司"
-      ],
-      "headline": "Modus Penipuan Perusahaan Fiktif di Lombok Utara, 28 Karyawan Diminta Pinjol dan Kredit iPhone - Kompas.com",
-      "headlineZh": "北龙目空壳公司骗28员工网贷",
-      "summaryZh": "北龙目一空壳公司诱骗28名员工办理网贷及iPhone分期，属具体诈骗案件。",
-      "rationale": "具体诈骗案件报道",
-      "independentSourceCount": 1,
-      "domains": [
-        "regional.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "5394411c1ba40feb"
-      ],
-      "articles": [
-        {
-          "title": "Modus Penipuan Perusahaan Fiktif di Lombok Utara, 28 Karyawan Diminta Pinjol dan Kredit iPhone - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNOWR1bmFfbk54dERWQzBDRV9aUy1ndmlBYlNzc2FLS0J5NDBGTkdUT1lRMmZDNHE3MEJNTTFtMGhubl9KeDkxMHM2aHV6cmJPdFZIUjdHbTZ5N3NXLUZicTJySldoVnVwRnZpUWdOTFZrOEJRNUx4czBMaUpfRWR6RUNoUVU5WEZRby1Zbk5mLWxWbEZfdzVwOW5LbjJwY2xKdmZvcmRzSkNVVGg4QmtsZzZaT3ZSWkY1ZmtrMmk1b3Y2TWtJV2FkXw?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-be10442ac62b",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Luncurkan Pedoman LPBBTI, Penagihan Pinjol Wajib Bebas Intimidasi - CaraPandang",
-      "headlineZh": "OJK发布网贷催收与数据安全指引",
-      "summaryZh": "OJK发布LPBBTI指引，要求催收不得恐吓并强化数据安全，属监管新规出台。",
-      "rationale": "监管发布新指引，属监管动作",
-      "independentSourceCount": 4,
-      "domains": [
-        "akurat.co",
-        "carapandang.com",
-        "radioidola.com",
-        "sulselsatu.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1ab4d73eeab2fdbe",
-        "5869944dc30c7593",
-        "506d894f860a91fa",
-        "cb3ea3d999cca60f"
-      ],
-      "articles": [
-        {
-          "title": "OJK Luncurkan Pedoman LPBBTI, Penagihan Pinjol Wajib Bebas Intimidasi - CaraPandang",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQaDRfX2dMOXl4ME5xbTFrNVFLTXRYVnltOExTbzllTkpPbEM5dE5laHRmRTRkOVBaMk5VTE9MOFNqSmtQd2tiY1VhcmxmMWprZkZjS0Y3Z2p5QTJIZUZSbWxCdjE2b1Nsb0JFTFpRYUdnTGhKek81SUF2YkVzZnU1ZVprQWtOdXQ2b3dqNTk5UGZLLTh3Rmc4LWtGdmFmaWEyX2hOaTY0ckFEdw?oc=5"
-        },
-        {
-          "title": "OJK Perketat Keamanan Data dan Penagihan Pinjol - Radio Idola Semarang",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPb3pRSkk5Y3FhUkZIUzJaMkhsMUU5WVkxbE1HR21qT2ZjalBvM1RzeXpjS2w2M2NnaEZDNkhaMm1WZzU2UkpBY1BiRHZaX0ZnMWtxZHFycnI0N2JNamE3djNIaDNNUXR4bERGaEhEa1hBS2RpVGxCSXlzbkE4ZHExV0hB?oc=5"
-        },
-        {
-          "title": "OJK Perkuat Keamanan Siber dan Etika Penagihan Fintech - Sulselsatu",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQNGktM3FqMDFfMXFRcU5RdTBfU3lrbHplcmtiRzdTREFtcXlXaVA0cWZiZ1I3VkVsQ1JxNjR2WWdiMi1RT09LZHJGR0Frc0ItWjM2VC11YTNmS2xzdGVQUTI2Mi03WE5XcGhqV2xVRUp1NVdmVzcwTmJER1ctZW1CVHA1Y01BNEs4OFd2U0Ntd3FxWmdxMEVnbGFOX2hiVFdIWmZkcE85N1LSAa4BQVVfeXFMTUhTN3RLTE9FVVpwbXYtNnF3eFFLQ1dWOEpoUWtjVHg4elJUbWp2R3VQYjdNV1AteHI3bG4zYXI2YzVLS3lKY3NmdG9iVmNiX2p5cksxOGlFc1YwdWc4WmxwN0hxdUNaWWtxbnVsUFBtQnJqZ1k1eDVSQmx2aXZRLVR4MGFYQi01NDdzX3oxRTNQMG9HU1hOV0h2NkhwbUVLdTNwSEJQb2tuQnc5MHNR?oc=5"
-        },
-        {
-          "title": "OJK Tegaskan Penagihan Pinjol Tak Boleh Pakai Intimidasi - Akurat.co",
-          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSnlzbFRWUFVJYXNZSzBSVFExMERKSnJvN1dTVDdEblZVOWcxVUhwM2pvMW9MdXFPbWo0QnlSelNuSDlJQ2hUX1BlZDFuLVZQX3Q5ZUVNRE5GdHkyYkxhd0tnZnV0WUJxSWdjU1d1djQ0dkRnZFdlNWhMRDNVa0YwM2I2WV8yckVYal9wLVk0Q2FtS0tVNzRZT2JB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 4,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
-      "kaskus": "Kaskus hot_threads unavailable after retries: The read operation timed out",
+      "gdelt": "HTTP Error 429: Too Many Requests",
+      "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 25,
-    "socialItemCount48h": 15
+    "articleCount48h": 29,
+    "socialItemCount48h": 21
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 500,
-    "classifiedCount": 112,
-    "irrelevantDropped": 128,
+    "inputCount": 526,
+    "classifiedCount": 141,
+    "irrelevantDropped": 99,
     "model": "deepseek-chat",
-    "fallbackCount": 260,
+    "fallbackCount": 286,
     "labelCounts": {
-      "NEG": 45,
-      "MIX": 32,
-      "POS": 35
+      "NEG": 66,
+      "MIX": 46,
+      "POS": 29
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
