@@ -1,49 +1,297 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-15",
+  "date": "2026-11-16",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 26.4,
-    "socialDailyVolumeRisk": 0.0,
+    "newsDailyVolumeRisk": 93.0,
+    "socialDailyVolumeRisk": 26.7,
     "negativeSocialShare": 0.0,
     "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=7; prior-7d median=14.0; robust z=-1.57",
-    "socialVolume": "today=1; prior-7d median=28.0; robust z=-3.64"
+    "newsVolume": "today=30; prior-7d median=13.0; robust z=2.87",
+    "socialVolume": "today=3; prior-7d median=26.0; robust z=-1.55"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-5fe299d14060",
-      "eventType": "fraud_or_illegal_practice",
+      "id": "llm-3cefd8eceec9",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "Polsek Sagulung",
-        "Propam"
+        "AFTECH",
+        "OJK"
       ],
-      "headline": "Diduga ’Damai’ Narkoba Rp. 50 Juta Lewat Pinjol, 5 Anggota Polsek Sagulung Digelandang Propam - Target Berita",
-      "headlineZh": "警员涉用网贷行贿50万毒品案",
-      "summaryZh": "Sagulung警局5名警员疑通过网贷筹措50万毒品和解金，被Propam带走调查，涉公职人员违规。",
-      "rationale": "有机构介入的具体案件",
-      "independentSourceCount": 1,
+      "headline": "Aftech Tanggapi Kenaikan TWP90 Pinjol Sentuh Angka 5,36 Persen - Pikiran Rakyat Koran",
+      "headlineZh": "行业不良率TWP90升至5.36%",
+      "summaryZh": "AFTECH回应OJK数据，pindar行业TWP90升至5.36%，资产质量承压值得留痕。",
+      "rationale": "行业资产质量指标恶化",
+      "independentSourceCount": 2,
       "domains": [
-        "targetberita.co.id"
+        "cwibc.co.id",
+        "koran.pikiran-rakyat.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "44da3a9be91b14ad"
+        "6f0daea35887d727",
+        "fa9010aa4e61f5d3"
       ],
       "articles": [
         {
-          "title": "Diduga ’Damai’ Narkoba Rp. 50 Juta Lewat Pinjol, 5 Anggota Polsek Sagulung Digelandang Propam - Target Berita",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdG0tT0ljcnEtaTBzVG1kSHoycGd3V0VBRmFHWlNwY2EzTDhEblpkSjZxMVkzckhBb0NtY3BmRUpsRWRBQ1JIenVGQy1Ldzl0LWJDNE9pSFRndHZDVkJoS3dSNWxMZkh3N1FZNW1tN19yMzRrZmpHR2NQUFFNNHlkU3BXdlVzSzFwcUJPSHR1T1B4aTNCRzBxX0ZyZGxicUF4bXBGcW9HbnBxN1VVNGd0NGdkLWcwX0NE?oc=5"
+          "title": "Aftech Tanggapi Kenaikan TWP90 Pinjol Sentuh Angka 5,36 Persen - Pikiran Rakyat Koran",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdUlPUk1lQ3NwX29tR1gxS3BOa0h0UG9kMFdKVW9WZlp3T201QWpYRDFYa1JCc0IySkNVWk9ZVUFnNEpHeDF1aTZtQXNqQmprbDFERkJxbkRmdktaRUd1Y2hYeVpaTGpNQlpmNzJ1S2tYN1NIbmJBWmFsUlpHdF9NNG1BNUdxcC1ZWU4tMmU2UzJNdFNKX2hZaHdVdUtpY1hyMllqUUhjbWo1LW5kbWpNbHJ3NWFkTFBE?oc=5"
+        },
+        {
+          "title": "AFTECH Soroti Kenaikan Kredit Macet Pindar Jadi 5,36 Persen - cwibc.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBHZnJ0bFNMVGZKS1lYelJyWl9sZnZSTnVDbmZJTVlRUk41NmljOUlycDdidHNYLXVaOFlzOHl0OU1MLXJNOG9pOTNwT1Z2QUwzZW1UOTZOWUZXZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-03ec6f6b997e",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Anak Muda Usia 19-34 Tahun Jadi Penyumbang Terbesar Kredit Macet Pinjol - kumparan.com - kumparan",
+      "headlineZh": "19-34岁群体占坏账51%",
+      "summaryZh": "OJK披露19-34岁借款人贡献50.69%个人坏账，反映年轻客群信用风险集中。",
+      "rationale": "监管披露的资产质量数据",
+      "independentSourceCount": 6,
+      "domains": [
+        "demokratis.co.id",
+        "finance.detik.com",
+        "katadata.co.id",
+        "kumparan.com",
+        "peradaban.id",
+        "suaragarut.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "92867e2cc1a85238",
+        "03a512c04ff53fab",
+        "eb5a8e305e55981a",
+        "06836f5b3943639c",
+        "1fa289e3a58a9f62",
+        "9558f20841476254",
+        "fd266ff0c65eadd6"
+      ],
+      "articles": [
+        {
+          "title": "Anak Muda Usia 19-34 Tahun Jadi Penyumbang Terbesar Kredit Macet Pinjol - kumparan.com - kumparan",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNR0xTVk5TdUVJSk5Pcml6WUpzbUMxYjBqSUxxbDkzaTg1TnEtX1FkcklWQjc1VFpYVVg3ZlJyLUhnVnFkc0hZa1NGOTZBTlZELXVjLTNUS3VXWkttV0pyeGQ2QVAxRm1tQTFzbnprYlRHVDZ4aXl2V3MzaWJiTlpUUjhUaXJKNE9zYndlRU9mUGhYVXJaRVV6U1VaWVNNcDFCNVVSZDFpNy04d2NvRGgwZlRHeEJidjdFeG1V0gHDAUFVX3lxTFBVLU41R2xTSTJ2em92TkFTNElIQ1ROcXgzUnZJekFVcXdUUERqX0VvcW9DTDlMM0tZR3JoUmZjNDRhaGhfWF94eVBubkszRmYxOXNYRHlKX2gxN04zLXRHQ3ZrYVh2X2pLSmxUczFESmQ1MFlaN3E3M0NReENmbjNEbmc1ZkluME5hdXV1OEQ5ZXhGV2d0Y3Z2RGhJekcwVzZ6MEVQeUQtd1RPdlFDRDlpeDRUS1F5Q1AtWHROaEFNeHkwYw?oc=5"
+        },
+        {
+          "title": "OJK Catat Usia 19-34 Tahun Dominasi Kredit Macet Pindar - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0xZjVDV21QNUFvajQxaVozbDBSMGxRMkVnNnhIckFKV3gxVUlmYnVwZUFjdTBycGFsLXBUNDlZdEk2c3VFVU14QWZlSVZ1RUtWNkxjczFaZjQzRWJfc0RDQVdIYw?oc=5"
+        },
+        {
+          "title": "OJK Soroti Kredit Macet Pindar pada Usia 19-34 Tahun - Peradaban.id",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5ndUk2dkUwYVBZVnVQd1FWbTd1TGdtazg3SjFpYmIyZ29VMlZTNHJHYjZUZnR3QnFZVUJkS0F6dXE4RW56bldvYXBXa0VZRm1za2xWWFpHbVBOSlJSSDNzY0dvT04?oc=5"
+        },
+        {
+          "title": "OJK Soroti Kredit Macet Pindar pada Usia 19-34 Tahun - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5qa29hYkI3SThVUlRIaTQ1bDhjVExwNnFkalpkQ1FWNDFnQzBWYnpIZXBZTVNXLXZzXy1JM21pWE5SaDBNazZqM1hQUE1HeFB1R0JqSW5ONGR5anFFdmVOcFdqTjY2dw?oc=5"
+        },
+        {
+          "title": "OJK Ungkap 51% Kredit Macet Pinjol Berasal dari Peminjam Usia 19-34 Tahun",
+          "link": "https://katadata.co.id/digital/fintech/6afaa8e73315f/ojk-ungkap-51-kredit-macet-pinjol-berasal-dari-peminjam-usia-19-34-tahun"
+        }
+      ],
+      "bodyBackedSourceCount": 7,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-13925d1bdc74",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Bank Jadi Sumber Dana Utama Pinjol, Nilainya Tembus Rp 71,58 Triliun",
+      "headlineZh": "银行对pindar融资71.58万亿",
+      "summaryZh": "OJK数据显示银行占pindar行业资金来源67.22%，属常规行业数据披露。",
+      "rationale": "常规行业统计动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "infobanknews.com",
+        "katadata.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "dbd1898d3ffaa4da",
+        "98938dc3b8c5e6eb"
+      ],
+      "articles": [
+        {
+          "title": "Bank Jadi Sumber Dana Utama Pinjol, Nilainya Tembus Rp 71,58 Triliun",
+          "link": "https://katadata.co.id/digital/fintech/6afab9ff40d38/bank-jadi-sumber-dana-utama-pinjol-nilainya-tembus-rp-71-58-triliun"
+        },
+        {
+          "title": "Kontribusi Pendanaan Bank ke Pindar Tembus Rp71,58 Triliun - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNa1hpazE4SFg5eDdvczIxcXBZaElEdkJqQnpXcnlYMlg4Ty11aDYxbzR4RGZCbGx3Y2lmTlQ0MFhRXzNKWGdQZXE4WUhzNmlGQlNINnR6MmRsbC0wOFp1anpROFJLZjlseVg1OW1KbC04RDNpTTA0V1VMMDJkb0N1WDRKQzN0UFFnZGc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-d6e27d1fb1bf",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Kredit Macet Memburuk, Laba Industri Pinjol Tergerus",
+      "headlineZh": "pindar行业利润降14%",
+      "summaryZh": "OJK数据：行业综合利润同比降14.14%至1.65万亿，BOPO升至90.05%，盈利承压。",
+      "rationale": "行业盈利与资产质量承压",
+      "independentSourceCount": 3,
+      "domains": [
+        "cnbcindonesia.com",
+        "demokratis.co.id",
+        "katadata.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3bd22c5dc5b7faee",
+        "6f8530bd46234637",
+        "e3314a2297f982e9",
+        "69f59da4bd22daa7",
+        "6506c259a8fba962"
+      ],
+      "articles": [
+        {
+          "title": "Kredit Macet Memburuk, Laba Industri Pinjol Tergerus",
+          "link": "https://www.cnbcindonesia.com/market/20261116113121-17-785514/kredit-macet-memburuk-laba-industri-pinjol-tergerus"
+        },
+        {
+          "title": "Kredit Macet Memburuk, Laba Industri Pinjol Tergerus - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPU1A1bVlxdnpuNWNlSE5INFQ1bWhwR2sxdzBKaXBrSkJaYXpJY2E2cWJMNDlvZFFhSE9MNWhQc2VCRFgzaFFzTllaWVBNTWUzWlJsQ3NWYlJHZDh0VE9UUHhjaHBXaG40SUkyREROWG5Zb0lGTGE5LXJwang4Q19sMkFabjRhSnppSEJBcTlNNFdlak5iV2xPMlJPUTdXYzgxckNXaTNCaEtOdGRHUmtzUmNYa9IBuAFBVV95cUxQRnV1R0Y2U1lidXNLM3hqMTd3dXZPVEprWk1GSFYwNEE5aUpLVWtOd0RackRGMk1Kc0hIU2ZiQmFSMFpoamdhTTZrSmJ2QkRJai1MWVdsdmgtQl9TMWdkRGc5T01yWTk0WFJzZzBVb3NqNy00VEFpVGJSc2dxbjVMUUhhVzA2V3ZaOTl6QlRBYTNoMDJucExtcjFlUFk0ZGkwSUZseTVHQzJMZklLQk9FSS00YmE2RGNH?oc=5"
+        },
+        {
+          "title": "Laba Industri Pinjol Turun 14% Jadi Rp 1,65 Triliun, Ini Penyebabnya",
+          "link": "https://katadata.co.id/digital/fintech/6afab1d830699/laba-industri-pinjol-turun-14-jadi-rp-1-65-triliun-ini-penyebabnya"
+        },
+        {
+          "title": "Laba Industri Pinjol Turun 14% Jadi Rp 1,65 Triliun, Ini Penyebabnya - Katadata.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUkt5dDdnNzJ5S1o1bmJZanNGS0llVzFzdURadUhCZ1djaVJNMlRmTVBPbTZacExETUVlclVzYnhZQXV0THFlRll2SWs0RUNJTWZQV0hteFJ2X0M4TFlKaHV0MnVLbksyTUNrRm56Tzd4MFlEUXhDMGdMT0ZrOEh1MnlKeXcyRXpSclZWSC1qalZ4ZFhBblhlcHEweXBleGpzUThoYUtEcHRZYWFKV3AyU2dWSzdUblJ1ZTNr0gHAAUFVX3lxTE5xMFNJSTlQRmNNT1Q4VFlBVjVUSDhBU0kxSUE5ZnFPT3Mxb1ZZWlZFVy1fdTdNR1NleEJRVDB3SGQ1QjdvYms3MFdMTHZvYWdJR01IX21ORzFzVkpPREc0R2hrb1o1OWQtbHFtVml0Y0xNRmZ2ZndwTm9VOE52WVRha1BYN0NxNUREVWl1RGdsc2xudVprTjZvWll5OEJtMm1fUXhIS3pjWGEyaklCSmxPYl9kcGVqYWRyVGlkN1dEaA?oc=5"
+        },
+        {
+          "title": "OJK Catat Laba Fintech Lending Turun 14,14 Persen - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE95UHJvcjNlR21lb3poaGhlV2JxUnA4eFdOUkRjYnAzSEF2SHhaM3kyV3Ixb1FLc0w5dXhsWGp2SXRVQkxGTUItSElzZWxjTFlXeG1DakVkMTNUVHBZXzh1bVFiZmpxZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-9353a4c88806",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "KPPU",
+        "OJK"
+      ],
+      "headline": "Pengadilan Batalkan Denda KPPU ke Industri Pinjol, Begini Kata OJK - Bisnis.com",
+      "headlineZh": "法院撤销KPPU对pindar罚款",
+      "summaryZh": "法院推翻KPPU对网贷行业罚款，OJK回应，属监管司法进展值得留痕。",
+      "rationale": "司法裁定具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "finansial.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "2f67bd9536cac5e4"
+      ],
+      "articles": [
+        {
+          "title": "Pengadilan Batalkan Denda KPPU ke Industri Pinjol, Begini Kata OJK - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNjM2UlkxTVA2azF6T1dGcTRyR2J6UWxWVGwtMU9nb1AyQVdqdlI5UlNOLWc3N0RDUHZabkFWdVZOb1dOUVViV1BOZkpkci10UmE4VlltRjgwZWp0X0lEOGZiX0EwbkVHYXdXblpMWDhPU1F1MDZkclREY2tpRkpacVpUWnBJVmtrc3c5ZnpOZXFVWFJBYlJlOF9mSS1vRzBvajU4WVlWWDRVckVEQjRpdGc1NmlLMGg2SloxUA?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-47760312e76a",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "AFPI Perketat Seleksi Pinjaman Daring di Tengah Pelemahan Daya Beli - Demokratis.co.id",
+      "headlineZh": "AFPI要求收紧放贷筛选",
+      "summaryZh": "因购买力走弱，AFPI呼吁P2P更审慎放贷，属行业常规动态。",
+      "rationale": "行业常规动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "demokratis.co.id",
+        "keuangan.kontan.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "118118a763072c47",
+        "e44aac0a982c741a"
+      ],
+      "articles": [
+        {
+          "title": "AFPI Perketat Seleksi Pinjaman Daring di Tengah Pelemahan Daya Beli - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hQ0J6LWRBWTRwdnZDckM4UzNqd3FPaUV0QWhKcTh0b0M4LXhzQVB3VTNYN3c4a1ZVcDY4ZDNLdl9yejhpTkZVQXgxU01TUVJudDU1U3k2NWRFMDZFTzNVaXdwZw?oc=5"
+        },
+        {
+          "title": "Daya Beli Melemah, AFPI Minta Fintech P2P Lending Lebih Selektif Salurkan Pembiayaan - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQN1NYOU9ZU2xobHNtc0tVR0VvOWlfZ3BLSEdQVDBUUG5KazNqYzlTRTg1VXFSeEloenU4LXhFX0k0TnBBeG9TOUZ2cUNrOXVtQzA5VWVGdm01Xy1RdXN4UmxrbF9IamRLYlU1TFVIRmhTYkRQRW5uallsUktvYl9ZMUE4UXZyb1lONnR3UjBka1UtMC16THRnZ2pNeGhFRWhmQWMtLXpNdDJWMjNQVVU2UWk4TlBwdHVfa3fSAbMBQVVfeXFMTVZzRVhrdUNjcXJVLVVrckdNbTI1Y2p6c21BcWx0OFVETHFfS3dwLVU0ZzRfdmxKUDdIUmJjMHU5UkQtVVd1RUZSLVBhejZwNFI3dVVJdHNKTlV6em5CclNRVlM2V3ZmZVZwN1B5R0JzYVV0eVVjbGcweHhxdVRSWUlRSlMwVGRNMmhJWUpScHRnX0ZGZkNoM2g0S1Vwem5hQnczN0pJZkRIOEZIMG1MWmdVWHM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -53,56 +301,39 @@
       }
     },
     {
-      "id": "llm-df0f5c2bc681",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
+      "id": "llm-202867575875",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
       "entities": [
-        "AFTECH",
         "OJK"
       ],
-      "headline": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
-      "headlineZh": "P2P贷款余额106万亿坏账率5.36%",
-      "summaryZh": "P2P行业贷款余额达106.48万亿印尼盾，TWP90坏账率升至5.36%，AFTECH呼吁加强风险缓释与更严格放贷。",
-      "rationale": "行业资产质量数据事件",
-      "independentSourceCount": 4,
+      "headline": "OJK Perkuat Keamanan Pinjol, Ini 5 Aspek Penting dalam Pedoman Ketahanan Siber LPBBTI - radarcirebon.disway.id - Radar Cirebon",
+      "headlineZh": "OJK发布LPBBTI网络安全指南",
+      "summaryZh": "OJK出台网贷行业网络安全韧性指南五要点，属监管规范动态。",
+      "rationale": "监管规范发布",
+      "independentSourceCount": 1,
       "domains": [
-        "infobanknews.com",
-        "jakarta.bisnis.com",
-        "journalarta.com",
-        "waspada.id"
+        "radarcirebon.disway.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e1b2c1f9f1913b1a",
-        "462f522f6830dc8e",
-        "fdadbee9d2971deb",
-        "783b192c83828bd3"
+        "00743f8882c0a4fa"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQczB5eENVdXZmZHhHTk1HTG1JSnBNUGQ3LVBORXphZHFKTUhZbFhORDdmb0xFbFA0NHp0cjV1bUJneGJTYUhWb0sxVldPclhBU3d1UG9hWE1BYzRkaUw3MUJQcWpxdVBab00weVBxX1pJaC1FOVIzZVVXb0hMWEo4Vmlwa2E2UF9mZ3JQZ0NMVmdxZUdoaG1KY0NRd0E3eWM?oc=5"
-        },
-        {
-          "title": "Utang Pindar Tembus Rp106,46 Triliun, AFTECH Dorong Penguatan Mitigasi Risiko - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSzEzaDhodGdBVjhSSUJZOUFza01ESjNfTHh2cVdlX19DYWhycnpGNUZYaXJ5NTFlMndlbm9yaEJzZkFNR2JTa2p5LVlkenJMeC01SmlfaGpTQ1pPTTBGX1dFdHplOHRXRWQwMjh1T0RFY2NHRUEwbHljN1VCbEJBUEF4WEN6UklOZkZOdWxrc1FnN2pFOUFlR2QxTUo0T29EX1E?oc=5"
-        },
-        {
-          "title": "Utang Pindar Tembus Rp106,48 Triliun, Risiko Kredit Naik - JournalArta",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9CS1pjeGJnZzJLMEFISW9mYkJ6WHdzZU1RMF9Ra2FlSUhCSzQ5VUVmdV91c0ppbktPcmpUMUZoVTJ0alNsVVRBT0xwS0R2Nkd2V3MtNHJiY2tKMjhxSmFuNk1FX19qOGRIelhNR2lvd3FaNVkxU01YZg?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Tembus Rp106,48 Triliun di Tengah Kenaikan TWP90 ke 5,36% - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdWQzX0F2MDF0LUN1SzRQaUpTVjZQZjlaU090ZFdieGZRWHFxSW5uZHpyUVg4ay00UlZTR0o5aE5TQm83bUNUWDd0SmhndzNHRVpndmRNNVcxTmc4eUJBMjdlek5uOWpHdTRaOGsyTGQxczI5cFpud3BSa3AtRF8tVlJxZE1LOFdKNkU5anVjMXZSd19Sa0YxWVFzVW5wbjVINDhyTHA0MVVnWGVnSTZUcTE1S1BzSWtlemRxOA?oc=5"
+          "title": "OJK Perkuat Keamanan Pinjol, Ini 5 Aspek Penting dalam Pedoman Ketahanan Siber LPBBTI - radarcirebon.disway.id - Radar Cirebon",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPTjdCbTJfejE0VjZSUmpWSEpXNXZwOXBQc3U0MWZoR2JuV0VpbUFaOVY0V05JYWhLTTdUOXEyblhFQlNEUWFFa2NfdUJYWURxZUpaMkx4ZkZ0RGNwN1ZRZlQxOVBvMkdTT0c2R0gySElEbGNkLTJRd0xhaVNMLXFtbzNlZVBxSy1yQksxY2I3TThuOFRZOTJoN0Z1anI2SV9NUmM5ZEdiUnByczQ0LTNTRUlkV2RmUnoybnktaS1nR0JDSW9INk5jUmRGWUc5YTdhS3fSAcQBQVVfeXFMTWxSRDQzZU4tUUVYLVZjRnNROWh5Yi0ybUlyU0tESDhyaDdDbWpCVTJDa0VlZ1Z0Ry04UU9UQkxDTW5qTkYwclpjVlRud0V6LVdLLWVJSnBMa2d5WlRDZk9XNDNINVZ1SnB3bjBxTU42YWZSbTVKTTN5WUN3Wk41YVRLRzl5SHkyWTRXSnY1cU50RGtqal9pNXI2cDlocVpQckFnZXpqUUJ5a3dRMUZiRElkYnF6QkVyN2MxWGRjMFU5NlJzQw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 4,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -110,43 +341,291 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 21,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 12,
+    "candidateCount": 40,
+    "eventGroupCount": 7,
+    "rejectedNonEvents": 14,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 21
+      "ok": 40
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-5fe299d14060",
-      "eventType": "fraud_or_illegal_practice",
+      "id": "llm-3cefd8eceec9",
+      "eventType": "credit_quality_stress",
       "severity": 0.55,
       "entities": [
-        "Polsek Sagulung",
-        "Propam"
+        "AFTECH",
+        "OJK"
       ],
-      "headline": "Diduga ’Damai’ Narkoba Rp. 50 Juta Lewat Pinjol, 5 Anggota Polsek Sagulung Digelandang Propam - Target Berita",
-      "headlineZh": "警员涉用网贷行贿50万毒品案",
-      "summaryZh": "Sagulung警局5名警员疑通过网贷筹措50万毒品和解金，被Propam带走调查，涉公职人员违规。",
-      "rationale": "有机构介入的具体案件",
-      "independentSourceCount": 1,
+      "headline": "Aftech Tanggapi Kenaikan TWP90 Pinjol Sentuh Angka 5,36 Persen - Pikiran Rakyat Koran",
+      "headlineZh": "行业不良率TWP90升至5.36%",
+      "summaryZh": "AFTECH回应OJK数据，pindar行业TWP90升至5.36%，资产质量承压值得留痕。",
+      "rationale": "行业资产质量指标恶化",
+      "independentSourceCount": 2,
       "domains": [
-        "targetberita.co.id"
+        "cwibc.co.id",
+        "koran.pikiran-rakyat.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "44da3a9be91b14ad"
+        "6f0daea35887d727",
+        "fa9010aa4e61f5d3"
       ],
       "articles": [
         {
-          "title": "Diduga ’Damai’ Narkoba Rp. 50 Juta Lewat Pinjol, 5 Anggota Polsek Sagulung Digelandang Propam - Target Berita",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdG0tT0ljcnEtaTBzVG1kSHoycGd3V0VBRmFHWlNwY2EzTDhEblpkSjZxMVkzckhBb0NtY3BmRUpsRWRBQ1JIenVGQy1Ldzl0LWJDNE9pSFRndHZDVkJoS3dSNWxMZkh3N1FZNW1tN19yMzRrZmpHR2NQUFFNNHlkU3BXdlVzSzFwcUJPSHR1T1B4aTNCRzBxX0ZyZGxicUF4bXBGcW9HbnBxN1VVNGd0NGdkLWcwX0NE?oc=5"
+          "title": "Aftech Tanggapi Kenaikan TWP90 Pinjol Sentuh Angka 5,36 Persen - Pikiran Rakyat Koran",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdUlPUk1lQ3NwX29tR1gxS3BOa0h0UG9kMFdKVW9WZlp3T201QWpYRDFYa1JCc0IySkNVWk9ZVUFnNEpHeDF1aTZtQXNqQmprbDFERkJxbkRmdktaRUd1Y2hYeVpaTGpNQlpmNzJ1S2tYN1NIbmJBWmFsUlpHdF9NNG1BNUdxcC1ZWU4tMmU2UzJNdFNKX2hZaHdVdUtpY1hyMllqUUhjbWo1LW5kbWpNbHJ3NWFkTFBE?oc=5"
+        },
+        {
+          "title": "AFTECH Soroti Kenaikan Kredit Macet Pindar Jadi 5,36 Persen - cwibc.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBHZnJ0bFNMVGZKS1lYelJyWl9sZnZSTnVDbmZJTVlRUk41NmljOUlycDdidHNYLXVaOFlzOHl0OU1MLXJNOG9pOTNwT1Z2QUwzZW1UOTZOWUZXZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-03ec6f6b997e",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Anak Muda Usia 19-34 Tahun Jadi Penyumbang Terbesar Kredit Macet Pinjol - kumparan.com - kumparan",
+      "headlineZh": "19-34岁群体占坏账51%",
+      "summaryZh": "OJK披露19-34岁借款人贡献50.69%个人坏账，反映年轻客群信用风险集中。",
+      "rationale": "监管披露的资产质量数据",
+      "independentSourceCount": 6,
+      "domains": [
+        "demokratis.co.id",
+        "finance.detik.com",
+        "katadata.co.id",
+        "kumparan.com",
+        "peradaban.id",
+        "suaragarut.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "92867e2cc1a85238",
+        "03a512c04ff53fab",
+        "eb5a8e305e55981a",
+        "06836f5b3943639c",
+        "1fa289e3a58a9f62",
+        "9558f20841476254",
+        "fd266ff0c65eadd6"
+      ],
+      "articles": [
+        {
+          "title": "Anak Muda Usia 19-34 Tahun Jadi Penyumbang Terbesar Kredit Macet Pinjol - kumparan.com - kumparan",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNR0xTVk5TdUVJSk5Pcml6WUpzbUMxYjBqSUxxbDkzaTg1TnEtX1FkcklWQjc1VFpYVVg3ZlJyLUhnVnFkc0hZa1NGOTZBTlZELXVjLTNUS3VXWkttV0pyeGQ2QVAxRm1tQTFzbnprYlRHVDZ4aXl2V3MzaWJiTlpUUjhUaXJKNE9zYndlRU9mUGhYVXJaRVV6U1VaWVNNcDFCNVVSZDFpNy04d2NvRGgwZlRHeEJidjdFeG1V0gHDAUFVX3lxTFBVLU41R2xTSTJ2em92TkFTNElIQ1ROcXgzUnZJekFVcXdUUERqX0VvcW9DTDlMM0tZR3JoUmZjNDRhaGhfWF94eVBubkszRmYxOXNYRHlKX2gxN04zLXRHQ3ZrYVh2X2pLSmxUczFESmQ1MFlaN3E3M0NReENmbjNEbmc1ZkluME5hdXV1OEQ5ZXhGV2d0Y3Z2RGhJekcwVzZ6MEVQeUQtd1RPdlFDRDlpeDRUS1F5Q1AtWHROaEFNeHkwYw?oc=5"
+        },
+        {
+          "title": "OJK Catat Usia 19-34 Tahun Dominasi Kredit Macet Pindar - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE0xZjVDV21QNUFvajQxaVozbDBSMGxRMkVnNnhIckFKV3gxVUlmYnVwZUFjdTBycGFsLXBUNDlZdEk2c3VFVU14QWZlSVZ1RUtWNkxjczFaZjQzRWJfc0RDQVdIYw?oc=5"
+        },
+        {
+          "title": "OJK Soroti Kredit Macet Pindar pada Usia 19-34 Tahun - Peradaban.id",
+          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5ndUk2dkUwYVBZVnVQd1FWbTd1TGdtazg3SjFpYmIyZ29VMlZTNHJHYjZUZnR3QnFZVUJkS0F6dXE4RW56bldvYXBXa0VZRm1za2xWWFpHbVBOSlJSSDNzY0dvT04?oc=5"
+        },
+        {
+          "title": "OJK Soroti Kredit Macet Pindar pada Usia 19-34 Tahun - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5qa29hYkI3SThVUlRIaTQ1bDhjVExwNnFkalpkQ1FWNDFnQzBWYnpIZXBZTVNXLXZzXy1JM21pWE5SaDBNazZqM1hQUE1HeFB1R0JqSW5ONGR5anFFdmVOcFdqTjY2dw?oc=5"
+        },
+        {
+          "title": "OJK Ungkap 51% Kredit Macet Pinjol Berasal dari Peminjam Usia 19-34 Tahun",
+          "link": "https://katadata.co.id/digital/fintech/6afaa8e73315f/ojk-ungkap-51-kredit-macet-pinjol-berasal-dari-peminjam-usia-19-34-tahun"
+        }
+      ],
+      "bodyBackedSourceCount": 7,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-13925d1bdc74",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Bank Jadi Sumber Dana Utama Pinjol, Nilainya Tembus Rp 71,58 Triliun",
+      "headlineZh": "银行对pindar融资71.58万亿",
+      "summaryZh": "OJK数据显示银行占pindar行业资金来源67.22%，属常规行业数据披露。",
+      "rationale": "常规行业统计动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "infobanknews.com",
+        "katadata.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "dbd1898d3ffaa4da",
+        "98938dc3b8c5e6eb"
+      ],
+      "articles": [
+        {
+          "title": "Bank Jadi Sumber Dana Utama Pinjol, Nilainya Tembus Rp 71,58 Triliun",
+          "link": "https://katadata.co.id/digital/fintech/6afab9ff40d38/bank-jadi-sumber-dana-utama-pinjol-nilainya-tembus-rp-71-58-triliun"
+        },
+        {
+          "title": "Kontribusi Pendanaan Bank ke Pindar Tembus Rp71,58 Triliun - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNa1hpazE4SFg5eDdvczIxcXBZaElEdkJqQnpXcnlYMlg4Ty11aDYxbzR4RGZCbGx3Y2lmTlQ0MFhRXzNKWGdQZXE4WUhzNmlGQlNINnR6MmRsbC0wOFp1anpROFJLZjlseVg1OW1KbC04RDNpTTA0V1VMMDJkb0N1WDRKQzN0UFFnZGc?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-d6e27d1fb1bf",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "Kredit Macet Memburuk, Laba Industri Pinjol Tergerus",
+      "headlineZh": "pindar行业利润降14%",
+      "summaryZh": "OJK数据：行业综合利润同比降14.14%至1.65万亿，BOPO升至90.05%，盈利承压。",
+      "rationale": "行业盈利与资产质量承压",
+      "independentSourceCount": 3,
+      "domains": [
+        "cnbcindonesia.com",
+        "demokratis.co.id",
+        "katadata.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3bd22c5dc5b7faee",
+        "6f8530bd46234637",
+        "e3314a2297f982e9",
+        "69f59da4bd22daa7",
+        "6506c259a8fba962"
+      ],
+      "articles": [
+        {
+          "title": "Kredit Macet Memburuk, Laba Industri Pinjol Tergerus",
+          "link": "https://www.cnbcindonesia.com/market/20261116113121-17-785514/kredit-macet-memburuk-laba-industri-pinjol-tergerus"
+        },
+        {
+          "title": "Kredit Macet Memburuk, Laba Industri Pinjol Tergerus - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPU1A1bVlxdnpuNWNlSE5INFQ1bWhwR2sxdzBKaXBrSkJaYXpJY2E2cWJMNDlvZFFhSE9MNWhQc2VCRFgzaFFzTllaWVBNTWUzWlJsQ3NWYlJHZDh0VE9UUHhjaHBXaG40SUkyREROWG5Zb0lGTGE5LXJwang4Q19sMkFabjRhSnppSEJBcTlNNFdlak5iV2xPMlJPUTdXYzgxckNXaTNCaEtOdGRHUmtzUmNYa9IBuAFBVV95cUxQRnV1R0Y2U1lidXNLM3hqMTd3dXZPVEprWk1GSFYwNEE5aUpLVWtOd0RackRGMk1Kc0hIU2ZiQmFSMFpoamdhTTZrSmJ2QkRJai1MWVdsdmgtQl9TMWdkRGc5T01yWTk0WFJzZzBVb3NqNy00VEFpVGJSc2dxbjVMUUhhVzA2V3ZaOTl6QlRBYTNoMDJucExtcjFlUFk0ZGkwSUZseTVHQzJMZklLQk9FSS00YmE2RGNH?oc=5"
+        },
+        {
+          "title": "Laba Industri Pinjol Turun 14% Jadi Rp 1,65 Triliun, Ini Penyebabnya",
+          "link": "https://katadata.co.id/digital/fintech/6afab1d830699/laba-industri-pinjol-turun-14-jadi-rp-1-65-triliun-ini-penyebabnya"
+        },
+        {
+          "title": "Laba Industri Pinjol Turun 14% Jadi Rp 1,65 Triliun, Ini Penyebabnya - Katadata.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPUkt5dDdnNzJ5S1o1bmJZanNGS0llVzFzdURadUhCZ1djaVJNMlRmTVBPbTZacExETUVlclVzYnhZQXV0THFlRll2SWs0RUNJTWZQV0hteFJ2X0M4TFlKaHV0MnVLbksyTUNrRm56Tzd4MFlEUXhDMGdMT0ZrOEh1MnlKeXcyRXpSclZWSC1qalZ4ZFhBblhlcHEweXBleGpzUThoYUtEcHRZYWFKV3AyU2dWSzdUblJ1ZTNr0gHAAUFVX3lxTE5xMFNJSTlQRmNNT1Q4VFlBVjVUSDhBU0kxSUE5ZnFPT3Mxb1ZZWlZFVy1fdTdNR1NleEJRVDB3SGQ1QjdvYms3MFdMTHZvYWdJR01IX21ORzFzVkpPREc0R2hrb1o1OWQtbHFtVml0Y0xNRmZ2ZndwTm9VOE52WVRha1BYN0NxNUREVWl1RGdsc2xudVprTjZvWll5OEJtMm1fUXhIS3pjWGEyaklCSmxPYl9kcGVqYWRyVGlkN1dEaA?oc=5"
+        },
+        {
+          "title": "OJK Catat Laba Fintech Lending Turun 14,14 Persen - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE95UHJvcjNlR21lb3poaGhlV2JxUnA4eFdOUkRjYnAzSEF2SHhaM3kyV3Ixb1FLc0w5dXhsWGp2SXRVQkxGTUItSElzZWxjTFlXeG1DakVkMTNUVHBZXzh1bVFiZmpxZw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-9353a4c88806",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "KPPU",
+        "OJK"
+      ],
+      "headline": "Pengadilan Batalkan Denda KPPU ke Industri Pinjol, Begini Kata OJK - Bisnis.com",
+      "headlineZh": "法院撤销KPPU对pindar罚款",
+      "summaryZh": "法院推翻KPPU对网贷行业罚款，OJK回应，属监管司法进展值得留痕。",
+      "rationale": "司法裁定具体事件",
+      "independentSourceCount": 1,
+      "domains": [
+        "finansial.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "2f67bd9536cac5e4"
+      ],
+      "articles": [
+        {
+          "title": "Pengadilan Batalkan Denda KPPU ke Industri Pinjol, Begini Kata OJK - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNNjM2UlkxTVA2azF6T1dGcTRyR2J6UWxWVGwtMU9nb1AyQVdqdlI5UlNOLWc3N0RDUHZabkFWdVZOb1dOUVViV1BOZkpkci10UmE4VlltRjgwZWp0X0lEOGZiX0EwbkVHYXdXblpMWDhPU1F1MDZkclREY2tpRkpacVpUWnBJVmtrc3c5ZnpOZXFVWFJBYlJlOF9mSS1vRzBvajU4WVlWWDRVckVEQjRpdGc1NmlLMGg2SloxUA?oc=5"
         }
       ],
       "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 1,
+        "negativeShare": 0.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-47760312e76a",
+      "eventType": "industry_update",
+      "severity": 0.3,
+      "entities": [
+        "AFPI"
+      ],
+      "headline": "AFPI Perketat Seleksi Pinjaman Daring di Tengah Pelemahan Daya Beli - Demokratis.co.id",
+      "headlineZh": "AFPI要求收紧放贷筛选",
+      "summaryZh": "因购买力走弱，AFPI呼吁P2P更审慎放贷，属行业常规动态。",
+      "rationale": "行业常规动态",
+      "independentSourceCount": 2,
+      "domains": [
+        "demokratis.co.id",
+        "keuangan.kontan.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "118118a763072c47",
+        "e44aac0a982c741a"
+      ],
+      "articles": [
+        {
+          "title": "AFPI Perketat Seleksi Pinjaman Daring di Tengah Pelemahan Daya Beli - Demokratis.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9hQ0J6LWRBWTRwdnZDckM4UzNqd3FPaUV0QWhKcTh0b0M4LXhzQVB3VTNYN3c4a1ZVcDY4ZDNLdl9yejhpTkZVQXgxU01TUVJudDU1U3k2NWRFMDZFTzNVaXdwZw?oc=5"
+        },
+        {
+          "title": "Daya Beli Melemah, AFPI Minta Fintech P2P Lending Lebih Selektif Salurkan Pembiayaan - kontan.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQN1NYOU9ZU2xobHNtc0tVR0VvOWlfZ3BLSEdQVDBUUG5KazNqYzlTRTg1VXFSeEloenU4LXhFX0k0TnBBeG9TOUZ2cUNrOXVtQzA5VWVGdm01Xy1RdXN4UmxrbF9IamRLYlU1TFVIRmhTYkRQRW5uallsUktvYl9ZMUE4UXZyb1lONnR3UjBka1UtMC16THRnZ2pNeGhFRWhmQWMtLXpNdDJWMjNQVVU2UWk4TlBwdHVfa3fSAbMBQVVfeXFMTVZzRVhrdUNjcXJVLVVrckdNbTI1Y2p6c21BcWx0OFVETHFfS3dwLVU0ZzRfdmxKUDdIUmJjMHU5UkQtVVd1RUZSLVBhejZwNFI3dVVJdHNKTlV6em5CclNRVlM2V3ZmZVZwN1B5R0JzYVV0eVVjbGcweHhxdVRSWUlRSlMwVGRNMmhJWUpScHRnX0ZGZkNoM2g0S1Vwem5hQnczN0pJZkRIOEZIMG1MWmdVWHM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -156,56 +635,39 @@
       }
     },
     {
-      "id": "llm-df0f5c2bc681",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
+      "id": "llm-202867575875",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
       "entities": [
-        "AFTECH",
         "OJK"
       ],
-      "headline": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
-      "headlineZh": "P2P贷款余额106万亿坏账率5.36%",
-      "summaryZh": "P2P行业贷款余额达106.48万亿印尼盾，TWP90坏账率升至5.36%，AFTECH呼吁加强风险缓释与更严格放贷。",
-      "rationale": "行业资产质量数据事件",
-      "independentSourceCount": 4,
+      "headline": "OJK Perkuat Keamanan Pinjol, Ini 5 Aspek Penting dalam Pedoman Ketahanan Siber LPBBTI - radarcirebon.disway.id - Radar Cirebon",
+      "headlineZh": "OJK发布LPBBTI网络安全指南",
+      "summaryZh": "OJK出台网贷行业网络安全韧性指南五要点，属监管规范动态。",
+      "rationale": "监管规范发布",
+      "independentSourceCount": 1,
       "domains": [
-        "infobanknews.com",
-        "jakarta.bisnis.com",
-        "journalarta.com",
-        "waspada.id"
+        "radarcirebon.disway.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "e1b2c1f9f1913b1a",
-        "462f522f6830dc8e",
-        "fdadbee9d2971deb",
-        "783b192c83828bd3"
+        "00743f8882c0a4fa"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pindar 5,36%, Aftech Dorong Penyaluran Kredit Lebih Ketat - Waspada.id",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQczB5eENVdXZmZHhHTk1HTG1JSnBNUGQ3LVBORXphZHFKTUhZbFhORDdmb0xFbFA0NHp0cjV1bUJneGJTYUhWb0sxVldPclhBU3d1UG9hWE1BYzRkaUw3MUJQcWpxdVBab00weVBxX1pJaC1FOVIzZVVXb0hMWEo4Vmlwa2E2UF9mZ3JQZ0NMVmdxZUdoaG1KY0NRd0E3eWM?oc=5"
-        },
-        {
-          "title": "Utang Pindar Tembus Rp106,46 Triliun, AFTECH Dorong Penguatan Mitigasi Risiko - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSzEzaDhodGdBVjhSSUJZOUFza01ESjNfTHh2cVdlX19DYWhycnpGNUZYaXJ5NTFlMndlbm9yaEJzZkFNR2JTa2p5LVlkenJMeC01SmlfaGpTQ1pPTTBGX1dFdHplOHRXRWQwMjh1T0RFY2NHRUEwbHljN1VCbEJBUEF4WEN6UklOZkZOdWxrc1FnN2pFOUFlR2QxTUo0T29EX1E?oc=5"
-        },
-        {
-          "title": "Utang Pindar Tembus Rp106,48 Triliun, Risiko Kredit Naik - JournalArta",
-          "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9CS1pjeGJnZzJLMEFISW9mYkJ6WHdzZU1RMF9Ra2FlSUhCSzQ5VUVmdV91c0ppbktPcmpUMUZoVTJ0alNsVVRBT0xwS0R2Nkd2V3MtNHJiY2tKMjhxSmFuNk1FX19qOGRIelhNR2lvd3FaNVkxU01YZg?oc=5"
-        },
-        {
-          "title": "Utang Pinjol Tembus Rp106,48 Triliun di Tengah Kenaikan TWP90 ke 5,36% - Bisnis.com",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdWQzX0F2MDF0LUN1SzRQaUpTVjZQZjlaU090ZFdieGZRWHFxSW5uZHpyUVg4ay00UlZTR0o5aE5TQm83bUNUWDd0SmhndzNHRVpndmRNNVcxTmc4eUJBMjdlek5uOWpHdTRaOGsyTGQxczI5cFpud3BSa3AtRF8tVlJxZE1LOFdKNkU5anVjMXZSd19Sa0YxWVFzVW5wbjVINDhyTHA0MVVnWGVnSTZUcTE1S1BzSWtlemRxOA?oc=5"
+          "title": "OJK Perkuat Keamanan Pinjol, Ini 5 Aspek Penting dalam Pedoman Ketahanan Siber LPBBTI - radarcirebon.disway.id - Radar Cirebon",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPTjdCbTJfejE0VjZSUmpWSEpXNXZwOXBQc3U0MWZoR2JuV0VpbUFaOVY0V05JYWhLTTdUOXEyblhFQlNEUWFFa2NfdUJYWURxZUpaMkx4ZkZ0RGNwN1ZRZlQxOVBvMkdTT0c2R0gySElEbGNkLTJRd0xhaVNMLXFtbzNlZVBxSy1yQksxY2I3TThuOFRZOTJoN0Z1anI2SV9NUmM5ZEdiUnByczQ0LTNTRUlkV2RmUnoybnktaS1nR0JDSW9INk5jUmRGWUc5YTdhS3fSAcQBQVVfeXFMTWxSRDQzZU4tUUVYLVZjRnNROWh5Yi0ybUlyU0tESDhyaDdDbWpCVTJDa0VlZ1Z0Ry04UU9UQkxDTW5qTkYwclpjVlRud0V6LVdLLWVJSnBMa2d5WlRDZk9XNDNINVZ1SnB3bjBxTU42YWZSbTVKTTN5WUN3Wk41YVRLRzl5SHkyWTRXSnY1cU50RGtqal9pNXI2cDlocVpQckFnZXpqUUJ5a3dRMUZiRElkYnF6QkVyN2MxWGRjMFU5NlJzQw?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 4,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
+        "mentionCount": 1,
         "negativeShare": 0.0,
-        "platforms": []
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -218,25 +680,25 @@
     ],
     "failedOrUnavailableChannels": {
       "gdelt": "HTTP Error 429: Too Many Requests",
-      "kaskus": "Kaskus hot_threads unavailable after retries: The read operation timed out",
+      "kaskus": "Kaskus hot_threads unavailable after retries: HTTP Error 429: Too Many Requests",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 21,
-    "socialItemCount48h": 15
+    "articleCount48h": 43,
+    "socialItemCount48h": 19
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 497,
+    "inputCount": 507,
     "classifiedCount": 104,
     "irrelevantDropped": 136,
     "model": "deepseek-chat",
-    "fallbackCount": 257,
+    "fallbackCount": 267,
     "labelCounts": {
-      "NEG": 41,
+      "NEG": 44,
       "MIX": 29,
-      "POS": 34
+      "POS": 31
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",

@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-11-15T08:29:38.394797+00:00",
+  "generatedAt": "2026-11-16T08:39:55.142064+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-15",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-16",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
       "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼副总统职位空缺，总统将出访后物色接替人选，各党魁据称同意由大印尼运动党人士出任**\n严重度 0.75｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔺 **市场失序(汇股债)｜印尼盾兑美元跌破18000关口至18200，进口商担忧工业崩溃**\n严重度 0.75｜1个独立来源（cnnindonesia.com）｜影响支柱：currency\n\n🟠 **仓促立法/政策骤变｜印尼要求企业将法定遣散费储备金上缴政府，劳工部否认须存入Danantara**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **仓促立法/政策骤变｜总统指示矿业许可证（IUP）至少70%收益须归国家享有**\n严重度 0.55｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions",
-      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜MPR推迟副总统补选日程，Prabowo致函MPR启动接替Gibran程序**\n严重度 0.75｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜Sohibul Iman宣誓就任MPR副主席接替Hidayat Nur Wahid**\n严重度 0.55｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜Irjen Eko Hadi因非法窃听案接受警队伦理审判**\n严重度 0.55｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜前最高法院秘书长Nurhadi上诉被驳回，KPK将执行判决**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 7 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-15:normal:red:success"
+    "decisionId": "daily:2026-11-16:normal:red:success"
   },
   "feishu": "sent"
 }
