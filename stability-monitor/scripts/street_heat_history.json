@@ -1262,20 +1262,20 @@
   {
     "date": "2026-11-17",
     "version": 3,
-    "heat": 39.3,
-    "suggested_score": 61,
+    "heat": 43.4,
+    "suggested_score": 59,
     "opposition": {
       "status": "ok",
-      "rate": 42.8,
-      "detail": "250条中政治条目201条(浓度80%)，反对86/中性90/支持25 → 总反对率 42.8%（分侧: 民间YouTube 46% · 论坛Kaskus 75% · 媒体RSS 32%）"
+      "rate": 48.5,
+      "detail": "250条中政治条目204条(浓度82%)，反对99/中性81/支持24 → 总反对率 48.5%（分侧: 民间YouTube 55% · 论坛Kaskus 62% · 媒体RSS 33%）"
     },
     "sources": {
       "trends": {
         "status": "ok",
-        "heat": 41.3,
+        "heat": 41.1,
         "raw": {
-          "ratio_street": 0.5257142857142856,
-          "ratio_anger": 1.1269686953140192,
+          "ratio_street": 0.5324074074074072,
+          "ratio_anger": 1.110375705664785,
           "per_kw": {
             "demo hari ini": 2,
             "demonstrasi": 2,
@@ -1286,17 +1286,17 @@
             "kejaksaan": 21,
             "Indonesia gelap": 1,
             "turunkan presiden": 0,
-            "krisis": 11
+            "krisis": 10
           }
         }
       },
       "kaskus": {
         "status": "ok",
-        "heat": 78.6,
+        "heat": 78.4,
         "raw": {
           "n_threads": 25,
           "n_hits": 5,
-          "share": 39.291677993087646,
+          "share": 39.217734447539456,
           "examples": [
             "GIBRAN RESIGN! Tamatlah Sudah Alkisah Genk Solo",
             "Kejadian di Majalengka: Bapak Aing KDM Adu Argumen Sama Menteri Ara Soal Upah So",
@@ -1308,27 +1308,21 @@
       },
       "youtube": {
         "status": "ok",
-        "heat": 57.5,
+        "heat": 52.5,
         "raw": {
-          "n_searched": 130,
-          "n_big": 23
+          "n_searched": 134,
+          "n_big": 21
         }
       },
       "gdelt_vol": {
-        "status": "ok",
-        "heat": 21.6,
-        "raw": {
-          "avg7": 0.0037285714285714283,
-          "baseline": 0.00864193548387097,
-          "ratio": 0.4314509678451447
-        }
+        "status": "fail",
+        "heat": null,
+        "raw": {}
       },
       "gdelt_tone": {
-        "status": "ok",
-        "heat": 29.9,
-        "raw": {
-          "avg_tone7": -0.9872428571428572
-        }
+        "status": "fail",
+        "heat": null,
+        "raw": {}
       },
       "rss": {
         "status": "ok",
