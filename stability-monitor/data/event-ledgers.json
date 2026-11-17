@@ -70,6 +70,16 @@
           "sources": [
             "TIMELINE 2026-07-10"
           ]
+        },
+        {
+          "date": "2026-11-03",
+          "weight": 1,
+          "label": "前警察总长、时任总统办公厅主任 Listyo Sigit 被 Bareskrim 列为非法窃听总统案嫌疑人并羁押于 Mako Brimob（同案另有三名二星将军）",
+          "sources": [
+            "Kompas 2026-11-04/07",
+            "CNN Indonesia 2026-11-08/09",
+            "Kontan"
+          ]
         }
       ],
       "excluded": [
@@ -165,6 +175,16 @@
             "Kompas Surabaya 2026-10-29",
             "Suara Surabaya",
             "Liputan6"
+          ]
+        },
+        {
+          "date": "2026-11-04",
+          "weight": 2,
+          "label": "亚齐 Pidie 军方清除「星月旗」时与群众冲突，1 名平民（20 岁）胸部中枪身亡、13 人受伤；军方称仅用空包弹与橡皮弹，交国家人权委员会调查",
+          "sources": [
+            "The Jakarta Post 2026-11-06",
+            "infopublik",
+            "afu.id"
           ]
         }
       ]
@@ -280,6 +300,16 @@
             "Kompas 2026-10-16",
             "Katadata 2026-10-03",
             "CNN Indonesia 2026-10-01"
+          ]
+        },
+        {
+          "date": "2026-11-04",
+          "weight": 1,
+          "label": "总统罢免总统办公厅主任（部长级）Listyo Sigit，就任仅 35 天；陆军中将 Aryo Windutomo 代理",
+          "sources": [
+            "Kompas 2026-11-04",
+            "CNBC Indonesia 2026-11-04",
+            "detik"
           ]
         }
       ],
