@@ -186,6 +186,17 @@
             "infopublik",
             "afu.id"
           ]
+        },
+        {
+          "date": "2026-11-10",
+          "weight": 1,
+          "label": "日惹英雄节示威入夜转为冲突（地方议会遭燃烧瓶、蔓延至 UGM 环岛），警方带走 154 人（含未成年人）后于 11-11 释放；国家人权委员会称有警方过度使用武力的强烈迹象，11 名警察被查",
+          "sources": [
+            "Tempo 2026-11-11",
+            "Kompas Yogyakarta 2026-11-12",
+            "Tirto",
+            "Republika（Komnas HAM）"
+          ]
         }
       ]
     },
@@ -310,6 +321,16 @@
             "Kompas 2026-11-04",
             "CNBC Indonesia 2026-11-04",
             "detik"
+          ]
+        },
+        {
+          "date": "2026-11-12",
+          "weight": 2,
+          "label": "副总统 Gibran 向 MPR 递交辞呈、未说明理由，副总统职位空缺；MPR 须 60 天内补选（排期 12-09），总统须先提两名人选",
+          "sources": [
+            "Kompas 2026-11-12",
+            "Antara 2026-11-12（MPR 主席 Muzani）",
+            "hukumonline"
           ]
         }
       ],
