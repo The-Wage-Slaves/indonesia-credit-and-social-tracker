@@ -1,0 +1,45 @@
+name: Weekly autopilot merge
+
+# 每周二云端 Claude 定时代理把周更推到 claude/weekly-YYYY-MM-DD 分支（见 docs/WEEKLY_AUTOPILOT.md）。
+# 本工作流重跑完整校验，通过后合并进 main、删分支，并显式触发看板下载包发布——
+# 用 GITHUB_TOKEN 推送的提交不会再触发 push 事件，所以发布必须手动 dispatch。
+# 这不是采集工作流：push 触发只针对代理的周更分支，不会在普通提交上运行。
+on:
+  push:
+    branches:
+      - "claude/weekly-*"
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: weekly-autopilot-merge
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    uses: ./.github/workflows/validate.yml
+
+  merge:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Merge weekly branch into main
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "$BRANCH"
+          git merge --no-ff "origin/$BRANCH" -m "auto(weekly): merge $BRANCH"
+          git push origin HEAD:main
+          git push origin --delete "$BRANCH"
+      - name: Publish dashboard package
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run publish-dashboard-package.yml --ref main

@@ -5,6 +5,9 @@ on:
     # 目标每月1日 10:43 Asia/Shanghai（02:43 UTC）。避开整点排队高峰，理由见
     # daily-risk-alerts.yml 与 AUTOMATIONS.md「定时不是准点」一节。
     - cron: "43 2 1 * *"
+    # 2026-11-17 起每周二再跑一次，给周二自动周更（docs/WEEKLY_AUTOPILOT.md）提供当周宏观与 P2P 候选。
+    # 03:17 UTC 留出排队延迟，代理 11:37 UTC 才读取。
+    - cron: "17 3 * * 2"
   workflow_dispatch:
 
 permissions:
