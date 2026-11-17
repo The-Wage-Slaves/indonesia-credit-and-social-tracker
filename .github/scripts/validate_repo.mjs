@@ -588,7 +588,7 @@ for (const marker of [
   assert(packageWorkflow.includes(marker), `dashboard package workflow missing ${marker}`);
 }
 const projectMemory = read('PROJECT_MEMORY.md');
-for (const marker of ['一个用户目标只对应一个 PR', 'PR #10—#13', '上下文防腐流程', '人在环是铁律']) {
+for (const marker of ['一个用户目标只对应一个 PR', 'PR #10—#13', '上下文防腐流程', '证据标准是铁律', 'WEEKLY_AUTOPILOT.md']) {
   assert(projectMemory.includes(marker), `project memory missing ${marker}`);
 }
 assert(!cloudPublisher.includes('"title": f"周二监测'), 'weekly Feishu title must disclose cadence and purpose');

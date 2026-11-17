@@ -23,7 +23,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 
 ## 1. 铁律（改任何东西前必读，违反=错）
 
-1. **人在环**：脚本只「抓取→写待确认区（首页卡片 / 信贷看板"✎数据管理"暗门）」，**绝不直接改看板数值/评分**；人确认后才写入。
+1. **证据标准（人在环已于 2026-11-17 取消）**：采集脚本仍只「抓取→写 bot 分支/待确认区」，不直接改看板；每周二由云端 Claude 定时代理按 `docs/WEEKLY_AUTOPILOT.md` 读取产物、改分并自动合并 `main`，不再等人审。**只有官方原文/API 可追溯的数字能改分，拿不到就沿用**；方法论与 V4 转正仍只由所有者决定。
 2. **事实/判断分离**：稳定性证据每条标 事实/引述/判断/待补 四类标签。
 3. **改 `stability-monitor/dashboard/data.js` 必须**：同步更新该 driver 的 `score/prev/changeReason/sources/updated`；支柱分 = round(Σ driver.score×weight)，改分后**本地跑 `node .github/scripts/validate_repo.mjs` 必须通过**（它校验权重和=1、支柱分=加权和、provenance 齐全、pending/V4 一致性、支柱读法文字里的「当前N」与分数一致、导出文件与 data.js 同步、driver 级快照自洽且最新一期与 data.js 一致）。**手改评分后必须补跑 `python scripts/apply_week.py snapshot`**——`append` 会自动归档，手改不会。
 4. **FX 固定 15000**（历史可比口径），除非所有者明确批准改方法论。
@@ -106,7 +106,7 @@ GitHub 私有仓 `The-Wage-Slaves/indonesia-credit-and-social-tracker`（仓库�
 - **待校准**：红色要求的「社媒 ≥3 条提及」是拍的。若真事件长期卡在 `high_pending` 上不去红，先怀疑这个阈值或社媒覆盖率。
 
 **周更流程**：⓪ **先清观察时点表**——`python scripts/apply_week.py watch` 列出 `data.js` 的 `watchlist` 里已过期未复核与 30 天内到期的项；已到期的先核对结果写进 `outcome`、改 `status`（resolved/lapsed），再决定是否改 driver；新出现的**有日期**的期限/议息/复审日补进表（open 项过期 14 天仍未复核 → `validate_repo` 报错）。看板「后续观察时点」区块与周二飞书卡都读这张表。⓪′ **再取当周日频事件**——单一真源是云端 `bot/daily-risk-alerts` 分支：
-`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 用户本机跑 `street_heat.py` → 确认单；② web检索本周宏观/政治/市场变化，并跑 `python scripts/market_relative.py --period YYYY-MM-DD`（股市对 MSCI EM、卢比对亚洲五币的偏离读数，2026-10-16 起是这两个 driver 的唯一出处；拒绝出数时不得手填）；把本周新事件补进 `data/event-ledgers.json`（政策翻转/精英清洗/对平民镇压/军警冲突/要害更替/领土建制，**每条带完整日期与来源**），跑 `python scripts/event_decay.py --date YYYY-MM-DD` 取这六个 driver 的分（`test_event_decay.py` 会核对看板与台账一致）；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照（**会自动归档一份 driver 级快照到 `data/driver-snapshots/YYYY-MM-DD.json`**；手改评分后若没跑 append，补跑 `python scripts/apply_week.py snapshot`）→ `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 用户审 diff 后合并。
+`git fetch origin bot/daily-risk-alerts && git show origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl`（避免漏检）；① 读云端 `street_heat.py` 当日读数（`bot/weekly-monitoring`，本地跑不入分）；② web检索本周宏观/政治/市场变化，并跑 `python scripts/market_relative.py --period YYYY-MM-DD`（股市对 MSCI EM、卢比对亚洲五币的偏离读数，2026-10-16 起是这两个 driver 的唯一出处；拒绝出数时不得手填）；把本周新事件补进 `data/event-ledgers.json`（政策翻转/精英清洗/对平民镇压/军警冲突/要害更替/领土建制，**每条带完整日期与来源**），跑 `python scripts/event_decay.py --date YYYY-MM-DD` 取这六个 driver 的分（`test_event_decay.py` 会核对看板与台账一致）；③ 新分支改 `data.js`(driver分+changeReason+sources+updated、支柱分、weekChange、engine.js解读文字) → `python scripts/apply_week.py append YYYY-MM-DD fiscal=.. currency=.. institutions=.. social=.. coercive=..` 追加周快照（**会自动归档一份 driver 级快照到 `data/driver-snapshots/YYYY-MM-DD.json`**；手改评分后若没跑 append，补跑 `python scripts/apply_week.py snapshot`）→ `validate_repo.mjs` → commit/push/PR；④ 同步刷新数据置信版(改 `v4-shadow-input.json` asOf+建 `data/evidence/YYYY-MM-DD.json`+跑 `score_v4_shadow.py --write-output`+history加当周确认点)；⑤ 推 `claude/weekly-YYYY-MM-DD`，由 `weekly-autopilot-merge.yml` 校验后自动合并（2026-11-17 起无人工审阅；V4 history 确认点仍留给所有者）。
 
 ---
 

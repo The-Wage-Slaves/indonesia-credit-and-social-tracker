@@ -10,10 +10,10 @@
 | 每日 09:43* | 稳定性重大新闻/制度骤变警报 | GitHub workflow `daily-risk-alerts.yml` → `daily_alert.py --no-push` | `bot/daily-risk-alerts` 证据池；不改分数 | 红/高危/橙事件是否纳入周评 | 仅异常日推送 | 云端自动；不依赖本机开机 |
 | 每日 09:43* | Pinjol/Pindar 舆情波动警报 | 同一 `daily-risk-alerts.yml` → `credit_daily_alert.py --write-output` | `daily-credit-alert-pending.json`；不改周度历史 | 严重事件、跨新闻/社媒异常是否升级 | 仅异常日推送 | 云端自动；不依赖本机开机 |
 | 每周二 09:53* | 线上信贷恐慌指数＋稳定性街头热度 | GitHub workflow `weekly-credit-sentiment.yml` | `bot/weekly-monitoring` 待确认数据；不建 PR | 确认分数、信源覆盖和告警证据 | 红/橙风险才推送 | 云端统一执行；不依赖本机开机 |
-| 每周二，采集后人工确认 | 稳定性两版周评 | 云端 `street_heat.py` 证据 → 人工确认后 `apply_week.py` / `score_v4_shadow.py` | 全景等权版与数据置信版同日结果 | 先确认街头热度与日频事件，再确认两版分数 | 风险或采集失败才推送 | 评分写入仍坚持人在环 |
+| 每周二 19:37* | 自动周更：稳定性两版周评 + 宏观 + P2P 竞对写入 | claude.ai 云端定时代理「印尼周更 autopilot」（cron `37 11 * * 2`）按 `docs/WEEKLY_AUTOPILOT.md` 读取云端 `street_heat.py` 读数与日频/月度产物 → 推 `claude/weekly-*` → `weekly-autopilot-merge.yml` 校验后合并 `main` | 全景等权版周快照、数据置信版影子、宏观序列、P2P 已确认批次 | **无人工确认**（2026-11-17 起）；所有者事后看会话报告与 `main` 提交 | 合并后由看板 ZIP 发布推下载链接 | 云端自动；V4 history 确认点与方法论变更仍留给所有者 |
 | 每月1日 10:43* | BI/OJK 行业数据更新 | GitHub workflow `monthly-credit-data.yml` → `update_credit.py` | `bot/monthly-credit-data` 暗门待确认项 | 核对月份、单位、来源和异常值 | 有新数据或失败时推送 | 云端自动；不依赖本机开机 |
-| 每月1日 10:43* | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
-| 每月1日 10:43* | P2P 竞对官网数据 | 同一 `monthly-credit-data.yml` → `p2p-scraper/scraper.mjs` | `p2p-pending.js` 暗门逐格确认 | 核对各公司口径与缺失项 | 有新数据或覆盖不足时推送 | 云端自动；不依赖本机开机 |
+| 每月1日 10:43* + 每周二 11:17* | 国家宏观指标更新 | 同一 `monthly-credit-data.yml` → `macro-monitor/macro_monitor.py` | BI利率、JISDOR、CPI候选；每月检查GDP与失业率新发布；不改正式序列 | 核对期间、单位、官方原文和修订值 | 有新数据、缺少BPS密钥或采集失败时推送 | 云端自动；不依赖本机开机 |
+| 每月1日 10:43* + 每周二 11:17* | P2P 竞对官网数据 | 同一 `monthly-credit-data.yml` → `p2p-scraper/scraper.mjs` | `p2p-pending.js` 暗门逐格确认 | 核对各公司口径与缺失项 | 有新数据或覆盖不足时推送 | 云端自动；不依赖本机开机 |
 | `main` 看板变更后 | 最新看板下载包 | `publish-dashboard-package.yml` | 覆盖同一个 Private Release ZIP | 无评分决策；仅通知已发布最新版 | 每次有效变更推送下载链接 | 云端事件触发；无本机常驻/轮询 |
 | 每日/每周 | 印尼新闻简报 | `stability-monitor/brief/src/main.py` 或既有 `indo_news` | 新闻摘要/历史 | 新闻阅读；异常事件可转稳定性证据 | 既有飞书 Hook | 仓库 workflow 仍为手动；本机 `indo_news` 为整合目标 |
 
@@ -195,5 +195,7 @@ driver 的环比恰恰依赖这个文件。日频修完后周频原样留着没�
 
 - 上述日/周/月采集均在 GitHub Actions 运行，不依赖本机或 Windows 计划任务。
 - 每日/每周的印尼新闻简报不在本次改造范围内，仍由 `indo_news` / Claude Code 管理。
-- 例行产物只写 bot 待确认分支；不会创建数据 PR，也不会自动修改
-  全景等权版、数据置信版或信贷正式历史。
+- 采集器的例行产物只写 bot 分支；不会创建数据 PR。
+- 2026-11-17 起，每周二的云端 Claude 代理读取这些产物与当周新闻，自动改写全景等权版、数据置信版影子、
+  宏观序列与 P2P 已确认批次并合并进 `main`；BI/OJK 行业余额（`apply_industry_pending.py`）与 V4 history
+  确认点仍由所有者手动处理。
