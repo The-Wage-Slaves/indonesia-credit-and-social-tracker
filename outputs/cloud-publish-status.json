@@ -1,20 +1,20 @@
 {
-  "generatedAt": "2026-11-18T09:08:31.714810+00:00",
+  "generatedAt": "2026-11-19T09:31:43.327298+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-18",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-19",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **仓促立法/政策骤变｜印尼国会加速审议并通过《资产没收法案》**\n严重度 0.75｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **关键官员更替/清洗｜印尼国家警察总长签署新道德准则，涉监听案高级警官被开除**\n严重度 0.75｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **军警冲突/安全事件｜印尼警方调查涉监听总统的叛国案，搜查涉案高级警官住所**\n严重度 0.75｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：coercive\n\n🟠 **大规模抗议/镇压｜日惹11月10日示威学生控诉遭殴打驱散**\n严重度 0.55｜1个独立来源（bbc.com）｜影响支柱：social",
-      "**已确认、本次不再催办**\n另有 1 条已人工处置且无实质新进展的事件（央行独立性），未逐条列出；它们仍写入证据池留痕。若后续出现实质进展会重新推送并标为「进展升级」。",
-      "**已折叠的低证据线索**\n另有 6 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **仓促立法/政策骤变｜印尼国会仓促通过《资产没收法》，未纳入非法致富条款**\n严重度 0.75｜4个独立来源（antaranews.com、bbc.com）｜影响支柱：institutions\n\n🔴 **市场失序(汇股债)｜印尼盾大幅走弱至1美元兑18,254印尼盾，央行加息至6%**\n严重度 0.75｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：currency\n\n🔴 **司法/执法工具化｜印尼警方以涉嫌叛国罪调查普拉博沃案，包括前警察总长利斯特约**\n严重度 0.75｜3个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：institutions",
+      "**Pinjol/Pindar 舆情事件**\n\n**OJK紧盯P2P违约处置**\nOJK对Akseleran、iGrow、KoinP2P的违约问题处置进行严密监控，属监管介入平台风险事件。\n证据：3个独立来源。",
+      "**已折叠的低证据线索**\n另有 3 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-18:normal:red:success"
+    "decisionId": "daily:2026-11-19:high_pending:red:success"
   },
   "feishu": "sent"
 }
