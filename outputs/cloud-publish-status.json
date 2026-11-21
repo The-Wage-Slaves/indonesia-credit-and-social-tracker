@@ -1,21 +1,19 @@
 {
-  "generatedAt": "2026-11-20T09:11:48.820931+00:00",
+  "generatedAt": "2026-11-21T08:47:20.224445+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-20",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-21",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **仓促立法/政策骤变｜印尼国会通过搁置18年的《资产没收法》，KPK表态将执行**\n严重度 0.75｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🔴 **司法/执法工具化｜印尼警方以涉嫌叛国罪搜查并推迟案件曝光，涉及准将Tedjo Kusumo与警官Iman Imanuddin**\n严重度 0.75｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **关键官员更替/清洗｜印尼副总统人选更替程序启动，MPR开始核验替代Gibran的候选人文件，Mahfud质疑12月9日强行选举合法性**\n严重度 0.75｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **大规模抗议/镇压｜雅加达工人拒绝2027年最低工资标准，要求上调至624万盾**\n严重度 0.55｜1个独立来源（liputan6.com）｜影响支柱：social",
-      "**已确认、本次不再催办**\n另有 1 条已人工处置且无实质新进展的事件（关键官员更替/清洗），未逐条列出；它们仍写入证据池留痕。若后续出现实质进展会重新推送并标为「进展升级」。",
-      "**Pinjol/Pindar 舆情事件**\n\n**OJK监督Akseleran、iGrow、KoinP2P违约处置**\nOJK密切监督Akseleran、iGrow与KoinP2P三家P2P平台的违约清偿处置，属监管介入。\n证据：2个独立来源。",
-      "**已折叠的低证据线索**\n另有 5 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **司法/执法工具化｜印尼警察总长Listyo Sigit等被列为叛国案证人，多名警官涉案**\n严重度 0.75｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔺 **仓促立法/政策骤变｜印尼副总统选举日期争议：9日大选面临不合法风险，Golkar提议推迟全体会议**\n严重度 0.75｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **军警冲突/安全事件｜印尼六省逮捕15名恐怖嫌疑人**\n严重度 0.55｜1个独立来源（antaranews.com）｜影响支柱：coercive\n\n🟠 **关键官员更替/清洗｜印尼政府撤销PT RAPP 33.8万公顷林地的利用许可**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions",
+      "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-20:high_pending:red:success"
+    "decisionId": "daily:2026-11-21:normal:red:success"
   },
   "feishu": "sent"
 }

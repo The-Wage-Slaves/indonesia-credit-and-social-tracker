@@ -1,231 +1,114 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-20",
-  "level": "high_pending",
+  "date": "2026-11-21",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 41.8,
-    "socialDailyVolumeRisk": 25.7,
-    "negativeSocialShare": 17.2,
+    "newsDailyVolumeRisk": 41.3,
+    "socialDailyVolumeRisk": 38.5,
+    "negativeSocialShare": 14.7,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=8; prior-7d median=21.0; robust z=-0.55",
-    "socialVolume": "today=2; prior-7d median=26.0; robust z=-1.62"
+    "newsVolume": "today=8; prior-7d median=20.0; robust z=-0.58",
+    "socialVolume": "today=6; prior-7d median=23.0; robust z=-0.76"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [
     {
-      "id": "llm-b7465ff3b93a",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
+      "id": "llm-2ddf985ae000",
+      "eventType": "credit_quality_stress",
+      "severity": 0.55,
       "entities": [
         "OJK",
-        "Akseleran",
-        "iGrow",
-        "KoinP2P"
+        "Asosiasi Fintech Lending"
       ],
-      "headline": "OJK Awasi Penyelesaian Gagal Bayar Akseleran iGrow dan KoinP2P - Demokratis.co.id",
-      "headlineZh": "OJK监督Akseleran、iGrow、KoinP2P违约处置",
-      "summaryZh": "OJK密切监督Akseleran、iGrow与KoinP2P三家P2P平台的违约清偿处置，属监管介入。",
-      "rationale": "监管机构介入平台违约处置",
-      "independentSourceCount": 2,
+      "headline": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
+      "headlineZh": "Pindar不良贷款率升至5.36%",
+      "summaryZh": "OJK数据显示Pindar不良贷款率突破5.36%上限，行业协会回应，反映线上信贷资产质量承压。",
+      "rationale": "监管数据披露的资产质量指标恶化",
+      "independentSourceCount": 5,
       "domains": [
-        "demokratis.co.id",
-        "infobanknews.com"
+        "bsinews.id",
+        "cwibc.co.id",
+        "limapagi.id",
+        "money.kompas.com",
+        "suaragarut.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "80d6c9a7103b9368",
-        "f80f6a6c56780bb4"
+        "dac85519777e027f",
+        "c898f3517c6b1dd3",
+        "da80e44e021addcb",
+        "faab69b746eaa3ef",
+        "b01caa915b89c955"
       ],
       "articles": [
         {
-          "title": "OJK Awasi Penyelesaian Gagal Bayar Akseleran iGrow dan KoinP2P - Demokratis.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9Tc0JaQzB2OG9Bal8tWDB4WWVPdjQ4Z0VZdGItS0V4MkRxNmc0YWlYN2x3RUNtX21KeHViUEF1ZUJZQVdiQlMyeVk5V0JkbWJjYnhfOVRNOWp5MmJHRXN1c19DOVY?oc=5"
+          "title": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWlBqaUhsN0wtS1c4M3RPYXlYTmJReXl3SUplUXctR0NUMERvQm9xdDBYWVF5aGpWWEcxR0RJeXJYQk9HUzhXWThTb0tPVG56MkdaRkZhOTRiVDg0aXVvWi1FWExiWTExREM2V0ViTmtnU0ltN1RxM1gtaFllMi1JZzNmMkVsckJGVGl4aWNVdnB1d3FtY2k1bVd5c3NSSlVEeXV0ZHJacDB0N3pIclJZYjJjQkFQeTYwVlh5RjlWc2UtVlRqQklTbw?oc=5"
         },
         {
-          "title": "OJK Pantau Ketat Penyelesaian Kasus Pindar iGrow, Akseleran, dan KoinP2P - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRUN1VWQtV2tydGZGVXQyVjJNYW5CMzE1blJWRWxzZThzUVA5VlRYYXBJNHptWVZyQVFTb09Hc2JpdmZ4a05hQVJ0XzBOd3lrWnVGOTVOMDdPeEdJZ19ydlB4Y1FHa0ZzR1htTUFzaDZtQ2Nnc3Vvc3VoMnF4T0lDdGIxUnh5RW1FVnZJTGh3LXY3cDVKajAyRGtVZw?oc=5"
+          "title": "OJK Catat Kredit Macet Fintech Pindar Tembus 5,36 Persen - bsinews.id",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43dUh6eE05Wm1JMjVTQlljSzFGYWRVcExwb196YzFRQ01GZDZFb3dkOHRMWS1ieTA2LW5xX1pVdFA4NjY2dU9sRUNiTVlUd3A2VzFXQjEycWNScnNXYU9J?oc=5"
+        },
+        {
+          "title": "OJK Catat Kredit Macet Pindar Capai 5,36 Persen - cwibc.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9aN0RqYXRqQTJ0M09xczI2RkVvV0w2N01KUGxjR0pSYXROWlpXdmY4TVpOZUZ5emM3UmRUUDNlLW5nZy1Oa1JkVnltQmthQmxpNWx5Z3dB?oc=5"
+        },
+        {
+          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - Limapagi",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43X0xjWXQ3bnJwWUNIbXUyRmFwTzlvdGFNSUZZd1VQcFRWUHFHWE42Y0J6eGNkZlZZUjBSclpKT0RUU1MwQXNCNGVzOVllY3ZjUVhSMTlRSlVVaXhyWDVXVTMyTS0xMWZFbDlCRUhR?oc=5"
+        },
+        {
+          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1FM0VtMGNBSUhLS01Yb2dGczFuUlRZNDVEellNdXF4WGxrdWVuSkpjVHB1cFVzWDdjeHc5ZWRVeGhFcGgtMmZfTkR3VVFmSkZvR2dKbGloRC0?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-b209e493b758",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "Pria Kudus"
+      ],
+      "headline": "Pria Kudus Jual Istri-Tonton Saat Layani Hidung Belang Ngaku Terjerat Pinjol - detikcom",
+      "headlineZh": "Kudus男子卖妻还网贷",
+      "summaryZh": "Kudus一名男子因陷入网贷竟卖妻并容留其卖淫，已被媒体广泛报道，属严重消费者受害案件。",
+      "rationale": "具体刑事案件，涉及网贷致害",
+      "independentSourceCount": 1,
+      "domains": [
+        "detik.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "bd650ae074716139",
+        "f1c1b0aa86c478c7"
+      ],
+      "articles": [
+        {
+          "title": "Pria Kudus Jual Istri-Tonton Saat Layani Hidung Belang Ngaku Terjerat Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVFB5Rm4xVzFENnZwbVVNLTc4TGZIUVB6ODZLMkNyWk1FWWhEVmxBRDZYcm9vRWZsN2xMYkJFOGd4Nm9MZ3NoaWxmY2tZbUpVbWRtOTBxSUl5ek52N1pqMk5sbXdON3VuUnk4ODB1REVhVFA4NHJ4c1FWeTJ6WTZHMUJiMUVzbXVvRUhnQlg0eDAzOXNkZU5YTllscHFyZ3k1TG5kRkFsQ0k5U3BTdWljRGJDUmZydVdLdURZbXRBLVlYSVNrUE9VWEk0NlY0ZG_SAdQBQVVfeXFMTlN5Rk9SZ3R0bTFGSS1ZaXhrVVdPX2oxcFJuR3RjQjM1cHd6MzExQzZzdkpReWF2ekNpSm9rRXp3Wi05Y0w1OEM2TS10b0RxdWh6cUU4TXl2UFNtRVJIMWpEYUxaYkYyWVRQRVJXSmxfampJUTNXVE15bXVfZmJNcEdIOU0wSDFWNkhsTmdJY082YW1zeGI1R3pWZHh6V3hVcnhJZHlSREhmYk81Ylp2cHhJS3RBdmxxYlF5TkpNeFVOYm5FUHNFXy1BVXNlSEpRdld1YVo?oc=5"
+        },
+        {
+          "title": "Pria Kudus Tega Jual Istri demi Bayar Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNd1lFcnNYc3RqbEZ0UlI5dHEtMHJvOG5vUnlzX2JaU3g5VEljcm5zZWctb0x2d2pjUmFWWmVaYWJCbHJQSGVkbXVCWmdvbDY3RV9QaG12eExOX2RDT0x1Sy1ld0ZGcmZiTGlONnRYTXV3aWxzUmo4MDhreXN3Z3hPT2VVRTNlR1Q2NEYwX0N3bnE2Zk5qNFJvUERhQkdySHExN3BkedIBqgFBVV95cUxNNFVqdVBVZ0lZMVpGTFIyek5IZXBVZlZzM2tpU3VNc0VOSnlXdGJ2Y21VcHJGcy1LMHYwcGowdm80TkZoaGQ0SVZhVlZ2OHpuUFVicnRqLWNKR0hjbnJ6UGROTldNX2FNWWpaSWJUUF9Kc2t5MHMzRGtoY2xxQUF4SmswbjR2RzV0ejhPWHNET19zY19kOWdtNF9xLUNNd3Q1elRCTGZ3a1ZGQQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-358846dc16c3",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Pemalang居民"
-      ],
-      "headline": "Enam Warga Pemalang Jadi Tentara Bayaran Rusia Terjerat Pinjol dan Judol",
-      "headlineZh": "六名Pemalang居民因网贷赌博沦为俄雇佣兵",
-      "summaryZh": "六名Pemalang居民因陷入网贷与网络赌博债务，被招募为俄罗斯雇佣兵，反映债务驱动的社会伤害。",
-      "rationale": "具体人员受害事件，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "republika.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "867f3736e8df866c"
-      ],
-      "articles": [
-        {
-          "title": "Enam Warga Pemalang Jadi Tentara Bayaran Rusia Terjerat Pinjol dan Judol",
-          "link": "https://rejogja.republika.co.id/berita/toslux487/enam-warga-pemalang-jadi-tentara-bayaran-rusia-terjerat-pinjol-dan-judol"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c3bf5dfa76eb",
-      "eventType": "credit_quality_stress",
-      "severity": 0.75,
-      "entities": [
-        "Batumbu",
-        "Asosiasi Fintech"
-      ],
-      "headline": "Kredit Macet Pindar Batumbu Tembus 60 Persen, Asosiasi Finatech Buka Suara - Kompas.com",
-      "headlineZh": "Pindar平台Batumbu坏账率达60%",
-      "summaryZh": "P2P借贷平台Batumbu不良贷款率高达60%，行业协会回应，显示平台资产质量严重承压。",
-      "rationale": "平台坏账率极高，资产质量承压",
-      "independentSourceCount": 1,
-      "domains": [
-        "money.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7ae52b5f1dfde484"
-      ],
-      "articles": [
-        {
-          "title": "Kredit Macet Pindar Batumbu Tembus 60 Persen, Asosiasi Finatech Buka Suara - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNR2kxcFBCSFNkTnFTZlZWS3F1TE9SMGdqVE1lTnBid1VZY1BnMURIdnFlbXUwZFc1YlhsOGRObllqcHIzX1NyYm5Ocmxya3FFRElJNk5yZVV1Smk5SnN3Mzk5T29TTWRqZmlkM1JLMGozWThMVmdHQWxIMWJhZGxTYXl5NEJUcWNPVEhIN0xiSmh4VkFxSzM1OHNodnF5M3NTbzE5YmRod0N6aTR0UmtaclR2YS1wR3prM0NnZHVDei1oQQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e947f0ff6450",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "PINJAM FLEXI"
-      ],
-      "headline": "Merasa Tak Ajukan Pinjaman, Pinjol Diduga Ilegal \"PINJAM FLEXI\" Ancam Keselamatan Keluarga Hingga Data Pribadi Korban - News Times",
-      "headlineZh": "疑似非法网贷PINJAM FLEXI威胁借款人家庭",
-      "summaryZh": "用户称未借款却遭疑似非法平台PINJAM FLEXI威胁家人安全并泄露个人数据，属消费者受害个案。",
-      "rationale": "具体消费者受害个案",
-      "independentSourceCount": 1,
-      "domains": [
-        "newstimes.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "5d07170e5c9fcf63"
-      ],
-      "articles": [
-        {
-          "title": "Merasa Tak Ajukan Pinjaman, Pinjol Diduga Ilegal \"PINJAM FLEXI\" Ancam Keselamatan Keluarga Hingga Data Pribadi Korban - News Times",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaW1OaTNLek5JVnlabTRibVRBbXNNSmQycmdfU1Vmb1BJVEg3WTJJeWVaQzdZdGNKb29YOURDVFVBMUZFSkJIY0tfRDA1SkdjVlBadGNPSTlUNmZNdWlTUFJ2MXZ5SUtRYThual9fZXNIQTNOYVp3V1VJOGthOUtSbWZVVzIzNTBra0UyY3QwckxnWEczWVNXOW5tOXBPV05sX3Y4RGcwbThxT1h6RHo5VjNweWExdFpPazRGWE1CaFJHMnFrMHFwemVDZW91Rkx4elFvWUl3TQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-50807d738755",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Kalteng"
-      ],
-      "headline": "OJK Catat 450 Aduan Keuangan Ilegal di Kalteng, Pinjol Ilegal Mendominasi - TintaBorneo.com",
-      "headlineZh": "中加里曼丹记录450起非法金融投诉",
-      "summaryZh": "OJK中加里曼丹记录450起非法金融投诉，以非法网贷为主，反映区域性消费者受害规模。",
-      "rationale": "区域性投诉数据，消费者受害留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "tintaborneo.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b2c32b0a0991ace1"
-      ],
-      "articles": [
-        {
-          "title": "OJK Catat 450 Aduan Keuangan Ilegal di Kalteng, Pinjol Ilegal Mendominasi - TintaBorneo.com",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcGRsUHlEQVNUNE9GR2JJSmQxVnA3XzdSTmlFUDlXWHNpblJIVmQtQ3VBNFU3LTdFMnFkb2Z6a2hlV3ZnOG9qVy01Z1B5TWdkWi1Ld01LRDVBLWRpTmJjQVZNLW1KMVRobzlBc1U3QnFtOHUxNm5IbUZIaDA5RmprenByTll3NzBzcDQ2RFVUeExtWjFBWDQ4NFc4VGRXRlhvWHQ4TDgwRlA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-d7d371508c24",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Sleman警方"
-      ],
-      "headline": "Polisi Terima 300 Laporan terkait Pinjol Ilegal di Sleman - Tribratanews",
-      "headlineZh": "Sleman警方受理300起非法网贷报案",
-      "summaryZh": "Sleman警方已受理约300起与非法网贷相关的报案，反映当地消费者受害规模。",
-      "rationale": "警方受理大量报案，具体事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "tribratanews.polri.go.id"
-      ],
-      "hasPrimarySource": true,
-      "articleIds": [
-        "a065f4029bd8c3bb"
-      ],
-      "articles": [
-        {
-          "title": "Polisi Terima 300 Laporan terkait Pinjol Ilegal di Sleman - Tribratanews",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdDdJS01fSTRlOFUxbGEyY3JLbkY0OFdPWURQZUFIZExQeWdlRUpzZF9uMUtKVlBQMzcwcGV5MWpvSm56U0xBTF9WWS02YVVPYndNY3VYbXFzYnd4bE1URmRLSFJ3U3BvZmU5M3VrbkJ6Mm1OZkFmYUg5UEhEb0RXa0taMFJFc0JhSVdkR3FHcExUQk9rQ2QydmNia1NYVU5VdDhUNXQzUHYwTXZteWUxWnRn?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -239,222 +122,106 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 24,
-    "eventGroupCount": 6,
-    "rejectedNonEvents": 17,
+    "candidateCount": 20,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 11,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 24
+      "ok": 20
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-358846dc16c3",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Pemalang居民"
-      ],
-      "headline": "Enam Warga Pemalang Jadi Tentara Bayaran Rusia Terjerat Pinjol dan Judol",
-      "headlineZh": "六名Pemalang居民因网贷赌博沦为俄雇佣兵",
-      "summaryZh": "六名Pemalang居民因陷入网贷与网络赌博债务，被招募为俄罗斯雇佣兵，反映债务驱动的社会伤害。",
-      "rationale": "具体人员受害事件，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "republika.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "867f3736e8df866c"
-      ],
-      "articles": [
-        {
-          "title": "Enam Warga Pemalang Jadi Tentara Bayaran Rusia Terjerat Pinjol dan Judol",
-          "link": "https://rejogja.republika.co.id/berita/toslux487/enam-warga-pemalang-jadi-tentara-bayaran-rusia-terjerat-pinjol-dan-judol"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-c3bf5dfa76eb",
+      "id": "llm-2ddf985ae000",
       "eventType": "credit_quality_stress",
-      "severity": 0.75,
-      "entities": [
-        "Batumbu",
-        "Asosiasi Fintech"
-      ],
-      "headline": "Kredit Macet Pindar Batumbu Tembus 60 Persen, Asosiasi Finatech Buka Suara - Kompas.com",
-      "headlineZh": "Pindar平台Batumbu坏账率达60%",
-      "summaryZh": "P2P借贷平台Batumbu不良贷款率高达60%，行业协会回应，显示平台资产质量严重承压。",
-      "rationale": "平台坏账率极高，资产质量承压",
-      "independentSourceCount": 1,
-      "domains": [
-        "money.kompas.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7ae52b5f1dfde484"
-      ],
-      "articles": [
-        {
-          "title": "Kredit Macet Pindar Batumbu Tembus 60 Persen, Asosiasi Finatech Buka Suara - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNR2kxcFBCSFNkTnFTZlZWS3F1TE9SMGdqVE1lTnBid1VZY1BnMURIdnFlbXUwZFc1YlhsOGRObllqcHIzX1NyYm5Ocmxya3FFRElJNk5yZVV1Smk5SnN3Mzk5T29TTWRqZmlkM1JLMGozWThMVmdHQWxIMWJhZGxTYXl5NEJUcWNPVEhIN0xiSmh4VkFxSzM1OHNodnF5M3NTbzE5YmRod0N6aTR0UmtaclR2YS1wR3prM0NnZHVDei1oQQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-e947f0ff6450",
-      "eventType": "consumer_harm",
       "severity": 0.55,
-      "entities": [
-        "PINJAM FLEXI"
-      ],
-      "headline": "Merasa Tak Ajukan Pinjaman, Pinjol Diduga Ilegal \"PINJAM FLEXI\" Ancam Keselamatan Keluarga Hingga Data Pribadi Korban - News Times",
-      "headlineZh": "疑似非法网贷PINJAM FLEXI威胁借款人家庭",
-      "summaryZh": "用户称未借款却遭疑似非法平台PINJAM FLEXI威胁家人安全并泄露个人数据，属消费者受害个案。",
-      "rationale": "具体消费者受害个案",
-      "independentSourceCount": 1,
-      "domains": [
-        "newstimes.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "5d07170e5c9fcf63"
-      ],
-      "articles": [
-        {
-          "title": "Merasa Tak Ajukan Pinjaman, Pinjol Diduga Ilegal \"PINJAM FLEXI\" Ancam Keselamatan Keluarga Hingga Data Pribadi Korban - News Times",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaW1OaTNLek5JVnlabTRibVRBbXNNSmQycmdfU1Vmb1BJVEg3WTJJeWVaQzdZdGNKb29YOURDVFVBMUZFSkJIY0tfRDA1SkdjVlBadGNPSTlUNmZNdWlTUFJ2MXZ5SUtRYThual9fZXNIQTNOYVp3V1VJOGthOUtSbWZVVzIzNTBra0UyY3QwckxnWEczWVNXOW5tOXBPV05sX3Y4RGcwbThxT1h6RHo5VjNweWExdFpPazRGWE1CaFJHMnFrMHFwemVDZW91Rkx4elFvWUl3TQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-b7465ff3b93a",
-      "eventType": "regulatory_action",
-      "severity": 0.75,
       "entities": [
         "OJK",
-        "Akseleran",
-        "iGrow",
-        "KoinP2P"
+        "Asosiasi Fintech Lending"
       ],
-      "headline": "OJK Awasi Penyelesaian Gagal Bayar Akseleran iGrow dan KoinP2P - Demokratis.co.id",
-      "headlineZh": "OJK监督Akseleran、iGrow、KoinP2P违约处置",
-      "summaryZh": "OJK密切监督Akseleran、iGrow与KoinP2P三家P2P平台的违约清偿处置，属监管介入。",
-      "rationale": "监管机构介入平台违约处置",
-      "independentSourceCount": 2,
+      "headline": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
+      "headlineZh": "Pindar不良贷款率升至5.36%",
+      "summaryZh": "OJK数据显示Pindar不良贷款率突破5.36%上限，行业协会回应，反映线上信贷资产质量承压。",
+      "rationale": "监管数据披露的资产质量指标恶化",
+      "independentSourceCount": 5,
       "domains": [
-        "demokratis.co.id",
-        "infobanknews.com"
+        "bsinews.id",
+        "cwibc.co.id",
+        "limapagi.id",
+        "money.kompas.com",
+        "suaragarut.id"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "80d6c9a7103b9368",
-        "f80f6a6c56780bb4"
+        "dac85519777e027f",
+        "c898f3517c6b1dd3",
+        "da80e44e021addcb",
+        "faab69b746eaa3ef",
+        "b01caa915b89c955"
       ],
       "articles": [
         {
-          "title": "OJK Awasi Penyelesaian Gagal Bayar Akseleran iGrow dan KoinP2P - Demokratis.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9Tc0JaQzB2OG9Bal8tWDB4WWVPdjQ4Z0VZdGItS0V4MkRxNmc0YWlYN2x3RUNtX21KeHViUEF1ZUJZQVdiQlMyeVk5V0JkbWJjYnhfOVRNOWp5MmJHRXN1c19DOVY?oc=5"
+          "title": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWlBqaUhsN0wtS1c4M3RPYXlYTmJReXl3SUplUXctR0NUMERvQm9xdDBYWVF5aGpWWEcxR0RJeXJYQk9HUzhXWThTb0tPVG56MkdaRkZhOTRiVDg0aXVvWi1FWExiWTExREM2V0ViTmtnU0ltN1RxM1gtaFllMi1JZzNmMkVsckJGVGl4aWNVdnB1d3FtY2k1bVd5c3NSSlVEeXV0ZHJacDB0N3pIclJZYjJjQkFQeTYwVlh5RjlWc2UtVlRqQklTbw?oc=5"
         },
         {
-          "title": "OJK Pantau Ketat Penyelesaian Kasus Pindar iGrow, Akseleran, dan KoinP2P - Infobanknews",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRUN1VWQtV2tydGZGVXQyVjJNYW5CMzE1blJWRWxzZThzUVA5VlRYYXBJNHptWVZyQVFTb09Hc2JpdmZ4a05hQVJ0XzBOd3lrWnVGOTVOMDdPeEdJZ19ydlB4Y1FHa0ZzR1htTUFzaDZtQ2Nnc3Vvc3VoMnF4T0lDdGIxUnh5RW1FVnZJTGh3LXY3cDVKajAyRGtVZw?oc=5"
+          "title": "OJK Catat Kredit Macet Fintech Pindar Tembus 5,36 Persen - bsinews.id",
+          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43dUh6eE05Wm1JMjVTQlljSzFGYWRVcExwb196YzFRQ01GZDZFb3dkOHRMWS1ieTA2LW5xX1pVdFA4NjY2dU9sRUNiTVlUd3A2VzFXQjEycWNScnNXYU9J?oc=5"
+        },
+        {
+          "title": "OJK Catat Kredit Macet Pindar Capai 5,36 Persen - cwibc.co.id",
+          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9aN0RqYXRqQTJ0M09xczI2RkVvV0w2N01KUGxjR0pSYXROWlpXdmY4TVpOZUZ5emM3UmRUUDNlLW5nZy1Oa1JkVnltQmthQmxpNWx5Z3dB?oc=5"
+        },
+        {
+          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - Limapagi",
+          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43X0xjWXQ3bnJwWUNIbXUyRmFwTzlvdGFNSUZZd1VQcFRWUHFHWE42Y0J6eGNkZlZZUjBSclpKT0RUU1MwQXNCNGVzOVllY3ZjUVhSMTlRSlVVaXhyWDVXVTMyTS0xMWZFbDlCRUhR?oc=5"
+        },
+        {
+          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - SuaraGarut.ID",
+          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1FM0VtMGNBSUhLS01Yb2dGczFuUlRZNDVEellNdXF4WGxrdWVuSkpjVHB1cFVzWDdjeHc5ZWRVeGhFcGgtMmZfTkR3VVFmSkZvR2dKbGloRC0?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-b209e493b758",
+      "eventType": "consumer_harm",
+      "severity": 0.75,
+      "entities": [
+        "Pria Kudus"
+      ],
+      "headline": "Pria Kudus Jual Istri-Tonton Saat Layani Hidung Belang Ngaku Terjerat Pinjol - detikcom",
+      "headlineZh": "Kudus男子卖妻还网贷",
+      "summaryZh": "Kudus一名男子因陷入网贷竟卖妻并容留其卖淫，已被媒体广泛报道，属严重消费者受害案件。",
+      "rationale": "具体刑事案件，涉及网贷致害",
+      "independentSourceCount": 1,
+      "domains": [
+        "detik.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "bd650ae074716139",
+        "f1c1b0aa86c478c7"
+      ],
+      "articles": [
+        {
+          "title": "Pria Kudus Jual Istri-Tonton Saat Layani Hidung Belang Ngaku Terjerat Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxOVFB5Rm4xVzFENnZwbVVNLTc4TGZIUVB6ODZLMkNyWk1FWWhEVmxBRDZYcm9vRWZsN2xMYkJFOGd4Nm9MZ3NoaWxmY2tZbUpVbWRtOTBxSUl5ek52N1pqMk5sbXdON3VuUnk4ODB1REVhVFA4NHJ4c1FWeTJ6WTZHMUJiMUVzbXVvRUhnQlg0eDAzOXNkZU5YTllscHFyZ3k1TG5kRkFsQ0k5U3BTdWljRGJDUmZydVdLdURZbXRBLVlYSVNrUE9VWEk0NlY0ZG_SAdQBQVVfeXFMTlN5Rk9SZ3R0bTFGSS1ZaXhrVVdPX2oxcFJuR3RjQjM1cHd6MzExQzZzdkpReWF2ekNpSm9rRXp3Wi05Y0w1OEM2TS10b0RxdWh6cUU4TXl2UFNtRVJIMWpEYUxaYkYyWVRQRVJXSmxfampJUTNXVE15bXVfZmJNcEdIOU0wSDFWNkhsTmdJY082YW1zeGI1R3pWZHh6V3hVcnhJZHlSREhmYk81Ylp2cHhJS3RBdmxxYlF5TkpNeFVOYm5FUHNFXy1BVXNlSEpRdld1YVo?oc=5"
+        },
+        {
+          "title": "Pria Kudus Tega Jual Istri demi Bayar Pinjol - detikcom",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNd1lFcnNYc3RqbEZ0UlI5dHEtMHJvOG5vUnlzX2JaU3g5VEljcm5zZWctb0x2d2pjUmFWWmVaYWJCbHJQSGVkbXVCWmdvbDY3RV9QaG12eExOX2RDT0x1Sy1ld0ZGcmZiTGlONnRYTXV3aWxzUmo4MDhreXN3Z3hPT2VVRTNlR1Q2NEYwX0N3bnE2Zk5qNFJvUERhQkdySHExN3BkedIBqgFBVV95cUxNNFVqdVBVZ0lZMVpGTFIyek5IZXBVZlZzM2tpU3VNc0VOSnlXdGJ2Y21VcHJGcy1LMHYwcGowdm80TkZoaGQ0SVZhVlZ2OHpuUFVicnRqLWNKR0hjbnJ6UGROTldNX2FNWWpaSWJUUF9Kc2t5MHMzRGtoY2xxQUF4SmswbjR2RzV0ejhPWHNET19zY19kOWdtNF9xLUNNd3Q1elRCTGZ3a1ZGQQ?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-50807d738755",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "OJK Kalteng"
-      ],
-      "headline": "OJK Catat 450 Aduan Keuangan Ilegal di Kalteng, Pinjol Ilegal Mendominasi - TintaBorneo.com",
-      "headlineZh": "中加里曼丹记录450起非法金融投诉",
-      "summaryZh": "OJK中加里曼丹记录450起非法金融投诉，以非法网贷为主，反映区域性消费者受害规模。",
-      "rationale": "区域性投诉数据，消费者受害留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "tintaborneo.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "b2c32b0a0991ace1"
-      ],
-      "articles": [
-        {
-          "title": "OJK Catat 450 Aduan Keuangan Ilegal di Kalteng, Pinjol Ilegal Mendominasi - TintaBorneo.com",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcGRsUHlEQVNUNE9GR2JJSmQxVnA3XzdSTmlFUDlXWHNpblJIVmQtQ3VBNFU3LTdFMnFkb2Z6a2hlV3ZnOG9qVy01Z1B5TWdkWi1Ld01LRDVBLWRpTmJjQVZNLW1KMVRobzlBc1U3QnFtOHUxNm5IbUZIaDA5RmprenByTll3NzBzcDQ2RFVUeExtWjFBWDQ4NFc4VGRXRlhvWHQ4TDgwRlA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-d7d371508c24",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [
-        "Sleman警方"
-      ],
-      "headline": "Polisi Terima 300 Laporan terkait Pinjol Ilegal di Sleman - Tribratanews",
-      "headlineZh": "Sleman警方受理300起非法网贷报案",
-      "summaryZh": "Sleman警方已受理约300起与非法网贷相关的报案，反映当地消费者受害规模。",
-      "rationale": "警方受理大量报案，具体事件",
-      "independentSourceCount": 1,
-      "domains": [
-        "tribratanews.polri.go.id"
-      ],
-      "hasPrimarySource": true,
-      "articleIds": [
-        "a065f4029bd8c3bb"
-      ],
-      "articles": [
-        {
-          "title": "Polisi Terima 300 Laporan terkait Pinjol Ilegal di Sleman - Tribratanews",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOdDdJS01fSTRlOFUxbGEyY3JLbkY0OFdPWURQZUFIZExQeWdlRUpzZF9uMUtKVlBQMzcwcGV5MWpvSm56U0xBTF9WWS02YVVPYndNY3VYbXFzYnd4bE1URmRLSFJ3U3BvZmU5M3VrbkJ6Mm1OZkFmYUg5UEhEb0RXa0taMFJFc0JhSVdkR3FHcExUQk9rQ2QydmNia1NYVU5VdDhUNXQzUHYwTXZteWUxWnRn?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
@@ -467,31 +234,31 @@
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
+      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 29,
-    "socialItemCount48h": 18
+    "articleCount48h": 23,
+    "socialItemCount48h": 9
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 492,
-    "classifiedCount": 128,
-    "irrelevantDropped": 112,
+    "inputCount": 508,
+    "classifiedCount": 144,
+    "irrelevantDropped": 96,
     "model": "deepseek-chat",
-    "fallbackCount": 252,
+    "fallbackCount": 268,
     "labelCounts": {
       "NEG": 46,
-      "MIX": 57,
-      "POS": 25
+      "MIX": 37,
+      "POS": 61
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
