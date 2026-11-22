@@ -1,19 +1,20 @@
 {
-  "generatedAt": "2026-11-21T08:47:20.224445+00:00",
+  "generatedAt": "2026-11-22T08:50:58.735939+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-21",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-22",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **司法/执法工具化｜印尼警察总长Listyo Sigit等被列为叛国案证人，多名警官涉案**\n严重度 0.75｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔺 **仓促立法/政策骤变｜印尼副总统选举日期争议：9日大选面临不合法风险，Golkar提议推迟全体会议**\n严重度 0.75｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **军警冲突/安全事件｜印尼六省逮捕15名恐怖嫌疑人**\n严重度 0.55｜1个独立来源（antaranews.com）｜影响支柱：coercive\n\n🟠 **关键官员更替/清洗｜印尼政府撤销PT RAPP 33.8万公顷林地的利用许可**\n严重度 0.55｜1个独立来源（cnnindonesia.com）｜影响支柱：institutions",
+      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔴 **司法/执法工具化｜印尼警方在涉嫌叛国案中撤换法律事务部门负责人，三名涉非法窃听案警官被免职**\n严重度 0.75｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **关键官员更替/清洗｜印尼国家警察大规模人事调整，6名地方警察局长及704名高级警官被轮换**\n严重度 0.55｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜印尼警方以涉嫌诽谤逮捕并传唤活动人士Cakra Adi Negara，要求定期报到**\n严重度 0.55｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions\n\n🟠 **司法/执法工具化｜印尼警方调查古邦县长涉嫌强奸案并搜查其官邸**\n严重度 0.55｜2个独立来源（cnnindonesia.com、liputan6.com）｜影响支柱：institutions",
+      "**Pinjol/Pindar 舆情事件**\n\n**母亲疑遭催收恐吓后死亡**\n网民称其母仅逾期5小时即遭“Pinjaman Go”催收恐吓后死亡，警方人士Manang Soebeti公开要求停止暴力催收，引发广泛转载。\n证据：13个独立来源。",
       "**已折叠的低证据线索**\n另有 2 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-21:normal:red:success"
+    "decisionId": "daily:2026-11-22:high_pending:red:success"
   },
   "feishu": "sent"
 }
