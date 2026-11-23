@@ -1,187 +1,114 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-22",
-  "level": "high_pending",
+  "date": "2026-11-23",
+  "level": "red",
   "signals": {
-    "newsDailyVolumeRisk": 38.2,
-    "socialDailyVolumeRisk": 0.0,
-    "negativeSocialShare": 11.0,
+    "newsDailyVolumeRisk": 15.6,
+    "socialDailyVolumeRisk": 16.8,
+    "negativeSocialShare": 90.6,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=8; prior-7d median=22.0; robust z=-0.79",
-    "socialVolume": "today=0; prior-7d median=36.0; robust z=-3.47"
+    "newsVolume": "today=9; prior-7d median=26.0; robust z=-2.29",
+    "socialVolume": "today=4; prior-7d median=27.0; robust z=-2.22"
   },
-  "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
+  "verifiedRedEvents": [
     {
-      "id": "llm-a1f580c67bf1",
+      "id": "llm-897b0f816c6d",
       "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "Pinjaman Go",
-        "Manang Soebeti"
+        "Pinjol",
+        "Debt Collector"
       ],
-      "headline": "Baru Telat Bayar 5 Jam, Pengguna Threads Sebut Ibunya Diteror DC Pinjol hingga Meninggal - Kabar Jambi Kito - Kabar Jambi Kito",
-      "headlineZh": "母亲疑遭催收恐吓后死亡",
-      "summaryZh": "网民称其母仅逾期5小时即遭“Pinjaman Go”催收恐吓后死亡，警方人士Manang Soebeti公开要求停止暴力催收，引发广泛转载。",
-      "rationale": "催收致死个案，警方人士介入",
-      "independentSourceCount": 13,
+      "headline": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
+      "headlineZh": "母亲疑遭催收恐吓后去世引热议",
+      "summaryZh": "Threads用户爆料其母疑遭网贷催收恐吓后去世，事件病毒式传播，警官Manang Soebeti关注，涉致死指控。",
+      "rationale": "涉致死催收伤害案，已引发公职人员关注",
+      "independentSourceCount": 2,
       "domains": [
-        "distriknews.com",
-        "dobrak.co",
-        "jakarta.suaramerdeka.com",
-        "kabarjambikito.id",
-        "konteks.co.id",
-        "koropak.co.id"
+        "klikanggaran.com",
+        "mediapriangan.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "d44c370d225f42b8",
-        "27cf5faebd8e1a82",
-        "f2427facddb4a962",
-        "065144b72501ee63",
-        "a824af9f973f6cf9",
-        "9faebe1c4dfa6ccd",
-        "3031a91e7b2c9376",
-        "869ad8928f6e4162",
-        "7f0d5154539a837c",
-        "019d6e77fcf69569",
-        "6343c447a6120287",
-        "7021cb54cfafeb63",
-        "a3fea4957265dd3b",
-        "6ede486abd58c2d1",
-        "403cc317345fa757",
-        "9772657edb1857af",
-        "57b3a610b9444e88",
-        "7808ee5466888658"
+        "1245024887c63c71",
+        "326085d42d008732",
+        "a3afb112c339fd44"
       ],
       "articles": [
         {
-          "title": "Baru Telat Bayar 5 Jam, Pengguna Threads Sebut Ibunya Diteror DC Pinjol hingga Meninggal - Kabar Jambi Kito - Kabar Jambi Kito",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPdnJHRF9ESVdlVHo5dDNTTDIxN0dxZ05ZQTJTVXotLXAxd1QxLUtkc0Y3VXh6MTVaTVpYQVlfaUJieWZNT083Q3pPYnZ2aHBSR0dSbm1td2FqNm5zYlRZdVFQaTcxQ3pId2VkX3pTTU83VXl2WndfUUlOSHBnRnRRQmVmcWJuMXRzN0VOclczZTdOZTI5dE03YWc4LWpKdHRXQVdSU0p0YUVNU0dIM2txbmh1NVE5d0JqMFYxT0JYd3BMUFFTOVhzbTJNZDBmS0tOc2pLcFVQZ9IB1wFBVV95cUxPdnJHRF9ESVdlVHo5dDNTTDIxN0dxZ05ZQTJTVXotLXAxd1QxLUtkc0Y3VXh6MTVaTVpYQVlfaUJieWZNT083Q3pPYnZ2aHBSR0dSbm1td2FqNm5zYlRZdVFQaTcxQ3pId2VkX3pTTU83VXl2WndfUUlOSHBnRnRRQmVmcWJuMXRzN0VOclczZTdOZTI5dE03YWc4LWpKdHRXQVdSU0p0YUVNU0dIM2txbmh1NVE5d0JqMFYxT0JYd3BMUFFTOVhzbTJNZDBmS0tOc2pLcFVQZw?oc=5"
+          "title": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQOGxvUFhOVzFnYlpZLVBwMW52aTZWMG1EaXZBamJsdGJkeEhDcmJheS16RjVsbjhQN3E2LUYyd3RJOWc4QWMtdk9zakZ3N1ZrOHRTWG1rNV9XVU45ZnI3ZUU4cHp2TTl5a2l2Sm1mTzRPeWdKejE3cFJWS1N2R2IzaGFzTlRRRXQycVZZT1U2YWpXbWNRNlVYSDhmWndxNXRJVzRvU3lWdmpZdkd6U3c2cXJNUVlNNF81VXJsQm5RRjZsNU1HeW8xdU5aR1J0VFdyZ3B3Nzd2eFluT2o0S2pNSnNTdTFpQdIB6wFBVV95cUxQeHRjSVU3OHlzV3c5VTJ0RVhwcHFEM1pYcm94N2VVMUFEOHJaMTY5ZWd4c0RTcDI0Wmp3aGVuRFZjZEh6akZOblFpVG9maHBfSjBfc19tMEh2VE1vWl9rczA0WXJhU2J5MzhPTnBhcm4xSmhKd0tIWFVnWFBLVEtiNHBuSU9PbWY4eXJsZzVZeWJ2Q1F1Vm41NHhmVTdrd2FCUmU4aE9aUUhVcHBmVUN4d0pnU3J6Vm5POV9pMFZuNlBoRzJYaWpNcWlFT2VIU2Y3TFRSOHk5LTBnUEVtVFRpNmpBWTFNRm5HSkNR?oc=5"
         },
         {
-          "title": "Dari Kasus Curhatan Netizen yang Diteror Dept Collector Pinjol, Manang Soebeti Ancam Akan Kampanyekan Gagal Bayar Nasional - Lamongan Network - Lamongan Network",
-          "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQakVhZ1VUYk13ZmJNQ0RjR0E2NVpzcml5QXV6UUdJcGxYVy03TXNRRzh0U3BHc2pXX3JpZGpJVVhITm9PTTNRdlBZeWwwdE5vdlhORnhrOTJmalRTQk9oRlZkZDJuWEd5dmdBWkxoa3NNTXVFcTc3RHZNdm1BUmdUc2Z5cHFvNDhreGFxQ1l2dEVGb2hMamkxODZsSEJPYk1abmVGSm5XUUJUc1prVExISjdkOWlFM3dKbEVzQS1IWV9oRFVzeVB3eFNrSjUtSUlRdTFzSHF2N2NYYVU1TVZFNjJyY0RIZ2pndEZDVWFXWW5TTkFqZEREUktfdHpWVGFtZHhHWkRZQ3PSAYgCQVVfeXFMUGpFYWdVVGJNd2ZiTUNEY0dBNjVac3JpeUF1elFHSXBsWFctN01zUUc4dFNwR3NqV19yaWRqSVVYSE5vT00zUXZQWXlsMHROb3ZYTkZ4azkyZmpUU0JPaEZWZGQyblhHeXZnQVpMaGtzTU11RXE3N0R2TXZtQVJnVHNmeXBxbzQ4a3hhcUNZdnRFRm9oTGppMTg2bEhCT2JNWm5lRkpuV1FCVHNaa1RMSEo3ZDlpRTN3SmxFc0EtSFlfaERVc3lQd3hTa0o1LUlJUXUxc0hxdjdjWGFVNU1WRTYycmNESGdqZ3RGQ1VhV1luU05BamRERFJLX3R6VlRhbWR4R1pEWUNz?oc=5"
+          "title": "Manang Soebeti Soroti Curhatan Netizen, Ibu Meninggal Diduga Usai Diteror DC Pinjol - Klik Anggaran - Klik Anggaran",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzlVMTRKcEYxMFdoMVc4dEtIN0l2NzExcXp4MmR1ZjBjZDlUcHE4MWYxczVrT2VzSF9tSTZXSjhuQUN3ZUo2dzhMZVloc3lRdG5SX0NpNG9EcVp4UWlfalppWkl2eGFFQ25DNnhQV3ZsUlVXdWdPakktUkdVRmFQaDRfRkhGUFNrN0NWUE5JWjYyN3o0VmZfT1FZN3QyelJWaUt4VHJzcUpET29DMXJJR1k2MUxkOG9zWE04SG1pR0lNVnotMnFWZNIBzgFBVV95cUxPcjZQV3lYWDN4WEd1VlgzM2hoRFNoUEpfVl9hQktUb3VnNkFsWWxLajZqVWZfTUNpVXJ1OXBGd0lpSGFEbGxNQU5zZWdIYk54Z1pwRzl2Z3FNamtSbXpqeUVCeDRJa3FxLUdGcjZPaUtfdVJwa0xGM0tkZ3VKLWdBbzFQaUQ5aUxkaVdHYy1UTC1vRUkzUkdWckQ3Q3ZNOEk3Rm12SUlXeDI5SF9RZk9ZaG9qWk8tNk5KMmI0S2tBQWt2U09KWkRiaTN3QTdVZw?oc=5"
         },
         {
-          "title": "Ibu Meninggal Usai Diteror DC Pinjaman Go, Baru Telat Bayar 5 Jam - Konteks.co.id - Konteks.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOalg0VEEyVzljSm9CNF9pY3VVN3E1Y3RPNzNjeFlmN0loS3pUNUxYZmdDTEEzT1hJMy1icmhqUVZYUlZZZ2JGc2d6N0VlZjRGOFIyMURRRF81ZlIxemtJZHVqQWwwek5aWTVwS2RqbHhOZ2lldkJsV3U2OWQzcEh4R1hqQWdtcFE5bEtjTDZZSG4xRjdfcTBid0NPYVY0T0pZcE5POHZkUzJqalHSAbABQVVfeXFMTUE1X01kSVdobUw0ZzZtQ3RZMmdQYlpyU25DWXNxb2VjZzN0TFd3V3A2bGFUQTdvVVhRd01qNXJ1TUg1WEpKMncxeDNLUUo1SWFaYlpWYVlkakFFenBLMzFSVHJ1ZFNCT0R1N3pyV0dhTjV6V1lwcUVHdkpySjllVVlxRzl1LUdxUmh5cWE2anV1RGtTQ2x5YUJEbW41akJtbVNpZUgtdFIzdEo1T29UdmU?oc=5"
-        },
-        {
-          "title": "Kisah Pilu Pengguna Pinjol, Sang Ibu Diduga Jadi Korban Teror Debt Collector - Dobrak - Dobrak",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUHhWUVdFblR6eEZZUUd5RHgtVl9NLVJmT2xySDNEU1RfcThfajQ2RWRfVHZnUEpOUWxCUHZLdlloeWVmTk0zYlEtNmdNRGtBOUt2Y182b2F1OXh2em4wLTRpRFZ4dzA1OHhCSVYxOEhpYTJMWWk5eTZGcEdaWDFTcEdVemROcmhCRWdpOXNzWEE1MjRLenpIcnNSZXlzRjlqM3Z1RnMxcmtOYnNyYWJxTWRYYnRhN2Fz0gG4AUFVX3lxTE1QeFZRV0VuVHp4RllRR3lEeC1WX00tUmZPbHJIM0RTVF9xOF9qNDZFZF9UdmdQSk5RbEJQdkt2WWh5ZWZOTTNiUS02Z01Ea0E5S3ZjXzZvYXU5eHZ6bjAtNGlEVnh3MDU4eEJJVjE4SGlhMkxZaTl5NkZwR1pYMVNwR1V6ZE5yaEJFZ2k5c3NYQTUyNEt6ekhyc1JleXNGOWozdnVGczFya05ic3JhYnFNZFhidGE3YXM?oc=5"
-        },
-        {
-          "title": "Manang Soebeti Ancam Bakal Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Suara Merdeka Jakarta - Suara Merdeka Jakarta",
-          "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPM3R6V01PRDhiNzJ2WVpLS3o4TG8zZldMS0NDOHhCMW1mSGFDRldhX3RTWXRCMDdtWTYxcng0RHJ4WGM5RHJiUE5CMUQzUGdyY3VSR25yZE84TnJhS012blJCNDNrMXNfeTZ3dUV4UkNvRzFQMzZmd0ZYNkljZTduOUlXZGpfSHhzTWxybllJZjBsVndzUkVQTno0ckg4MFF3SzBBV0xTU0s0M1ZnbVNISFlLZnpGM2Z2bDZCNDVOWkFNQW5adVlmUXZKYndpQmpTeG5fNkdJVE5FSWxlVjJJS2V0TU4xM1NYUzhLXzkxTnpwQdIB9wFBVV95cUxQN2V6Y2k1QWFUUU42Y1liTmFaSmt6b2xJbE5nOUxtMmJMNm0ya25SalRtZUFlejI4a3lKTTFua0J6LVJZaTRvczZXZHlVbGFfYXhjcktPS0JENi1LX2xrRmtpZmZFUVpoVTlUQ09XUkJYeHVpdlQ2RXB4RmhzUDZuRjU2bm9CT28yTmRmaUFlc2dVNGVhRDJXV0RRWjR1VWlVTEhyeDU1ZS1yTHhVRmNXY2R4ckNmc211TTRNTnZFbkdrVXFPOUt6a3FHNUwtdXZTRm9PQ3pRZVNoLVZkME1qQ1FoSnJnWGcxeWYtYmgtcGhKVkJnUVJB?oc=5"
+          "title": "Viral Curhat Pengguna Threads, Ibu Meninggal Usai Diduga Diteror Debt Collector Pinjol - Klik Anggaran - Klik Anggaran",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPbWxOdG1hQ1JoN0FPU1E0RDNRRUN6TzZ5OXgyRHowS1ozSU9ZV1Q0RUdvai1IbWpWdjJVMkV6dEFyUFhZUDVQVTlzTHZYSFItVUdFMElRUVdzWEdvUjEtSGpMYkhCYkZlZGQxSzc5aGVNd2djcFFlMzVJSGExZ0Z3bHFwNlVSYzRKMGpFTXFXenc0YnFycFRKVGF2c0hpd2k2UzhWVW1vNDFoaU05TG1tOUhwaWIwbHRyRUdFVkNMLXNiMzYtbk1VYlB6Q0nSAdIBQVVfeXFMUGdFdWM5WVB1T0xWZllsNUJBSlNDSWVGZmdpOFpUdXFGQTQ0ckhJbFBaeUxsd1ZlLUdlQjB5aHhURDIwSTBRVGFjLTRER1pHdmlmcjdyLXl4OURiSzZXWlNqTlVPWDFSVTJoYWw0SzZJa3VFUTF0WE5XWTJTUnJ4a0NfY2RzdVhITGl1LU9kS1dCVDN2S0dlYm5CQVl6cjZBSUk3blJrMkh0YlIxSkVxY2hJNWVWM0I2ejl1NjlSQlc3RW9CRWFzSXBrR3RIdU96Wjhn?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 18,
+      "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
+        "mentionCount": 17,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
+  "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-2ddf985ae000",
-      "eventType": "credit_quality_stress",
+      "id": "llm-aa396d65fa96",
+      "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "OJK",
-        "Asosiasi Fintech Lending"
+        "Manang Soebeti",
+        "Pinjol"
       ],
-      "headline": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
-      "headlineZh": "Pindar网贷不良率升至5.36%",
-      "summaryZh": "OJK数据显示网络借贷（Pindar）不良率达5.36%超阈值，行业协会回应，反映行业资产质量承压。",
-      "rationale": "监管数据披露的资产质量指标",
-      "independentSourceCount": 5,
+      "headline": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+      "headlineZh": "警官警告催收恐吓将号召全国拒还",
+      "summaryZh": "Kombes Manang Soebeti公开警告若网贷催收仍具恐吓性，将发起全国拒还运动，反映催收暴力问题。",
+      "rationale": "公职人员就催收暴力公开表态，值得留痕",
+      "independentSourceCount": 2,
       "domains": [
-        "bsinews.id",
-        "cwibc.co.id",
-        "limapagi.id",
-        "money.kompas.com",
-        "suaragarut.id"
+        "askara.co",
+        "nawacitapost.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "dac85519777e027f",
-        "c898f3517c6b1dd3",
-        "da80e44e021addcb",
-        "faab69b746eaa3ef",
-        "b01caa915b89c955"
+        "51850eb73d0ed9fa",
+        "7e69f21133ba3e6b"
       ],
       "articles": [
         {
-          "title": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWlBqaUhsN0wtS1c4M3RPYXlYTmJReXl3SUplUXctR0NUMERvQm9xdDBYWVF5aGpWWEcxR0RJeXJYQk9HUzhXWThTb0tPVG56MkdaRkZhOTRiVDg0aXVvWi1FWExiWTExREM2V0ViTmtnU0ltN1RxM1gtaFllMi1JZzNmMkVsckJGVGl4aWNVdnB1d3FtY2k1bVd5c3NSSlVEeXV0ZHJacDB0N3pIclJZYjJjQkFQeTYwVlh5RjlWc2UtVlRqQklTbw?oc=5"
+          "title": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUV2YmtNUUZSVklyZzB0R0dRQ2M0ZEtDU1lqS1phZmU4YWRhNFVCLVUxcklra3MtUEkweDNTa2JfQkZZeTJlaEVkaVQtWS1aakQ5cmFWb1pYNlRyaGpIUTlRM2w1VnFIdTRHekZub0lESHg1Uzg4Q25meUVnZEZCYWVMQ3dGUjlpZ2REX0VwN2FqNEQ3VW84YWtXT05oMDJHSjlETmJCcjEybnhDZElFQ0xSbC0zdFZyY1ozNU9NTEFYMHd4MVUyclQxUlVueUxLcjh0cTVJOGjSAd4BQVVfeXFMTVBOUS04UlVRdGhTWFYtVG14U1U3aXU0LV9XQlUzNU9hcHpaUUU2XzFSS3d1bkdyUU9mRjNFNEJDMUhVWHNBd1F0T0lrMWY2VUNPRnJvajVqNFRseENtSUUxMXVuekRSa3pXQ25sV2NlZFZVcVlCVndfbTZSYzlkLXprSVhLZkhnaHRhbENtUXN3UWg5Wmc0Y19OaFljUFRnVFl2R2lIeHF0RllYSWZiaVk0QUFBRU8zNkF6MWprX3hUaGpHRmxfVzZSQzF1azc4ZUtWV3Z5WkJzU2cxSUF3?oc=5"
         },
         {
-          "title": "OJK Catat Kredit Macet Fintech Pindar Tembus 5,36 Persen - bsinews.id",
-          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43dUh6eE05Wm1JMjVTQlljSzFGYWRVcExwb196YzFRQ01GZDZFb3dkOHRMWS1ieTA2LW5xX1pVdFA4NjY2dU9sRUNiTVlUd3A2VzFXQjEycWNScnNXYU9J?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Pindar Capai 5,36 Persen - cwibc.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9aN0RqYXRqQTJ0M09xczI2RkVvV0w2N01KUGxjR0pSYXROWlpXdmY4TVpOZUZ5emM3UmRUUDNlLW5nZy1Oa1JkVnltQmthQmxpNWx5Z3dB?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - Limapagi",
-          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43X0xjWXQ3bnJwWUNIbXUyRmFwTzlvdGFNSUZZd1VQcFRWUHFHWE42Y0J6eGNkZlZZUjBSclpKT0RUU1MwQXNCNGVzOVllY3ZjUVhSMTlRSlVVaXhyWDVXVTMyTS0xMWZFbDlCRUhR?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - SuaraGarut.ID",
-          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1FM0VtMGNBSUhLS01Yb2dGczFuUlRZNDVEellNdXF4WGxrdWVuSkpjVHB1cFVzWDdjeHc5ZWRVeGhFcGgtMmZfTkR3VVFmSkZvR2dKbGloRC0?oc=5"
+          "title": "Kombes Manang: Hentikan Penagihan Biadab atau Kami Kampanyekan Gagal Bayar Nasional! - Askara.co",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVTJ4R2tZQWtSOHpsenhZb0RUelp4OWdLbmlhdnNXdUJlS09IYVlmbEktVWpkU0JtYmY5RHl1OHFxVl9nTi1HTW1Yb0VQdFN4Z2ZidERsRzBoMjBXQ3BCNVhlUHItSzd4QV9rZ1FMSklxREJEQkw0bFVkOUFWN19YWXBHaTRja244SXF2ZjNrakZNYkFRbjFaNXJuNnNiLU9SVFRUa2sxeUs3YTI1clN4SXpSSW9KMFI1TmdkQ1l6and6ZG9Qc2pn?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 5,
+      "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-a29e9117d6d9",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Terlilit Pinjol, Suami Nekat Jual Istri Rp 600 Ribu ke Pria Hidung Belang - detikcom",
-      "headlineZh": "男子因网贷卖妻案",
-      "summaryZh": "报道称一男子因陷入网贷将妻子以60万印尼盾卖给他人，属具体刑事案件报道。",
-      "rationale": "具体刑事案件，涉网贷诱因",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "76750f28a980a674"
-      ],
-      "articles": [
-        {
-          "title": "Terlilit Pinjol, Suami Nekat Jual Istri Rp 600 Ribu ke Pria Hidung Belang - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMVpfVjdlRFNKWWN2UmotZURYWkN5NGRwamx5STZWSU1sLTJDZlE0ckNHbmVDOW9FN0lQX0F3b3ZGcXFicE5oTDBjc0xBajMtMzBCMFlrMFZJall4NG5lR3ZIVjUybVk0QURNaUdVYWR1ZW9DRXJwdkJCOUt6ZFNoN2hCWlNfWF9fTDNkSGxPVlVPN3FaaGVoYWtlZmJEZGVsbks1Y3B6QVV6MGRxN2ZVdDVwMzRLV0FlRjI4aGtQbm13WFZqN1NocVdOLXB5aG_SAdQBQVVfeXFMTThGZ29zUlFBRHg0Rkdvc3VXRnBNRlhyajhHeU9mMW5SbkZuc2FxUXN6QXZ6Tzh6ZEw5NFRaZjA1d0trbUMteGc3dWxUbkpFTU9fVWI2RmVKcUpHa2ZIWXZDOW96Mkg0S0NnY2gwcmo1czI5V1pLWGI0MDZETC16ZmZpZUJweTY3SEc5SU1CVWEtaGtYaGFrUl9pN3ltWTI0OVBaWlVhM0pVM1RNWEJfLVYyeTFUR0kyZ0dtQWhwSktONFBOYVZmLUZHMXNseWFRZTNMSW0?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
+        "mentionCount": 16,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
@@ -189,209 +116,136 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 40,
-    "eventGroupCount": 3,
-    "rejectedNonEvents": 11,
+    "candidateCount": 28,
+    "eventGroupCount": 2,
+    "rejectedNonEvents": 14,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 40
+      "ok": 28
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-a1f580c67bf1",
+      "id": "llm-aa396d65fa96",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Manang Soebeti",
+        "Pinjol"
+      ],
+      "headline": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+      "headlineZh": "警官警告催收恐吓将号召全国拒还",
+      "summaryZh": "Kombes Manang Soebeti公开警告若网贷催收仍具恐吓性，将发起全国拒还运动，反映催收暴力问题。",
+      "rationale": "公职人员就催收暴力公开表态，值得留痕",
+      "independentSourceCount": 2,
+      "domains": [
+        "askara.co",
+        "nawacitapost.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "51850eb73d0ed9fa",
+        "7e69f21133ba3e6b"
+      ],
+      "articles": [
+        {
+          "title": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUV2YmtNUUZSVklyZzB0R0dRQ2M0ZEtDU1lqS1phZmU4YWRhNFVCLVUxcklra3MtUEkweDNTa2JfQkZZeTJlaEVkaVQtWS1aakQ5cmFWb1pYNlRyaGpIUTlRM2w1VnFIdTRHekZub0lESHg1Uzg4Q25meUVnZEZCYWVMQ3dGUjlpZ2REX0VwN2FqNEQ3VW84YWtXT05oMDJHSjlETmJCcjEybnhDZElFQ0xSbC0zdFZyY1ozNU9NTEFYMHd4MVUyclQxUlVueUxLcjh0cTVJOGjSAd4BQVVfeXFMTVBOUS04UlVRdGhTWFYtVG14U1U3aXU0LV9XQlUzNU9hcHpaUUU2XzFSS3d1bkdyUU9mRjNFNEJDMUhVWHNBd1F0T0lrMWY2VUNPRnJvajVqNFRseENtSUUxMXVuekRSa3pXQ25sV2NlZFZVcVlCVndfbTZSYzlkLXprSVhLZkhnaHRhbENtUXN3UWg5Wmc0Y19OaFljUFRnVFl2R2lIeHF0RllYSWZiaVk0QUFBRU8zNkF6MWprX3hUaGpHRmxfVzZSQzF1azc4ZUtWV3Z5WkJzU2cxSUF3?oc=5"
+        },
+        {
+          "title": "Kombes Manang: Hentikan Penagihan Biadab atau Kami Kampanyekan Gagal Bayar Nasional! - Askara.co",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVTJ4R2tZQWtSOHpsenhZb0RUelp4OWdLbmlhdnNXdUJlS09IYVlmbEktVWpkU0JtYmY5RHl1OHFxVl9nTi1HTW1Yb0VQdFN4Z2ZidERsRzBoMjBXQ3BCNVhlUHItSzd4QV9rZ1FMSklxREJEQkw0bFVkOUFWN19YWXBHaTRja244SXF2ZjNrakZNYkFRbjFaNXJuNnNiLU9SVFRUa2sxeUs3YTI1clN4SXpSSW9KMFI1TmdkQ1l6and6ZG9Qc2pn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 16,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
+      }
+    },
+    {
+      "id": "llm-897b0f816c6d",
       "eventType": "consumer_harm",
       "severity": 0.75,
       "entities": [
-        "Pinjaman Go",
-        "Manang Soebeti"
+        "Pinjol",
+        "Debt Collector"
       ],
-      "headline": "Baru Telat Bayar 5 Jam, Pengguna Threads Sebut Ibunya Diteror DC Pinjol hingga Meninggal - Kabar Jambi Kito - Kabar Jambi Kito",
-      "headlineZh": "母亲疑遭催收恐吓后死亡",
-      "summaryZh": "网民称其母仅逾期5小时即遭“Pinjaman Go”催收恐吓后死亡，警方人士Manang Soebeti公开要求停止暴力催收，引发广泛转载。",
-      "rationale": "催收致死个案，警方人士介入",
-      "independentSourceCount": 13,
+      "headline": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
+      "headlineZh": "母亲疑遭催收恐吓后去世引热议",
+      "summaryZh": "Threads用户爆料其母疑遭网贷催收恐吓后去世，事件病毒式传播，警官Manang Soebeti关注，涉致死指控。",
+      "rationale": "涉致死催收伤害案，已引发公职人员关注",
+      "independentSourceCount": 2,
       "domains": [
-        "distriknews.com",
-        "dobrak.co",
-        "jakarta.suaramerdeka.com",
-        "kabarjambikito.id",
-        "konteks.co.id",
-        "koropak.co.id"
+        "klikanggaran.com",
+        "mediapriangan.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "d44c370d225f42b8",
-        "27cf5faebd8e1a82",
-        "f2427facddb4a962",
-        "065144b72501ee63",
-        "a824af9f973f6cf9",
-        "9faebe1c4dfa6ccd",
-        "3031a91e7b2c9376",
-        "869ad8928f6e4162",
-        "7f0d5154539a837c",
-        "019d6e77fcf69569",
-        "6343c447a6120287",
-        "7021cb54cfafeb63",
-        "a3fea4957265dd3b",
-        "6ede486abd58c2d1",
-        "403cc317345fa757",
-        "9772657edb1857af",
-        "57b3a610b9444e88",
-        "7808ee5466888658"
+        "1245024887c63c71",
+        "326085d42d008732",
+        "a3afb112c339fd44"
       ],
       "articles": [
         {
-          "title": "Baru Telat Bayar 5 Jam, Pengguna Threads Sebut Ibunya Diteror DC Pinjol hingga Meninggal - Kabar Jambi Kito - Kabar Jambi Kito",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPdnJHRF9ESVdlVHo5dDNTTDIxN0dxZ05ZQTJTVXotLXAxd1QxLUtkc0Y3VXh6MTVaTVpYQVlfaUJieWZNT083Q3pPYnZ2aHBSR0dSbm1td2FqNm5zYlRZdVFQaTcxQ3pId2VkX3pTTU83VXl2WndfUUlOSHBnRnRRQmVmcWJuMXRzN0VOclczZTdOZTI5dE03YWc4LWpKdHRXQVdSU0p0YUVNU0dIM2txbmh1NVE5d0JqMFYxT0JYd3BMUFFTOVhzbTJNZDBmS0tOc2pLcFVQZ9IB1wFBVV95cUxPdnJHRF9ESVdlVHo5dDNTTDIxN0dxZ05ZQTJTVXotLXAxd1QxLUtkc0Y3VXh6MTVaTVpYQVlfaUJieWZNT083Q3pPYnZ2aHBSR0dSbm1td2FqNm5zYlRZdVFQaTcxQ3pId2VkX3pTTU83VXl2WndfUUlOSHBnRnRRQmVmcWJuMXRzN0VOclczZTdOZTI5dE03YWc4LWpKdHRXQVdSU0p0YUVNU0dIM2txbmh1NVE5d0JqMFYxT0JYd3BMUFFTOVhzbTJNZDBmS0tOc2pLcFVQZw?oc=5"
+          "title": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
+          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQOGxvUFhOVzFnYlpZLVBwMW52aTZWMG1EaXZBamJsdGJkeEhDcmJheS16RjVsbjhQN3E2LUYyd3RJOWc4QWMtdk9zakZ3N1ZrOHRTWG1rNV9XVU45ZnI3ZUU4cHp2TTl5a2l2Sm1mTzRPeWdKejE3cFJWS1N2R2IzaGFzTlRRRXQycVZZT1U2YWpXbWNRNlVYSDhmWndxNXRJVzRvU3lWdmpZdkd6U3c2cXJNUVlNNF81VXJsQm5RRjZsNU1HeW8xdU5aR1J0VFdyZ3B3Nzd2eFluT2o0S2pNSnNTdTFpQdIB6wFBVV95cUxQeHRjSVU3OHlzV3c5VTJ0RVhwcHFEM1pYcm94N2VVMUFEOHJaMTY5ZWd4c0RTcDI0Wmp3aGVuRFZjZEh6akZOblFpVG9maHBfSjBfc19tMEh2VE1vWl9rczA0WXJhU2J5MzhPTnBhcm4xSmhKd0tIWFVnWFBLVEtiNHBuSU9PbWY4eXJsZzVZeWJ2Q1F1Vm41NHhmVTdrd2FCUmU4aE9aUUhVcHBmVUN4d0pnU3J6Vm5POV9pMFZuNlBoRzJYaWpNcWlFT2VIU2Y3TFRSOHk5LTBnUEVtVFRpNmpBWTFNRm5HSkNR?oc=5"
         },
         {
-          "title": "Dari Kasus Curhatan Netizen yang Diteror Dept Collector Pinjol, Manang Soebeti Ancam Akan Kampanyekan Gagal Bayar Nasional - Lamongan Network - Lamongan Network",
-          "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxQakVhZ1VUYk13ZmJNQ0RjR0E2NVpzcml5QXV6UUdJcGxYVy03TXNRRzh0U3BHc2pXX3JpZGpJVVhITm9PTTNRdlBZeWwwdE5vdlhORnhrOTJmalRTQk9oRlZkZDJuWEd5dmdBWkxoa3NNTXVFcTc3RHZNdm1BUmdUc2Z5cHFvNDhreGFxQ1l2dEVGb2hMamkxODZsSEJPYk1abmVGSm5XUUJUc1prVExISjdkOWlFM3dKbEVzQS1IWV9oRFVzeVB3eFNrSjUtSUlRdTFzSHF2N2NYYVU1TVZFNjJyY0RIZ2pndEZDVWFXWW5TTkFqZEREUktfdHpWVGFtZHhHWkRZQ3PSAYgCQVVfeXFMUGpFYWdVVGJNd2ZiTUNEY0dBNjVac3JpeUF1elFHSXBsWFctN01zUUc4dFNwR3NqV19yaWRqSVVYSE5vT00zUXZQWXlsMHROb3ZYTkZ4azkyZmpUU0JPaEZWZGQyblhHeXZnQVpMaGtzTU11RXE3N0R2TXZtQVJnVHNmeXBxbzQ4a3hhcUNZdnRFRm9oTGppMTg2bEhCT2JNWm5lRkpuV1FCVHNaa1RMSEo3ZDlpRTN3SmxFc0EtSFlfaERVc3lQd3hTa0o1LUlJUXUxc0hxdjdjWGFVNU1WRTYycmNESGdqZ3RGQ1VhV1luU05BamRERFJLX3R6VlRhbWR4R1pEWUNz?oc=5"
+          "title": "Manang Soebeti Soroti Curhatan Netizen, Ibu Meninggal Diduga Usai Diteror DC Pinjol - Klik Anggaran - Klik Anggaran",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzlVMTRKcEYxMFdoMVc4dEtIN0l2NzExcXp4MmR1ZjBjZDlUcHE4MWYxczVrT2VzSF9tSTZXSjhuQUN3ZUo2dzhMZVloc3lRdG5SX0NpNG9EcVp4UWlfalppWkl2eGFFQ25DNnhQV3ZsUlVXdWdPakktUkdVRmFQaDRfRkhGUFNrN0NWUE5JWjYyN3o0VmZfT1FZN3QyelJWaUt4VHJzcUpET29DMXJJR1k2MUxkOG9zWE04SG1pR0lNVnotMnFWZNIBzgFBVV95cUxPcjZQV3lYWDN4WEd1VlgzM2hoRFNoUEpfVl9hQktUb3VnNkFsWWxLajZqVWZfTUNpVXJ1OXBGd0lpSGFEbGxNQU5zZWdIYk54Z1pwRzl2Z3FNamtSbXpqeUVCeDRJa3FxLUdGcjZPaUtfdVJwa0xGM0tkZ3VKLWdBbzFQaUQ5aUxkaVdHYy1UTC1vRUkzUkdWckQ3Q3ZNOEk3Rm12SUlXeDI5SF9RZk9ZaG9qWk8tNk5KMmI0S2tBQWt2U09KWkRiaTN3QTdVZw?oc=5"
         },
         {
-          "title": "Ibu Meninggal Usai Diteror DC Pinjaman Go, Baru Telat Bayar 5 Jam - Konteks.co.id - Konteks.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOalg0VEEyVzljSm9CNF9pY3VVN3E1Y3RPNzNjeFlmN0loS3pUNUxYZmdDTEEzT1hJMy1icmhqUVZYUlZZZ2JGc2d6N0VlZjRGOFIyMURRRF81ZlIxemtJZHVqQWwwek5aWTVwS2RqbHhOZ2lldkJsV3U2OWQzcEh4R1hqQWdtcFE5bEtjTDZZSG4xRjdfcTBid0NPYVY0T0pZcE5POHZkUzJqalHSAbABQVVfeXFMTUE1X01kSVdobUw0ZzZtQ3RZMmdQYlpyU25DWXNxb2VjZzN0TFd3V3A2bGFUQTdvVVhRd01qNXJ1TUg1WEpKMncxeDNLUUo1SWFaYlpWYVlkakFFenBLMzFSVHJ1ZFNCT0R1N3pyV0dhTjV6V1lwcUVHdkpySjllVVlxRzl1LUdxUmh5cWE2anV1RGtTQ2x5YUJEbW41akJtbVNpZUgtdFIzdEo1T29UdmU?oc=5"
-        },
-        {
-          "title": "Kisah Pilu Pengguna Pinjol, Sang Ibu Diduga Jadi Korban Teror Debt Collector - Dobrak - Dobrak",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUHhWUVdFblR6eEZZUUd5RHgtVl9NLVJmT2xySDNEU1RfcThfajQ2RWRfVHZnUEpOUWxCUHZLdlloeWVmTk0zYlEtNmdNRGtBOUt2Y182b2F1OXh2em4wLTRpRFZ4dzA1OHhCSVYxOEhpYTJMWWk5eTZGcEdaWDFTcEdVemROcmhCRWdpOXNzWEE1MjRLenpIcnNSZXlzRjlqM3Z1RnMxcmtOYnNyYWJxTWRYYnRhN2Fz0gG4AUFVX3lxTE1QeFZRV0VuVHp4RllRR3lEeC1WX00tUmZPbHJIM0RTVF9xOF9qNDZFZF9UdmdQSk5RbEJQdkt2WWh5ZWZOTTNiUS02Z01Ea0E5S3ZjXzZvYXU5eHZ6bjAtNGlEVnh3MDU4eEJJVjE4SGlhMkxZaTl5NkZwR1pYMVNwR1V6ZE5yaEJFZ2k5c3NYQTUyNEt6ekhyc1JleXNGOWozdnVGczFya05ic3JhYnFNZFhidGE3YXM?oc=5"
-        },
-        {
-          "title": "Manang Soebeti Ancam Bakal Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Suara Merdeka Jakarta - Suara Merdeka Jakarta",
-          "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPM3R6V01PRDhiNzJ2WVpLS3o4TG8zZldMS0NDOHhCMW1mSGFDRldhX3RTWXRCMDdtWTYxcng0RHJ4WGM5RHJiUE5CMUQzUGdyY3VSR25yZE84TnJhS012blJCNDNrMXNfeTZ3dUV4UkNvRzFQMzZmd0ZYNkljZTduOUlXZGpfSHhzTWxybllJZjBsVndzUkVQTno0ckg4MFF3SzBBV0xTU0s0M1ZnbVNISFlLZnpGM2Z2bDZCNDVOWkFNQW5adVlmUXZKYndpQmpTeG5fNkdJVE5FSWxlVjJJS2V0TU4xM1NYUzhLXzkxTnpwQdIB9wFBVV95cUxQN2V6Y2k1QWFUUU42Y1liTmFaSmt6b2xJbE5nOUxtMmJMNm0ya25SalRtZUFlejI4a3lKTTFua0J6LVJZaTRvczZXZHlVbGFfYXhjcktPS0JENi1LX2xrRmtpZmZFUVpoVTlUQ09XUkJYeHVpdlQ2RXB4RmhzUDZuRjU2bm9CT28yTmRmaUFlc2dVNGVhRDJXV0RRWjR1VWlVTEhyeDU1ZS1yTHhVRmNXY2R4ckNmc211TTRNTnZFbkdrVXFPOUt6a3FHNUwtdXZTRm9PQ3pRZVNoLVZkME1qQ1FoSnJnWGcxeWYtYmgtcGhKVkJnUVJB?oc=5"
+          "title": "Viral Curhat Pengguna Threads, Ibu Meninggal Usai Diduga Diteror Debt Collector Pinjol - Klik Anggaran - Klik Anggaran",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPbWxOdG1hQ1JoN0FPU1E0RDNRRUN6TzZ5OXgyRHowS1ozSU9ZV1Q0RUdvai1IbWpWdjJVMkV6dEFyUFhZUDVQVTlzTHZYSFItVUdFMElRUVdzWEdvUjEtSGpMYkhCYkZlZGQxSzc5aGVNd2djcFFlMzVJSGExZ0Z3bHFwNlVSYzRKMGpFTXFXenc0YnFycFRKVGF2c0hpd2k2UzhWVW1vNDFoaU05TG1tOUhwaWIwbHRyRUdFVkNMLXNiMzYtbk1VYlB6Q0nSAdIBQVVfeXFMUGdFdWM5WVB1T0xWZllsNUJBSlNDSWVGZmdpOFpUdXFGQTQ0ckhJbFBaeUxsd1ZlLUdlQjB5aHhURDIwSTBRVGFjLTRER1pHdmlmcjdyLXl4OURiSzZXWlNqTlVPWDFSVTJoYWw0SzZJa3VFUTF0WE5XWTJTUnJ4a0NfY2RzdVhITGl1LU9kS1dCVDN2S0dlYm5CQVl6cjZBSUk3blJrMkh0YlIxSkVxY2hJNWVWM0I2ejl1NjlSQlc3RW9CRWFzSXBrR3RIdU96Wjhn?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 18,
+      "bodyBackedSourceCount": 3,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-2ddf985ae000",
-      "eventType": "credit_quality_stress",
-      "severity": 0.55,
-      "entities": [
-        "OJK",
-        "Asosiasi Fintech Lending"
-      ],
-      "headline": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
-      "headlineZh": "Pindar网贷不良率升至5.36%",
-      "summaryZh": "OJK数据显示网络借贷（Pindar）不良率达5.36%超阈值，行业协会回应，反映行业资产质量承压。",
-      "rationale": "监管数据披露的资产质量指标",
-      "independentSourceCount": 5,
-      "domains": [
-        "bsinews.id",
-        "cwibc.co.id",
-        "limapagi.id",
-        "money.kompas.com",
-        "suaragarut.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "dac85519777e027f",
-        "c898f3517c6b1dd3",
-        "da80e44e021addcb",
-        "faab69b746eaa3ef",
-        "b01caa915b89c955"
-      ],
-      "articles": [
-        {
-          "title": "Kredit Macet Pindar Melonjak di Atas Batas, Asosiasi Fintech Lending Buka Suara - Kompas.com",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPWlBqaUhsN0wtS1c4M3RPYXlYTmJReXl3SUplUXctR0NUMERvQm9xdDBYWVF5aGpWWEcxR0RJeXJYQk9HUzhXWThTb0tPVG56MkdaRkZhOTRiVDg0aXVvWi1FWExiWTExREM2V0ViTmtnU0ltN1RxM1gtaFllMi1JZzNmMkVsckJGVGl4aWNVdnB1d3FtY2k1bVd5c3NSSlVEeXV0ZHJacDB0N3pIclJZYjJjQkFQeTYwVlh5RjlWc2UtVlRqQklTbw?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Fintech Pindar Tembus 5,36 Persen - bsinews.id",
-          "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE43dUh6eE05Wm1JMjVTQlljSzFGYWRVcExwb196YzFRQ01GZDZFb3dkOHRMWS1ieTA2LW5xX1pVdFA4NjY2dU9sRUNiTVlUd3A2VzFXQjEycWNScnNXYU9J?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Pindar Capai 5,36 Persen - cwibc.co.id",
-          "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9aN0RqYXRqQTJ0M09xczI2RkVvV0w2N01KUGxjR0pSYXROWlpXdmY4TVpOZUZ5emM3UmRUUDNlLW5nZy1Oa1JkVnltQmthQmxpNWx5Z3dB?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - Limapagi",
-          "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE43X0xjWXQ3bnJwWUNIbXUyRmFwTzlvdGFNSUZZd1VQcFRWUHFHWE42Y0J6eGNkZlZZUjBSclpKT0RUU1MwQXNCNGVzOVllY3ZjUVhSMTlRSlVVaXhyWDVXVTMyTS0xMWZFbDlCRUhR?oc=5"
-        },
-        {
-          "title": "OJK Catat Kredit Macet Pindar Tembus 5,36 Persen - SuaraGarut.ID",
-          "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1FM0VtMGNBSUhLS01Yb2dGczFuUlRZNDVEellNdXF4WGxrdWVuSkpjVHB1cFVzWDdjeHc5ZWRVeGhFcGgtMmZfTkR3VVFmSkZvR2dKbGloRC0?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 5,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-a29e9117d6d9",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Terlilit Pinjol, Suami Nekat Jual Istri Rp 600 Ribu ke Pria Hidung Belang - detikcom",
-      "headlineZh": "男子因网贷卖妻案",
-      "summaryZh": "报道称一男子因陷入网贷将妻子以60万印尼盾卖给他人，属具体刑事案件报道。",
-      "rationale": "具体刑事案件，涉网贷诱因",
-      "independentSourceCount": 1,
-      "domains": [
-        "detik.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "76750f28a980a674"
-      ],
-      "articles": [
-        {
-          "title": "Terlilit Pinjol, Suami Nekat Jual Istri Rp 600 Ribu ke Pria Hidung Belang - detikcom",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPMVpfVjdlRFNKWWN2UmotZURYWkN5NGRwamx5STZWSU1sLTJDZlE0ckNHbmVDOW9FN0lQX0F3b3ZGcXFicE5oTDBjc0xBajMtMzBCMFlrMFZJall4NG5lR3ZIVjUybVk0QURNaUdVYWR1ZW9DRXJwdkJCOUt6ZFNoN2hCWlNfWF9fTDNkSGxPVlVPN3FaaGVoYWtlZmJEZGVsbks1Y3B6QVV6MGRxN2ZVdDVwMzRLV0FlRjI4aGtQbm13WFZqN1NocVdOLXB5aG_SAdQBQVVfeXFMTThGZ29zUlFBRHg0Rkdvc3VXRnBNRlhyajhHeU9mMW5SbkZuc2FxUXN6QXZ6Tzh6ZEw5NFRaZjA1d0trbUMteGc3dWxUbkpFTU9fVWI2RmVKcUpHa2ZIWXZDOW96Mkg0S0NnY2gwcmo1czI5V1pLWGI0MDZETC16ZmZpZUJweTY3SEc5SU1CVWEtaGtYaGFrUl9pN3ltWTI0OVBaWlVhM0pVM1RNWEJfLVYyeTFUR0kyZ0dtQWhwSktONFBOYVZmLUZHMXNseWFRZTNMSW0?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
+        "mentionCount": 17,
+        "negativeShare": 100.0,
+        "platforms": [
+          "youtube"
+        ]
       }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
-      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 42,
-    "socialItemCount48h": 36
+    "articleCount48h": 28,
+    "socialItemCount48h": 30
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 506,
-    "classifiedCount": 116,
-    "irrelevantDropped": 124,
+    "inputCount": 526,
+    "classifiedCount": 114,
+    "irrelevantDropped": 126,
     "model": "deepseek-chat",
-    "fallbackCount": 266,
+    "fallbackCount": 286,
     "labelCounts": {
-      "NEG": 35,
-      "MIX": 41,
-      "POS": 40
+      "NEG": 58,
+      "MIX": 24,
+      "POS": 32
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
