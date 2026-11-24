@@ -1,22 +1,26 @@
 {
  "schemaVersion": 1,
- "preparedAt": "2026-11-01",
+ "preparedAt": "2026-11-24",
  "status": "pending-owner-review",
  "generatedBy": "credit-tracker/build_industry_pending.py（云端月度）",
- "dashboardLastPeriod": "2026.07",
+ "dashboardLastPeriod": "2026.09",
  "unit": "Rp Miliar（RDKB 原文 Rp triliun ×1000）",
  "sources": {
   "seki": {
    "source": "BI SEKI I.4",
    "sourceUrl": "https://www.bi.go.id/SEKI/tabel/TABEL1_4.xls",
-   "latest": "2026.08",
+   "latest": "2026.09",
    "calibratedAgainst": {
     "period": "2026.05",
     "bankVeh": 128846,
     "bankOth": 1411357
    }
   },
-  "rdkb": null
+  "rdkb": {
+   "source": "OJK RDKB 月度新闻稿",
+   "sourceUrl": "https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/RDKB-Oktober-2026.aspx",
+   "dataMonth": "2026.09"
+  }
  },
  "fieldProvenance": {
   "bankVeh": "BI SEKI I.4 · Kendaraan Bermotor（合计块）；与 SSKI 逐位一致",
@@ -27,11 +31,5 @@
   "mfBNPL": "OJK RDKB · pembiayaan BNPL oleh Perusahaan Pembiayaan (SLIK)",
   "mf2W/mf4W/mfMP": "RDKB 不拆，留 null 待补（OJK SLP Excel 冻结于 2025.12）"
  },
- "rows": {
-  "2026.08": {
-   "bankVeh": 125464,
-   "bankOth": 1430258,
-   "bankMP": null
-  }
- }
+ "rows": {}
 }
