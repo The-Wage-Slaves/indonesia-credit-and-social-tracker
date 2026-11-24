@@ -1,114 +1,295 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-23",
-  "level": "red",
+  "date": "2026-11-24",
+  "level": "high_pending",
   "signals": {
-    "newsDailyVolumeRisk": 15.6,
-    "socialDailyVolumeRisk": 16.8,
-    "negativeSocialShare": 90.6,
+    "newsDailyVolumeRisk": 32.3,
+    "socialDailyVolumeRisk": 0.0,
+    "negativeSocialShare": 26.1,
     "negativeSocialPlatforms": [
       "youtube"
     ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=9; prior-7d median=26.0; robust z=-2.29",
-    "socialVolume": "today=4; prior-7d median=27.0; robust z=-2.22"
+    "newsVolume": "today=13; prior-7d median=20.0; robust z=-1.18",
+    "socialVolume": "today=1; prior-7d median=27.0; robust z=-3.51"
   },
-  "verifiedRedEvents": [
+  "verifiedRedEvents": [],
+  "highRiskPendingEvents": [
     {
-      "id": "llm-897b0f816c6d",
+      "id": "llm-0103a9e2c039",
       "eventType": "consumer_harm",
-      "severity": 0.75,
+      "severity": 0.9,
       "entities": [
-        "Pinjol",
-        "Debt Collector"
+        "Labuhanbatu警方",
+        "Aek Nabara酒店"
       ],
-      "headline": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
-      "headlineZh": "母亲疑遭催收恐吓后去世引热议",
-      "summaryZh": "Threads用户爆料其母疑遭网贷催收恐吓后去世，事件病毒式传播，警官Manang Soebeti关注，涉致死指控。",
-      "rationale": "涉致死催收伤害案，已引发公职人员关注",
-      "independentSourceCount": 2,
+      "headline": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
+      "headlineZh": "Labuhanbatu网贷债务杀人案",
+      "summaryZh": "Labuhanbatu Aek Nabara酒店一名男子因网贷债务杀害前女友，警方已立案，多家媒体报道同一案件。",
+      "rationale": "致死刑案已立案",
+      "independentSourceCount": 5,
       "domains": [
-        "klikanggaran.com",
-        "mediapriangan.com"
+        "bidiknasional.com",
+        "medanposonline.com",
+        "mitramabesnews.id",
+        "radarmedan.com",
+        "sumut.akurat.co"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "1245024887c63c71",
-        "326085d42d008732",
-        "a3afb112c339fd44"
+        "6ffdbaf05020c4b3",
+        "b71ace22ae897f88",
+        "fb735d26bd26c5fb",
+        "18dd5673c38dbf10",
+        "d7c0a033ffd3f164"
       ],
       "articles": [
         {
-          "title": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
-          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQOGxvUFhOVzFnYlpZLVBwMW52aTZWMG1EaXZBamJsdGJkeEhDcmJheS16RjVsbjhQN3E2LUYyd3RJOWc4QWMtdk9zakZ3N1ZrOHRTWG1rNV9XVU45ZnI3ZUU4cHp2TTl5a2l2Sm1mTzRPeWdKejE3cFJWS1N2R2IzaGFzTlRRRXQycVZZT1U2YWpXbWNRNlVYSDhmWndxNXRJVzRvU3lWdmpZdkd6U3c2cXJNUVlNNF81VXJsQm5RRjZsNU1HeW8xdU5aR1J0VFdyZ3B3Nzd2eFluT2o0S2pNSnNTdTFpQdIB6wFBVV95cUxQeHRjSVU3OHlzV3c5VTJ0RVhwcHFEM1pYcm94N2VVMUFEOHJaMTY5ZWd4c0RTcDI0Wmp3aGVuRFZjZEh6akZOblFpVG9maHBfSjBfc19tMEh2VE1vWl9rczA0WXJhU2J5MzhPTnBhcm4xSmhKd0tIWFVnWFBLVEtiNHBuSU9PbWY4eXJsZzVZeWJ2Q1F1Vm41NHhmVTdrd2FCUmU4aE9aUUhVcHBmVUN4d0pnU3J6Vm5POV9pMFZuNlBoRzJYaWpNcWlFT2VIU2Y3TFRSOHk5LTBnUEVtVFRpNmpBWTFNRm5HSkNR?oc=5"
+          "title": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNcmFqLVlFZ3ByX1hTaTZsc1hEb1NVU3F1N0dnSG11WTBSbWRSenJyWDFFWVRfZGo5THFrUjhyUTRScUF0QnVWeHJ3dFJNSXRQUkRTSnRMNzBoVXVybnpjZGV0a2Z2czVUVlFvRU4tVWlDZ2ZkTWJ5WlVHWlRiZVNNd29ta0JQdnBfWWE1ZllOX3JobkwwMFRhaVUycU44TUV4UWVILU1razQ2SEZ2eUFEQzJhQVl2ZWhWaGtyUklTRzFSSldvVDBiVGNCV2FSYkN1TWFTNmY0MVhIVjZW?oc=5"
         },
         {
-          "title": "Manang Soebeti Soroti Curhatan Netizen, Ibu Meninggal Diduga Usai Diteror DC Pinjol - Klik Anggaran - Klik Anggaran",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzlVMTRKcEYxMFdoMVc4dEtIN0l2NzExcXp4MmR1ZjBjZDlUcHE4MWYxczVrT2VzSF9tSTZXSjhuQUN3ZUo2dzhMZVloc3lRdG5SX0NpNG9EcVp4UWlfalppWkl2eGFFQ25DNnhQV3ZsUlVXdWdPakktUkdVRmFQaDRfRkhGUFNrN0NWUE5JWjYyN3o0VmZfT1FZN3QyelJWaUt4VHJzcUpET29DMXJJR1k2MUxkOG9zWE04SG1pR0lNVnotMnFWZNIBzgFBVV95cUxPcjZQV3lYWDN4WEd1VlgzM2hoRFNoUEpfVl9hQktUb3VnNkFsWWxLajZqVWZfTUNpVXJ1OXBGd0lpSGFEbGxNQU5zZWdIYk54Z1pwRzl2Z3FNamtSbXpqeUVCeDRJa3FxLUdGcjZPaUtfdVJwa0xGM0tkZ3VKLWdBbzFQaUQ5aUxkaVdHYy1UTC1vRUkzUkdWckQ3Q3ZNOEk3Rm12SUlXeDI5SF9RZk9ZaG9qWk8tNk5KMmI0S2tBQWt2U09KWkRiaTN3QTdVZw?oc=5"
+          "title": "Kasus Pembunuhan LY di Hotel Aek Nabara, Mantan Kekasih Tersangka Diduga Terbebani Utang PINJOL & Ingin Kuasai Barang Berharga Korban - Mitra Mabes News",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZGdiMzF4czlua3RsS2VDZW9CRHZFRzZ6S1ExUGgyTjBxWWlpMGZPRGZiaG1PcjF3cFhGUWk0eUttcEVLbFdGQkt1TnR3WnZ6WFE1UmtzRmRwWVgtelYwd2ExeGhsWE45V0pTaTZfeEhrZlBtN3ZZVGFoalVEejA0bThMR0VlT2JQ?oc=5"
         },
         {
-          "title": "Viral Curhat Pengguna Threads, Ibu Meninggal Usai Diduga Diteror Debt Collector Pinjol - Klik Anggaran - Klik Anggaran",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPbWxOdG1hQ1JoN0FPU1E0RDNRRUN6TzZ5OXgyRHowS1ozSU9ZV1Q0RUdvai1IbWpWdjJVMkV6dEFyUFhZUDVQVTlzTHZYSFItVUdFMElRUVdzWEdvUjEtSGpMYkhCYkZlZGQxSzc5aGVNd2djcFFlMzVJSGExZ0Z3bHFwNlVSYzRKMGpFTXFXenc0YnFycFRKVGF2c0hpd2k2UzhWVW1vNDFoaU05TG1tOUhwaWIwbHRyRUdFVkNMLXNiMzYtbk1VYlB6Q0nSAdIBQVVfeXFMUGdFdWM5WVB1T0xWZllsNUJBSlNDSWVGZmdpOFpUdXFGQTQ0ckhJbFBaeUxsd1ZlLUdlQjB5aHhURDIwSTBRVGFjLTRER1pHdmlmcjdyLXl4OURiSzZXWlNqTlVPWDFSVTJoYWw0SzZJa3VFUTF0WE5XWTJTUnJ4a0NfY2RzdVhITGl1LU9kS1dCVDN2S0dlYm5CQVl6cjZBSUk3blJrMkh0YlIxSkVxY2hJNWVWM0I2ejl1NjlSQlc3RW9CRWFzSXBrR3RIdU96Wjhn?oc=5"
+          "title": "Pembunuhan Wanita LY di Hotel Aek Nabara, Diduga Tersangka Terlilit Hutang Pinjol - bidiknasional.com",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVmVYRVFhMm1UMXo3eGtCVm9Lbkc1QmpURXNGV2RYX2xPVnd2NVJBRTZRdm03WExhZWhJSm5kV0YtY092aDVudGJYRER2dXZjRXlKUHFxclV3Q2tlb010X2lTNFZpcGJldi14NGNxSm5sZUwtcU1ubzdmV1N1T3FQR3FDTWRydE9fMlV5TEYyZDFZdkZfWl9uOXl5YXFEVmNycWR3a1hvYmRKWFJDY1kyRjVrXzlPZ29ab0E?oc=5"
+        },
+        {
+          "title": "Terlilit Utang Pinjol, Pria di Labuhanbatu Tega Habisi Mantan Pacar di Kamar Hotel - RADARMEDAN.COM",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMVJmblBTb2dsdU9Bb1FyOTdEQ3h4N0pkR2JvZXFBQlNYVEZCanIwNDNKVzdleEhBVDU1Mkd0emdtaTRmTUZEcjM2eFFtT2paNkMyMjRLVER4RjMwdnFXNDR0ejhYLVRQYjVPNlZ5VUlRdko3eFFSQ3NVQ1dscWhtRVN5Qnd6UDJwSl9VSFNUM3NaNGhHY2ZydU01Y3VlYjg4YzVaRnhENA?oc=5"
+        },
+        {
+          "title": "Tragedi Kamar 160 Hotel Aek Nabara! Jerat Pinjol Picu Pria Habisi Mantan Pacar, Terancam Penjara Seumur Hidup - Akurat Sumut",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNOGVKM0V0ckZtd2dXNG1mZ2h5eHcyTDVUb01EWXhYaFo1U0d0d3FlV3VmeTdKOFdoYjA4R01hUDBjT2NaMjVtTVQ2RVJjRldYODZOMC13Z1poS2NuQnpjV2x3Q3o4QUV1ZXo0RFF5TUlBckVHR0J3WG5saml5MER4ZW9XQWJMcFV4Tmo3RVNoYUoyQ3IwdzU2QWdvTmtFQ1ZVNjl6d1lTcFRaWm5naGw5ZXc3X1k2VS1KTjlsVGRTUkkzX0FBQVJqR01YaUpGNU5CNXJjeTJLcE5CQURIN1lrRzRtV3hsaXY3?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 5,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 17,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
-  "highRiskPendingEvents": [],
   "lowEvidenceLeads": [
     {
-      "id": "llm-aa396d65fa96",
+      "id": "llm-bf977a5af64a",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Manang Soebeti",
-        "Pinjol"
+        "Pekanbaru居民"
       ],
-      "headline": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
-      "headlineZh": "警官警告催收恐吓将号召全国拒还",
-      "summaryZh": "Kombes Manang Soebeti公开警告若网贷催收仍具恐吓性，将发起全国拒还运动，反映催收暴力问题。",
-      "rationale": "公职人员就催收暴力公开表态，值得留痕",
-      "independentSourceCount": 2,
+      "headline": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
+      "headlineZh": "Pekanbaru居民因网贷降档失补助",
+      "summaryZh": "报道称Pekanbaru多名居民因网贷及摩托车贷款导致收入档位上升、失去社会救助资格，反映债务对民生的局部影响。",
+      "rationale": "具体群体受害现象",
+      "independentSourceCount": 1,
       "domains": [
-        "askara.co",
-        "nawacitapost.com"
+        "liputanoke.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "51850eb73d0ed9fa",
-        "7e69f21133ba3e6b"
+        "f08c643ddaf69743"
       ],
       "articles": [
         {
-          "title": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUV2YmtNUUZSVklyZzB0R0dRQ2M0ZEtDU1lqS1phZmU4YWRhNFVCLVUxcklra3MtUEkweDNTa2JfQkZZeTJlaEVkaVQtWS1aakQ5cmFWb1pYNlRyaGpIUTlRM2w1VnFIdTRHekZub0lESHg1Uzg4Q25meUVnZEZCYWVMQ3dGUjlpZ2REX0VwN2FqNEQ3VW84YWtXT05oMDJHSjlETmJCcjEybnhDZElFQ0xSbC0zdFZyY1ozNU9NTEFYMHd4MVUyclQxUlVueUxLcjh0cTVJOGjSAd4BQVVfeXFMTVBOUS04UlVRdGhTWFYtVG14U1U3aXU0LV9XQlUzNU9hcHpaUUU2XzFSS3d1bkdyUU9mRjNFNEJDMUhVWHNBd1F0T0lrMWY2VUNPRnJvajVqNFRseENtSUUxMXVuekRSa3pXQ25sV2NlZFZVcVlCVndfbTZSYzlkLXprSVhLZkhnaHRhbENtUXN3UWg5Wmc0Y19OaFljUFRnVFl2R2lIeHF0RllYSWZiaVk0QUFBRU8zNkF6MWprX3hUaGpHRmxfVzZSQzF1azc4ZUtWV3Z5WkJzU2cxSUF3?oc=5"
+          "title": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPb1pKZG1xZDZXRUc0OW9xd0xVUFZaUkhIU0RIR3BnUEViU3IwR0FkNEJ5VllWY0x3VWtJYzZFelNIc19rd2t1N2p6S2RhWDRTREtpWXpLUHFkcVZyOFNrdGpQbTR1RXZHajJCUFZjTFFlZ0lhZ19BaTdJUUotbVMzNlJCM01JWDZpLTZLUEdyaWxQbWpfMlkycnFuemowT1JNY0xBTnI2RS1vT1NfLTJYQnMwRU54MUFOcWViMTBWYXlyLVlHOUlROWFRb3Q4ZGtJa1lSMDJVZFQ4UkVNRFHSAdwBQVVfeXFMT0tnZFR1SlhoSnk2TGNRWHpkaVk2bldrN2hWOXRHZEJQekFYdXlxcGJ4ZDlrTVpaOTVuVko5VnhzRF9ZNHlVYWZocTA0RFptNVNGbk00S1ZWRk1BUlVLZzB4cUN5ak5lYzZERmlTNUpJTVBrUkszUXN4UC04aWFsZG5zRmNZX3pQOTVWV29RbDE1V1lMNFUxM09FYUMyT3pnd2x2LTNrWll0UHl5NEJlSmw0MklNVmI4LXBnNGZPcnZ3TG1QZEFoUm85ZnQ3ZVl1WlYyVU5KbzFjbXAwRw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-e1fe5fa4812e",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "马尼拉诈骗团伙"
+      ],
+      "headline": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
+      "headlineZh": "马尼拉团伙冒充警察逼借网贷",
+      "summaryZh": "报道披露马尼拉诈骗团伙冒充警察、胁迫受害者借网贷的作案手法，属具体诈骗模式曝光。",
+      "rationale": "具体诈骗手法披露",
+      "independentSourceCount": 1,
+      "domains": [
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "381d0ea3e6193ce6"
+      ],
+      "articles": [
+        {
+          "title": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSUhWV3d6VzRBZXlpRm10cG1Gd3kyeG04UFZnZjlLQlJjRml3dWRHLVVUQlhkdlhNakhmZVhDeVpQc2F1WkIwb1RwMC13MW9xZDVpY05pczIwVFJrU1lUeTNpX1d2NmhQVDdEWlktX050b3JQX1o1U1ZCSTNjdFpGLXN0NWpiNWN6dm5vQmVRZ0NZUkVQTDQ0RjVTYlNvUEpNWUdKamV3bko5UGl6N2JOWFVuaWRGMjVkcGlvRzNsUVZRb1pVSFRB?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-467ae542a89b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK Jabar",
+        "IASC"
+      ],
+      "headline": "Jabar Masih jadi Surga bagi Pinjol Ilegal dan Bank Emok, OJK Perkuat Peran IASC - Bisnis.com",
+      "headlineZh": "OJK西爪哇强化打击非法网贷",
+      "summaryZh": "OJK西爪哇指出当地非法网贷与银行Emok仍活跃，将通过强化IASC作用加强整治，属监管表态与行动。",
+      "rationale": "监管机构具体行动",
+      "independentSourceCount": 2,
+      "domains": [
+        "ayobandung.com",
+        "bandung.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "81a9dca82b528e4a",
+        "87b6c44799118fd3"
+      ],
+      "articles": [
+        {
+          "title": "Jabar Masih jadi Surga bagi Pinjol Ilegal dan Bank Emok, OJK Perkuat Peran IASC - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPOFBrbUlTcDdkZ2NUQkxLYkJEamZ0WHVPUkNiMFVGNXFOTzQ1cGxNMkhaNGlob2hSdWMtMnNvYXljcVpCNmFkVVJOUG11bjI5cjRyRzRSNnFwX3RCVTUtWl85UVlGbUV4TkdYLVpPcUN6RnlFVDhtWUVBNjh3bTBNSVpNY2YxdlhSbmJqVzRBd1RpUE4ybHJPX25Vc1VKUEhXc3VKNjVueUYwcnNEbHU2Y2laOVFxZDREZWlBQmxUMVdKbjRCRW5FdGpPTQ?oc=5"
         },
         {
-          "title": "Kombes Manang: Hentikan Penagihan Biadab atau Kami Kampanyekan Gagal Bayar Nasional! - Askara.co",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVTJ4R2tZQWtSOHpsenhZb0RUelp4OWdLbmlhdnNXdUJlS09IYVlmbEktVWpkU0JtYmY5RHl1OHFxVl9nTi1HTW1Yb0VQdFN4Z2ZidERsRzBoMjBXQ3BCNVhlUHItSzd4QV9rZ1FMSklxREJEQkw0bFVkOUFWN19YWXBHaTRja244SXF2ZjNrakZNYkFRbjFaNXJuNnNiLU9SVFRUa2sxeUs3YTI1clN4SXpSSW9KMFI1TmdkQ1l6and6ZG9Qc2pn?oc=5"
+          "title": "OJK Jabar Wanti-wanti Warga Beralih dari Rentenir ke Pinjol Ilegal - Ayo Bandung - Ayo Bandung",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPT0xuNGdPMG4wSWxyb0hhSnF5Yzl2Y0VzS1NYZk95NWZfZmFZcUItanY2UkFFQmxtc2ZhMTJ4b2R1VjRtYkZyTmJlT08xVkptVUEtNDJ2MGRHUURGMVRZZWtzdTdyckVVVFlhRjY2ckh1bkVDNk1Ia0QwVEZZQjgwVkJpSHl0RXBoR2JwXzF3WUN5WEFpdmtZczViRkpuY2trakgyX1oxRGpSa0F5WkI0T2dUMDlKOXZu0gG-AUFVX3lxTFBzeHdXNjFrbnZaSGcwY0R3TGV0cHBaUzN0R1g5ZUNweU5jazBfMXdWekp0cnZIck1KR0JXVngxY2hZX3FMOXk0UkY5b3dueTBTeUJWWEp6QWdFNHM5OUNmTGg3VDcybjQxQzluaWJOV1FoVi1GcENKczkxeUhVUWVENnlyc1BWMnJXRklLT0RwR1dRb25CNVpYak1Td2xDMzVVNXc5OUN3YXdmRlRDSXhUNkZQdjdOekxVVUxSQkE?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 16,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-2d8a36676e58",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "Manang Soebeti"
+      ],
+      "headline": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+      "headlineZh": "借款人威胁发起全国拒还运动",
+      "summaryZh": "借款人Manang Soebeti威胁若网贷催收仍具恐吓性将发起全国性拒还运动，反映催收争议升级。",
+      "rationale": "具体个人公开行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "nawacitapost.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "51850eb73d0ed9fa"
+      ],
+      "articles": [
+        {
+          "title": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUV2YmtNUUZSVklyZzB0R0dRQ2M0ZEtDU1lqS1phZmU4YWRhNFVCLVUxcklra3MtUEkweDNTa2JfQkZZeTJlaEVkaVQtWS1aakQ5cmFWb1pYNlRyaGpIUTlRM2w1VnFIdTRHekZub0lESHg1Uzg4Q25meUVnZEZCYWVMQ3dGUjlpZ2REX0VwN2FqNEQ3VW84YWtXT05oMDJHSjlETmJCcjEybnhDZElFQ0xSbC0zdFZyY1ozNU9NTEFYMHd4MVUyclQxUlVueUxLcjh0cTVJOGjSAd4BQVVfeXFMTVBOUS04UlVRdGhTWFYtVG14U1U3aXU0LV9XQlUzNU9hcHpaUUU2XzFSS3d1bkdyUU9mRjNFNEJDMUhVWHNBd1F0T0lrMWY2VUNPRnJvajVqNFRseENtSUUxMXVuekRSa3pXQ25sV2NlZFZVcVlCVndfbTZSYzlkLXprSVhLZkhnaHRhbENtUXN3UWg5Wmc0Y19OaFljUFRnVFl2R2lIeHF0RllYSWZiaVk0QUFBRU8zNkF6MWprX3hUaGpHRmxfVzZSQzF1azc4ZUtWV3Z5WkJzU2cxSUF3?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-29e1393d28a1",
+      "eventType": "credit_quality_stress",
+      "severity": 0.3,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "Pembiayaan Produktif Pindar Masih di Bawah Target, Begini Kata OJK - Infobanknews",
+      "headlineZh": "Pindar生产性融资未达标",
+      "summaryZh": "OJK表示Pindar生产性融资规模仍低于目标，反映行业资产结构承压，属常规监管披露。",
+      "rationale": "监管披露行业数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1a5b028ae7739641"
+      ],
+      "articles": [
+        {
+          "title": "Pembiayaan Produktif Pindar Masih di Bawah Target, Begini Kata OJK - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTzRWU3JDTS1pYUVuem1IRnpBakdPcFQwUkRoQWFqQ0YzYVRpRzhfa1A3S3pES2t1VmhhRVBKMkFVd19hQ0ZsNkZCd0FwRFo5NGJZUWp6X290Y0dIcXhKSDhBQWVrWUJqdXJpMDFFM01nME9TUUd3bnRqTzdhbFZqc1hJbE9ORHNMM29TTVVPX21UYkE1?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-abaf27ebf64e",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "Totok Bachtiar",
+        "OJK"
+      ],
+      "headline": "Totok Bachtiar Desak OJK dan APH Tindak Tegas Pinjol Ilegal - read.id",
+      "headlineZh": "议员敦促OJK严打非法网贷",
+      "summaryZh": "议员Totok Bachtiar公开敦促OJK与执法机构严厉打击非法网贷，属监管呼吁。",
+      "rationale": "公开呼吁监管行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "read.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "b4af41ec7ce52911"
+      ],
+      "articles": [
+        {
+          "title": "Totok Bachtiar Desak OJK dan APH Tindak Tegas Pinjol Ilegal - read.id",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQZGk5bUJraVhSR2FjZmhPM0xQZHJnR1dqU1hLR1VTNEFGcU9JU1R2aUVGNUkxc05jN095VkFHVEN3WHNSUVpfOEducnpiSl9PS0Njd01rQ2RPcTlNWHpSV0xMZ2dDY2VCLVVoaWZLakZORTU5VzZoNXE3NnF3QTBsZ2Rn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
@@ -116,136 +297,317 @@
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 28,
-    "eventGroupCount": 2,
-    "rejectedNonEvents": 14,
+    "candidateCount": 30,
+    "eventGroupCount": 7,
+    "rejectedNonEvents": 13,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 28
+      "ok": 30
     },
     "socialCrossCheck": "applied"
   },
   "events": [
     {
-      "id": "llm-aa396d65fa96",
+      "id": "llm-bf977a5af64a",
       "eventType": "consumer_harm",
       "severity": 0.55,
       "entities": [
-        "Manang Soebeti",
-        "Pinjol"
+        "Pekanbaru居民"
       ],
-      "headline": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
-      "headlineZh": "警官警告催收恐吓将号召全国拒还",
-      "summaryZh": "Kombes Manang Soebeti公开警告若网贷催收仍具恐吓性，将发起全国拒还运动，反映催收暴力问题。",
-      "rationale": "公职人员就催收暴力公开表态，值得留痕",
-      "independentSourceCount": 2,
+      "headline": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
+      "headlineZh": "Pekanbaru居民因网贷降档失补助",
+      "summaryZh": "报道称Pekanbaru多名居民因网贷及摩托车贷款导致收入档位上升、失去社会救助资格，反映债务对民生的局部影响。",
+      "rationale": "具体群体受害现象",
+      "independentSourceCount": 1,
       "domains": [
-        "askara.co",
-        "nawacitapost.com"
+        "liputanoke.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "51850eb73d0ed9fa",
-        "7e69f21133ba3e6b"
+        "f08c643ddaf69743"
       ],
       "articles": [
         {
-          "title": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUV2YmtNUUZSVklyZzB0R0dRQ2M0ZEtDU1lqS1phZmU4YWRhNFVCLVUxcklra3MtUEkweDNTa2JfQkZZeTJlaEVkaVQtWS1aakQ5cmFWb1pYNlRyaGpIUTlRM2w1VnFIdTRHekZub0lESHg1Uzg4Q25meUVnZEZCYWVMQ3dGUjlpZ2REX0VwN2FqNEQ3VW84YWtXT05oMDJHSjlETmJCcjEybnhDZElFQ0xSbC0zdFZyY1ozNU9NTEFYMHd4MVUyclQxUlVueUxLcjh0cTVJOGjSAd4BQVVfeXFMTVBOUS04UlVRdGhTWFYtVG14U1U3aXU0LV9XQlUzNU9hcHpaUUU2XzFSS3d1bkdyUU9mRjNFNEJDMUhVWHNBd1F0T0lrMWY2VUNPRnJvajVqNFRseENtSUUxMXVuekRSa3pXQ25sV2NlZFZVcVlCVndfbTZSYzlkLXprSVhLZkhnaHRhbENtUXN3UWg5Wmc0Y19OaFljUFRnVFl2R2lIeHF0RllYSWZiaVk0QUFBRU8zNkF6MWprX3hUaGpHRmxfVzZSQzF1azc4ZUtWV3Z5WkJzU2cxSUF3?oc=5"
+          "title": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
+          "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxPb1pKZG1xZDZXRUc0OW9xd0xVUFZaUkhIU0RIR3BnUEViU3IwR0FkNEJ5VllWY0x3VWtJYzZFelNIc19rd2t1N2p6S2RhWDRTREtpWXpLUHFkcVZyOFNrdGpQbTR1RXZHajJCUFZjTFFlZ0lhZ19BaTdJUUotbVMzNlJCM01JWDZpLTZLUEdyaWxQbWpfMlkycnFuemowT1JNY0xBTnI2RS1vT1NfLTJYQnMwRU54MUFOcWViMTBWYXlyLVlHOUlROWFRb3Q4ZGtJa1lSMDJVZFQ4UkVNRFHSAdwBQVVfeXFMT0tnZFR1SlhoSnk2TGNRWHpkaVk2bldrN2hWOXRHZEJQekFYdXlxcGJ4ZDlrTVpaOTVuVko5VnhzRF9ZNHlVYWZocTA0RFptNVNGbk00S1ZWRk1BUlVLZzB4cUN5ak5lYzZERmlTNUpJTVBrUkszUXN4UC04aWFsZG5zRmNZX3pQOTVWV29RbDE1V1lMNFUxM09FYUMyT3pnd2x2LTNrWll0UHl5NEJlSmw0MklNVmI4LXBnNGZPcnZ3TG1QZEFoUm85ZnQ3ZVl1WlYyVU5KbzFjbXAwRw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-e1fe5fa4812e",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "马尼拉诈骗团伙"
+      ],
+      "headline": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
+      "headlineZh": "马尼拉团伙冒充警察逼借网贷",
+      "summaryZh": "报道披露马尼拉诈骗团伙冒充警察、胁迫受害者借网贷的作案手法，属具体诈骗模式曝光。",
+      "rationale": "具体诈骗手法披露",
+      "independentSourceCount": 1,
+      "domains": [
+        "cnbcindonesia.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "381d0ea3e6193ce6"
+      ],
+      "articles": [
+        {
+          "title": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSUhWV3d6VzRBZXlpRm10cG1Gd3kyeG04UFZnZjlLQlJjRml3dWRHLVVUQlhkdlhNakhmZVhDeVpQc2F1WkIwb1RwMC13MW9xZDVpY05pczIwVFJrU1lUeTNpX1d2NmhQVDdEWlktX050b3JQX1o1U1ZCSTNjdFpGLXN0NWpiNWN6dm5vQmVRZ0NZUkVQTDQ0RjVTYlNvUEpNWUdKamV3bko5UGl6N2JOWFVuaWRGMjVkcGlvRzNsUVZRb1pVSFRB?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-0103a9e2c039",
+      "eventType": "consumer_harm",
+      "severity": 0.9,
+      "entities": [
+        "Labuhanbatu警方",
+        "Aek Nabara酒店"
+      ],
+      "headline": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
+      "headlineZh": "Labuhanbatu网贷债务杀人案",
+      "summaryZh": "Labuhanbatu Aek Nabara酒店一名男子因网贷债务杀害前女友，警方已立案，多家媒体报道同一案件。",
+      "rationale": "致死刑案已立案",
+      "independentSourceCount": 5,
+      "domains": [
+        "bidiknasional.com",
+        "medanposonline.com",
+        "mitramabesnews.id",
+        "radarmedan.com",
+        "sumut.akurat.co"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "6ffdbaf05020c4b3",
+        "b71ace22ae897f88",
+        "fb735d26bd26c5fb",
+        "18dd5673c38dbf10",
+        "d7c0a033ffd3f164"
+      ],
+      "articles": [
+        {
+          "title": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
+          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNcmFqLVlFZ3ByX1hTaTZsc1hEb1NVU3F1N0dnSG11WTBSbWRSenJyWDFFWVRfZGo5THFrUjhyUTRScUF0QnVWeHJ3dFJNSXRQUkRTSnRMNzBoVXVybnpjZGV0a2Z2czVUVlFvRU4tVWlDZ2ZkTWJ5WlVHWlRiZVNNd29ta0JQdnBfWWE1ZllOX3JobkwwMFRhaVUycU44TUV4UWVILU1razQ2SEZ2eUFEQzJhQVl2ZWhWaGtyUklTRzFSSldvVDBiVGNCV2FSYkN1TWFTNmY0MVhIVjZW?oc=5"
         },
         {
-          "title": "Kombes Manang: Hentikan Penagihan Biadab atau Kami Kampanyekan Gagal Bayar Nasional! - Askara.co",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOVTJ4R2tZQWtSOHpsenhZb0RUelp4OWdLbmlhdnNXdUJlS09IYVlmbEktVWpkU0JtYmY5RHl1OHFxVl9nTi1HTW1Yb0VQdFN4Z2ZidERsRzBoMjBXQ3BCNVhlUHItSzd4QV9rZ1FMSklxREJEQkw0bFVkOUFWN19YWXBHaTRja244SXF2ZjNrakZNYkFRbjFaNXJuNnNiLU9SVFRUa2sxeUs3YTI1clN4SXpSSW9KMFI1TmdkQ1l6and6ZG9Qc2pn?oc=5"
+          "title": "Kasus Pembunuhan LY di Hotel Aek Nabara, Mantan Kekasih Tersangka Diduga Terbebani Utang PINJOL & Ingin Kuasai Barang Berharga Korban - Mitra Mabes News",
+          "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOZGdiMzF4czlua3RsS2VDZW9CRHZFRzZ6S1ExUGgyTjBxWWlpMGZPRGZiaG1PcjF3cFhGUWk0eUttcEVLbFdGQkt1TnR3WnZ6WFE1UmtzRmRwWVgtelYwd2ExeGhsWE45V0pTaTZfeEhrZlBtN3ZZVGFoalVEejA0bThMR0VlT2JQ?oc=5"
+        },
+        {
+          "title": "Pembunuhan Wanita LY di Hotel Aek Nabara, Diduga Tersangka Terlilit Hutang Pinjol - bidiknasional.com",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVmVYRVFhMm1UMXo3eGtCVm9Lbkc1QmpURXNGV2RYX2xPVnd2NVJBRTZRdm03WExhZWhJSm5kV0YtY092aDVudGJYRER2dXZjRXlKUHFxclV3Q2tlb010X2lTNFZpcGJldi14NGNxSm5sZUwtcU1ubzdmV1N1T3FQR3FDTWRydE9fMlV5TEYyZDFZdkZfWl9uOXl5YXFEVmNycWR3a1hvYmRKWFJDY1kyRjVrXzlPZ29ab0E?oc=5"
+        },
+        {
+          "title": "Terlilit Utang Pinjol, Pria di Labuhanbatu Tega Habisi Mantan Pacar di Kamar Hotel - RADARMEDAN.COM",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMVJmblBTb2dsdU9Bb1FyOTdEQ3h4N0pkR2JvZXFBQlNYVEZCanIwNDNKVzdleEhBVDU1Mkd0emdtaTRmTUZEcjM2eFFtT2paNkMyMjRLVER4RjMwdnFXNDR0ejhYLVRQYjVPNlZ5VUlRdko3eFFSQ3NVQ1dscWhtRVN5Qnd6UDJwSl9VSFNUM3NaNGhHY2ZydU01Y3VlYjg4YzVaRnhENA?oc=5"
+        },
+        {
+          "title": "Tragedi Kamar 160 Hotel Aek Nabara! Jerat Pinjol Picu Pria Habisi Mantan Pacar, Terancam Penjara Seumur Hidup - Akurat Sumut",
+          "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNOGVKM0V0ckZtd2dXNG1mZ2h5eHcyTDVUb01EWXhYaFo1U0d0d3FlV3VmeTdKOFdoYjA4R01hUDBjT2NaMjVtTVQ2RVJjRldYODZOMC13Z1poS2NuQnpjV2x3Q3o4QUV1ZXo0RFF5TUlBckVHR0J3WG5saml5MER4ZW9XQWJMcFV4Tmo3RVNoYUoyQ3IwdzU2QWdvTmtFQ1ZVNjl6d1lTcFRaWm5naGw5ZXc3X1k2VS1KTjlsVGRTUkkzX0FBQVJqR01YaUpGNU5CNXJjeTJLcE5CQURIN1lrRzRtV3hsaXY3?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-467ae542a89b",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK Jabar",
+        "IASC"
+      ],
+      "headline": "Jabar Masih jadi Surga bagi Pinjol Ilegal dan Bank Emok, OJK Perkuat Peran IASC - Bisnis.com",
+      "headlineZh": "OJK西爪哇强化打击非法网贷",
+      "summaryZh": "OJK西爪哇指出当地非法网贷与银行Emok仍活跃，将通过强化IASC作用加强整治，属监管表态与行动。",
+      "rationale": "监管机构具体行动",
+      "independentSourceCount": 2,
+      "domains": [
+        "ayobandung.com",
+        "bandung.bisnis.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "81a9dca82b528e4a",
+        "87b6c44799118fd3"
+      ],
+      "articles": [
+        {
+          "title": "Jabar Masih jadi Surga bagi Pinjol Ilegal dan Bank Emok, OJK Perkuat Peran IASC - Bisnis.com",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPOFBrbUlTcDdkZ2NUQkxLYkJEamZ0WHVPUkNiMFVGNXFOTzQ1cGxNMkhaNGlob2hSdWMtMnNvYXljcVpCNmFkVVJOUG11bjI5cjRyRzRSNnFwX3RCVTUtWl85UVlGbUV4TkdYLVpPcUN6RnlFVDhtWUVBNjh3bTBNSVpNY2YxdlhSbmJqVzRBd1RpUE4ybHJPX25Vc1VKUEhXc3VKNjVueUYwcnNEbHU2Y2laOVFxZDREZWlBQmxUMVdKbjRCRW5FdGpPTQ?oc=5"
+        },
+        {
+          "title": "OJK Jabar Wanti-wanti Warga Beralih dari Rentenir ke Pinjol Ilegal - Ayo Bandung - Ayo Bandung",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPT0xuNGdPMG4wSWxyb0hhSnF5Yzl2Y0VzS1NYZk95NWZfZmFZcUItanY2UkFFQmxtc2ZhMTJ4b2R1VjRtYkZyTmJlT08xVkptVUEtNDJ2MGRHUURGMVRZZWtzdTdyckVVVFlhRjY2ckh1bkVDNk1Ia0QwVEZZQjgwVkJpSHl0RXBoR2JwXzF3WUN5WEFpdmtZczViRkpuY2trakgyX1oxRGpSa0F5WkI0T2dUMDlKOXZu0gG-AUFVX3lxTFBzeHdXNjFrbnZaSGcwY0R3TGV0cHBaUzN0R1g5ZUNweU5jazBfMXdWekp0cnZIck1KR0JXVngxY2hZX3FMOXk0UkY5b3dueTBTeUJWWEp6QWdFNHM5OUNmTGg3VDcybjQxQzluaWJOV1FoVi1GcENKczkxeUhVUWVENnlyc1BWMnJXRklLT0RwR1dRb25CNVpYak1Td2xDMzVVNXc5OUN3YXdmRlRDSXhUNkZQdjdOekxVVUxSQkE?oc=5"
         }
       ],
       "bodyBackedSourceCount": 2,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 16,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     },
     {
-      "id": "llm-897b0f816c6d",
+      "id": "llm-2d8a36676e58",
       "eventType": "consumer_harm",
-      "severity": 0.75,
+      "severity": 0.55,
       "entities": [
-        "Pinjol",
-        "Debt Collector"
+        "Manang Soebeti"
       ],
-      "headline": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
-      "headlineZh": "母亲疑遭催收恐吓后去世引热议",
-      "summaryZh": "Threads用户爆料其母疑遭网贷催收恐吓后去世，事件病毒式传播，警官Manang Soebeti关注，涉致死指控。",
-      "rationale": "涉致死催收伤害案，已引发公职人员关注",
-      "independentSourceCount": 2,
+      "headline": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+      "headlineZh": "借款人威胁发起全国拒还运动",
+      "summaryZh": "借款人Manang Soebeti威胁若网贷催收仍具恐吓性将发起全国性拒还运动，反映催收争议升级。",
+      "rationale": "具体个人公开行动",
+      "independentSourceCount": 1,
       "domains": [
-        "klikanggaran.com",
-        "mediapriangan.com"
+        "nawacitapost.com"
       ],
       "hasPrimarySource": false,
       "articleIds": [
-        "1245024887c63c71",
-        "326085d42d008732",
-        "a3afb112c339fd44"
+        "51850eb73d0ed9fa"
       ],
       "articles": [
         {
-          "title": "Dugaan Teror Debt Collector Pinjaman Go Viral di Threads, Pengguna Akun Ceritakan Kisah Pilu Sang Ibu - Media Priangan - Media Priangan",
-          "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQOGxvUFhOVzFnYlpZLVBwMW52aTZWMG1EaXZBamJsdGJkeEhDcmJheS16RjVsbjhQN3E2LUYyd3RJOWc4QWMtdk9zakZ3N1ZrOHRTWG1rNV9XVU45ZnI3ZUU4cHp2TTl5a2l2Sm1mTzRPeWdKejE3cFJWS1N2R2IzaGFzTlRRRXQycVZZT1U2YWpXbWNRNlVYSDhmWndxNXRJVzRvU3lWdmpZdkd6U3c2cXJNUVlNNF81VXJsQm5RRjZsNU1HeW8xdU5aR1J0VFdyZ3B3Nzd2eFluT2o0S2pNSnNTdTFpQdIB6wFBVV95cUxQeHRjSVU3OHlzV3c5VTJ0RVhwcHFEM1pYcm94N2VVMUFEOHJaMTY5ZWd4c0RTcDI0Wmp3aGVuRFZjZEh6akZOblFpVG9maHBfSjBfc19tMEh2VE1vWl9rczA0WXJhU2J5MzhPTnBhcm4xSmhKd0tIWFVnWFBLVEtiNHBuSU9PbWY4eXJsZzVZeWJ2Q1F1Vm41NHhmVTdrd2FCUmU4aE9aUUhVcHBmVUN4d0pnU3J6Vm5POV9pMFZuNlBoRzJYaWpNcWlFT2VIU2Y3TFRSOHk5LTBnUEVtVFRpNmpBWTFNRm5HSkNR?oc=5"
-        },
-        {
-          "title": "Manang Soebeti Soroti Curhatan Netizen, Ibu Meninggal Diduga Usai Diteror DC Pinjol - Klik Anggaran - Klik Anggaran",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdzlVMTRKcEYxMFdoMVc4dEtIN0l2NzExcXp4MmR1ZjBjZDlUcHE4MWYxczVrT2VzSF9tSTZXSjhuQUN3ZUo2dzhMZVloc3lRdG5SX0NpNG9EcVp4UWlfalppWkl2eGFFQ25DNnhQV3ZsUlVXdWdPakktUkdVRmFQaDRfRkhGUFNrN0NWUE5JWjYyN3o0VmZfT1FZN3QyelJWaUt4VHJzcUpET29DMXJJR1k2MUxkOG9zWE04SG1pR0lNVnotMnFWZNIBzgFBVV95cUxPcjZQV3lYWDN4WEd1VlgzM2hoRFNoUEpfVl9hQktUb3VnNkFsWWxLajZqVWZfTUNpVXJ1OXBGd0lpSGFEbGxNQU5zZWdIYk54Z1pwRzl2Z3FNamtSbXpqeUVCeDRJa3FxLUdGcjZPaUtfdVJwa0xGM0tkZ3VKLWdBbzFQaUQ5aUxkaVdHYy1UTC1vRUkzUkdWckQ3Q3ZNOEk3Rm12SUlXeDI5SF9RZk9ZaG9qWk8tNk5KMmI0S2tBQWt2U09KWkRiaTN3QTdVZw?oc=5"
-        },
-        {
-          "title": "Viral Curhat Pengguna Threads, Ibu Meninggal Usai Diduga Diteror Debt Collector Pinjol - Klik Anggaran - Klik Anggaran",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPbWxOdG1hQ1JoN0FPU1E0RDNRRUN6TzZ5OXgyRHowS1ozSU9ZV1Q0RUdvai1IbWpWdjJVMkV6dEFyUFhZUDVQVTlzTHZYSFItVUdFMElRUVdzWEdvUjEtSGpMYkhCYkZlZGQxSzc5aGVNd2djcFFlMzVJSGExZ0Z3bHFwNlVSYzRKMGpFTXFXenc0YnFycFRKVGF2c0hpd2k2UzhWVW1vNDFoaU05TG1tOUhwaWIwbHRyRUdFVkNMLXNiMzYtbk1VYlB6Q0nSAdIBQVVfeXFMUGdFdWM5WVB1T0xWZllsNUJBSlNDSWVGZmdpOFpUdXFGQTQ0ckhJbFBaeUxsd1ZlLUdlQjB5aHhURDIwSTBRVGFjLTRER1pHdmlmcjdyLXl4OURiSzZXWlNqTlVPWDFSVTJoYWw0SzZJa3VFUTF0WE5XWTJTUnJ4a0NfY2RzdVhITGl1LU9kS1dCVDN2S0dlYm5CQVl6cjZBSUk3blJrMkh0YlIxSkVxY2hJNWVWM0I2ejl1NjlSQlc3RW9CRWFzSXBrR3RIdU96Wjhn?oc=5"
+          "title": "Manang Soebeti Ancam Kampanyekan Gagal Bayar Nasional jika Penagihan Pinjol Masih Intimidatif - Nawacita Post - Nawacita Post",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUUV2YmtNUUZSVklyZzB0R0dRQ2M0ZEtDU1lqS1phZmU4YWRhNFVCLVUxcklra3MtUEkweDNTa2JfQkZZeTJlaEVkaVQtWS1aakQ5cmFWb1pYNlRyaGpIUTlRM2w1VnFIdTRHekZub0lESHg1Uzg4Q25meUVnZEZCYWVMQ3dGUjlpZ2REX0VwN2FqNEQ3VW84YWtXT05oMDJHSjlETmJCcjEybnhDZElFQ0xSbC0zdFZyY1ozNU9NTEFYMHd4MVUyclQxUlVueUxLcjh0cTVJOGjSAd4BQVVfeXFMTVBOUS04UlVRdGhTWFYtVG14U1U3aXU0LV9XQlUzNU9hcHpaUUU2XzFSS3d1bkdyUU9mRjNFNEJDMUhVWHNBd1F0T0lrMWY2VUNPRnJvajVqNFRseENtSUUxMXVuekRSa3pXQ25sV2NlZFZVcVlCVndfbTZSYzlkLXprSVhLZkhnaHRhbENtUXN3UWg5Wmc0Y19OaFljUFRnVFl2R2lIeHF0RllYSWZiaVk0QUFBRU8zNkF6MWprX3hUaGpHRmxfVzZSQzF1azc4ZUtWV3Z5WkJzU2cxSUF3?oc=5"
         }
       ],
-      "bodyBackedSourceCount": 3,
+      "bodyBackedSourceCount": 1,
       "machineClassified": true,
       "social": {
         "status": "ok",
-        "mentionCount": 17,
-        "negativeShare": 100.0,
-        "platforms": [
-          "youtube"
-        ]
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-29e1393d28a1",
+      "eventType": "credit_quality_stress",
+      "severity": 0.3,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "Pembiayaan Produktif Pindar Masih di Bawah Target, Begini Kata OJK - Infobanknews",
+      "headlineZh": "Pindar生产性融资未达标",
+      "summaryZh": "OJK表示Pindar生产性融资规模仍低于目标，反映行业资产结构承压，属常规监管披露。",
+      "rationale": "监管披露行业数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1a5b028ae7739641"
+      ],
+      "articles": [
+        {
+          "title": "Pembiayaan Produktif Pindar Masih di Bawah Target, Begini Kata OJK - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPTzRWU3JDTS1pYUVuem1IRnpBakdPcFQwUkRoQWFqQ0YzYVRpRzhfa1A3S3pES2t1VmhhRVBKMkFVd19hQ0ZsNkZCd0FwRFo5NGJZUWp6X290Y0dIcXhKSDhBQWVrWUJqdXJpMDFFM01nME9TUUd3bnRqTzdhbFZqc1hJbE9ORHNMM29TTVVPX21UYkE1?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-abaf27ebf64e",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "Totok Bachtiar",
+        "OJK"
+      ],
+      "headline": "Totok Bachtiar Desak OJK dan APH Tindak Tegas Pinjol Ilegal - read.id",
+      "headlineZh": "议员敦促OJK严打非法网贷",
+      "summaryZh": "议员Totok Bachtiar公开敦促OJK与执法机构严厉打击非法网贷，属监管呼吁。",
+      "rationale": "公开呼吁监管行动",
+      "independentSourceCount": 1,
+      "domains": [
+        "read.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "b4af41ec7ce52911"
+      ],
+      "articles": [
+        {
+          "title": "Totok Bachtiar Desak OJK dan APH Tindak Tegas Pinjol Ilegal - read.id",
+          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQZGk5bUJraVhSR2FjZmhPM0xQZHJnR1dqU1hLR1VTNEFGcU9JU1R2aUVGNUkxc05jN095VkFHVEN3WHNSUVpfOEducnpiSl9PS0Njd01rQ2RPcTlNWHpSV0xMZ2dDY2VCLVVoaWZLakZORTU5VzZoNXE3NnF3QTBsZ2Rn?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
       }
     }
   ],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "media_rss",
       "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
+      "media_rss": "Collector ran successfully but found no relevant records.",
       "gdelt": "HTTP Error 429: Too Many Requests",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 28,
-    "socialItemCount48h": 30
+    "articleCount48h": 30,
+    "socialItemCount48h": 16
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 526,
-    "classifiedCount": 114,
-    "irrelevantDropped": 126,
+    "inputCount": 521,
+    "classifiedCount": 131,
+    "irrelevantDropped": 109,
     "model": "deepseek-chat",
-    "fallbackCount": 286,
+    "fallbackCount": 281,
     "labelCounts": {
-      "NEG": 58,
-      "MIX": 24,
-      "POS": 32
+      "NEG": 65,
+      "MIX": 41,
+      "POS": 25
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
