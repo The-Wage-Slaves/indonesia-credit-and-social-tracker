@@ -1340,5 +1340,87 @@
         }
       }
     }
+  },
+  {
+    "date": "2026-11-24",
+    "version": 3,
+    "heat": 23.9,
+    "suggested_score": 70,
+    "opposition": {
+      "status": "ok",
+      "rate": 60.5,
+      "detail": "250条中政治条目185条(浓度74%)，反对112/中性54/支持19 → 总反对率 60.5%（分侧: 民间YouTube 74% · 论坛Kaskus 43% · 媒体RSS 31%）"
+    },
+    "sources": {
+      "trends": {
+        "status": "ok",
+        "heat": 41.5,
+        "raw": {
+          "ratio_street": 0.5424528301886793,
+          "ratio_anger": 1.1184870706291006,
+          "per_kw": {
+            "demo hari ini": 2,
+            "demonstrasi": 2,
+            "unjuk rasa": 1,
+            "BBM naik": 0,
+            "aksi massa": 0,
+            "korupsi": 33,
+            "kejaksaan": 19,
+            "Indonesia gelap": 1,
+            "turunkan presiden": 0,
+            "krisis": 10
+          }
+        }
+      },
+      "kaskus": {
+        "status": "ok",
+        "heat": 20.9,
+        "raw": {
+          "n_threads": 25,
+          "n_hits": 2,
+          "share": 10.457013381214997,
+          "examples": [
+            "Kabarnya Google Tutup 19.000 Akun Buzzer Pro Rezim, Gimana Ceritanya?",
+            "Ijazah Untuk Kalangan Pejabat Pemerintah Perlu Ga Sih?"
+          ]
+        }
+      },
+      "youtube": {
+        "status": "ok",
+        "heat": 15.0,
+        "raw": {
+          "n_searched": 150,
+          "n_big": 6
+        }
+      },
+      "gdelt_vol": {
+        "status": "ok",
+        "heat": 30.5,
+        "raw": {
+          "avg7": 0.0044714285714285715,
+          "baseline": 0.007330303030303031,
+          "ratio": 0.6099923226835173
+        }
+      },
+      "gdelt_tone": {
+        "status": "fail",
+        "heat": null,
+        "raw": {}
+      },
+      "rss": {
+        "status": "ok",
+        "heat": 4.4,
+        "raw": {
+          "total": 452,
+          "matched": 2,
+          "share": 0.4424778761061947,
+          "examples": [
+            "[CNN Indonesia Nasional] Kapolda Bantah Mutasi Besar-besaran di DIY Terkait Ricuh Demo Yogya",
+            "[CNN Indonesia Nasional] Bareskrim: Kaus ACAB hingga Bendera One Peace Dibeli Untuk Susupi Demo"
+          ],
+          "dead_feeds": []
+        }
+      }
+    }
   }
 ]
