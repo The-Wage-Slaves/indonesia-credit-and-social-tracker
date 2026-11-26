@@ -1,20 +1,18 @@
 {
-  "generatedAt": "2026-11-25T10:29:56.381271+00:00",
+  "generatedAt": "2026-11-26T10:03:30.944970+00:00",
   "summary": {
     "kind": "daily",
-    "title": "【日频异常触发】风险警报｜待确认｜2026-11-25",
+    "title": "【日频异常触发】风险警报｜待确认｜2026-11-26",
     "risk": true,
     "level": "red",
     "lines": [
       "**为什么收到**\n这是日频扫描触发的额外风险通知；只有风险事件或采集异常时发送，正常日保持静默。",
-      "**风险状态**\nPinjol/Pindar 舆情：HIGH_PENDING；制度/政治骤变：RED。",
-      "**制度/政治骤变**\n\n🔴 **关键官员更替/清洗｜印尼国会启动对副总统候选人Sugiono与Amran的资格审查与背景核验**\n严重度 0.75｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **关键官员更替/清洗｜印尼警察总长涉政变案：Brigjen TK被开除，多名警官受审**\n严重度 0.75｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🟠 **大规模抗议/镇压｜雅加达多地爆发学生示威，警方部署4485名警力**\n严重度 0.55｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：social\n\n🟠 **市场失序(汇股债)｜印尼汇市与股市同步走弱，盾兑美元跌至18,332、IHSG跌至5,197**\n严重度 0.55｜2个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：currency",
-      "**Pinjol/Pindar 舆情事件**\n\n**拉布汉巴都男子因网贷杀人**\n拉布汉巴都一名男子因网贷债务缠身，杀害并抢劫前女友，警方已介入，属致死案件。\n证据：2个独立来源。",
-      "**已折叠的低证据线索**\n另有 7 条命中关键词但只有单一来源、且无原始来源的条目（多为科普提醒或个人转述），未逐条列出。需要时在 `daily-credit-alert-pending.json` 的 `lowEvidenceLeads` 查阅。",
+      "**风险状态**\nPinjol/Pindar 舆情：NORMAL；制度/政治骤变：RED。",
+      "**制度/政治骤变**\n\n🔺 **市场失序(汇股债)｜印尼盾兑美元跌破18,400创历史新低，央行出面回应**\n严重度 0.75｜1个独立来源（cnnindonesia.com）｜影响支柱：currency\n\n🔴 **关键官员更替/清洗｜MPR计划就副总统人选召开为期两天的全体会议，各党团表态支持Sugiono**\n严重度 0.75｜3个独立来源（antaranews.com、cnnindonesia.com）｜影响支柱：institutions\n\n🔴 **表外/或有负债扩张｜Danantara精简380家国企并计划年底扩至600家，接管30万公顷土地**\n严重度 0.75｜2个独立来源（antaranews.com、bbc.com）｜影响支柱：fiscal\n\n🟠 **司法/执法工具化｜前警察总长Listyo Sigit拒不出席涉叛国与窃听的道德听证会**\n严重度 0.55｜2个独立来源（bbc.com、cnnindonesia.com）｜影响支柱：institutions",
       "**需要你决定什么**\n风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
     ],
     "reviewUrl": "https://github.com/The-Wage-Slaves/indonesia-credit-and-social-tracker/tree/bot/daily-risk-alerts/stability-monitor/data/daily-events",
-    "decisionId": "daily:2026-11-25:high_pending:red:success"
+    "decisionId": "daily:2026-11-26:normal:red:success"
   },
   "feishu": "sent"
 }

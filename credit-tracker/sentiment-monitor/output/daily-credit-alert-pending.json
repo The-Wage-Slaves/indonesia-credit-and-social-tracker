@@ -1,617 +1,64 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-25",
-  "level": "high_pending",
+  "date": "2026-11-26",
+  "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 22.2,
-    "socialDailyVolumeRisk": 34.8,
-    "negativeSocialShare": 4.4,
-    "negativeSocialPlatforms": [
-      "youtube"
-    ],
+    "newsDailyVolumeRisk": 19.6,
+    "socialDailyVolumeRisk": 33.1,
+    "negativeSocialShare": 0.0,
+    "negativeSocialPlatforms": [],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=8; prior-7d median=19.0; robust z=-1.85",
-    "socialVolume": "today=22; prior-7d median=31.0; robust z=-1.01"
+    "newsVolume": "today=9; prior-7d median=21.0; robust z=-2.02",
+    "socialVolume": "today=15; prior-7d median=30.0; robust z=-1.12"
   },
   "verifiedRedEvents": [],
-  "highRiskPendingEvents": [
-    {
-      "id": "llm-725094877bea",
-      "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [],
-      "headline": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
-      "headlineZh": "拉布汉巴都男子因网贷杀人",
-      "summaryZh": "拉布汉巴都一名男子因网贷债务缠身，杀害并抢劫前女友，警方已介入，属致死案件。",
-      "rationale": "警方立案的致死案件",
-      "independentSourceCount": 2,
-      "domains": [
-        "kumparan.com",
-        "medanposonline.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "6ffdbaf05020c4b3",
-        "1d3ed70b34fec3df"
-      ],
-      "articles": [
-        {
-          "title": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
-          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNcmFqLVlFZ3ByX1hTaTZsc1hEb1NVU3F1N0dnSG11WTBSbWRSenJyWDFFWVRfZGo5THFrUjhyUTRScUF0QnVWeHJ3dFJNSXRQUkRTSnRMNzBoVXVybnpjZGV0a2Z2czVUVlFvRU4tVWlDZ2ZkTWJ5WlVHWlRiZVNNd29ta0JQdnBfWWE1ZllOX3JobkwwMFRhaVUycU44TUV4UWVILU1razQ2SEZ2eUFEQzJhQVl2ZWhWaGtyUklTRzFSSldvVDBiVGNCV2FSYkN1TWFTNmY0MVhIVjZW?oc=5"
-        },
-        {
-          "title": "Terlilit Utang Pinjol, Pria di Labuhanbatu Bunuh dan Rampas Harta Mantan Pacar - kumparan.com - kumparan",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbWxISVFZMm45NHlYN2YzcG9nZHVfRTdSOHZxVi16Y3VEeXpsdzN5TnpYVjRSejMyN2hCbDZBZHV4dnBSOE55Sk5PdEY5SDRiMzRELWswalRWM0g1Wks2cTIxUkZfYVRWVmx6dWx3LUtDR2hZcFFqMVNsS2FOaXhUYTlWZjFPelc1YUt0ZmpkUTg5NWxiOGhjeExqR2lMcGZOTDN5eFEzTU03Y3JSXzVUTC01alhPNWVZeGgzb2pTbEzSAcgBQVVfeXFMUGtCQTRZVUZVU0JrVG9qeXdUbE8zRkZrYkpiamwyUWhIOGVEQmFQVElVQUEzYVlmbE1pU0IxeU1TYUlDVHF6U0FrNG54ZXVicklacUVIODVOMzF1cGJESjhCazhjclM2R0xwellqVmJkQ3hkUS02S1JKeFhDbTY4ZEdUdDYteXRYcDVfRUpSWnN1YzlFT0tBd2tUM0wwTVJrQlRDblV0djN2UUM2aXdielFwYWVXeWpDZ3hsOVB3Ym5jWW5GSE1tRTA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    }
-  ],
-  "lowEvidenceLeads": [
-    {
-      "id": "llm-a83f382b3322",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Satgas PASTI",
-        "OJK"
-      ],
-      "headline": "Satgas PASTI Hentikan 1.489 Entitas Keuangan Ilegal hingga Oktober 2026, Pinjol Ilegal Mendominasi - Makassar Terkini",
-      "headlineZh": "PASTI查封1489家非法金融实体",
-      "summaryZh": "Satgas PASTI截至2026年10月关停1489家非法金融实体，以非法网贷为主，属监管执法成果。",
-      "rationale": "监管执法行动，有具体数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "makassar.terkini.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a0d30cae7f698dfc"
-      ],
-      "articles": [
-        {
-          "title": "Satgas PASTI Hentikan 1.489 Entitas Keuangan Ilegal hingga Oktober 2026, Pinjol Ilegal Mendominasi - Makassar Terkini",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVnc4RGdPS0xVSzBSQzI0di1FVURRSWY1VUtnTUlmWnkwd2drZ1RVSnU1U2NrME1DR3hEdHp4Qk9IMGtsbXV4MWtpVmJtZ2pPdHJKV0VQaktMR0dCUExMVWl5eUtNM1Fqa2NTdXhVR3JlVWhzZ254ZUR4Mk44UThuczhscGUxdnQ2VFpmNURXUDRVR3hfbzRxUXh2aV9QR0hLTmRXcTc3LXhUSUhGQXRxNmxpaDdGWUJVdW1TYVFoYlpFZVdJ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-11636825c6fb",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
-      "headlineZh": "北干巴鲁居民因网贷失去补助",
-      "summaryZh": "北干巴鲁多名居民因网贷和摩托车贷款导致收入等级上升，失去社会救助资格，属消费者受害。",
-      "rationale": "具体群体受害，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "liputanoke.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "783ecc595a550c4b"
-      ],
-      "articles": [
-        {
-          "title": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNODhhVTZxcVNLLXhUT2Z5dnVWS1A1WGNEODVRTlVtc1NfOUpfZU5CYnhzMzlxMzhFUkhPdnpxc3pwVGFhaGllUlkyY2hZZ0RQbHdBb3hqY0JrMlA3N0tzeUtKd1RlT01CUndSSTk4TU13bW8wRVE0U29odmMxQ1dWOU0zU1doeE9sU0s3dnZsZjN5RUt2MFR1XzlrUU56ZTB0SmZ2Nk9vdkU5R3pDMC1mZE9UZW9mYmhPUHI5aWNoU1dPdUVBNzNnTEZZYXZ6RjZOUHFncHBpQ3DSAdcBQVVfeXFMUDBwMDNreENTd1pLUkJwYzhVWGk0eXlvYjRPVlV0VjVGMWJGNHlnWUhFQ1ZzOWc1eERtOE9DTGhxYlVnNzNaMHo4Ums3Z0hNVnRRWE5oLXVEVUgta0hCRWx3REpEVmxFU09mRlNpNHJrd3NIbjBpXzRkb0QtemZ0T1M2dHFzVXc1ZThXeUNvbkszc1c2cHc4Y24tNHhhR3czZDAyMjdRR1ZrNjhHQXNtdVFqd2twWm5nemh6Vk1lSEpZZGo2VjhpeHZZYlRuQWdWVFE4RXlzYVk?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-2e13bb437241",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
-      "headlineZh": "马尼拉团伙冒充警察强迫网贷",
-      "summaryZh": "马尼拉诈骗团伙冒充警察强迫受害人借网贷，属具体诈骗手法案件报道。",
-      "rationale": "具体诈骗案件，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "cnbcindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "381d0ea3e6193ce6"
-      ],
-      "articles": [
-        {
-          "title": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSUhWV3d6VzRBZXlpRm10cG1Gd3kyeG04UFZnZjlLQlJjRml3dWRHLVVUQlhkdlhNakhmZVhDeVpQc2F1WkIwb1RwMC13MW9xZDVpY05pczIwVFJrU1lUeTNpX1d2NmhQVDdEWlktX050b3JQX1o1U1ZCSTNjdFpGLXN0NWpiNWN6dm5vQmVRZ0NZUkVQTDQ0RjVTYlNvUEpNWUdKamV3bko5UGl6N2JOWFVuaWRGMjVkcGlvRzNsUVZRb1pVSFRB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-89f70ed49460",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Batasi Bunga Pinjaman Daring Konsumtif Maksimal 0,3 Persen - MediaKompeten",
-      "headlineZh": "OJK限制消费贷利率至0.3%",
-      "summaryZh": "OJK将消费类网贷利率上限限制在每月0.3%，属监管定价干预措施。",
-      "rationale": "监管新规，具体政策动作",
-      "independentSourceCount": 1,
-      "domains": [
-        "mediakompeten.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "73df9cc9d0a7854e"
-      ],
-      "articles": [
-        {
-          "title": "OJK Batasi Bunga Pinjaman Daring Konsumtif Maksimal 0,3 Persen - MediaKompeten",
-          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvb0k0Z2VsRlFhLTVMMmJGZjFVUi0xUFZFeGhfeXpWbExJNkdJeFVRUHJaalZrNEtEai1aeVFmM3J3bzBxN0VKYU5uNVRQVEY1OWFKLWZfbUdiR3lvcHdpRmZoSFFydlhmTjhPQUpJZ2t4QQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-33e8b5713260",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Sebut Penurunan Bunga Fintech Lending Bertujuan Kurangi Beban Biaya Borrower - kontan.co.id",
-      "headlineZh": "OJK称降息为减轻借款人负担",
-      "summaryZh": "OJK解释下调网贷利率旨在减轻借款人成本负担，属对A16政策的解读说明。",
-      "rationale": "政策解读，与A16同源",
-      "independentSourceCount": 1,
-      "domains": [
-        "keuangan.kontan.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a97ed5be19a5a929"
-      ],
-      "articles": [
-        {
-          "title": "OJK Sebut Penurunan Bunga Fintech Lending Bertujuan Kurangi Beban Biaya Borrower - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPR0FRNGw3SUVqei0tTTNTaEFqcU9nU3Y2R203M2VWZlNBR2ZjbkU4Rmh0bnRnc0lRNV8wRzBVLW51eG5xdFNmR1NlLUpaWm16WW9sTHVqZmNJdng3Nm1renVRNTZYSVpueWRtdEdLaFM2MHU5Nzk4c0hWaEJmLUdJcHFRTmVOSWRMMlREVVV2WWtjYVktdlRlYU82ZFBrVG5EelNsdUJfekVROHhVWlBtNW0yeTU1Z9IBrwFBVV95cUxOTGRJZXRucmdjU1dMMThjdXRZZ3hienlsRnVNdTA4dVUtOXlPMFBBNmhib1F5clhWVFpzc3l5eHVYMUlYMjhRdmk4Y0c1SkVwRnRhVFpVM2x5UXVHaXdTQ05fTW5ZUkx1aDdGdUJIQlhZMHZFZ1UwUzFUWVR2WG9JbjRrU2ZMajZKNzg0LXVZTGpzTUxTandTd056TU5QRE1qM1J4MUNGaDBEVno2eTBv?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-840049a6bb48",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "OJK Papua Barat"
-      ],
-      "headline": "OJK: Ada 117 laporan keuangan ilegal di Regional Papua Barat - ANTARA News Papua Tengah",
-      "headlineZh": "西巴布亚117起非法金融举报",
-      "summaryZh": "OJK西巴布亚区域办收到117起非法金融活动举报，属具体区域执法数据。",
-      "rationale": "具体举报数据，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "papuatengah.antaranews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7d416022dde51528"
-      ],
-      "articles": [
-        {
-          "title": "OJK: Ada 117 laporan keuangan ilegal di Regional Papua Barat - ANTARA News Papua Tengah",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV0p6VE5fM0U2LUJQZkF0c04yV01TcDhMd2p6VXFId2VmVG4xclBTRTJYQ0FpQllrMVQzRnpXdEEzYmhNcHc4QkNzQnRyVGlkZ2IwZDRsWnhHUlZGREplTmgyNU4xT1M2TlpNQmZ0aFp0VzVubXNiTmpsMnQyUkFNZUNaWTE5MEJRbWJYa2wzT1FfQVZVMGRwNDNZSVlkNjVLTURXTlkwaXIxTUHSAbABQVVfeXFMT1BUVFlCM2pOTEFSQnNQMC01eElHLUpIbVEzY1BtdjYxV2k2c2pzYmtEWFZYWFdrXzRtOWRGbmJYZXFPb2lnVGIzNHhPYWtoTTJ1WlZlRWF5amgyV2xodnJsRXBzVGFSdE5pM3RVcmFJVDNmWGs1SVhPRGpSZ3VNWmxQYl8zbzR4aWpybjZFOWlPWjZCR1dZV1VJOVM0MFhnS1doVzBreVJMZDdoRS1xajE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-f8f83434c372",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK Jabar",
-        "Satgas PASTI"
-      ],
-      "headline": "Perang Melawan Pinjol Ilegal hingga Bank Emok, OJK Jabar dan Satgas PASTI Selamatkan Rp207,16 Miliar Dana Korban Penipuan - Ayo Bandung - Ayo Bandung",
-      "headlineZh": "西爪哇追回2.07亿盾诈骗资金",
-      "summaryZh": "OJK西爪哇与Satgas PASTI打击非法网贷和Bank Emok，为受害者追回2071.6亿盾资金。",
-      "rationale": "监管执法成果，具体金额",
-      "independentSourceCount": 1,
-      "domains": [
-        "ayobandung.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1f288c70bfd20a6f"
-      ],
-      "articles": [
-        {
-          "title": "Perang Melawan Pinjol Ilegal hingga Bank Emok, OJK Jabar dan Satgas PASTI Selamatkan Rp207,16 Miliar Dana Korban Penipuan - Ayo Bandung - Ayo Bandung",
-          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQMmN3b2Q5cE5FRGU4RGZyb2hEUWV2cnZOT2ZJUmxuWEFPam9fZUZBTmRxLVVJaFlhYjRoYVc1ZE03ekNyLUsxRXlFMGxaU1o3Z0ZXb05rSnBFM1o5ZVEtbzI1eW1KS3V4UC01QWZQUGlOYng5X2ZDdXdRZEZWRnN5Qnpkby1iNW02Qk5QVFBHU1ZjRTVGSjhZTWhXdGtHY3pNX2d0SGdPUjRrcnd5Tm1XVEtmRFpoRlB5RVR0cnNXSUliZGpUYlV2UjJEOUU4dk1vLU1BRndUNkJJSFRwM1YwbDM4Nl9RSE5JbUo5OFFzNGZpb1Zt0gH6AUFVX3lxTE1WRmtaeFEzUHA2UVYxT2hnalZiTXZCcGZka01TSWJKWEFqaGNKWWlCQVBlTEZQZElCRTJXLUlaSkwwbk9VbklMeGdQcUFVWnM4dWh0M3NHSEs2Ums1djJwRUQxZlBtYUt3b09yeXpybnIxazBPWGliSUoxMnFBY0VOQTdHTHpHTkMwQkpRb3BnR0pCbWpxWVdpLU8zbzVRZG5VZVMtZEozZjc4NEhJamFPZlh2V2VJaUpJeWtHNl9BejR3aDdHUm45SUxyOUNLejJHVnFUTWNlemlyUmE2TUVIc1I5YWNIdHFSa0RZMDhDeWtzNEE2RER6dkE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    }
-  ],
+  "highRiskPendingEvents": [],
+  "lowEvidenceLeads": [],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 24,
-    "eventGroupCount": 8,
-    "rejectedNonEvents": 15,
+    "candidateCount": 20,
+    "eventGroupCount": 0,
+    "rejectedNonEvents": 16,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 24
+      "ok": 20
     },
     "socialCrossCheck": "applied"
   },
-  "events": [
-    {
-      "id": "llm-a83f382b3322",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "Satgas PASTI",
-        "OJK"
-      ],
-      "headline": "Satgas PASTI Hentikan 1.489 Entitas Keuangan Ilegal hingga Oktober 2026, Pinjol Ilegal Mendominasi - Makassar Terkini",
-      "headlineZh": "PASTI查封1489家非法金融实体",
-      "summaryZh": "Satgas PASTI截至2026年10月关停1489家非法金融实体，以非法网贷为主，属监管执法成果。",
-      "rationale": "监管执法行动，有具体数据",
-      "independentSourceCount": 1,
-      "domains": [
-        "makassar.terkini.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a0d30cae7f698dfc"
-      ],
-      "articles": [
-        {
-          "title": "Satgas PASTI Hentikan 1.489 Entitas Keuangan Ilegal hingga Oktober 2026, Pinjol Ilegal Mendominasi - Makassar Terkini",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVnc4RGdPS0xVSzBSQzI0di1FVURRSWY1VUtnTUlmWnkwd2drZ1RVSnU1U2NrME1DR3hEdHp4Qk9IMGtsbXV4MWtpVmJtZ2pPdHJKV0VQaktMR0dCUExMVWl5eUtNM1Fqa2NTdXhVR3JlVWhzZ254ZUR4Mk44UThuczhscGUxdnQ2VFpmNURXUDRVR3hfbzRxUXh2aV9QR0hLTmRXcTc3LXhUSUhGQXRxNmxpaDdGWUJVdW1TYVFoYlpFZVdJ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-11636825c6fb",
-      "eventType": "consumer_harm",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
-      "headlineZh": "北干巴鲁居民因网贷失去补助",
-      "summaryZh": "北干巴鲁多名居民因网贷和摩托车贷款导致收入等级上升，失去社会救助资格，属消费者受害。",
-      "rationale": "具体群体受害，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "liputanoke.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "783ecc595a550c4b"
-      ],
-      "articles": [
-        {
-          "title": "Gara-gara Pinjol hingga Kredit Motor, Banyak Warga Pekanbaru Naik Desil dan Kehilangan Bansos - LiputanOke.Com",
-          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNODhhVTZxcVNLLXhUT2Z5dnVWS1A1WGNEODVRTlVtc1NfOUpfZU5CYnhzMzlxMzhFUkhPdnpxc3pwVGFhaGllUlkyY2hZZ0RQbHdBb3hqY0JrMlA3N0tzeUtKd1RlT01CUndSSTk4TU13bW8wRVE0U29odmMxQ1dWOU0zU1doeE9sU0s3dnZsZjN5RUt2MFR1XzlrUU56ZTB0SmZ2Nk9vdkU5R3pDMC1mZE9UZW9mYmhPUHI5aWNoU1dPdUVBNzNnTEZZYXZ6RjZOUHFncHBpQ3DSAdcBQVVfeXFMUDBwMDNreENTd1pLUkJwYzhVWGk0eXlvYjRPVlV0VjVGMWJGNHlnWUhFQ1ZzOWc1eERtOE9DTGhxYlVnNzNaMHo4Ums3Z0hNVnRRWE5oLXVEVUgta0hCRWx3REpEVmxFU09mRlNpNHJrd3NIbjBpXzRkb0QtemZ0T1M2dHFzVXc1ZThXeUNvbkszc1c2cHc4Y24tNHhhR3czZDAyMjdRR1ZrNjhHQXNtdVFqd2twWm5nemh6Vk1lSEpZZGo2VjhpeHZZYlRuQWdWVFE4RXlzYVk?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-2e13bb437241",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [],
-      "headline": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
-      "headlineZh": "马尼拉团伙冒充警察强迫网贷",
-      "summaryZh": "马尼拉诈骗团伙冒充警察强迫受害人借网贷，属具体诈骗手法案件报道。",
-      "rationale": "具体诈骗案件，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "cnbcindonesia.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "381d0ea3e6193ce6"
-      ],
-      "articles": [
-        {
-          "title": "Modus Scam Geng Manila, Mengaku Petugas Polri Lalu Paksa Utang Pinjol - CNBC Indonesia",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSUhWV3d6VzRBZXlpRm10cG1Gd3kyeG04UFZnZjlLQlJjRml3dWRHLVVUQlhkdlhNakhmZVhDeVpQc2F1WkIwb1RwMC13MW9xZDVpY05pczIwVFJrU1lUeTNpX1d2NmhQVDdEWlktX050b3JQX1o1U1ZCSTNjdFpGLXN0NWpiNWN6dm5vQmVRZ0NZUkVQTDQ0RjVTYlNvUEpNWUdKamV3bko5UGl6N2JOWFVuaWRGMjVkcGlvRzNsUVZRb1pVSFRB?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-89f70ed49460",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Batasi Bunga Pinjaman Daring Konsumtif Maksimal 0,3 Persen - MediaKompeten",
-      "headlineZh": "OJK限制消费贷利率至0.3%",
-      "summaryZh": "OJK将消费类网贷利率上限限制在每月0.3%，属监管定价干预措施。",
-      "rationale": "监管新规，具体政策动作",
-      "independentSourceCount": 1,
-      "domains": [
-        "mediakompeten.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "73df9cc9d0a7854e"
-      ],
-      "articles": [
-        {
-          "title": "OJK Batasi Bunga Pinjaman Daring Konsumtif Maksimal 0,3 Persen - MediaKompeten",
-          "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBvb0k0Z2VsRlFhLTVMMmJGZjFVUi0xUFZFeGhfeXpWbExJNkdJeFVRUHJaalZrNEtEai1aeVFmM3J3bzBxN0VKYU5uNVRQVEY1OWFKLWZfbUdiR3lvcHdpRmZoSFFydlhmTjhPQUpJZ2t4QQ?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-33e8b5713260",
-      "eventType": "regulatory_action",
-      "severity": 0.3,
-      "entities": [
-        "OJK"
-      ],
-      "headline": "OJK Sebut Penurunan Bunga Fintech Lending Bertujuan Kurangi Beban Biaya Borrower - kontan.co.id",
-      "headlineZh": "OJK称降息为减轻借款人负担",
-      "summaryZh": "OJK解释下调网贷利率旨在减轻借款人成本负担，属对A16政策的解读说明。",
-      "rationale": "政策解读，与A16同源",
-      "independentSourceCount": 1,
-      "domains": [
-        "keuangan.kontan.co.id"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "a97ed5be19a5a929"
-      ],
-      "articles": [
-        {
-          "title": "OJK Sebut Penurunan Bunga Fintech Lending Bertujuan Kurangi Beban Biaya Borrower - kontan.co.id",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPR0FRNGw3SUVqei0tTTNTaEFqcU9nU3Y2R203M2VWZlNBR2ZjbkU4Rmh0bnRnc0lRNV8wRzBVLW51eG5xdFNmR1NlLUpaWm16WW9sTHVqZmNJdng3Nm1renVRNTZYSVpueWRtdEdLaFM2MHU5Nzk4c0hWaEJmLUdJcHFRTmVOSWRMMlREVVV2WWtjYVktdlRlYU82ZFBrVG5EelNsdUJfekVROHhVWlBtNW0yeTU1Z9IBrwFBVV95cUxOTGRJZXRucmdjU1dMMThjdXRZZ3hienlsRnVNdTA4dVUtOXlPMFBBNmhib1F5clhWVFpzc3l5eHVYMUlYMjhRdmk4Y0c1SkVwRnRhVFpVM2x5UXVHaXdTQ05fTW5ZUkx1aDdGdUJIQlhZMHZFZ1UwUzFUWVR2WG9JbjRrU2ZMajZKNzg0LXVZTGpzTUxTandTd056TU5QRE1qM1J4MUNGaDBEVno2eTBv?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-840049a6bb48",
-      "eventType": "fraud_or_illegal_practice",
-      "severity": 0.55,
-      "entities": [
-        "OJK Papua Barat"
-      ],
-      "headline": "OJK: Ada 117 laporan keuangan ilegal di Regional Papua Barat - ANTARA News Papua Tengah",
-      "headlineZh": "西巴布亚117起非法金融举报",
-      "summaryZh": "OJK西巴布亚区域办收到117起非法金融活动举报，属具体区域执法数据。",
-      "rationale": "具体举报数据，值得留痕",
-      "independentSourceCount": 1,
-      "domains": [
-        "papuatengah.antaranews.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "7d416022dde51528"
-      ],
-      "articles": [
-        {
-          "title": "OJK: Ada 117 laporan keuangan ilegal di Regional Papua Barat - ANTARA News Papua Tengah",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQV0p6VE5fM0U2LUJQZkF0c04yV01TcDhMd2p6VXFId2VmVG4xclBTRTJYQ0FpQllrMVQzRnpXdEEzYmhNcHc4QkNzQnRyVGlkZ2IwZDRsWnhHUlZGREplTmgyNU4xT1M2TlpNQmZ0aFp0VzVubXNiTmpsMnQyUkFNZUNaWTE5MEJRbWJYa2wzT1FfQVZVMGRwNDNZSVlkNjVLTURXTlkwaXIxTUHSAbABQVVfeXFMT1BUVFlCM2pOTEFSQnNQMC01eElHLUpIbVEzY1BtdjYxV2k2c2pzYmtEWFZYWFdrXzRtOWRGbmJYZXFPb2lnVGIzNHhPYWtoTTJ1WlZlRWF5amgyV2xodnJsRXBzVGFSdE5pM3RVcmFJVDNmWGs1SVhPRGpSZ3VNWmxQYl8zbzR4aWpybjZFOWlPWjZCR1dZV1VJOVM0MFhnS1doVzBreVJMZDdoRS1xajE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-f8f83434c372",
-      "eventType": "regulatory_action",
-      "severity": 0.55,
-      "entities": [
-        "OJK Jabar",
-        "Satgas PASTI"
-      ],
-      "headline": "Perang Melawan Pinjol Ilegal hingga Bank Emok, OJK Jabar dan Satgas PASTI Selamatkan Rp207,16 Miliar Dana Korban Penipuan - Ayo Bandung - Ayo Bandung",
-      "headlineZh": "西爪哇追回2.07亿盾诈骗资金",
-      "summaryZh": "OJK西爪哇与Satgas PASTI打击非法网贷和Bank Emok，为受害者追回2071.6亿盾资金。",
-      "rationale": "监管执法成果，具体金额",
-      "independentSourceCount": 1,
-      "domains": [
-        "ayobandung.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "1f288c70bfd20a6f"
-      ],
-      "articles": [
-        {
-          "title": "Perang Melawan Pinjol Ilegal hingga Bank Emok, OJK Jabar dan Satgas PASTI Selamatkan Rp207,16 Miliar Dana Korban Penipuan - Ayo Bandung - Ayo Bandung",
-          "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQMmN3b2Q5cE5FRGU4RGZyb2hEUWV2cnZOT2ZJUmxuWEFPam9fZUZBTmRxLVVJaFlhYjRoYVc1ZE03ekNyLUsxRXlFMGxaU1o3Z0ZXb05rSnBFM1o5ZVEtbzI1eW1KS3V4UC01QWZQUGlOYng5X2ZDdXdRZEZWRnN5Qnpkby1iNW02Qk5QVFBHU1ZjRTVGSjhZTWhXdGtHY3pNX2d0SGdPUjRrcnd5Tm1XVEtmRFpoRlB5RVR0cnNXSUliZGpUYlV2UjJEOUU4dk1vLU1BRndUNkJJSFRwM1YwbDM4Nl9RSE5JbUo5OFFzNGZpb1Zt0gH6AUFVX3lxTE1WRmtaeFEzUHA2UVYxT2hnalZiTXZCcGZka01TSWJKWEFqaGNKWWlCQVBlTEZQZElCRTJXLUlaSkwwbk9VbklMeGdQcUFVWnM4dWh0M3NHSEs2Ums1djJwRUQxZlBtYUt3b09yeXpybnIxazBPWGliSUoxMnFBY0VOQTdHTHpHTkMwQkpRb3BnR0pCbWpxWVdpLU8zbzVRZG5VZVMtZEozZjc4NEhJamFPZlh2V2VJaUpJeWtHNl9BejR3aDdHUm45SUxyOUNLejJHVnFUTWNlemlyUmE2TUVIc1I5YWNIdHFSa0RZMDhDeWtzNEE2RER6dkE?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 1,
-      "machineClassified": true,
-      "social": {
-        "status": "ok",
-        "mentionCount": 0,
-        "negativeShare": 0.0,
-        "platforms": []
-      }
-    },
-    {
-      "id": "llm-725094877bea",
-      "eventType": "consumer_harm",
-      "severity": 0.75,
-      "entities": [],
-      "headline": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
-      "headlineZh": "拉布汉巴都男子因网贷杀人",
-      "summaryZh": "拉布汉巴都一名男子因网贷债务缠身，杀害并抢劫前女友，警方已介入，属致死案件。",
-      "rationale": "警方立案的致死案件",
-      "independentSourceCount": 2,
-      "domains": [
-        "kumparan.com",
-        "medanposonline.com"
-      ],
-      "hasPrimarySource": false,
-      "articleIds": [
-        "6ffdbaf05020c4b3",
-        "1d3ed70b34fec3df"
-      ],
-      "articles": [
-        {
-          "title": "Tega !! Mantan Pacar Dibunuh Di Kamar Mandi Hotel : Motif Pelaku Terlilit Hutang Pinjaman Online - Medan Pos",
-          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNcmFqLVlFZ3ByX1hTaTZsc1hEb1NVU3F1N0dnSG11WTBSbWRSenJyWDFFWVRfZGo5THFrUjhyUTRScUF0QnVWeHJ3dFJNSXRQUkRTSnRMNzBoVXVybnpjZGV0a2Z2czVUVlFvRU4tVWlDZ2ZkTWJ5WlVHWlRiZVNNd29ta0JQdnBfWWE1ZllOX3JobkwwMFRhaVUycU44TUV4UWVILU1razQ2SEZ2eUFEQzJhQVl2ZWhWaGtyUklTRzFSSldvVDBiVGNCV2FSYkN1TWFTNmY0MVhIVjZW?oc=5"
-        },
-        {
-          "title": "Terlilit Utang Pinjol, Pria di Labuhanbatu Bunuh dan Rampas Harta Mantan Pacar - kumparan.com - kumparan",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbWxISVFZMm45NHlYN2YzcG9nZHVfRTdSOHZxVi16Y3VEeXpsdzN5TnpYVjRSejMyN2hCbDZBZHV4dnBSOE55Sk5PdEY5SDRiMzRELWswalRWM0g1Wks2cTIxUkZfYVRWVmx6dWx3LUtDR2hZcFFqMVNsS2FOaXhUYTlWZjFPelc1YUt0ZmpkUTg5NWxiOGhjeExqR2lMcGZOTDN5eFEzTU03Y3JSXzVUTC01alhPNWVZeGgzb2pTbEzSAcgBQVVfeXFMUGtCQTRZVUZVU0JrVG9qeXdUbE8zRkZrYkpiamwyUWhIOGVEQmFQVElVQUEzYVlmbE1pU0IxeU1TYUlDVHF6U0FrNG54ZXVicklacUVIODVOMzF1cGJESjhCazhjclM2R0xwellqVmJkQ3hkUS02S1JKeFhDbTY4ZEdUdDYteXRYcDVfRUpSWnN1YzlFT0tBd2tUM0wwTVJrQlRDblV0djN2UUM2aXdielFwYWVXeWpDZ3hsOVB3Ym5jWW5GSE1tRTA?oc=5"
-        }
-      ],
-      "bodyBackedSourceCount": 2,
-      "machineClassified": true,
-      "social": {
-        "status": "no_entities",
-        "mentionCount": null,
-        "negativeShare": null,
-        "platforms": []
-      }
-    }
-  ],
+  "events": [],
   "coverage": {
     "successfulChannels": [
       "google_news",
-      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "'timeline'",
+      "gdelt": "HTTP Error 429: Too Many Requests",
+      "google_trends": "The request failed: Google returned a response with code 429",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 27,
-    "socialItemCount48h": 26
+    "articleCount48h": 36,
+    "socialItemCount48h": 25
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 528,
-    "classifiedCount": 140,
-    "irrelevantDropped": 100,
+    "inputCount": 504,
+    "classifiedCount": 137,
+    "irrelevantDropped": 103,
     "model": "deepseek-chat",
-    "fallbackCount": 288,
+    "fallbackCount": 264,
     "labelCounts": {
-      "NEG": 78,
-      "MIX": 45,
-      "POS": 17
+      "NEG": 58,
+      "MIX": 52,
+      "POS": 27
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
