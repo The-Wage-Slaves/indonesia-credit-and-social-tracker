@@ -1,64 +1,481 @@
 {
   "schemaVersion": 1,
   "status": "pending-human-review",
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "level": "normal",
   "signals": {
-    "newsDailyVolumeRisk": 19.6,
-    "socialDailyVolumeRisk": 33.1,
-    "negativeSocialShare": 0.0,
-    "negativeSocialPlatforms": [],
+    "newsDailyVolumeRisk": 42.4,
+    "socialDailyVolumeRisk": 16.0,
+    "negativeSocialShare": 10.3,
+    "negativeSocialPlatforms": [
+      "youtube"
+    ],
     "crossChannelSpike": false
   },
   "notes": {
-    "newsVolume": "today=9; prior-7d median=21.0; robust z=-2.02",
-    "socialVolume": "today=15; prior-7d median=30.0; robust z=-1.12"
+    "newsVolume": "today=10; prior-7d median=13.0; robust z=-0.51",
+    "socialVolume": "today=1; prior-7d median=38.0; robust z=-2.27"
   },
   "verifiedRedEvents": [],
   "highRiskPendingEvents": [],
-  "lowEvidenceLeads": [],
+  "lowEvidenceLeads": [
+    {
+      "id": "llm-288019c7ea76",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "Polda Jabar",
+        "Unpad",
+        "Polres Indramayu",
+        "Polresta Sidoarjo"
+      ],
+      "headline": "Gandeng Sivitas Akademika Unpad, Polda Jabar Bangun Gerakan Edukasi Bahaya Judi Online dan Pinjol Ilegal - MIN.CO.ID",
+      "headlineZh": "警方联合高校开展反非法网贷宣教",
+      "summaryZh": "西爪哇警方、Indramayu与Sidoarjo警局联合高校举办反网赌与非法网贷观影宣教活动，属常规预防性执法宣传。",
+      "rationale": "警方主导的宣教活动，属机构介入的常规动态",
+      "independentSourceCount": 5,
+      "domains": [
+        "cuplik.com",
+        "memorandum.disway.id",
+        "min.co.id",
+        "pelitainvestigasi.com",
+        "radarsidoarjo.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ee9af2e8cb091ad2",
+        "4441697ae60f72fa",
+        "933c998ca7bfcd49",
+        "b971389e5f4005a7",
+        "e821e2fa24608f00"
+      ],
+      "articles": [
+        {
+          "title": "Gandeng Sivitas Akademika Unpad, Polda Jabar Bangun Gerakan Edukasi Bahaya Judi Online dan Pinjol Ilegal - MIN.CO.ID",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdGZRYnJpSDVkdFJNQnRKdDBQUG9XMTVhVHJybjNqck50NzczTzlnc21EVlpyTGtiVTJSNE5wZFBDS19ZYjdHc2QtMS1XRHFMV0NQR3F4cVdMVkdaNllNUjZNeElCbXJmZzFfZmx5X3Z0Y0poTlQ4ZkFBbTFuYmQwZVAyYklGZm1ZaW1SNlFCWHNPTnBJUzc2R0JoTGJYQ1Rzbjk1Z3V1bXdhaE84WG5PZnM5SlZzY1QwaWhfcXFENzNSWXViZWpSYmR5T0poZw?oc=5"
+        },
+        {
+          "title": "Kabid Humas Polda Jabar Ajak Sivitas Akademika Unpad dan Warga Waspadai Bahaya Judi Online serta Pinjol Ilegal Lewat Nobar \"Menang Untuk Kalah\" - Pelita Investi",
+          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOQ25FSU5mZjJSY1VkYjRlanZrblVZazJRSHZKaGtfeE9FQmdRbHBjOFBhSjNMQklldl96NzRVVG4yMi1fQ3lBNXZBNDE4Nmh1bW1nZ2V1RVc2aGozdnpXV3YxR3ZRX05KcnRVVlVLMjBQX2wxSmYwQy1jUjA5S3VLMGlwc0xjck4tRDBiVGJmNW1telN4ZzRfTEktRXAtOTgxdmJpQ2ZMazZOVUJwRmFDbEFmYVp3V3RWSWZqai1kM1RBM2ZKTUVYRi1uZC1IQWVNNzMyWFdneFJBdDM0dEk0d1dnaG9IYjgwM0ZFMmVUSmpoMDhxNVF4dmhlRmVoWUNja25ieVBsWVNUcTdsTmc0TQ?oc=5"
+        },
+        {
+          "title": "Nobar Film, Presma STAI Sayid Sabiq Apresiasi Polres Indramayu dalam Edukasi Bahaya Judol dan Pinjol - CuplikCom",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNNlNBeEI3aWpXV2k0MVNPTzZZSWN2UGhRUE9XZl9YSEVEbFNaQlFWampjR0E5bnhxSTVBdTRwREhPNDFvOURYN3hVTE0xTGdKY2RwQzJIdWlPTHRJdHZqckdWRjcxT2hXX0RLMmUxYTJYaVZlM05zc2VPOF83Y1g3b0c1bWF2VnVqMVZ3aE5XVEZTX2xGeUFoSGJFTGx6ZWxvc2F1X2Q1ZUVFZXlIdGxMbFIyUGI2cDdkbUw5T0M4RmJMYkg5Z005VW45VER3aEE?oc=5"
+        },
+        {
+          "title": "Polresta Sidoarjo Edukasi Bahaya Judol dan Pinjol Ilegal lewat Nobar Film - Radar Sidoarjo",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPemNIcEhjVVF5eHdsWGZMZ2l4OUpIM25Gc1lWbHN5TVkxcUdmLXhDOUc1MFBSYUhuVzVRSzlDUkdtRUN1cDBkVWtpZ1hJMTZPbFEyeWJzU0NieUJROFBueVpZdExJME81RzEyRDI1R1dXQWlMaHN0RGhLTmtmNkZnUjU2dmpVOWNsdlktUVpyS0dUNU9sRldZdHlOT2NkS0NaOERqZlNJQWREamRvb0lPRWVmenExbzhtSkR3ZEVBbldoeGJ2ejh6VNIBzgFBVV95cUxNSW1SeHhTQ3I0aHVOdVc4MTdxVTBKLVVjTFplZkJHZmVkVHFpdjcteVZMNG02M0hMLWpnclpEclQ0cE1lMEM0R3FLZ1lIWG1wYWo4Zm9GYlJDVTJucnhPdkFWNTVfR210d2JHTi1qV3hoN3prVnBfN1NuYUdoZlZ6QnpHbUNhQXZBUEM1N0x5OFMxTEdUQTQxUmh1MXVWQmdvcjh1TWJtZE1RNVlydVRuUlZKS2wtdTBZcWRDcjRlTG5tcFI4MGlVNF9xRlpndw?oc=5"
+        },
+        {
+          "title": "Polresta Sidoarjo Nobar Film Menang untuk Kalah, Edukasi Bahaya Judol dan Pinjol - memorandum.disway.id - Memorandum.co.id",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMWtsWkx3RWpoY1c3VWIzN29Ha1pDdW1yYmtOXzl4Qzd0MjQ4SHBnbjEteUhhWlJrbFZFT1BERk9VeEFJUlh5OVVNbGNKRmJQb3FRaVFwMHZwLWFEck9EN0xQQTlkS0ZmRFlfNXVyYi1uU0dmc0ZCa21HYmlkb0UtMlFhVjBqTlprSV9HUkwwQ2ZPbnM2eUtfTUQyemU3aG04LWcwSk1DeU8yZDVBNUgzbnVNamMyU1RqbTQyUDduVldnMVVGQTZ2UFFwUVI0NV9JY2QxMNIBuwFBVV95cUxPTl9LUU1IVVZfRGNzZjRzS3hMLW9wOUtlclktVUwxVktKaTV1QkxpMUNlelFxSG03SzdfeXZpQXBQRk9lT3Eycjc3YkxTd3hneVlrbzJnX2d6WFh3endOQnFKbGVwMnRfMmM3TmNmNlkyOGR0TjZvTXhNUlFlNllHS2dTV3NuOVk5NHNFbmJHRmN4YlByY1RHOTBkVkg0SGZlVVVPNTNvdExQZDZXYjk5RzlIdy1zZjY0cDc4?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-29e1393d28a1",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "OJK Larang Pindar Akali Batas Bunga Lewat Biaya Tambahan, Ini Aturannya - Infobanknews",
+      "headlineZh": "OJK禁止Pindar以附加费规避利率上限",
+      "summaryZh": "OJK出台规则禁止Pindar通过额外收费规避利率上限，属监管规范动作，值得留痕。",
+      "rationale": "监管机构发布规则，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3f0c35230c432230"
+      ],
+      "articles": [
+        {
+          "title": "OJK Larang Pindar Akali Batas Bunga Lewat Biaya Tambahan, Ini Aturannya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRzd5eGxvNENlZDJsS2ZvdUdNUy1hWlR1c1ZCLWdnX1JNZnlNLTZWb0VpT3IyazBOSGJ2YzBXc21tVk9NWXdROEdkS3d4em9qVDIwMVc0U1E1WGdBb3ZnNXpWbEtIZDhkeG9LSkNBOTl3N2xBZHlqX2ZHS2o5MWlxc2xGRWlXQW9rZ2VJQTFYeEVTNWNfZFVBeG9EWQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-ce78809210de",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "Samarinda",
+        "OJK",
+        "Polisi"
+      ],
+      "headline": "Digiring Modus Akun Diretas, Warga Samarinda Terjerat Pinjol Rp18,7 Juta, Pengacara G Dyah Dampingi Lapor Polisi hingga OJK - Beranda Indonesia",
+      "headlineZh": "三马林达居民遭盗号被冒名网贷",
+      "summaryZh": "三马林达居民因账号被盗被冒名网贷损失1870万盾，律师陪同向警方与OJK报案，属具体受害事件。",
+      "rationale": "已报案的具体冒名网贷受害事件",
+      "independentSourceCount": 2,
+      "domains": [
+        "berandaindonesia.id",
+        "jurnalborneo.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "936749445604f758",
+        "7a6b6be5e771f800"
+      ],
+      "articles": [
+        {
+          "title": "Digiring Modus Akun Diretas, Warga Samarinda Terjerat Pinjol Rp18,7 Juta, Pengacara G Dyah Dampingi Lapor Polisi hingga OJK - Beranda Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQWmFoQU1ZYUJJODdCUnROMTNzeE1KT08wUzBOeTR4dkpKcDhIQWM0eFlSWHd6enJNTnNxVDI5RkJLOFdyWi1QdTdDUU1qRllQT0FQMTdqME5oS3ZRUWdNM2M4RDU2OFExaWlPT3Z0cjZTemFWNF8yUTg5UldMTllSeC1sTDB6Qm9rbEJHcnItRURPUHZLNnhoVy1OMUIxcGhoT1FSZzFCV2dwLXJtRkdPV0ZBSWszaXhEaHlBLTJvb2FLY2p0Q1VCcG9kbmtIekIyNm1oQjMxZjBmU3RoeEVLSlp2X3dHMVMzRzc1Z3hDQmRvenhqV3c?oc=5"
+        },
+        {
+          "title": "Warga Samarinda Rugi Rp18,7 Juta akibat Penipuan Pinjol - Jurnal Borneo",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdlR3V0JyN0xVZ3pJa1ZzX3JRQmtBRHROSW1ucklxOUNtd0xzR2VLa0F3amlWeDk4SWdXeFhFQW9uOHZmc2ZSRDhhTTY0My1NZkVCYXR3b0liN3pndWpnZDcyTmpGSU1YN0o1bjdnZVlqQ1JvV3F0alBuMEg0dnBoVVFKcE14UHM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-69d875382c30",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Atur Usia Minimal dan Penghasilan Peminjam Online - www.suaralandak.co.id",
+      "headlineZh": "OJK规定网贷借款人年龄与收入门槛",
+      "summaryZh": "OJK出台线上借贷借款人最低年龄与收入要求规则，属监管规范动作。",
+      "rationale": "监管机构发布规则，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaralandak.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1589a8d7443f1ba5"
+      ],
+      "articles": [
+        {
+          "title": "OJK Atur Usia Minimal dan Penghasilan Peminjam Online - www.suaralandak.co.id",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5obFlfVnFHRGt0bTM3bkQyODhjZUdYWXQxaWpfTFEzQXFpcFNLUGhDWjlGNmRHa1RXdnRudmI0dE1GQkotajJ4VEVRUkRxMlQ2RnA3TjJKWWxVQkJVVmRUbExQc21GUGFGSXVtRw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-d894a1864af7",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat 41.527 Pengaduan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - RRI.co.id",
+      "headlineZh": "OJK记录4.15万起非法金融投诉",
+      "summaryZh": "OJK统计4.15万起非法金融活动投诉，网贷占主导，反映消费者受害规模，值得留痕。",
+      "rationale": "监管机构披露的投诉统计数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "rri.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3fd99124ea09b953"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat 41.527 Pengaduan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNS0ZIM0lnM2haTTZ2c3hIb0xmRnpxdUJWXy1oVHlhdlREb20xbzRuT3E1YmRFOFhnTEJpU3V1SGg4U0lBaFFiME5wQ1hTUGpJeVpES2tYcGw4OUFEaERQNkthODIwNUFkSm1xemV2YmlpQnZBNXRGcTBQa01Id3N5U2VrXzhzSHROX3lDaF9KRHl3N3VYNXNoZjRtTHhFZkpvbWQzQnBTQUNPVkhrTklLMWtxR1ZCTndwZ0dnYXN2dw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
   "acknowledgedSuppressedCount": 1,
   "eventAdjudication": {
     "method": "deepseek_credit_event_v1",
     "status": "ok",
-    "candidateCount": 20,
-    "eventGroupCount": 0,
-    "rejectedNonEvents": 16,
+    "candidateCount": 30,
+    "eventGroupCount": 5,
+    "rejectedNonEvents": 10,
     "unassignedCount": 0,
     "articleBodyStatus": {
-      "ok": 20
+      "ok": 29,
+      "fetch_failed": 1
     },
     "socialCrossCheck": "applied"
   },
-  "events": [],
+  "events": [
+    {
+      "id": "llm-288019c7ea76",
+      "eventType": "regulatory_action",
+      "severity": 0.3,
+      "entities": [
+        "Polda Jabar",
+        "Unpad",
+        "Polres Indramayu",
+        "Polresta Sidoarjo"
+      ],
+      "headline": "Gandeng Sivitas Akademika Unpad, Polda Jabar Bangun Gerakan Edukasi Bahaya Judi Online dan Pinjol Ilegal - MIN.CO.ID",
+      "headlineZh": "警方联合高校开展反非法网贷宣教",
+      "summaryZh": "西爪哇警方、Indramayu与Sidoarjo警局联合高校举办反网赌与非法网贷观影宣教活动，属常规预防性执法宣传。",
+      "rationale": "警方主导的宣教活动，属机构介入的常规动态",
+      "independentSourceCount": 5,
+      "domains": [
+        "cuplik.com",
+        "memorandum.disway.id",
+        "min.co.id",
+        "pelitainvestigasi.com",
+        "radarsidoarjo.jawapos.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "ee9af2e8cb091ad2",
+        "4441697ae60f72fa",
+        "933c998ca7bfcd49",
+        "b971389e5f4005a7",
+        "e821e2fa24608f00"
+      ],
+      "articles": [
+        {
+          "title": "Gandeng Sivitas Akademika Unpad, Polda Jabar Bangun Gerakan Edukasi Bahaya Judi Online dan Pinjol Ilegal - MIN.CO.ID",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPdGZRYnJpSDVkdFJNQnRKdDBQUG9XMTVhVHJybjNqck50NzczTzlnc21EVlpyTGtiVTJSNE5wZFBDS19ZYjdHc2QtMS1XRHFMV0NQR3F4cVdMVkdaNllNUjZNeElCbXJmZzFfZmx5X3Z0Y0poTlQ4ZkFBbTFuYmQwZVAyYklGZm1ZaW1SNlFCWHNPTnBJUzc2R0JoTGJYQ1Rzbjk1Z3V1bXdhaE84WG5PZnM5SlZzY1QwaWhfcXFENzNSWXViZWpSYmR5T0poZw?oc=5"
+        },
+        {
+          "title": "Kabid Humas Polda Jabar Ajak Sivitas Akademika Unpad dan Warga Waspadai Bahaya Judi Online serta Pinjol Ilegal Lewat Nobar \"Menang Untuk Kalah\" - Pelita Investi",
+          "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxOQ25FSU5mZjJSY1VkYjRlanZrblVZazJRSHZKaGtfeE9FQmdRbHBjOFBhSjNMQklldl96NzRVVG4yMi1fQ3lBNXZBNDE4Nmh1bW1nZ2V1RVc2aGozdnpXV3YxR3ZRX05KcnRVVlVLMjBQX2wxSmYwQy1jUjA5S3VLMGlwc0xjck4tRDBiVGJmNW1telN4ZzRfTEktRXAtOTgxdmJpQ2ZMazZOVUJwRmFDbEFmYVp3V3RWSWZqai1kM1RBM2ZKTUVYRi1uZC1IQWVNNzMyWFdneFJBdDM0dEk0d1dnaG9IYjgwM0ZFMmVUSmpoMDhxNVF4dmhlRmVoWUNja25ieVBsWVNUcTdsTmc0TQ?oc=5"
+        },
+        {
+          "title": "Nobar Film, Presma STAI Sayid Sabiq Apresiasi Polres Indramayu dalam Edukasi Bahaya Judol dan Pinjol - CuplikCom",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNNlNBeEI3aWpXV2k0MVNPTzZZSWN2UGhRUE9XZl9YSEVEbFNaQlFWampjR0E5bnhxSTVBdTRwREhPNDFvOURYN3hVTE0xTGdKY2RwQzJIdWlPTHRJdHZqckdWRjcxT2hXX0RLMmUxYTJYaVZlM05zc2VPOF83Y1g3b0c1bWF2VnVqMVZ3aE5XVEZTX2xGeUFoSGJFTGx6ZWxvc2F1X2Q1ZUVFZXlIdGxMbFIyUGI2cDdkbUw5T0M4RmJMYkg5Z005VW45VER3aEE?oc=5"
+        },
+        {
+          "title": "Polresta Sidoarjo Edukasi Bahaya Judol dan Pinjol Ilegal lewat Nobar Film - Radar Sidoarjo",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPemNIcEhjVVF5eHdsWGZMZ2l4OUpIM25Gc1lWbHN5TVkxcUdmLXhDOUc1MFBSYUhuVzVRSzlDUkdtRUN1cDBkVWtpZ1hJMTZPbFEyeWJzU0NieUJROFBueVpZdExJME81RzEyRDI1R1dXQWlMaHN0RGhLTmtmNkZnUjU2dmpVOWNsdlktUVpyS0dUNU9sRldZdHlOT2NkS0NaOERqZlNJQWREamRvb0lPRWVmenExbzhtSkR3ZEVBbldoeGJ2ejh6VNIBzgFBVV95cUxNSW1SeHhTQ3I0aHVOdVc4MTdxVTBKLVVjTFplZkJHZmVkVHFpdjcteVZMNG02M0hMLWpnclpEclQ0cE1lMEM0R3FLZ1lIWG1wYWo4Zm9GYlJDVTJucnhPdkFWNTVfR210d2JHTi1qV3hoN3prVnBfN1NuYUdoZlZ6QnpHbUNhQXZBUEM1N0x5OFMxTEdUQTQxUmh1MXVWQmdvcjh1TWJtZE1RNVlydVRuUlZKS2wtdTBZcWRDcjRlTG5tcFI4MGlVNF9xRlpndw?oc=5"
+        },
+        {
+          "title": "Polresta Sidoarjo Nobar Film Menang untuk Kalah, Edukasi Bahaya Judol dan Pinjol - memorandum.disway.id - Memorandum.co.id",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPMWtsWkx3RWpoY1c3VWIzN29Ha1pDdW1yYmtOXzl4Qzd0MjQ4SHBnbjEteUhhWlJrbFZFT1BERk9VeEFJUlh5OVVNbGNKRmJQb3FRaVFwMHZwLWFEck9EN0xQQTlkS0ZmRFlfNXVyYi1uU0dmc0ZCa21HYmlkb0UtMlFhVjBqTlprSV9HUkwwQ2ZPbnM2eUtfTUQyemU3aG04LWcwSk1DeU8yZDVBNUgzbnVNamMyU1RqbTQyUDduVldnMVVGQTZ2UFFwUVI0NV9JY2QxMNIBuwFBVV95cUxPTl9LUU1IVVZfRGNzZjRzS3hMLW9wOUtlclktVUwxVktKaTV1QkxpMUNlelFxSG03SzdfeXZpQXBQRk9lT3Eycjc3YkxTd3hneVlrbzJnX2d6WFh3endOQnFKbGVwMnRfMmM3TmNmNlkyOGR0TjZvTXhNUlFlNllHS2dTV3NuOVk5NHNFbmJHRmN4YlByY1RHOTBkVkg0SGZlVVVPNTNvdExQZDZXYjk5RzlIdy1zZjY0cDc4?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 5,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-29e1393d28a1",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK",
+        "Pindar"
+      ],
+      "headline": "OJK Larang Pindar Akali Batas Bunga Lewat Biaya Tambahan, Ini Aturannya - Infobanknews",
+      "headlineZh": "OJK禁止Pindar以附加费规避利率上限",
+      "summaryZh": "OJK出台规则禁止Pindar通过额外收费规避利率上限，属监管规范动作，值得留痕。",
+      "rationale": "监管机构发布规则，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "infobanknews.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3f0c35230c432230"
+      ],
+      "articles": [
+        {
+          "title": "OJK Larang Pindar Akali Batas Bunga Lewat Biaya Tambahan, Ini Aturannya - Infobanknews",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRzd5eGxvNENlZDJsS2ZvdUdNUy1hWlR1c1ZCLWdnX1JNZnlNLTZWb0VpT3IyazBOSGJ2YzBXc21tVk9NWXdROEdkS3d4em9qVDIwMVc0U1E1WGdBb3ZnNXpWbEtIZDhkeG9LSkNBOTl3N2xBZHlqX2ZHS2o5MWlxc2xGRWlXQW9rZ2VJQTFYeEVTNWNfZFVBeG9EWQ?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-ce78809210de",
+      "eventType": "fraud_or_illegal_practice",
+      "severity": 0.55,
+      "entities": [
+        "Samarinda",
+        "OJK",
+        "Polisi"
+      ],
+      "headline": "Digiring Modus Akun Diretas, Warga Samarinda Terjerat Pinjol Rp18,7 Juta, Pengacara G Dyah Dampingi Lapor Polisi hingga OJK - Beranda Indonesia",
+      "headlineZh": "三马林达居民遭盗号被冒名网贷",
+      "summaryZh": "三马林达居民因账号被盗被冒名网贷损失1870万盾，律师陪同向警方与OJK报案，属具体受害事件。",
+      "rationale": "已报案的具体冒名网贷受害事件",
+      "independentSourceCount": 2,
+      "domains": [
+        "berandaindonesia.id",
+        "jurnalborneo.com"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "936749445604f758",
+        "7a6b6be5e771f800"
+      ],
+      "articles": [
+        {
+          "title": "Digiring Modus Akun Diretas, Warga Samarinda Terjerat Pinjol Rp18,7 Juta, Pengacara G Dyah Dampingi Lapor Polisi hingga OJK - Beranda Indonesia",
+          "link": "https://news.google.com/rss/articles/CBMi9gFBVV95cUxQWmFoQU1ZYUJJODdCUnROMTNzeE1KT08wUzBOeTR4dkpKcDhIQWM0eFlSWHd6enJNTnNxVDI5RkJLOFdyWi1QdTdDUU1qRllQT0FQMTdqME5oS3ZRUWdNM2M4RDU2OFExaWlPT3Z0cjZTemFWNF8yUTg5UldMTllSeC1sTDB6Qm9rbEJHcnItRURPUHZLNnhoVy1OMUIxcGhoT1FSZzFCV2dwLXJtRkdPV0ZBSWszaXhEaHlBLTJvb2FLY2p0Q1VCcG9kbmtIekIyNm1oQjMxZjBmU3RoeEVLSlp2X3dHMVMzRzc1Z3hDQmRvenhqV3c?oc=5"
+        },
+        {
+          "title": "Warga Samarinda Rugi Rp18,7 Juta akibat Penipuan Pinjol - Jurnal Borneo",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQdlR3V0JyN0xVZ3pJa1ZzX3JRQmtBRHROSW1ucklxOUNtd0xzR2VLa0F3amlWeDk4SWdXeFhFQW9uOHZmc2ZSRDhhTTY0My1NZkVCYXR3b0liN3pndWpnZDcyTmpGSU1YN0o1bjdnZVlqQ1JvV3F0alBuMEg0dnBoVVFKcE14UHM?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 2,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-69d875382c30",
+      "eventType": "regulatory_action",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Atur Usia Minimal dan Penghasilan Peminjam Online - www.suaralandak.co.id",
+      "headlineZh": "OJK规定网贷借款人年龄与收入门槛",
+      "summaryZh": "OJK出台线上借贷借款人最低年龄与收入要求规则，属监管规范动作。",
+      "rationale": "监管机构发布规则，属监管介入",
+      "independentSourceCount": 1,
+      "domains": [
+        "suaralandak.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "1589a8d7443f1ba5"
+      ],
+      "articles": [
+        {
+          "title": "OJK Atur Usia Minimal dan Penghasilan Peminjam Online - www.suaralandak.co.id",
+          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5obFlfVnFHRGt0bTM3bkQyODhjZUdYWXQxaWpfTFEzQXFpcFNLUGhDWjlGNmRHa1RXdnRudmI0dE1GQkotajJ4VEVRUkRxMlQ2RnA3TjJKWWxVQkJVVmRUbExQc21GUGFGSXVtRw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    },
+    {
+      "id": "llm-d894a1864af7",
+      "eventType": "consumer_harm",
+      "severity": 0.55,
+      "entities": [
+        "OJK"
+      ],
+      "headline": "OJK Catat 41.527 Pengaduan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - RRI.co.id",
+      "headlineZh": "OJK记录4.15万起非法金融投诉",
+      "summaryZh": "OJK统计4.15万起非法金融活动投诉，网贷占主导，反映消费者受害规模，值得留痕。",
+      "rationale": "监管机构披露的投诉统计数据",
+      "independentSourceCount": 1,
+      "domains": [
+        "rri.co.id"
+      ],
+      "hasPrimarySource": false,
+      "articleIds": [
+        "3fd99124ea09b953"
+      ],
+      "articles": [
+        {
+          "title": "OJK Catat 41.527 Pengaduan Aktivitas Keuangan Ilegal, Pinjol Mendominasi - RRI.co.id",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNS0ZIM0lnM2haTTZ2c3hIb0xmRnpxdUJWXy1oVHlhdlREb20xbzRuT3E1YmRFOFhnTEJpU3V1SGg4U0lBaFFiME5wQ1hTUGpJeVpES2tYcGw4OUFEaERQNkthODIwNUFkSm1xemV2YmlpQnZBNXRGcTBQa01Id3N5U2VrXzhzSHROX3lDaF9KRHl3N3VYNXNoZjRtTHhFZkpvbWQzQnBTQUNPVkhrTklLMWtxR1ZCTndwZ0dnYXN2dw?oc=5"
+        }
+      ],
+      "bodyBackedSourceCount": 1,
+      "machineClassified": true,
+      "social": {
+        "status": "ok",
+        "mentionCount": 0,
+        "negativeShare": 0.0,
+        "platforms": []
+      }
+    }
+  ],
   "coverage": {
     "successfulChannels": [
       "google_news",
+      "google_trends",
       "youtube"
     ],
     "failedOrUnavailableChannels": {
       "media_rss": "Collector ran successfully but found no relevant records.",
-      "gdelt": "HTTP Error 429: Too Many Requests",
-      "google_trends": "The request failed: Google returned a response with code 429",
+      "gdelt": "'timeline'",
       "kaskus": "Collector ran successfully but found no relevant records.",
       "reddit": "Reddit searches failed: indonesia: HTTP Error 403: Blocked | finansial: HTTP Error 403: Blocked",
       "x": "X_BEARER_TOKEN is not configured"
     },
-    "articleCount48h": 36,
-    "socialItemCount48h": 25
+    "articleCount48h": 44,
+    "socialItemCount48h": 14
   },
   "socialClassifier": {
     "method": "deepseek_credit_social_v1",
     "status": "ok",
-    "inputCount": 504,
-    "classifiedCount": 137,
-    "irrelevantDropped": 103,
+    "inputCount": 521,
+    "classifiedCount": 140,
+    "irrelevantDropped": 100,
     "model": "deepseek-chat",
-    "fallbackCount": 264,
+    "fallbackCount": 281,
     "labelCounts": {
-      "NEG": 58,
-      "MIX": 52,
-      "POS": 27
+      "NEG": 87,
+      "MIX": 40,
+      "POS": 13
     }
   },
   "rule": "Keyword matching only selects candidates. An LLM reads the fetched article body, decides whether each item is a concrete event (rejecting advisories, opinion and personal anecdotes), and groups reports of the same event so independent-source counts are real. Red requires an alertable type, severity>=0.75, corroboration (>=2 independent sources or a primary source) and >=3 matching social mentions. Without the social echo the same evidence stays high-risk pending. Everything else is a low-evidence lead that is recorded but never pushed. Acknowledged event ids are suppressed. If adjudication cannot run, the day is reported as degraded rather than normal.",
