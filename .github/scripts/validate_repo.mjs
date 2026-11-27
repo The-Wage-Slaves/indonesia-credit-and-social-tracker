@@ -458,6 +458,10 @@ const weeklyCreditWorkflow = read('.github/workflows/weekly-credit-sentiment.yml
 assert(weeklyCreditWorkflow.includes('DEEPSEEK_API_KEY'), 'weekly credit workflow does not expose the optional DeepSeek secret');
 assert(/cron: "\d+ \d+ \* \* 2"/.test(weeklyCreditWorkflow), 'weekly monitoring must run on Tuesday');
 assert(weeklyCreditWorkflow.includes('street_heat.py'), 'weekly monitoring must include stability street heat');
+// 自动周更失败本身不产生任何消息；周三 watchdog 是唯一会说「这周没跑成」的地方。
+const watchdogWorkflow = read('.github/workflows/weekly-autopilot-watchdog.yml');
+assert(watchdogWorkflow.includes('cloud_publish.py autopilot --push'), 'autopilot watchdog must alert through the unified publisher');
+assert(/cron: "\d+ \d+ \* \* 3"/.test(watchdogWorkflow), 'autopilot watchdog must run on Wednesday');
 // 周更 routine 的云端沙箱连不上 MSCI（2026-11-24 实测），市场相对读数必须在 GitHub 侧采集。
 assert(weeklyCreditWorkflow.includes('market_relative.py --period'), 'weekly monitoring must collect market-relative readings for the autopilot');
 assert(weeklyCreditWorkflow.includes('STREET_STATUS: ${{ steps.street.outcome }}'), 'weekly card must receive the current street-heat outcome');

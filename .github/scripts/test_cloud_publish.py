@@ -392,6 +392,55 @@ class ReviewLinkTests(unittest.TestCase):
                 self.assertIn(url_const, block, f"{cadence} 用错了链接常量")
 
 
+class AutopilotWatchdogTests(unittest.TestCase):
+    SRC = (
+        'const DATA = {\n  weekly: [\n'
+        '    { date: "2026-11-17", scores: { fiscal: 48 } },\n'
+        '    { date: "2026-11-24", scores: { fiscal: 48 } }\n  ],\n'
+        '  watchlist: [ { date: "2026-12-01", title: "x" } ]\n};\n'
+    )
+
+    def summary(self, week, branch=False, src=None):
+        import datetime as dt
+        import tempfile
+        with tempfile.TemporaryDirectory() as d:
+            p = pathlib.Path(d) / "data.js"
+            p.write_text(src or self.SRC, encoding="utf-8")
+            env = {"AUTOPILOT_WEEK": week}
+            if branch:
+                env["AUTOPILOT_BRANCH_EXISTS"] = "1"
+            with mock.patch.object(MODULE, "DATA_JS", p), mock.patch.dict(MODULE.os.environ, env, clear=False):
+                if not branch:
+                    MODULE.os.environ.pop("AUTOPILOT_BRANCH_EXISTS", None)
+                return MODULE.autopilot_summary(dt.date(2026, 12, 2))
+
+    def test_present_week_stays_silent(self):
+        s = self.summary("2026-11-24")
+        self.assertFalse(s["risk"])
+
+    def test_missing_week_alerts_and_names_latest(self):
+        s = self.summary("2026-12-01")
+        self.assertTrue(s["risk"])
+        self.assertEqual(s["level"], "red")
+        self.assertIn("2026-11-24", "".join(s["lines"]))
+        self.assertIn("不是「本周无变化」", "".join(s["lines"]))
+
+    def test_watchlist_date_is_not_mistaken_for_a_snapshot(self):
+        # watchlist 里有 2026-12-01，但 weekly 没有：必须报缺失
+        self.assertTrue(self.summary("2026-12-01")["risk"])
+
+    def test_pushed_but_unmerged_branch_points_at_merge_workflow(self):
+        s = self.summary("2026-12-01", branch=True)
+        self.assertIn("weekly-autopilot-merge", "".join(s["lines"]))
+
+    def test_default_week_is_the_preceding_tuesday(self):
+        import datetime as dt
+        MODULE.os.environ.pop("AUTOPILOT_WEEK", None)
+        with mock.patch.object(MODULE, "DATA_JS", pathlib.Path("/nonexistent/data.js")):
+            s = MODULE.autopilot_summary(dt.date(2026, 12, 2))  # 周三
+        self.assertIn("2026-12-01", s["title"])
+
+
 if __name__ == "__main__":
     unittest.main()
 

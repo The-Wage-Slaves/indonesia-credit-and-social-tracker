@@ -1,0 +1,41 @@
+name: Weekly autopilot watchdog
+
+# 周三 11:17 北京/吉隆坡（03:17 UTC）检查：本周二的自动周更是否已写入 main。
+# routine 周二 21:00 UTC 启动，留出约 6 小时给运行、合并与 GitHub 排队延迟。
+# 只在缺失时推飞书——自动周更失败本身不会产生任何消息，没有这一步，
+# 「没跑成」会被误读成「本周平静」（本项目踩过三次的静默失效）。不调用任何模型。
+on:
+  schedule:
+    - cron: "17 3 * * 3"
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "要检查的周二日期 YYYY-MM-DD（默认最近一个周二）"
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check this week's snapshot and alert if missing
+        env:
+          AUTOPILOT_WEEK: ${{ inputs.week }}
+          FEISHU_WEBHOOK_URL: ${{ secrets.FEISHU_WEBHOOK_URL || secrets.FEISHU_WEBHOOK }}
+          FEISHU_SIGN_SECRET: ${{ secrets.FEISHU_SIGN_SECRET || secrets.FEISHU_SECRET }}
+        shell: bash
+        run: |
+          week="${AUTOPILOT_WEEK:-$(python -c 'import datetime as d;t=d.datetime.now(d.timezone.utc).date();print(t-d.timedelta(days=(t.weekday()-1)%7))')}"
+          export AUTOPILOT_WEEK="$week"
+          if git ls-remote --exit-code --heads origin "claude/weekly-${week}" >/dev/null 2>&1; then
+            export AUTOPILOT_BRANCH_EXISTS=1
+          fi
+          python .github/scripts/cloud_publish.py autopilot --push
