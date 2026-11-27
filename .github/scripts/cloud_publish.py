@@ -23,6 +23,7 @@ import hmac
 import json
 import os
 import pathlib
+import re
 import sys
 import time
 from typing import Any
@@ -570,7 +571,7 @@ def daily_summary() -> dict[str, Any]:
     lines.append(
         "**需要你决定什么**\n"
         "风险事件请确认：①确认留痕并纳入周评证据；②降级为观察；③驳回。"
-        "若是采集异常，请检查工作流并重新运行。在你确认前不会自动改正式评分。"
+        "若是采集异常，请检查工作流并重新运行。日频事件本身不改分；每周三的自动周更会逐条核实后再决定是否计分。"
     )
     return {
         "kind": "daily",
@@ -674,6 +675,66 @@ def release_summary() -> dict[str, Any]:
     }
 
 
+ROUTINE_URL = "https://claude.ai/code/routines/trig_01TAyokCossdXmXzxHwzXgxq"
+DATA_JS = ROOT / "stability-monitor" / "dashboard" / "data.js"
+
+
+def weekly_dates(source: str) -> list[str]:
+    """data.js weekly 数组里的周快照日期（只看 weekly：watchlist 也有 date 字段）。"""
+    start = source.find("weekly:")
+    end = source.find("]", start) if start >= 0 else -1
+    if start < 0 or end < 0:
+        return []
+    return re.findall(r'\{\s*date:\s*"(\d{4}-\d{2}-\d{2})",\s*scores:', source[start:end])
+
+
+def autopilot_summary(today: dt.date | None = None) -> dict[str, Any]:
+    """周三 watchdog：本周二的周快照是否已进 main。缺了才推送——静默周 ≠ 平静周。"""
+    today = today or dt.datetime.now(dt.timezone.utc).date()
+    week = os.getenv("AUTOPILOT_WEEK") or (
+        today - dt.timedelta(days=(today.weekday() - 1) % 7)
+    ).isoformat()
+    try:
+        dates = weekly_dates(DATA_JS.read_text(encoding="utf-8"))
+    except OSError:
+        dates = []
+    if week in dates:
+        return {
+            "kind": "autopilot",
+            "title": f"【自动周更】{week} 已写入 main",
+            "risk": False,
+            "level": "green",
+            "lines": [f"weekly 已有 {week} 快照。"],
+            "decisionId": f"autopilot:{week}:ok",
+        }
+    latest = dates[-1] if dates else "无"
+    if os.getenv("AUTOPILOT_BRANCH_EXISTS") == "1":
+        cause = (
+            f"代理已推送 `claude/weekly-{week}`，但没有合并进 main——多半是合并工作流的校验没过。"
+            "看 Actions 里 weekly-autopilot-merge 的失败步骤。"
+        )
+    else:
+        cause = (
+            "代理没有推送周更分支：可能是 routine 没有触发、额度用尽中途停止，"
+            "或它自己判定校验不过而按规则不推送。先看 routine 的运行记录，最终回复第一行会写明原因。"
+        )
+    return {
+        "kind": "autopilot",
+        "title": f"【周更未完成】{week} 自动周更没有写入 main",
+        "risk": True,
+        "level": "red",
+        "lines": [
+            f"**发生了什么**\nmain 的稳定性 weekly 里没有 {week} 这一期，最新一期仍是 {latest}。"
+            "看板仍显示上周的分数——这不是「本周无变化」。",
+            f"**可能原因**\n{cause}",
+            f"**去哪里看**\n[routine 运行记录]({ROUTINE_URL})　|　"
+            f"[合并工作流]({REPO_URL}/actions/workflows/weekly-autopilot-merge.yml)",
+        ],
+        "reviewUrl": ROUTINE_URL,
+        "decisionId": f"autopilot:{week}:missing",
+    }
+
+
 def feishu_payload(summary: dict[str, Any]) -> dict[str, Any]:
     content = "\n\n---\n\n".join(summary["lines"])
     download_url = summary.get("downloadUrl", DASHBOARD_DOWNLOAD_URL)
@@ -681,7 +742,8 @@ def feishu_payload(summary: dict[str, Any]) -> dict[str, Any]:
     if summary.get("reviewUrl"):
         content += f"　|　[打开风险待确认记录]({summary['reviewUrl']})"
     content += (
-        "\n\n**人在环边界：**机器人只提交证据和建议；不会自动改正式评分或历史数据。"
+        "\n\n**写入边界：**采集机器人只提交证据；正式评分由每周三的自动周更按官方来源写入 main，"
+        "方法论与行业余额仍由你决定。"
     )
     elements: list[dict[str, Any]] = [
         {"tag": "div", "text": {"tag": "lark_md", "content": content}},
@@ -760,7 +822,7 @@ def write_status(summary: dict[str, Any], feishu_status: str) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=("daily", "weekly", "monthly", "release"))
+    parser.add_argument("mode", choices=("daily", "weekly", "monthly", "release", "autopilot"))
     parser.add_argument("--push", action="store_true")
     args = parser.parse_args()
     summary = {
@@ -768,6 +830,7 @@ def main() -> int:
         "weekly": weekly_summary,
         "monthly": monthly_summary,
         "release": release_summary,
+        "autopilot": autopilot_summary,
     }[args.mode]()
     delivery_errors: list[str] = []
     try:
