@@ -60,13 +60,13 @@ const T = {
 const cardS = {background:"#fff",borderRadius:12,padding:16,border:"1px solid #e7e9ee",boxShadow:"0 1px 2px rgba(16,24,40,.04)"};
 const h3S = {fontSize:13,fontWeight:600,margin:"0 0 12px",color:"#111827"};
 
-// ===== ① 国家宏观数据 (来源: BPS / Bank Indonesia，采集日 2026-11-10) =====
+// ===== ① 国家宏观数据 (来源: BPS / Bank Indonesia，采集日 2026-11-26) =====
 const macroKPI = [
-  { label:"GDP 增速", value:"5.47%", sub:"2026Q3 同比 · BPS 11-05（媒体转述，官方原文待核）；Q2 5.29%" },
-  { label:"BI 基准利率", value:"5.75%", sub:"2026-10-21 · 6月加息后连续按兵；存款便利利率 +25bp 至 5.00%" },
+  { label:"GDP 增速", value:"5.47%", sub:"2026Q3 同比 · BPS 11-05（官方接口已核）；Q2 5.29%" },
+  { label:"BI 基准利率", value:"6.00%", sub:"2026-11-18 · +25bp，6 月以来首次加息（10 月已上调存款便利利率）" },
   { label:"CPI 通胀", value:"3.23%", sub:"2026年10月 同比 · BPS（9月 3.28%，目标区间上沿）" },
-  { label:"USD/IDR", value:"18,059", sub:"JISDOR 2026-11-10 · 10-28 曾见年内高点 18,183" },
-  { label:"失业率", value:"4.75%", sub:"2026年8月 · BPS Sakernas（媒体转述，待核）；非正规就业 57.93%" },
+  { label:"USD/IDR", value:"18,390", sub:"JISDOR 2026-11-26 · 年内新高（11-17 18,264）" },
+  { label:"失业率", value:"4.75%", sub:"2026年8月 · BPS Sakernas（官方接口已核）；非正规就业 57.93%" },
 ];
 const gdpData = [
   {q:"24Q1",v:5.11},{q:"24Q2",v:5.05},{q:"24Q3",v:4.95},{q:"24Q4",v:5.02},
@@ -74,7 +74,7 @@ const gdpData = [
   {q:"26Q2",v:5.29},{q:"26Q3",v:5.47}
 ];
 // CPI月度同比 2024.01起（BPS官方值; 2025.10-12经检索核实2.86/2.72/2.92; 2026.07-10 = 2.88/3.19/3.28/3.23 BPS新闻稿 08-03/09-01/10-01/11-02）
-// GDP 26Q2 5.29 = BPS WebAPI 08-05（云端采集）; 26Q3 5.47 = BPS 11-05 发布、媒体转述（Kontan/detik/Liputan6），官方原文待核
+// GDP 26Q2 5.29 = BPS WebAPI 08-05（云端采集）; 26Q3 5.47 = BPS 11-05，2026-11-24 经 BPS WebAPI 核对
 const cpiData = [
   {m:"24.01",v:2.57},{m:"24.02",v:2.75},{m:"24.03",v:3.05},{m:"24.04",v:3.00},{m:"24.05",v:2.84},{m:"24.06",v:2.51},
   {m:"24.07",v:2.13},{m:"24.08",v:2.12},{m:"24.09",v:1.84},{m:"24.10",v:1.71},{m:"24.11",v:1.55},{m:"24.12",v:1.57},
@@ -287,7 +287,7 @@ function MacroSection() {
   const macroFailures = Object.entries(MACRO_PENDING_DATA?.sourceHealth || {})
     .filter(([,health]) => health.status !== "ok");
   return (<section id="sec1" style={{scrollMarginTop:64}}>
-    <SectionHead no="①" title="国家宏观数据" en="ID Macro Monitor" note="来源: BPS · Bank Indonesia · 采集日 2026-11-10" />
+    <SectionHead no="①" title="国家宏观数据" en="ID Macro Monitor" note="来源: BPS · Bank Indonesia · 采集日 2026-11-26" />
     {MACRO_PENDING_DATA?.reviewRequired && (
       <div style={{background:"#fffbeb",border:"1px solid #fde68a",borderLeft:"4px solid #d97706",borderRadius:8,padding:"11px 14px",fontSize:12,color:"#78350f",lineHeight:1.65,marginBottom:12}}>
         <b>月度宏观指标待确认：</b>
@@ -306,7 +306,7 @@ function MacroSection() {
       </div>))}
     </div>
     <div style={{background:"#eff6ff",border:"1px solid #bfdbfe",borderLeft:"4px solid #2563eb",borderRadius:8,padding:"12px 16px",fontSize:12.5,color:"#1e3a5f",lineHeight:1.7,marginBottom:14}}>
-      <b>宏观信号（截至 2026-11-10）：</b>增长端仍稳（Q3 GDP +5.47%，Q2 +5.29%），但居民端在变弱：CPI 8–10 月都在 3.2–3.3%、贴着 3.5% 目标上沿，而 8 月 Sakernas 平均工资同比仅约 +2.55%，<b>实际工资已转负</b>；失业率降至 4.75% 的同时非正规就业升到 57.93%，即就业质量在下沉。卢比 JISDOR 自 10 月中起基本站在 18,000 上方，BI 维持 5.75% 但 10 月上调存款便利利率收窄走廊托汇率，降息空间短期为零。对消费信贷策略：<b>资金成本维持高位、还款能力承压，批核与额度假设保持保守</b>；这与 LPBBTI TWP90 7–9 月的抬升方向一致。
+      <b>宏观信号（截至 2026-11-26）：</b>增长端仍稳（Q3 GDP +5.47%，Q2 +5.29%），但居民端在变弱：CPI 8–10 月都在 3.2–3.3%、贴着 3.5% 目标上沿，而 8 月 Sakernas 平均工资同比仅约 +2.55%，<b>实际工资已转负</b>；失业率降至 4.75% 的同时非正规就业升到 57.93%，即就业质量在下沉。卢比 JISDOR 11-26 收 18,390 创年内新高，BI 11-18 加息 25bp 至 6.00%（6 月以来首次）托汇率，资金成本进一步上行。对消费信贷策略：<b>资金成本维持高位、还款能力承压，批核与额度假设保持保守</b>；这与 LPBBTI TWP90 7–9 月的抬升方向一致。
     </div>
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(300px,1fr))",gap:12}}>
       <MacroChart title="GDP 增速 — 季度同比 (%)" data={gdpData} xKey="q" yKey="v" color="#0f766e" suffix="%" domain={[4,6]} />
@@ -316,7 +316,7 @@ function MacroSection() {
       <MacroChart title="失业率 (%) — 半年度调查" data={unempData} xKey="d" yKey="v" color="#7c3aed" suffix="%" domain={[4,5.5]} />
     </div>
     <div style={{fontSize:10,color:"#9aa1ab",marginTop:10,lineHeight:1.7}}>
-      注：① 全部序列统一自 2024年1月起：GDP为季度、失业率为半年度调查（Sakernas 每年2月/8月），其余为月度。② CPI/GDP/失业率为 BPS 官方值（2025年10-12月CPI 2.86/2.72/2.92 已核）；BI利率为官方决议月末生效值（2025年9月降至4.75%后连续按兵至2026年4月已核，2026年5-6月+100bp至5.75%，此后 7/8/9/10 月 RDG 均维持；下次议息约 11-18）。③ <b>汇率为月末近似值（待核）</b>：2024年为实值；2025年为约值，受 BI 全年均值16,475、区间16,116–17,071双重校验；2026年仅1/5/6/7月有锚点，其余为内插；2026年9月起为 BI JISDOR 月末实值。④ Q3 GDP 5.47% 与 8 月失业率 4.75% 目前为媒体转述 BPS 11-05 发布（BPS 官网暂无法直连），待月度采集器经 BPS 官方接口取回后核对。
+      注：① 全部序列统一自 2024年1月起：GDP为季度、失业率为半年度调查（Sakernas 每年2月/8月），其余为月度。② CPI/GDP/失业率为 BPS 官方值（2025年10-12月CPI 2.86/2.72/2.92 已核）；BI利率为官方决议月末生效值（2025年9月降至4.75%后连续按兵至2026年4月已核，2026年5-6月+100bp至5.75%，此后 7/8/9/10 月 RDG 均维持，11-18 加息至 6.00%——月末序列于 12 月初补 11 月点）。③ <b>汇率为月末近似值（待核）</b>：2024年为实值；2025年为约值，受 BI 全年均值16,475、区间16,116–17,071双重校验；2026年仅1/5/6/7月有锚点，其余为内插；2026年9月起为 BI JISDOR 月末实值。④ Q3 GDP 5.47% 与 8 月失业率 4.75% 已于 2026-11-24 经月度采集器从 BPS 官方接口取回核对一致。
     </div>
   </section>);
 }

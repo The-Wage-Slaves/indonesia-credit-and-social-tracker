@@ -95,7 +95,8 @@
         }
       ],
       "value": 116.8,
-      "sourceUrl": "https://www.bi.go.id/id/publikasi/laporan/Pages/SK-Juli-2026.aspx"
+      "sourceUrl": "https://www.bi.go.id/id/publikasi/laporan/Pages/SK-Juli-2026.aspx",
+      "carryForwardReason": "No new primary observation in the 2026-11-24 cycle (market-relative fetch was blocked in the routine sandbox); carried forward with original timestamp."
     },
     {
       "id": "contingent_liabilities_2026_09",
@@ -220,7 +221,8 @@
           "score": 35,
           "weight": 1
         }
-      ]
+      ],
+      "carryForwardReason": "No new primary observation in the 2026-11-24 cycle (market-relative fetch was blocked in the routine sandbox); carried forward with original timestamp."
     },
     {
       "id": "governance_effectiveness_proxy_2026",
@@ -356,7 +358,8 @@
           "score": 35.5,
           "weight": 1
         }
-      ]
+      ],
+      "carryForwardReason": "No new primary observation in the 2026-11-24 cycle (market-relative fetch was blocked in the routine sandbox); carried forward with original timestamp."
     },
     {
       "id": "military_role_boundary_2026_10",
