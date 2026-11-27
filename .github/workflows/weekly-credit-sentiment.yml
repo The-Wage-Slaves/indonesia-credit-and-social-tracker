@@ -74,6 +74,15 @@ jobs:
         run: |
           set -o pipefail
           python stability-monitor/scripts/street_heat.py 2>&1 | tee /tmp/street-heat.log
+      - name: Build market-relative readings
+        id: market
+        continue-on-error: true
+        # 股市对 MSCI EM、卢比对亚洲五币两个 driver 的唯一出处。2026-11-24 起放在这里跑：
+        # 周更 routine 的云端沙箱代理拦截 app2.msci.com，拒绝出数导致两个 driver 被迫沿用。
+        # 拒绝出数时脚本非零退出、不写文件，代理照样按「沿用」处理，不得手填。
+        run: |
+          set -o pipefail
+          python stability-monitor/scripts/market_relative.py --period "$(date -u +%F)" 2>&1 | tee /tmp/market-relative.log
       - name: Read weekly decision summary
         id: summary
         shell: bash
@@ -103,6 +112,7 @@ jobs:
           CANDIDATE_COUNT: ${{ steps.summary.outputs.candidate_count }}
           SUPPRESSED_COUNT: ${{ steps.summary.outputs.suppressed_count }}
           STREET_STATUS: ${{ steps.street.outcome }}
+          MARKET_STATUS: ${{ steps.market.outcome }}
         shell: bash
         run: |
           {
@@ -113,6 +123,7 @@ jobs:
             echo "| ${WEEK_END} | ${FEAR_INDEX} | ${NEWS_SCORE} | ${SOCIAL_SCORE} | ${DATA_STATUS} | ${ALERT_LEVEL} | ${ACTIVE_COUNT} | ${CANDIDATE_COUNT} |"
             echo
             echo "- Street-heat collector: **${STREET_STATUS}**"
+            echo "- Market-relative readings: **${MARKET_STATUS}**"
           if [ "${STREET_STATUS}" != "success" ] && [ -f /tmp/street-heat.log ]; then
             echo "  - 采集器未出分。分源状态："
             sed -n 's/^数据覆盖不足/    - 数据覆盖不足/p;s/^未参与的源: /    - 未参与的源: /p' /tmp/street-heat.log
@@ -150,6 +161,10 @@ jobs:
           tar -cf "$transfer_dir/pending-output.tar" --ignore-failed-read $artifacts
           # 合并脚本先备份出去：bot 分支建自旧 main，切过去后脚本会从工作区消失。
           cp .github/scripts/merge_bot_evidence.py "$transfer_dir/"
+          # 当日市场相对读数单独搬运：它在 main 上是已跟踪目录，不能进上面的 rm 清单；
+          # 同日第二次运行时 bot 分支已有同名文件，留在工作区会让 checkout 中止。
+          market_file="stability-monitor/data/market-relative/$(date -u +%F).json"
+          if [ -f "$market_file" ]; then mv "$market_file" "$transfer_dir/market-relative.json"; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # 产物已装进 tar，切分支前必须全部从工作区移走，否则 git 会以
@@ -168,6 +183,11 @@ jobs:
           mkdir -p "$transfer_dir/incoming"
           tar -xf "$transfer_dir/pending-output.tar" -C "$transfer_dir/incoming"
           python "$transfer_dir/merge_bot_evidence.py" "$transfer_dir/incoming"
+          if [ -f "$transfer_dir/market-relative.json" ]; then
+            mkdir -p stability-monitor/data/market-relative
+            cp "$transfer_dir/market-relative.json" "$market_file"
+            git add "$market_file" || true
+          fi
           git add credit-tracker/sentiment-monitor/output || true
           git add stability-monitor/scripts/output || true
           git add stability-monitor/scripts/street_heat_history.json || true

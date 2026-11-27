@@ -21,7 +21,7 @@
 | 日频事件池 | `origin/bot/daily-risk-alerts:stability-monitor/data/daily-events/YYYY-MM.jsonl` | 每日 |
 | 宏观候选 | `origin/bot/monthly-credit-data:credit-tracker/macro-monitor/output/macro-pending.json` | 每月 1 日与每周二 `monthly-credit-data.yml` |
 | P2P 抓取 | `origin/bot/monthly-credit-data:credit-tracker/p2p-scraper/results/scrape_<date>.json` | 同上 |
-| 市场相对读数 | 本地跑 `python stability-monitor/scripts/market_relative.py --period <当天>` | 即时 |
+| 市场相对读数 | `origin/bot/weekly-monitoring:stability-monitor/data/market-relative/<WEEK>.json`（由周二 `weekly-credit-sentiment.yml` 在 GitHub 侧采集）。用 `git checkout origin/bot/weekly-monitoring -- <该路径>` 取到工作分支一并提交。**不要在沙箱里跑 `market_relative.py`**：沙箱代理拦截 `app2.msci.com`（2026-11-24 实测） | 与街头热度同一次运行 |
 
 **同日有两条街头热度时**（计划任务延迟 + 手动触发）：历史文件只留最后一次。用 `git log origin/bot/weekly-monitoring -- stability-monitor/scripts/street_heat_history.json` 找当天各次提交，取**成功源更多**的那次；两次落同一反对率档就取源更全的，并在 changeReason 记下两次读数。
 **当天没有街头热度**：网络政治情绪维持原分，写明「云端读数未就绪」，不得本地跑 `street_heat.py` 入分。
@@ -33,16 +33,19 @@
 1. `git checkout -b claude/weekly-<YYYY-MM-DD> origin/main`。
 2. `python stability-monitor/scripts/apply_week.py watch`：到期观察项写 `outcome`、改 `status`；新出现的有日期期限补进 watchlist。
 3. 读本周日频事件池（上周二之后的全部记录）。每条 severity ≥0.6 的事件都要么在 driver 里有对应变动，要么在 weeklyAnalysis 的「不计分」里写明理由。单源且检索核实不了的，不计分。
-4. 网络检索核实本周事件（优先印尼一线媒体与官方网站；BPS 官网对自动访问有人机验证，**不得绕过**）。
+   - **观察时点要随事件结项**：事件若已经回答了某个 open 观察项（例如期限前法案已通过、提名已提交），**本周就写 `outcome` 并改 `status`**，不要等到该项日期。
+4. 网络检索核实本周事件（优先印尼一线媒体与官方网站；BPS 官网对自动访问有人机验证，**不得绕过**）。**检索下限**：事件池里每个 severity ≥0.6 的事件簇、以及每个本周到期的观察项，至少各检索一次，且必须看到上周二之后发布的结果才算核实；查不到新结果时换印尼语关键词再查一次，仍无才写「检索未见新进展」。
 5. 事件进 `stability-monitor/data/event-ledgers.json`（完整日期 + 至少一个来源；致死事件权重 2；最高层级人事更替权重 2），跑 `python stability-monitor/scripts/event_decay.py --date <当天>` 取六个衰减 driver 的分。
-6. `market_relative.py` 取股市、汇率两个 driver；BI JISDOR 用 `credit-tracker/macro-monitor/macro_monitor.py` 里的 `fetch_text(JISDOR_URL)` 读官方表。
+6. 股市、汇率两个 driver 读上表的市场相对文件（bot 分支上没有当天文件 = 采集器拒绝出数 → 两项沿用并写明）；JISDOR 最新值取 `macro-pending.json` 的 `usd_idr` 观察值（BI 官方表，采集器取回）。
 7. 改 `stability-monitor/dashboard/data.js`：driver、支柱 `score/prev/weekChange`、1998 对照文字里的「当前N」、`weeklyAnalysis`。支柱分 = 半数进位(Σ score×weight + pillarAdj)。
 8. `python stability-monitor/scripts/apply_week.py append <当天> fiscal=.. currency=.. institutions=.. social=.. coercive=..`，再 `python stability-monitor/scripts/apply_week.py export`。
-9. 数据置信版：证据台账 `data/evidence/<当天>.json` 从上期滚动（有新官方读数的观察项换新 id，其余加 `carryForwardReason`），更新 `data/v4-shadow-input.json` 的 `asOf`/`evidenceFile`/`observationIds`/`v3Score`，跑 `python stability-monitor/scripts/score_v4_shadow.py --write-output`。**不追加 V4 history 确认点**（那一步仍留给所有者）。
+9. 数据置信版：证据台账 `data/evidence/<当天>.json` 从上期滚动（有新官方读数的观察项换新 id；**其余每一条都要有 `carryForwardReason`**，包括上期刚换过 id、本期没换的条目），更新 `data/v4-shadow-input.json` 的 `asOf`/`evidenceFile`/`observationIds`/`v3Score`，跑 `python stability-monitor/scripts/score_v4_shadow.py --write-output`。**不追加 V4 history 确认点**（那一步仍留给所有者）。
 
 ## 3. 信贷看板：宏观与竞对
 
-1. **宏观**：读 `macro-pending.json` 的 `changes`。只写 `source_url` 指向 BI/BPS 官方的候选；按看板既有口径追加到 `gdpData/cpiData/rateData/fxData/unempData`（期间格式与已有条目一致），更新 `macroKPI` 与「宏观信号」段、SectionHead 的采集日。BI 利率按月末生效值；USD/IDR 用 JISDOR 月末值，**信贷行业 FX=15000 不动**。媒体转述值可放进 KPI 副标题并标「待核」，不进序列。
+1. **宏观**：读 `macro-pending.json` 的 `observations` 与 `changes`。只用 `source_url` 指向 BI/BPS 官方的值。
+   - **月度序列**（`gdpData/cpiData/rateData/fxData/unempData`）只追加**已结束**的期间，期间格式与已有条目一致。
+   - **`macroKPI` 卡片每周都要对齐最新官方值，月中也一样**：BI 利率决议当周就改卡片（2026-11-24 那次因「11 月未结束」整体跳过，卡片停在旧利率，属于错误）；同时更新「宏观信号」段与 SectionHead 采集日。BI 利率按月末生效值；USD/IDR 用 JISDOR 月末值，**信贷行业 FX=15000 不动**。媒体转述值可放进 KPI 副标题并标「待核」，不进序列。
 2. **P2P 竞对**：对 bot 分支上尚未进 `credit-tracker/dashboard/p2p-confirmed.js` 的每个 `scrape_<date>.json`，先 `git checkout origin/bot/monthly-credit-data -- credit-tracker/p2p-scraper/results/scrape_<date>.json` 取到本地，再 `python credit-tracker/p2p-scraper/confirm_p2p.py --batch <date> --dry-run` 看对照表；无拒绝就去掉 `--dry-run` 落盘。脚本拒绝的批次跳过，在最终回复里写原因。
 3. **行业数据（BI/OJK 月度余额）不在自动范围内**：`apply_industry_pending.py` 涉及口径起点（`--from`）判断，仍由所有者手动触发；代理只在最终回复里提示 bot 分支上是否有新的行业候选。
 
